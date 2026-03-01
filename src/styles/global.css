@@ -87,9 +87,19 @@ h1, h2, h3, h4, h5, h6 {
   outline-offset: 2px;
 }
 
-/* Subtle geometric pattern for section dividers */
+/* Painted-over pattern — layered dark blue textures like brushstrokes */
 .geo-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4A843' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  position: relative;
+  background-color: var(--color-navy-900);
+  background-image:
+    /* Layer 1: soft diagonal linen weave */
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h1v1H0zm2 2h1v1H2zm2 2h1v1H4zm2 2h1v1H6zm2 2h1v1H8zm2 2h1v1h-1zm2 2h1v1h-1zm2 2h1v1h-1zm2 2h1v1h-1zm2 2h1v1h-1zm2 2h1v1h-1zm2 2h1v1h-1zm2 2h1v1h-1zm2 2h1v1h-1zm2 2h1v1h-1zm2 2h1v1h-1zm2 2h1v1h-1zm2 2h1v1h-1zm2 2h1v1h-1zm2 2h1v1h-1z' fill='%231E2D6F' fill-opacity='0.12'/%3E%3C/svg%3E"),
+    /* Layer 2: organic brushstroke circles */
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='18' fill='none' stroke='%23162356' stroke-width='1' stroke-opacity='0.15'/%3E%3Ccircle cx='0' cy='0' r='12' fill='none' stroke='%231E2D6F' stroke-width='0.8' stroke-opacity='0.08'/%3E%3Ccircle cx='80' cy='80' r='12' fill='none' stroke='%231E2D6F' stroke-width='0.8' stroke-opacity='0.08'/%3E%3C/svg%3E"),
+    /* Layer 3: fine crosshatch texture */
+    url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l20 20M20 0L0 20' stroke='%23162356' stroke-width='0.4' stroke-opacity='0.1'/%3E%3C/svg%3E"),
+    /* Layer 4: large soft diamond grid */
+    url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 0L120 60L60 120L0 60Z' fill='none' stroke='%231E2D6F' stroke-width='0.6' stroke-opacity='0.07'/%3E%3C/svg%3E");
 }
 
 /* Scrollbar styling */

@@ -9,6 +9,9 @@ import ServiceCard from '@/components/ServiceCard.astro';
 import StatCard from '@/components/StatCard.astro';
 
 import heroImage from '@/assets/images/hero/home-page-photo.jpg';
+import maduukaImg from '@/assets/images/portfolio/MADUUKASOFTWARE-01.jpg';
+import aqarImg from '@/assets/images/portfolio/PROPERTY-MANAGEMENT-01.jpg';
+import longhornImg from '@/assets/images/portfolio/ERP-01.jpg';
 
 const lang: Lang = 'en';
 
@@ -45,9 +48,10 @@ const services = [
 ---
 
 <BaseLayout
-  title="Peter Bamuhigire — Technology & Business Consulting"
-  description="15+ years of software development, ICT consulting, and business advisory across 10+ African countries. Building practical technology solutions that deliver real results."
+  title="Peter Bamuhigire — IT Consultant & Software Developer, Kampala Uganda"
+  description="IT consultant and software developer in Kampala, Uganda with 15+ years' experience. Custom software development, website design, ICT consulting, and ERP systems across 10+ African countries."
   lang={lang}
+  page="home"
 >
 
   <!-- ==============================
@@ -198,30 +202,26 @@ const services = [
         />
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8 lg:gap-12 fade-up">
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8 fade-up">
         <!-- Maduuka -->
-        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-navy-100 transition-all duration-500 hover:-translate-y-1">
-          <!-- Placeholder screenshot area -->
-          <div class="relative h-52 md:h-64 bg-gradient-to-br from-navy-800 via-navy-700 to-navy-900 flex items-center justify-center overflow-hidden">
-            <div class="absolute inset-0 geo-pattern opacity-20"></div>
-            <div class="relative text-center">
-              <div class="inline-flex items-center gap-2 px-3 py-1 bg-gold-400/10 border border-gold-400/30 rounded-full text-gold-400 text-xs font-medium mb-3">
-                SaaS Platform
-              </div>
-              <h3 class="text-3xl md:text-4xl font-bold text-warm-white font-heading">Maduuka</h3>
-              <p class="text-navy-300 text-sm mt-1">Business Management Suite</p>
+        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-navy-100 transition-all duration-500 hover:-translate-y-1 flex flex-col">
+          <div class="relative h-48 md:h-56 overflow-hidden">
+            <Image
+              src={maduukaImg}
+              alt="Maduuka Business Management Software — SaaS platform for SMEs"
+              width={600}
+              height={400}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute top-3 left-3">
+              <span class="px-3 py-1 bg-navy-900/80 backdrop-blur-sm text-gold-400 text-xs font-medium rounded-full">SaaS Platform</span>
             </div>
           </div>
-          <div class="p-6 md:p-8">
-            <p class="text-navy-600 leading-relaxed mb-4">
-              A multi-tenant SaaS bookkeeping and business management platform designed for SMEs across Africa. Integrates POS, inventory, accounting, pharmacy, restaurant, and asset management modules — available in 5 languages with offline-first mobile capability.
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold text-navy-900 font-heading mb-2">Maduuka</h3>
+            <p class="text-navy-600 text-sm leading-relaxed mb-4 flex-1">
+              Multi-tenant SaaS bookkeeping and business management platform for SMEs. POS, inventory, accounting, and asset management — available in 5 languages.
             </p>
-            <div class="flex flex-wrap gap-2 mb-5">
-              <span class="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full">PHP</span>
-              <span class="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full">MySQL</span>
-              <span class="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full">Kotlin</span>
-              <span class="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full">REST API</span>
-            </div>
             <a href="/en/portfolio/" class="inline-flex items-center text-sm font-semibold text-gold-600 hover:text-amber-accent transition-colors gap-1.5 group-hover:gap-2">
               View details
               <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
@@ -230,29 +230,52 @@ const services = [
         </div>
 
         <!-- Aqar -->
-        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-navy-100 transition-all duration-500 hover:-translate-y-1">
-          <!-- Placeholder screenshot area -->
-          <div class="relative h-52 md:h-64 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 flex items-center justify-center overflow-hidden">
-            <div class="absolute inset-0 geo-pattern opacity-20"></div>
-            <div class="relative text-center">
-              <div class="inline-flex items-center gap-2 px-3 py-1 bg-gold-400/10 border border-gold-400/30 rounded-full text-gold-400 text-xs font-medium mb-3">
-                PropTech
-              </div>
-              <h3 class="text-3xl md:text-4xl font-bold text-warm-white font-heading">Aqar</h3>
-              <p class="text-navy-300 text-sm mt-1">Property Management Software</p>
+        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-navy-100 transition-all duration-500 hover:-translate-y-1 flex flex-col">
+          <div class="relative h-48 md:h-56 overflow-hidden">
+            <Image
+              src={aqarImg}
+              alt="Aqar Property Management Software — PropTech for landlords"
+              width={600}
+              height={400}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute top-3 left-3">
+              <span class="px-3 py-1 bg-navy-900/80 backdrop-blur-sm text-gold-400 text-xs font-medium rounded-full">PropTech</span>
             </div>
           </div>
-          <div class="p-6 md:p-8">
-            <p class="text-navy-600 leading-relaxed mb-4">
-              Property management software for landlords and property managers. Handles tenant onboarding, lease management, rent collection tracking, maintenance scheduling, and financial reporting — serving clients across Africa and the United Kingdom.
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold text-navy-900 font-heading mb-2">Aqar</h3>
+            <p class="text-navy-600 text-sm leading-relaxed mb-4 flex-1">
+              Property management software for landlords and managers. Tenant onboarding, rent tracking, maintenance, and financial reporting across Africa and the UK.
             </p>
-            <div class="flex flex-wrap gap-2 mb-5">
-              <span class="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full">PHP</span>
-              <span class="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full">MySQL</span>
-              <span class="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full">Web-based</span>
-            </div>
             <a href="https://aqarproperty.co.uk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-gold-600 hover:text-amber-accent transition-colors gap-1.5 group-hover:gap-2">
               Visit Aqar
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Longhorn ERP -->
+        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-navy-100 transition-all duration-500 hover:-translate-y-1 flex flex-col">
+          <div class="relative h-48 md:h-56 overflow-hidden">
+            <Image
+              src={longhornImg}
+              alt="Longhorn ERP — Cloud-based enterprise resource planning system"
+              width={600}
+              height={400}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute top-3 left-3">
+              <span class="px-3 py-1 bg-navy-900/80 backdrop-blur-sm text-gold-400 text-xs font-medium rounded-full">ERP</span>
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-bold text-navy-900 font-heading mb-2">Longhorn ERP</h3>
+            <p class="text-navy-600 text-sm leading-relaxed mb-4 flex-1">
+              Cloud-based ERP system with web and mobile applications. Custom-built enterprise resource planning for businesses requiring integrated operations management.
+            </p>
+            <a href="https://chwezi.co.za/en/technology/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-gold-600 hover:text-amber-accent transition-colors gap-1.5 group-hover:gap-2">
+              Find out more
               <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </a>
           </div>

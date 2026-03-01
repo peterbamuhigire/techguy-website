@@ -83,10 +83,10 @@ const socials = [
           {t('nav.services', lang)}
         </h3>
         <ul class="space-y-2.5 text-sm text-navy-300">
-          <li>{lang === 'en' ? 'Software Development' : 'Développement Logiciel'}</li>
-          <li>{lang === 'en' ? 'ICT Consulting & Strategy' : 'Conseil & Stratégie TIC'}</li>
-          <li>{lang === 'en' ? 'Business Consulting' : 'Conseil aux Entreprises'}</li>
-          <li>{lang === 'en' ? 'Property Management Tech' : 'Technologie Immobilière'}</li>
+          <li><a href={`/${lang}/services/#software-development`} class="hover:text-gold-400 transition-colors">{lang === 'en' ? 'Software Development' : 'Développement Logiciel'}</a></li>
+          <li><a href={`/${lang}/services/#ict-consulting`} class="hover:text-gold-400 transition-colors">{lang === 'en' ? 'ICT Consulting & Strategy' : 'Conseil & Stratégie TIC'}</a></li>
+          <li><a href={`/${lang}/services/#business-consulting`} class="hover:text-gold-400 transition-colors">{lang === 'en' ? 'Business Consulting' : 'Conseil aux Entreprises'}</a></li>
+          <li><a href={`/${lang}/services/#property-management`} class="hover:text-gold-400 transition-colors">{lang === 'en' ? 'Property Management Tech' : 'Technologie Immobilière'}</a></li>
         </ul>
       </div>
 

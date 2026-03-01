@@ -9,14 +9,110 @@ interface Props {
   description: string;
   lang: Lang;
   ogImage?: string;
-  canonicalUrl?: string;
+  page?: string;
+  noindex?: boolean;
 }
 
-const { title, description, lang, ogImage = '/og-image.jpg', canonicalUrl } = Astro.props;
+const { title, description, lang, ogImage = '/og-image.jpg', page = '', noindex = false } = Astro.props;
 const altLang = lang === 'en' ? 'fr' : 'en';
 const currentPath = Astro.url.pathname.replace(`/${lang}`, '');
 const altUrl = `/${altLang}${currentPath || '/'}`;
 const siteUrl = 'https://techguypeter.com';
+const canonicalUrl = `${siteUrl}/${lang}${currentPath || '/'}`;
+
+// Breadcrumb data
+const breadcrumbItems: { name: string; url: string }[] = [
+  { name: lang === 'en' ? 'Home' : 'Accueil', url: `${siteUrl}/${lang}/` },
+];
+if (page && page !== 'home') {
+  const pageNames: Record<string, Record<string, string>> = {
+    services: { en: 'Services', fr: 'Services' },
+    portfolio: { en: 'Portfolio', fr: 'Réalisations' },
+    about: { en: 'About', fr: 'À Propos' },
+    contact: { en: 'Contact', fr: 'Contact' },
+    blog: { en: 'Blog', fr: 'Blog' },
+  };
+  breadcrumbItems.push({
+    name: pageNames[page]?.[lang] || page,
+    url: canonicalUrl,
+  });
+}
+
+// ProfessionalService structured data (on every page)
+const professionalServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Peter Bamuhigire — IT Consultant & Software Developer",
+  "url": siteUrl,
+  "logo": `${siteUrl}/og-image.jpg`,
+  "image": `${siteUrl}/og-image.jpg`,
+  "description": "IT consulting, software development, website design, and business advisory services in Kampala, Uganda. Serving clients across East Africa and internationally.",
+  "telephone": "+256784464178",
+  "email": "peter@techguypeter.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Bukoto",
+    "addressLocality": "Kampala",
+    "addressCountry": "UG"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 0.3476,
+    "longitude": 32.5936
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "Uganda" },
+    { "@type": "Country", "name": "Kenya" },
+    { "@type": "Country", "name": "Tanzania" },
+    { "@type": "Country", "name": "Rwanda" },
+    { "@type": "Country", "name": "Democratic Republic of the Congo" },
+    { "@type": "Country", "name": "Senegal" },
+    { "@type": "Country", "name": "Sierra Leone" },
+    { "@type": "Country", "name": "Guinea" },
+    { "@type": "Country", "name": "United Kingdom" }
+  ],
+  "serviceType": [
+    "IT Consulting",
+    "Software Development",
+    "Website Design",
+    "Web Development",
+    "ICT Strategy",
+    "ERP Systems",
+    "Business Consulting",
+    "Property Management Software"
+  ],
+  "knowsLanguage": ["en", "fr"],
+  "founder": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "jobTitle": "IT Consultant & Software Developer",
+    "url": `${siteUrl}/en/about/`,
+    "sameAs": [
+      "https://linkedin.com/in/peterbamuhigire",
+      "https://github.com/peterbamuhigire",
+      "https://twitter.com/peterbamu"
+    ]
+  },
+  "sameAs": [
+    "https://linkedin.com/in/peterbamuhigire",
+    "https://github.com/peterbamuhigire",
+    "https://twitter.com/peterbamu",
+    "https://facebook.com/pbamu",
+    "https://instagram.com/peterbamuhigire"
+  ]
+};
+
+// BreadcrumbList structured data
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": item.url
+  }))
+};
 ---
 <!DOCTYPE html>
 <html lang={lang} class="scroll-smooth">
@@ -26,21 +122,28 @@ const siteUrl = 'https://techguypeter.com';
   <title>{title}</title>
   <meta name="description" content={description} />
   <meta name="author" content="Peter Bamuhigire" />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
 
   <!-- Canonical & Hreflang -->
-  {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+  <link rel="canonical" href={canonicalUrl} />
   <link rel="alternate" hreflang={lang} href={`${siteUrl}/${lang}${currentPath || '/'}`} />
   <link rel="alternate" hreflang={altLang} href={`${siteUrl}${altUrl}`} />
   <link rel="alternate" hreflang="x-default" href={`${siteUrl}/en${currentPath || '/'}`} />
+
+  <!-- Geo Targeting — Kampala, Uganda -->
+  <meta name="geo.region" content="UG-102" />
+  <meta name="geo.placename" content="Kampala" />
+  <meta name="geo.position" content="0.3476;32.5936" />
+  <meta name="ICBM" content="0.3476, 32.5936" />
 
   <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={`${siteUrl}${ogImage}`} />
-  <meta property="og:url" content={`${siteUrl}/${lang}${currentPath || '/'}`} />
+  <meta property="og:url" content={canonicalUrl} />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content={lang === 'en' ? 'en_GB' : 'fr_FR'} />
-  <meta property="og:site_name" content="Peter Bamuhigire — Technology & Business Consultant" />
+  <meta property="og:site_name" content="Peter Bamuhigire — IT Consultant & Software Developer, Kampala" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -50,9 +153,9 @@ const siteUrl = 'https://techguypeter.com';
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <!-- Preload critical fonts -->
-  <link rel="preload" href="/fonts/playfair-display-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <!-- Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(professionalServiceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </head>
 <body class="min-h-screen flex flex-col bg-warm-white text-navy-900">
   <a href="#main-content" class="skip-to-content">Skip to content</a>

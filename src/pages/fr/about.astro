@@ -1,0 +1,270 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import CTASection from '@/components/CTASection.astro';
+import StatCard from '@/components/StatCard.astro';
+import { t, type Lang } from '@/utils/i18n';
+
+import peterHeadshot from '@/assets/images/team/peter-headshot.jpg';
+
+const lang: Lang = 'fr';
+
+const timelineEntries = [
+  {
+    year: '2008',
+    location: 'Kampala',
+    title: 'Développeur Web chez Infinity Computers',
+    description: 'A posé les fondations d\'une approche pratique : développement web et support technique, associés à une exposition directe aux véritables défis technologiques des entreprises. A appris que les meilleures solutions sont celles que les gens peuvent réellement utiliser.',
+  },
+  {
+    year: '2010 - 2014',
+    location: 'Freetown',
+    title: 'Responsable SIG chez Dynapharm Sierra Leone',
+    description: 'Responsabilité complète de la mise en place et de la maintenance des systèmes d\'information, de la formation du personnel et de la garantie de l\'intégrité des données. Quatre années en Afrique de l\'Ouest ont forgé un principe directeur : la technologie doit être conçue pour ceux qui l\'utilisent, et non pour les ingénieurs qui la conçoivent.',
+  },
+  {
+    year: '2014 - 2016',
+    location: 'Kampala',
+    title: 'Consultant TIC chez EFICON',
+    description: 'Élargissement de l\'exposition à différentes industries, échelles d\'opération et défis technologiques. Réalisation d\'analyses de systèmes, conception de solutions et recommandations technologiques. Cette période a confirmé une conviction grandissante : plutôt que de mettre en œuvre les solutions d\'autrui, il était temps de construire les siennes.',
+  },
+  {
+    year: '2016 - présent',
+    location: 'Kampala',
+    title: 'Fondation de Chwezi Digital Solutions',
+    description: 'Lancement d\'un cabinet de conseil indépendant et de développement de produits. Création de Maduuka, Aqar et Chwezi Server Manager à partir de problèmes réels rencontrés lors de missions de conseil. Des produits servant des entreprises en Afrique de l\'Est et à l\'international.',
+  },
+  {
+    year: '2019 - 2022',
+    location: 'Dakar',
+    title: 'Responsable TIC Régional, Dynapharm Africa',
+    description: 'Responsabilités élargies à trois pays : Sénégal, Sierra Leone et Guinée. Gestion des systèmes ERP, de l\'infrastructure réseau, de la formation du personnel et de la transformation numérique en Afrique de l\'Ouest francophone et anglophone.',
+  },
+  {
+    year: '2024 - présent',
+    location: 'Kampala',
+    title: 'Responsable TIC, BIRD Center',
+    description: 'Gestion de l\'ensemble de la fonction TIC pour une institution nationale de recherche agricole. Gestion de l\'infrastructure, développement de systèmes, administration réseau et planification technologique stratégique — équilibrant innovation et stabilité opérationnelle.',
+  },
+];
+
+const philosophyCards = [
+  {
+    icon: 'kaizen',
+    title: 'Kaizen — Amélioration Continue',
+    description: 'Le concept japonais d\'amélioration continue et progressive est profondément ancré dans la pratique. En plus de 15 ans, de nouvelles compétences acquises, de nouveaux outils adoptés, de nouveaux marchés explorés. Non pas le changement pour le changement, mais un engagement discipliné envers l\'apprentissage et l\'adaptation. L\'adoption récente de flux de travail de développement assistés par l\'IA est une extension naturelle de cette philosophie.',
+  },
+  {
+    icon: 'results',
+    title: 'Résultats — Un Service à Impact',
+    description: 'Le conseil technologique qui ne produit pas de résultats commerciaux mesurables ne remplit pas sa mission. Chaque mission se concentre sur des systèmes fiables, des processus plus efficaces et des décisions éclairées par des données précises. La question n\'est jamais « que pouvons-nous construire ? » mais « de quoi votre entreprise a-t-elle besoin ? »',
+  },
+  {
+    icon: 'ethics',
+    title: 'Éthique — Intégrité & Transparence',
+    description: 'La confiance est le fondement de toute relation professionnelle. Des propositions claires, une tarification transparente, des délais réalistes et des évaluations honnêtes. Si un projet n\'est pas adapté, Peter vous le dira. Si une solution plus simple peut répondre au besoin, il la recommandera plutôt que de survendre. Cette approche a maintenu des relations clients durables à travers les années et les continents.',
+  },
+];
+
+const certifications = [
+  { year: '2023', name: 'AWS Cloud Practitioner Essentials' },
+  { year: '2022', name: 'Google Project Management Professional Certificate' },
+  { year: '2020', name: 'Cisco Certified Network Associate (CCNA) — Routing & Switching' },
+  { year: '2018', name: 'ITIL Foundation Certificate in IT Service Management' },
+  { year: '2015', name: 'Microsoft Certified Solutions Associate (MCSA) — SQL Server' },
+  { year: '2010', name: 'CompTIA A+ Certification' },
+];
+---
+
+<BaseLayout
+  title="À Propos — Peter Bamuhigire"
+  description="L'histoire de Peter Bamuhigire : plus de 15 ans de solutions technologiques à travers l'Afrique. De Kampala à Freetown en passant par Dakar — une carrière dédiée à combler le fossé entre les besoins des entreprises et ce que la technologie peut offrir."
+  lang={lang}
+>
+  <!-- ═══════════════════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════════════════ -->
+  <section class="bg-navy-900 geo-pattern pt-20 md:pt-24 pb-16 md:pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <!-- Left: Text -->
+        <div class="order-2 lg:order-1 fade-up">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
+            L'Histoire de Peter Bamuhigire
+          </h1>
+          <div class="mt-4 h-1 w-20 rounded-full bg-gold-400"></div>
+          <p class="mt-6 text-lg text-navy-200 leading-relaxed">
+            À travers l'Afrique, il existe un fossé persistant entre ce que les entreprises
+            attendent de la technologie et ce qui leur est accessible. Les logiciels d'entreprise
+            conçus pour les marchés occidentaux ne tiennent pas toujours compte des réalités
+            des environnements commerciaux africains &mdash; connectivité internet instable,
+            opérations multilingues, clients orientés mobile et besoin de systèmes que le
+            personnel non technique peut utiliser en toute confiance.
+          </p>
+          <p class="mt-4 text-lg text-navy-200 leading-relaxed">
+            Peter Bamuhigire consacre depuis plus de 15 ans ses efforts à combler ce fossé &mdash;
+            en développant des solutions technologiques pratiques, durables et adaptées aux
+            environnements dans lesquels elles sont déployées.
+          </p>
+        </div>
+
+        <!-- Right: Headshot -->
+        <div class="order-1 lg:order-2 flex justify-center lg:justify-end fade-up">
+          <div class="relative">
+            <div class="absolute -inset-3 bg-gradient-to-br from-gold-400/20 to-gold-600/10 rounded-2xl blur-lg"></div>
+            <Image
+              src={peterHeadshot}
+              alt="Peter Bamuhigire — portrait professionnel"
+              class="relative rounded-2xl shadow-2xl shadow-navy-950/50 w-full max-w-md lg:max-w-lg object-cover"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 500px"
+              loading="eager"
+            />
+            <!-- Decorative corner accent -->
+            <div class="absolute -bottom-3 -right-3 w-24 h-24 border-2 border-gold-400/30 rounded-xl"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CAREER JOURNEY TIMELINE
+       ═══════════════════════════════════════════════════════ -->
+  <section class="py-16 md:py-24 bg-warm-white overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Parcours Professionnel"
+        subtitle="De Kampala à Freetown en passant par Dakar et retour — développer des solutions technologiques à travers le continent."
+      />
+
+      <div class="relative">
+        <!-- Vertical line -->
+        <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-navy-200 md:-translate-x-0.5"></div>
+
+        {timelineEntries.map((entry, i) => (
+          <div class:list={[
+            'relative flex items-start mb-12 last:mb-0 fade-up',
+            'md:even:flex-row-reverse',
+          ]}>
+            {/* Gold dot */}
+            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-gold-500 rounded-full border-4 border-warm-white shadow-md -translate-x-1/2 z-10 mt-6"></div>
+
+            {/* Spacer for mobile left offset */}
+            <div class="w-12 flex-shrink-0 md:hidden"></div>
+
+            {/* Desktop spacer — takes up the other half */}
+            <div class="hidden md:block md:w-1/2"></div>
+
+            {/* Content card */}
+            <div class:list={[
+              'md:w-1/2 fade-up',
+              i % 2 === 0 ? 'md:pr-12' : 'md:pl-12',
+            ]}>
+              <div class="bg-white p-6 rounded-xl shadow-md shadow-navy-900/5 border border-navy-100 hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="inline-block px-3 py-1 text-xs font-bold bg-navy-900 text-gold-400 rounded-full">
+                    {entry.year}
+                  </span>
+                  <span class="text-sm font-medium text-navy-500 flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    {entry.location}
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-navy-900">{entry.title}</h3>
+                <p class="mt-2 text-sm text-navy-600 leading-relaxed">{entry.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PHILOSOPHY
+       ═══════════════════════════════════════════════════════ -->
+  <section class="py-16 md:py-24 bg-warm-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Philosophie"
+        subtitle="Trois principes qui guident chaque mission."
+      />
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {philosophyCards.map((card) => (
+          <div class="bg-white rounded-2xl p-8 shadow-md shadow-navy-900/5 border border-navy-100 hover:shadow-lg transition-shadow duration-300 fade-up">
+            {/* Icon */}
+            <div class="w-14 h-14 rounded-xl bg-navy-900 flex items-center justify-center mb-5">
+              {card.icon === 'kaizen' && (
+                <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                </svg>
+              )}
+              {card.icon === 'results' && (
+                <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              )}
+              {card.icon === 'ethics' && (
+                <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              )}
+            </div>
+            <h3 class="text-xl font-bold text-navy-900">{card.title}</h3>
+            <p class="mt-3 text-sm text-navy-600 leading-relaxed">{card.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CERTIFICATIONS
+       ═══════════════════════════════════════════════════════ -->
+  <section class="py-16 md:py-24 bg-warm-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Certifications & Développement Professionnel"
+        subtitle="Investissement continu dans les compétences et les certifications reconnues par l'industrie."
+      />
+
+      <div class="space-y-4">
+        {certifications.map((cert) => (
+          <div class="flex items-start gap-4 md:gap-6 bg-white rounded-xl p-5 border border-navy-100 shadow-sm hover:shadow-md transition-shadow duration-300 fade-up">
+            <span class="flex-shrink-0 inline-flex items-center justify-center w-16 h-10 rounded-lg bg-navy-900 text-gold-400 text-sm font-bold font-heading">
+              {cert.year}
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="text-base font-medium text-navy-900">{cert.name}</p>
+            </div>
+            <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       KEY NUMBERS STRIP
+       ═══════════════════════════════════════════════════════ -->
+  <section class="bg-navy-900 geo-pattern py-14 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <StatCard number="15" label="Années d'Expérience" />
+        <StatCard number="10" label="Pays Servis" />
+        <StatCard number="3" label="Produits SaaS" />
+        <StatCard number="6" label="Industries Servies" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CTA
+       ═══════════════════════════════════════════════════════ -->
+  <CTASection lang={lang} />
+</BaseLayout>

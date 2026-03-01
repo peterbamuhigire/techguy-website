@@ -1,0 +1,438 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import { t } from '@/utils/i18n';
+import type { Lang } from '@/utils/i18n';
+import SectionHeading from '@/components/SectionHeading.astro';
+import CTASection from '@/components/CTASection.astro';
+
+import softwareDevImg from '@/assets/images/services/software-dev-1.jpg';
+import techSupportImg from '@/assets/images/services/tech-support-1.jpg';
+import businessStrategyImg from '@/assets/images/services/business-strategy.jpg';
+import businessDevImg from '@/assets/images/services/business-dev-1.jpg';
+
+const lang: Lang = 'fr';
+
+const processSteps = [
+  {
+    number: '01',
+    title: 'Découverte',
+    description: 'Une consultation initiale pour comprendre votre organisation, vos défis et vos objectifs. C\'est une conversation, pas un argumentaire de vente.',
+  },
+  {
+    number: '02',
+    title: 'Analyse',
+    description: 'Une évaluation approfondie de vos systèmes, processus et besoins actuels. Identifier ce qui fonctionne, ce qui ne fonctionne pas, et où se trouvent les opportunités.',
+  },
+  {
+    number: '03',
+    title: 'Proposition',
+    description: 'Une proposition claire et détaillée décrivant l\'approche recommandée, le calendrier, les livrables et l\'investissement. Pas de coûts cachés, pas de promesses vagues.',
+  },
+  {
+    number: '04',
+    title: 'Mise en Œuvre',
+    description: 'Une exécution concrète avec des mises à jour régulières sur l\'avancement. Peter travaille aux côtés de votre équipe, pas de manière isolée.',
+  },
+  {
+    number: '05',
+    title: 'Accompagnement',
+    description: 'Un accompagnement continu, une formation et des conseils pour garantir que vos solutions continuent à apporter de la valeur bien après la mission initiale.',
+  },
+];
+---
+
+<BaseLayout
+  title="Services — Peter Bamuhigire | Conseil en Technologie & Entreprise"
+  description="Des services complets en technologie et conseil aux entreprises : développement logiciel, stratégie TIC, conseil aux entreprises et technologie de gestion immobilière à travers l'Afrique."
+  lang={lang}
+>
+
+  <!-- ==============================
+       HERO BANNER
+       ============================== -->
+  <section class="relative bg-navy-950 overflow-hidden">
+    <div class="absolute inset-0 geo-pattern opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-900"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24">
+      <div class="py-16 md:py-20 lg:py-24 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-6">
+          <span class="text-gold-400 text-sm font-medium">Ce Que Nous Offrons</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
+          {t('section.services', lang)}
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-navy-200 leading-relaxed max-w-2xl">
+          Peter Bamuhigire propose des services complets en technologie et conseil aux entreprises, fondés sur plus de 15 ans d'expérience pratique dans plus de 10 pays africains. Chaque mission repose sur un principe simple : la technologie doit servir les résultats de l'entreprise.
+        </p>
+
+        <div class="mt-4 h-1 w-16 rounded-full bg-gold-400"></div>
+      </div>
+    </div>
+
+    <!-- Bottom wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 40V10C360 30 720 0 1080 20C1260 30 1380 25 1440 20V40H0Z" fill="var(--color-warm-white)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SERVICE 1: SOFTWARE DEVELOPMENT
+       ============================== -->
+  <section id="software-development" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
+        <!-- Text -->
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-50 border border-navy-100 mb-5">
+            <svg class="w-4 h-4 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/>
+            </svg>
+            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Service</span>
+          </div>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Développement Logiciel</h2>
+
+          <p class="text-navy-600 leading-relaxed mb-8">
+            Le développement logiciel est au cœur de cette pratique. Fort d'une expérience approfondie en développement web full-stack, en développement d'applications mobiles et en architecture de plateformes SaaS, Peter conçoit des systèmes pensés pour une utilisation concrète. Chaque projet commence par la compréhension de vos processus métier, l'identification des domaines où la technologie peut créer une véritable valeur, et la conception de solutions que votre équipe peut réellement utiliser. L'approche privilégie des stacks technologiques éprouvés et maintenables, une conception rigoureuse des bases de données et une architecture API propre — car les systèmes fiables reposent sur des fondations solides.
+          </p>
+
+          <!-- Deliverables grid -->
+          <div class="grid sm:grid-cols-2 gap-3">
+            {[
+              'Développement d\'applications web full-stack',
+              'Développement d\'applications mobiles Android',
+              'Architecture de plateformes SaaS',
+              'Implémentation & personnalisation d\'ERP',
+              'Conception & optimisation de bases de données',
+              'Conception & intégration d\'API REST',
+              'Workflows de développement assistés par l\'IA',
+              'Modernisation de systèmes existants',
+            ].map((item) => (
+              <div class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-gold-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-navy-700 text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="/fr/contact/"
+            class="inline-flex items-center mt-8 px-6 py-3 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            {t('cta.book', lang)}
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Image -->
+        <div class="relative">
+          <div class="absolute -inset-3 bg-gradient-to-br from-gold-400/10 via-transparent to-navy-200/20 rounded-2xl -rotate-1"></div>
+          <div class="relative rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src={softwareDevImg}
+              alt="Espace de travail de développement logiciel avec du code à l'écran"
+              width={640}
+              height={480}
+              loading="lazy"
+              class="w-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SERVICE 2: ICT CONSULTING & STRATEGY
+       ============================== -->
+  <section id="ict-consulting" class="bg-warm-cream py-16 md:py-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
+        <!-- Image (left on desktop) -->
+        <div class="relative order-2 lg:order-1">
+          <div class="absolute -inset-3 bg-gradient-to-bl from-gold-400/10 via-transparent to-navy-200/20 rounded-2xl rotate-1"></div>
+          <div class="relative rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src={techSupportImg}
+              alt="Session de conseil en TIC et stratégie technologique"
+              width={640}
+              height={480}
+              loading="lazy"
+              class="w-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-50 border border-navy-100 mb-5">
+            <svg class="w-4 h-4 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 17.25v-.228a4.5 4.5 0 00-.12-1.03l-2.268-9.64a3.375 3.375 0 00-3.285-2.602H7.923a3.375 3.375 0 00-3.285 2.602l-2.268 9.64a4.5 4.5 0 00-.12 1.03v.228m19.5 0a3 3 0 01-3 3H5.25a3 3 0 01-3-3m19.5 0a3 3 0 00-3-3H5.25a3 3 0 00-3 3m16.5 0h.008v.008h-.008v-.008zm-3 0h.008v.008h-.008v-.008z"/>
+            </svg>
+            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Service</span>
+          </div>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Conseil & Stratégie TIC</h2>
+
+          <p class="text-navy-600 leading-relaxed mb-8">
+            De nombreuses organisations investissent dans la technologie sans stratégie claire — en achetant des systèmes qui ne s'intègrent pas, en construisant une infrastructure qui ne passe pas à l'échelle, ou en adoptant des outils que le personnel ne peut pas utiliser efficacement. Le conseil en TIC de Peter comble cette lacune. S'appuyant sur une expérience de gestion des opérations TIC dans plusieurs pays et organisations — des entreprises multinationales de produits de santé aux institutions nationales de recherche — la pratique fournit des orientations stratégiques ancrées dans la réalité opérationnelle.
+          </p>
+
+          <!-- Deliverables grid -->
+          <div class="grid sm:grid-cols-2 gap-3">
+            {[
+              'Évaluation & planification de l\'infrastructure IT',
+              'Feuilles de route de transformation numérique',
+              'Analyse des systèmes & ingénierie des besoins',
+              'Évaluation des fournisseurs technologiques',
+              'Conception d\'infrastructure réseau & serveur',
+              'Mise en place & optimisation de SIG',
+              'Stratégie de migration vers le cloud',
+            ].map((item) => (
+              <div class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-gold-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-navy-700 text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="/fr/contact/"
+            class="inline-flex items-center mt-8 px-6 py-3 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            {t('cta.book', lang)}
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SERVICE 3: BUSINESS CONSULTING
+       ============================== -->
+  <section id="business-consulting" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
+        <!-- Text -->
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-50 border border-navy-100 mb-5">
+            <svg class="w-4 h-4 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/>
+            </svg>
+            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Service</span>
+          </div>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Conseil aux Entreprises</h2>
+
+          <p class="text-navy-600 leading-relaxed mb-8">
+            La technologie n'est efficace que lorsqu'elle sert des processus métier bien conçus. Le conseil aux entreprises de Peter s'appuie sur une expérience acquise auprès d'organisations de divers secteurs — distribution de produits de santé, recherche agricole, gestion immobilière, commerce de détail et bien d'autres. La pratique aide les organisations à analyser leurs processus actuels, à identifier les inefficacités et à mettre en œuvre des améliorations qui produisent des résultats mesurables. C'est un conseil qui travaille à vos côtés — pas un rapport qui reste sur une étagère.
+          </p>
+
+          <!-- Deliverables grid -->
+          <div class="grid sm:grid-cols-2 gap-3">
+            {[
+              'Analyse & optimisation des processus métier',
+              'Élaboration de plans d\'affaires & propositions',
+              'Planification stratégique & définition d\'objectifs',
+              'Conception de cadres de suivi-évaluation',
+              'Gestion & coordination de projets',
+              'Conduite du changement',
+              'Intelligence d\'affaires & décisions basées sur les données',
+            ].map((item) => (
+              <div class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-gold-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-navy-700 text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="/fr/contact/"
+            class="inline-flex items-center mt-8 px-6 py-3 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            {t('cta.book', lang)}
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Image -->
+        <div class="relative">
+          <div class="absolute -inset-3 bg-gradient-to-br from-gold-400/10 via-transparent to-navy-200/20 rounded-2xl -rotate-1"></div>
+          <div class="relative rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src={businessStrategyImg}
+              alt="Session de conseil aux entreprises et planification stratégique"
+              width={640}
+              height={480}
+              loading="lazy"
+              class="w-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SERVICE 4: PROPERTY MANAGEMENT TECHNOLOGY
+       ============================== -->
+  <section id="property-management" class="bg-warm-cream py-16 md:py-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
+        <!-- Image (left on desktop) -->
+        <div class="relative order-2 lg:order-1">
+          <div class="absolute -inset-3 bg-gradient-to-bl from-gold-400/10 via-transparent to-navy-200/20 rounded-2xl rotate-1"></div>
+          <div class="relative rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src={businessDevImg}
+              alt="Solutions de gestion immobilière et PropTech"
+              width={640}
+              height={480}
+              loading="lazy"
+              class="w-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-50 border border-navy-100 mb-5">
+            <svg class="w-4 h-4 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5M3.75 3v18m4.5-18v18m4.5-18v18m4.5-18v18M6 6.75h.008v.008H6V6.75zm0 3.75h.008v.008H6v-.008zm0 3.75h.008v.008H6v-.008zm4.5-7.5h.008v.008h-.008V6.75zm0 3.75h.008v.008h-.008v-.008zm0 3.75h.008v.008h-.008v-.008zm4.5-7.5h.008v.008h-.008V6.75zm0 3.75h.008v.008h-.008v-.008zm0 3.75h.008v.008h-.008v-.008z"/>
+            </svg>
+            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Service</span>
+          </div>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Technologie de Gestion Immobilière</h2>
+
+          <p class="text-navy-600 leading-relaxed mb-8">
+            La gestion immobilière reste l'un des secteurs les moins numérisés en Afrique et sur de nombreux marchés internationaux. Peter a développé Aqar, une plateforme dédiée à la gestion immobilière, et accompagne les propriétaires et les sociétés de gestion immobilière dans la structuration de leurs opérations au sein de systèmes numériques fiables. Que vous gériez cinq propriétés ou cinquante, la pratique vous aide à passer des tableurs et des registres papier à un système qui suit les locataires, surveille la collecte des loyers, planifie la maintenance et génère des rapports financiers.
+          </p>
+
+          <!-- Deliverables grid -->
+          <div class="grid sm:grid-cols-2 gap-3">
+            {[
+              'Implémentation d\'Aqar Property Management',
+              'Numérisation de portefeuilles immobiliers',
+              'Mise en place de systèmes de gestion locative',
+              'Suivi & planification de la maintenance',
+              'Rapports financiers & tableaux de bord des loyers',
+              'Développement de solutions PropTech sur mesure',
+            ].map((item) => (
+              <div class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-gold-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-navy-700 text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="/fr/contact/"
+            class="inline-flex items-center mt-8 px-6 py-3 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            {t('cta.book', lang)}
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       HOW WE WORK - PROCESS TIMELINE
+       ============================== -->
+  <section class="bg-navy-900 py-16 md:py-24 geo-pattern relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-900/95 to-navy-900/90"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-up">
+        <SectionHeading
+          title="Notre Méthodologie"
+          subtitle="Chaque mission suit un processus structuré conçu pour garantir la clarté, l'alignement et des résultats mesurables."
+          light
+        />
+      </div>
+
+      <!-- Desktop: horizontal timeline -->
+      <div class="hidden md:block fade-up">
+        <div class="relative">
+          <!-- Connecting line -->
+          <div class="absolute top-10 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-gold-400/20 via-gold-400/60 to-gold-400/20"></div>
+
+          <div class="grid grid-cols-5 gap-4 lg:gap-6">
+            {processSteps.map((step) => (
+              <div class="relative text-center group">
+                <!-- Step circle -->
+                <div class="relative z-10 w-20 h-20 mx-auto rounded-full bg-navy-800 border-2 border-gold-400/40 flex items-center justify-center group-hover:border-gold-400 group-hover:bg-navy-700 transition-all duration-300">
+                  <span class="text-gold-400 font-bold text-lg font-heading">{step.number}</span>
+                </div>
+
+                <h3 class="mt-5 text-lg font-bold text-warm-white">{step.title}</h3>
+                <p class="mt-2 text-navy-300 text-sm leading-relaxed">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile: vertical timeline -->
+      <div class="md:hidden fade-up">
+        <div class="relative ml-6">
+          <!-- Vertical line -->
+          <div class="absolute top-0 bottom-0 left-4 w-0.5 bg-gradient-to-b from-gold-400/20 via-gold-400/60 to-gold-400/20"></div>
+
+          <div class="space-y-8">
+            {processSteps.map((step) => (
+              <div class="relative flex items-start gap-6">
+                <!-- Step circle -->
+                <div class="relative z-10 w-9 h-9 shrink-0 rounded-full bg-navy-800 border-2 border-gold-400/50 flex items-center justify-center">
+                  <span class="text-gold-400 font-bold text-xs font-heading">{step.number}</span>
+                </div>
+
+                <div class="pb-2">
+                  <h3 class="text-lg font-bold text-warm-white">{step.title}</h3>
+                  <p class="mt-1 text-navy-300 text-sm leading-relaxed">{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       CTA SECTION
+       ============================== -->
+  <div class="fade-up">
+    <CTASection
+      lang={lang}
+      title="Prêt à discuter de votre projet ?"
+      subtitle="Chaque mission commence par une conversation. Réservez une consultation pour découvrir comment l'expérience de Peter peut servir votre organisation."
+    />
+  </div>
+
+</BaseLayout>

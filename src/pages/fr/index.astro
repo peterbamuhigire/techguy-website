@@ -10,43 +10,43 @@ import StatCard from '@/components/StatCard.astro';
 
 import heroImage from '@/assets/images/hero/home-page-photo.jpg';
 
-const lang: Lang = 'en';
+const lang: Lang = 'fr';
 
 const services = [
   {
-    title: 'Software Development',
-    description: 'Custom software solutions — from web applications and mobile apps to full SaaS platforms — built to solve the specific challenges your business faces.',
+    title: 'Développement Logiciel',
+    description: 'Des solutions logicielles sur mesure — applications web, applications mobiles et plateformes SaaS complètes — conçues pour répondre aux défis spécifiques de votre entreprise.',
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>',
-    href: '/en/services/#software-development',
+    href: '/fr/services/#software-development',
     linkText: t('cta.learn_more', lang),
   },
   {
-    title: 'ICT Consulting & Strategy',
-    description: 'Strategic technology advisory that helps organisations plan, implement, and manage their ICT infrastructure for long-term reliability and growth.',
+    title: 'Conseil & Stratégie TIC',
+    description: 'Un accompagnement technologique stratégique qui aide les organisations à planifier, mettre en œuvre et gérer leur infrastructure TIC pour une fiabilité et une croissance à long terme.',
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 17.25v-.228a4.5 4.5 0 00-.12-1.03l-2.268-9.64a3.375 3.375 0 00-3.285-2.602H7.923a3.375 3.375 0 00-3.285 2.602l-2.268 9.64a4.5 4.5 0 00-.12 1.03v.228m19.5 0a3 3 0 01-3 3H5.25a3 3 0 01-3-3m19.5 0a3 3 0 00-3-3H5.25a3 3 0 00-3 3m16.5 0h.008v.008h-.008v-.008zm-3 0h.008v.008h-.008v-.008z"/></svg>',
-    href: '/en/services/#ict-consulting',
+    href: '/fr/services/#ict-consulting',
     linkText: t('cta.learn_more', lang),
   },
   {
-    title: 'Business Consulting',
-    description: 'Business advisory services that bridge the gap between organisational goals and the operational processes needed to achieve them.',
+    title: 'Conseil aux Entreprises',
+    description: 'Des services de conseil aux entreprises qui comblent l\'écart entre les objectifs organisationnels et les processus opérationnels nécessaires pour les atteindre.',
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>',
-    href: '/en/services/#business-consulting',
+    href: '/fr/services/#business-consulting',
     linkText: t('cta.learn_more', lang),
   },
   {
-    title: 'Property Management Technology',
-    description: 'Specialised PropTech solutions that help landlords and property managers digitise their operations, track tenants, and manage portfolios efficiently.',
+    title: 'Technologie de Gestion Immobilière',
+    description: 'Des solutions PropTech spécialisées qui aident les propriétaires et gestionnaires immobiliers à numériser leurs opérations, suivre les locataires et gérer efficacement leurs portefeuilles.',
     icon: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5M3.75 3v18m4.5-18v18m4.5-18v18m4.5-18v18M6 6.75h.008v.008H6V6.75zm0 3.75h.008v.008H6v-.008zm0 3.75h.008v.008H6v-.008zm4.5-7.5h.008v.008h-.008V6.75zm0 3.75h.008v.008h-.008v-.008zm0 3.75h.008v.008h-.008v-.008zm4.5-7.5h.008v.008h-.008V6.75zm0 3.75h.008v.008h-.008v-.008zm0 3.75h.008v.008h-.008v-.008z"/></svg>',
-    href: '/en/services/#property-management',
+    href: '/fr/services/#property-management',
     linkText: t('cta.learn_more', lang),
   },
 ];
 ---
 
 <BaseLayout
-  title="Peter Bamuhigire — Technology & Business Consulting"
-  description="15+ years of software development, ICT consulting, and business advisory across 10+ African countries. Building practical technology solutions that deliver real results."
+  title="Peter Bamuhigire — Conseil en Technologie & Entreprise"
+  description="Plus de 15 ans de développement logiciel, de conseil en TIC et de conseil aux entreprises dans plus de 10 pays africains. Des solutions technologiques pratiques qui produisent des résultats concrets."
   lang={lang}
 >
 
@@ -65,22 +65,22 @@ const services = [
         <div class="order-2 lg:order-1">
           <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-6">
             <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
-            <span class="text-gold-400 text-sm font-medium">Available for new projects</span>
+            <span class="text-gold-400 text-sm font-medium">Disponible pour de nouveaux projets</span>
           </div>
 
           <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
-            Building Technology Solutions
-            <span class="text-gold-400"> Across Africa</span>
-            & Beyond
+            Des Solutions Technologiques
+            <span class="text-gold-400"> à Travers l'Afrique</span>
+            et Au-delà
           </h1>
 
           <p class="mt-6 text-lg md:text-xl text-navy-200 max-w-xl leading-relaxed">
-            15+ years of software development, ICT consulting, and business advisory across 10+ African countries. Practical solutions that deliver real business results.
+            Plus de 15 ans de développement logiciel, de conseil en TIC et de conseil aux entreprises dans plus de 10 pays africains. Des solutions pratiques qui produisent de véritables résultats.
           </p>
 
           <div class="mt-8 flex flex-col sm:flex-row gap-4">
             <a
-              href="/en/contact/"
+              href="/fr/contact/"
               class="inline-flex items-center justify-center px-8 py-4 bg-amber-accent hover:bg-amber-accent/90 text-white text-lg font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-amber-accent/20 hover:shadow-xl hover:shadow-amber-accent/30 hover:-translate-y-0.5"
             >
               {t('cta.book', lang)}
@@ -89,7 +89,7 @@ const services = [
               </svg>
             </a>
             <a
-              href="/en/portfolio/"
+              href="/fr/portfolio/"
               class="inline-flex items-center justify-center px-8 py-4 border-2 border-gold-400 text-gold-400 hover:bg-gold-400/10 text-lg font-semibold rounded-lg transition-all duration-300 hover:-translate-y-0.5"
             >
               {t('cta.view_work', lang)}
@@ -100,15 +100,15 @@ const services = [
           <div class="mt-10 flex items-center gap-6 text-navy-300 text-sm">
             <div class="flex items-center gap-2">
               <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span>Pan-African reach</span>
+              <span>Présence panafricaine</span>
             </div>
             <div class="flex items-center gap-2">
               <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span>Full-stack expertise</span>
+              <span>Expertise full-stack</span>
             </div>
             <div class="hidden sm:flex items-center gap-2">
               <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span>Bilingual (EN/FR)</span>
+              <span>Bilingue (EN/FR)</span>
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@ const services = [
             <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-navy-950/50">
               <Image
                 src={heroImage}
-                alt="Peter Bamuhigire — Technology and Business Consultant"
+                alt="Peter Bamuhigire — Consultant en Technologie et Entreprise"
                 width={560}
                 height={640}
                 loading="eager"
@@ -131,7 +131,7 @@ const services = [
             </div>
             <!-- Floating accent -->
             <div class="absolute -bottom-4 -left-4 bg-gold-400 text-navy-950 px-4 py-2 rounded-lg font-bold text-sm shadow-lg">
-              15+ Years Experience
+              15+ Ans d'Expérience
             </div>
           </div>
         </div>
@@ -194,7 +194,7 @@ const services = [
       <div class="fade-up">
         <SectionHeading
           title={t('section.products', lang)}
-          subtitle="Proprietary SaaS platforms built to serve real business needs across Africa and beyond."
+          subtitle="Des plateformes SaaS propriétaires conçues pour répondre aux besoins réels des entreprises en Afrique et au-delà."
         />
       </div>
 
@@ -206,15 +206,15 @@ const services = [
             <div class="absolute inset-0 geo-pattern opacity-20"></div>
             <div class="relative text-center">
               <div class="inline-flex items-center gap-2 px-3 py-1 bg-gold-400/10 border border-gold-400/30 rounded-full text-gold-400 text-xs font-medium mb-3">
-                SaaS Platform
+                Plateforme SaaS
               </div>
               <h3 class="text-3xl md:text-4xl font-bold text-warm-white font-heading">Maduuka</h3>
-              <p class="text-navy-300 text-sm mt-1">Business Management Suite</p>
+              <p class="text-navy-300 text-sm mt-1">Suite de Gestion d'Entreprise</p>
             </div>
           </div>
           <div class="p-6 md:p-8">
             <p class="text-navy-600 leading-relaxed mb-4">
-              A multi-tenant SaaS bookkeeping and business management platform designed for SMEs across Africa. Integrates POS, inventory, accounting, pharmacy, restaurant, and asset management modules — available in 5 languages with offline-first mobile capability.
+              Une plateforme SaaS multi-locataires de comptabilité et de gestion d'entreprise conçue pour les PME en Afrique. Elle intègre des modules de point de vente, de gestion des stocks, de comptabilité, de pharmacie, de restauration et de gestion des actifs — disponible en 5 langues avec une capacité mobile hors ligne.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
               <span class="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full">PHP</span>
@@ -222,8 +222,8 @@ const services = [
               <span class="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full">Kotlin</span>
               <span class="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full">REST API</span>
             </div>
-            <a href="/en/portfolio/" class="inline-flex items-center text-sm font-semibold text-gold-600 hover:text-amber-accent transition-colors gap-1.5 group-hover:gap-2">
-              View details
+            <a href="/fr/portfolio/" class="inline-flex items-center text-sm font-semibold text-gold-600 hover:text-amber-accent transition-colors gap-1.5 group-hover:gap-2">
+              Voir les détails
               <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </a>
           </div>
@@ -239,20 +239,20 @@ const services = [
                 PropTech
               </div>
               <h3 class="text-3xl md:text-4xl font-bold text-warm-white font-heading">Aqar</h3>
-              <p class="text-navy-300 text-sm mt-1">Property Management Software</p>
+              <p class="text-navy-300 text-sm mt-1">Logiciel de Gestion Immobilière</p>
             </div>
           </div>
           <div class="p-6 md:p-8">
             <p class="text-navy-600 leading-relaxed mb-4">
-              Property management software for landlords and property managers. Handles tenant onboarding, lease management, rent collection tracking, maintenance scheduling, and financial reporting — serving clients across Africa and the United Kingdom.
+              Un logiciel de gestion immobilière pour les propriétaires et les gestionnaires de biens. Il prend en charge l'intégration des locataires, la gestion des baux, le suivi de la collecte des loyers, la planification de la maintenance et les rapports financiers — au service de clients en Afrique et au Royaume-Uni.
             </p>
             <div class="flex flex-wrap gap-2 mb-5">
               <span class="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full">PHP</span>
               <span class="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full">MySQL</span>
-              <span class="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full">Web-based</span>
+              <span class="px-2.5 py-1 bg-navy-50 text-navy-700 text-xs font-medium rounded-full">Web</span>
             </div>
             <a href="https://aqarproperty.co.uk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sm font-semibold text-gold-600 hover:text-amber-accent transition-colors gap-1.5 group-hover:gap-2">
-              Visit Aqar
+              Visiter Aqar
               <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </a>
           </div>
@@ -272,7 +272,7 @@ const services = [
       <div class="fade-up">
         <SectionHeading
           title={t('section.why', lang)}
-          subtitle="A rare combination of deep technical capability and genuine business understanding, forged across Africa's most dynamic markets."
+          subtitle="Une combinaison rare de compétences techniques approfondies et d'une véritable compréhension des affaires, forgée sur les marchés les plus dynamiques d'Afrique."
           light
         />
       </div>
@@ -285,9 +285,9 @@ const services = [
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 003 12c0-1.605.42-3.113 1.157-4.418"/>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-warm-white mb-3">Pan-African Experience</h3>
+          <h3 class="text-xl font-bold text-warm-white mb-3">Expérience Panafricaine</h3>
           <p class="text-navy-200 leading-relaxed">
-            Operations spanning East and West Africa — Uganda, Kenya, Tanzania, Rwanda, DRC, Senegal, Sierra Leone, and Guinea. Fluent in English and French business environments. Real understanding of African markets, not theoretical assumptions.
+            Des opérations couvrant l'Afrique de l'Est et de l'Ouest — Ouganda, Kenya, Tanzanie, Rwanda, RDC, Sénégal, Sierra Leone et Guinée. Une maîtrise parfaite des environnements professionnels francophones et anglophones. Une compréhension réelle des marchés africains, pas des suppositions théoriques.
           </p>
         </div>
 
@@ -298,9 +298,9 @@ const services = [
               <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z"/>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-warm-white mb-3">Technical Depth</h3>
+          <h3 class="text-xl font-bold text-warm-white mb-3">Profondeur Technique</h3>
           <p class="text-navy-200 leading-relaxed">
-            A full-stack developer who builds, not just advises. From database architecture and API design to mobile applications and SaaS platforms — Peter writes the code, manages the servers, and delivers production-grade systems.
+            Un développeur full-stack qui construit, et ne se contente pas de conseiller. De l'architecture de bases de données et la conception d'API aux applications mobiles et plateformes SaaS — Peter écrit le code, gère les serveurs et livre des systèmes de qualité professionnelle.
           </p>
         </div>
 
@@ -311,9 +311,9 @@ const services = [
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/>
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-warm-white mb-3">Business Understanding</h3>
+          <h3 class="text-xl font-bold text-warm-white mb-3">Compréhension des Affaires</h3>
           <p class="text-navy-200 leading-relaxed">
-            Consulting that starts with business outcomes, not technology assumptions. Peter combines technical capability with genuine business advisory experience — process analysis, strategic planning, M&E frameworks, and data-driven decision-making.
+            Un conseil qui commence par les résultats commerciaux, pas par des hypothèses technologiques. Peter combine compétence technique et véritable expérience en conseil aux entreprises — analyse des processus, planification stratégique, cadres de suivi-évaluation et prise de décision basée sur les données.
           </p>
         </div>
       </div>
@@ -328,7 +328,7 @@ const services = [
       <div class="fade-up">
         <SectionHeading
           title={t('section.testimonials', lang)}
-          subtitle="Trusted by organisations across Africa and internationally."
+          subtitle="La confiance d'organisations en Afrique et à l'international."
         />
       </div>
 
@@ -345,16 +345,16 @@ const services = [
           </div>
           <blockquote class="mt-4">
             <p class="text-navy-700 leading-relaxed italic">
-              "When we needed someone to manage our ICT operations across three West African countries, Peter delivered beyond our expectations. He unified our ERP systems, trained our staff in both French and English, and ensured data accuracy across all our regional offices."
+              « Lorsque nous avions besoin de quelqu'un pour gérer nos opérations TIC dans trois pays d'Afrique de l'Ouest, Peter a dépassé toutes nos attentes. Il a unifié nos systèmes ERP, formé notre personnel en français et en anglais, et assuré l'exactitude des données dans tous nos bureaux régionaux. »
             </p>
           </blockquote>
           <div class="mt-6 flex items-center gap-4">
             <div class="w-12 h-12 rounded-full bg-gradient-to-br from-navy-200 to-navy-300 flex items-center justify-center">
-              <span class="text-navy-700 font-bold text-sm">MD</span>
+              <span class="text-navy-700 font-bold text-sm">DG</span>
             </div>
             <div>
-              <p class="font-semibold text-navy-900 text-sm">Managing Director</p>
-              <p class="text-navy-500 text-sm">Health Products Company, West Africa</p>
+              <p class="font-semibold text-navy-900 text-sm">Directeur Général</p>
+              <p class="text-navy-500 text-sm">Société de Produits de Santé, Afrique de l'Ouest</p>
             </div>
           </div>
           <!-- Star rating -->
@@ -377,7 +377,7 @@ const services = [
           </div>
           <blockquote class="mt-4">
             <p class="text-navy-700 leading-relaxed italic">
-              "Peter took on the management of our entire ICT function and transformed our approach to technology. He assessed our existing infrastructure, identified the gaps, and implemented practical solutions that our team could maintain. We are significantly more efficient as a result."
+              « Peter a pris en charge la gestion de l'ensemble de notre fonction TIC et a transformé notre approche de la technologie. Il a évalué notre infrastructure existante, identifié les lacunes et mis en œuvre des solutions pratiques que notre équipe pouvait maintenir. Nous sommes considérablement plus efficaces grâce à lui. »
             </p>
           </blockquote>
           <div class="mt-6 flex items-center gap-4">
@@ -385,8 +385,8 @@ const services = [
               <span class="text-navy-700 font-bold text-sm">DR</span>
             </div>
             <div>
-              <p class="font-semibold text-navy-900 text-sm">Director</p>
-              <p class="text-navy-500 text-sm">National Research Institution, Uganda</p>
+              <p class="font-semibold text-navy-900 text-sm">Directeur</p>
+              <p class="text-navy-500 text-sm">Institution Nationale de Recherche, Ouganda</p>
             </div>
           </div>
           <!-- Star rating -->

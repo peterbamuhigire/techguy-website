@@ -1,172 +1,220 @@
 ---
-site_url: "https://client-domain.com"
-schema_type: "LocalBusiness"
+site_url: "https://techguypeter.com"
+schema_type: "ProfessionalService"
+schema_person: "Person"
 google_site_verification: ""
 default_og_image: "/og-image.png"
 ---
 
 # SEO Configuration
 
-Copy this file to `docs/seo.md` and fill in all sections. The SEO skill reads this during build to generate meta tags, structured data, and sitemaps.
-
 ---
 
 ## Site Configuration
 
-**Site URL** (required):
-Replace `https://client-domain.com` with the actual domain.
+**Site URL**: https://techguypeter.com
 
-**Schema Type** (recommended):
-Choose the most specific type for your business:
-- `LocalBusiness` (generic fallback)
-- `LegalService` (law firm)
-- `MedicalBusiness` (healthcare)
-- `FinancialService` (accounting, banking)
-- `AutomotiveBusiness` (auto repair, dealership)
-- `Restaurant` (food service)
-- `RetailStore` (e-commerce)
-- `ProfessionalService` (consulting, real estate)
-- `EducationalOrganization` (school, university)
-- `RealEstateAgent` (property/rental)
-- `AccountingService` (CPA, bookkeeping)
-- `GeneralContractor` (construction)
+**Schema Types**:
+- Primary: `Person` (Peter Bamuhigire as the professional entity)
+- Secondary: `ProfessionalService` (technology consulting practice)
 
-If unsure, use `LocalBusiness` or `ProfessionalService`.
+**Google Site Verification Code**: [PLACEHOLDER — add after setting up Google Search Console]
 
-**Google Site Verification Code** (optional):
-If you've already verified ownership in Google Search Console, paste the verification code here. This is added to the `<head>` automatically.
+**Default OG Image**: /og-image.png [PLACEHOLDER — use professional headshot, 1200x630px]
 
 ---
 
 ## Per-Page Meta Tags
 
-Every page needs:
-1. **Unique title tag** (50-60 characters)
-2. **Unique meta description** (150-160 characters)
-
-Format: `title: "Page Title | Brand Name"`
-
-Rules:
-- Front-load primary keyword in title
-- Include brand name at the end
-- For homepage, include location if relevant: "Best Lawyers in Kampala | FirmName"
-- Use natural language, not keyword stuffing
-- Never copy meta from another page
-
 ### Homepage
 
-**Title**: (50-60 chars)
+**Title**: (57 chars)
 ```
-Premier Legal Services in Kampala | CompanyName
-```
-
-**Description**: (150-160 chars)
-```
-Expert legal counsel in corporate law, litigation, and real estate. Trusted by 500+ clients across Uganda since 2010. Free initial consultation available.
+Technology & Business Consultant in Africa | Peter Bamuhigire
 ```
 
-### About
-
-**Title**: (50-60 chars)
+**Description**: (158 chars)
 ```
-About CompanyName | 15 Years of Legal Excellence
-```
-
-**Description**: (150-160 chars)
-```
-Learn about our team of experienced attorneys and our commitment to justice. Serving clients across East Africa from our Kampala office since 2010.
+Software development, ICT consulting, and business advisory across 10+ African countries. 15+ years of experience. Book a consultation with Peter Bamuhigire.
 ```
 
 ### Services
 
-**Title**: (50-60 chars)
+**Title**: (58 chars)
 ```
-Our Legal Services | Corporate, Litigation & Real Estate Law
+Software Development & ICT Consulting Services | TechGuyPeter
 ```
 
-**Description**: (150-160 chars)
+**Description**: (159 chars)
 ```
-Comprehensive legal services including corporate advisory, civil litigation, real estate transactions, regulatory compliance, and contract drafting for individuals and businesses.
+Custom software development, ERP implementation, ICT strategy, and business consulting. Practical technology solutions for organisations across Africa and beyond.
+```
+
+### Portfolio
+
+**Title**: (53 chars)
+```
+Portfolio — SaaS Products & Consulting | TechGuyPeter
+```
+
+**Description**: (155 chars)
+```
+Maduuka bookkeeping platform, Aqar property management, open-source tools, and consulting projects across East and West Africa. View Peter Bamuhigire's work.
+```
+
+### About
+
+**Title**: (56 chars)
+```
+About Peter Bamuhigire — 15+ Years Across Africa | TechGuyPeter
+```
+
+**Description**: (157 chars)
+```
+Technology and business consultant with 15+ years of experience across 10+ African countries. From Kampala to Dakar — building practical solutions that deliver.
+```
+
+### Blog
+
+**Title**: (52 chars)
+```
+Insights on Technology & Business in Africa | TechGuyPeter
+```
+
+**Description**: (148 chars)
+```
+Thoughts on software development, ICT strategy, and building technology solutions across Africa. Insights from 15+ years of hands-on experience.
 ```
 
 ### Contact
 
-**Title**: (50-60 chars)
+**Title**: (54 chars)
 ```
-Contact CompanyName | Get Legal Help Today
-```
-
-**Description**: (150-160 chars)
-```
-Reach our Kampala office for expert legal consultation. Call +256 700 000000 or visit us at Plot 12, Kampala Road. Available Mon-Fri, 8am-5pm.
+Book a Consultation — Peter Bamuhigire | TechGuyPeter
 ```
 
-### [Add Additional Pages]
-
-For each page on the site, add:
-
-**Title**: [unique title, 50-60 chars]
-**Description**: [unique description, 150-160 chars]
+**Description**: (156 chars)
+```
+Book a consultation with Peter Bamuhigire. Software development, ICT consulting, and business advisory. Based in Kampala, serving clients across Africa and beyond.
+```
 
 ---
 
-## Geo-Coordinates (Optional but Recommended)
+## Target Keywords
 
-If you want your business to appear in Google Maps and local search:
+### Primary Keywords
+- software developer Uganda
+- ICT consultant Kampala
+- technology consultant Africa
+- full stack developer Uganda
+- custom software development Kampala
 
-**Latitude**: 0.3136 (example: Kampala)
-**Longitude**: 32.5811 (example: Kampala)
+### Secondary Keywords
+- ERP implementation Africa
+- business consultant East Africa
+- SaaS development Africa
+- property management software
+- IT consulting Uganda
+- web application development Kampala
+- Android app developer Uganda
+- business management software Africa
+- digital transformation consultant Africa
 
-Find your coordinates:
-1. Go to Google Maps
-2. Right-click on your office location
-3. Select the coordinates to copy them
-4. Paste here (latitude first, then longitude)
-
----
-
-## Key Points to Remember
-
-✅ **Unique titles/descriptions on every page** — Google penalizes duplicates
-✅ **Front-load keywords naturally** — "Best Lawyers in Kampala" not "Lawyers Best Kampala"
-✅ **Think like a customer** — Your title/description appear in search results; write for humans, not robots
-✅ **Character limits matter** — Google truncates titles at ~60 chars, descriptions at ~160 chars
-✅ **Brand consistency** — Include company name in every title (helps brand recognition)
-✅ **Call-to-action optional** — "Free consultation" or "Get help today" can increase clicks, but keep it natural
-
----
-
-## Testing Your Work
-
-Before delivery:
-
-1. **Google Search Central:** https://search.google.com/test/rich-results
-   - Paste your homepage URL
-   - Should show Organization, WebSite, and WebPage structured data
-
-2. **Title/Description char count:**
-   - Titles: 50-60 (no more than 60)
-   - Descriptions: 150-160 (no more than 160)
-
-3. **Uniqueness:**
-   - No two pages should have identical titles or descriptions
+### Long-Tail Keywords
+- custom ERP systems for African businesses
+- bookkeeping software for SMEs in Africa
+- ICT consulting services in Kampala Uganda
+- property management software for landlords
+- technology consultant with Pan-African experience
 
 ---
 
-## FAQ
+## Geo-Coordinates
 
-**Q: Do I need keywords in the title?**
-A: Yes, but naturally. "Best Corporate Lawyers in Kampala" is good. "Corporate Lawyers Kampala Best Legal Services Law Firm" is keyword stuffing and will hurt you.
-
-**Q: Can I use special characters?**
-A: Avoid them. Stick to letters, numbers, spaces, and hyphens. Google may not display special characters correctly.
-
-**Q: What if my business operates nationwide?**
-A: Remove the location from homepage title. Use "Premier Legal Services in Uganda | CompanyName" instead of city-specific.
-
-**Q: How often should I update these?**
-A: Only when your business changes (new services, new location, new phone number). Don't change just for the sake of it — Google rewards consistency.
+**Latitude**: 0.3476
+**Longitude**: 32.5936
+**Location**: Bukoto, Kampala, Uganda
 
 ---
 
-**Done?** Save this as `docs/seo.md` and run the SEO skill. It will generate meta tags, structured data, and an audit report automatically.
+## Local Business / Person Structured Data
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Peter Bamuhigire",
+  "jobTitle": "Technology & Business Consultant",
+  "url": "https://techguypeter.com",
+  "image": "[PLACEHOLDER — professional headshot URL]",
+  "email": "peter@techguypeter.com",
+  "telephone": "+256784464178",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Sserumaga Road, Bukoto",
+    "addressLocality": "Kampala",
+    "addressCountry": "UG"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "0.3476",
+    "longitude": "32.5936"
+  },
+  "sameAs": [
+    "https://twitter.com/peterbamu",
+    "https://instagram.com/peterbamuhigire",
+    "https://linkedin.com/in/peterbamuhigire",
+    "https://facebook.com/pbamu",
+    "https://github.com/peterbamuhigire"
+  ],
+  "knowsAbout": [
+    "Software Development",
+    "ICT Consulting",
+    "ERP Implementation",
+    "Business Consulting",
+    "Property Management Technology",
+    "SaaS Development",
+    "Android Development",
+    "Database Management"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Chwezi Digital Solutions"
+  }
+}
+```
+
+---
+
+## Open Graph Defaults
+
+**og:type**: website
+**og:site_name**: Peter Bamuhigire — Technology & Business Consultant
+**og:locale**: en_GB
+**og:locale:alternate**: fr_FR
+**og:image**: /og-image.png [PLACEHOLDER — 1200x630px professional headshot with brand overlay]
+**twitter:card**: summary_large_image
+**twitter:site**: @peterbamu
+**twitter:creator**: @peterbamu
+
+---
+
+## Robots & Crawling
+
+**robots.txt**:
+```
+User-agent: *
+Allow: /
+Sitemap: https://techguypeter.com/sitemap-index.xml
+```
+
+**Pages to noindex**: None — all pages should be indexed.
+
+---
+
+## Performance Targets
+
+- Lighthouse Performance: 95+
+- Lighthouse SEO: 95+
+- Core Web Vitals: All green
+- Total page weight (first load): Under 500KB excluding lazy-loaded images

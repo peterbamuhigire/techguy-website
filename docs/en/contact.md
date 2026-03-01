@@ -1,86 +1,97 @@
 # Contact Information
 
-This file provides detailed contact and location information for your Contact page, footer, and structured data (Google search results).
-
 ---
 
 ## Business Hours
 
-**Monday**: {e.g., 8:00 AM - 5:00 PM}
-**Tuesday**: {e.g., 8:00 AM - 5:00 PM}
-**Wednesday**: {e.g., 8:00 AM - 5:00 PM}
-**Thursday**: {e.g., 8:00 AM - 5:00 PM}
-**Friday**: {e.g., 8:00 AM - 5:00 PM}
-**Saturday**: {e.g., 9:00 AM - 1:00 PM or Closed}
-**Sunday**: {e.g., Closed}
+**Monday**: 9:00 AM – 6:00 PM EAT
+**Tuesday**: 9:00 AM – 6:00 PM EAT
+**Wednesday**: 9:00 AM – 6:00 PM EAT
+**Thursday**: 9:00 AM – 6:00 PM EAT
+**Friday**: 9:00 AM – 6:00 PM EAT
+**Saturday**: 9:00 AM – 6:00 PM EAT
+**Sunday**: Closed
 
-**Public Holidays**: {e.g., "Closed on all Ugandan public holidays" or "Open with reduced hours"}
+**Public Holidays**: Closed on Ugandan public holidays
+
+**Time Zone**: East Africa Time (EAT), UTC+3
+
+**Response Commitment**: Consultations are typically scheduled within 48 hours of your enquiry.
+
+**International Clients**: Remote consultations are available across all time zones. Peter has extensive experience working with international teams and clients remotely.
 
 ---
 
 ## Primary Location
 
-**Office / Branch Name**: {e.g., "Head Office" or "Main Branch"}
+**Office / Branch Name**: Chwezi Digital Solutions
 
-**Street / Plot**: {e.g., Plot 24, Kampala Road}
+**Street / Plot**: Sserumaga Road
 
-**Building / Floor**: {e.g., 3rd Floor, Rwenzori Towers — or N/A}
+**Area**: Bukoto
 
-**City**: {e.g., Kampala}
+**City**: Kampala
 
-**Region**: {e.g., Central Region}
+**Country**: Uganda
 
-**Country**: {e.g., Uganda}
+**Landmark / Directions**: Bukoto, along Sserumaga Road — a residential and commercial neighbourhood in the Kampala metropolitan area.
 
-**Landmark / Directions**: {e.g., "Opposite Nakasero Market, next to Stanbic Bank" — helps visitors find you}
+**Google Maps Coordinates**:
+- Latitude: 0.3476
+- Longitude: 32.5936
 
-**Google Maps Coordinates** (optional):
-- Latitude: {e.g., 0.3136}
-- Longitude: {e.g., 32.5811}
-- {Find yours: right-click your location on Google Maps and copy the coordinates}
-
-**Photo of Location**: {e.g., office-building.jpg — or N/A}
+**Photo of Location**: [PHOTO NEEDED — office or workspace exterior/interior]
 
 ---
 
-<!-- ADDITIONAL LOCATIONS
-If you have more than one office or branch, copy the block above and fill it in.
+## Contact Details
 
-## {Second Location Name}
+**Phone**: +256 784 464178 (WhatsApp enabled — calls and messages welcome)
 
-**Street / Plot**: {address}
-**Building / Floor**: {details}
-**City**: {city}
-**Region**: {region}
-**Country**: {country}
-**Landmark / Directions**: {how to find it}
-**Photo of Location**: {filename.jpg}
+**Alternative Phone**: +256 741 430561
+
+**Email**: peter@techguypeter.com
+
+**WhatsApp**: +256 784 464178 — tap to message directly
 
 ---
 
--->
-
-## Contact Form
+## Contact Form — Book a Consultation
 
 **What should happen when someone submits the contact form?**
-{e.g., "Send an email to info@yourcompany.com" or "Send to info@yourcompany.com and sales@yourcompany.com"}
+Send an email to peter@techguypeter.com with all form data.
 
-**What fields should the form have?** (check all that apply)
-- [x] Name
-- [x] Email
-- [x] Phone number
-- [x] Message
-- [ ] Company name
-- [ ] Service interested in (dropdown)
-- [ ] Preferred contact method (phone / email / WhatsApp)
-- [ ] {Other: specify}
+**Form headline**: Book a Consultation
+
+**Form introduction**: Every engagement begins with a conversation. Kindly share your details and a brief description of your project or requirements. Peter will respond within 48 hours to schedule a consultation at a time that suits you.
+
+**Form fields:**
+- [x] Full Name (required)
+- [x] Email Address (required)
+- [x] Phone Number (optional)
+- [x] Company / Organisation (optional)
+- [x] Service Interest — dropdown:
+  - Software Development
+  - ICT Consulting & Strategy
+  - Business Consulting
+  - Property Management Technology
+  - Other
+- [x] Project Description (textarea — "Kindly describe your project, challenge, or requirements")
+- [x] Preferred Contact Method — radio buttons:
+  - Phone Call
+  - WhatsApp
+  - Email
+
+**Submit button text**: Book a Consultation
+
+**Success message**: Thank you for your enquiry. Peter will be in touch within 48 hours to schedule your consultation. We look forward to working with you.
 
 ---
 
-## Emergency / After-Hours Contact (Optional)
+## Social Media
 
-**After-hours phone**: {e.g., +256 700 999999 — or N/A}
-
-**After-hours email**: {e.g., urgent@yourcompany.com — or N/A}
-
-**Note**: {e.g., "For medical emergencies, call our 24-hour line" — or delete this section}
+**Twitter / X**: https://twitter.com/peterbamu
+**Instagram**: https://instagram.com/peterbamuhigire
+**LinkedIn**: https://linkedin.com/in/peterbamuhigire
+**Facebook**: https://facebook.com/pbamu
+**GitHub**: https://github.com/peterbamuhigire

@@ -1,103 +1,115 @@
 # Company Profile
 
-Fill in every section below. This is the most important document — almost every part of your website draws from it. Leave nothing blank; if something doesn't apply, write "N/A".
-
 ---
 
 ## Company Name
 
-{Your full registered company name}
+Peter Bamuhigire — Technology & Business Consulting
 
 ## Tagline
 
-{A short phrase that captures what you do — e.g., "Building East Africa's Future, One Project at a Time"}
+Building Technology Solutions Across Africa & Beyond
 
 ## What We Do
 
-{2-3 sentences describing your core business. Be specific — not "we offer solutions", but "we design and build residential homes in Kampala and Wakiso districts."}
+Peter Bamuhigire is a Technology & Business Consultant with over 15 years of experience delivering software systems, ERP implementations, ICT strategy, and business advisory services across Africa and internationally. The practice specialises in building practical, results-driven technology solutions — from custom software development and SaaS platforms to ICT infrastructure management and digital transformation consulting. With a portfolio spanning more than 10 African countries, the practice serves organisations that need reliable technology partnerships grounded in deep understanding of African business environments.
 
 ## Who We Serve
 
-{Describe your ideal customer. Be specific — e.g., "Middle-income families looking to build their first home" or "SMEs in Uganda needing reliable accounting services."}
+Business owners and executives seeking custom software solutions, ERP systems, or digital transformation guidance. Organisations requiring ICT strategy, systems analysis, or infrastructure consulting. SMEs looking for affordable, proven SaaS products for bookkeeping, inventory, and property management. International companies seeking a trusted technology partner with Pan-African reach and local market expertise.
 
 ## What Makes Us Different
 
-{Your unique selling point. What do you do that competitors don't? Why should someone choose you over the alternatives? Be honest and specific — e.g., "We are the only firm in Kampala that offers a 12-month structural guarantee on every build."}
+Over 15 years of hands-on experience across more than 10 African countries — not theoretical knowledge, but practical solutions built in real business environments from Kampala to Dakar. Peter combines deep technical capability (full-stack development, ERP implementation, systems architecture) with genuine business consulting expertise (process analysis, strategic planning, M&E frameworks). This dual perspective — understanding both the technology and the business it serves — means solutions are built to deliver measurable results, not just technical milestones. Additionally, the practice has built its own SaaS products (Maduuka, Aqar), demonstrating the ability to take solutions from concept to market across multiple countries.
 
 ## Industry / Sector
 
-{e.g., Construction, Legal Services, Healthcare, Education, Tourism, Agriculture, Technology, Retail, etc.}
+Technology Consulting / Software Development / Business Advisory
 
 ## Founded
 
-{Year — e.g., 2015}
+2016 (Chwezi Digital Solutions — independent practice)
 
 ---
 
 ## Contact Information
 
-**Phone**: {e.g., +256 700 123456}
+**Phone**: +256 784 464178 (WhatsApp enabled)
 
-**Alternative Phone**: {e.g., +256 312 123456 — or N/A}
+**Alternative Phone**: +256 741 430561
 
-**Email**: {e.g., info@yourcompany.com}
+**Email**: peter@techguypeter.com
 
-**Website**: {e.g., www.yourcompany.com — or "new site" if this is the first website}
+**Website**: https://techguypeter.com
 
 ---
 
 ## Physical Address
 
-**Street / Plot**: {e.g., Plot 24, Kampala Road}
+**Street / Plot**: Sserumaga Road
 
-**Building / Floor**: {e.g., 3rd Floor, Rwenzori Towers — or N/A}
+**Building / Floor**: N/A
 
-**City**: {e.g., Kampala}
+**Area**: Bukoto
 
-**Region / District**: {e.g., Central Region}
+**City**: Kampala
 
-**Country**: {e.g., Uganda}
+**Country**: Uganda
 
 ---
 
 ## Social Media
 
-Fill in the ones you have. Delete or leave blank the ones you don't use.
+**Facebook**: https://facebook.com/pbamu
 
-**Facebook**: {full URL — e.g., https://facebook.com/yourcompany}
+**Instagram**: https://instagram.com/peterbamuhigire
 
-**Instagram**: {full URL}
+**Twitter / X**: https://twitter.com/peterbamu
 
-**Twitter / X**: {full URL}
+**LinkedIn**: https://linkedin.com/in/peterbamuhigire
 
-**LinkedIn**: {full URL}
+**YouTube**: N/A
 
-**YouTube**: {full URL}
+**TikTok**: N/A
 
-**TikTok**: {full URL}
+**GitHub**: https://github.com/peterbamuhigire
 
-**WhatsApp Business**: {phone number — e.g., +256 700 123456}
+**WhatsApp Business**: +256 784 464178
 
 ---
 
 ## Logo Files
 
-Place your logo files in the `photo-bank/` folder. List the filenames here:
+**Main Logo**: [PLACEHOLDER — logo needed]
 
-**Main Logo**: {e.g., logo-full-color.png}
+**Logo for Dark Backgrounds**: [PLACEHOLDER — logo-white needed]
 
-**Logo for Dark Backgrounds**: {e.g., logo-white.png — or N/A}
-
-**Square Logo / Icon**: {e.g., logo-icon.png — or N/A}
+**Square Logo / Icon**: [PLACEHOLDER — logo-icon needed]
 
 ---
 
-## Certifications, Awards & Memberships (Optional)
+## Certifications & Continuing Professional Development
 
-{List any professional memberships, certifications, awards, or recognitions — e.g., "Member of Uganda Law Society", "ISO 9001:2015 Certified", "Best New Business Award 2023". Delete this section if none.}
+- Business Processes & Information Systems — ALISON Learning (2023)
+- Fundamentals of Human Resource Management — ALISON Learning (2023)
+- Fundamentals of Accounting — ALISON Learning (2023)
+- Monitoring & Evaluation — Brookings Institute (2017)
+- Geographical Information Systems (GIS) — Makerere University (2012)
 
 ---
 
-## Anything Else
+## Key Numbers
 
-{Anything important about your company that doesn't fit above — e.g., "We operate in 3 countries", "We are a family-owned business now in our second generation", "We serve over 2,000 clients per year." Delete if nothing to add.}
+- **15+** years of professional experience
+- **10+** African countries served
+- **3** SaaS products built and deployed
+- **6+** industries served (health products, agriculture, property, retail, restaurants, pharmacies)
+- Operations across **East Africa** (Uganda, Kenya, Tanzania, Rwanda, DRC) and **West Africa** (Senegal, Sierra Leone, Guinea)
+
+---
+
+## Core Values
+
+- **Kaizen (Continuous Improvement)** — Commitment to lifelong learning, actively seeking new skills and knowledge to adapt, innovate, and enhance professional capabilities.
+- **Results (Service With Results)** — Prioritising client needs, focusing on delivering effective, efficient, and impactful solutions.
+- **Ethics (Integrity & Transparency)** — Upholding the highest ethical standards, ensuring honesty, open communication, and accountability.

@@ -1,55 +1,29 @@
 # Team Profiles
 
-Add a profile for each team member, founder, or key staff member you want featured on the website. Copy the template block below for each person.
+---
 
-Photos: Place each person's photo in the `photo-bank/` folder and write the filename below.
+## Peter Bamuhigire
+
+**Role / Title**: Technology & Business Consultant
+
+**Bio**: Peter Bamuhigire is a Technology & Business Consultant with over 15 years of professional experience spanning software development, ERP implementation, ICT management, and strategic business advisory across more than 10 African countries and internationally. He has built and deployed SaaS platforms serving businesses in multiple countries, managed ICT operations across entire regions, and led digital transformation initiatives for organisations ranging from multinational companies to national research institutions. His approach combines deep technical capability with genuine business understanding — building solutions that deliver measurable results in real-world operating environments. When larger projects require additional expertise, Peter collaborates with a trusted network of specialists across Africa and internationally.
+
+**Photo**: PETER.jpg
+
+**Email**: peter@techguypeter.com
+
+**Phone**: +256 784 464178
+
+**LinkedIn**: https://linkedin.com/in/peterbamuhigire
+
+**Twitter / X**: https://twitter.com/peterbamu
+
+**Instagram**: https://instagram.com/peterbamuhigire
+
+**GitHub**: https://github.com/peterbamuhigire
+
+**Order**: 1
 
 ---
 
-## {Full Name}
-
-**Role / Title**: {e.g., Managing Director, Lead Architect, Head of Finance}
-
-**Bio**: {2-4 sentences about this person. Include their experience, qualifications, and what they bring to the company. Write in third person — e.g., "Peter has over 15 years of experience in civil engineering. He holds a degree from Makerere University and has overseen the construction of more than 200 residential projects across Kampala. He founded the company in 2015 with a vision to make quality housing affordable."}
-
-**Photo**: {filename — e.g., peter.jpg}
-
-**Email**: {e.g., peter@yourcompany.com — or leave blank if not public}
-
-**Phone**: {e.g., +256 700 123456 — or leave blank if not public}
-
-**LinkedIn**: {full URL — or leave blank}
-
-**Twitter / X**: {full URL — or leave blank}
-
-**Order**: {Where this person appears in the team list — e.g., 1 for first, 2 for second}
-
----
-
-<!-- ADDING MORE TEAM MEMBERS
-Copy the entire block above (from ## to the ---) for each additional team member.
-Paste it below and fill in the details.
-
-Example:
-
-## {Next Person's Full Name}
-
-**Role / Title**: {Their position}
-
-**Bio**: {2-4 sentences about them}
-
-**Photo**: {their-photo.jpg}
-
-**Email**: {email or blank}
-
-**Phone**: {phone or blank}
-
-**LinkedIn**: {URL or blank}
-
-**Twitter / X**: {URL or blank}
-
-**Order**: {number}
-
----
-
--->
+*Note: This is a solo professional practice. For larger engagements, Peter collaborates with a curated network of trusted specialists — developers, designers, systems engineers, and business analysts — drawn from across Africa and internationally. This model ensures every project has the right expertise without the overhead of a permanent team.*

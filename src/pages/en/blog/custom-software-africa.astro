@@ -35,7 +35,7 @@ const articleSchema = {
     "url": siteUrl
   },
   "description": description,
-  "image": `${siteUrl}/en/blog/${slug}/`,
+  "image": `${siteUrl}${heroImg.src}`,
   "inLanguage": "en-GB",
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -44,7 +44,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog">
+<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <!-- Reading Progress Bar -->

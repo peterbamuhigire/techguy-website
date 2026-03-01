@@ -14,38 +14,38 @@ const timelineEntries = [
   {
     year: '2008',
     location: 'Kampala',
-    title: 'Développeur Web chez Infinity Computers',
+    title: 'Développeur Web chez <a href="https://i3c.co.ug" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-700 underline underline-offset-2">Infinity Computers</a>',
     description: 'A posé les fondations d\'une approche pratique : développement web et support technique, associés à une exposition directe aux véritables défis technologiques des entreprises. A appris que les meilleures solutions sont celles que les gens peuvent réellement utiliser.',
   },
   {
     year: '2010 - 2014',
     location: 'Freetown',
-    title: 'Responsable SIG chez Dynapharm Sierra Leone',
+    title: 'Responsable SIG chez <a href="https://dynapharmafrica.com" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-700 underline underline-offset-2">Dynapharm</a> Sierra Leone',
     description: 'Responsabilité complète de la mise en place et de la maintenance des systèmes d\'information, de la formation du personnel et de la garantie de l\'intégrité des données. Quatre années en Afrique de l\'Ouest ont forgé un principe directeur : la technologie doit être conçue pour ceux qui l\'utilisent, et non pour les ingénieurs qui la conçoivent.',
   },
   {
     year: '2014 - 2016',
     location: 'Kampala',
-    title: 'Consultant TIC chez EFICON',
+    title: 'Consultant TIC chez <a href="https://eficon.co.ug" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-700 underline underline-offset-2">EFICON Consult</a>',
     description: 'Élargissement de l\'exposition à différentes industries, échelles d\'opération et défis technologiques. Réalisation d\'analyses de systèmes, conception de solutions et recommandations technologiques. Cette période a confirmé une conviction grandissante : plutôt que de mettre en œuvre les solutions d\'autrui, il était temps de construire les siennes.',
   },
   {
     year: '2016 - présent',
     location: 'Kampala',
-    title: 'Fondation de Chwezi Digital Solutions',
-    description: 'Lancement d\'un cabinet de conseil indépendant et de développement de produits. Création de Maduuka, Aqar et Chwezi Server Manager à partir de problèmes réels rencontrés lors de missions de conseil. Des produits servant des entreprises en Afrique de l\'Est et à l\'international.',
+    title: 'Fondation de <a href="https://chwezi.co.za" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-700 underline underline-offset-2">Chwezi</a> Digital Solutions (désormais Chwezi Core Systems)',
+    description: 'Lancement d\'un cabinet de conseil indépendant et de développement de produits. Création de Maduuka, Aqar, Longhorn ERP et Chwezi Server Manager à partir de problèmes réels rencontrés lors de missions de conseil. Des produits servant des entreprises en Afrique de l\'Est et à l\'international. Renommé Chwezi Core Systems en 2025.',
   },
   {
     year: '2019 - 2022',
     location: 'Dakar',
-    title: 'Responsable TIC Régional, Dynapharm Africa',
+    title: 'Responsable TIC Régional, <a href="https://dynapharmafrica.com" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-700 underline underline-offset-2">Dynapharm Africa</a>',
     description: 'Responsabilités élargies à trois pays : Sénégal, Sierra Leone et Guinée. Gestion des systèmes ERP, de l\'infrastructure réseau, de la formation du personnel et de la transformation numérique en Afrique de l\'Ouest francophone et anglophone.',
   },
   {
-    year: '2024 - présent',
+    year: '2022 - présent',
     location: 'Kampala',
-    title: 'Responsable TIC, BIRD Center',
-    description: 'Gestion de l\'ensemble de la fonction TIC pour une institution nationale de recherche agricole. Gestion de l\'infrastructure, développement de systèmes, administration réseau et planification technologique stratégique — équilibrant innovation et stabilité opérationnelle.',
+    title: 'Responsable TIC, <a href="https://birdc.ug" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-700 underline underline-offset-2">BIRDC</a>',
+    description: 'A rejoint le Banana Industrial Research and Development Center (BIRDC) en 2022 en tant que Consultant TIC et est devenu Responsable TIC en 2024. Gestion de l\'ensemble de la fonction TIC — gestion de l\'infrastructure, développement de systèmes, administration réseau et planification technologique stratégique — équilibrant innovation et stabilité opérationnelle.',
   },
 ];
 
@@ -172,8 +172,8 @@ const certifications = [
                     {entry.location}
                   </span>
                 </div>
-                <h3 class="text-lg font-bold text-navy-900">{entry.title}</h3>
-                <p class="mt-2 text-sm text-navy-600 leading-relaxed">{entry.description}</p>
+                <h3 class="text-lg font-bold text-navy-900" set:html={entry.title} />
+                <p class="mt-2 text-sm text-navy-600 leading-relaxed" set:html={entry.description} />
               </div>
             </div>
           </div>

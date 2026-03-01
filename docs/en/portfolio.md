@@ -91,6 +91,31 @@ A selection of products built, open-source projects contributed, and consulting 
 
 ---
 
+### Longhorn ERP
+
+**Client**: Flagship product — Chwezi Core Systems
+
+**Category**: ERP / Cloud
+
+**Short Summary**: A custom-built cloud-based ERP system with web and mobile applications. Flagship product of Chwezi Core Systems.
+
+**Full Description**: Longhorn ERP is a comprehensive cloud-based enterprise resource planning system developed as the flagship product of Chwezi Core Systems. The platform provides a complete suite of ERP modules accessible through both web and mobile applications, enabling businesses to manage their operations from anywhere. Built on a modern cloud architecture, the system delivers reliability and scalability for growing enterprises.
+
+**Key Highlights**:
+- Cloud-based enterprise resource planning
+- Web and mobile applications
+- Comprehensive ERP module suite
+- Flagship product of Chwezi Core Systems
+
+**Tech Stack**: PHP, MySQL, Kotlin/Jetpack Compose (Android), REST API
+
+**Link**: https://chwezi.co.za/en/technology/
+
+**Photos**:
+- ERP-01.jpg — Longhorn ERP dashboard
+
+---
+
 ## Open-Source Projects
 
 ---
@@ -161,43 +186,43 @@ A selection of products built, open-source projects contributed, and consulting 
 
 ### Regional ERP Rollout — West Africa
 
-**Client**: Confidential — Multinational health products company
+**Client**: Dynapharm Africa — [dynapharmafrica.com](https://dynapharmafrica.com)
 
 **Location**: Senegal, Sierra Leone, Guinea
 
-**Date**: 2019 – 2022
+**Date**: 2018 – present
 
 **Category**: ICT Management / ERP Implementation
 
-**Short Summary**: Managed ICT operations and ERP systems across three West African countries for a multinational health products company, operating in both French-speaking and English-speaking environments.
+**Short Summary**: Managed ICT operations and ERP systems across three West African countries for Dynapharm Africa, operating in both French-speaking and English-speaking environments. Continues to provide ongoing consulting.
 
-**Full Description**: Peter served as Regional ICT Manager for a multinational health products distribution company, overseeing technology operations across Senegal, Sierra Leone, and Guinea. The engagement encompassed ERP system management and optimisation, network infrastructure oversight, staff training programmes delivered in both French and English, and digital transformation initiatives across the region. Working across three countries with different languages, regulatory environments, and infrastructure challenges required practical adaptability and deep understanding of African business contexts. The result was a unified, reliable technology foundation that supported the company's growth across the region.
+**Full Description**: Peter served as Regional ICT Manager for Dynapharm Africa, overseeing technology operations across Senegal, Sierra Leone, and Guinea. The engagement encompassed ERP system management and optimisation, network infrastructure oversight, staff training programmes delivered in both French and English, and digital transformation initiatives across the region. Working across three countries with different languages, regulatory environments, and infrastructure challenges required practical adaptability and deep understanding of African business contexts. The result was a unified, reliable technology foundation that supported the company's growth across the region. Peter continues to provide ongoing consulting to Dynapharm Africa.
 
 **Key Highlights**:
 - Managed ICT operations across 3 West African countries simultaneously
 - Operated in French-speaking (Senegal, Guinea) and English-speaking (Sierra Leone) environments
 - Unified ERP systems and data management across regional offices
 - Delivered staff training programmes adapted to local language and context
-- Continues to provide remote MIS consulting for the organisation
+- Continues to provide ongoing remote MIS consulting
 
 ---
 
-### National Research Institution — ICT Modernisation
+### BIRDC — ICT Manager
 
-**Client**: Confidential — National agricultural research institution, Uganda
+**Client**: Banana Industrial Research and Development Center (BIRDC) — [birdc.ug](https://birdc.ug)
 
 **Location**: Kampala, Uganda
 
-**Date**: 2024 – present
+**Date**: 2022 – present
 
 **Category**: ICT Management / Digital Transformation
 
-**Short Summary**: Leading the entire ICT function for a national research institution — infrastructure management, systems development, and digital transformation.
+**Short Summary**: Joined the Banana Industrial Research and Development Center (BIRDC) in 2022 as ICT Consultant and became ICT Manager in 2024 — leading infrastructure management, systems development, and digital transformation.
 
-**Full Description**: Peter manages the complete ICT function for a Ugandan government-affiliated research institution focused on agricultural development. The role encompasses IT infrastructure management, internal systems development, network administration, and strategic technology planning. The engagement involves modernising legacy systems, improving data management practices, and ensuring reliable technology services for research staff. This institutional environment demands a careful balance between innovation and stability — introducing improvements without disrupting the critical research operations that depend on existing systems.
+**Full Description**: Peter joined the Banana Industrial Research and Development Center (BIRDC) in 2022 as ICT Consultant and was promoted to ICT Manager in 2024, managing the complete ICT function for this Ugandan research institution focused on agricultural development. The role encompasses IT infrastructure management, internal systems development, network administration, and strategic technology planning. The engagement involves modernising legacy systems, improving data management practices, and ensuring reliable technology services for research staff. This institutional environment demands a careful balance between innovation and stability — introducing improvements without disrupting the critical research operations that depend on existing systems.
 
 **Key Highlights**:
-- Full responsibility for institutional ICT function
+- Full responsibility for institutional ICT function as ICT Manager
 - Infrastructure management and network administration
 - Internal systems development and maintenance
 - Digital transformation planning and implementation
@@ -205,9 +230,9 @@ A selection of products built, open-source projects contributed, and consulting 
 
 ---
 
-### ICT Consultancy Portfolio — East Africa
+### ICT Consultancy Portfolio — East Africa & Government
 
-**Client**: Multiple clients — SMEs and organisations across Uganda
+**Client**: Multiple clients — including EFICON Consult Ltd ([eficon.co.ug](https://eficon.co.ug)), SMEs and government organisations across Uganda
 
 **Location**: Kampala, Uganda and regional
 
@@ -215,15 +240,15 @@ A selection of products built, open-source projects contributed, and consulting 
 
 **Category**: ICT Consulting / Software Development
 
-**Short Summary**: A portfolio of consulting engagements providing systems analysis, solution design, technology advisory, and custom software development to businesses and organisations across East Africa.
+**Short Summary**: A portfolio of consulting engagements providing systems analysis, solution design, technology advisory, and custom software development. Notably developed the Online Budgeting System for the Ministry of Finance, Uganda whilst working with EFICON Consult Ltd.
 
-**Full Description**: Since establishing his independent consulting practice, Peter has served a diverse portfolio of clients across Uganda and the broader East African region. Engagements have ranged from systems analysis and requirements engineering for organisations seeking new technology solutions, to custom software development for businesses with specific operational needs, to strategic ICT advisory for organisations planning their technology investments. This breadth of experience — working with different industries, different scales of operation, and different technology maturity levels — has deepened the practical expertise that Peter brings to every new engagement.
+**Full Description**: Since establishing his independent consulting practice, Peter has served a diverse portfolio of clients across Uganda and the broader East African region. A notable engagement includes the development of the Online Budgeting System for the Ministry of Finance, Uganda, whilst working with EFICON Consult Ltd. Engagements have ranged from systems analysis and requirements engineering for organisations seeking new technology solutions, to custom software development for businesses with specific operational needs, to strategic ICT advisory for organisations planning their technology investments. This breadth of experience — working with different industries, different scales of operation, and different technology maturity levels — has deepened the practical expertise that Peter brings to every new engagement.
 
 **Key Highlights**:
+- Online Budgeting System — Ministry of Finance, Uganda (with EFICON Consult Ltd)
 - Systems analysis and requirements engineering
 - Custom software development for business-specific needs
 - Technology vendor evaluation and selection advisory
-- Ongoing retainer relationships with multiple clients
 - Experience across diverse industries and organisational scales
 
 ---

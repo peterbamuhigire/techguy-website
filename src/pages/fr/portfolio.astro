@@ -2,7 +2,13 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
 import { t, type Lang } from '@/utils/i18n';
+
+import maduukaImg from '@assets/images/portfolio/MADUUKASOFTWARE-01.jpg';
+import aqarImg from '@assets/images/portfolio/PROPERTY-MANAGEMENT-01.jpg';
+import serverMgrImg from '@assets/images/portfolio/server-manager-01.jpg';
+import longhornImg from '@assets/images/portfolio/ERP-01.jpg';
 
 const lang: Lang = 'fr';
 ---
@@ -40,86 +46,115 @@ const lang: Lang = 'fr';
         subtitle="Des plateformes SaaS conçues à partir de problèmes réels d'entreprise, servant des clients à travers l'Afrique et au-delà."
       />
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5">
         <!-- Maduuka -->
-        <article class="bg-white rounded-2xl shadow-lg shadow-navy-900/5 overflow-hidden border border-navy-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-up">
-          <div class="bg-gradient-to-br from-navy-800 to-navy-600 rounded-xl h-48 flex items-center justify-center m-4">
-            <span class="text-2xl md:text-3xl font-heading font-bold text-gold-400">Maduuka</span>
+        <article class="bg-white rounded-2xl shadow-lg shadow-navy-900/5 overflow-hidden border border-navy-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-up flex flex-col">
+          <div class="overflow-hidden rounded-xl m-3">
+            <Image src={maduukaImg} alt="Plateforme de gestion d'entreprise Maduuka" class="w-full h-44 object-cover rounded-xl" loading="lazy" />
           </div>
-          <div class="p-6 pt-2">
-            <div class="flex flex-wrap gap-2 mb-3">
-              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-gold-100 text-gold-800">SaaS</span>
-              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-navy-100 text-navy-700">Gestion d'Entreprise</span>
+          <div class="p-5 pt-1 flex flex-col flex-1">
+            <div class="flex flex-wrap gap-1.5 mb-2">
+              <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-gold-100 text-gold-800">SaaS</span>
+              <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-navy-100 text-navy-700">Gestion d'Entreprise</span>
             </div>
-            <h3 class="text-xl font-bold text-navy-900">Maduuka</h3>
-            <p class="mt-2 text-navy-600 text-sm leading-relaxed">
-              Une plateforme SaaS multi-tenant de comptabilité et de gestion d'entreprise conçue pour
-              les PME à travers l'Afrique. Les modules incluent le Point de Vente, la Gestion des Stocks,
-              les Ventes, la Comptabilité, la Pharmacie, la Restauration et la Gestion des Actifs.
+            <h3 class="text-lg font-bold text-navy-900">Maduuka</h3>
+            <p class="mt-1.5 text-navy-600 text-sm leading-relaxed flex-1">
+              Plateforme SaaS multi-tenant de comptabilité et de gestion pour les PME en Afrique. POS, Stocks, Comptabilité, Pharmacie, Restauration et plus.
             </p>
-            <ul class="mt-4 space-y-1.5 text-sm text-navy-600">
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Multilingue : anglais, français, arabe, swahili, espagnol
+            <ul class="mt-3 space-y-1 text-sm text-navy-600">
+              <li class="flex items-start gap-1.5">
+                <svg class="w-3.5 h-3.5 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                5 langues &middot; App Android hors ligne
               </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Application Android hors ligne (Kotlin/Jetpack Compose)
-              </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Multi-tenant : du commerce individuel aux franchises
+              <li class="flex items-start gap-1.5">
+                <svg class="w-3.5 h-3.5 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Du commerce individuel aux franchises
               </li>
             </ul>
-            <div class="mt-5 flex flex-wrap gap-2">
+            <div class="mt-4 flex flex-wrap gap-1.5">
               <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">PHP</span>
               <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">MySQL</span>
               <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">Kotlin</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">REST API</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Longhorn ERP -->
+        <article class="bg-white rounded-2xl shadow-lg shadow-navy-900/5 overflow-hidden border border-navy-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-up flex flex-col">
+          <div class="overflow-hidden rounded-xl m-3">
+            <Image src={longhornImg} alt="Système ERP cloud Longhorn" class="w-full h-44 object-cover rounded-xl" loading="lazy" />
+          </div>
+          <div class="p-5 pt-1 flex flex-col flex-1">
+            <div class="flex flex-wrap gap-1.5 mb-2">
+              <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-gold-100 text-gold-800">ERP</span>
+              <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-navy-100 text-navy-700">Cloud</span>
+            </div>
+            <h3 class="text-lg font-bold text-navy-900">Longhorn ERP</h3>
+            <p class="mt-1.5 text-navy-600 text-sm leading-relaxed flex-1">
+              Système ERP cloud sur mesure avec applications web et mobiles. Produit phare de
+              <a href="https://chwezi.co.za/en/technology/" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-700 underline underline-offset-2">Chwezi Core Systems</a>.
+            </p>
+            <ul class="mt-3 space-y-1 text-sm text-navy-600">
+              <li class="flex items-start gap-1.5">
+                <svg class="w-3.5 h-3.5 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Applications web &amp; mobiles
+              </li>
+              <li class="flex items-start gap-1.5">
+                <svg class="w-3.5 h-3.5 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Planification des ressources d'entreprise cloud
+              </li>
+            </ul>
+            <div class="mt-4 flex flex-wrap items-center gap-1.5">
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">PHP</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">MySQL</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">Kotlin</span>
+              <a
+                href="https://chwezi.co.za/en/technology/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="ml-auto inline-flex items-center gap-1 text-xs font-medium text-amber-accent hover:text-gold-600 transition-colors"
+              >
+                Visiter
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
             </div>
           </div>
         </article>
 
         <!-- Aqar -->
-        <article class="bg-white rounded-2xl shadow-lg shadow-navy-900/5 overflow-hidden border border-navy-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-up">
-          <div class="bg-gradient-to-br from-navy-800 to-navy-600 rounded-xl h-48 flex items-center justify-center m-4">
-            <span class="text-2xl md:text-3xl font-heading font-bold text-gold-400">Aqar</span>
+        <article class="bg-white rounded-2xl shadow-lg shadow-navy-900/5 overflow-hidden border border-navy-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-up flex flex-col">
+          <div class="overflow-hidden rounded-xl m-3">
+            <Image src={aqarImg} alt="Plateforme de gestion immobilière Aqar" class="w-full h-44 object-cover rounded-xl" loading="lazy" />
           </div>
-          <div class="p-6 pt-2">
-            <div class="flex flex-wrap gap-2 mb-3">
-              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-gold-100 text-gold-800">PropTech</span>
-              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-navy-100 text-navy-700">Gestion Immobilière</span>
+          <div class="p-5 pt-1 flex flex-col flex-1">
+            <div class="flex flex-wrap gap-1.5 mb-2">
+              <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-gold-100 text-gold-800">PropTech</span>
+              <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-navy-100 text-navy-700">Gestion Immobilière</span>
             </div>
-            <h3 class="text-xl font-bold text-navy-900">Aqar Property Management</h3>
-            <p class="mt-2 text-navy-600 text-sm leading-relaxed">
-              Logiciel de gestion immobilière pour propriétaires et gestionnaires de biens &mdash; gestion
-              des locataires, suivi des loyers et planification de la maintenance dans un seul système.
-              Dessert des clients au-delà des frontières, y compris au Royaume-Uni.
+            <h3 class="text-lg font-bold text-navy-900">Aqar Property Management</h3>
+            <p class="mt-1.5 text-navy-600 text-sm leading-relaxed flex-1">
+              Logiciel de gestion immobilière &mdash; locataires, suivi des loyers et planification de la maintenance. Dessert des clients au-delà des frontières dont le Royaume-Uni.
             </p>
-            <ul class="mt-4 space-y-1.5 text-sm text-navy-600">
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Gestion complète des locataires et suivi des baux
+            <ul class="mt-3 space-y-1 text-sm text-navy-600">
+              <li class="flex items-start gap-1.5">
+                <svg class="w-3.5 h-3.5 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Suivi des baux &amp; collecte des loyers
               </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Suivi de la collecte des loyers et rapports sur les arriérés
-              </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Planification de la maintenance et rapports financiers
+              <li class="flex items-start gap-1.5">
+                <svg class="w-3.5 h-3.5 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Maintenance &amp; rapports financiers
               </li>
             </ul>
-            <div class="mt-5 flex flex-wrap items-center gap-2">
+            <div class="mt-4 flex flex-wrap items-center gap-1.5">
               <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">PHP</span>
               <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">MySQL</span>
               <a
                 href="https://aqarproperty.co.uk"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="ml-auto inline-flex items-center gap-1.5 text-xs font-medium text-amber-accent hover:text-gold-600 transition-colors"
+                class="ml-auto inline-flex items-center gap-1 text-xs font-medium text-amber-accent hover:text-gold-600 transition-colors"
               >
-                Visiter le Site
+                Visiter
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               </a>
             </div>
@@ -127,42 +162,36 @@ const lang: Lang = 'fr';
         </article>
 
         <!-- Chwezi Server Manager -->
-        <article class="bg-white rounded-2xl shadow-lg shadow-navy-900/5 overflow-hidden border border-navy-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-up">
-          <div class="bg-gradient-to-br from-navy-800 to-navy-600 rounded-xl h-48 flex items-center justify-center m-4">
-            <span class="text-xl md:text-2xl font-heading font-bold text-gold-400 text-center px-4">Chwezi<br/>Server Manager</span>
+        <article class="bg-white rounded-2xl shadow-lg shadow-navy-900/5 overflow-hidden border border-navy-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-up flex flex-col">
+          <div class="overflow-hidden rounded-xl m-3">
+            <Image src={serverMgrImg} alt="Tableau de bord d'administration Chwezi Server Manager" class="w-full h-44 object-cover rounded-xl" loading="lazy" />
           </div>
-          <div class="p-6 pt-2">
-            <div class="flex flex-wrap gap-2 mb-3">
-              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-gold-100 text-gold-800">DevOps</span>
-              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-navy-100 text-navy-700">Administration Serveur</span>
+          <div class="p-5 pt-1 flex flex-col flex-1">
+            <div class="flex flex-wrap gap-1.5 mb-2">
+              <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-gold-100 text-gold-800">DevOps</span>
+              <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-navy-100 text-navy-700">Administration Serveur</span>
             </div>
-            <h3 class="text-xl font-bold text-navy-900">Chwezi Server Manager</h3>
-            <p class="mt-2 text-navy-600 text-sm leading-relaxed">
-              Un outil auto-hébergé de gestion de serveurs offrant une administration complète
-              depuis un tableau de bord unique &mdash; domaines, SSL, bases de données, cron, Git et
-              déploiement WordPress.
+            <h3 class="text-lg font-bold text-navy-900">Chwezi Server Manager</h3>
+            <p class="mt-1.5 text-navy-600 text-sm leading-relaxed flex-1">
+              Outil auto-hébergé de gestion de serveurs &mdash; domaines, SSL, bases de données, cron, Git et déploiement WordPress depuis un tableau de bord unique.
             </p>
-            <ul class="mt-4 space-y-1.5 text-sm text-navy-600">
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Gestion des domaines et configuration DNS
+            <ul class="mt-3 space-y-1 text-sm text-navy-600">
+              <li class="flex items-start gap-1.5">
+                <svg class="w-3.5 h-3.5 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Gestion des domaines, SSL &amp; DNS
               </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Provisionnement SSL, opérations de bases de données, surveillance d'activité
-              </li>
-              <li class="flex items-start gap-2">
-                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Connexions Git et déploiement WordPress
+              <li class="flex items-start gap-1.5">
+                <svg class="w-3.5 h-3.5 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Connexions Git &amp; déploiement WordPress
               </li>
             </ul>
-            <div class="mt-5 flex flex-wrap items-center gap-2">
+            <div class="mt-4 flex flex-wrap items-center gap-1.5">
               <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">PHP</span>
               <a
                 href="https://github.com/peterbamuhigire/server-manager"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="ml-auto inline-flex items-center gap-1.5 text-xs font-medium text-amber-accent hover:text-gold-600 transition-colors"
+                class="ml-auto inline-flex items-center gap-1 text-xs font-medium text-amber-accent hover:text-gold-600 transition-colors"
               >
                 GitHub
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
@@ -312,16 +341,16 @@ const lang: Lang = 'fr';
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 Sénégal, Sierra Leone, Guinée
               </span>
-              <span class="text-xs text-navy-300">2019 &ndash; 2022</span>
+              <span class="text-xs text-navy-300">2018 &ndash; présent</span>
             </div>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold text-navy-900">Déploiement ERP Régional</h3>
-            <p class="mt-1 text-sm font-medium text-gold-600">Afrique de l'Ouest</p>
+            <p class="mt-1 text-sm font-medium text-gold-600"><a href="https://dynapharmafrica.com" target="_blank" rel="noopener noreferrer" class="hover:text-gold-700 underline underline-offset-2">Dynapharm Africa</a></p>
             <p class="mt-3 text-sm text-navy-600 leading-relaxed">
               Gestion des opérations TIC et des systèmes ERP dans trois pays d'Afrique de l'Ouest
-              pour une entreprise multinationale de produits de santé, opérant dans des environnements
-              francophones et anglophones.
+              pour Dynapharm Africa, opérant dans des environnements
+              francophones et anglophones. Poursuite du conseil en cours.
             </p>
             <ul class="mt-4 space-y-2 text-sm text-navy-600">
               <li class="flex items-start gap-2">
@@ -338,7 +367,7 @@ const lang: Lang = 'fr';
               </li>
               <li class="flex items-start gap-2">
                 <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
-                Poursuite du conseil MIS à distance
+                Conseil MIS à distance en continu
               </li>
             </ul>
           </div>
@@ -352,20 +381,21 @@ const lang: Lang = 'fr';
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 Kampala, Ouganda
               </span>
-              <span class="text-xs text-navy-300">2024 &ndash; présent</span>
+              <span class="text-xs text-navy-300">2022 &ndash; présent</span>
             </div>
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold text-navy-900">Institution Nationale de Recherche</h3>
-            <p class="mt-1 text-sm font-medium text-gold-600">Modernisation des TIC</p>
+            <h3 class="text-xl font-bold text-navy-900">BIRDC</h3>
+            <p class="mt-1 text-sm font-medium text-gold-600"><a href="https://birdc.ug" target="_blank" rel="noopener noreferrer" class="hover:text-gold-700 underline underline-offset-2">Responsable TIC</a></p>
             <p class="mt-3 text-sm text-navy-600 leading-relaxed">
-              Direction de l'ensemble de la fonction TIC pour une institution nationale de recherche &mdash;
-              gestion de l'infrastructure, développement de systèmes et transformation numérique.
+              A rejoint le Banana Industrial Research and Development Center (BIRDC) en 2022 en tant que
+              Consultant TIC et est devenu Responsable TIC en 2024 &mdash; direction de la gestion de
+              l'infrastructure, du développement de systèmes et de la transformation numérique.
             </p>
             <ul class="mt-4 space-y-2 text-sm text-navy-600">
               <li class="flex items-start gap-2">
                 <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
-                Responsabilité complète des TIC institutionnelles
+                Responsabilité complète des TIC institutionnelles en tant que Responsable TIC
               </li>
               <li class="flex items-start gap-2">
                 <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
@@ -396,13 +426,18 @@ const lang: Lang = 'fr';
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold text-navy-900">Portefeuille de Conseil en TIC</h3>
-            <p class="mt-1 text-sm font-medium text-gold-600">Afrique de l'Est</p>
+            <p class="mt-1 text-sm font-medium text-gold-600">Afrique de l'Est &amp; Gouvernement</p>
             <p class="mt-3 text-sm text-navy-600 leading-relaxed">
               Un portefeuille de missions de conseil fournissant analyse de systèmes, conception de solutions,
-              conseil technologique et développement de logiciels sur mesure pour des entreprises et des organisations
-              à travers l'Afrique de l'Est.
+              conseil technologique et développement de logiciels sur mesure. Notamment le développement du
+              Système de Budgétisation en Ligne pour le Ministère des Finances de l'Ouganda en collaboration avec
+              <a href="https://eficon.co.ug" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-700 underline underline-offset-2">EFICON Consult Ltd</a>.
             </p>
             <ul class="mt-4 space-y-2 text-sm text-navy-600">
+              <li class="flex items-start gap-2">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
+                Système de Budgétisation en Ligne — Ministère des Finances, Ouganda
+              </li>
               <li class="flex items-start gap-2">
                 <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
                 Analyse de systèmes et ingénierie des exigences
@@ -414,10 +449,6 @@ const lang: Lang = 'fr';
               <li class="flex items-start gap-2">
                 <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
                 Évaluation et sélection de fournisseurs
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
-                Relations de conseil continu
               </li>
             </ul>
           </div>

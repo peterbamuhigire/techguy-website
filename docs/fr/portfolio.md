@@ -91,6 +91,31 @@ Une sélection de produits développés, de projets open-source auxquels Peter a
 
 ---
 
+### Longhorn ERP
+
+**Client** : Produit phare — Chwezi Core Systems
+
+**Catégorie** : ERP / Cloud
+
+**Résumé** : Système ERP cloud sur mesure avec applications web et mobiles. Produit phare de Chwezi Core Systems.
+
+**Description complète** : Longhorn ERP est un système de planification des ressources d'entreprise complet et basé sur le cloud, développé comme produit phare de Chwezi Core Systems. La plateforme offre une suite complète de modules ERP accessibles via des applications web et mobiles, permettant aux entreprises de gérer leurs opérations depuis n'importe quel endroit. Construit sur une architecture cloud moderne, le système assure fiabilité et évolutivité pour les entreprises en croissance.
+
+**Points clés** :
+- Planification des ressources d'entreprise basée sur le cloud
+- Applications web et mobiles
+- Suite complète de modules ERP
+- Produit phare de Chwezi Core Systems
+
+**Stack technique** : PHP, MySQL, Kotlin/Jetpack Compose (Android), REST API
+
+**Lien** : https://chwezi.co.za/en/technology/
+
+**Photos** :
+- ERP-01.jpg — Tableau de bord Longhorn ERP
+
+---
+
 ## Projets open-source
 
 ---
@@ -161,43 +186,43 @@ Une sélection de produits développés, de projets open-source auxquels Peter a
 
 ### Déploiement ERP régional — Afrique de l'Ouest
 
-**Client** : Confidentiel — Entreprise multinationale de produits de santé
+**Client** : Dynapharm Africa — [dynapharmafrica.com](https://dynapharmafrica.com)
 
 **Lieu** : Sénégal, Sierra Leone, Guinée
 
-**Période** : 2019 – 2022
+**Période** : 2018 – en cours
 
 **Catégorie** : Gestion des TIC / Déploiement ERP
 
-**Résumé** : Gestion des opérations TIC et des systèmes ERP dans trois pays d'Afrique de l'Ouest pour une entreprise multinationale de produits de santé, opérant en environnement francophone et anglophone.
+**Résumé** : Gestion des opérations TIC et des systèmes ERP dans trois pays d'Afrique de l'Ouest pour Dynapharm Africa, opérant en environnement francophone et anglophone. Poursuite du conseil en cours.
 
-**Description complète** : Peter a exercé les fonctions de Responsable TIC régional pour une entreprise multinationale de distribution de produits de santé, supervisant les opérations technologiques au Sénégal, en Sierra Leone et en Guinée. La mission a englobé la gestion et l'optimisation des systèmes ERP, la supervision des infrastructures réseau, des programmes de formation du personnel dispensés en français et en anglais, ainsi que des initiatives de transformation numérique à l'échelle de la région. Travailler simultanément dans trois pays aux langues, environnements réglementaires et défis d'infrastructure différents a exigé une adaptabilité concrète et une compréhension approfondie des contextes d'affaires africains. Le résultat a été une fondation technologique unifiée et fiable, soutenant la croissance de l'entreprise dans toute la région.
+**Description complète** : Peter a exercé les fonctions de Responsable TIC régional pour Dynapharm Africa, supervisant les opérations technologiques au Sénégal, en Sierra Leone et en Guinée. La mission a englobé la gestion et l'optimisation des systèmes ERP, la supervision des infrastructures réseau, des programmes de formation du personnel dispensés en français et en anglais, ainsi que des initiatives de transformation numérique à l'échelle de la région. Travailler simultanément dans trois pays aux langues, environnements réglementaires et défis d'infrastructure différents a exigé une adaptabilité concrète et une compréhension approfondie des contextes d'affaires africains. Le résultat a été une fondation technologique unifiée et fiable, soutenant la croissance de l'entreprise dans toute la région. Peter continue de fournir un conseil continu à Dynapharm Africa.
 
 **Points clés** :
 - Gestion simultanée des opérations TIC dans 3 pays d'Afrique de l'Ouest
 - Intervention en environnement francophone (Sénégal, Guinée) et anglophone (Sierra Leone)
 - Unification des systèmes ERP et de la gestion des données à travers les bureaux régionaux
 - Programmes de formation du personnel adaptés à la langue et au contexte local
-- Poursuite de la prestation de conseil MIS à distance pour l'organisation
+- Poursuite du conseil MIS à distance en continu
 
 ---
 
-### Institution nationale de recherche — Modernisation des TIC
+### BIRDC — Responsable TIC
 
-**Client** : Confidentiel — Institution nationale de recherche agricole, Ouganda
+**Client** : Banana Industrial Research and Development Center (BIRDC) — [birdc.ug](https://birdc.ug)
 
 **Lieu** : Kampala, Ouganda
 
-**Période** : 2024 – en cours
+**Période** : 2022 – en cours
 
 **Catégorie** : Gestion des TIC / Transformation numérique
 
-**Résumé** : Direction de l'ensemble de la fonction TIC pour une institution nationale de recherche — gestion de l'infrastructure, développement de systèmes et transformation numérique.
+**Résumé** : A rejoint le Banana Industrial Research and Development Center (BIRDC) en 2022 en tant que Consultant TIC et est devenu Responsable TIC en 2024 — direction de la gestion de l'infrastructure, du développement de systèmes et de la transformation numérique.
 
-**Description complète** : Peter assure la gestion complète de la fonction TIC d'une institution de recherche ougandaise affiliée au gouvernement, spécialisée dans le développement agricole. Ce rôle englobe la gestion de l'infrastructure informatique, le développement de systèmes internes, l'administration réseau et la planification technologique stratégique. La mission implique la modernisation de systèmes hérités, l'amélioration des pratiques de gestion des données et la garantie de services technologiques fiables pour le personnel de recherche. Cet environnement institutionnel exige un équilibre délicat entre innovation et stabilité — introduire des améliorations sans perturber les opérations de recherche critiques qui dépendent des systèmes existants.
+**Description complète** : Peter a rejoint le Banana Industrial Research and Development Center (BIRDC) en 2022 en tant que Consultant TIC et a été promu Responsable TIC en 2024, assurant la gestion complète de la fonction TIC de cette institution de recherche ougandaise spécialisée dans le développement agricole. Ce rôle englobe la gestion de l'infrastructure informatique, le développement de systèmes internes, l'administration réseau et la planification technologique stratégique. La mission implique la modernisation de systèmes hérités, l'amélioration des pratiques de gestion des données et la garantie de services technologiques fiables pour le personnel de recherche. Cet environnement institutionnel exige un équilibre délicat entre innovation et stabilité — introduire des améliorations sans perturber les opérations de recherche critiques qui dépendent des systèmes existants.
 
 **Points clés** :
-- Responsabilité complète de la fonction TIC institutionnelle
+- Responsabilité complète de la fonction TIC institutionnelle en tant que Responsable TIC
 - Gestion de l'infrastructure et administration réseau
 - Développement et maintenance des systèmes internes
 - Planification et mise en oeuvre de la transformation numérique
@@ -205,9 +230,9 @@ Une sélection de produits développés, de projets open-source auxquels Peter a
 
 ---
 
-### Portefeuille de conseil TIC — Afrique de l'Est
+### Portefeuille de conseil TIC — Afrique de l'Est & Gouvernement
 
-**Client** : Clients multiples — PME et organisations à travers l'Ouganda
+**Client** : Clients multiples — dont EFICON Consult Ltd ([eficon.co.ug](https://eficon.co.ug)), PME et organisations gouvernementales à travers l'Ouganda
 
 **Lieu** : Kampala, Ouganda et région
 
@@ -215,15 +240,15 @@ Une sélection de produits développés, de projets open-source auxquels Peter a
 
 **Catégorie** : Conseil TIC / Développement logiciel
 
-**Résumé** : Un portefeuille de missions de conseil offrant analyse des systèmes, conception de solutions, conseil technologique et développement logiciel sur mesure à des entreprises et organisations d'Afrique de l'Est.
+**Résumé** : Un portefeuille de missions de conseil offrant analyse des systèmes, conception de solutions, conseil technologique et développement logiciel sur mesure. Notamment le développement du Système de Budgétisation en Ligne pour le Ministère des Finances de l'Ouganda en collaboration avec EFICON Consult Ltd.
 
-**Description complète** : Depuis la création de son cabinet de conseil indépendant, Peter a accompagné un portefeuille diversifié de clients à travers l'Ouganda et la région est-africaine au sens large. Ses missions ont couvert aussi bien l'analyse des systèmes et l'ingénierie des exigences pour des organisations en quête de nouvelles solutions technologiques, que le développement logiciel sur mesure pour des entreprises ayant des besoins opérationnels spécifiques, ou encore le conseil stratégique en TIC pour des organisations planifiant leurs investissements technologiques. Cette diversité d'expérience — au contact de secteurs variés, d'échelles d'opérations différentes et de niveaux de maturité technologique distincts — a enrichi l'expertise pratique que Peter apporte à chaque nouvelle mission.
+**Description complète** : Depuis la création de son cabinet de conseil indépendant, Peter a accompagné un portefeuille diversifié de clients à travers l'Ouganda et la région est-africaine au sens large. Une mission notable comprend le développement du Système de Budgétisation en Ligne pour le Ministère des Finances de l'Ouganda, en collaboration avec EFICON Consult Ltd. Ses missions ont couvert aussi bien l'analyse des systèmes et l'ingénierie des exigences pour des organisations en quête de nouvelles solutions technologiques, que le développement logiciel sur mesure pour des entreprises ayant des besoins opérationnels spécifiques, ou encore le conseil stratégique en TIC pour des organisations planifiant leurs investissements technologiques. Cette diversité d'expérience — au contact de secteurs variés, d'échelles d'opérations différentes et de niveaux de maturité technologique distincts — a enrichi l'expertise pratique que Peter apporte à chaque nouvelle mission.
 
 **Points clés** :
+- Système de Budgétisation en Ligne — Ministère des Finances, Ouganda (avec EFICON Consult Ltd)
 - Analyse des systèmes et ingénierie des exigences
 - Développement logiciel sur mesure répondant à des besoins métiers spécifiques
 - Évaluation de fournisseurs et conseil en sélection de solutions technologiques
-- Relations de mandat continu avec de nombreux clients
 - Expérience dans des secteurs et des échelles organisationnelles variés
 
 ---

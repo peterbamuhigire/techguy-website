@@ -14,38 +14,38 @@ const timelineEntries = [
   {
     year: '2008',
     location: 'Kampala',
-    title: 'Web Developer at Infinity Computers',
+    title: 'Web Developer at <a href="https://i3c.co.ug" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-700 underline underline-offset-2">Infinity Computers</a>',
     description: 'Built the foundation of a hands-on approach: web development and technical support, paired with direct exposure to the real technology challenges businesses face. Learned that the best solutions are the ones people can actually use.',
   },
   {
     year: '2010 - 2014',
     location: 'Freetown',
-    title: 'MIS Manager at Dynapharm Sierra Leone',
+    title: 'MIS Manager at <a href="https://dynapharmafrica.com" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-700 underline underline-offset-2">Dynapharm</a> Sierra Leone',
     description: 'Full responsibility for building and maintaining business systems, training staff, and ensuring data integrity. Four years in West Africa shaped a guiding principle: technology must be built for the people who use it, not for the engineers who design it.',
   },
   {
     year: '2014 - 2016',
     location: 'Kampala',
-    title: 'ICT Consultant at EFICON',
+    title: 'ICT Consultant at <a href="https://eficon.co.ug" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-700 underline underline-offset-2">EFICON Consult</a>',
     description: 'Broadened exposure to different industries, scales of operation, and technology challenges. Conducted systems analysis, designed solutions, and delivered technology recommendations. This period confirmed a growing conviction: rather than implementing other people\'s solutions, it was time to build his own.',
   },
   {
     year: '2016 - present',
     location: 'Kampala',
-    title: 'Founded Chwezi Digital Solutions',
-    description: 'Launched an independent consultancy and product development practice. Built Maduuka, Aqar, and Chwezi Server Manager from real business problems encountered across consulting engagements. Products serving businesses across East Africa and internationally.',
+    title: 'Founded <a href="https://chwezi.co.za" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-700 underline underline-offset-2">Chwezi</a> Digital Solutions (now Chwezi Core Systems)',
+    description: 'Launched an independent consultancy and product development practice. Built Maduuka, Aqar, Longhorn ERP, and Chwezi Server Manager from real business problems encountered across consulting engagements. Products serving businesses across East Africa and internationally. Rebranded to Chwezi Core Systems in 2025.',
   },
   {
     year: '2019 - 2022',
     location: 'Dakar',
-    title: 'Regional ICT Manager, Dynapharm Africa',
+    title: 'Regional ICT Manager, <a href="https://dynapharmafrica.com" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-700 underline underline-offset-2">Dynapharm Africa</a>',
     description: 'Expanded responsibilities to three countries: Senegal, Sierra Leone, and Guinea. Managed ERP systems, network infrastructure, staff training, and digital transformation across francophone and anglophone West Africa.',
   },
   {
-    year: '2024 - present',
+    year: '2022 - present',
     location: 'Kampala',
-    title: 'Manager ICT, BIRD Center',
-    description: 'Managing the complete ICT function for a national agricultural research institution. Infrastructure management, systems development, network administration, and strategic technology planning — balancing innovation with operational stability.',
+    title: 'ICT Manager, <a href="https://birdc.ug" target="_blank" rel="noopener noreferrer" class="text-gold-600 hover:text-gold-700 underline underline-offset-2">BIRDC</a>',
+    description: 'Joined the Banana Industrial Research and Development Center (BIRDC) in 2022 as ICT Consultant and became ICT Manager in 2024. Managing the complete ICT function — infrastructure management, systems development, network administration, and strategic technology planning — balancing innovation with operational stability.',
   },
 ];
 
@@ -171,8 +171,8 @@ const certifications = [
                     {entry.location}
                   </span>
                 </div>
-                <h3 class="text-lg font-bold text-navy-900">{entry.title}</h3>
-                <p class="mt-2 text-sm text-navy-600 leading-relaxed">{entry.description}</p>
+                <h3 class="text-lg font-bold text-navy-900" set:html={entry.title} />
+                <p class="mt-2 text-sm text-navy-600 leading-relaxed" set:html={entry.description} />
               </div>
             </div>
           </div>

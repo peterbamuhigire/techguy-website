@@ -1,0 +1,251 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/blog-images-9.jpg';
+import img10 from '@/assets/images/blog-images-10.jpg';
+import img12 from '@/assets/images/blog-images-12.jpg';
+import img17 from '@/assets/images/blog-images-17.jpg';
+
+const lang: Lang = 'fr';
+const title = "Ce Que Coûte Réellement un Site Web en Ouganda (Et Pourquoi les Prix Varient Autant)";
+const description = "Combien coûte un site web en Ouganda ? Ventilation honnête des prix en UGX et USD — des sites modèles aux constructions sur mesure.";
+const date = "2026-01-15";
+const category = "Technologie";
+const readTime = "12 min de lecture";
+const slug = "website-costs-uganda";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/fr/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}/fr/blog/${slug}/`,
+  "inLanguage": "fr-FR",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/fr/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Style D: Minimal Hero -->
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-16">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="px-3 py-1 text-xs font-semibold bg-amber-accent/20 text-amber-accent rounded-full">{category}</span>
+      <span class="text-sm text-navy-500">{readTime}</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 leading-tight">
+      {title}
+    </h1>
+    <div class="mt-4 flex items-center gap-4 text-sm text-navy-500">
+      <span>Par Peter Bamuhigire</span>
+      <span class="w-1 h-1 rounded-full bg-navy-400"></span>
+      <time datetime={date}>15 janvier 2026</time>
+    </div>
+    <p class="mt-6 text-lg text-navy-600 leading-relaxed border-l-4 border-amber-accent pl-5">
+      Demandez à cinq développeurs à Kampala combien coûte un site web, et vous obtiendrez cinq réponses radicalement différentes. Ce guide est la conversation franche que tout chef d'entreprise mérite avant de signer un contrat.
+    </p>
+  </section>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Retour au Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-warm prose-dropcap">
+
+      <p>Si vous avez déjà demandé à plusieurs développeurs combien coûte un site web en Ouganda, vous connaissez la confusion qui en résulte. L'un annonce 500 000 UGX, un autre 20 000 000 UGX. La réalité, c'est que chacun de ces chiffres peut être légitime. Encore faut-il comprendre ce que vous achetez réellement.</p>
+
+      <p>Je m'appelle Peter Bamuhigire. Depuis plus de quinze ans, je conçois des sites web pour des clients répartis dans une dizaine de pays africains. Ce guide est la conversation franche que j'aurais aimé avoir avec chaque client avant la signature du contrat.</p>
+
+      <figure class="my-8">
+        <Image
+          src={heroImg}
+          alt="Des professionnels examinent un site web sur une tablette, évaluant le design et le contenu"
+          width={2222}
+          height={1483}
+          class="article-img-landscape"
+          loading="eager"
+        />
+        <figcaption>Évaluer le design et le contenu d'un site web avant de prendre une décision</figcaption>
+      </figure>
+
+      <h2>Les Vrais Tarifs : Combien Coûte un Site Web en Ouganda en 2026</h2>
+
+      <p><strong>Site web sur modèle :</strong> UGX 500 000 – 2 000 000 (USD 130 – 530 | environ 80 000 – 330 000 FCFA). Un modèle préfabriqué avec votre logo. Fonctionnel, mais il ressemblera à des milliers d'autres.</p>
+
+      <p><strong>Site WordPress personnalisé :</strong> UGX 2 000 000 – 8 000 000 (USD 530 – 2 100 | environ 330 000 – 1 300 000 FCFA). Un thème adapté à votre marque. Le choix le plus courant parmi les PME établies.</p>
+
+      <p><strong>Site professionnel sur mesure :</strong> UGX 5 000 000 – 20 000 000 (USD 1 300 – 5 300 | environ 800 000 – 3 300 000 FCFA). Conçu et codé de zéro — sans modèle. Se charge en moins de deux secondes et obtient plus de 95/100 sur Google Lighthouse.</p>
+
+      <p><strong>Application web ou plateforme SaaS :</strong> UGX 15 000 000 – 80 000 000+ (USD 4 000 – 21 000+ | environ 2 500 000 – 13 000 000+ FCFA). Un véritable logiciel : comptes utilisateurs, tableaux de bord, paiements, bases de données. J'ai conçu <a href="https://maduuka.com" target="_blank" rel="noopener">Maduuka</a> et <a href="https://aqar.chwezi.tech" target="_blank" rel="noopener">Aqar</a> à ce niveau.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img10}
+          alt="Gros plan d'une main posée sur un circuit imprimé, symbolisant les fondations techniques"
+          width={2222}
+          height={1245}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Les fondations techniques derrière chaque site web</figcaption>
+      </figure>
+
+      <h2>Ce Qui Fait Réellement Monter le Prix</h2>
+
+      <p><strong>La complexité du design.</strong> Un site de cinq pages coûte bien moins qu'un site de vingt pages avec animations et design unique pour chaque section.</p>
+
+      <p><strong>La création de contenu.</strong> La rédaction professionnelle est un métier à part entière. Si vous fournissez vos propres textes, vous économisez. C'est d'autant plus vrai pour les sites multilingues.</p>
+
+      <p><strong>Le nombre de pages et de fonctionnalités.</strong> Ajoutez un blog, un portfolio, un formulaire de contact, un support multilingue, et vous avez triplé la charge de travail.</p>
+
+      <p><strong>L'adaptation mobile.</strong> Votre site doit fonctionner aussi bien sur un Tecno à Gulu que sur un MacBook à Kololo, aussi bien sur un Infinix à Ouagadougou que sur un Samsung à Nairobi.</p>
+
+      <p><strong>Le référencement et les performances.</strong> Un site qui met huit secondes à se charger sur une connexion 3G est un site que personne n'attendra — et en Afrique, la 3G reste répandue.</p>
+
+      <h2>Le Piège du Modèle : Quand le Moins Cher Devient le Plus Cher</h2>
+
+      <p>Une entreprise touristique de Kampala avait payé 1 500 000 UGX pour un site WordPress. En un an, les problèmes se sont accumulés. Douze secondes de chargement sur mobile. Le formulaire de contact a cessé de fonctionner. Le référencement était si médiocre que le nom exact de l'entreprise ne remontait pas dans Google.</p>
+
+      <p>Nous avons reconstruit le site intégralement. Code sur mesure. Images optimisées. Référencement rigoureux. Leurs demandes en provenance de Google ont triplé en six mois.</p>
+
+      <p>La leçon : l'option la moins chère finit souvent par coûter plus cher à long terme.</p>
+
+      <figure class="my-8 flex justify-center">
+        <div class="max-w-sm">
+          <Image
+            src={img12}
+            alt="Un professionnel travaille avec une tablette dans un bureau technologique moderne"
+            width={600}
+            height={900}
+            class="article-img-portrait rounded-xl"
+            loading="lazy"
+          />
+          <figcaption>Analyse des performances d'un site web pour mesurer le retour sur investissement</figcaption>
+        </div>
+      </figure>
+
+      <h2>Cinq Questions à Poser Avant de Signer</h2>
+
+      <p><strong>1. « Que comprend exactement votre devis ? »</strong> Exigez un cahier des charges écrit. Précisez si le site sera monolingue ou multilingue.</p>
+
+      <p><strong>2. « Qui est propriétaire du site ? »</strong> Vous devez être propriétaire du domaine, de l'hébergement et du code source.</p>
+
+      <p><strong>3. « Quelle technologie utilisez-vous, et pourquoi ? »</strong> Un bon développeur peut justifier clairement ses choix.</p>
+
+      <p><strong>4. « Que se passe-t-il après la mise en ligne ? »</strong> Un site sans maintenance est une bombe à retardement.</p>
+
+      <p><strong>5. « Puis-je voir trois sites en ligne que vous avez réalisés ? »</strong> Pas des captures d'écran. Des sites fonctionnels. Consultez <a href="/fr/portfolio/">mon portfolio</a> pour juger du niveau d'exigence que je m'impose.</p>
+
+      <h2>Les Coûts Que Personne Ne Mentionne</h2>
+
+      <p><strong>Nom de domaine :</strong> 80 000 – 200 000 UGX par an (12 000 – 32 000 FCFA).</p>
+
+      <p><strong>Hébergement :</strong> 200 000 – 800 000 UGX par an (32 000 – 130 000 FCFA).</p>
+
+      <p><strong>Maintenance annuelle :</strong> 500 000 – 3 000 000 UGX par an (80 000 – 490 000 FCFA).</p>
+
+      <p><strong>Messagerie professionnelle :</strong> à partir d'environ 6 USD par utilisateur par mois.</p>
+
+      <p>En additionnant le tout, un site de petite entreprise coûte entre 700 000 et 1 500 000 UGX par an en frais de fonctionnement (115 000 – 245 000 FCFA). Tout développeur qui ne mentionne pas ces coûts est soit inexpérimenté, soit espère que vous ne poserez pas la question.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img17}
+          alt="Baie de serveurs avec des icônes technologiques, représentant l'infrastructure permanente"
+          width={600}
+          height={800}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>L'infrastructure permanente derrière chaque site web</figcaption>
+      </figure>
+
+      <h2>Ce Dont Vous Avez Réellement Besoin</h2>
+
+      <p><strong>Professionnel indépendant ou jeune entreprise :</strong> un site propre de cinq à sept pages. Budget : 2 000 000 – 5 000 000 UGX pour la réalisation.</p>
+
+      <p><strong>PME établie :</strong> un site professionnel sur mesure avec blog et support multilingue. Budget : 5 000 000 – 15 000 000 UGX.</p>
+
+      <p><strong>Produit ou plateforme :</strong> une application web avec architecture logicielle, authentification et intégration avec <a href="/fr/services/">MTN Mobile Money, Orange Money ou Wave</a>. Budget : à partir de 15 000 000 UGX.</p>
+
+      <h2>Faire Fructifier Votre Investissement</h2>
+
+      <p>Le coût d'un site web ne se résume pas à la somme dépensée — c'est la valeur que vous en retirez qui compte. Un site à 1 000 000 UGX qui ne génère aucun trafic revient plus cher qu'un site à 10 000 000 UGX qui vous apporte des demandes chaque semaine.</p>
+
+      <p>Votre site web est votre employé le plus assidu. Disponible vingt-quatre heures sur vingt-quatre, il s'adresse à vos clients potentiels pendant votre sommeil. Investissez en conséquence.</p>
+
+      <p>Commencez avec ce que vous pouvez vous permettre, mais commencez par la qualité. Vous pouvez <a href="/fr/services/">découvrir mes services</a> ou simplement <a href="/fr/contact/">me contacter</a> — sans pression et sans devis gonflé.</p>
+
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-amber-accent/30">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-amber-accent/10 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-amber-accent">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Consultant en technologie et en stratégie d'entreprise avec plus de 15 ans d'expérience dans plus de 10 pays africains. Fondateur de Chwezi Digital Solutions, basé à Kampala, en Ouganda.</p>
+          <a href="/fr/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Nous Contacter
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Retour aux Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

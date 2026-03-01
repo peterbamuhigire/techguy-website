@@ -67,6 +67,7 @@ You have skills in `.claude/skills/`. Read them before generating any code.
 | `photo-manager` | Before building pages, after design | photo-bank/**/* | src/assets/images/*/, _catalog.json |
 | `page-builder` | After design + photos are ready | docs/{lang}/*.md, design-tokens.md, _catalog.json | src/pages/{lang}/, components/, layouts/ |
 | `seo` | After pages are built | docs/seo.md, all pages | hreflang tags, sitemaps, structured data |
+| `blog-writer` | When publishing blog articles | docs/{lang}/company-profile.md, blog pages | docs/{lang}/blog/*.md, Astro blog pages, Article JSON-LD |
 | `deploy` | After all pages are built | src/, dist/ | deploy.sh, nginx.conf, verification report |
 
 **Execution order matters:** website-builder -> i18n -> design-system -> photo-manager -> page-builder -> seo -> deploy.

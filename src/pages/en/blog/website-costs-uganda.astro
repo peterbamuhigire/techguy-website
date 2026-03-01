@@ -1,0 +1,269 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/blog-images-9.jpg';
+import img10 from '@/assets/images/blog-images-10.jpg';
+import img12 from '@/assets/images/blog-images-12.jpg';
+import img17 from '@/assets/images/blog-images-17.jpg';
+
+const lang: Lang = 'en';
+const title = "What a Website Actually Costs in Uganda (And Why It Varies So Much)";
+const description = "Honest breakdown of website cost in Uganda — from template sites to custom builds. Real prices in UGX and USD, plus hidden costs.";
+const date = "2026-01-15";
+const category = "Technology";
+const readTime = "10 min read";
+const slug = "website-costs-uganda";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}/en/blog/${slug}/`,
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Style D: Minimal Hero -->
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-16">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="px-3 py-1 text-xs font-semibold bg-amber-accent/20 text-amber-accent rounded-full">{category}</span>
+      <span class="text-sm text-navy-500">{readTime}</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 leading-tight">
+      {title}
+    </h1>
+    <div class="mt-4 flex items-center gap-4 text-sm text-navy-500">
+      <span>By Peter Bamuhigire</span>
+      <span class="w-1 h-1 rounded-full bg-navy-400"></span>
+      <time datetime={date}>15 January 2026</time>
+    </div>
+    <p class="mt-6 text-lg text-navy-600 leading-relaxed border-l-4 border-amber-accent pl-5">
+      Ask five developers in Kampala what a website costs, and you will get five wildly different answers. This guide is the honest conversation every business owner needs before signing a contract.
+    </p>
+  </section>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-warm prose-dropcap">
+
+      <p>Ask five developers in Kampala what a website costs, and you will get five wildly different answers. One quotes UGX 500,000. Another says UGX 20,000,000. A third offers to "do it for free" if you buy hosting through them. The truth about website cost in Uganda is that every number you hear could be legitimate — but only if you understand what you are actually paying for.</p>
+
+      <p>I am Peter Bamuhigire, and I have spent over fifteen years building websites for clients across ten African countries. I have built everything from simple landing pages for startups in Kampala to full SaaS platforms used across the continent. This guide is the honest conversation I wish every client had before signing a contract.</p>
+
+      <figure class="my-8">
+        <Image
+          src={heroImg}
+          alt="Business professionals evaluating website cost in Uganda by browsing a site on a tablet"
+          width={2222}
+          height={1483}
+          class="article-img-landscape"
+          loading="eager"
+        />
+        <figcaption>Evaluating website design, content, and cost before making a decision</figcaption>
+      </figure>
+
+      <h2>The Real Price Ranges: What Websites Actually Cost in Uganda</h2>
+
+      <p>Let me cut straight to the numbers. These are realistic ranges for the Ugandan market in 2026.</p>
+
+      <p><strong>Template or DIY website:</strong> UGX 500,000 – 2,000,000 (USD 130 – 530). This is your Wix, Squarespace, or pre-made WordPress theme. Someone installs a template, swaps in your logo and text, and hands it over. You get a functional site, but it will look like thousands of others.</p>
+
+      <p><strong>Customised WordPress site:</strong> UGX 2,000,000 – 8,000,000 (USD 530 – 2,100). A developer takes a premium theme or builds a custom theme, tailors the design to your brand, and sets up proper pages for your services. Most established small businesses in Kampala fall into this category.</p>
+
+      <p><strong>Custom-built professional site:</strong> UGX 5,000,000 – 20,000,000 (USD 1,300 – 5,300). A site designed and coded from scratch — no templates, no bloated page builders. Technologies like Astro, Next.js, or hand-coded HTML produce sites that load in under two seconds and score 95+ on Google Lighthouse. If your website is a core part of your business strategy, this is where you should be.</p>
+
+      <p><strong>Web application or SaaS platform:</strong> UGX 15,000,000 – 80,000,000+ (USD 4,000 – 21,000+). This is software: user accounts, dashboards, payment processing, databases, APIs. I have built platforms like <a href="https://maduuka.com" target="_blank" rel="noopener">Maduuka</a> and <a href="https://aqar.chwezi.tech" target="_blank" rel="noopener">Aqar</a> at this level.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img10}
+          alt="Close-up of circuit board representing the technical foundation behind website development"
+          width={2222}
+          height={1245}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>The technical foundation behind every website determines its performance and longevity</figcaption>
+      </figure>
+
+      <h2>What Actually Drives the Price Up (and Down)</h2>
+
+      <p><strong>Design complexity.</strong> A five-page site with a clean, consistent layout costs far less than a twenty-page site with custom animations, interactive elements, and a unique design for every section. Design is not decoration — it is problem-solving.</p>
+
+      <p><strong>Content creation.</strong> Many clients assume the developer will write their website copy. Professional copywriting that speaks to your audience and performs well in search engines is a separate skill. If you provide your own content, you save money.</p>
+
+      <p><strong>Number of pages and features.</strong> A five-page brochure site is straightforward. Add a blog, portfolio gallery, contact form with notifications, testimonial slider, multi-language support, and events calendar, and you have tripled the work.</p>
+
+      <p><strong>Responsiveness and cross-browser testing.</strong> Your site must work on a Tecno phone in Gulu just as well as on a MacBook in Kololo. Responsive design is not optional — it is the majority of the work on most modern projects.</p>
+
+      <p><strong>SEO and performance optimisation.</strong> A site that loads in eight seconds on a 3G connection is a site that nobody will wait for. Proper image optimisation, clean code, fast hosting, and search engine optimisation all take effort.</p>
+
+      <p><strong>The developer's experience.</strong> A junior freelancer charges less than a senior developer with fifteen years of experience, and that is perfectly reasonable. But experience shows up in the details: cleaner code, fewer bugs, better advice.</p>
+
+      <h2>The Template Trap: When Cheap Becomes Expensive</h2>
+
+      <p>A medium-sized tour company based in Kampala had paid UGX 1,500,000 for a WordPress site. On the surface, it looked decent — attractive photos, a booking enquiry form, the usual pages.</p>
+
+      <p>Within a year, the problems started. The site loaded in twelve seconds on mobile because the template included fifteen JavaScript libraries nobody needed. The contact form broke after a WordPress update. The SEO was so poor that searching the company's exact name barely brought up their site.</p>
+
+      <p>They came to me, and we rebuilt the site from scratch. Custom code. Optimised images. Proper SEO. The new site cost more upfront, but it has run smoothly for over two years. Their enquiries from Google tripled within six months.</p>
+
+      <p>The lesson is not that templates are bad. They have their place. The lesson is that the cheapest option often costs you more in the long run — in lost customers, in repair bills, and in opportunity cost.</p>
+
+      <figure class="my-8 flex justify-center">
+        <div class="max-w-sm">
+          <Image
+            src={img12}
+            alt="Professional reviewing website analytics on a tablet in a modern tech office"
+            width={600}
+            height={900}
+            class="article-img-portrait rounded-xl"
+            loading="lazy"
+          />
+          <figcaption>Reviewing website performance analytics to measure return on investment</figcaption>
+        </div>
+      </figure>
+
+      <h2>Five Questions to Ask Your Developer Before You Pay</h2>
+
+      <p><strong>1. "What exactly am I getting, and what is not included?"</strong> Get a written scope of work. How many pages? Does it include mobile responsiveness? Content writing? SEO setup? Training on how to update the site?</p>
+
+      <p><strong>2. "Who owns the site after you build it?"</strong> This is critical. Some developers build your site on their own hosting account and hold it hostage if the relationship sours. You should own your domain, hosting account, and all source code.</p>
+
+      <p><strong>3. "What technology are you using, and why?"</strong> A good developer can explain their technology choice in plain language. If they cannot, that is a warning sign.</p>
+
+      <p><strong>4. "What happens after launch?"</strong> Websites need updates, security patches, content changes, and occasional fixes. Ask whether maintenance is included and what it costs.</p>
+
+      <p><strong>5. "Can I see three live sites you have built?"</strong> Not screenshots. Not mockups. Live, working websites you can visit on your phone right now. Check how fast they load, how they look on mobile, and whether they rank on Google. You can view <a href="/en/portfolio/">my own portfolio here</a> to see the standard I hold myself to.</p>
+
+      <h2>The Costs Nobody Mentions Until It Is Too Late</h2>
+
+      <p>The website itself is only part of the expense. These ongoing costs are real, and any honest developer will discuss them upfront.</p>
+
+      <p><strong>Domain name registration:</strong> UGX 80,000 – 200,000 per year for a .com or .co.ug domain.</p>
+
+      <p><strong>Web hosting:</strong> UGX 200,000 – 800,000 per year, depending on the type of site.</p>
+
+      <p><strong>SSL certificate:</strong> Most hosting providers now include this for free with Let's Encrypt.</p>
+
+      <p><strong>Annual maintenance:</strong> UGX 500,000 – 3,000,000 per year. WordPress sites need more maintenance than static sites because plugins require regular updates to stay secure.</p>
+
+      <p><strong>Content updates:</strong> If you want to add blog posts, update service pages, or change photos, someone has to do that work.</p>
+
+      <p><strong>Email hosting:</strong> Professional email addresses (info@yourcompany.co.ug) start at around USD 6 per user per month with Google Workspace.</p>
+
+      <p>Add it all up, and a typical small business website costs UGX 700,000 – 1,500,000 per year to keep running. This is not a hidden fee — it is the reality of owning digital property.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img17}
+          alt="Server rack with technology icons representing the ongoing infrastructure behind every website"
+          width={600}
+          height={800}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>The ongoing infrastructure that keeps your website running reliably</figcaption>
+      </figure>
+
+      <h2>What You Actually Need (An Honest Assessment)</h2>
+
+      <p><strong>You are a solo professional or very small startup.</strong> A clean, fast, mobile-friendly site with five to seven pages. Budget UGX 2,000,000 – 5,000,000 for the build and UGX 700,000 per year for maintenance.</p>
+
+      <p><strong>You are an established SME with ten or more staff.</strong> A professional custom site that reflects your brand, ranks on Google, and converts visitors into enquiries. Budget UGX 5,000,000 – 15,000,000.</p>
+
+      <p><strong>You are building a product or platform.</strong> You need a web application, not a website. This requires proper software architecture, user authentication, database design, and payment system integration like <a href="/en/services/">MTN Mobile Money or Airtel Money</a>. Budget UGX 15,000,000 and above.</p>
+
+      <p><strong>You are not sure what you need.</strong> That is perfectly fine. A good developer will have an honest conversation with you and recommend an approach that fits your budget and requirements.</p>
+
+      <h2>Making Your Investment Count</h2>
+
+      <p>The website cost in Uganda is not just about the money you spend — it is about the value you receive. A UGX 1,000,000 site that drives no traffic is more expensive than a UGX 10,000,000 site that generates enquiries every week.</p>
+
+      <p>Your website is your most hardworking employee. It is available twenty-four hours a day, seven days a week. It speaks to potential clients while you sleep. It establishes your credibility before you ever shake someone's hand. Invest in it accordingly.</p>
+
+      <p>Start with what you can afford, but start with quality. A smaller site built well will always outperform a larger site built poorly.</p>
+
+      <p>If you are ready to have an honest conversation about what your business actually needs, I am happy to help. You can <a href="/en/services/">explore my services</a> to understand my approach, or simply <a href="/en/contact/">get in touch</a> and we will talk through your goals and budget — no pressure, no inflated quotes.</p>
+
+      <p>The right website, built by the right developer, at the right price. That is what every business in Uganda deserves.</p>
+
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-amber-accent/30">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-amber-accent/10 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-amber-accent">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Technology and Business Consultant with over 15 years of experience across more than 10 African countries. Founder of Chwezi Digital Solutions, based in Kampala, Uganda.</p>
+          <a href="/en/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Get in Touch
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to All Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

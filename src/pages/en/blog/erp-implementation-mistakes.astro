@@ -1,0 +1,256 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/blog-images-1.jpg';
+import img18 from '@/assets/images/blog-images-18.jpg';
+import img2 from '@/assets/images/blog-images-2.jpg';
+import img4 from '@/assets/images/blog-images-4.jpg';
+
+const lang: Lang = 'en';
+const title = "ERP Implementation: What SMEs Get Wrong and How to Get It Right";
+const description = "Avoid costly ERP mistakes African SMEs make. Proven strategies for successful ERP implementation from 15+ years of rollouts across Africa.";
+const date = "2026-02-01";
+const category = "ERP";
+const readTime = "9 min read";
+const slug = "erp-implementation-mistakes";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}/en/blog/${slug}/`,
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Style C: Split Hero -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-16">
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 text-xs font-semibold bg-navy-700 text-warm-white rounded-full">{category}</span>
+          <span class="text-sm text-navy-500">{readTime}</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-navy-900 leading-tight">
+          {title}
+        </h1>
+        <div class="mt-4 flex items-center gap-4 text-sm text-navy-500">
+          <span>By Peter Bamuhigire</span>
+          <span class="w-1 h-1 rounded-full bg-navy-400"></span>
+          <time datetime={date}>1 February 2026</time>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden">
+        <Image
+          src={heroImg}
+          alt="ERP system hologram with business management icons representing enterprise resource planning"
+          width={2222}
+          height={1391}
+          class="w-full h-[300px] md:h-[400px] object-cover"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-navy">
+
+      <p>In 2019, I landed in Dakar to take over regional ICT operations for a health products company operating across three West African countries. The previous ERP system had been installed eighteen months earlier. It cost the company over $40,000 in licensing and setup fees. When I opened the system for the first time, I found that warehouse staff in Freetown were still recording stock movements on paper. The finance team in Conakry had never logged in. The Dakar office used the system only for generating invoices — ignoring every other module they had paid for.</p>
+
+      <p>This is not an unusual story. Across the continent, ERP implementation in Africa fails at rates that should alarm every business owner considering the investment. Research from Panorama Consulting suggests that over 50% of ERP projects experience cost overruns, and roughly 60% fail to deliver expected benefits. For SMEs in Uganda, Kenya, Senegal, and across the region, the stakes are even higher — because the budget for getting it wrong simply does not exist.</p>
+
+      <p>Over the past 15 years, I have designed, implemented, and rescued ERP systems across more than 10 African countries. The good news is that these mistakes are entirely avoidable. Here is what goes wrong — and how to get it right.</p>
+
+      <h2>The Promise Versus the Reality of ERP Implementation</h2>
+
+      <p>The sales pitch is always compelling. A single system that connects your inventory, finance, HR, procurement, and sales. Real-time dashboards. Automated reporting. For any business owner drowning in disconnected systems, the promise of an ERP is irresistible.</p>
+
+      <p>The reality is more complicated. An ERP system is not a product you install. It is a transformation you undertake. The software is perhaps 30% of the equation. The remaining 70% is process redesign, data preparation, staff training, change management, and ongoing support. Most vendors will not tell you this.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img18}
+          alt="Business dashboard showing ERP analytics and real-time reporting across departments"
+          width={2222}
+          height={1250}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>A well-configured ERP dashboard gives business leaders real-time visibility into operations</figcaption>
+      </figure>
+
+      <p>For African SMEs, additional challenges compound the difficulty. Internet connectivity is unreliable in many locations. Power outages interrupt work. Staff digital literacy varies enormously. Multiple currencies, languages, and regulatory environments add layers of complexity that off-the-shelf systems rarely anticipate.</p>
+
+      <h2>Mistake 1: Buying the Software Before Planning the Implementation</h2>
+
+      <p>This is the most expensive mistake, and the most common. A business owner attends a trade show, sees a demonstration, and signs a licensing agreement. The software arrives. Nobody has mapped the business processes it needs to support.</p>
+
+      <p>I have walked into organisations where an ERP had been purchased twelve months prior and was still not operational. The reason was always the same: no implementation plan. No one had documented how purchase orders flow from request to approval. No one had defined who authorises what. No one had mapped the chart of accounts to the system's financial module.</p>
+
+      <p><strong>The cost of this mistake is staggering.</strong> A mid-range ERP licence for an SME in Kampala runs between $5,000 and $25,000 annually. Add implementation consulting, and the total investment can reach $50,000 or more. When that investment sits unused for a year, the business has effectively burned cash.</p>
+
+      <p><strong>How to avoid it:</strong> Before you speak to a single vendor, document your business processes. Map every workflow that the ERP will touch — procurement, sales, inventory, finance, HR. Identify the pain points you need the system to solve. Define your requirements in writing. The planning phase should take four to eight weeks for a typical SME. It is the most valuable time you will spend on the entire project.</p>
+
+      <h2>Mistake 2: Treating Staff Training as an Afterthought</h2>
+
+      <p>Here is a pattern I have seen in every country I have worked in: the system is configured, the data is loaded, the go-live date arrives — and the staff cannot use it. Training was a two-hour session the week before launch. Half the team missed it. The other half forgot everything by Monday.</p>
+
+      <p>During my time managing ERP operations across Senegal, Sierra Leone, and Guinea for <a href="/en/about/">Dynapharm Africa</a>, training was the single most important factor in determining whether a country office succeeded or failed with the system.</p>
+
+      <p>In Senegal, where the team was based in the same office as the IT function, we could provide daily support and reinforcement. Adoption was strong within three months. In Sierra Leone, the Freetown office operated with limited bandwidth, meaning remote support was unreliable. We had to redesign the entire training programme — hands-on workshops over two weeks, simplified quick-reference guides with screenshots, and a local champion for peer support.</p>
+
+      <p>In Guinea, the challenge was compounded by language. The Conakry team operated primarily in French, and the ERP interface had been configured in English. Before any training could be effective, we had to localise the system — translating menu labels, form fields, reports, and error messages.</p>
+
+      <p><strong>How to avoid it:</strong> Budget 15-20% of your total ERP investment for training. Plan a minimum of two weeks of hands-on training before go-live, structured by module. Identify and train internal champions. Produce materials in the language your staff actually use. Schedule refresher sessions at 30, 60, and 90 days after launch.</p>
+
+      <h2>Mistake 3: Ignoring Data Migration Until the Last Minute</h2>
+
+      <figure class="my-8 flex justify-center">
+        <div class="max-w-sm">
+          <Image
+            src={img2}
+            alt="Database infrastructure forming the backbone of ERP systems — data migration requires careful planning"
+            width={600}
+            height={903}
+            class="article-img-portrait rounded-xl"
+            loading="lazy"
+          />
+          <figcaption>Database infrastructure forms the backbone of any ERP system</figcaption>
+        </div>
+      </figure>
+
+      <p>Every business moving to an ERP has existing data: customer records, product catalogues, financial histories, supplier details. That data lives in spreadsheets, paper ledgers, old software systems, and sometimes in people's heads. Moving it into the new ERP is one of the most technically demanding parts of any implementation.</p>
+
+      <p>I once worked with a retail business in Kampala that had 4,500 product SKUs. The data lived across seven different Excel files maintained by three different staff members. Product names were inconsistent — the same item appeared as "Paracetamol 500mg," "PARA 500," and "Paracetamol tabs." Pricing had not been updated in two of the files for over a year.</p>
+
+      <p>Cleaning and standardising that data took three weeks of dedicated work. Had we attempted it in the final days before launch, the go-live would have been a disaster.</p>
+
+      <p><strong>How to avoid it:</strong> Start data migration planning in the first week of the project. Audit all existing data sources and assess their quality. Assign a data owner for each module. Build a data migration checklist: field mapping, deduplication, validation rules, test imports, and final verification. Run at least two test migrations before the live cutover. Budget four to six weeks.</p>
+
+      <h2>Mistake 4: Choosing Complexity Over Fit</h2>
+
+      <p>Many SMEs fall into the trap of selecting an ERP designed for large enterprises. The logic seems sound — buy the most powerful system now so you will not outgrow it. In practice, the result is a system that is over-engineered, expensive to maintain, and intimidating for your staff.</p>
+
+      <p>I have seen businesses with ten employees running SAP Business One, paying annual maintenance fees that exceed their entire IT budget. I have seen companies licensing modules they will never use.</p>
+
+      <p><strong>How to avoid it:</strong> Match the system to your business, not your ambitions. Start with the modules you need today — typically finance, inventory, and sales. For SMEs in Uganda and across East Africa, consider solutions that understand the local business environment: multi-currency support, <a href="/en/services/">mobile money integration</a>, offline capability, and compliance with local tax authorities like URA.</p>
+
+      <h2>A Better Approach: The Phased Implementation</h2>
+
+      <figure class="my-8">
+        <Image
+          src={img4}
+          alt="Structured phased approach to ERP implementation with digital workflow visualization"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>A structured, phased approach dramatically improves ERP success rates</figcaption>
+      </figure>
+
+      <p>The most successful ERP implementations I have managed follow a phased approach rather than the "big bang" deployment that fails more often than it succeeds.</p>
+
+      <p><strong>Phase 1: Foundation (Weeks 1-4).</strong> Map business processes. Document requirements. Evaluate and select the system. Assemble the implementation team with an internal project sponsor.</p>
+
+      <p><strong>Phase 2: Core Configuration (Weeks 5-10).</strong> Configure the first modules — typically finance and inventory. Begin data migration. Start training the core team.</p>
+
+      <p><strong>Phase 3: Pilot (Weeks 11-14).</strong> Go live with core modules in a single department or location. Monitor daily. Fix issues immediately. Gather feedback and refine.</p>
+
+      <p><strong>Phase 4: Expansion (Weeks 15-22).</strong> Roll out additional modules. Extend to additional locations. Continue training and support.</p>
+
+      <p><strong>Phase 5: Optimisation (Ongoing).</strong> Fine-tune reports and dashboards. Automate routine processes. Review performance against original objectives.</p>
+
+      <p>This approach takes five to six months for a full rollout versus the eight to twelve weeks that aggressive vendors promise. But it succeeds. When we restructured the Dynapharm West Africa rollout using this model, we went from a system that three country offices were largely ignoring to one that all three used daily for core operations.</p>
+
+      <h2>Getting ERP Implementation Right in Africa</h2>
+
+      <p>ERP implementation in Africa does not fail because the technology is inadequate. It fails because businesses underestimate the human, organisational, and contextual factors that determine success. The software is the easy part. The hard part is the planning, the training, the data preparation, and the sustained commitment to change management.</p>
+
+      <p>If you are considering an ERP system, start with three questions: What business problems am I trying to solve? Are my processes documented and ready? Do I have the internal capacity to manage this change, or do I need help?</p>
+
+      <p>Answering those questions honestly will save you more money than any vendor discount ever could.</p>
+
+      <p>Ready to discuss your ERP strategy? <a href="/en/services/">Learn more about our consulting services</a> or <a href="/en/contact/">get in touch directly</a> to schedule a consultation. You can also <a href="/en/about/">read more about our experience</a> working with businesses across the continent.</p>
+
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-navy-200">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-navy-100 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-navy-600">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Technology and Business Consultant with over 15 years of experience across more than 10 African countries. Founder of Chwezi Digital Solutions, based in Kampala, Uganda.</p>
+          <a href="/en/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Get in Touch
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to All Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

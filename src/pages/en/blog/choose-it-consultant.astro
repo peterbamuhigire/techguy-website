@@ -1,0 +1,286 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/blog-images-8.jpg';
+import img5 from '@/assets/images/blog-images-5.jpg';
+import img15 from '@/assets/images/blog-images-15.jpg';
+import img6 from '@/assets/images/blog-images-6.jpg';
+
+const lang: Lang = 'en';
+const title = "How to Choose an IT Consultant in East Africa";
+const description = "A practical guide to choosing the right IT consultant in Kampala and East Africa — questions to ask, red flags, and what good engagement looks like.";
+const date = "2026-02-15";
+const category = "Business";
+const readTime = "10 min read";
+const slug = "choose-it-consultant";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}/en/blog/${slug}/`,
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Style B: Contained Hero -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-16">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="px-3 py-1 text-xs font-semibold bg-gold-400 text-navy-900 rounded-full">{category}</span>
+      <span class="text-sm text-navy-500">{readTime}</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 leading-tight max-w-3xl">
+      {title}
+    </h1>
+    <div class="mt-4 flex items-center gap-4 text-sm text-navy-500">
+      <span>By Peter Bamuhigire</span>
+      <span class="w-1 h-1 rounded-full bg-navy-400"></span>
+      <time datetime={date}>15 February 2026</time>
+    </div>
+    <div class="mt-8 rounded-2xl overflow-hidden">
+      <Image
+        src={heroImg}
+        alt="IT consultant in Kampala reviewing technology systems and infrastructure"
+        width={2222}
+        height={2222}
+        class="w-full h-[350px] md:h-[450px] object-cover"
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-gold">
+
+      <p>Every growing business in East Africa reaches a moment when technology decisions become too consequential to guess at. You need systems that work, infrastructure that scales, and someone who understands both the technology and the terrain. But finding a trustworthy IT consultant in Kampala — or anywhere in the region — is harder than it should be. The market is crowded with credential-heavy generalists and fly-by-night vendors who vanish after the invoice clears.</p>
+
+      <p>So how do you tell the difference between a consultant who will transform your operations and one who will drain your budget while delivering a half-finished system? This guide gives you a practical framework — whether you are a Ugandan SME deploying your first ERP, an NGO modernising field data collection, or a multinational expanding ICT infrastructure across the continent.</p>
+
+      <h2>When You Actually Need an IT Consultant</h2>
+
+      <p>Not every technology problem requires outside help. If your office Wi-Fi keeps dropping, you need a network technician, not a consultant. The distinction matters because it shapes your expectations and your budget.</p>
+
+      <p>You need a consultant when the problem is strategic — when the decision you make today will constrain or enable your business for years. Consider these scenarios: you are choosing between building a custom application or licensing an existing platform. You are migrating from on-premise servers to the cloud. You are rolling out a new system across multiple offices in different countries. You are losing data, losing customers, or losing staff productivity, and you cannot pinpoint why.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img5}
+          alt="Technician working on server infrastructure — the kind of decision that benefits from IT consulting guidance"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Infrastructure decisions benefit from expert consulting guidance</figcaption>
+      </figure>
+
+      <p>A consultant brings pattern recognition. They have seen what works and what fails across dozens of organisations. They know which ERP platforms collapse under East African internet conditions. They know which cloud providers have reliable data centres on the continent and which ones route your traffic through Europe, adding latency your staff will curse daily.</p>
+
+      <p>But here is the other side: if someone is selling you "digital transformation" before they have asked a single question about how your business actually operates, walk away. The best consultants listen first. They diagnose before they prescribe.</p>
+
+      <h2>The Five Questions You Must Ask Before Hiring</h2>
+
+      <p>Most business owners interview IT consultants the way they interview any service provider — they ask about qualifications and price. That is not enough. Here are five questions that separate serious consultants from salespeople.</p>
+
+      <p><strong>1. "Can you describe a project similar to mine that you have completed in this region?"</strong></p>
+
+      <p>Regional experience is not optional. A consultant who has built systems in Silicon Valley but has never dealt with power outages in Kampala, intermittent connectivity in rural Uganda, or mobile money integration in East Africa will make expensive assumptions.</p>
+
+      <p><strong>2. "What will you need from my team, and how much of their time?"</strong></p>
+
+      <p>Good consultants are honest about the demands they place on your staff. If they say "nothing — we handle everything," that is a red flag. Every successful technology project requires internal champions who understand the business processes being automated or improved.</p>
+
+      <p><strong>3. "How do you handle scope changes?"</strong></p>
+
+      <p>Projects evolve. The question is not whether scope will change but how the consultant manages it. Do they have a formal change request process? Do they re-estimate timelines and costs? Or do they simply keep billing until the money runs out?</p>
+
+      <p><strong>4. "What happens after handover?"</strong></p>
+
+      <p>A system is only as good as the people who maintain it. Ask whether the consultant provides training, documentation, and a defined support period. Ask who owns the source code and the data.</p>
+
+      <p><strong>5. "Can I speak with a past client — specifically one whose project did not go perfectly?"</strong></p>
+
+      <p>Any consultant can produce a glowing reference. The real test is how they handled difficulty. A consultant who is willing to connect you with a client who experienced challenges — and who can explain how they resolved those challenges — is demonstrating maturity and confidence.</p>
+
+      <h2>Red Flags That Should Stop You Immediately</h2>
+
+      <p>Over 15 years of consulting across more than 10 African countries, I have seen businesses waste millions on the wrong technology partners. The warning signs are almost always visible from the start, but people ignore them because they are eager to get moving.</p>
+
+      <p><strong>They cannot explain things in plain language.</strong> If a consultant hides behind jargon and cannot explain their proposed approach to a non-technical stakeholder, they either do not understand the problem well enough or they are deliberately obscuring it.</p>
+
+      <p><strong>They push a specific product before understanding your needs.</strong> Some consultants are resellers in disguise. They have a partnership with a particular software vendor, and every client gets the same recommendation regardless of fit. Ask directly: "Do you receive commissions or referral fees from any of the vendors you might recommend?"</p>
+
+      <figure class="my-8 flex justify-center">
+        <div class="max-w-sm">
+          <Image
+            src={img15}
+            alt="Technology should serve your business processes — beware consultants who force-fit solutions"
+            width={600}
+            height={733}
+            class="article-img-portrait rounded-xl"
+            loading="lazy"
+          />
+          <figcaption>Technology should serve your processes, not the other way around</figcaption>
+        </div>
+      </figure>
+
+      <p><strong>They have no local references.</strong> International credentials are valuable, but local execution is what matters. A consultant should be able to point to organisations in Uganda, Kenya, Rwanda, or Tanzania where they have delivered results.</p>
+
+      <p><strong>They quote a fixed price before scoping the work.</strong> A suspiciously precise quote delivered in the first meeting means one of two things: they are padding the price to cover unknowns, or they are underquoting to win the contract and will make it up through change orders later.</p>
+
+      <p><strong>They have no methodology.</strong> Ask how they run projects. If the answer is vague — "we are agile" or "we are flexible" — press harder. You want to hear about specific phases, deliverables, review points, and sign-off processes.</p>
+
+      <p><strong>They resist putting things in writing.</strong> If a consultant is reluctant to document the scope, deliverables, timeline, and payment terms in a formal agreement, do not proceed. Verbal agreements breed disputes.</p>
+
+      <h2>What a Good Engagement Actually Looks Like</h2>
+
+      <p>A manufacturing client in Kampala once approached me after a painful experience with their previous IT provider. They had paid for a custom inventory management system that was delivered nine months late, lacked basic reporting features, and crashed whenever more than five users logged in simultaneously. The vendor blamed the client's internet connection. The client blamed the vendor's competence. Neither was entirely wrong, but the root cause was simpler: nobody had documented what the system was supposed to do before development began.</p>
+
+      <p>When we took over the project, we spent the first three weeks doing nothing but listening. We sat with warehouse staff, finance managers, procurement officers, and the managing director. We mapped their actual workflows — not the ones in the employee handbook, but the real ones, with all their workarounds and informal processes. Only then did we propose a solution.</p>
+
+      <p>That solution was not even custom software. It turned out that an existing ERP platform, properly configured and integrated with their mobile money provider, could handle 90% of their needs at a fraction of the cost of a bespoke build. We configured it, trained their team, wrote documentation in both English and the terminology their warehouse staff actually used, and stayed on for three months of post-launch support.</p>
+
+      <p>That is what good engagement looks like. It follows a pattern:</p>
+
+      <p><strong>Discovery first.</strong> The consultant invests genuine time understanding your business. This phase should produce a written document that you review and approve before any further work begins.</p>
+
+      <p><strong>Clear milestones.</strong> The project is broken into phases with defined deliverables. You are never more than a few weeks away from a checkpoint where you can evaluate progress.</p>
+
+      <p><strong>Transparent communication.</strong> Good consultants send regular status updates without being asked. They surface problems early rather than hiding them.</p>
+
+      <p><strong>Knowledge transfer.</strong> The goal is not to create dependency. A good consultant builds your team's capacity alongside delivering the technical solution. When they leave, your people should be able to operate and maintain whatever was built.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img6}
+          alt="Collaborative consulting relationship where the client's team gains capability alongside the deliverable"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>The best consulting relationships are collaborative — your team gains capability</figcaption>
+      </figure>
+
+      <p><strong>Defined support period.</strong> After handover, there should be a clearly scoped support window — typically 30 to 90 days — during which the consultant addresses bugs, answers questions, and helps your team stabilise the new system.</p>
+
+      <h2>Budget Expectations for East African Businesses</h2>
+
+      <p>Let us talk about money honestly, because this is where many business owners feel most uncertain.</p>
+
+      <p>IT consulting rates in East Africa vary enormously. A freelance developer might charge UGX 50,000 to 150,000 per hour. An established consultancy with senior expertise typically charges between UGX 200,000 and 500,000 per hour, or works on project-based fees.</p>
+
+      <p>The right question is not "how much per hour?" but "what is the total cost of the outcome I need?" A cheaper consultant who takes three times as long, or who delivers a system that requires constant fixes, is far more expensive in the end.</p>
+
+      <p><strong>For small projects</strong> — setting up cloud infrastructure, configuring an existing platform, building a simple website — expect to invest between UGX 3 million and 15 million. The timeline should be 2 to 6 weeks.</p>
+
+      <p><strong>For medium projects</strong> — custom application development, ERP implementation, multi-site network design — budget between UGX 20 million and 80 million. These projects typically run 2 to 6 months.</p>
+
+      <p><strong>For large projects</strong> — enterprise system rollouts across multiple countries, full digital transformation programmes — costs can range from UGX 100 million upward. These engagements often span 6 to 18 months.</p>
+
+      <p>Always negotiate a payment schedule tied to deliverables, not calendar dates. Pay a reasonable deposit — 20% to 30% is standard — and release subsequent payments as milestones are met. Never pay the full amount upfront.</p>
+
+      <h2>How to Evaluate Proposals Side by Side</h2>
+
+      <p>When you reach the proposal stage, you will likely have two or three candidates. Here is a framework for comparing them fairly.</p>
+
+      <p><strong>Technical approach.</strong> Does the proposal demonstrate understanding of your specific situation, or does it read like a template? Look for references to your industry, your scale, and the constraints you discussed during discovery.</p>
+
+      <p><strong>Team composition.</strong> Who will actually do the work? Some firms send their best people to the pitch and their least experienced staff to the project. Ask for names and CVs of the people assigned to your engagement.</p>
+
+      <p><strong>Risk management.</strong> Does the proposal acknowledge potential challenges and explain how they will be mitigated? A proposal that promises smooth sailing with no caveats is either naive or dishonest.</p>
+
+      <p><strong>References.</strong> By this stage, you should have spoken with at least one past client of each candidate. Ask: "Would you hire them again?"</p>
+
+      <p><strong>Cultural fit.</strong> This one is underrated. You will be working closely with this consultant for weeks or months. Do they communicate in a way that works for your organisation? Technical brilliance without professional courtesy is a recipe for conflict.</p>
+
+      <h2>Making the Decision With Confidence</h2>
+
+      <p>Choosing an IT consultant is ultimately a judgement call, but it does not have to be a gamble. If you have followed this framework — identified a genuine need, asked the right questions, watched for red flags, evaluated proposals rigorously, and spoken with references — you have done the due diligence that most organisations skip.</p>
+
+      <p>The technology landscape in East Africa is maturing rapidly. Businesses in Kampala and across the region are building sophisticated digital capabilities that rival operations anywhere in the world. But that progress depends on making sound technology partnerships — choosing consultants who bring genuine expertise, regional understanding, and a commitment to outcomes over invoices.</p>
+
+      <p>At <a href="/en/about/">Tech Guy</a>, we have spent over 15 years building that kind of practice. From deploying ICT infrastructure across West Africa with Dynapharm to building SaaS platforms like Maduuka and Aqar, our approach has always been the same: listen deeply, design carefully, build solidly, and stay accountable long after handover.</p>
+
+      <p>You can <a href="/en/services/">explore our full range of services</a>, <a href="/en/about/">learn more about our story and approach</a>, or <a href="/en/contact/">get in touch directly</a> to discuss your needs. The right technology partner is out there. Now you know how to find them.</p>
+
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-gold-300">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-gold-100 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-gold-700">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Technology and Business Consultant with over 15 years of experience across more than 10 African countries. Founder of Chwezi Digital Solutions, based in Kampala, Uganda.</p>
+          <a href="/en/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Get in Touch
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to All Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

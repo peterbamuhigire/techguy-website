@@ -1,0 +1,240 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/blog-images-1.jpg';
+import img18 from '@/assets/images/blog-images-18.jpg';
+import img2 from '@/assets/images/blog-images-2.jpg';
+import img4 from '@/assets/images/blog-images-4.jpg';
+
+const lang: Lang = 'fr';
+const title = "Implémentation ERP : Ce Que les PME Font Mal et Comment Bien Faire";
+const description = "Évitez les erreurs coûteuses d'implémentation ERP que commettent les PME africaines. Stratégies éprouvées pour réussir votre déploiement ERP en Afrique.";
+const date = "2026-02-01";
+const category = "ERP";
+const readTime = "11 min de lecture";
+const slug = "erp-implementation-mistakes";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/fr/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}/fr/blog/${slug}/`,
+  "inLanguage": "fr-FR",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/fr/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Style C: Split Hero -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-16">
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 text-xs font-semibold bg-navy-700 text-warm-white rounded-full">{category}</span>
+          <span class="text-sm text-navy-500">{readTime}</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-navy-900 leading-tight">
+          {title}
+        </h1>
+        <div class="mt-4 flex items-center gap-4 text-sm text-navy-500">
+          <span>Par Peter Bamuhigire</span>
+          <span class="w-1 h-1 rounded-full bg-navy-400"></span>
+          <time datetime={date}>1 février 2026</time>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden">
+        <Image
+          src={heroImg}
+          alt="Hologramme de système ERP avec des icônes de gestion d'entreprise"
+          width={2222}
+          height={1391}
+          class="w-full h-[300px] md:h-[400px] object-cover"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Retour au Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-navy">
+
+      <p>Quand je suis arrivé à Dakar en 2019 pour prendre en charge les opérations TIC régionales d'une entreprise de produits de santé présente au Sénégal, en Sierra Leone et en Guinée, je m'attendais à trouver un système ERP fonctionnel. L'entreprise avait investi plus de 25 millions de francs CFA en licences et en frais d'installation dix-huit mois plus tôt. À Freetown, les magasiniers continuaient de noter les mouvements de stock sur des cahiers. À Conakry, l'équipe financière n'avait jamais ouvert une session. Le bureau de Dakar ne l'utilisait que pour éditer des factures. Dix-huit mois et 25 millions de FCFA, et l'entreprise tournait encore sous Excel.</p>
+
+      <p>Cette situation n'a rien d'exceptionnel. Selon Panorama Consulting, plus de 50 % des projets ERP dépassent leur budget initial, et environ 60 % ne produisent pas les bénéfices attendus. Pour les PME d'Abidjan, de Douala ou de Kampala, les conséquences sont d'autant plus graves : le budget pour recommencer après un échec n'existe tout simplement pas.</p>
+
+      <p>Au cours des quinze dernières années, j'ai conçu, déployé et redressé des systèmes ERP dans plus de dix pays africains. Voici ce qui ne fonctionne pas — et comment vous pouvez faire autrement.</p>
+
+      <h2>La Promesse Face à la Réalité du Déploiement ERP en Afrique</h2>
+
+      <p>Le discours commercial est toujours séduisant. Un système unique reliant stocks, finances, ressources humaines. Des tableaux de bord en temps réel. Mais un ERP n'est pas un produit que vous installez. C'est une transformation. Le logiciel ne représente qu'environ 30 % de l'équation. Les 70 % restants relèvent de la refonte des processus, de la préparation des données, de la formation et de la gestion du changement.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img18}
+          alt="Un tableau de bord ERP bien configuré offre aux dirigeants une visibilité en temps réel sur les opérations"
+          width={2222}
+          height={1250}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Un tableau de bord ERP bien configuré offre une visibilité en temps réel</figcaption>
+      </figure>
+
+      <p>Pour les PME africaines, la connexion internet reste instable. Les coupures d'électricité interrompent le travail. La maîtrise informatique du personnel varie considérablement. La gestion multidevise — franc CFA, dollar, leone — ajoute une complexité que les solutions standard anticipent rarement.</p>
+
+      <h2>Erreur n° 1 : Acheter le Logiciel Avant de Planifier le Déploiement</h2>
+
+      <p>C'est l'erreur la plus coûteuse. Un directeur général assiste à un salon, voit une démonstration, et signe un contrat. Personne n'a cartographié les processus métier.</p>
+
+      <p><strong>Le coût est considérable.</strong> Une licence ERP pour une PME à Dakar ou Kampala coûte entre 3 et 15 millions de FCFA par an. Avec les frais de conseil, l'investissement peut atteindre 30 millions de FCFA. Quand cet investissement reste inutilisé pendant un an, l'entreprise a brûlé de l'argent.</p>
+
+      <p><strong>Comment éviter cette erreur :</strong> Avant de contacter le moindre éditeur, documentez vos processus métier. Cartographiez chaque flux de travail. Comptez quatre à huit semaines pour cette phase de planification.</p>
+
+      <h2>Erreur n° 2 : Considérer la Formation Comme un Détail Secondaire</h2>
+
+      <p>Lorsque je dirigeais les opérations ERP de <a href="/fr/about/">Dynapharm Africa</a> au Sénégal, en Sierra Leone et en Guinée, la formation était le facteur déterminant. Au Sénégal, l'accompagnement quotidien a permis une adoption solide en trois mois.</p>
+
+      <p>En Sierra Leone, nous avons repensé le programme : ateliers pratiques sur deux semaines, guides de référence simplifiés, champion local. En Guinée, il a fallu localiser le système en français avant que toute formation puisse porter ses fruits.</p>
+
+      <p><strong>Comment éviter cette erreur :</strong> Prévoyez 15 à 20 % de votre investissement ERP pour la formation. Planifiez deux semaines minimum de formation pratique. Produisez tous les supports dans la langue de travail de votre personnel.</p>
+
+      <h2>Erreur n° 3 : Négliger la Migration des Données</h2>
+
+      <figure class="my-8 flex justify-center">
+        <div class="max-w-sm">
+          <Image
+            src={img2}
+            alt="L'infrastructure de base de données constitue l'épine dorsale de tout système ERP"
+            width={600}
+            height={903}
+            class="article-img-portrait rounded-xl"
+            loading="lazy"
+          />
+          <figcaption>La migration des données exige une planification rigoureuse</figcaption>
+        </div>
+      </figure>
+
+      <p>J'ai accompagné une entreprise à Kampala avec 4 500 références produits réparties sur sept fichiers Excel. Les noms de produits étaient incohérents. Le nettoyage a demandé trois semaines de travail intensif.</p>
+
+      <p><strong>Comment éviter cette erreur :</strong> Lancez la planification de la migration dès la première semaine. Désignez un responsable par module. Réalisez au minimum deux migrations de test. Prévoyez quatre à six semaines.</p>
+
+      <h2>Erreur n° 4 : Choisir la Complexité Plutôt Que l'Adéquation</h2>
+
+      <p>J'ai vu des entreprises de dix employés à Douala faire tourner SAP Business One, en payant des frais de maintenance qui dépassaient la totalité de leur budget informatique.</p>
+
+      <p><strong>Comment éviter cette erreur :</strong> Adaptez le système à votre entreprise telle qu'elle est. Commencez par les modules dont vous avez besoin aujourd'hui. Pour les PME africaines, privilégiez les solutions avec gestion multidevise, intégration mobile (Orange Money, MTN MoMo, Wave), capacité hors ligne, et conformité fiscale locale.</p>
+
+      <h2>Une Meilleure Approche : la Mise en Place par Étapes</h2>
+
+      <figure class="my-8">
+        <Image
+          src={img4}
+          alt="Une approche structurée et progressive du déploiement ERP améliore les taux de réussite"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Une approche progressive améliore considérablement les taux de réussite</figcaption>
+      </figure>
+
+      <p><strong>Phase 1 : Fondations (Semaines 1 à 4).</strong> Cartographier les processus. Documenter les exigences. Constituer l'équipe de mise en œuvre.</p>
+
+      <p><strong>Phase 2 : Configuration du socle (Semaines 5 à 10).</strong> Configurer les premiers modules. Lancer la migration des données. Débuter la formation.</p>
+
+      <p><strong>Phase 3 : Pilote (Semaines 11 à 14).</strong> Mettre en production dans un seul service. Suivre l'utilisation au quotidien. Corriger immédiatement.</p>
+
+      <p><strong>Phase 4 : Extension (Semaines 15 à 22).</strong> Déployer les modules supplémentaires. Étendre aux autres sites.</p>
+
+      <p><strong>Phase 5 : Optimisation (En continu).</strong> Affiner les rapports. Automatiser les processus répétitifs.</p>
+
+      <p>Cette approche prend cinq à six mois, mais elle fonctionne. Lorsque nous avons restructuré le déploiement Dynapharm avec ce modèle, les trois bureaux sont passés de l'ignorance du système à une utilisation quotidienne. La clé a été la patience — commencer par Dakar, valider, puis répliquer à Freetown et Conakry en adaptant à chaque fois.</p>
+
+      <h2>Réussir la Mise en Place de Votre ERP en Afrique</h2>
+
+      <p>L'implémentation ERP en Afrique n'échoue pas parce que la technologie est inadéquate. Elle échoue parce que les entreprises sous-estiment les facteurs humains et organisationnels. Le logiciel, c'est la partie facile.</p>
+
+      <p>Posez-vous trois questions : Quels problèmes métier est-ce que je cherche à résoudre ? Mes processus sont-ils documentés ? Ai-je la capacité interne de gérer cette transformation ?</p>
+
+      <p>Répondre honnêtement vous fera économiser davantage que n'importe quelle remise commerciale.</p>
+
+      <p><a href="/fr/services/">Découvrez nos services de conseil</a> ou <a href="/fr/contact/">contactez-nous directement</a> pour planifier une consultation. Vous pouvez également <a href="/fr/about/">en savoir plus sur notre expérience</a> à travers le continent.</p>
+
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-navy-200">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-navy-100 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-navy-600">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Consultant en technologie et en stratégie d'entreprise avec plus de 15 ans d'expérience dans plus de 10 pays africains. Fondateur de Chwezi Digital Solutions, basé à Kampala, en Ouganda.</p>
+          <a href="/fr/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Nous Contacter
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Retour aux Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

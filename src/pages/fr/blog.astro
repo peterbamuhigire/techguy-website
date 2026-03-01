@@ -2,30 +2,56 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
 import { t, type Lang } from '@/utils/i18n';
+
+import imgCustomSoftware from '@/assets/images/blog-images-3.jpg';
+import imgItConsultant from '@/assets/images/blog-images-8.jpg';
+import imgErp from '@/assets/images/blog-images-1.jpg';
+import imgWebsiteCosts from '@/assets/images/blog-images-9.jpg';
 
 const lang: Lang = 'fr';
 
 const blogPosts = [
   {
     title: 'Pourquoi les Entreprises Africaines Ont Besoin de Logiciels Sur Mesure',
+    slug: 'custom-software-africa',
     category: 'Technologie',
-    gradient: 'from-navy-700 via-navy-800 to-navy-900',
+    date: '1 mars 2026',
+    readTime: '10 min de lecture',
+    excerpt: 'Logiciel sur mesure en Afrique : pourquoi les solutions prêtes à l\'emploi échouent et comment les logiciels personnalisés produisent des résultats.',
+    image: imgCustomSoftware,
+    imageAlt: 'Professionnel africain des TI gérant des systèmes dans un centre de données',
   },
   {
-    title: 'Leçons Tirées de la Gestion des TIC dans Trois Pays d\'Afrique de l\'Ouest',
+    title: 'Comment Choisir un Consultant IT en Afrique de l\'Est',
+    slug: 'choose-it-consultant',
     category: 'Affaires',
-    gradient: 'from-navy-800 via-gold-900 to-navy-900',
-  },
-  {
-    title: 'Le Cas des Applications Mobiles Offline-First sur les Marchés Africains',
-    category: 'Afrique',
-    gradient: 'from-navy-900 via-navy-700 to-gold-800',
+    date: '15 février 2026',
+    readTime: '12 min de lecture',
+    excerpt: 'Guide pratique pour choisir le bon consultant IT à Kampala et en Afrique — questions à poser, signaux d\'alerte et bonnes pratiques.',
+    image: imgItConsultant,
+    imageAlt: 'Consultant IT évaluant les systèmes technologiques et l\'infrastructure',
   },
   {
     title: 'Implémentation ERP : Ce Que les PME Font Mal et Comment Bien Faire',
+    slug: 'erp-implementation-mistakes',
     category: 'ERP',
-    gradient: 'from-gold-800 via-navy-800 to-navy-900',
+    date: '1 février 2026',
+    readTime: '11 min de lecture',
+    excerpt: 'Évitez les erreurs coûteuses d\'implémentation ERP que commettent les PME africaines. Stratégies éprouvées pour réussir votre déploiement.',
+    image: imgErp,
+    imageAlt: 'Hologramme de système ERP avec des icônes de gestion d\'entreprise',
+  },
+  {
+    title: 'Ce Que Coûte Réellement un Site Web en Ouganda',
+    slug: 'website-costs-uganda',
+    category: 'Technologie',
+    date: '15 janvier 2026',
+    readTime: '12 min de lecture',
+    excerpt: 'Combien coûte un site web en Ouganda ? Ventilation honnête des prix en UGX, USD et FCFA — des sites modèles aux constructions sur mesure.',
+    image: imgWebsiteCosts,
+    imageAlt: 'Des professionnels examinent un site web sur une tablette',
   },
 ];
 ---
@@ -35,7 +61,6 @@ const blogPosts = [
   description="Articles sur le développement logiciel, le conseil IT et les solutions technologiques pour les entreprises africaines. Perspectives de Peter Bamuhigire, consultant IT à Kampala."
   lang={lang}
   page="blog"
-  noindex
 >
   <!-- Hero Banner -->
   <section class="bg-navy-900 pt-20 md:pt-24 pb-12 md:pb-16 geo-pattern">
@@ -50,60 +75,48 @@ const blogPosts = [
     </div>
   </section>
 
-  <!-- Coming Soon Section -->
+  <!-- Blog Articles Section -->
   <section class="py-16 md:py-24 bg-warm-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="fade-up text-center mb-12 md:mb-16">
-        <div class="inline-flex items-center gap-2 px-4 py-2 bg-gold-50 rounded-full mb-6">
-          <svg class="w-5 h-5 text-gold-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <span class="text-sm font-medium text-gold-700">Bientôt Disponible</span>
-        </div>
-        <h2 class="text-3xl md:text-4xl font-bold text-navy-900">
-          Articles en Préparation
-        </h2>
-        <p class="mt-4 text-lg text-navy-600 max-w-2xl mx-auto">
-          Peter prépare une collection de réflexions tirées de plus de 15 années d'expérience dans la création de solutions technologiques et le conseil à travers l'Afrique. Voici un aperçu de ce qui vous attend.
-        </p>
-      </div>
-
       <!-- Blog Post Cards Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-        {blogPosts.map((post, index) => (
-          <article class="fade-up group bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden">
-            <!-- Gradient Placeholder Image -->
-            <div class={`h-48 md:h-52 bg-gradient-to-br ${post.gradient} relative overflow-hidden`}>
-              <div class="absolute inset-0 flex items-center justify-center opacity-20">
-                <svg class="w-20 h-20 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                </svg>
-              </div>
-              <!-- Coming Soon Badge -->
+        {blogPosts.map((post) => (
+          <a href={`/${lang}/blog/${post.slug}/`} class="fade-up group bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden block">
+            <!-- Featured Image -->
+            <div class="h-48 md:h-52 overflow-hidden relative">
+              <Image
+                src={post.image}
+                alt={post.imageAlt}
+                width={700}
+                height={400}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
               <div class="absolute top-4 right-4">
                 <span class="inline-flex items-center px-3 py-1 text-xs font-semibold bg-white/90 backdrop-blur-sm text-navy-800 rounded-full">
-                  Bientôt Disponible
+                  {post.category}
                 </span>
               </div>
             </div>
             <!-- Card Content -->
             <div class="p-5 md:p-6">
-              <div class="mb-3">
-                <span class="inline-block px-3 py-1 text-xs font-medium bg-navy-50 text-navy-600 rounded-full">
-                  {post.category}
-                </span>
+              <div class="flex items-center gap-3 mb-3 text-sm text-navy-500">
+                <time>{post.date}</time>
+                <span class="w-1 h-1 rounded-full bg-navy-300"></span>
+                <span>{post.readTime}</span>
               </div>
-              <h3 class="text-lg md:text-xl font-bold text-navy-900 group-hover:text-navy-700 transition-colors leading-snug">
+              <h3 class="text-lg md:text-xl font-bold text-navy-900 group-hover:text-amber-accent transition-colors leading-snug">
                 {post.title}
               </h3>
-              <div class="mt-4 flex items-center gap-2 text-sm text-navy-400">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                </svg>
-                <span>Article en cours de rédaction</span>
+              <p class="mt-2 text-sm text-navy-600 line-clamp-2">
+                {post.excerpt}
+              </p>
+              <div class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-amber-accent group-hover:text-gold-700 transition-colors">
+                Lire l'Article
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
               </div>
             </div>
-          </article>
+          </a>
         ))}
       </div>
     </div>
@@ -127,10 +140,10 @@ const blogPosts = [
       <!-- Newsletter Form -->
       <div class="mt-8 fade-up" x-show="!submitted" x-transition>
         <form action="#" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto" @submit.prevent="submitted = true">
-          <label for="newsletter-email" class="sr-only">Adresse e-mail</label>
+          <label for="newsletter-email-fr" class="sr-only">Adresse e-mail</label>
           <input
             type="email"
-            id="newsletter-email"
+            id="newsletter-email-fr"
             name="email"
             required
             placeholder="Entrez votre adresse e-mail"

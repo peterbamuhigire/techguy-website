@@ -1,0 +1,211 @@
+{
+  "generated": "2026-03-01",
+  "blog_images": {
+    "blog-images-1.jpg": {
+      "width": 2222,
+      "height": 1391,
+      "orientation": "landscape",
+      "description": "Business professional presenting holographic ERP system with business process icons over city skyline",
+      "article": "erp-implementation-mistakes",
+      "role": "featured",
+      "alt_en": "ERP system implementation concept showing integrated business processes for African enterprises",
+      "alt_fr": "Concept de mise en œuvre d'un système ERP montrant les processus métier intégrés pour les entreprises africaines"
+    },
+    "blog-images-2.jpg": {
+      "width": 2222,
+      "height": 3346,
+      "orientation": "portrait",
+      "description": "Blue illuminated database server stack on circuit board, digital illustration",
+      "article": "erp-implementation-mistakes",
+      "role": "in-article",
+      "alt_en": "Database architecture powering modern ERP systems",
+      "alt_fr": "Architecture de base de données alimentant les systèmes ERP modernes"
+    },
+    "blog-images-3.jpg": {
+      "width": 2222,
+      "height": 1250,
+      "orientation": "landscape",
+      "description": "African IT professional reviewing data on tablet in a server room data centre",
+      "article": "custom-software-africa",
+      "role": "featured",
+      "alt_en": "IT professional managing custom software systems in an African data centre",
+      "alt_fr": "Professionnel IT gérant des systèmes logiciels sur mesure dans un centre de données africain"
+    },
+    "blog-images-4.jpg": {
+      "width": 2222,
+      "height": 1481,
+      "orientation": "landscape",
+      "description": "Laptop workspace with coffee, glasses, notebook and digital data overlay",
+      "article": "erp-implementation-mistakes",
+      "role": "in-article",
+      "alt_en": "Technology workspace for planning ERP system deployment",
+      "alt_fr": "Espace de travail technologique pour la planification du déploiement d'un système ERP"
+    },
+    "blog-images-5.jpg": {
+      "width": 2222,
+      "height": 1481,
+      "orientation": "landscape",
+      "description": "IT professional working on server rack with laptop showing terminal commands",
+      "article": "choose-it-consultant",
+      "role": "in-article",
+      "alt_en": "Experienced IT consultant managing server infrastructure in East Africa",
+      "alt_fr": "Consultant IT expérimenté gérant une infrastructure serveur en Afrique de l'Est"
+    },
+    "blog-images-6.jpg": {
+      "width": 2222,
+      "height": 1481,
+      "orientation": "landscape",
+      "description": "Person holding tablet device at desk with laptop, warm ambient lighting",
+      "article": "choose-it-consultant",
+      "role": "in-article",
+      "alt_en": "Professional reviewing technology solutions on tablet and laptop",
+      "alt_fr": "Professionnel examinant des solutions technologiques sur tablette et ordinateur portable"
+    },
+    "blog-images-7.jpg": {
+      "width": 2222,
+      "height": 1172,
+      "orientation": "landscape",
+      "description": "Hands typing on Apple keyboard at wooden desk with notebook",
+      "article": "custom-software-africa",
+      "role": "in-article",
+      "alt_en": "Software developer building custom applications for African businesses",
+      "alt_fr": "Développeur logiciel créant des applications sur mesure pour les entreprises africaines"
+    },
+    "blog-images-8.jpg": {
+      "width": 2222,
+      "height": 2222,
+      "orientation": "square",
+      "description": "IT Information Technology text with multiple computer monitors showing dashboards in modern office",
+      "article": "choose-it-consultant",
+      "role": "featured",
+      "alt_en": "IT consulting workspace with multiple systems and dashboards in East Africa",
+      "alt_fr": "Espace de travail de conseil IT avec plusieurs systèmes et tableaux de bord en Afrique de l'Est"
+    },
+    "blog-images-9.jpg": {
+      "width": 2222,
+      "height": 1483,
+      "orientation": "landscape",
+      "description": "People browsing a website on tablet device at cafe table with travel items",
+      "article": "website-costs-uganda",
+      "role": "featured",
+      "alt_en": "User browsing a professionally designed website on tablet in Uganda",
+      "alt_fr": "Utilisateur naviguant sur un site web professionnel sur tablette en Ouganda"
+    },
+    "blog-images-10.jpg": {
+      "width": 2222,
+      "height": 1245,
+      "orientation": "landscape",
+      "description": "Hand touching illuminated circuit board surface, close-up technology shot",
+      "article": "website-costs-uganda",
+      "role": "in-article",
+      "alt_en": "The technology behind professional website development in Uganda",
+      "alt_fr": "La technologie derrière le développement de sites web professionnels en Ouganda"
+    },
+    "blog-images-11.jpg": {
+      "width": 2222,
+      "height": 1483,
+      "orientation": "landscape",
+      "description": "Laptop displaying Computer System graphic with gears, coffee cup, and plants on desk",
+      "article": "custom-software-africa",
+      "role": "in-article",
+      "alt_en": "Computer systems designed for African business workflows and requirements",
+      "alt_fr": "Systèmes informatiques conçus pour les flux de travail et les besoins des entreprises africaines"
+    },
+    "blog-images-12.jpg": {
+      "width": 2222,
+      "height": 3333,
+      "orientation": "portrait",
+      "description": "Person interacting with tablet showing map data in modern tech control room",
+      "article": "website-costs-uganda",
+      "role": "in-article",
+      "alt_en": "Technology professional working with digital systems in East Africa",
+      "alt_fr": "Professionnel de la technologie travaillant avec des systèmes numériques en Afrique de l'Est"
+    },
+    "blog-images-13.jpg": {
+      "width": 2222,
+      "height": 2778,
+      "orientation": "portrait",
+      "description": "Close-up of circuit board with orange and gold illuminated components",
+      "article": "custom-software-africa",
+      "role": "in-article",
+      "alt_en": "Custom-built technology infrastructure powering African business solutions",
+      "alt_fr": "Infrastructure technologique sur mesure alimentant les solutions d'entreprise africaines"
+    },
+    "blog-images-14.jpg": {
+      "width": 2222,
+      "height": 2963,
+      "orientation": "portrait",
+      "description": "Server rack with blue network connectivity icons overlay",
+      "article": "spare",
+      "role": "spare",
+      "alt_en": "Server infrastructure and network connectivity",
+      "alt_fr": "Infrastructure serveur et connectivité réseau"
+    },
+    "blog-images-15.jpg": {
+      "width": 2222,
+      "height": 2721,
+      "orientation": "portrait",
+      "description": "Person holding smartphone with mechanical gears and network illustration above",
+      "article": "choose-it-consultant",
+      "role": "in-article",
+      "alt_en": "Choosing the right IT consultant to integrate your business systems in East Africa",
+      "alt_fr": "Choisir le bon consultant IT pour intégrer vos systèmes d'entreprise en Afrique de l'Est"
+    },
+    "blog-images-16.jpg": {
+      "width": 2222,
+      "height": 1245,
+      "orientation": "landscape",
+      "description": "3D rendered black database server stack on minimal grey background",
+      "article": "spare",
+      "role": "spare",
+      "alt_en": "Database server infrastructure",
+      "alt_fr": "Infrastructure de serveur de base de données"
+    },
+    "blog-images-17.jpg": {
+      "width": 2222,
+      "height": 2963,
+      "orientation": "portrait",
+      "description": "Server rack with blue technology icons including code, wifi, cloud, security",
+      "article": "website-costs-uganda",
+      "role": "in-article",
+      "alt_en": "The hosting and server technology behind website costs in Uganda",
+      "alt_fr": "La technologie d'hébergement et de serveur derrière les coûts des sites web en Ouganda"
+    },
+    "blog-images-18.jpg": {
+      "width": 2222,
+      "height": 1250,
+      "orientation": "landscape",
+      "description": "Laptop with blue digital business analytics dashboard and technology icons overlay",
+      "article": "erp-implementation-mistakes",
+      "role": "in-article",
+      "alt_en": "Business analytics dashboard used in ERP implementation planning",
+      "alt_fr": "Tableau de bord d'analyse d'entreprise utilisé dans la planification de la mise en œuvre ERP"
+    }
+  },
+  "article_assignments": {
+    "custom-software-africa": {
+      "featured": "blog-images-3.jpg",
+      "in_article": ["blog-images-7.jpg", "blog-images-13.jpg", "blog-images-11.jpg"],
+      "layout": "A",
+      "accent": "navy"
+    },
+    "choose-it-consultant": {
+      "featured": "blog-images-8.jpg",
+      "in_article": ["blog-images-5.jpg", "blog-images-15.jpg", "blog-images-6.jpg"],
+      "layout": "B",
+      "accent": "gold"
+    },
+    "erp-implementation-mistakes": {
+      "featured": "blog-images-1.jpg",
+      "in_article": ["blog-images-18.jpg", "blog-images-2.jpg", "blog-images-4.jpg"],
+      "layout": "C",
+      "accent": "navy"
+    },
+    "website-costs-uganda": {
+      "featured": "blog-images-9.jpg",
+      "in_article": ["blog-images-10.jpg", "blog-images-12.jpg", "blog-images-17.jpg"],
+      "layout": "D",
+      "accent": "warm"
+    }
+  }
+}

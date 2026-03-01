@@ -1,0 +1,248 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/blog-images-8.jpg';
+import img5 from '@/assets/images/blog-images-5.jpg';
+import img15 from '@/assets/images/blog-images-15.jpg';
+import img6 from '@/assets/images/blog-images-6.jpg';
+
+const lang: Lang = 'fr';
+const title = "Comment Choisir un Consultant IT en Afrique de l'Est";
+const description = "Guide pratique pour choisir le bon consultant IT à Kampala et en Afrique de l'Est — questions à poser, signaux d'alerte et bonnes pratiques.";
+const date = "2026-02-15";
+const category = "Affaires";
+const readTime = "12 min de lecture";
+const slug = "choose-it-consultant";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/fr/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}/fr/blog/${slug}/`,
+  "inLanguage": "fr-FR",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/fr/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Style B: Contained Hero -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-16">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="px-3 py-1 text-xs font-semibold bg-gold-400 text-navy-900 rounded-full">{category}</span>
+      <span class="text-sm text-navy-500">{readTime}</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 leading-tight max-w-3xl">
+      {title}
+    </h1>
+    <div class="mt-4 flex items-center gap-4 text-sm text-navy-500">
+      <span>Par Peter Bamuhigire</span>
+      <span class="w-1 h-1 rounded-full bg-navy-400"></span>
+      <time datetime={date}>15 février 2026</time>
+    </div>
+    <div class="mt-8 rounded-2xl overflow-hidden">
+      <Image
+        src={heroImg}
+        alt="Consultant IT à Kampala évaluant les systèmes technologiques et l'infrastructure"
+        width={2222}
+        height={2222}
+        class="w-full h-[350px] md:h-[450px] object-cover"
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Retour au Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-gold">
+
+      <p>Il arrive un moment dans la vie de toute entreprise africaine en croissance où les décisions technologiques deviennent trop lourdes de conséquences pour être laissées au hasard. Que vous soyez une PME à Dakar, une société à Abidjan qui modernise sa gestion des données, ou un groupe basé à Douala qui étend son infrastructure TIC — vous avez besoin de systèmes fiables et d'un partenaire qui comprend autant la technologie que les réalités du terrain africain.</p>
+
+      <p>Mais trouver un consultant IT digne de confiance à Kampala, à Kigali ou dans n'importe quelle capitale de la région demeure un parcours semé d'embûches. Comment distinguer le consultant qui transformera véritablement vos opérations de celui qui épuisera votre budget en vous livrant un système à moitié achevé ?</p>
+
+      <h2>Quand Fait-on Réellement Appel à un Consultant IT ?</h2>
+
+      <p>Tous les problèmes technologiques ne nécessitent pas un intervenant extérieur. Si votre connexion Wi-Fi tombe régulièrement, vous avez besoin d'un technicien réseau, pas d'un consultant.</p>
+
+      <p>Vous avez besoin d'un consultant lorsque le problème est d'ordre stratégique — lorsque la décision que vous prenez aujourd'hui va contraindre ou libérer votre entreprise pour les années à venir. Vous hésitez entre développer une application sur mesure ou acquérir une licence. Vous déployez un nouveau système dans plusieurs bureaux. Vous perdez des données et ne parvenez pas à en identifier la cause.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img5}
+          alt="Un technicien intervenant sur une baie de serveurs — le type de décision d'infrastructure qui bénéficie d'un accompagnement expert"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Les décisions d'infrastructure bénéficient d'un accompagnement expert</figcaption>
+      </figure>
+
+      <p>Un consultant apporte une capacité de reconnaissance de schémas. Il sait quelles plateformes ERP s'effondrent sous les conditions de connectivité africaines. Il connaît les fournisseurs cloud disposant de centres de données fiables sur le continent.</p>
+
+      <p>Mais si quelqu'un vous vend une « transformation numérique » avant même d'avoir posé une seule question sur le fonctionnement réel de votre entreprise, prenez vos distances. Les meilleurs consultants écoutent d'abord. Ils diagnostiquent avant de prescrire.</p>
+
+      <h2>Les Cinq Questions Incontournables Avant Toute Embauche</h2>
+
+      <p><strong>1. « Pouvez-vous décrire un projet similaire au mien que vous avez réalisé dans cette région ? »</strong> L'expérience régionale n'est pas un luxe. Un consultant qui n'a jamais été confronté aux coupures d'électricité à Kampala ou à l'intégration du paiement mobile en Afrique de l'Ouest fera des hypothèses coûteuses.</p>
+
+      <p><strong>2. « De quoi aurez-vous besoin de la part de mon équipe ? »</strong> S'ils répondent « rien du tout — nous gérons tout », c'est un signal d'alerte. Tout projet réussi nécessite des relais internes.</p>
+
+      <p><strong>3. « Comment gérez-vous les évolutions de périmètre ? »</strong> Les projets évoluent. Dispose-t-il d'un processus formel de demande de modification ?</p>
+
+      <p><strong>4. « Que se passe-t-il après la livraison ? »</strong> Demandez si le consultant fournit une formation, une documentation complète et une période de support définie. Demandez à qui appartiennent le code source et les données.</p>
+
+      <p><strong>5. « Puis-je m'entretenir avec un ancien client — dont le projet ne s'est pas déroulé parfaitement ? »</strong> Le véritable test réside dans sa gestion des difficultés.</p>
+
+      <h2>Les Signaux d'Alerte Qui Doivent Vous Arrêter Net</h2>
+
+      <p><strong>Ils ne parviennent pas à s'exprimer en langage clair.</strong> Si un consultant se réfugie derrière le jargon technique, c'est qu'il ne maîtrise pas suffisamment le problème — ou qu'il cherche délibérément à l'obscurcir.</p>
+
+      <p><strong>Ils préconisent un produit spécifique avant de comprendre vos besoins.</strong> Posez la question directement : « Percevez-vous des commissions de la part des éditeurs que vous pourriez nous conseiller ? »</p>
+
+      <figure class="my-8 flex justify-center">
+        <div class="max-w-sm">
+          <Image
+            src={img15}
+            alt="La technologie doit servir vos processus métier — méfiez-vous des consultants qui forcent l'adoption de solutions inadaptées"
+            width={600}
+            height={733}
+            class="article-img-portrait rounded-xl"
+            loading="lazy"
+          />
+          <figcaption>La technologie doit servir vos processus, pas l'inverse</figcaption>
+        </div>
+      </figure>
+
+      <p><strong>Ils n'ont aucune référence locale.</strong> Un consultant doit pouvoir vous orienter vers des organisations en Ouganda, au Kenya, en Côte d'Ivoire ou au Sénégal où il a livré des résultats concrets.</p>
+
+      <p><strong>Ils annoncent un prix fixe avant d'avoir cadré le projet.</strong> Les consultants sérieux investissent du temps dans la compréhension du problème avant de s'engager sur un montant.</p>
+
+      <p><strong>Ils n'ont aucune méthodologie.</strong> Vous devez entendre parler de phases précises, de livrables définis, de points de revue.</p>
+
+      <p><strong>Ils rechignent à formaliser par écrit.</strong> Les accords verbaux sont des nids à litiges.</p>
+
+      <h2>À Quoi Ressemble un Accompagnement Réussi</h2>
+
+      <p>Un client du secteur manufacturier à Kampala nous a contactés après une expérience douloureuse avec son précédent prestataire. L'entreprise avait payé pour un système de gestion des stocks sur mesure, livré avec neuf mois de retard, dépourvu de fonctionnalités de reporting élémentaires. Le prestataire accusait la connexion internet. Le client accusait l'incompétence du prestataire. La cause profonde était plus simple : personne n'avait documenté ce que le système devait accomplir.</p>
+
+      <p>Lorsque nous avons repris ce projet, nous avons consacré les trois premières semaines à l'écoute. Nous avons cartographié les flux de travail réels — pas ceux du manuel de procédures. La solution n'était même pas un logiciel sur mesure : une plateforme ERP existante, correctement configurée, pouvait couvrir 90 % des besoins.</p>
+
+      <p><strong>La découverte en premier.</strong> Le consultant investit un temps réel pour comprendre votre entreprise.</p>
+
+      <p><strong>Des jalons clairement définis.</strong> Le projet est découpé en phases assorties de livrables précis.</p>
+
+      <p><strong>Une communication transparente.</strong> Les bons consultants font remonter les problèmes tôt.</p>
+
+      <p><strong>Le transfert de compétences.</strong> L'objectif n'est pas de créer une dépendance.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img6}
+          alt="Les meilleures relations de conseil sont collaboratives — votre équipe doit gagner en compétences"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Les meilleures relations de conseil sont collaboratives</figcaption>
+      </figure>
+
+      <p><strong>Une période de support définie.</strong> Après la livraison, une fenêtre de 30 à 90 jours pour stabiliser le nouveau système.</p>
+
+      <h2>Attentes Budgétaires pour les Entreprises Africaines</h2>
+
+      <p>Les tarifs de conseil IT en Afrique varient considérablement. Ne demandez pas « combien de l'heure ? » mais plutôt « quel est le coût total du résultat dont j'ai besoin ? »</p>
+
+      <p><strong>Pour les petits projets</strong> — prévoyez 3 à 15 millions UGX (environ 500 000 à 2 500 000 FCFA). Délai : 2 à 6 semaines.</p>
+
+      <p><strong>Pour les projets moyens</strong> — budgétisez entre 20 et 80 millions UGX (environ 3 500 000 à 14 000 000 FCFA). Délai : 2 à 6 mois.</p>
+
+      <p><strong>Pour les grands projets</strong> — les coûts peuvent dépasser 100 millions UGX (environ 17 000 000 FCFA et au-delà). Durée : 6 à 18 mois.</p>
+
+      <p>Négociez systématiquement un échéancier de paiement adossé aux livrables. Ne réglez jamais la totalité en amont.</p>
+
+      <h2>Prendre la Décision en Toute Confiance</h2>
+
+      <p>Choisir un consultant IT relève d'un jugement — mais ce n'est pas un pari si vous avez suivi ce cadre méthodique.</p>
+
+      <p>Chez <a href="/fr/about/">Tech Guy</a>, nous avons consacré plus de quinze ans à construire ce type de pratique. Du déploiement d'infrastructures TIC en Afrique de l'Ouest avec Dynapharm à la conception de plateformes SaaS telles que Maduuka et Aqar, notre approche demeure la même : écouter en profondeur, concevoir avec soin, bâtir solidement.</p>
+
+      <p>Vous pouvez <a href="/fr/services/">découvrir l'ensemble de nos services</a>, <a href="/fr/about/">en savoir plus sur notre approche</a>, ou <a href="/fr/contact/">nous contacter directement</a>. Le bon partenaire technologique existe. Vous savez désormais comment le trouver.</p>
+
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-gold-300">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-gold-100 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-gold-700">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Consultant en technologie et en stratégie d'entreprise avec plus de 15 ans d'expérience dans plus de 10 pays africains. Fondateur de Chwezi Digital Solutions, basé à Kampala, en Ouganda.</p>
+          <a href="/fr/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Nous Contacter
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Retour aux Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

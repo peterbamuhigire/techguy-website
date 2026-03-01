@@ -1,0 +1,155 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import WebsiteCard from '@/components/WebsiteCard.astro';
+import CTASection from '@/components/CTASection.astro';
+import WhatsAppButton from '@/components/WhatsAppButton.astro';
+import { t, type Lang } from '@/utils/i18n';
+
+import imgMaduuka from '@assets/images/website-maduuka.com.jpg';
+import imgAqar from '@assets/images/website-aqarproperty.co.uk.jpg';
+import imgChwezi from '@assets/images/website-chwezi.co.za.jpg';
+import imgDynapharm from '@assets/images/website-dynapharmafrica.com.jpg';
+import imgBirdc from '@assets/images/website-birdc.ug.jpg';
+import imgTechguy from '@assets/images/website-techguypeter.com.jpg';
+
+const lang: Lang = 'fr';
+
+const websites = [
+  {
+    id: 'maduuka',
+    title: 'Maduuka',
+    url: 'maduuka.com',
+    description: 'Site vitrine de la plateforme de gestion tout-en-un Maduuka — point de vente, inventaire, comptabilité, pharmacie et restauration au service des PME dans huit pays africains.',
+    techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
+    image: imgMaduuka,
+    imageAlt: 'Site web de la plateforme de gestion Maduuka',
+  },
+  {
+    id: 'aqar',
+    title: 'Aqar Property',
+    url: 'aqarproperty.co.uk',
+    description: 'Site produit du logiciel de gestion immobilière Aqar — bases de données locataires, suivi des loyers, planification de la maintenance et rapports financiers. Développé chez Chwezi Core Systems.',
+    techStack: ['WordPress', 'Elementor', 'PHP'],
+    image: imgAqar,
+    imageAlt: 'Site web du logiciel de gestion immobilière Aqar',
+  },
+  {
+    id: 'chwezi',
+    title: 'Chwezi Core Systems',
+    url: 'chwezi.co.za',
+    description: 'Site institutionnel de Chwezi Core Systems Limited — cabinet intégré de conseil en TIC et développement logiciel basé à Kampala, offrant des services en technologie, conseil aux entreprises et sécurité à travers l\'Afrique de l\'Est.',
+    techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
+    image: imgChwezi,
+    imageAlt: 'Site institutionnel de Chwezi Core Systems',
+  },
+  {
+    id: 'dynapharm',
+    title: 'Dynapharm Africa',
+    url: 'dynapharmafrica.com',
+    description: 'Site e-commerce bilingue pour Dynapharm Africa — présentant plus de 90 produits naturels de santé répartis en huit catégories, avec une plateforme de recrutement de distributeurs dans plus de 40 pays africains.',
+    techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
+    image: imgDynapharm,
+    imageAlt: 'Site web de Dynapharm Africa, produits de santé naturels',
+  },
+  {
+    id: 'birdc',
+    title: 'BIRDC',
+    url: 'birdc.ug',
+    description: 'Site institutionnel trilingue du Banana Industrial Research and Development Centre — institution de référence en recherche bananière en Afrique, présentant les programmes de R&D, la gamme de produits Tooke et les installations de formation à Bushenyi, Ouganda.',
+    techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
+    image: imgBirdc,
+    imageAlt: 'Site web du BIRDC — Centre de Recherche et Développement Industriel de la Banane',
+  },
+  {
+    id: 'techguy',
+    title: 'TechGuy Peter',
+    url: 'techguypeter.com',
+    description: 'Le site que vous consultez en ce moment — portfolio professionnel de Peter Bamuhigire, consultant IT et développeur logiciel basé à Kampala, Ouganda. Plus de 15 ans d\'expérience au service d\'organisations dans plus de 10 pays africains et à l\'international.',
+    techStack: ['Astro', 'Tailwind CSS', 'Alpine.js', 'GSAP'],
+    image: imgTechguy,
+    imageAlt: 'Site web de conseil TechGuy Peter',
+    isSelf: true,
+  },
+];
+
+const siteUrl = 'https://techguypeter.com';
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Portfolio de Conception Web — Peter Bamuhigire",
+  "description": t('websites.meta_description', lang),
+  "url": `${siteUrl}/fr/websites/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": websites.map((site, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "WebSite",
+        "name": site.title,
+        "url": `https://${site.url}`,
+      }
+    }))
+  }
+};
+---
+
+<BaseLayout
+  title="Portfolio de Conception Web — Peter Bamuhigire, Kampala"
+  description={t('websites.meta_description', lang)}
+  lang={lang}
+  page="websites"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+
+  <!-- Hero -->
+  <section class="bg-navy-900 geo-pattern pt-20 md:pt-24 pb-14 md:pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white fade-up">
+        {t('websites.title', lang)}
+      </h1>
+      <div class="mt-4 h-1 w-20 rounded-full bg-gold-400 mx-auto"></div>
+      <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-navy-200 leading-relaxed fade-up">
+        {t('websites.subtitle', lang)}
+      </p>
+    </div>
+  </section>
+
+  <!-- Website Grid -->
+  <section class="py-16 md:py-24 bg-warm-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Portfolio de Conception Web"
+        subtitle="Des sites web rapides, distinctifs et pensés mobile d'abord — sans lourdeur WordPress, sans modèles génériques."
+      />
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {websites.map((site) => (
+          <WebsiteCard
+            id={site.id}
+            title={site.title}
+            url={site.url}
+            description={site.description}
+            techStack={site.techStack}
+            image={site.image}
+            imageAlt={site.imageAlt}
+            isSelf={site.isSelf ?? false}
+            lang={lang}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    lang={lang}
+    title={t('websites.cta.title', lang)}
+    subtitle={t('websites.cta.description', lang)}
+  />
+
+  <!-- WhatsApp -->
+  <WhatsAppButton lang={lang} />
+</BaseLayout>

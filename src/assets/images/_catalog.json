@@ -182,6 +182,62 @@
       "alt_fr": "Tableau de bord d'analyse d'entreprise utilisé dans la planification de la mise en œuvre ERP"
     }
   },
+  "website_screenshots": {
+    "website-maduuka.com.jpg": {
+      "width": 1260,
+      "height": 990,
+      "orientation": "landscape",
+      "description": "Maduuka multi-vendor marketplace platform homepage screenshot",
+      "category": "websites",
+      "alt_en": "Maduuka marketplace platform website screenshot",
+      "alt_fr": "Capture d'écran du site web de la plateforme Maduuka"
+    },
+    "website-aqarproperty.co.uk.jpg": {
+      "width": 1246,
+      "height": 1017,
+      "orientation": "landscape",
+      "description": "Aqar Property management software website screenshot — developed at Chwezi Core Systems",
+      "category": "websites",
+      "alt_en": "Aqar Property management software website screenshot",
+      "alt_fr": "Capture d'écran du site web du logiciel de gestion immobilière Aqar"
+    },
+    "website-chwezi.co.za.jpg": {
+      "width": 1235,
+      "height": 1009,
+      "orientation": "landscape",
+      "description": "Chwezi Core Systems digital agency website screenshot",
+      "category": "websites",
+      "alt_en": "Chwezi Core Systems website screenshot",
+      "alt_fr": "Capture d'écran du site web de Chwezi Core Systems"
+    },
+    "website-dynapharmafrica.com.jpg": {
+      "width": 1258,
+      "height": 1009,
+      "orientation": "landscape",
+      "description": "Dynapharm Africa health products company website screenshot",
+      "category": "websites",
+      "alt_en": "Dynapharm Africa website screenshot",
+      "alt_fr": "Capture d'écran du site web de Dynapharm Africa"
+    },
+    "website-birdc.ug.jpg": {
+      "width": 1247,
+      "height": 929,
+      "orientation": "landscape",
+      "description": "BIRDC — Banana Industrial Research and Development Centre website screenshot",
+      "category": "websites",
+      "alt_en": "BIRDC website screenshot",
+      "alt_fr": "Capture d'écran du site web du BIRDC"
+    },
+    "website-techguypeter.com.jpg": {
+      "width": 1269,
+      "height": 931,
+      "orientation": "landscape",
+      "description": "TechGuy Peter personal portfolio and consulting website screenshot",
+      "category": "websites",
+      "alt_en": "TechGuy Peter website screenshot",
+      "alt_fr": "Capture d'écran du site web TechGuy Peter"
+    }
+  },
   "article_assignments": {
     "custom-software-africa": {
       "featured": "blog-images-3.jpg",

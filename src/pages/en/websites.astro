@@ -1,0 +1,155 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import WebsiteCard from '@/components/WebsiteCard.astro';
+import CTASection from '@/components/CTASection.astro';
+import WhatsAppButton from '@/components/WhatsAppButton.astro';
+import { t, type Lang } from '@/utils/i18n';
+
+import imgMaduuka from '@assets/images/website-maduuka.com.jpg';
+import imgAqar from '@assets/images/website-aqarproperty.co.uk.jpg';
+import imgChwezi from '@assets/images/website-chwezi.co.za.jpg';
+import imgDynapharm from '@assets/images/website-dynapharmafrica.com.jpg';
+import imgBirdc from '@assets/images/website-birdc.ug.jpg';
+import imgTechguy from '@assets/images/website-techguypeter.com.jpg';
+
+const lang: Lang = 'en';
+
+const websites = [
+  {
+    id: 'maduuka',
+    title: 'Maduuka',
+    url: 'maduuka.com',
+    description: 'Marketing website for the Maduuka all-in-one business management platform — POS, inventory, accounting, pharmacy, and restaurant modules serving SMEs across eight African countries.',
+    techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
+    image: imgMaduuka,
+    imageAlt: 'Maduuka business management platform website',
+  },
+  {
+    id: 'aqar',
+    title: 'Aqar Property',
+    url: 'aqarproperty.co.uk',
+    description: 'Product website for the Aqar cloud-based property management software — tenant databases, rent tracking, maintenance scheduling, and financial reporting. Developed at Chwezi Core Systems.',
+    techStack: ['WordPress', 'Elementor', 'PHP'],
+    image: imgAqar,
+    imageAlt: 'Aqar Property management software website',
+  },
+  {
+    id: 'chwezi',
+    title: 'Chwezi Core Systems',
+    url: 'chwezi.co.za',
+    description: 'Corporate website for Chwezi Core Systems Limited — an integrated ICT consultancy and software development firm based in Kampala, delivering technology, business consulting, and security services across East Africa.',
+    techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
+    image: imgChwezi,
+    imageAlt: 'Chwezi Core Systems corporate website',
+  },
+  {
+    id: 'dynapharm',
+    title: 'Dynapharm Africa',
+    url: 'dynapharmafrica.com',
+    description: 'Bilingual e-commerce and corporate website for Dynapharm Africa — showcasing 90+ natural health products across eight categories, with a distributor recruitment platform serving 40+ African countries.',
+    techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
+    image: imgDynapharm,
+    imageAlt: 'Dynapharm Africa health products website',
+  },
+  {
+    id: 'birdc',
+    title: 'BIRDC',
+    url: 'birdc.ug',
+    description: 'Trilingual institutional website for the Banana Industrial Research and Development Centre — Africa\'s leading banana research institution, showcasing R&D programmes, the Tooke product line, and farmer training facilities in Bushenyi, Uganda.',
+    techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
+    image: imgBirdc,
+    imageAlt: 'BIRDC — Banana Industrial Research and Development Centre website',
+  },
+  {
+    id: 'techguy',
+    title: 'TechGuy Peter',
+    url: 'techguypeter.com',
+    description: 'This very website — a professional portfolio for Peter Bamuhigire, IT consultant and software developer based in Kampala, Uganda. Showcasing 15+ years of experience serving organisations across 10+ African countries and internationally.',
+    techStack: ['Astro', 'Tailwind CSS', 'Alpine.js', 'GSAP'],
+    image: imgTechguy,
+    imageAlt: 'TechGuy Peter personal consulting website',
+    isSelf: true,
+  },
+];
+
+const siteUrl = 'https://techguypeter.com';
+
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Website Design Portfolio — Peter Bamuhigire",
+  "description": t('websites.meta_description', lang),
+  "url": `${siteUrl}/en/websites/`,
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": websites.map((site, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "WebSite",
+        "name": site.title,
+        "url": `https://${site.url}`,
+      }
+    }))
+  }
+};
+---
+
+<BaseLayout
+  title="Website Design Portfolio — Peter Bamuhigire, Kampala"
+  description={t('websites.meta_description', lang)}
+  lang={lang}
+  page="websites"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+
+  <!-- Hero -->
+  <section class="bg-navy-900 geo-pattern pt-20 md:pt-24 pb-14 md:pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white fade-up">
+        {t('websites.title', lang)}
+      </h1>
+      <div class="mt-4 h-1 w-20 rounded-full bg-gold-400 mx-auto"></div>
+      <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-navy-200 leading-relaxed fade-up">
+        {t('websites.subtitle', lang)}
+      </p>
+    </div>
+  </section>
+
+  <!-- Website Grid -->
+  <section class="py-16 md:py-24 bg-warm-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Web Design Portfolio"
+        subtitle="Fast, distinctive, mobile-first websites built with modern standards — no WordPress bloat, no generic templates."
+      />
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {websites.map((site) => (
+          <WebsiteCard
+            id={site.id}
+            title={site.title}
+            url={site.url}
+            description={site.description}
+            techStack={site.techStack}
+            image={site.image}
+            imageAlt={site.imageAlt}
+            isSelf={site.isSelf ?? false}
+            lang={lang}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    lang={lang}
+    title={t('websites.cta.title', lang)}
+    subtitle={t('websites.cta.description', lang)}
+  />
+
+  <!-- WhatsApp -->
+  <WhatsAppButton lang={lang} />
+</BaseLayout>

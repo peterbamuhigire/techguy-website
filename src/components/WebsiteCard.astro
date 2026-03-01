@@ -1,0 +1,191 @@
+---
+import { Image } from 'astro:assets';
+import { t, type Lang } from '@/utils/i18n';
+
+interface Props {
+  title: string;
+  url: string;
+  description: string;
+  techStack: string[];
+  image: ImageMetadata;
+  imageAlt: string;
+  isSelf?: boolean;
+  lang: Lang;
+  id: string;
+}
+
+const { title, url, description, techStack, image, imageAlt, isSelf = false, lang, id } = Astro.props;
+---
+
+<div x-data="{ open: false }">
+  <!-- Card -->
+  <button
+    @click="open = true"
+    class="group block w-full text-left bg-white rounded-2xl shadow-lg shadow-navy-900/5 overflow-hidden border border-navy-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-up focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400 focus-visible:ring-offset-2"
+    aria-label={`View details for ${title}`}
+  >
+    <!-- Browser chrome bar -->
+    <div class="bg-navy-800 px-3 py-2 flex items-center gap-2">
+      <div class="flex items-center gap-1.5">
+        <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+        <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+      </div>
+      <div class="flex-1 bg-navy-700/60 rounded px-3 py-0.5 text-xs text-navy-300 truncate font-mono">
+        {url}
+      </div>
+    </div>
+
+    <!-- Screenshot -->
+    <div class="overflow-hidden">
+      <Image
+        src={image}
+        alt={imageAlt}
+        class="w-full h-48 md:h-52 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Card body -->
+    <div class="p-5">
+      <div class="flex items-center gap-2">
+        <h3 class="text-lg font-bold text-navy-900">{title}</h3>
+        {isSelf && (
+          <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-gold-100 text-gold-800">
+            {t('websites.modal.youAreHere', lang)}
+          </span>
+        )}
+      </div>
+      <p class="mt-2 text-sm text-navy-600 leading-relaxed line-clamp-2">{description}</p>
+      <div class="mt-3 flex flex-wrap gap-1.5">
+        {techStack.map((tech) => (
+          <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">{tech}</span>
+        ))}
+      </div>
+    </div>
+  </button>
+
+  <!-- Modal overlay -->
+  <template x-teleport="body">
+    <div
+      x-show="open"
+      x-cloak
+      class="fixed inset-0 z-[60] flex items-center justify-center p-4"
+      @keydown.escape.window="open = false"
+    >
+      <!-- Backdrop -->
+      <div
+        x-show="open"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="absolute inset-0 bg-navy-900/80 backdrop-blur-sm"
+        @click="open = false"
+      ></div>
+
+      <!-- Modal panel -->
+      <div
+        x-show="open"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-95"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-95"
+        class="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+        @click.stop
+      >
+        <!-- Close button -->
+        <button
+          @click="open = false"
+          class="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-navy-900/10 hover:bg-navy-900/20 text-navy-600 transition-colors"
+          aria-label={t('websites.modal.close', lang)}
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <!-- Browser chrome bar -->
+        <div class="bg-navy-800 rounded-t-2xl px-4 py-2.5 flex items-center gap-2">
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-red-400"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+            <span class="w-3 h-3 rounded-full bg-green-400"></span>
+          </div>
+          <div class="flex-1 bg-navy-700/60 rounded-md px-3 py-1 text-sm text-navy-300 truncate font-mono">
+            {url}
+          </div>
+        </div>
+
+        <!-- Screenshot -->
+        <Image
+          src={image}
+          alt={imageAlt}
+          class="w-full object-cover object-top"
+          loading="lazy"
+        />
+
+        <!-- Modal body -->
+        <div class="p-6 md:p-8">
+          <div class="flex items-center gap-3">
+            <h3 class="text-2xl font-bold text-navy-900">{title}</h3>
+            {isSelf && (
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-gold-100 text-gold-800">
+                {t('websites.modal.youAreHere', lang)}
+              </span>
+            )}
+          </div>
+
+          <p class="mt-3 text-navy-600 leading-relaxed">{description}</p>
+
+          <!-- Tech stack -->
+          <div class="mt-5">
+            <h4 class="text-sm font-semibold text-navy-500 uppercase tracking-wider">{t('websites.modal.tech', lang)}</h4>
+            <div class="mt-2 flex flex-wrap gap-2">
+              {techStack.map((tech) => (
+                <span class="text-sm font-mono px-3 py-1 rounded-lg bg-navy-50 text-navy-700 border border-navy-200">{tech}</span>
+              ))}
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="mt-6 flex flex-wrap gap-3">
+            {!isSelf && (
+              <a
+                href={`https://${url}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-amber-accent hover:bg-gold-600 text-white font-semibold rounded-lg transition-colors"
+              >
+                {t('websites.modal.visit', lang)}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+            )}
+            <button
+              @click="open = false"
+              class="inline-flex items-center gap-2 px-6 py-3 border border-navy-200 text-navy-600 hover:bg-navy-50 font-medium rounded-lg transition-colors"
+            >
+              {t('websites.modal.close', lang)}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+</div>
+
+<style>
+  [x-cloak] { display: none !important; }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

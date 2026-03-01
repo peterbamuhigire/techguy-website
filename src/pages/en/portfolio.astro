@@ -1,0 +1,433 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import CTASection from '@/components/CTASection.astro';
+import { t, type Lang } from '@/utils/i18n';
+
+const lang: Lang = 'en';
+---
+
+<BaseLayout
+  title="Portfolio — Peter Bamuhigire"
+  description="Products built, open-source contributions, and consulting engagements delivered across Africa and internationally by Peter Bamuhigire."
+  lang={lang}
+>
+  <!-- ═══════════════════════════════════════════════════════
+       HERO BANNER
+       ═══════════════════════════════════════════════════════ -->
+  <section class="bg-navy-900 geo-pattern pt-20 md:pt-24 pb-14 md:pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white fade-up">
+        Portfolio
+      </h1>
+      <div class="mt-4 h-1 w-20 rounded-full bg-gold-400 mx-auto"></div>
+      <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-navy-200 leading-relaxed fade-up">
+        A selection of products built, open-source projects contributed, and consulting
+        engagements delivered across Africa and internationally. This portfolio reflects
+        the breadth of Peter Bamuhigire's work &mdash; from SaaS platforms serving
+        businesses in multiple countries to institutional ICT management and strategic advisory.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       FLAGSHIP PRODUCTS
+       ═══════════════════════════════════════════════════════ -->
+  <section class="py-16 md:py-24 bg-warm-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Flagship Products"
+        subtitle="SaaS platforms built from real business problems, serving clients across Africa and beyond."
+      />
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <!-- Maduuka -->
+        <article class="bg-white rounded-2xl shadow-lg shadow-navy-900/5 overflow-hidden border border-navy-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-up">
+          <div class="bg-gradient-to-br from-navy-800 to-navy-600 rounded-xl h-48 flex items-center justify-center m-4">
+            <span class="text-2xl md:text-3xl font-heading font-bold text-gold-400">Maduuka</span>
+          </div>
+          <div class="p-6 pt-2">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-gold-100 text-gold-800">SaaS</span>
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-navy-100 text-navy-700">Business Management</span>
+            </div>
+            <h3 class="text-xl font-bold text-navy-900">Maduuka</h3>
+            <p class="mt-2 text-navy-600 text-sm leading-relaxed">
+              A multi-tenant SaaS bookkeeping and business management platform designed for
+              SMEs across Africa. Modules include POS, Inventory, Sales, Accounting, Pharmacy,
+              Restaurant, and Asset Management.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-sm text-navy-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Multi-language: English, French, Arabic, Swahili, Spanish
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Offline-capable Android app (Kotlin/Jetpack Compose)
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Multi-tenant: single shop to franchise operations
+              </li>
+            </ul>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">PHP</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">MySQL</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">Kotlin</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">REST API</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Aqar -->
+        <article class="bg-white rounded-2xl shadow-lg shadow-navy-900/5 overflow-hidden border border-navy-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-up">
+          <div class="bg-gradient-to-br from-navy-800 to-navy-600 rounded-xl h-48 flex items-center justify-center m-4">
+            <span class="text-2xl md:text-3xl font-heading font-bold text-gold-400">Aqar</span>
+          </div>
+          <div class="p-6 pt-2">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-gold-100 text-gold-800">PropTech</span>
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-navy-100 text-navy-700">Property Management</span>
+            </div>
+            <h3 class="text-xl font-bold text-navy-900">Aqar Property Management</h3>
+            <p class="mt-2 text-navy-600 text-sm leading-relaxed">
+              Property management software for landlords and property managers &mdash; tenant
+              management, rent tracking, and maintenance scheduling in one system. Serves clients
+              across borders, including in the United Kingdom.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-sm text-navy-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Complete tenant management and lease tracking
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Rent collection monitoring and arrears reporting
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Maintenance scheduling and financial reporting
+              </li>
+            </ul>
+            <div class="mt-5 flex flex-wrap items-center gap-2">
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">PHP</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">MySQL</span>
+              <a
+                href="https://aqarproperty.co.uk"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="ml-auto inline-flex items-center gap-1.5 text-xs font-medium text-amber-accent hover:text-gold-600 transition-colors"
+              >
+                Visit Site
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Chwezi Server Manager -->
+        <article class="bg-white rounded-2xl shadow-lg shadow-navy-900/5 overflow-hidden border border-navy-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 fade-up">
+          <div class="bg-gradient-to-br from-navy-800 to-navy-600 rounded-xl h-48 flex items-center justify-center m-4">
+            <span class="text-xl md:text-2xl font-heading font-bold text-gold-400 text-center px-4">Chwezi<br/>Server Manager</span>
+          </div>
+          <div class="p-6 pt-2">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-gold-100 text-gold-800">DevOps</span>
+              <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-navy-100 text-navy-700">Server Admin</span>
+            </div>
+            <h3 class="text-xl font-bold text-navy-900">Chwezi Server Manager</h3>
+            <p class="mt-2 text-navy-600 text-sm leading-relaxed">
+              A self-hosted server management tool providing complete server administration
+              from a single dashboard &mdash; domains, SSL, databases, cron, Git, and
+              WordPress deployment.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-sm text-navy-600">
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Domain management and DNS configuration
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                SSL provisioning, database ops, activity monitoring
+              </li>
+              <li class="flex items-start gap-2">
+                <svg class="w-4 h-4 mt-0.5 text-gold-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Git connections and WordPress deployment
+              </li>
+            </ul>
+            <div class="mt-5 flex flex-wrap items-center gap-2">
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-navy-50 text-navy-600 border border-navy-200">PHP</span>
+              <a
+                href="https://github.com/peterbamuhigire/server-manager"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="ml-auto inline-flex items-center gap-1.5 text-xs font-medium text-amber-accent hover:text-gold-600 transition-colors"
+              >
+                GitHub
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       OPEN-SOURCE PROJECTS
+       ═══════════════════════════════════════════════════════ -->
+  <section class="py-16 md:py-24 bg-warm-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Open-Source Projects"
+        subtitle="Tools and utilities shared with the developer community on GitHub."
+      />
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- MyWampSSL -->
+        <a
+          href="https://github.com/peterbamuhigire/MyWampSSL"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group block bg-navy-50 rounded-xl p-6 border border-navy-100 hover:border-gold-300 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 fade-up"
+        >
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-lg font-bold text-navy-900 group-hover:text-navy-700">MyWampSSL</h3>
+            <svg class="w-5 h-5 text-navy-400 group-hover:text-amber-accent transition-colors flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <p class="mt-2 text-sm text-navy-600 leading-relaxed">
+            A C# WinForms tool that automates the creation of trusted SSL certificates
+            and configures Apache and Windows for local WAMP server environments.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-white text-navy-600 border border-navy-200">C#</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-white text-navy-600 border border-navy-200">WinForms</span>
+          </div>
+        </a>
+
+        <!-- pyPDFLibrarianSort -->
+        <a
+          href="https://github.com/peterbamuhigire/pyPDFLibrarianSort"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group block bg-navy-50 rounded-xl p-6 border border-navy-100 hover:border-gold-300 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 fade-up"
+        >
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-lg font-bold text-navy-900 group-hover:text-navy-700">pyPDFLibrarianSort</h3>
+            <svg class="w-5 h-5 text-navy-400 group-hover:text-amber-accent transition-colors flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <p class="mt-2 text-sm text-navy-600 leading-relaxed">
+            A modern web interface for PDF file management with machine learning-powered
+            organisation capabilities. Simplifies sorting and categorising large PDF collections.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-white text-navy-600 border border-navy-200">Python</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-white text-navy-600 border border-navy-200">ML</span>
+          </div>
+        </a>
+
+        <!-- SRS Skills -->
+        <a
+          href="https://github.com/peterbamuhigire/srs-skills"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group block bg-navy-50 rounded-xl p-6 border border-navy-100 hover:border-gold-300 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 fade-up"
+        >
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-lg font-bold text-navy-900 group-hover:text-navy-700">SRS Skills</h3>
+            <svg class="w-5 h-5 text-navy-400 group-hover:text-amber-accent transition-colors flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <p class="mt-2 text-sm text-navy-600 leading-relaxed">
+            AI utilities for creating formal Software Requirements Specification documentation.
+            Streamlines the process of producing structured, professional SRS documents.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-white text-navy-600 border border-navy-200">Python</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-white text-navy-600 border border-navy-200">AI</span>
+          </div>
+        </a>
+
+        <!-- MySQLDevAssistant -->
+        <a
+          href="https://github.com/peterbamuhigire/MySQLDevAssistant"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group block bg-navy-50 rounded-xl p-6 border border-navy-100 hover:border-gold-300 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 fade-up"
+        >
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-lg font-bold text-navy-900 group-hover:text-navy-700">MySQLDevAssistant</h3>
+            <svg class="w-5 h-5 text-navy-400 group-hover:text-amber-accent transition-colors flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <p class="mt-2 text-sm text-navy-600 leading-relaxed">
+            A Database Development Assistant toolkit for MySQL development with test data
+            management and schema operations. Accelerates database development workflows.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-white text-navy-600 border border-navy-200">Python</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-white text-navy-600 border border-navy-200">MySQL</span>
+          </div>
+        </a>
+
+        <!-- Skills Web Dev -->
+        <a
+          href="https://github.com/peterbamuhigire/skills-web-dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group block bg-navy-50 rounded-xl p-6 border border-navy-100 hover:border-gold-300 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 fade-up"
+        >
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-lg font-bold text-navy-900 group-hover:text-navy-700">Skills Web Dev</h3>
+            <svg class="w-5 h-5 text-navy-400 group-hover:text-amber-accent transition-colors flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <p class="mt-2 text-sm text-navy-600 leading-relaxed">
+            Structured markdown learning materials covering web architecture, frontend design,
+            and strategic planning documentation. A curated knowledge collection.
+          </p>
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-white text-navy-600 border border-navy-200">PHP</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-white text-navy-600 border border-navy-200">Markdown</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONSULTING ENGAGEMENTS
+       ═══════════════════════════════════════════════════════ -->
+  <section class="py-16 md:py-24 bg-warm-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Consulting Engagements"
+        subtitle="Selected engagements spanning institutional ICT management, regional operations, and advisory services."
+      />
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Regional ERP Rollout -->
+        <article class="bg-white rounded-2xl shadow-lg shadow-navy-900/5 border border-navy-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 fade-up">
+          <div class="bg-navy-900 px-6 py-4">
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center gap-1.5 text-xs font-medium text-gold-400">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                Senegal, Sierra Leone, Guinea
+              </span>
+              <span class="text-xs text-navy-300">2019 &ndash; 2022</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-navy-900">Regional ERP Rollout</h3>
+            <p class="mt-1 text-sm font-medium text-gold-600">West Africa</p>
+            <p class="mt-3 text-sm text-navy-600 leading-relaxed">
+              Managed ICT operations and ERP systems across three West African countries
+              for a multinational health products company, operating in both French-speaking
+              and English-speaking environments.
+            </p>
+            <ul class="mt-4 space-y-2 text-sm text-navy-600">
+              <li class="flex items-start gap-2">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
+                Managed ICT across 3 countries simultaneously
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
+                Unified ERP systems and data management
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
+                Staff training in French and English
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
+                Continues remote MIS consulting
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- National Research Institution -->
+        <article class="bg-white rounded-2xl shadow-lg shadow-navy-900/5 border border-navy-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 fade-up">
+          <div class="bg-navy-900 px-6 py-4">
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center gap-1.5 text-xs font-medium text-gold-400">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                Kampala, Uganda
+              </span>
+              <span class="text-xs text-navy-300">2024 &ndash; present</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-navy-900">National Research Institution</h3>
+            <p class="mt-1 text-sm font-medium text-gold-600">ICT Modernisation</p>
+            <p class="mt-3 text-sm text-navy-600 leading-relaxed">
+              Leading the entire ICT function for a national research institution &mdash;
+              infrastructure management, systems development, and digital transformation.
+            </p>
+            <ul class="mt-4 space-y-2 text-sm text-navy-600">
+              <li class="flex items-start gap-2">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
+                Full responsibility for institutional ICT
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
+                Infrastructure and network administration
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
+                Digital transformation planning
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
+                Balancing innovation with stability
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ICT Consultancy Portfolio -->
+        <article class="bg-white rounded-2xl shadow-lg shadow-navy-900/5 border border-navy-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 fade-up">
+          <div class="bg-navy-900 px-6 py-4">
+            <div class="flex items-center justify-between">
+              <span class="inline-flex items-center gap-1.5 text-xs font-medium text-gold-400">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                Kampala, Uganda &amp; Regional
+              </span>
+              <span class="text-xs text-navy-300">2014 &ndash; present</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-navy-900">ICT Consultancy Portfolio</h3>
+            <p class="mt-1 text-sm font-medium text-gold-600">East Africa</p>
+            <p class="mt-3 text-sm text-navy-600 leading-relaxed">
+              A portfolio of consulting engagements providing systems analysis, solution design,
+              technology advisory, and custom software development to businesses and organisations
+              across East Africa.
+            </p>
+            <ul class="mt-4 space-y-2 text-sm text-navy-600">
+              <li class="flex items-start gap-2">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
+                Systems analysis and requirements engineering
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
+                Custom software development
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
+                Vendor evaluation and selection advisory
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold-500 flex-shrink-0"></span>
+                Ongoing retainer relationships
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CTA
+       ═══════════════════════════════════════════════════════ -->
+  <CTASection lang={lang} />
+</BaseLayout>

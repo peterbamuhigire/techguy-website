@@ -1,0 +1,269 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import CTASection from '@/components/CTASection.astro';
+import StatCard from '@/components/StatCard.astro';
+import { t, type Lang } from '@/utils/i18n';
+
+import peterHeadshot from '@/assets/images/team/peter-headshot.jpg';
+
+const lang: Lang = 'en';
+
+const timelineEntries = [
+  {
+    year: '2008',
+    location: 'Kampala',
+    title: 'Web Developer at Infinity Computers',
+    description: 'Built the foundation of a hands-on approach: web development and technical support, paired with direct exposure to the real technology challenges businesses face. Learned that the best solutions are the ones people can actually use.',
+  },
+  {
+    year: '2010 - 2014',
+    location: 'Freetown',
+    title: 'MIS Manager at Dynapharm Sierra Leone',
+    description: 'Full responsibility for building and maintaining business systems, training staff, and ensuring data integrity. Four years in West Africa shaped a guiding principle: technology must be built for the people who use it, not for the engineers who design it.',
+  },
+  {
+    year: '2014 - 2016',
+    location: 'Kampala',
+    title: 'ICT Consultant at EFICON',
+    description: 'Broadened exposure to different industries, scales of operation, and technology challenges. Conducted systems analysis, designed solutions, and delivered technology recommendations. This period confirmed a growing conviction: rather than implementing other people\'s solutions, it was time to build his own.',
+  },
+  {
+    year: '2016 - present',
+    location: 'Kampala',
+    title: 'Founded Chwezi Digital Solutions',
+    description: 'Launched an independent consultancy and product development practice. Built Maduuka, Aqar, and Chwezi Server Manager from real business problems encountered across consulting engagements. Products serving businesses across East Africa and internationally.',
+  },
+  {
+    year: '2019 - 2022',
+    location: 'Dakar',
+    title: 'Regional ICT Manager, Dynapharm Africa',
+    description: 'Expanded responsibilities to three countries: Senegal, Sierra Leone, and Guinea. Managed ERP systems, network infrastructure, staff training, and digital transformation across francophone and anglophone West Africa.',
+  },
+  {
+    year: '2024 - present',
+    location: 'Kampala',
+    title: 'Manager ICT, BIRD Center',
+    description: 'Managing the complete ICT function for a national agricultural research institution. Infrastructure management, systems development, network administration, and strategic technology planning — balancing innovation with operational stability.',
+  },
+];
+
+const philosophyCards = [
+  {
+    icon: 'kaizen',
+    title: 'Kaizen — Continuous Improvement',
+    description: 'The Japanese concept of continuous, incremental improvement is deeply embedded in the practice. Over 15 years, new skills acquired, new tools adopted, new markets entered. Not change for the sake of change, but a disciplined commitment to learning and adaptation. Recent adoption of AI-assisted development workflows is a natural extension of this philosophy.',
+  },
+  {
+    icon: 'results',
+    title: 'Results — Service With Impact',
+    description: 'Technology consulting that does not deliver measurable business outcomes is not serving its purpose. Every engagement focuses on systems that work reliably, processes that run more efficiently, and decisions informed by accurate data. The question is never "what can we build?" but "what does your business need?"',
+  },
+  {
+    icon: 'ethics',
+    title: 'Ethics — Integrity & Transparency',
+    description: 'Trust is the foundation of every professional relationship. Clear proposals, transparent pricing, realistic timelines, and honest assessments. If a project is not a good fit, Peter will say so. If a simpler solution will serve the need, he will recommend it rather than overselling. This approach has sustained client relationships spanning years and continents.',
+  },
+];
+
+const certifications = [
+  { year: '2023', name: 'AWS Cloud Practitioner Essentials' },
+  { year: '2022', name: 'Google Project Management Professional Certificate' },
+  { year: '2020', name: 'Cisco Certified Network Associate (CCNA) — Routing & Switching' },
+  { year: '2018', name: 'ITIL Foundation Certificate in IT Service Management' },
+  { year: '2015', name: 'Microsoft Certified Solutions Associate (MCSA) — SQL Server' },
+  { year: '2010', name: 'CompTIA A+ Certification' },
+];
+---
+
+<BaseLayout
+  title="About — Peter Bamuhigire"
+  description="The story of Peter Bamuhigire: 15+ years building technology solutions across Africa. From Kampala to Freetown to Dakar — a career driven by closing the gap between what businesses need and what technology delivers."
+  lang={lang}
+>
+  <!-- ═══════════════════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════════════════ -->
+  <section class="bg-navy-900 geo-pattern pt-20 md:pt-24 pb-16 md:pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <!-- Left: Text -->
+        <div class="order-2 lg:order-1 fade-up">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
+            Peter Bamuhigire's Story
+          </h1>
+          <div class="mt-4 h-1 w-20 rounded-full bg-gold-400"></div>
+          <p class="mt-6 text-lg text-navy-200 leading-relaxed">
+            Across Africa, there is a persistent gap between what businesses need from
+            technology and what is available to them. Enterprise software built for Western
+            markets does not always account for the realities of African business environments
+            &mdash; unreliable internet connectivity, multilingual operations, mobile-first
+            customers, and the need for systems that non-technical staff can use confidently.
+          </p>
+          <p class="mt-4 text-lg text-navy-200 leading-relaxed">
+            Peter Bamuhigire has spent over 15 years working to close that gap &mdash;
+            building technology solutions that are practical, sustainable, and designed for
+            the environments in which they operate.
+          </p>
+        </div>
+
+        <!-- Right: Headshot -->
+        <div class="order-1 lg:order-2 flex justify-center lg:justify-end fade-up">
+          <div class="relative">
+            <div class="absolute -inset-3 bg-gradient-to-br from-gold-400/20 to-gold-600/10 rounded-2xl blur-lg"></div>
+            <Image
+              src={peterHeadshot}
+              alt="Peter Bamuhigire — professional portrait"
+              class="relative rounded-2xl shadow-2xl shadow-navy-950/50 w-full max-w-md lg:max-w-lg object-cover"
+              widths={[400, 600, 800]}
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 500px"
+              loading="eager"
+            />
+            <!-- Decorative corner accent -->
+            <div class="absolute -bottom-3 -right-3 w-24 h-24 border-2 border-gold-400/30 rounded-xl"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CAREER JOURNEY TIMELINE
+       ═══════════════════════════════════════════════════════ -->
+  <section class="py-16 md:py-24 bg-warm-white overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Career Journey"
+        subtitle="From Kampala to Freetown to Dakar and back — building technology solutions across the continent."
+      />
+
+      <div class="relative">
+        <!-- Vertical line -->
+        <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-navy-200 md:-translate-x-0.5"></div>
+
+        {timelineEntries.map((entry, i) => (
+          <div class:list={[
+            'relative flex items-start mb-12 last:mb-0 fade-up',
+            'md:even:flex-row-reverse',
+          ]}>
+            {/* Gold dot */}
+            <div class="absolute left-6 md:left-1/2 w-4 h-4 bg-gold-500 rounded-full border-4 border-warm-white shadow-md -translate-x-1/2 z-10 mt-6"></div>
+
+            {/* Spacer for mobile left offset */}
+            <div class="w-12 flex-shrink-0 md:hidden"></div>
+
+            {/* Desktop spacer — takes up the other half */}
+            <div class="hidden md:block md:w-1/2"></div>
+
+            {/* Content card */}
+            <div class:list={[
+              'md:w-1/2 fade-up',
+              i % 2 === 0 ? 'md:pr-12' : 'md:pl-12',
+            ]}>
+              <div class="bg-white p-6 rounded-xl shadow-md shadow-navy-900/5 border border-navy-100 hover:shadow-lg transition-shadow duration-300">
+                <div class="flex items-center gap-3 mb-2">
+                  <span class="inline-block px-3 py-1 text-xs font-bold bg-navy-900 text-gold-400 rounded-full">
+                    {entry.year}
+                  </span>
+                  <span class="text-sm font-medium text-navy-500 flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    {entry.location}
+                  </span>
+                </div>
+                <h3 class="text-lg font-bold text-navy-900">{entry.title}</h3>
+                <p class="mt-2 text-sm text-navy-600 leading-relaxed">{entry.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       PHILOSOPHY
+       ═══════════════════════════════════════════════════════ -->
+  <section class="py-16 md:py-24 bg-warm-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Philosophy"
+        subtitle="Three principles that guide every engagement."
+      />
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {philosophyCards.map((card) => (
+          <div class="bg-white rounded-2xl p-8 shadow-md shadow-navy-900/5 border border-navy-100 hover:shadow-lg transition-shadow duration-300 fade-up">
+            {/* Icon */}
+            <div class="w-14 h-14 rounded-xl bg-navy-900 flex items-center justify-center mb-5">
+              {card.icon === 'kaizen' && (
+                <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                </svg>
+              )}
+              {card.icon === 'results' && (
+                <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              )}
+              {card.icon === 'ethics' && (
+                <svg class="w-7 h-7 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              )}
+            </div>
+            <h3 class="text-xl font-bold text-navy-900">{card.title}</h3>
+            <p class="mt-3 text-sm text-navy-600 leading-relaxed">{card.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CERTIFICATIONS
+       ═══════════════════════════════════════════════════════ -->
+  <section class="py-16 md:py-24 bg-warm-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        title="Certifications & Professional Development"
+        subtitle="Continuous investment in skills and industry-recognised credentials."
+      />
+
+      <div class="space-y-4">
+        {certifications.map((cert) => (
+          <div class="flex items-start gap-4 md:gap-6 bg-white rounded-xl p-5 border border-navy-100 shadow-sm hover:shadow-md transition-shadow duration-300 fade-up">
+            <span class="flex-shrink-0 inline-flex items-center justify-center w-16 h-10 rounded-lg bg-navy-900 text-gold-400 text-sm font-bold font-heading">
+              {cert.year}
+            </span>
+            <div class="flex-1 min-w-0">
+              <p class="text-base font-medium text-navy-900">{cert.name}</p>
+            </div>
+            <svg class="w-5 h-5 text-gold-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       KEY NUMBERS STRIP
+       ═══════════════════════════════════════════════════════ -->
+  <section class="bg-navy-900 geo-pattern py-14 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <StatCard number="15" label="Years Experience" />
+        <StatCard number="10" label="Countries Served" />
+        <StatCard number="3" label="SaaS Products Built" />
+        <StatCard number="6" label="Industries Served" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CTA
+       ═══════════════════════════════════════════════════════ -->
+  <CTASection lang={lang} />
+</BaseLayout>

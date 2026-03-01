@@ -1,0 +1,99 @@
+---
+import '../styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import type { Lang } from '@/utils/i18n';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: Lang;
+  ogImage?: string;
+  canonicalUrl?: string;
+}
+
+const { title, description, lang, ogImage = '/og-image.jpg', canonicalUrl } = Astro.props;
+const altLang = lang === 'en' ? 'fr' : 'en';
+const currentPath = Astro.url.pathname.replace(`/${lang}`, '');
+const altUrl = `/${altLang}${currentPath || '/'}`;
+const siteUrl = 'https://techguypeter.com';
+---
+<!DOCTYPE html>
+<html lang={lang} class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="author" content="Peter Bamuhigire" />
+
+  <!-- Canonical & Hreflang -->
+  {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+  <link rel="alternate" hreflang={lang} href={`${siteUrl}/${lang}${currentPath || '/'}`} />
+  <link rel="alternate" hreflang={altLang} href={`${siteUrl}${altUrl}`} />
+  <link rel="alternate" hreflang="x-default" href={`${siteUrl}/en${currentPath || '/'}`} />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+  <meta property="og:url" content={`${siteUrl}/${lang}${currentPath || '/'}`} />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content={lang === 'en' ? 'en_GB' : 'fr_FR'} />
+  <meta property="og:site_name" content="Peter Bamuhigire — Technology & Business Consultant" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@peterbamu" />
+  <meta name="twitter:creator" content="@peterbamu" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Preload critical fonts -->
+  <link rel="preload" href="/fonts/playfair-display-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+</head>
+<body class="min-h-screen flex flex-col bg-warm-white text-navy-900">
+  <a href="#main-content" class="skip-to-content">Skip to content</a>
+  <Header lang={lang} />
+  <main id="main-content" class="flex-1">
+    <slot />
+  </main>
+  <Footer lang={lang} />
+
+  <!-- Alpine.js -->
+  <script>
+    import Alpine from 'alpinejs';
+    window.Alpine = Alpine;
+    Alpine.start();
+  </script>
+
+  <!-- GSAP scroll animations -->
+  <script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener('astro:page-load', () => {
+      gsap.utils.toArray<HTMLElement>('.fade-up').forEach((el) => {
+        gsap.fromTo(el,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
+            scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+          }
+        );
+      });
+
+      gsap.utils.toArray<HTMLElement>('.counter').forEach((el) => {
+        const target = parseInt(el.dataset.target || '0');
+        gsap.fromTo(el, { innerText: 0 }, {
+          innerText: target, duration: 2, ease: 'power1.out',
+          snap: { innerText: 1 },
+          scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { t, type Lang } from '@/utils/i18n';
+
+const lang: Lang = 'en';
+
+const serviceOptions = [
+  'Software Development',
+  'ICT Consulting & Strategy',
+  'Business Consulting',
+  'Property Management Technology',
+  'Other',
+];
+
+const contactMethods = [
+  { value: 'phone', label: 'Phone Call' },
+  { value: 'whatsapp', label: 'WhatsApp' },
+  { value: 'email', label: 'Email' },
+];
+
+const socials = [
+  { name: 'LinkedIn', href: 'https://linkedin.com/in/peterbamuhigire', icon: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z' },
+  { name: 'GitHub', href: 'https://github.com/peterbamuhigire', icon: 'M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12' },
+  { name: 'Twitter', href: 'https://twitter.com/peterbamu', icon: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z' },
+  { name: 'Facebook', href: 'https://facebook.com/pbamu', icon: 'M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z' },
+  { name: 'Instagram', href: 'https://instagram.com/peterbamuhigire', icon: 'M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z' },
+];
+---
+
+<BaseLayout
+  title="Contact | Peter Bamuhigire"
+  description="Get in touch with Peter Bamuhigire for technology consulting, software development, and business advisory services. Based in Kampala, serving clients across Africa."
+  lang={lang}
+>
+  <!-- Hero Banner -->
+  <section class="bg-navy-900 pt-20 md:pt-24 pb-12 md:pb-16 geo-pattern">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white">
+        Get in Touch
+      </h1>
+      <p class="mt-4 text-lg md:text-xl text-navy-200 max-w-2xl mx-auto">
+        Whether you have a project in mind, need strategic guidance, or simply wish to explore possibilities — enquiries are always welcome.
+      </p>
+      <div class="mt-6 h-1 w-20 rounded-full bg-gold-400 mx-auto"></div>
+    </div>
+  </section>
+
+  <!-- Main Content: Form + Contact Info -->
+  <section class="py-16 md:py-24 bg-warm-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+
+        <!-- Left Column: Consultation Form (3/5 width) -->
+        <div class="lg:col-span-3 fade-up">
+          <div class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">
+              Book a Consultation
+            </h2>
+            <p class="mt-3 text-navy-600 leading-relaxed">
+              Every engagement begins with a conversation. Kindly share your details and a brief description of your project.
+            </p>
+
+            <form action="#" method="POST" class="mt-8 space-y-6">
+              <!-- Full Name -->
+              <div>
+                <label for="full-name" class="block text-sm font-medium text-navy-800 mb-1.5">
+                  Full Name <span class="text-amber-accent" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="full-name"
+                  name="full_name"
+                  required
+                  autocomplete="name"
+                  placeholder="e.g. Jane Nakato"
+                  class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors"
+                />
+              </div>
+
+              <!-- Email Address -->
+              <div>
+                <label for="email" class="block text-sm font-medium text-navy-800 mb-1.5">
+                  Email Address <span class="text-amber-accent" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  placeholder="jane@company.com"
+                  class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors"
+                />
+              </div>
+
+              <!-- Phone Number -->
+              <div>
+                <label for="phone" class="block text-sm font-medium text-navy-800 mb-1.5">
+                  Phone Number <span class="text-navy-400 text-xs font-normal">(optional)</span>
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="+256 7XX XXX XXX"
+                  class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors"
+                />
+              </div>
+
+              <!-- Company / Organisation -->
+              <div>
+                <label for="company" class="block text-sm font-medium text-navy-800 mb-1.5">
+                  Company / Organisation <span class="text-navy-400 text-xs font-normal">(optional)</span>
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  autocomplete="organization"
+                  placeholder="Your company or organisation name"
+                  class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors"
+                />
+              </div>
+
+              <!-- Service Interest -->
+              <div>
+                <label for="service" class="block text-sm font-medium text-navy-800 mb-1.5">
+                  Service Interest
+                </label>
+                <select
+                  id="service"
+                  name="service"
+                  class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors appearance-none"
+                  style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2720%27 height=%2720%27 viewBox=%270 0 20 20%27 fill=%27%237986CB%27%3E%3Cpath fill-rule=%27evenodd%27 d=%27M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z%27 clip-rule=%27evenodd%27/%3E%3C/svg%3E'); background-position: right 0.75rem center; background-repeat: no-repeat; background-size: 1.25rem;"
+                >
+                  <option value="">Select a service</option>
+                  {serviceOptions.map((option) => (
+                    <option value={option}>{option}</option>
+                  ))}
+                </select>
+              </div>
+
+              <!-- Project Description -->
+              <div>
+                <label for="message" class="block text-sm font-medium text-navy-800 mb-1.5">
+                  Project Description
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Briefly describe your project, goals, and any relevant context..."
+                  class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors resize-vertical"
+                ></textarea>
+              </div>
+
+              <!-- Preferred Contact Method -->
+              <fieldset>
+                <legend class="block text-sm font-medium text-navy-800 mb-3">
+                  Preferred Contact Method
+                </legend>
+                <div class="flex flex-wrap gap-4">
+                  {contactMethods.map((method, index) => (
+                    <label
+                      class="flex items-center gap-2 cursor-pointer group"
+                    >
+                      <input
+                        type="radio"
+                        name="contact_method"
+                        value={method.value}
+                        checked={index === 0}
+                        class="w-4 h-4 text-gold-500 border-navy-300 focus:ring-gold-500 focus:ring-2 accent-gold-500"
+                      />
+                      <span class="text-sm text-navy-700 group-hover:text-navy-900 transition-colors">
+                        {method.label}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+
+              <!-- Submit Button -->
+              <div>
+                <button
+                  type="submit"
+                  class="w-full sm:w-auto px-8 py-4 bg-amber-accent hover:bg-gold-600 text-white text-lg font-semibold rounded-lg transition-colors shadow-lg shadow-amber-accent/20 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2"
+                >
+                  Book a Consultation
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right Column: Contact Information (2/5 width) -->
+        <div class="lg:col-span-2 space-y-6 fade-up">
+
+          <!-- Phone Numbers -->
+          <div class="bg-navy-50 rounded-2xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-navy-100 rounded-lg">
+                <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-navy-800">Phone</h3>
+                <a href="tel:+256784464178" class="mt-1 block text-navy-700 hover:text-gold-600 transition-colors font-medium">
+                  +256 784 464178
+                </a>
+                <span class="inline-flex items-center gap-1 mt-1 px-2 py-0.5 text-xs font-medium bg-green-100 text-green-700 rounded-full">
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                  </svg>
+                  WhatsApp
+                </span>
+                <a href="tel:+256741430561" class="mt-3 block text-sm text-navy-600 hover:text-gold-600 transition-colors">
+                  +256 741 430561 <span class="text-navy-400">(alternative)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="bg-navy-50 rounded-2xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-navy-100 rounded-lg">
+                <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-navy-800">Email</h3>
+                <a href="mailto:peter@techguypeter.com" class="mt-1 block text-navy-700 hover:text-gold-600 transition-colors font-medium">
+                  peter@techguypeter.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="bg-navy-50 rounded-2xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-navy-100 rounded-lg">
+                <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-navy-800">Location</h3>
+                <p class="mt-1 text-navy-700 font-medium">
+                  Sserumaga Road, Bukoto
+                </p>
+                <p class="text-navy-600">Kampala, Uganda</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Business Hours -->
+          <div class="bg-navy-50 rounded-2xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-navy-100 rounded-lg">
+                <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-navy-800">Business Hours</h3>
+                <p class="mt-1 text-navy-700 font-medium">
+                  Monday &ndash; Saturday
+                </p>
+                <p class="text-navy-600">9:00 AM &ndash; 6:00 PM EAT</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Response Commitment -->
+          <div class="bg-gold-50 rounded-2xl p-6 border border-gold-200">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-gold-100 rounded-lg">
+                <svg class="w-5 h-5 text-gold-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-navy-800">Response Commitment</h3>
+                <p class="mt-1 text-navy-700 text-sm leading-relaxed">
+                  Consultations typically scheduled within 48 hours.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- International Note -->
+          <div class="bg-navy-50 rounded-2xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 flex items-center justify-center bg-navy-100 rounded-lg">
+                <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm font-semibold text-navy-800">International Clients</h3>
+                <p class="mt-1 text-navy-700 text-sm leading-relaxed">
+                  Remote consultations available across all time zones.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="bg-navy-50 rounded-2xl p-6">
+            <h3 class="text-sm font-semibold text-navy-800 mb-4">Connect Online</h3>
+            <div class="flex items-center gap-3">
+              {socials.map((s) => (
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-navy-100 hover:bg-gold-500 text-navy-600 hover:text-white transition-colors"
+                  aria-label={`Visit Peter on ${s.name}`}
+                >
+                  <svg class="w-4.5 h-4.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d={s.icon}/></svg>
+                </a>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Placeholder -->
+  <section class="py-16 md:py-20 bg-warm-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-up">
+        <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-navy-800 via-navy-900 to-navy-950 h-64 md:h-80 flex items-center justify-center">
+          <!-- Decorative grid overlay -->
+          <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(240,194,67,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(240,194,67,0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+          <!-- Location pin and text -->
+          <div class="relative text-center px-4">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-gold-500/20 rounded-full mb-4">
+              <svg class="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-warm-white">
+              Bukoto, Kampala
+            </h3>
+            <p class="mt-2 text-navy-300">
+              Sserumaga Road, Bukoto &middot; Kampala, Uganda
+            </p>
+            <a
+              href="https://www.google.com/maps/search/Sserumaga+Road+Bukoto+Kampala+Uganda"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 mt-4 px-5 py-2.5 bg-white/10 hover:bg-white/20 text-warm-white text-sm font-medium rounded-lg transition-colors backdrop-blur-sm border border-white/10"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+              Open in Google Maps
+            </a>
+          </div>
+
+          <!-- Decorative ping animation -->
+          <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div class="w-3 h-3 bg-gold-400 rounded-full animate-ping opacity-30"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <CTASection lang={lang} />
+</BaseLayout>

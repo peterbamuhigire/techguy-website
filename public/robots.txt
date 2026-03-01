@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://techguypeter.com/sitemap-index.xml

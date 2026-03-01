@@ -1,0 +1,28 @@
+---
+import { t, type Lang } from '@/utils/i18n';
+
+interface Props {
+  lang: Lang;
+  title?: string;
+  subtitle?: string;
+}
+
+const { lang, title, subtitle } = Astro.props;
+const heading = title || (lang === 'en' ? 'Ready to discuss your project?' : 'Prêt à discuter de votre projet ?');
+const sub = subtitle || (lang === 'en'
+  ? 'Every engagement begins with a conversation. Book a consultation to explore how Peter\'s experience can serve your organisation.'
+  : 'Chaque collaboration commence par une conversation. Réservez une consultation pour découvrir comment l\'expérience de Peter peut servir votre organisation.');
+---
+
+<section class="bg-navy-900 py-16 md:py-20 geo-pattern">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-warm-white">{heading}</h2>
+    <p class="mt-4 text-navy-200 text-lg">{sub}</p>
+    <a
+      href={`/${lang}/contact/`}
+      class="inline-block mt-8 px-8 py-4 bg-amber-accent hover:bg-gold-600 text-white text-lg font-semibold rounded-lg transition-colors shadow-lg shadow-amber-accent/20"
+    >
+      {t('cta.book', lang)}
+    </a>
+  </div>
+</section>

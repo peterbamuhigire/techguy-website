@@ -1,0 +1,144 @@
+---
+import { Image } from 'astro:assets';
+import logoImg from '@/assets/images/branding/logo-signature.png';
+import { t, languages, type Lang } from '@/utils/i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const altLang = lang === 'en' ? 'fr' : 'en';
+const currentPath = Astro.url.pathname.replace(`/${lang}`, '');
+const altUrl = `/${altLang}${currentPath || '/'}`;
+
+const navItems = [
+  { key: 'nav.home' as const, href: `/${lang}/` },
+  { key: 'nav.services' as const, href: `/${lang}/services/` },
+  { key: 'nav.portfolio' as const, href: `/${lang}/portfolio/` },
+  { key: 'nav.about' as const, href: `/${lang}/about/` },
+  { key: 'nav.blog' as const, href: `/${lang}/blog/` },
+  { key: 'nav.contact' as const, href: `/${lang}/contact/` },
+];
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 bg-navy-900/95 backdrop-blur-sm border-b border-navy-700/50"
+  x-data="{ open: false }"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <a href={`/${lang}/`} class="flex-shrink-0" aria-label="Peter Bamuhigire — Home">
+        <Image
+          src={logoImg}
+          alt="Bamuhigire Peter signature"
+          width={160}
+          height={54}
+          class="h-10 md:h-12 w-auto brightness-0 invert"
+          loading="eager"
+        />
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'px-3 py-2 text-sm font-medium rounded-md transition-colors',
+              Astro.url.pathname.startsWith(item.href) && item.href !== `/${lang}/`
+                ? 'text-gold-400'
+                : Astro.url.pathname === item.href || (item.href === `/${lang}/` && Astro.url.pathname === `/${lang}`)
+                  ? 'text-gold-400'
+                  : 'text-warm-cream hover:text-gold-300',
+            ]}
+          >
+            {t(item.key, lang)}
+          </a>
+        ))}
+
+        <!-- Language Switcher -->
+        <a
+          href={altUrl}
+          class="ml-2 px-2 py-1 text-xs font-medium text-navy-300 hover:text-warm-cream border border-navy-600 rounded transition-colors"
+          aria-label={`Switch to ${languages[altLang]}`}
+        >
+          {languages[altLang]}
+        </a>
+
+        <!-- CTA -->
+        <a
+          href={`/${lang}/contact/`}
+          class="ml-3 px-5 py-2.5 bg-amber-accent hover:bg-gold-600 text-white text-sm font-semibold rounded-lg transition-colors"
+        >
+          {t('cta.book', lang)}
+        </a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <div class="flex items-center gap-3 lg:hidden">
+        <a
+          href={altUrl}
+          class="px-2 py-1 text-xs font-medium text-navy-300 hover:text-warm-cream border border-navy-600 rounded"
+        >
+          {languages[altLang]}
+        </a>
+        <button
+          @click="open = !open"
+          class="p-2 text-warm-cream hover:text-gold-400 transition-colors"
+          :aria-expanded="open"
+          aria-label="Toggle menu"
+        >
+          <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg x-show="open" x-cloak class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    x-show="open"
+    x-cloak
+    x-transition:enter="transition ease-out duration-200"
+    x-transition:enter-start="opacity-0 -translate-y-2"
+    x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition ease-in duration-150"
+    x-transition:leave-start="opacity-100 translate-y-0"
+    x-transition:leave-end="opacity-0 -translate-y-2"
+    class="lg:hidden bg-navy-900 border-t border-navy-700/50"
+  >
+    <nav class="max-w-7xl mx-auto px-4 py-4 space-y-1" aria-label="Mobile navigation">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'block px-4 py-3 text-base font-medium rounded-lg transition-colors',
+            Astro.url.pathname.startsWith(item.href)
+              ? 'text-gold-400 bg-navy-800'
+              : 'text-warm-cream hover:text-gold-300 hover:bg-navy-800',
+          ]}
+        >
+          {t(item.key, lang)}
+        </a>
+      ))}
+      <div class="pt-3">
+        <a
+          href={`/${lang}/contact/`}
+          class="block w-full text-center px-5 py-3 bg-amber-accent hover:bg-gold-600 text-white font-semibold rounded-lg transition-colors"
+        >
+          {t('cta.book', lang)}
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  [x-cloak] { display: none !important; }
+</style>

@@ -1,0 +1,17 @@
+---
+interface Props {
+  number: string;
+  label: string;
+  suffix?: string;
+}
+
+const { number, label, suffix = '+' } = Astro.props;
+const numericValue = parseInt(number);
+---
+
+<div class="text-center">
+  <div class="text-4xl md:text-5xl font-bold text-gold-400 font-heading">
+    <span class="counter" data-target={numericValue.toString()}>{numericValue}</span>{suffix}
+  </div>
+  <p class="mt-2 text-sm text-navy-200 font-medium">{label}</p>
+</div>

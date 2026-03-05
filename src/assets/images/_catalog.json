@@ -256,6 +256,48 @@
       "alt_fr": "Capture d'écran du site web TechGuy Peter"
     }
   },
+  "blog_images_march5": {
+    "BLOG-MARCH-5-01.jpg": {
+      "width": 2222,
+      "height": 1481,
+      "orientation": "landscape",
+      "description": "African woman using POS system at retail counter with inventory shelves in background",
+      "article": "business-must-go-digital",
+      "role": "featured",
+      "alt_en": "Business owner using a digital POS system to manage sales and inventory in an African retail shop",
+      "alt_fr": "Propriétaire d'entreprise utilisant un système de point de vente numérique pour gérer les ventes et l'inventaire"
+    },
+    "BLOG-MARCH-5-02.jpg": {
+      "width": 2222,
+      "height": 1284,
+      "orientation": "landscape",
+      "description": "Business professional reviewing digital financial analytics and data visualisation on laptop",
+      "article": "business-must-go-digital",
+      "role": "in-article",
+      "alt_en": "Business professional analysing digital financial data and analytics on a laptop",
+      "alt_fr": "Professionnelle analysant des données financières numériques et des statistiques sur un ordinateur portable"
+    },
+    "BLOG-MARCH-5-03.jpg": {
+      "width": 2222,
+      "height": 1111,
+      "orientation": "landscape",
+      "description": "Laptop displaying ERP system interface with CRM, HR, and management module icons",
+      "article": "business-must-go-digital",
+      "role": "in-article",
+      "alt_en": "ERP system showing integrated digital business management modules for POS, CRM, and HR",
+      "alt_fr": "Interface de système ERP montrant les modules intégrés de gestion d'entreprise incluant CRM, RH et point de vente"
+    },
+    "BLOG-MARCH-5-04.jpg": {
+      "width": 2222,
+      "height": 742,
+      "orientation": "landscape",
+      "description": "Team of professionals working with multiple computer screens and business management dashboards",
+      "article": "business-must-go-digital",
+      "role": "in-article",
+      "alt_en": "Team of professionals implementing digital business systems across multiple screens and devices",
+      "alt_fr": "Équipe de professionnels travaillant avec plusieurs systèmes numériques de gestion d'entreprise"
+    }
+  },
   "article_assignments": {
     "custom-software-africa": {
       "featured": "blog-images-3.jpg",
@@ -279,6 +321,12 @@
       "featured": "blog-images-9.jpg",
       "in_article": ["blog-images-10.jpg", "blog-images-12.jpg", "blog-images-17.jpg"],
       "layout": "D",
+      "accent": "warm"
+    },
+    "business-must-go-digital": {
+      "featured": "BLOG-MARCH-5-01.jpg",
+      "in_article": ["BLOG-MARCH-5-02.jpg", "BLOG-MARCH-5-03.jpg", "BLOG-MARCH-5-04.jpg"],
+      "layout": "A",
       "accent": "warm"
     }
   }

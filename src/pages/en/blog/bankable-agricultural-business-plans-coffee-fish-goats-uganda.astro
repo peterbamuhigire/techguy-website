@@ -1,0 +1,685 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/photorealistic-goat-farm.jpg';
+import imgCoffeeStill from '@/assets/images/organic-coffee-beans-still-life.jpg';
+import imgFish01 from '@/assets/images/FISH-01.jpg';
+import imgFish02 from '@/assets/images/FISH-02.jpg';
+import imgCoffeeBranch from '@/assets/images/cherry-coffee-beans-branch-coffee-plant.jpg';
+
+const lang: Lang = 'en';
+const title = "Writing Bankable Business Plans for Agriculture: Coffee, Fish and Goats";
+const description = "A practical guide to writing agricultural business plans that get funded — real financial models for coffee, fish farming, and goat enterprises in Uganda.";
+const date = "2026-03-09";
+const category = "Agriculture";
+const readTime = "15 min read";
+const slug = "bankable-agricultural-business-plans-coffee-fish-goats-uganda";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Full-Width Hero -->
+  <section class="relative h-[50vh] min-h-[400px] md:h-[60vh] overflow-hidden">
+    <Image
+      src={heroImg}
+      alt="Photorealistic goat farm in Uganda — healthy dairy goats grazing in a well-managed paddock"
+      width={2222}
+      height={1244}
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-900/50 to-emerald-900/20"></div>
+    <div class="absolute inset-0 flex items-end">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 md:pb-14 w-full">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 text-xs font-semibold bg-emerald-500 text-white rounded-full">{category}</span>
+          <span class="text-sm text-navy-200">{readTime}</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-white leading-tight max-w-3xl">
+          {title}
+        </h1>
+        <div class="mt-4 flex items-center gap-4 text-sm text-navy-200">
+          <span>By Peter Bamuhigire</span>
+          <span class="w-1 h-1 rounded-full bg-navy-400"></span>
+          <time datetime={date}>9 March 2026</time>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-warm prose-dropcap">
+
+      <p>A farmer I worked with last year had everything right on the ground. Five acres of healthy Arabica coffee near Mount Elgon — well-pruned, well-spaced, the soil properly limed. A UCDA-registered processor had already approached him. His land was titled. He needed UGX 20 million from the Agricultural Credit Facility to cover the establishment costs for Years 1 and 2.</p>
+
+      <p>His application was rejected. Not because the farm was bad. Because the business plan could not answer the questions a credit committee needs answered before it says yes.</p>
+
+      <p>This guide shows you how to write the plan that gets funded. I work through three of Uganda's most accessible and high-potential agricultural sectors: coffee, fish farming, and goat farming. Each has a different financial structure and a different set of lender expectations. The numbers are real. The format is practical.</p>
+
+      <h2>Why Agricultural Business Plans Get Rejected</h2>
+
+      <p>Before the sector specifics, understand what kills most applications at the credit committee stage.</p>
+
+      <p><strong>Production-first thinking.</strong> The plan describes what you will grow and how — but says almost nothing about who will buy it, at what price, and when the money arrives. A bank does not fund crops. It funds cash flows.</p>
+
+      <p><strong>No enterprise-level numbers.</strong> A farm running three enterprises needs three separate profit calculations. Lumping everything together hides which one is profitable and which is bleeding money. A reviewer who cannot see this immediately suspects the farmer does not know either.</p>
+
+      <p><strong>Missing the cash flow timeline.</strong> Agriculture has long cash conversion cycles. A coffee farmer waits three to four years for full production, then gets paid once or twice a year. The bank needs to see exactly which months cash arrives and how the loan gets serviced during the lean months.</p>
+
+      <p><strong>No DSCR.</strong> Every Ugandan commercial bank and every Development Finance Institution requires a Debt Service Coverage Ratio — your operating income divided by your loan repayment obligations. The minimum acceptable is 1.25x. If your plan does not include this calculation, the application is returned.</p>
+
+      <p>Fix all four of these and you are already ahead of 80% of applications sitting on the same desk.</p>
+
+      <h2>Section 1: Coffee Farming — The Plan That Gets ACF Funding</h2>
+
+      <p>Uganda is the second-largest coffee exporter in Africa. Arabica grows in the mountain regions of Elgon, Rwenzori, and Kisoro; Robusta dominates the Lake Victoria crescent. The farmgate price for certified Arabica has been trending upward — the specialty coffee premium is real and growing. The Agricultural Credit Facility was partly designed for this sector.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgCoffeeBranch}
+          alt="Fresh red cherry coffee beans on branch — Arabica coffee plant in Uganda highland region"
+          width={2222}
+          height={1668}
+          class="article-img-landscape rounded-xl"
+          loading="lazy"
+        />
+        <figcaption>Uganda's Arabica coffee, grown in the Mount Elgon and Rwenzori belts, commands a specialty premium that changes the economics entirely</figcaption>
+      </figure>
+
+      <h3>The Financial Structure of a Coffee Enterprise</h3>
+
+      <p>Coffee is a perennial crop business: capital-intensive upfront, slow to income, then consistently profitable for 20–30 years if managed well. This timeline is both the opportunity and the lender's concern.</p>
+
+      <p>A representative 5-acre Arabica enterprise in the Mount Elgon belt looks like this:</p>
+
+      <div class="ag-table-wrapper">
+        <table class="ag-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Year 1</th>
+              <th>Year 2</th>
+              <th>Year 3</th>
+              <th>Year 4 (Full Production)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Investment</strong></td>
+              <td>UGX 8M–12M</td>
+              <td>UGX 3M–5M</td>
+              <td>UGX 3M–4M</td>
+              <td>UGX 3M–4M</td>
+            </tr>
+            <tr>
+              <td><strong>Revenue</strong></td>
+              <td>—</td>
+              <td>—</td>
+              <td>UGX 4M–8M</td>
+              <td>UGX 18M–28M</td>
+            </tr>
+            <tr>
+              <td><strong>Net Cash Flow</strong></td>
+              <td>Negative</td>
+              <td>Negative</td>
+              <td>Near break-even</td>
+              <td>UGX 15M–24M/year</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The business plan must show how Years 1–3 are funded without revenue. This is the bank's primary concern. Your plan must answer: who pays the costs during the establishment phase, and what services the loan in the meantime?</p>
+
+      <p>Two structures that work. <strong>Option A</strong> — a phased ACF loan with interest-only payments for Years 1–3 and principal repayment from Year 4 cashflow. ACF and UDB both accommodate this for permanent crops. <strong>Option B</strong> — the plan shows an existing income source (employment, another farm enterprise, rental income) that services the loan during establishment.</p>
+
+      <h3>Financial Projections: 5-Acre Arabica at Full Production</h3>
+
+      <div class="ag-financials">
+        <pre>Revenue:
+  Yield per acre at full production:   800–1,200 kg cherry/acre
+  Total farm yield (5 acres):          4,000–6,000 kg cherry
+  Cherry-to-parchment ratio:           5.5:1
+  Parchment equivalent:                727–1,091 kg
+  Farmgate parchment price (2026):     UGX 12,000–16,000/kg
+  Gross annual revenue:                UGX 8.7M–17.5M
+
+Variable Costs:
+  Fertiliser and soil amendments:      UGX 1.2M–2.0M
+  Crop protection:                     UGX 400,000–700,000
+  Seasonal labour (picking, pulping):  UGX 1.5M–3.0M
+  Transport to wet mill:               UGX 300,000–500,000
+  Total variable costs:                UGX 3.4M–6.2M
+
+Contribution Margin:                   UGX 5.3M–11.3M
+Fixed Costs (allocated):               UGX 1.5M–2.5M
+Net enterprise profit (Year 4):        UGX 3.8M–8.8M per year</pre>
+      </div>
+
+      <p><strong>DSCR worked example:</strong> An ACF loan of UGX 20M at 12% over 7 years carries annual debt service of approximately UGX 4.4M. Net operating income at the mid-estimate: UGX 6.3M. DSCR = 6.3 ÷ 4.4 = <strong>1.43x</strong> — above the 1.25x minimum. This passes.</p>
+
+      <p>Your plan must show this calculation explicitly, and add a sensitivity table: "If yield falls 20%, DSCR drops to 1.15x. Mitigant: income from companion crops (bananas inter-planted with coffee) covers the shortfall."</p>
+
+      <h3>Name Your Buyer</h3>
+
+      <p>Do not just say "there is demand for coffee." Name your buyer. A UCDA-registered processor? A direct export relationship? A cooperative? An artisan roaster supplying Kampala specialty cafés (farmgate premium for certified Arabica: UGX 12,000–18,000/kg versus UGX 6,000–9,000/kg uncertified)?</p>
+
+      <p>The plan that names a buyer with a draft offtake agreement or letter of intent is ten times more fundable than the plan that quotes national demand statistics.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgCoffeeStill}
+          alt="Organic Arabica coffee beans in still life — roasted coffee for specialty market Uganda"
+          width={2222}
+          height={1245}
+          class="article-img-landscape rounded-xl"
+          loading="lazy"
+        />
+        <figcaption>Certified organic and specialty-grade coffee commands UGX 12,000–18,000/kg at the farmgate — nearly double the uncertified price</figcaption>
+      </figure>
+
+      <h2>Section 2: Fish Farming — The Plan That Banks Can Calculate</h2>
+
+      <p>Fish farming — tilapia and African catfish — is one of the most calculable agricultural businesses a bank will see. Unlike coffee with its four-year wait, a tilapia pond produces in five to six months. The financial model is transparent and the credit risk is lower, if the plan is written well.</p>
+
+      <p>Uganda's fish market is undersupplied. The collapse of capture fisheries on Lake Victoria has driven domestic prices higher and created consistent demand from supermarkets, urban markets, and restaurants. A well-managed fish farm can achieve <strong>18% profit margins</strong> on revenues that can exceed UGX 2 billion per year at commercial scale.</p>
+
+      <h3>Single Pond Economics</h3>
+
+      <p>The foundational unit of any fish farming business plan is the pond. Build from here:</p>
+
+      <div class="ag-table-wrapper">
+        <table class="ag-table">
+          <thead>
+            <tr>
+              <th>Stage</th>
+              <th>Timeline</th>
+              <th>Key Inputs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Fingerling stocking</td>
+              <td>Day 1</td>
+              <td>Certified hatchery: UGX 300–500/fingerling</td>
+            </tr>
+            <tr>
+              <td>Feeding and management</td>
+              <td>Months 1–5</td>
+              <td>Commercial feed: UGX 2,200–2,800/kg; FCR ≈ 1.8:1</td>
+            </tr>
+            <tr>
+              <td>Harvest</td>
+              <td>Month 5–6</td>
+              <td>Average harvest weight: 400–600g</td>
+            </tr>
+            <tr>
+              <td>Sale</td>
+              <td>Month 5–6</td>
+              <td>Farmgate price: UGX 8,000–12,000/kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ag-financials">
+        <pre>Single 1/4-acre pond:
+
+Stocking density:         3,000–5,000 fingerlings
+Survival rate:            75–80% (good management)
+Harvest quantity:         1,125–2,000 kg
+Revenue (@ UGX 10,000/kg): UGX 11.25M–20M per cycle
+
+Costs per cycle:
+  Fingerlings:            UGX 900,000–2,000,000
+  Feed (FCR 1.8):         UGX 3,645,000–7,200,000
+  Labour:                 UGX 500,000–800,000
+  Water management, lime:  UGX 200,000–400,000
+  Total variable costs:   UGX 5.25M–10.4M
+
+Net profit per pond per cycle: UGX 6.0M–9.6M
+Annual (2 harvests):           UGX 12M–19.2M/pond/year</pre>
+      </div>
+
+      <p>A 10-pond operation with staggered harvests — one pond harvested every two to three weeks — generates near-monthly cash flows. That is the cash flow pattern a bank's credit model loves.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgFish01}
+          alt="Fish farming operation in Uganda — tilapia pond with healthy fish stock ready for harvest"
+          width={2222}
+          height={1481}
+          class="article-img-landscape rounded-xl"
+          loading="lazy"
+        />
+        <figcaption>A managed tilapia pond produces in 5–6 months. Ten staggered ponds create near-monthly income — the kind of cash flow pattern lenders want to see</figcaption>
+      </figure>
+
+      <h3>The DSCR for Fish Farming</h3>
+
+      <p>A 5-pond operation with a UGX 40M loan at 18% over 5 years has monthly debt service of approximately UGX 1.0M. Monthly net income at mid-range: UGX 4.2M. DSCR = <strong>4.2x</strong> — exceptionally strong. Fish farming economics, when presented properly, produce some of the most compelling DSCR ratios in the agricultural sector.</p>
+
+      <h3>The Section That Kills Most Fish Plans</h3>
+
+      <p>Almost every fish farming plan I review is rejected at the same point: <strong>feed cost escalation risk</strong>. Commercial fish feed is partly imported and priced in USD. When the shilling depreciates, feed costs jump. Your plan must:</p>
+
+      <ul>
+        <li>Show feed costs as a percentage of revenue (target: under 45%)</li>
+        <li>Include a sensitivity analysis: "If feed prices increase 20%, net profit falls to UGX X, DSCR remains 3.1x"</li>
+        <li>State your mitigation strategy — bulk purchasing, on-farm feed supplementation, or cooperative purchasing</li>
+      </ul>
+
+      <p>Banks have seen fish farming proposals before. They know about feed cost risk. Address it directly and you distinguish your plan from the majority that ignore it.</p>
+
+      <div class="ag-inset-portrait">
+        <Image
+          src={imgFish02}
+          alt="Close-up of healthy fish stock in a managed aquaculture pond in Uganda"
+          width={2222}
+          height={3333}
+          class="rounded-xl w-full"
+          loading="lazy"
+        />
+        <p class="text-sm text-navy-500 mt-2">Fingerling quality and stocking density are the two variables that most determine pond profitability</p>
+      </div>
+
+      <h2>Section 3: Goat Farming — Multiple Revenue Streams</h2>
+
+      <p>Goat farming is Uganda's most underrated agricultural enterprise. The national herd stands at 16 million animals, yet the market is dominated by informal middlemen and opportunistic selling. The farmer who formalises what is currently chaotic has a significant advantage — in market positioning and lender confidence.</p>
+
+      <p>Goat milk in Uganda fetches <strong>UGX 5,000–8,000 per litre</strong> — compare that with UGX 1,000–2,500/litre for cow milk. Mubende goat skins command leather premiums. A well-managed herd generates milk daily, kids for sale quarterly, cull animals annually, and manure continuously — multiple simultaneous revenue streams from the same animals.</p>
+
+      <h3>Choose Your Enterprise Type</h3>
+
+      <p>"Goat farming" is not a business. "A 50-doe intensive dairy goat operation producing UGX 166M in annual milk revenue" is a business. The three viable models:</p>
+
+      <div class="ag-table-wrapper">
+        <table class="ag-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Scale</th>
+              <th>Capital Required</th>
+              <th>Primary Revenue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Meat production</strong></td>
+              <td>20–50 does</td>
+              <td>UGX 25M–46M</td>
+              <td>Kid sales: UGX 200,000–400,000 each</td>
+            </tr>
+            <tr>
+              <td><strong>Dairy production</strong></td>
+              <td>50+ does</td>
+              <td>UGX 79M–158M</td>
+              <td>Milk: UGX 5,000–8,000/litre</td>
+            </tr>
+            <tr>
+              <td><strong>Breeding stock</strong></td>
+              <td>10–20 does</td>
+              <td>UGX 15M–30M</td>
+              <td>Breeding animals: UGX 600,000–2,000,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Financial Model: The 50-Doe Dairy Enterprise</h3>
+
+      <div class="ag-financials">
+        <pre>Year 1 Setup:
+  Initial stock (50 F2/F3 does + 3 bucks):  UGX 40M–75M
+  Housing and infrastructure:                UGX 25M–50M
+  Pasture establishment (2–3 acres):         UGX 3M–6M
+  Milking equipment and basic processing:    UGX 5M–15M
+  Working capital (6 months):                UGX 6M–12M
+  Total startup investment:                  UGX 79M–158M
+
+Annual Operating Income (from Year 1):
+  Milking does (70% of herd):                35 animals
+  Average yield (F2/F3, good management):    2 litres/day
+  Daily production:                          70 litres
+  Farmgate price:                            UGX 6,500/litre
+  Annual milk revenue:                       UGX 166.1M
+
+  Kids sold per year (after replacements):   ~55 kids
+  Revenue per kid (meat, 15–20kg):           UGX 250,000
+  Annual kid revenue:                        UGX 13.75M
+  Cull does and manure/compost:              UGX 7M–10M
+
+  Total annual gross revenue:                UGX 186.9M–189.9M
+  Operating costs:                           UGX 60M–80M
+  Annual net profit:                         UGX 106.9M–129.9M
+  Profit margin:                             57–68%
+
+DSCR (UGX 100M loan at 15% UDB over 7 years):
+  Annual debt service:                       ≈ UGX 21.5M
+  Net operating income:                      ≈ UGX 118M
+  DSCR:                                      5.5x — easily passes</pre>
+      </div>
+
+      <h3>The Market Argument for Goat Milk</h3>
+
+      <p>Goat milk is a specialty product. Your plan must explain where 70+ litres per day actually goes. Generic demand statistics are not enough — lenders need to see named buyers.</p>
+
+      <p>Hotels such as Serena, Sheraton, and boutique properties in Kololo source specialty dairy. A single hotel contract at 10 litres/day at UGX 8,000 generates UGX 2.4M per month from one buyer alone. Goat milk soaps and cosmetics sell at UGX 15,000–50,000 per unit in Kampala supermarkets — if you process or partner with a processor, the per-litre value of your milk can triple. A WhatsApp broadcast list of 200 direct customers paying UGX 7,000/litre can absorb 30+ litres per day without a middleman.</p>
+
+      <p>Name the actual buyers, their approximate volumes, and whether you have had any preliminary conversations. A letter of intent — even informal — transforms the market section from aspiration to evidence.</p>
+
+      <h2>The Universal Financial Section</h2>
+
+      <p>Regardless of enterprise type, every agricultural business plan needs these six components. This is the structure I use when helping clients prepare ACF and UDB applications.</p>
+
+      <p><strong>1. Startup Budget (Sources and Uses).</strong> Every cost to first revenue, matched against where the money comes from. The bank wants to see that the loan covers specific productive assets — not that the borrower is unclear about what they need.</p>
+
+      <p><strong>2. Enterprise Budget.</strong> Per-unit profitability for each crop or species, calculated separately. For a diversified farm, do this for each component, then consolidate.</p>
+
+      <p><strong>3. Month-by-Month Cash Flow (Year 1).</strong> Show the months with zero income clearly, and explain how the farm survives them. Do not hide the lean months; explain them.</p>
+
+      <p><strong>4. Income Statement (Years 1–5).</strong> Revenue → Gross Profit → Operating Expenses → EBIT → Interest → Tax → Net Profit. Include tax correctly — agricultural income is taxable in Uganda.</p>
+
+      <p><strong>5. Key Ratios.</strong> Gross margin %, net profit margin %, DSCR (Year 3 onwards), break-even quantity, and payback period — on one summary page.</p>
+
+      <p><strong>6. Sensitivity Table.</strong> Three scenarios: base, 20% revenue reduction, 30% cost increase. Show what DSCR looks like in each. This is what separates a professional plan from a hopeful one.</p>
+
+      <h2>Regulatory and Documentation Checklist</h2>
+
+      <p>Have these ready before submitting to ACF, UDB, or any commercial bank. Missing even one document delays applications — and in competitive lending windows, delays mean rejections.</p>
+
+      <div class="ag-checklist">
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>Land title or tenure document</strong>
+            <span>URSB / District Land Office. Formal title preferred; Kibanja accepted for some facilities.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>URSB business registration</strong>
+            <span>Sole proprietor acceptable; company preferred for loans above UGX 50M.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>TIN certificate</strong>
+            <span>URA — mandatory for any formal bank account or contract.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>Trading licence</strong>
+            <span>KCCA / District — requires annual renewal.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>UCDA registration (coffee only)</strong>
+            <span>Required to sell to licensed buyers or export.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>NEMA environmental permit (fish ponds)</strong>
+            <span>Required above certain pond scale — check with district office.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>MAAIF vaccination records (goats)</strong>
+            <span>Demonstrates biosecurity compliance to lenders.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>2 years of financial statements or bank statements</strong>
+            <span>For established businesses; projections acceptable for startups.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>Director NIN and passport copies</strong>
+            <span>Standard KYC requirement for all formal lenders.</span>
+          </div>
+        </div>
+      </div>
+
+      <h2>A Note on Presentation</h2>
+
+      <p>Loan officers at Centenary Bank, dfcu, and UDB review dozens of agricultural applications each week. The plan that is clearly organised, shows the numbers transparently, and addresses risk directly goes to the top of the pile.</p>
+
+      <p>Print the plan. Number every page. Include a one-page financial summary at the front — loan amount requested, purpose, collateral offered, DSCR, and break-even. This one page tells the banker within 30 seconds whether the application is worth reading in full.</p>
+
+      <div class="pull-quote">
+        "The data is in your farm. The discipline is in the plan."
+      </div>
+
+      <p>The coffee, fish, and goat industries all have strong, documented economics. The Agricultural Credit Facility offers rates below 12% for qualifying agribusinesses. The Uganda Development Bank provides long-term concessional finance. These are the right tools. But they require the right plan — one that speaks the language of money clearly enough for a credit committee to say yes without hesitation.</p>
+
+      <p>If you are working on an agricultural business plan and need help with the financial modelling, the DSCR calculation, or the ACF application structure, <a href="/en/contact/">get in touch</a>. I have helped businesses across <a href="/en/about/">more than 10 African countries</a> build plans that work — for lenders and for the businesses themselves. The first conversation costs you nothing.</p>
+
+    </div>
+
+    <!-- Key Takeaways Box -->
+    <div class="mt-10 bg-emerald-50 border border-emerald-200 rounded-2xl p-6 md:p-8">
+      <h2 class="text-lg font-bold text-emerald-900 mb-4">Key Takeaways</h2>
+      <ul class="space-y-3 text-sm text-emerald-800">
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">→</span>
+          <span>Coffee, fish, and goat farming all have strong economics — but only the plan that shows monthly cash flow, enterprise-level profitability, and DSCR gets funded.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">→</span>
+          <span>Name your buyer. A named buyer with an approximate volume is worth more than a paragraph about national demand statistics.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">→</span>
+          <span>The ACF offers rates below 12% for qualifying agribusinesses. UDB provides long-term concessional finance. These are the right tools — but they require a proper business plan.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">→</span>
+          <span>Every agricultural plan needs a sensitivity analysis showing the loan is serviceable even if yields fall 20% or prices drop 15%.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">→</span>
+          <span>The regulatory checklist is not optional — missing documents delay or kill applications. Prepare them before you start writing the plan.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-navy-200">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-navy-100 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-navy-600">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Technology and Business Consultant with over 15 years of experience across more than 10 African countries. Specialist in business systems, digital transformation, and business planning for East African enterprises. Based in Kampala, Uganda.</p>
+          <a href="/en/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Get in Touch
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to All Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<style>
+  /* Agriculture article table styles */
+  .ag-table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+  }
+  .ag-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+  .ag-table thead tr {
+    background-color: #0f2240;
+    color: #f8f4ec;
+  }
+  .ag-table thead th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .ag-table tbody tr:nth-child(odd) {
+    background-color: #f8fafc;
+  }
+  .ag-table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  .ag-table tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+  /* Financial pre blocks */
+  .ag-financials {
+    background-color: #0f2240;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .ag-financials pre {
+    color: #a3c4bc;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    margin: 0;
+    white-space: pre;
+  }
+  /* Portrait image inset */
+  .ag-inset-portrait {
+    float: right;
+    width: 45%;
+    margin: 0 0 1.5rem 1.5rem;
+  }
+  @media (max-width: 640px) {
+    .ag-inset-portrait {
+      float: none;
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+  }
+  /* Checklist */
+  .ag-checklist {
+    margin: 1.5rem 0;
+    border: 1px solid #d1fae5;
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  .ag-checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid #d1fae5;
+    background: #f0fdf4;
+    font-size: 0.875rem;
+  }
+  .ag-checklist-item:last-child {
+    border-bottom: none;
+  }
+  .ag-checklist-item:nth-child(even) {
+    background: #ecfdf5;
+  }
+  .ag-check {
+    color: #059669;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .ag-checklist-item strong {
+    display: block;
+    color: #065f46;
+    margin-bottom: 0.125rem;
+  }
+  .ag-checklist-item span {
+    color: #047857;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

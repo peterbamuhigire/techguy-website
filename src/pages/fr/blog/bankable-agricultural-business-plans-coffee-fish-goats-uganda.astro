@@ -1,0 +1,673 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/photorealistic-goat-farm.jpg';
+import imgCoffeeStill from '@/assets/images/organic-coffee-beans-still-life.jpg';
+import imgFish01 from '@/assets/images/FISH-01.jpg';
+import imgFish02 from '@/assets/images/FISH-02.jpg';
+import imgCoffeeBranch from '@/assets/images/cherry-coffee-beans-branch-coffee-plant.jpg';
+
+const lang: Lang = 'fr';
+const title = "Plans d'Affaires Bancables pour l'Agriculture : Café, Pisciculture et Chèvres";
+const description = "Guide pratique pour rédiger des plans d'affaires agricoles finançables en Ouganda — modèles financiers réels pour le café, la pisciculture et l'élevage de chèvres.";
+const date = "2026-03-09";
+const category = "Agriculture";
+const readTime = "18 min de lecture";
+const slug = "bankable-agricultural-business-plans-coffee-fish-goats-uganda";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/fr/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "fr-FR",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/fr/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Full-Width Hero -->
+  <section class="relative h-[50vh] min-h-[400px] md:h-[60vh] overflow-hidden">
+    <Image
+      src={heroImg}
+      alt="Ferme caprine en Ouganda — chèvres laitières dans un enclos bien géré"
+      width={2222}
+      height={1244}
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-900/50 to-emerald-900/20"></div>
+    <div class="absolute inset-0 flex items-end">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 md:pb-14 w-full">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 text-xs font-semibold bg-emerald-500 text-white rounded-full">{category}</span>
+          <span class="text-sm text-navy-200">{readTime}</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-white leading-tight max-w-3xl">
+          {title}
+        </h1>
+        <div class="mt-4 flex items-center gap-4 text-sm text-navy-200">
+          <span>Par Peter Bamuhigire</span>
+          <span class="w-1 h-1 rounded-full bg-navy-400"></span>
+          <time datetime={date}>9 mars 2026</time>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Retour au Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-warm prose-dropcap">
+
+      <p>Un agriculteur avec qui j'ai travaillé l'année dernière avait tout mis en place sur le terrain. Cinq acres de café Arabica en bonne santé près du Mont Elgon — bien taillés, bien espacés, le sol correctement chaulé. Un transformateur enregistré auprès de l'UCDA lui avait déjà manifesté son intérêt pour son parchemin. Son terrain était titré. Il avait besoin de 20 millions de UGX du Fonds de Crédit Agricole pour couvrir les coûts d'établissement des années 1 et 2.</p>
+
+      <p>Sa demande a été rejetée. Non pas parce que la ferme était mauvaise. Parce que le plan d'affaires ne répondait pas aux questions qu'un comité de crédit doit avoir pour dire oui.</p>
+
+      <p>Ce guide vous montre comment rédiger le plan qui obtient le financement. Nous examinons trois des secteurs agricoles les plus accessibles et à fort potentiel en Ouganda : le café, la pisciculture et l'élevage de chèvres. Chacun a une structure financière différente et un ensemble différent d'exigences des prêteurs. Les chiffres sont réels. Le format est pratique.</p>
+
+      <h2>Pourquoi les Plans d'Affaires Agricoles Sont Rejetés</h2>
+
+      <p>Avant d'entrer dans les spécificités sectorielles, comprenez ce qui tue la plupart des demandes au stade du comité de crédit.</p>
+
+      <p><strong>Raisonnement axé sur la production.</strong> Le plan décrit ce que vous allez cultiver et comment — mais dit presque rien sur qui va l'acheter, à quel prix, et quand l'argent arrivera. Une banque ne finance pas des cultures. Elle finance des flux de trésorerie.</p>
+
+      <p><strong>Absence de chiffres par entreprise.</strong> Une ferme exploitant trois activités nécessite trois calculs de rentabilité séparés. Regrouper tout ensemble masque laquelle est rentable et laquelle perd de l'argent. Un évaluateur qui ne peut pas voir cela suppose immédiatement que l'agriculteur ne le sait pas non plus.</p>
+
+      <p><strong>Calendrier de trésorerie manquant.</strong> L'agriculture a de longs cycles de conversion de trésorerie. Un caféiculteur attend trois à quatre ans pour une production complète, puis est payé une ou deux fois par an. La banque doit voir exactement quels mois l'argent arrive et comment le prêt est remboursé pendant les mois de vaches maigres.</p>
+
+      <p><strong>Pas de DSCR.</strong> Chaque banque commerciale ougandaise et chaque Institution de Financement du Développement exige un Ratio de Couverture du Service de la Dette — votre revenu d'exploitation divisé par vos obligations de remboursement. Le minimum acceptable est de 1,25x. Si votre plan n'inclut pas ce calcul, la demande est retournée.</p>
+
+      <p>Corrigez ces quatre points et vous serez déjà en avance sur 80 % des demandes qui attendent sur le même bureau.</p>
+
+      <h2>Section 1 : La Caféiculture — Le Plan Qui Obtient le Financement ACF</h2>
+
+      <p>L'Ouganda est le deuxième exportateur de café d'Afrique. L'Arabica pousse dans les régions montagneuses d'Elgon, du Rwenzori et de Kisoro ; le Robusta domine le croissant du Lac Victoria. Le prix départ ferme pour l'Arabica certifié a tendance à augmenter — la prime du café de spécialité est réelle et croissante. Le Fonds de Crédit Agricole a été en partie conçu pour ce secteur.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgCoffeeBranch}
+          alt="Grains de café cerise rouges sur branche — caféier Arabica dans la région des hauts plateaux ougandais"
+          width={2222}
+          height={1668}
+          class="article-img-landscape rounded-xl"
+          loading="lazy"
+        />
+        <figcaption>Le café Arabica ougandais, cultivé dans les ceintures du Mont Elgon et du Rwenzori, obtient une prime de spécialité qui change entièrement l'économie de l'entreprise</figcaption>
+      </figure>
+
+      <h3>La Structure Financière d'une Entreprise Caféière</h3>
+
+      <p>Le café est une culture pérenne : intensif en capital au départ, lent à générer des revenus, puis régulièrement rentable pendant 20 à 30 ans si bien géré. Ce calendrier est à la fois l'opportunité et la préoccupation du prêteur.</p>
+
+      <p>Une entreprise Arabica représentative de 5 acres dans la ceinture du Mont Elgon :</p>
+
+      <div class="ag-table-wrapper">
+        <table class="ag-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Année 1</th>
+              <th>Année 2</th>
+              <th>Année 3</th>
+              <th>Année 4 (Pleine production)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Investissement</strong></td>
+              <td>8M–12M UGX</td>
+              <td>3M–5M UGX</td>
+              <td>3M–4M UGX</td>
+              <td>3M–4M UGX</td>
+            </tr>
+            <tr>
+              <td><strong>Revenus</strong></td>
+              <td>—</td>
+              <td>—</td>
+              <td>4M–8M UGX</td>
+              <td>18M–28M UGX</td>
+            </tr>
+            <tr>
+              <td><strong>Flux de trésorerie net</strong></td>
+              <td>Négatif</td>
+              <td>Négatif</td>
+              <td>Proche du seuil</td>
+              <td>15M–24M UGX/an</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Le plan d'affaires doit montrer comment les années 1 à 3 sont financées sans revenus. C'est la préoccupation principale de la banque. Votre plan doit répondre : qui paie les coûts pendant la phase d'établissement, et qu'est-ce qui assure le service du prêt en attendant ?</p>
+
+      <p>Deux structures qui fonctionnent. <strong>Option A</strong> — un prêt ACF par phases avec paiement d'intérêts uniquement pour les années 1 à 3, et remboursement du principal à partir des flux de trésorerie de l'année 4. <strong>Option B</strong> — le plan montre une source de revenus existante qui assure le service du prêt pendant la phase d'établissement.</p>
+
+      <h3>Projections Financières : 5 Acres d'Arabica en Pleine Production</h3>
+
+      <div class="ag-financials">
+        <pre>Revenus :
+  Rendement par acre (pleine production) :   800–1 200 kg cerise/acre
+  Rendement total (5 acres) :                4 000–6 000 kg cerise
+  Ratio cerise/parchemin :                   5,5:1
+  Équivalent parchemin :                     727–1 091 kg
+  Prix départ ferme parchemin (2026) :       12 000–16 000 UGX/kg
+  Chiffre d'affaires annuel brut :           8,7M–17,5M UGX
+
+Coûts variables :
+  Fertilisants et amendements :              1,2M–2,0M UGX
+  Protection des cultures :                  400 000–700 000 UGX
+  Main-d'œuvre saisonnière :                 1,5M–3,0M UGX
+  Transport vers l'usine :                   300 000–500 000 UGX
+  Total coûts variables :                    3,4M–6,2M UGX
+
+Marge sur coûts variables :                  5,3M–11,3M UGX
+Coûts fixes (alloués) :                      1,5M–2,5M UGX
+Bénéfice net (Année 4) :                     3,8M–8,8M UGX/an</pre>
+      </div>
+
+      <p><strong>Exemple de calcul DSCR :</strong> Un prêt ACF de 20M UGX à 12 % sur 7 ans génère un service annuel de la dette d'environ 4,4M UGX. Revenu net d'exploitation à l'estimation médiane : 6,3M UGX. DSCR = 6,3 ÷ 4,4 = <strong>1,43x</strong> — au-dessus du minimum de 1,25x. La demande passe.</p>
+
+      <p>Votre plan doit inclure ce calcul explicitement, avec un tableau de sensibilité : « Si le rendement diminue de 20 %, le DSCR tombe à 1,15x. Mesure d'atténuation : les revenus des cultures associées (bananiers intercalés avec le café) comblent le déficit. »</p>
+
+      <h3>Nommez Votre Acheteur</h3>
+
+      <p>Ne dites pas simplement « il y a une demande pour le café ». Nommez votre acheteur. Un transformateur enregistré à l'UCDA ? Une coopérative ? Un torréfacteur artisanal approvisionnant les cafés spécialisés de Kampala (prime départ ferme pour l'Arabica certifié : 12 000–18 000 UGX/kg contre 6 000–9 000 UGX/kg non certifié) ?</p>
+
+      <p>Le plan qui nomme un acheteur avec un projet d'accord d'approvisionnement est dix fois plus finançable que le plan qui cite des statistiques nationales sur la demande.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgCoffeeStill}
+          alt="Grains de café Arabica biologiques en nature morte — café torréfié pour le marché de spécialité"
+          width={2222}
+          height={1245}
+          class="article-img-landscape rounded-xl"
+          loading="lazy"
+        />
+        <figcaption>Le café certifié biologique et de qualité spécialité obtient 12 000–18 000 UGX/kg départ ferme — près du double du prix non certifié</figcaption>
+      </figure>
+
+      <h2>Section 2 : La Pisciculture — Le Plan Que les Banques Peuvent Calculer</h2>
+
+      <p>La pisciculture est l'une des activités agricoles les plus calculables qu'une banque verra. Contrairement au café avec son délai de quatre ans, un étang de tilapia produit en cinq à six mois. Le modèle financier est transparent et le risque de crédit est plus faible, si le plan est bien rédigé.</p>
+
+      <p>Le marché du poisson en Ouganda est sous-approvisionné. L'effondrement des pêches de capture sur le Lac Victoria a fait monter les prix intérieurs et créé une demande constante. Une pisciculture bien gérée peut atteindre des <strong>marges bénéficiaires de 18 %</strong>.</p>
+
+      <h3>L'Économie d'un Seul Étang</h3>
+
+      <div class="ag-table-wrapper">
+        <table class="ag-table">
+          <thead>
+            <tr>
+              <th>Étape</th>
+              <th>Calendrier</th>
+              <th>Intrants Principaux</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mise en charge des alevins</td>
+              <td>Jour 1</td>
+              <td>Pisciculture certifiée : 300–500 UGX/alevin</td>
+            </tr>
+            <tr>
+              <td>Alimentation et gestion</td>
+              <td>Mois 1–5</td>
+              <td>Aliment commercial : 2 200–2 800 UGX/kg ; indice conversion 1,8:1</td>
+            </tr>
+            <tr>
+              <td>Récolte</td>
+              <td>Mois 5–6</td>
+              <td>Poids moyen à la récolte : 400–600g</td>
+            </tr>
+            <tr>
+              <td>Vente</td>
+              <td>Mois 5–6</td>
+              <td>Prix départ ferme : 8 000–12 000 UGX/kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ag-financials">
+        <pre>Modèle pour un étang d'1/4 d'acre :
+
+Densité de mise en charge :    3 000–5 000 alevins
+Taux de survie :               75–80 %
+Quantité récoltée :            1 125–2 000 kg
+Revenus (@ 10 000 UGX/kg) :   11,25M–20M UGX par cycle
+
+Coûts par cycle :
+  Alevins :                    900 000–2 000 000 UGX
+  Aliments (indice 1,8) :      3 645 000–7 200 000 UGX
+  Main-d'œuvre :               500 000–800 000 UGX
+  Gestion eau, chaux :         200 000–400 000 UGX
+  Total coûts variables :      5,25M–10,4M UGX
+
+Bénéfice net/étang/cycle :     6,0M–9,6M UGX
+Par an (2 récoltes) :          12M–19,2M UGX/étang/an</pre>
+      </div>
+
+      <figure class="my-8">
+        <Image
+          src={imgFish01}
+          alt="Opération piscicole en Ouganda — étang de tilapia avec stock de poissons sain prêt pour la récolte"
+          width={2222}
+          height={1481}
+          class="article-img-landscape rounded-xl"
+          loading="lazy"
+        />
+        <figcaption>Un étang de tilapia géré produit en 5 à 6 mois. Dix étangs échelonnés créent des revenus quasi mensuels</figcaption>
+      </figure>
+
+      <h3>Le DSCR en Pisciculture</h3>
+
+      <p>Une exploitation de 5 étangs avec un prêt de 40M UGX à 18 % sur 5 ans a un service mensuel de la dette d'environ 1,0M UGX. Revenu net mensuel à la médiane : 4,2M UGX. DSCR = <strong>4,2x</strong> — exceptionnellement solide.</p>
+
+      <h3>La Section Qui Tue la Plupart des Plans Piscicoles</h3>
+
+      <p>Presque chaque plan de pisciculture que j'examine est rejeté au même point : <strong>le risque d'escalade des coûts alimentaires</strong>. L'aliment commercial pour poissons est partiellement importé et tarifé en USD. Votre plan doit :</p>
+
+      <ul>
+        <li>Montrer les coûts alimentaires en pourcentage des revenus (objectif : moins de 45 %)</li>
+        <li>Inclure une analyse de sensibilité : « Si les prix des aliments augmentent de 20 %, le DSCR reste à 3,1x »</li>
+        <li>Indiquer votre stratégie d'atténuation — achat en gros, alimentation complémentaire à la ferme, achats coopératifs</li>
+      </ul>
+
+      <div class="ag-inset-portrait">
+        <Image
+          src={imgFish02}
+          alt="Gros plan d'un stock de poissons sain dans un étang d'aquaculture géré en Ouganda"
+          width={2222}
+          height={3333}
+          class="rounded-xl w-full"
+          loading="lazy"
+        />
+        <p class="text-sm text-navy-500 mt-2">La qualité des alevins et la densité de mise en charge déterminent principalement la rentabilité de l'étang</p>
+      </div>
+
+      <h2>Section 3 : L'Élevage de Chèvres — Plusieurs Sources de Revenus</h2>
+
+      <p>L'élevage de chèvres est l'entreprise agricole la plus sous-estimée de l'Ouganda. Le troupeau national compte 16 millions d'animaux, mais le marché est dominé par des intermédiaires informels. L'éleveur qui formalise ce qui est actuellement chaotique a un avantage considérable — en termes de positionnement commercial et de confiance des prêteurs.</p>
+
+      <p>Le lait de chèvre en Ouganda se vend <strong>5 000–8 000 UGX par litre</strong> — à comparer avec 1 000–2 500 UGX/litre pour le lait de vache. Un troupeau bien géré génère du lait quotidiennement, des chevreaux à vendre trimestriellement, des animaux de réforme annuellement, et du fumier en continu.</p>
+
+      <h3>Choisissez Votre Type d'Entreprise</h3>
+
+      <div class="ag-table-wrapper">
+        <table class="ag-table">
+          <thead>
+            <tr>
+              <th>Modèle</th>
+              <th>Échelle</th>
+              <th>Capital Requis</th>
+              <th>Revenu Principal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Production de viande</strong></td>
+              <td>20–50 femelles</td>
+              <td>25M–46M UGX</td>
+              <td>Chevreaux : 200 000–400 000 UGX chacun</td>
+            </tr>
+            <tr>
+              <td><strong>Production laitière</strong></td>
+              <td>50+ femelles</td>
+              <td>79M–158M UGX</td>
+              <td>Lait : 5 000–8 000 UGX/litre</td>
+            </tr>
+            <tr>
+              <td><strong>Reproducteurs</strong></td>
+              <td>10–20 femelles</td>
+              <td>15M–30M UGX</td>
+              <td>Animaux reproducteurs : 600 000–2 000 000 UGX</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Modèle Financier : L'Entreprise Laitière de 50 Femelles</h3>
+
+      <div class="ag-financials">
+        <pre>Mise en place de l'Année 1 :
+  Stock initial (50 femelles F2/F3 + 3 boucs) :  40M–75M UGX
+  Logements et infrastructure :                   25M–50M UGX
+  Établissement des pâturages (2–3 acres) :       3M–6M UGX
+  Équipement de traite et transformation :        5M–15M UGX
+  Fonds de roulement (6 mois) :                   6M–12M UGX
+  Total démarrage :                               79M–158M UGX
+
+Revenu d'exploitation annuel (à partir de l'Année 1) :
+  Femelles en lactation (70 %) :                  35 animaux
+  Rendement moyen (F2/F3) :                       2 litres/jour
+  Production quotidienne :                         70 litres
+  Prix départ ferme :                              6 500 UGX/litre
+  Revenus laitiers annuels :                       166,1M UGX
+
+  Chevreaux vendus par an :                        ~55 chevreaux
+  Revenu par chevreau :                            250 000 UGX
+  Revenus annuels des chevreaux :                  13,75M UGX
+  Femelles de réforme et fumier :                  7M–10M UGX
+
+  Chiffre d'affaires brut total :                  186,9M–189,9M UGX
+  Coûts d'exploitation :                           60M–80M UGX
+  Bénéfice net annuel :                            106,9M–129,9M UGX
+  Marge bénéficiaire :                             57–68 %
+
+DSCR (100M UGX à 15 % UDB sur 7 ans) :
+  Service annuel de la dette :                     ≈ 21,5M UGX
+  Revenu net d'exploitation :                      ≈ 118M UGX
+  DSCR :                                           5,5x — largement suffisant</pre>
+      </div>
+
+      <h3>L'Argument Commercial pour le Lait de Chèvre</h3>
+
+      <p>Le lait de chèvre est un produit de spécialité. Votre plan doit expliquer où vont réellement 70+ litres par jour. Les statistiques générales sur la demande ne suffisent pas — les prêteurs veulent voir des acheteurs nommés.</p>
+
+      <p>Les hôtels Serena, Sheraton et les boutiques-hôtels de Kololo s'approvisionnent en produits laitiers de spécialité. Un seul contrat hôtelier à 10 litres/jour à 8 000 UGX génère 2,4M UGX par mois. Les savons et cosmétiques au lait de chèvre se vendent 15 000–50 000 UGX par unité dans les supermarchés de Kampala — si vous transformez ou partenariez avec un transformateur, la valeur par litre peut tripler.</p>
+
+      <p>Nommez les acheteurs réels, leurs volumes approximatifs, et si vous avez eu des conversations préliminaires. Une lettre d'intention — même informelle — transforme la section commerciale d'une aspiration en preuve.</p>
+
+      <h2>La Section Financière Universelle</h2>
+
+      <p>Quelle que soit l'entreprise, tout plan d'affaires agricole nécessite ces six composantes financières.</p>
+
+      <p><strong>1. Budget de démarrage (Sources et Utilisations).</strong> Chaque coût jusqu'aux premiers revenus, en regard de leur financement. La banque veut voir que le prêt couvre des actifs productifs spécifiques.</p>
+
+      <p><strong>2. Budget d'entreprise.</strong> Rentabilité par unité pour chaque culture ou espèce, calculée séparément. Pour une ferme diversifiée, faites cela pour chaque composante, puis consolidez.</p>
+
+      <p><strong>3. Flux de Trésorerie Mensuel (Année 1).</strong> Montrez clairement les mois sans revenus, et expliquez comment la ferme survit pendant ces mois. Ne cachez pas les mois de vaches maigres ; expliquez-les.</p>
+
+      <p><strong>4. Compte de Résultat (Années 1–5).</strong> Chiffre d'affaires → Bénéfice brut → Charges d'exploitation → EBIT → Intérêts → Impôts → Bénéfice net. Incluez correctement les impôts — les revenus agricoles sont imposables en Ouganda.</p>
+
+      <p><strong>5. Ratios Clés.</strong> Marge brute %, marge bénéficiaire nette %, DSCR (à partir de l'Année 3), seuil de rentabilité, délai de récupération — sur une page récapitulative.</p>
+
+      <p><strong>6. Tableau de Sensibilité.</strong> Trois scénarios : base, réduction de 20 % des revenus, augmentation de 30 % des coûts. Montrez l'impact sur le DSCR dans chacun d'eux.</p>
+
+      <h2>Liste de Contrôle Réglementaire</h2>
+
+      <p>Préparez ces documents avant de soumettre à l'ACF, à l'UDB ou à toute banque commerciale. Un seul document manquant retarde les demandes.</p>
+
+      <div class="ag-checklist">
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>Titre foncier ou document d'occupation</strong>
+            <span>URSB / Bureau foncier de district. Titre formel préféré ; Kibanja accepté pour certaines facilités.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>Enregistrement commercial URSB</strong>
+            <span>Entreprise individuelle acceptable ; société préférée pour les prêts supérieurs à 50M UGX.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>Certificat TIN</strong>
+            <span>URA — obligatoire pour tout compte bancaire formel ou contrat.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>Licence commerciale</strong>
+            <span>KCCA / District — renouvellement annuel requis.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>Enregistrement UCDA (café uniquement)</strong>
+            <span>Requis pour vendre à des acheteurs agréés ou exporter.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>Permis environnemental NEMA (étangs piscicoles)</strong>
+            <span>Requis au-dessus d'un certain seuil — vérifier auprès du bureau de district.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>Registres de vaccination MAAIF (chèvres)</strong>
+            <span>Démontre la conformité biosécurité aux prêteurs.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>2 ans de relevés financiers ou bancaires</strong>
+            <span>Pour les entreprises établies ; projections acceptables pour les nouvelles créations.</span>
+          </div>
+        </div>
+        <div class="ag-checklist-item">
+          <span class="ag-check">✓</span>
+          <div>
+            <strong>NIN et copies de passeport du directeur</strong>
+            <span>Exigence standard KYC pour tous les prêteurs formels.</span>
+          </div>
+        </div>
+      </div>
+
+      <h2>Une Note sur la Présentation</h2>
+
+      <p>Les chargés de prêts à la Centenary Bank, dfcu et UDB examinent des dizaines de demandes agricoles chaque semaine. Le plan bien organisé, qui montre les chiffres de manière transparente et aborde le risque directement, monte en haut de la pile.</p>
+
+      <p>Imprimez le plan. Numérotez chaque page. Incluez un résumé financier d'une page en tête — montant du prêt demandé, objet, garanties offertes, DSCR et seuil de rentabilité. Cette seule page indique au banquier en 30 secondes si la demande mérite d'être lue intégralement.</p>
+
+      <div class="pull-quote">
+        « Les données sont dans votre ferme. La discipline est dans le plan. »
+      </div>
+
+      <p>La caféiculture, la pisciculture et l'élevage de chèvres présentent tous des économies solides et documentées. Le Fonds de Crédit Agricole offre des taux inférieurs à 12 % pour les agroentreprises éligibles. La Banque de Développement de l'Ouganda fournit un financement concessionnel à long terme. Ce sont les bons outils. Mais ils requièrent le bon plan — un plan qui parle le langage de l'argent assez clairement pour qu'un comité de crédit dise oui sans hésiter.</p>
+
+      <p>Si vous travaillez sur un plan d'affaires agricole et avez besoin d'aide pour la modélisation financière, le calcul du DSCR ou la structure de demande ACF, <a href="/fr/contact/">contactez-nous</a>. J'ai aidé des entreprises dans <a href="/fr/about/">plus de 10 pays africains</a> à élaborer des plans qui fonctionnent — pour les prêteurs et pour les entreprises elles-mêmes.</p>
+
+    </div>
+
+    <!-- Key Takeaways Box -->
+    <div class="mt-10 bg-emerald-50 border border-emerald-200 rounded-2xl p-6 md:p-8">
+      <h2 class="text-lg font-bold text-emerald-900 mb-4">Points Clés à Retenir</h2>
+      <ul class="space-y-3 text-sm text-emerald-800">
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">→</span>
+          <span>La caféiculture, la pisciculture et l'élevage de chèvres ont tous des économies solides — mais seul le plan qui montre les flux de trésorerie mensuels, la rentabilité par activité et le DSCR est financé.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">→</span>
+          <span>Nommez votre acheteur. Un acheteur nommé avec un volume approximatif vaut plus qu'un paragraphe sur les statistiques nationales de la demande.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">→</span>
+          <span>L'ACF offre des taux inférieurs à 12 % pour les agroentreprises éligibles. L'UDB fournit un financement concessionnel à long terme. Ce sont les bons outils — mais ils exigent un plan d'affaires approprié.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">→</span>
+          <span>Tout plan agricole nécessite une analyse de sensibilité montrant que le prêt est remboursable même si les rendements diminuent de 20 % ou les prix baissent de 15 %.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-emerald-500 font-bold mt-0.5 flex-shrink-0">→</span>
+          <span>La liste de contrôle réglementaire n'est pas facultative — les documents manquants retardent ou tuent les demandes. Préparez-les avant de commencer à rédiger le plan.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-navy-200">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-navy-100 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-navy-600">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Consultant en technologie et gestion d'entreprise avec plus de 15 ans d'expérience dans plus de 10 pays africains. Spécialiste en systèmes d'entreprise, transformation numérique et planification stratégique pour les entreprises d'Afrique de l'Est. Basé à Kampala, Ouganda.</p>
+          <a href="/fr/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Prendre Contact
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Retour à Tous les Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<style>
+  .ag-table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+  }
+  .ag-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+  .ag-table thead tr {
+    background-color: #0f2240;
+    color: #f8f4ec;
+  }
+  .ag-table thead th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .ag-table tbody tr:nth-child(odd) {
+    background-color: #f8fafc;
+  }
+  .ag-table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  .ag-table tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+  .ag-financials {
+    background-color: #0f2240;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .ag-financials pre {
+    color: #a3c4bc;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    margin: 0;
+    white-space: pre;
+  }
+  .ag-inset-portrait {
+    float: right;
+    width: 45%;
+    margin: 0 0 1.5rem 1.5rem;
+  }
+  @media (max-width: 640px) {
+    .ag-inset-portrait {
+      float: none;
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+  }
+  .ag-checklist {
+    margin: 1.5rem 0;
+    border: 1px solid #d1fae5;
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  .ag-checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid #d1fae5;
+    background: #f0fdf4;
+    font-size: 0.875rem;
+  }
+  .ag-checklist-item:last-child {
+    border-bottom: none;
+  }
+  .ag-checklist-item:nth-child(even) {
+    background: #ecfdf5;
+  }
+  .ag-check {
+    color: #059669;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .ag-checklist-item strong {
+    display: block;
+    color: #065f46;
+    margin-bottom: 0.125rem;
+  }
+  .ag-checklist-item span {
+    color: #047857;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

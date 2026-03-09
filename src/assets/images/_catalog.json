@@ -298,6 +298,58 @@
       "alt_fr": "Équipe de professionnels travaillant avec plusieurs systèmes numériques de gestion d'entreprise"
     }
   },
+  "blog_images_agriculture": {
+    "photorealistic-goat-farm.jpg": {
+      "width": 2222,
+      "height": 1244,
+      "orientation": "landscape",
+      "description": "Photorealistic goat farm with healthy dairy goats in a well-managed paddock — Uganda agricultural setting",
+      "article": "bankable-agricultural-business-plans-coffee-fish-goats-uganda",
+      "role": "featured",
+      "alt_en": "Photorealistic goat farm in Uganda — healthy dairy goats grazing in a well-managed paddock",
+      "alt_fr": "Ferme caprine en Ouganda — chèvres laitières dans un enclos bien géré"
+    },
+    "organic-coffee-beans-still-life.jpg": {
+      "width": 2222,
+      "height": 1245,
+      "orientation": "landscape",
+      "description": "Organic roasted Arabica coffee beans in still life arrangement for specialty market",
+      "article": "bankable-agricultural-business-plans-coffee-fish-goats-uganda",
+      "role": "in-article",
+      "alt_en": "Organic Arabica coffee beans in still life — roasted coffee for specialty market Uganda",
+      "alt_fr": "Grains de café Arabica biologiques en nature morte — café torréfié pour le marché de spécialité"
+    },
+    "cherry-coffee-beans-branch-coffee-plant.jpg": {
+      "width": 2222,
+      "height": 1668,
+      "orientation": "landscape",
+      "description": "Fresh red cherry coffee beans on branch of coffee plant — Arabica coffee in highland Uganda",
+      "article": "bankable-agricultural-business-plans-coffee-fish-goats-uganda",
+      "role": "in-article",
+      "alt_en": "Fresh red cherry coffee beans on branch — Arabica coffee plant in Uganda highland region",
+      "alt_fr": "Grains de café cerise rouges sur branche — caféier Arabica dans la région des hauts plateaux ougandais"
+    },
+    "FISH-01.jpg": {
+      "width": 2222,
+      "height": 1481,
+      "orientation": "landscape",
+      "description": "Fish farming operation in Uganda — tilapia pond with healthy fish stock ready for harvest",
+      "article": "bankable-agricultural-business-plans-coffee-fish-goats-uganda",
+      "role": "in-article",
+      "alt_en": "Fish farming operation in Uganda — tilapia pond with healthy fish stock ready for harvest",
+      "alt_fr": "Opération piscicole en Ouganda — étang de tilapia avec stock de poissons sain prêt pour la récolte"
+    },
+    "FISH-02.jpg": {
+      "width": 2222,
+      "height": 3333,
+      "orientation": "portrait",
+      "description": "Close-up of healthy fish stock in a managed aquaculture pond in Uganda",
+      "article": "bankable-agricultural-business-plans-coffee-fish-goats-uganda",
+      "role": "in-article",
+      "alt_en": "Close-up of healthy fish stock in a managed aquaculture pond in Uganda",
+      "alt_fr": "Gros plan d'un stock de poissons sain dans un étang d'aquaculture géré en Ouganda"
+    }
+  },
   "article_assignments": {
     "custom-software-africa": {
       "featured": "blog-images-3.jpg",
@@ -328,6 +380,12 @@
       "in_article": ["BLOG-MARCH-5-02.jpg", "BLOG-MARCH-5-03.jpg", "BLOG-MARCH-5-04.jpg"],
       "layout": "A",
       "accent": "warm"
+    },
+    "bankable-agricultural-business-plans-coffee-fish-goats-uganda": {
+      "featured": "photorealistic-goat-farm.jpg",
+      "in_article": ["cherry-coffee-beans-branch-coffee-plant.jpg", "organic-coffee-beans-still-life.jpg", "FISH-01.jpg", "FISH-02.jpg"],
+      "layout": "B",
+      "accent": "emerald"
     }
   }
 }

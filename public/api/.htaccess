@@ -1,0 +1,9 @@
+# Only allow PHP execution in this directory
+Options -Indexes
+<FilesMatch "\.php$">
+    Allow from all
+</FilesMatch>
+<FilesMatch "^(?!.*\.php$)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

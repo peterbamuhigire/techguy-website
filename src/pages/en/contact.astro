@@ -62,136 +62,233 @@ const socials = [
               Every engagement begins with a conversation. Kindly share your details and a brief description of your project.
             </p>
 
-            <form action="#" method="POST" class="mt-8 space-y-6">
-              <!-- Full Name -->
-              <div>
-                <label for="full-name" class="block text-sm font-medium text-navy-800 mb-1.5">
-                  Full Name <span class="text-amber-accent" aria-hidden="true">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="full-name"
-                  name="full_name"
-                  required
-                  autocomplete="name"
-                  placeholder="e.g. Jane Nakato"
-                  class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors"
-                />
-              </div>
-
-              <!-- Email Address -->
-              <div>
-                <label for="email" class="block text-sm font-medium text-navy-800 mb-1.5">
-                  Email Address <span class="text-amber-accent" aria-hidden="true">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  autocomplete="email"
-                  placeholder="jane@company.com"
-                  class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors"
-                />
-              </div>
-
-              <!-- Phone Number -->
-              <div>
-                <label for="phone" class="block text-sm font-medium text-navy-800 mb-1.5">
-                  Phone Number <span class="text-navy-400 text-xs font-normal">(optional)</span>
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  autocomplete="tel"
-                  placeholder="+256 7XX XXX XXX"
-                  class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors"
-                />
-              </div>
-
-              <!-- Company / Organisation -->
-              <div>
-                <label for="company" class="block text-sm font-medium text-navy-800 mb-1.5">
-                  Company / Organisation <span class="text-navy-400 text-xs font-normal">(optional)</span>
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  autocomplete="organization"
-                  placeholder="Your company or organisation name"
-                  class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors"
-                />
-              </div>
-
-              <!-- Service Interest -->
-              <div>
-                <label for="service" class="block text-sm font-medium text-navy-800 mb-1.5">
-                  Service Interest
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors appearance-none"
-                  style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2720%27 height=%2720%27 viewBox=%270 0 20 20%27 fill=%27%237986CB%27%3E%3Cpath fill-rule=%27evenodd%27 d=%27M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z%27 clip-rule=%27evenodd%27/%3E%3C/svg%3E'); background-position: right 0.75rem center; background-repeat: no-repeat; background-size: 1.25rem;"
-                >
-                  <option value="">Select a service</option>
-                  {serviceOptions.map((option) => (
-                    <option value={option}>{option}</option>
-                  ))}
-                </select>
-              </div>
-
-              <!-- Project Description -->
-              <div>
-                <label for="message" class="block text-sm font-medium text-navy-800 mb-1.5">
-                  Project Description
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  placeholder="Briefly describe your project, goals, and any relevant context..."
-                  class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors resize-vertical"
-                ></textarea>
-              </div>
-
-              <!-- Preferred Contact Method -->
-              <fieldset>
-                <legend class="block text-sm font-medium text-navy-800 mb-3">
-                  Preferred Contact Method
-                </legend>
-                <div class="flex flex-wrap gap-4">
-                  {contactMethods.map((method, index) => (
-                    <label
-                      class="flex items-center gap-2 cursor-pointer group"
-                    >
-                      <input
-                        type="radio"
-                        name="contact_method"
-                        value={method.value}
-                        checked={index === 0}
-                        class="w-4 h-4 text-gold-500 border-navy-300 focus:ring-gold-500 focus:ring-2 accent-gold-500"
-                      />
-                      <span class="text-sm text-navy-700 group-hover:text-navy-900 transition-colors">
-                        {method.label}
-                      </span>
-                    </label>
-                  ))}
+            <div
+              x-data="{
+                state: 'idle',
+                responseMessage: '',
+                fieldErrors: [],
+                csrfToken: '',
+                csrfTs: 0,
+                loadedAt: Math.floor(Date.now() / 1000),
+                formData: {
+                  name: '',
+                  email: '',
+                  phone: '',
+                  company: '',
+                  service: '',
+                  message: '',
+                  contact_method: 'phone',
+                  website: ''
+                },
+                async init() {
+                  try {
+                    const res = await fetch('/api/csrf-token.php');
+                    const d = await res.json();
+                    this.csrfToken = d.token;
+                    this.csrfTs = d.ts;
+                  } catch(e) {}
+                },
+                validate() {
+                  this.fieldErrors = [];
+                  if (!this.formData.name || this.formData.name.trim().length < 2) this.fieldErrors.push('name');
+                  if (!this.formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.formData.email)) this.fieldErrors.push('email');
+                  if (!this.formData.message || this.formData.message.trim().length < 5) this.fieldErrors.push('message');
+                  return this.fieldErrors.length === 0;
+                },
+                hasError(field) { return this.fieldErrors.includes(field); },
+                async submitForm() {
+                  if (!this.validate()) return;
+                  this.state = 'submitting';
+                  try {
+                    const res = await fetch('/api/contact.php', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({
+                        ...this.formData,
+                        lang: 'en',
+                        _csrf_token: this.csrfToken,
+                        _csrf_ts: this.csrfTs,
+                        _loaded_at: this.loadedAt
+                      })
+                    });
+                    const data = await res.json();
+                    this.responseMessage = data.message;
+                    this.state = data.success ? 'success' : 'error';
+                  } catch(e) {
+                    this.responseMessage = 'Something went wrong. Please email peter@techguypeter.com directly.';
+                    this.state = 'error';
+                  }
+                }
+              }"
+              x-init="init()"
+            >
+              <!-- Success state -->
+              <div x-show="state === 'success'" x-cloak class="mt-8 p-6 bg-green-50 border border-green-200 rounded-xl">
+                <div class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <p class="text-green-800 font-medium" x-text="responseMessage"></p>
                 </div>
-              </fieldset>
-
-              <!-- Submit Button -->
-              <div>
-                <button
-                  type="submit"
-                  class="w-full sm:w-auto px-8 py-4 bg-amber-accent hover:bg-gold-600 text-white text-lg font-semibold rounded-lg transition-colors shadow-lg shadow-amber-accent/20 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2"
-                >
-                  Book a Consultation
-                </button>
               </div>
-            </form>
+
+              <!-- Error banner -->
+              <div x-show="state === 'error'" x-cloak class="mt-8 p-4 bg-red-50 border border-red-200 rounded-xl">
+                <p class="text-red-700 text-sm" x-text="responseMessage"></p>
+              </div>
+
+              <!-- Form -->
+              <form
+                x-show="state !== 'success'"
+                @submit.prevent="submitForm()"
+                class="mt-8 space-y-6"
+                novalidate
+              >
+                <!-- Honeypot (hidden from real users) -->
+                <div class="absolute opacity-0 -z-10 h-0 overflow-hidden" aria-hidden="true">
+                  <input type="text" name="website" x-model="formData.website" tabindex="-1" autocomplete="off" />
+                </div>
+
+                <!-- Full Name -->
+                <div>
+                  <label for="full-name" class="block text-sm font-medium text-navy-800 mb-1.5">
+                    Full Name <span class="text-amber-accent" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="full-name"
+                    x-model="formData.name"
+                    autocomplete="name"
+                    placeholder="e.g. Jane Nakato"
+                    :class="hasError('name') ? 'border-red-400 focus:ring-red-500' : 'border-navy-200 focus:ring-gold-500'"
+                    class="w-full px-4 py-3 bg-navy-50 border rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:border-transparent transition-colors"
+                  />
+                  <p x-show="hasError('name')" class="mt-1 text-xs text-red-600">Please enter your full name.</p>
+                </div>
+
+                <!-- Email Address -->
+                <div>
+                  <label for="email" class="block text-sm font-medium text-navy-800 mb-1.5">
+                    Email Address <span class="text-amber-accent" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    x-model="formData.email"
+                    autocomplete="email"
+                    placeholder="jane@company.com"
+                    :class="hasError('email') ? 'border-red-400 focus:ring-red-500' : 'border-navy-200 focus:ring-gold-500'"
+                    class="w-full px-4 py-3 bg-navy-50 border rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:border-transparent transition-colors"
+                  />
+                  <p x-show="hasError('email')" class="mt-1 text-xs text-red-600">Please enter a valid email address.</p>
+                </div>
+
+                <!-- Phone Number -->
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-navy-800 mb-1.5">
+                    Phone Number <span class="text-navy-400 text-xs font-normal">(optional)</span>
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    x-model="formData.phone"
+                    autocomplete="tel"
+                    placeholder="+256 7XX XXX XXX"
+                    class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors"
+                  />
+                </div>
+
+                <!-- Company / Organisation -->
+                <div>
+                  <label for="company" class="block text-sm font-medium text-navy-800 mb-1.5">
+                    Company / Organisation <span class="text-navy-400 text-xs font-normal">(optional)</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    x-model="formData.company"
+                    autocomplete="organization"
+                    placeholder="Your company or organisation name"
+                    class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors"
+                  />
+                </div>
+
+                <!-- Service Interest -->
+                <div>
+                  <label for="service" class="block text-sm font-medium text-navy-800 mb-1.5">
+                    Service Interest
+                  </label>
+                  <select
+                    id="service"
+                    x-model="formData.service"
+                    class="w-full px-4 py-3 bg-navy-50 border border-navy-200 rounded-lg text-navy-900 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors appearance-none"
+                    style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2720%27 height=%2720%27 viewBox=%270 0 20 20%27 fill=%27%237986CB%27%3E%3Cpath fill-rule=%27evenodd%27 d=%27M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z%27 clip-rule=%27evenodd%27/%3E%3C/svg%3E'); background-position: right 0.75rem center; background-repeat: no-repeat; background-size: 1.25rem;"
+                  >
+                    <option value="">Select a service</option>
+                    {serviceOptions.map((option) => (
+                      <option value={option}>{option}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <!-- Project Description -->
+                <div>
+                  <label for="message" class="block text-sm font-medium text-navy-800 mb-1.5">
+                    Project Description <span class="text-amber-accent" aria-hidden="true">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    x-model="formData.message"
+                    rows="4"
+                    placeholder="Briefly describe your project, goals, and any relevant context..."
+                    :class="hasError('message') ? 'border-red-400 focus:ring-red-500' : 'border-navy-200 focus:ring-gold-500'"
+                    class="w-full px-4 py-3 bg-navy-50 border rounded-lg text-navy-900 placeholder:text-navy-400 focus:outline-none focus:ring-2 focus:border-transparent transition-colors resize-vertical"
+                  ></textarea>
+                  <p x-show="hasError('message')" class="mt-1 text-xs text-red-600">Please describe your project or requirements.</p>
+                </div>
+
+                <!-- Preferred Contact Method -->
+                <fieldset>
+                  <legend class="block text-sm font-medium text-navy-800 mb-3">
+                    Preferred Contact Method
+                  </legend>
+                  <div class="flex flex-wrap gap-4">
+                    {contactMethods.map((method) => (
+                      <label class="flex items-center gap-2 cursor-pointer group">
+                        <input
+                          type="radio"
+                          name="contact_method"
+                          value={method.value}
+                          x-model="formData.contact_method"
+                          class="w-4 h-4 text-gold-500 border-navy-300 focus:ring-gold-500 focus:ring-2 accent-gold-500"
+                        />
+                        <span class="text-sm text-navy-700 group-hover:text-navy-900 transition-colors">
+                          {method.label}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+
+                <!-- Submit Button -->
+                <div>
+                  <button
+                    type="submit"
+                    :disabled="state === 'submitting'"
+                    class="w-full sm:w-auto px-8 py-4 bg-amber-accent hover:bg-gold-600 disabled:opacity-60 disabled:cursor-not-allowed text-white text-lg font-semibold rounded-lg transition-colors shadow-lg shadow-amber-accent/20 focus:outline-none focus:ring-2 focus:ring-gold-500 focus:ring-offset-2"
+                  >
+                    <span x-show="state !== 'submitting'">Book a Consultation</span>
+                    <span x-show="state === 'submitting'" x-cloak class="flex items-center gap-2">
+                      <svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                      </svg>
+                      Sending…
+                    </span>
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
 

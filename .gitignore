@@ -3,6 +3,10 @@ node_modules/
 dist/
 .astro/
 
+# PHP dependencies and runtime data
+vendor/
+data/
+
 # OS files
 .DS_Store
 Thumbs.db

@@ -1,0 +1,547 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import { t } from '@/utils/i18n';
+import type { Lang } from '@/utils/i18n';
+import SectionHeading from '@/components/SectionHeading.astro';
+import CTASection from '@/components/CTASection.astro';
+
+import businessPlan01 from '@/assets/images/services/business-plan-01.jpg';
+import businessPlan02 from '@/assets/images/services/business-plan-02.jpg';
+import businessPlan03 from '@/assets/images/services/business-plan-03.jpg';
+
+const lang: Lang = 'fr';
+
+const processSteps = [
+  {
+    number: '01',
+    title: 'Découverte',
+    subtitle: 'Semaine 1',
+    description: "Entretien, étude de votre activité, collecte des données, identification des lacunes.",
+  },
+  {
+    number: '02',
+    title: 'Recherche & Structuration',
+    subtitle: 'Semaines 1–2',
+    description: "Études de marché indépendantes, validation des hypothèses, construction des fondements analytiques.",
+  },
+  {
+    number: '03',
+    title: "Élaboration du Plan",
+    subtitle: 'Semaines 2–4',
+    description: "Rédaction des 15 sections, modèle financier complet, registre des risques, calendrier d'exécution.",
+  },
+  {
+    number: '04',
+    title: 'Conception du Deck',
+    subtitle: 'Semaine 4',
+    description: "Pitch deck selon le standard assertion-preuve, narration adaptée à votre audience.",
+  },
+  {
+    number: '05',
+    title: 'Formation à la Présentation',
+    subtitle: 'Semaines 4–6',
+    description: "Six séances : récit, contenu, prestation, Q&R, répétition, briefing.",
+  },
+  {
+    number: '06',
+    title: 'Livraison Finale',
+    subtitle: '',
+    description: "Plan relié, fichier pitch deck, notes d'orateur, fiche de préparation Q&R, checklist jour J.",
+  },
+];
+
+const whoCards = [
+  {
+    title: 'Demandeurs de Crédit Bancaire',
+    description: "Vous sollicitez Ecobank, BOA, UBA, Orabank, BGFI ou toute autre banque commerciale ? Un plan préparé par un professionnel et structuré selon les critères d'évaluation du prêteur accroît significativement votre probabilité d'approbation.",
+  },
+  {
+    title: 'Investissement en Capital',
+    description: "Vous levez des fonds auprès de business angels, d'investisseurs à impact ou de fonds de capital-risque ? Votre plan et votre pitch deck sont les documents déterminants. La plupart des plans sont rejetés dès les cinq premières pages.",
+  },
+  {
+    title: "Entreprises en Expansion",
+    description: "Une expansion nécessitant des capitaux, un partenariat stratégique, un appel d'offres public ou une joint-venture exige presque toujours un plan formel.",
+  },
+  {
+    title: 'Dossiers Refusés',
+    description: "Vous avez déjà sollicité un financement et essuyé un refus ? Nous diagnostiquons exactement ce que le prêteur a trouvé peu convaincant et reconstruisons à partir de là.",
+  },
+  {
+    title: 'Consultants Professionnels',
+    description: "Vous dirigez un cabinet de conseil et souhaitez enrichir votre méthodologie ou acquérir une approche structurée pour les plans que vous produisez ?",
+  },
+];
+---
+
+<BaseLayout
+  title="Plan d'Affaires Bancable — Consultant Afrique Francophone | Pitch Deck & Formation"
+  description="Nous élaborons des plans d'affaires complets et bancables avec pitch deck et formation à la présentation pour les entrepreneurs d'Afrique francophone. Structurés selon les critères des banques et des IFD."
+  lang={lang}
+  page="services"
+>
+
+  <script type="application/ld+json" is:raw>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Combien coûte un plan d'affaires en Afrique ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Les honoraires de préparation d'un plan d'affaires varient selon la complexité et la portée du projet. Contactez-nous pour un devis adapté à vos besoins spécifiques."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce qu'un plan d'affaires bancable ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un plan bancable est structuré selon les critères CAMPARI utilisés par les banques et les IFD — démontrant le Caractère, la Capacité, les Moyens, l'Objet, le Montant, le Remboursement et les Garanties — avec un calcul documenté du ratio de couverture du service de la dette."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Préparez-vous des pitch decks ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Chaque mission inclut un pitch deck professionnel — 12 à 15 slides structurés comme un argument visuel, conçu pour votre audience spécifique : comité de crédit, IFD ou investisseurs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Proposez-vous une formation à la présentation ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Six séances structurées couvrant votre narratif, la maîtrise du contenu, les fondamentaux de la prestation, la simulation Q&R avec les 10 questions les plus difficiles, une répétition générale et un briefing jour J."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ==============================
+       HERO BANNER
+       ============================== -->
+  <section class="relative bg-navy-950 overflow-hidden">
+    <div class="absolute inset-0 geo-pattern opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-900"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24">
+      <div class="py-16 md:py-20 lg:py-24 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-6">
+          <span class="text-gold-400 text-sm font-medium">Service de Conseil</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
+          Plan d'Affaires : Plan. Présentation. Résultats.
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-navy-200 leading-relaxed max-w-2xl">
+          Nous élaborons des plans d'affaires complets et bancables — accompagnés d'un pitch deck professionnel et d'une formation personnalisée pour vous permettre de défendre votre projet avec assurance face aux banques, IFD et investisseurs.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a
+            href="/fr/contact/"
+            class="inline-flex items-center justify-center px-8 py-4 bg-amber-accent hover:bg-amber-accent/90 text-white text-lg font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-amber-accent/20 hover:shadow-xl hover:-translate-y-0.5"
+          >
+            Réserver une consultation gratuite
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+          <a
+            href="/fr/services/#business-consulting"
+            class="inline-flex items-center justify-center px-8 py-4 border-2 border-gold-400 text-gold-400 hover:bg-gold-400/10 text-lg font-semibold rounded-lg transition-all duration-300 hover:-translate-y-0.5"
+          >
+            Voir nos services
+          </a>
+        </div>
+
+        <div class="mt-4 h-1 w-16 rounded-full bg-gold-400"></div>
+      </div>
+    </div>
+
+    <!-- Bottom wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 40V10C360 30 720 0 1080 20C1260 30 1380 25 1440 20V40H0Z" fill="var(--color-warm-white)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SECTION 1: LE PLAN D'AFFAIRES
+       ============================== -->
+  <section id="business-plan" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
+        <!-- Text -->
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-50 border border-navy-100 mb-5">
+            <svg class="w-4 h-4 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/>
+            </svg>
+            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Livrable 1</span>
+          </div>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Le Plan d'Affaires</h2>
+
+          <p class="text-navy-600 leading-relaxed mb-6">
+            Plan complet en 15 sections. Bancable — structuré selon les critères d'évaluation des banques commerciales et des Institutions de Financement du Développement (IFD) actives en Afrique francophone. Fondé sur les preuves — chaque donnée de marché est sourcée. Stratégiquement rigoureux — analyse MECE, modèle financier soumis à des scénarios de sensibilité. Exécutable — jalons, responsables, délais réglementaires.
+          </p>
+
+          <!-- Deliverables grid -->
+          <div class="grid sm:grid-cols-2 gap-3 mb-8">
+            {[
+              "Plan d'affaires complet — 15 sections",
+              "Projections financières sur cinq ans",
+              "Calcul DSCR & analyse du seuil de rentabilité",
+              "Analyse de marché avec données sourcées",
+              "Registre des risques avec mesures d'atténuation",
+              "Calendrier d'exécution",
+              "Documentation des hypothèses",
+            ].map((item) => (
+              <div class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-gold-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-navy-700 text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="/fr/contact/"
+            class="inline-flex items-center px-6 py-3 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            {t('cta.book', lang)}
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Image -->
+        <div class="relative">
+          <div class="absolute -inset-3 bg-gradient-to-br from-gold-400/10 via-transparent to-navy-200/20 rounded-2xl -rotate-1"></div>
+          <div class="relative rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src={businessPlan01}
+              alt="Élaboration d'un plan d'affaires bancable pour banques et IFD en Afrique francophone"
+              width={640}
+              height={480}
+              loading="lazy"
+              class="w-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SECTION 2: LE PITCH DECK
+       ============================== -->
+  <section id="pitch-deck" class="bg-warm-cream py-16 md:py-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
+        <!-- Image (left on desktop) -->
+        <div class="relative order-2 lg:order-1">
+          <div class="absolute -inset-3 bg-gradient-to-bl from-gold-400/10 via-transparent to-navy-200/20 rounded-2xl rotate-1"></div>
+          <div class="relative rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src={businessPlan02}
+              alt="Pitch deck professionnel structuré pour investisseurs et comités de crédit"
+              width={640}
+              height={480}
+              loading="lazy"
+              class="w-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-50 border border-navy-100 mb-5">
+            <svg class="w-4 h-4 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/>
+            </svg>
+            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Livrable 2</span>
+          </div>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Le Pitch Deck</h2>
+
+          <p class="text-navy-600 leading-relaxed mb-6">
+            12 à 15 slides. Pas une version condensée du plan — un argument visuel. Chaque slide construit sur une structure assertion-preuve. Narration alternant réalité actuelle et futur créé par votre entreprise. Slides financiers titrés par des conclusions, pas par des étiquettes. Une demande précise et assurée.
+          </p>
+
+          <!-- Deliverables grid -->
+          <div class="grid sm:grid-cols-2 gap-3 mb-8">
+            {[
+              "12 à 15 slides conçus professionnellement",
+              "Narration structurée pour votre audience spécifique",
+              "Slides financiers titrés par des conclusions",
+              "Version avec notes d'orateur",
+              "Conçu pour comités de crédit, IFD ou investisseurs",
+            ].map((item) => (
+              <div class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-gold-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-navy-700 text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="/fr/contact/"
+            class="inline-flex items-center px-6 py-3 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            {t('cta.book', lang)}
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SECTION 3: LA FORMATION À LA PRÉSENTATION
+       ============================== -->
+  <section id="formation-presentation" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
+        <!-- Text -->
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-50 border border-navy-100 mb-5">
+            <svg class="w-4 h-4 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+            </svg>
+            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Livrable 3</span>
+          </div>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">La Formation à la Présentation</h2>
+
+          <p class="text-navy-600 leading-relaxed mb-6">
+            6 séances structurées. Votre narratif. Le cadre du pitch (se positionner comme l'opportunité, pas le demandeur). Maîtrise du contenu (connaître chaque chiffre par cœur). Prestation (voix, contact visuel, gestion du stress). Préparation aux questions (les 10 questions les plus difficiles, technique de reformulation). La conclusion (les mots exacts pour la demande, répétés jusqu'à ce qu'ils sonnent naturel).
+          </p>
+
+          <!-- 6 sessions list -->
+          <div class="space-y-3 mb-8">
+            {[
+              "Séance 1 : Récit & Cadre du Pitch",
+              "Séance 2 : Maîtrise du Contenu",
+              "Séance 3 : Fondamentaux de la Prestation",
+              "Séance 4 : Simulation Q&R",
+              "Séance 5 : Répétition Générale",
+              "Séance 6 : Briefing Jour J",
+            ].map((item, i) => (
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-gold-400/10 border border-gold-400/30 flex items-center justify-center flex-shrink-0">
+                  <span class="text-gold-600 text-xs font-bold">{i + 1}</span>
+                </div>
+                <span class="text-navy-700 text-sm font-medium">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="/fr/contact/"
+            class="inline-flex items-center px-6 py-3 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            {t('cta.book', lang)}
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Image -->
+        <div class="relative">
+          <div class="absolute -inset-3 bg-gradient-to-br from-gold-400/10 via-transparent to-navy-200/20 rounded-2xl -rotate-1"></div>
+          <div class="relative rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src={businessPlan03}
+              alt="Formation à la présentation et coaching pour défendre un plan d'affaires devant des investisseurs"
+              width={640}
+              height={480}
+              loading="lazy"
+              class="w-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SECTION 4: À QUI S'ADRESSE CE SERVICE
+       ============================== -->
+  <section class="bg-navy-900 py-16 md:py-24 geo-pattern relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-900/95 to-navy-900/90"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-up">
+        <SectionHeading
+          title="À Qui S'adresse Ce Service"
+          subtitle="Un service conçu pour les entrepreneurs sérieux qui préparent une démarche de financement en Afrique francophone."
+          light
+        />
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-up">
+        {whoCards.map((card) => (
+          <div class="bg-navy-800/60 border border-gold-400/20 rounded-2xl p-6 hover:border-gold-400/40 transition-colors duration-300">
+            <div class="w-10 h-10 rounded-xl bg-gold-400/10 border border-gold-400/20 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-warm-white mb-2">{card.title}</h3>
+            <p class="text-navy-200 text-sm leading-relaxed">{card.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SECTION 5: NOTRE PROCESSUS
+       ============================== -->
+  <section class="bg-warm-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-up">
+        <SectionHeading
+          title="Notre Processus"
+          subtitle="Six étapes structurées — de la découverte initiale à la livraison finale de votre dossier complet."
+        />
+      </div>
+
+      <!-- Desktop: horizontal timeline -->
+      <div class="hidden md:block fade-up">
+        <div class="relative">
+          <!-- Connecting line -->
+          <div class="absolute top-10 left-[8%] right-[8%] h-0.5 bg-gradient-to-r from-gold-400/20 via-gold-400/60 to-gold-400/20"></div>
+
+          <div class="grid grid-cols-6 gap-3 lg:gap-4">
+            {processSteps.map((step) => (
+              <div class="relative text-center group">
+                <!-- Step circle -->
+                <div class="relative z-10 w-20 h-20 mx-auto rounded-full bg-navy-800 border-2 border-gold-400/40 flex items-center justify-center group-hover:border-gold-400 group-hover:bg-navy-700 transition-all duration-300">
+                  <span class="text-gold-400 font-bold text-lg font-heading">{step.number}</span>
+                </div>
+
+                <h3 class="mt-5 text-base font-bold text-navy-900">{step.title}</h3>
+                {step.subtitle && (
+                  <p class="mt-0.5 text-xs font-medium text-gold-600">{step.subtitle}</p>
+                )}
+                <p class="mt-2 text-navy-600 text-xs leading-relaxed">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile: vertical timeline -->
+      <div class="md:hidden fade-up">
+        <div class="relative ml-6">
+          <!-- Vertical line -->
+          <div class="absolute top-0 bottom-0 left-4 w-0.5 bg-gradient-to-b from-gold-400/20 via-gold-400/60 to-gold-400/20"></div>
+
+          <div class="space-y-8">
+            {processSteps.map((step) => (
+              <div class="relative flex items-start gap-6">
+                <!-- Step circle -->
+                <div class="relative z-10 w-9 h-9 shrink-0 rounded-full bg-navy-800 border-2 border-gold-400/50 flex items-center justify-center">
+                  <span class="text-gold-400 font-bold text-xs font-heading">{step.number}</span>
+                </div>
+
+                <div class="pb-2">
+                  <h3 class="text-lg font-bold text-navy-900">{step.title}</h3>
+                  {step.subtitle && (
+                    <p class="text-xs font-medium text-gold-600 mt-0.5">{step.subtitle}</p>
+                  )}
+                  <p class="mt-1 text-navy-600 text-sm leading-relaxed">{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SECTION 6: CE QUI NOUS DISTINGUE
+       ============================== -->
+  <section class="bg-warm-cream py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-up">
+        <SectionHeading
+          title="Ce Qui Nous Distingue"
+          subtitle="Nous ne remplissons pas des modèles. Nous construisons des arguments."
+        />
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 fade-up">
+        <!-- Left: explanation -->
+        <div class="prose prose-navy max-w-none">
+          <p class="text-navy-600 leading-relaxed mb-4">
+            La plupart des plans d'affaires sont rédigés à partir de modèles. Un regard exercé le perçoit immédiatement : données de marché non sourcées, avantages concurrentiels non étayés, projections financières sans page d'hypothèses, registre des risques générique. Ces plans n'obtiennent pas de financement.
+          </p>
+          <p class="text-navy-600 leading-relaxed mb-4">
+            Nous construisons les plans comme les consultants élaborent des mémorandums d'investissement — depuis les preuves vers l'argument, et non depuis le modèle vers les chiffres. L'analyse de marché est MECE. Le modèle financier repose sur des hypothèses défendables.
+          </p>
+          <p class="text-navy-600 leading-relaxed">
+            Ensuite, nous vous préparons à la présentation. Car un plan qui reste dans un dossier n'accomplit rien.
+          </p>
+        </div>
+
+        <!-- Right: methodology box -->
+        <div class="bg-navy-900 rounded-2xl p-8 border border-gold-400/20">
+          <p class="text-warm-white font-bold text-lg mb-4 leading-snug">
+            "Nous élaborons le plan. Nous élaborons le deck. Nous formons le présentateur."
+          </p>
+          <p class="text-navy-300 text-sm mb-6">Notre méthodologie s'appuie sur :</p>
+          <ul class="space-y-2.5">
+            {[
+              "Pyramide de Minto",
+              "Cadre MECE de McKinsey",
+              "Critères CAMPARI des banques africaines",
+              "Méthode STRONG de Klaff",
+              "Structure Sparkline de Duarte",
+              "Standards de valorisation de Damodaran",
+              "Cadre de due diligence de Howson",
+            ].map((item) => (
+              <li class="flex items-center gap-2.5">
+                <svg class="w-4 h-4 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-navy-200 text-sm">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       CTA SECTION
+       ============================== -->
+  <div class="fade-up">
+    <CTASection
+      lang={lang}
+      title="Prêt à obtenir votre financement ?"
+      subtitle="Chaque mission commence par une consultation gratuite d'une heure. Nous examinons vos documents, identifions les besoins et vous donnons une évaluation honnête de votre maturité de financement."
+    />
+  </div>
+
+</BaseLayout>

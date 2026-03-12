@@ -98,6 +98,30 @@ Book a Consultation — Peter Bamuhigire | TechGuyPeter
 Book a consultation with Peter Bamuhigire. Software development, ICT consulting, and business advisory. Based in Kampala, serving clients across Africa and beyond.
 ```
 
+### Business Planning Service (EN)
+
+**Title**: (70 chars)
+```
+Bankable Business Plan Consultant Uganda | Pitch Deck & Training
+```
+
+**Description**: (158 chars)
+```
+Complete, bankable business plans with pitch decks and presentation training for Uganda and East Africa. CAMPARI-structured plans for banks, DFIs, and investors.
+```
+
+### Business Planning Service (FR)
+
+**Title**: (70 chars)
+```
+Plan d'Affaires Bancable — Consultant Afrique Francophone | Pitch Deck
+```
+
+**Description**: (160 chars)
+```
+Plans d'affaires complets et bancables avec pitch deck et formation à la présentation pour l'Afrique francophone. Structurés pour banques, IFD et investisseurs.
+```
+
 ---
 
 ## Target Keywords
@@ -108,6 +132,10 @@ Book a consultation with Peter Bamuhigire. Software development, ICT consulting,
 - technology consultant Africa
 - full stack developer Uganda
 - custom software development Kampala
+- bankable business plan Uganda
+- business plan consultant Kampala
+- pitch deck Uganda
+- plan d'affaires bancable Afrique
 
 ### Secondary Keywords
 - ERP implementation Africa
@@ -119,6 +147,13 @@ Book a consultation with Peter Bamuhigire. Software development, ICT consulting,
 - Android app developer Uganda
 - business management software Africa
 - digital transformation consultant Africa
+- UDB loan business plan requirements
+- business plan for bank loan Uganda
+- DFI investment readiness East Africa
+- business plan Côte d'Ivoire
+- consultant plan d'affaires Sénégal
+- business plan Cameroun
+- financement entreprise Afrique francophone
 
 ### Long-Tail Keywords
 - custom ERP systems for African businesses
@@ -126,6 +161,12 @@ Book a consultation with Peter Bamuhigire. Software development, ICT consulting,
 - ICT consulting services in Kampala Uganda
 - property management software for landlords
 - technology consultant with Pan-African experience
+- how to get a bank loan for my business in Uganda
+- business plan consultant Kampala Uganda
+- bankable business plan for Uganda Development Bank
+- how to pitch a business plan to investors East Africa
+- plan d'affaires pour banque Afrique de l'Ouest
+- comment obtenir un financement pour mon entreprise en Côte d'Ivoire
 
 ---
 
@@ -175,7 +216,12 @@ Book a consultation with Peter Bamuhigire. Software development, ICT consulting,
     "Property Management Technology",
     "SaaS Development",
     "Android Development",
-    "Database Management"
+    "Database Management",
+    "Business Planning",
+    "Pitch Deck Design",
+    "Presentation Coaching",
+    "Investment Readiness",
+    "CAMPARI Framework"
   ],
   "worksFor": {
     "@type": "Organization",

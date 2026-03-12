@@ -350,6 +350,60 @@
       "alt_fr": "Gros plan d'un stock de poissons sain dans un étang d'aquaculture géré en Ouganda"
     }
   },
+  "service_images": {
+    "business-plan-01.jpg": {
+      "id": "business-plan-01",
+      "path": "src/assets/images/services/business-plan-01.jpg",
+      "width": 2222,
+      "height": 1483,
+      "orientation": "landscape",
+      "category": "services",
+      "description": "Business plan document and financial projections spread on a desk",
+      "used_in": ["en/business-planning-consulting-service", "fr/business-planning-consulting-service"],
+      "alt_en": "Business plan document and financial projections spread on a desk",
+      "alt_fr": "Document de plan d'affaires et projections financières sur un bureau",
+      "notes": "Business planning service page hero/section image — landscape format"
+    },
+    "business-plan-02.jpg": {
+      "id": "business-plan-02",
+      "path": "src/assets/images/services/business-plan-02.jpg",
+      "width": 2222,
+      "height": 1611,
+      "orientation": "landscape",
+      "category": "services",
+      "description": "Pitch deck slides and presentation materials for investor meeting",
+      "used_in": ["en/business-planning-consulting-service", "fr/business-planning-consulting-service"],
+      "alt_en": "Pitch deck slides and presentation materials for investor meeting",
+      "alt_fr": "Slides de pitch deck et supports de présentation pour réunion investisseurs",
+      "notes": "Pitch deck section image — landscape format"
+    },
+    "business-plan-03.jpg": {
+      "id": "business-plan-03",
+      "path": "src/assets/images/services/business-plan-03.jpg",
+      "width": 2222,
+      "height": 2222,
+      "orientation": "square",
+      "category": "services",
+      "description": "Presenter practising business plan pitch in preparation for investor meeting",
+      "used_in": ["en/business-planning-consulting-service", "fr/business-planning-consulting-service"],
+      "alt_en": "Presenter practising business plan pitch in preparation for investor meeting",
+      "alt_fr": "Entrepreneur s'entraînant à présenter son plan d'affaires avant une réunion avec des investisseurs",
+      "notes": "Presentation training section image — square format, use with object-cover"
+    },
+    "business-plan-04.jpg": {
+      "id": "business-plan-04",
+      "path": "src/assets/images/services/business-plan-04.jpg",
+      "width": 2222,
+      "height": 1361,
+      "orientation": "landscape",
+      "category": "services",
+      "description": "Strategic business planning session with documents and laptop",
+      "used_in": ["en/business-planning-consulting-service", "fr/business-planning-consulting-service"],
+      "alt_en": "Strategic business planning session with documents and laptop",
+      "alt_fr": "Séance de planification stratégique avec documents et ordinateur portable",
+      "notes": "General business planning image — wide landscape format"
+    }
+  },
   "article_assignments": {
     "custom-software-africa": {
       "featured": "blog-images-3.jpg",

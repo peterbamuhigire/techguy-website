@@ -10,7 +10,7 @@ import img2 from '@/assets/images/blog-images-2.jpg';
 import img4 from '@/assets/images/blog-images-4.jpg';
 
 const lang: Lang = 'fr';
-const title = "Implémentation ERP : Ce Que les PME Font Mal et Comment Bien Faire";
+const title = "Erreurs d'Implémentation ERP : Ce Que les PME Font Mal";
 const description = "Évitez les erreurs coûteuses d'implémentation ERP que commettent les PME africaines. Stratégies éprouvées pour réussir votre déploiement ERP en Afrique.";
 const date = "2026-02-01";
 const category = "ERP";
@@ -20,7 +20,7 @@ const siteUrl = "https://techguypeter.com";
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": title,
   "author": {
     "@type": "Person",
@@ -44,7 +44,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <!-- Reading Progress Bar -->

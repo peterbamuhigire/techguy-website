@@ -43,8 +43,8 @@ const processSteps = [
 ---
 
 <BaseLayout
-  title="IT Consulting & Software Development Services — Kampala, Uganda"
-  description="Software development, website design, ICT consulting, ERP systems, and business advisory services in Kampala, Uganda. Web developer and IT consultant serving East Africa and beyond."
+  title="IT Consulting & Software Development — Kampala, Uganda"
+  description="Software development, website design, ICT consulting, and ERP systems in Kampala, Uganda. IT consultant serving East Africa and beyond."
   lang={lang}
   page="services"
 >
@@ -63,7 +63,7 @@ const processSteps = [
         </div>
 
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
-          {t('section.services', lang)}
+          IT Consulting &amp; Software Development Services
         </h1>
 
         <p class="mt-6 text-lg md:text-xl text-navy-200 leading-relaxed max-w-2xl">
@@ -409,8 +409,8 @@ const processSteps = [
         </div>
       </div>
 
-      <!-- Mobile: vertical timeline -->
-      <div class="md:hidden fade-up">
+      <!-- Mobile: vertical timeline (aria-hidden — desktop version is canonical) -->
+      <div class="md:hidden fade-up" aria-hidden="true">
         <div class="relative ml-6">
           <!-- Vertical line -->
           <div class="absolute top-0 bottom-0 left-4 w-0.5 bg-gradient-to-b from-gold-400/20 via-gold-400/60 to-gold-400/20"></div>
@@ -445,5 +445,45 @@ const processSteps = [
       subtitle="Every engagement begins with a conversation. Book a consultation to explore how Peter's experience can serve your organisation."
     />
   </div>
+
+<!-- Service structured data -->
+<script type="application/ld+json" set:html={JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Software Development",
+    "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/en/about/" },
+    "areaServed": [{ "@type": "Country", "name": "Uganda" }, { "@type": "Country", "name": "Kenya" }, { "@type": "Country", "name": "Tanzania" }],
+    "serviceType": "Software Development",
+    "description": "Full-stack web applications, Android mobile apps, SaaS platforms, ERP systems, and REST API development for African businesses."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "ICT Consulting & Strategy",
+    "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/en/about/" },
+    "areaServed": [{ "@type": "Country", "name": "Uganda" }, { "@type": "Country", "name": "Kenya" }, { "@type": "Country", "name": "Tanzania" }],
+    "serviceType": "IT Consulting",
+    "description": "IT infrastructure assessment, digital transformation roadmaps, systems analysis, and technology strategy for organisations in East Africa."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Business Consulting",
+    "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/en/about/" },
+    "areaServed": [{ "@type": "Country", "name": "Uganda" }, { "@type": "Country", "name": "Kenya" }, { "@type": "Country", "name": "Tanzania" }],
+    "serviceType": "Business Consulting",
+    "description": "Business process analysis, strategic planning, business plan development, M&E frameworks, and change management for African organisations."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Property Management Technology",
+    "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/en/about/" },
+    "areaServed": [{ "@type": "Country", "name": "Uganda" }, { "@type": "Country", "name": "Kenya" }, { "@type": "Country", "name": "Tanzania" }],
+    "serviceType": "Property Management Software",
+    "description": "Aqar property management platform implementation and custom PropTech solutions for landlords and property managers across Africa."
+  }
+])} />
 
 </BaseLayout>

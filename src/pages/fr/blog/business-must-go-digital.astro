@@ -10,8 +10,8 @@ import imgErp from '@/assets/images/BLOG-MARCH-5-03.jpg';
 import imgTeam from '@/assets/images/BLOG-MARCH-5-04.jpg';
 
 const lang: Lang = 'fr';
-const title = "Pourquoi Votre Entreprise Doit Passer au Numérique Dès Aujourd'hui";
-const description = "Pourquoi chaque PME africaine a besoin de systèmes numériques de point de vente, d'inventaire et de comptabilité — prévenir les pertes et se conformer aux exigences fiscales.";
+const title = "Passer au Numérique : Pourquoi Votre Entreprise Doit Agir";
+const description = "Pourquoi les PME africaines ont besoin de systèmes numériques de vente, d'inventaire et de comptabilité — prévenir les pertes et se conformer à l'EFRIS.";
 const date = "2026-03-05";
 const category = "Affaires";
 const readTime = "12 min de lecture";
@@ -20,7 +20,7 @@ const siteUrl = "https://techguypeter.com";
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": title,
   "author": {
     "@type": "Person",
@@ -44,7 +44,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <!-- Reading Progress Bar -->

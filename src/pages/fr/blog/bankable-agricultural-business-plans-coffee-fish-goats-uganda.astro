@@ -11,8 +11,8 @@ import imgFish02 from '@/assets/images/FISH-02.jpg';
 import imgCoffeeBranch from '@/assets/images/cherry-coffee-beans-branch-coffee-plant.jpg';
 
 const lang: Lang = 'fr';
-const title = "Plans d'Affaires Bancables pour l'Agriculture : Café, Pisciculture et Chèvres";
-const description = "Guide pratique pour rédiger des plans d'affaires agricoles finançables en Ouganda — modèles financiers réels pour le café, la pisciculture et l'élevage de chèvres.";
+const title = "Plans d'Affaires Agricoles : Café, Pisciculture et Chèvres";
+const description = "Rédiger des plans d'affaires agricoles finançables en Ouganda — modèles financiers réels pour le café, la pisciculture et l'élevage de chèvres.";
 const date = "2026-03-09";
 const category = "Agriculture";
 const readTime = "18 min de lecture";
@@ -21,7 +21,7 @@ const siteUrl = "https://techguypeter.com";
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": title,
   "author": {
     "@type": "Person",
@@ -45,7 +45,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <!-- Reading Progress Bar -->

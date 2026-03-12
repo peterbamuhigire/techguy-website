@@ -6,7 +6,7 @@ export default defineConfig({
   site: 'https://techguypeter.com',
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/blog') && page !== 'https://techguypeter.com/',
+      filter: (page) => page !== 'https://techguypeter.com/',
       i18n: {
         defaultLocale: 'en',
         locales: {

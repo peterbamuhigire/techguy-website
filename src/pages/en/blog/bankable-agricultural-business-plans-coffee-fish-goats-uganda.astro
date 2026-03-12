@@ -11,7 +11,7 @@ import imgFish02 from '@/assets/images/FISH-02.jpg';
 import imgCoffeeBranch from '@/assets/images/cherry-coffee-beans-branch-coffee-plant.jpg';
 
 const lang: Lang = 'en';
-const title = "Writing Bankable Business Plans for Agriculture: Coffee, Fish and Goats";
+const title = "Bankable Agricultural Business Plans: Coffee, Fish & Goats";
 const description = "A practical guide to writing agricultural business plans that get funded — real financial models for coffee, fish farming, and goat enterprises in Uganda.";
 const date = "2026-03-09";
 const category = "Agriculture";
@@ -21,7 +21,7 @@ const siteUrl = "https://techguypeter.com";
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": title,
   "author": {
     "@type": "Person",
@@ -45,7 +45,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <!-- Reading Progress Bar -->

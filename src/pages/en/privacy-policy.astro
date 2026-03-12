@@ -1,0 +1,74 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import type { Lang } from '@/utils/i18n';
+
+const lang: Lang = 'en';
+---
+
+<BaseLayout
+  title="Privacy Policy — techguypeter.com"
+  description="How Peter Bamuhigire collects, uses, and protects your personal data on techguypeter.com."
+  lang={lang}
+  page="privacy"
+>
+  <section class="bg-warm-white py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">Privacy Policy</h1>
+      <p class="text-navy-400 text-sm mb-10">Last updated: 12 March 2026</p>
+
+      <div class="space-y-8 text-navy-700 leading-relaxed">
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">1. Who We Are</h2>
+          <p>This website is operated by Peter Bamuhigire, an independent IT consultant and software developer based in Bukoto, Kampala, Uganda. Contact: <a href="mailto:peter@techguypeter.com" class="text-amber-accent hover:underline">peter@techguypeter.com</a> | +256 784 464178.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">2. Information We Collect</h2>
+          <p>When you use the contact form on this website, we collect the information you voluntarily provide: your name, email address, phone number, company name, and project description. We do not collect any other personal data automatically, except through analytics (see section 4).</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">3. How We Use Your Information</h2>
+          <p>Information submitted through the contact form is used solely to respond to your enquiry and to communicate with you about potential engagements. We do not sell, rent, or share your personal data with third parties for marketing purposes.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">4. Analytics</h2>
+          <p>This website uses Google Analytics 4 to understand how visitors use our site. Google Analytics collects anonymised data about page views, session duration, and traffic sources. This data is processed by Google LLC. You can opt out by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" class="text-amber-accent hover:underline">Google Analytics opt-out browser add-on</a>.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">5. Data Retention</h2>
+          <p>Contact form enquiries are retained for up to 2 years to enable follow-up on business relationships. You may request deletion of your data at any time by emailing <a href="mailto:peter@techguypeter.com" class="text-amber-accent hover:underline">peter@techguypeter.com</a>.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">6. Your Rights</h2>
+          <p>Under the Uganda Data Protection and Privacy Act 2019 and the EU General Data Protection Regulation (GDPR) where applicable, you have the right to access, correct, or delete any personal data we hold about you. To exercise these rights, contact us at <a href="mailto:peter@techguypeter.com" class="text-amber-accent hover:underline">peter@techguypeter.com</a>.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">7. Cookies</h2>
+          <p>This website uses minimal cookies. Google Analytics sets cookies to distinguish unique visitors. No other cookies are set by this website. You can disable cookies in your browser settings at any time.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">8. External Links</h2>
+          <p>This website contains links to external websites (LinkedIn, GitHub, client project sites). We are not responsible for the privacy practices of those sites and encourage you to read their privacy policies.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">9. Changes to This Policy</h2>
+          <p>We may update this privacy policy from time to time. The "Last updated" date at the top of this page reflects the most recent revision.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">10. Contact</h2>
+          <p>For any questions about this privacy policy, contact Peter Bamuhigire at <a href="mailto:peter@techguypeter.com" class="text-amber-accent hover:underline">peter@techguypeter.com</a> or by post: Bukoto, Kampala, Uganda.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

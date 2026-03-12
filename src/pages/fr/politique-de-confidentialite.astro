@@ -1,0 +1,74 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import type { Lang } from '@/utils/i18n';
+
+const lang: Lang = 'fr';
+---
+
+<BaseLayout
+  title="Politique de Confidentialité — techguypeter.com"
+  description="Comment Peter Bamuhigire collecte, utilise et protège vos données personnelles sur techguypeter.com."
+  lang={lang}
+  page="privacy"
+>
+  <section class="bg-warm-white py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4">Politique de Confidentialité</h1>
+      <p class="text-navy-400 text-sm mb-10">Dernière mise à jour : 12 mars 2026</p>
+
+      <div class="space-y-8 text-navy-700 leading-relaxed">
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">1. Qui Sommes-Nous</h2>
+          <p>Ce site est géré par Peter Bamuhigire, consultant IT indépendant et développeur logiciel basé à Bukoto, Kampala, Ouganda. Contact : <a href="mailto:peter@techguypeter.com" class="text-amber-accent hover:underline">peter@techguypeter.com</a> | +256 784 464178.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">2. Informations Collectées</h2>
+          <p>Lorsque vous utilisez le formulaire de contact de ce site, nous collectons les informations que vous fournissez volontairement : votre nom, adresse e-mail, numéro de téléphone, nom d'entreprise et description de projet. Nous ne collectons aucune autre donnée personnelle automatiquement, sauf via les analyses (voir section 4).</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">3. Utilisation de Vos Informations</h2>
+          <p>Les informations soumises via le formulaire de contact sont utilisées uniquement pour répondre à votre demande et communiquer avec vous concernant d'éventuelles collaborations. Nous ne vendons, ne louons ni ne partageons vos données personnelles avec des tiers à des fins commerciales.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">4. Analyses et Statistiques</h2>
+          <p>Ce site utilise Google Analytics 4 pour comprendre comment les visiteurs utilisent notre site. Google Analytics collecte des données anonymisées sur les pages vues, la durée des sessions et les sources de trafic. Ces données sont traitées par Google LLC. Vous pouvez vous désinscrire en installant le <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" class="text-amber-accent hover:underline">module complémentaire de désactivation de Google Analytics</a>.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">5. Conservation des Données</h2>
+          <p>Les demandes soumises via le formulaire de contact sont conservées jusqu'à 2 ans pour permettre le suivi des relations commerciales. Vous pouvez demander la suppression de vos données à tout moment en envoyant un e-mail à <a href="mailto:peter@techguypeter.com" class="text-amber-accent hover:underline">peter@techguypeter.com</a>.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">6. Vos Droits</h2>
+          <p>Conformément à la loi ougandaise sur la protection des données et de la vie privée de 2019 et au Règlement Général sur la Protection des Données (RGPD) de l'UE, le cas échéant, vous avez le droit d'accéder, de corriger ou de supprimer toute donnée personnelle que nous détenons vous concernant. Pour exercer ces droits, contactez-nous à <a href="mailto:peter@techguypeter.com" class="text-amber-accent hover:underline">peter@techguypeter.com</a>.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">7. Cookies</h2>
+          <p>Ce site utilise un minimum de cookies. Google Analytics utilise des cookies pour distinguer les visiteurs uniques. Aucun autre cookie n'est défini par ce site. Vous pouvez désactiver les cookies dans les paramètres de votre navigateur à tout moment.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">8. Liens Externes</h2>
+          <p>Ce site contient des liens vers des sites externes (LinkedIn, GitHub, sites de projets clients). Nous ne sommes pas responsables des pratiques de confidentialité de ces sites et vous encourageons à lire leurs politiques de confidentialité.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">9. Modifications de Cette Politique</h2>
+          <p>Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. La date de "Dernière mise à jour" en haut de cette page reflète la révision la plus récente.</p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold text-navy-900 mb-3">10. Contact</h2>
+          <p>Pour toute question concernant cette politique de confidentialité, contactez Peter Bamuhigire à <a href="mailto:peter@techguypeter.com" class="text-amber-accent hover:underline">peter@techguypeter.com</a> ou par courrier : Bukoto, Kampala, Ouganda.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -10,7 +10,7 @@ import img2 from '@/assets/images/blog-images-2.jpg';
 import img4 from '@/assets/images/blog-images-4.jpg';
 
 const lang: Lang = 'en';
-const title = "ERP Implementation: What SMEs Get Wrong and How to Get It Right";
+const title = "ERP Implementation Mistakes: What African SMEs Get Wrong";
 const description = "Avoid costly ERP mistakes African SMEs make. Proven strategies for successful ERP implementation from 15+ years of rollouts across Africa.";
 const date = "2026-02-01";
 const category = "ERP";
@@ -20,7 +20,7 @@ const siteUrl = "https://techguypeter.com";
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": title,
   "author": {
     "@type": "Person",
@@ -44,7 +44,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <!-- Reading Progress Bar -->

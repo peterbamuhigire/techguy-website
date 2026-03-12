@@ -10,7 +10,7 @@ import img12 from '@/assets/images/blog-images-12.jpg';
 import img17 from '@/assets/images/blog-images-17.jpg';
 
 const lang: Lang = 'fr';
-const title = "Ce Que Coûte Réellement un Site Web en Ouganda (Et Pourquoi les Prix Varient Autant)";
+const title = "Coût d'un Site Web en Ouganda : Le Vrai Prix";
 const description = "Combien coûte un site web en Ouganda ? Ventilation honnête des prix en UGX et USD — des sites modèles aux constructions sur mesure.";
 const date = "2026-01-15";
 const category = "Technologie";
@@ -20,7 +20,7 @@ const siteUrl = "https://techguypeter.com";
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": title,
   "author": {
     "@type": "Person",
@@ -44,7 +44,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <!-- Reading Progress Bar -->

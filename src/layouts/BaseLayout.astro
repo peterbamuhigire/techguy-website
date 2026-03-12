@@ -127,8 +127,8 @@ const breadcrumbSchema = {
 
   <!-- Canonical & Hreflang -->
   <link rel="canonical" href={canonicalUrl} />
-  <link rel="alternate" hreflang={lang} href={`${siteUrl}/${lang}${currentPath || '/'}`} />
-  <link rel="alternate" hreflang={altLang} href={`${siteUrl}${altUrl}`} />
+  <link rel="alternate" hreflang={lang === 'en' ? 'en-GB' : 'fr-FR'} href={`${siteUrl}/${lang}${currentPath || '/'}`} />
+  <link rel="alternate" hreflang={altLang === 'en' ? 'en-GB' : 'fr-FR'} href={`${siteUrl}${altUrl}`} />
   <link rel="alternate" hreflang="x-default" href={`${siteUrl}/en${currentPath || '/'}`} />
 
   <!-- Geo Targeting — Kampala, Uganda -->
@@ -153,6 +153,22 @@ const breadcrumbSchema = {
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Google Analytics 4 -->
+  <!-- TODO: Replace G-XXXXXXXXXX with your real Measurement ID from https://analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Search Console & Bing Webmaster Verification -->
+  <!-- TODO: Replace with token from https://search.google.com/search-console (HTML tag method) -->
+  <meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN" />
+  <!-- TODO: Replace with token from https://www.bing.com/webmasters (HTML meta tag method) -->
+  <meta name="msvalidate.01" content="REPLACE_WITH_BING_TOKEN" />
 
   <!-- Structured Data -->
   <script type="application/ld+json" set:html={JSON.stringify(professionalServiceSchema)} />

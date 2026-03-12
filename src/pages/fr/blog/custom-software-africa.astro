@@ -10,7 +10,7 @@ import img13 from '@/assets/images/blog-images-13.jpg';
 import img11 from '@/assets/images/blog-images-11.jpg';
 
 const lang: Lang = 'fr';
-const title = "Pourquoi les Entreprises Africaines Ont Besoin de Logiciels Sur Mesure";
+const title = "Logiciels Sur Mesure pour les Entreprises Africaines";
 const description = "Logiciel sur mesure en Afrique : pourquoi les solutions prêtes à l'emploi échouent et comment les logiciels personnalisés de Kampala produisent des résultats.";
 const date = "2026-03-01";
 const category = "Technologie";
@@ -20,7 +20,7 @@ const siteUrl = "https://techguypeter.com";
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": title,
   "author": {
     "@type": "Person",
@@ -44,7 +44,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <!-- Reading Progress Bar -->

@@ -10,7 +10,7 @@ import img12 from '@/assets/images/blog-images-12.jpg';
 import img17 from '@/assets/images/blog-images-17.jpg';
 
 const lang: Lang = 'en';
-const title = "What a Website Actually Costs in Uganda (And Why It Varies So Much)";
+const title = "Website Costs in Uganda: What You Actually Pay";
 const description = "Honest breakdown of website cost in Uganda — from template sites to custom builds. Real prices in UGX and USD, plus hidden costs.";
 const date = "2026-01-15";
 const category = "Technology";
@@ -20,7 +20,7 @@ const siteUrl = "https://techguypeter.com";
 
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": title,
   "author": {
     "@type": "Person",
@@ -44,7 +44,7 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={`${title} — Peter Bamuhigire`} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <!-- Reading Progress Bar -->

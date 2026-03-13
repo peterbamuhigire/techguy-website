@@ -5,27 +5,38 @@ import CTASection from '@/components/CTASection.astro';
 import { Image } from 'astro:assets';
 import { t, type Lang } from '@/utils/i18n';
 
+import imgWebsiteUsers from '@/assets/images/website-users--02.jpg';
+import imgAgriBusiness from '@/assets/images/photorealistic-goat-farm.jpg';
 import imgDigitalBusiness from '@/assets/images/BLOG-MARCH-5-01.jpg';
 import imgCustomSoftware from '@/assets/images/blog-images-3.jpg';
 import imgItConsultant from '@/assets/images/blog-images-8.jpg';
 import imgErp from '@/assets/images/blog-images-1.jpg';
 import imgWebsiteCosts from '@/assets/images/blog-images-9.jpg';
-import imgAgriBusiness from '@/assets/images/photorealistic-goat-farm.jpg';
 
 const lang: Lang = 'fr';
 
 const featuredPost = {
-  title: 'Plans d\'Affaires Bancables pour l\'Agriculture : Café, Pisciculture et Chèvres',
-  slug: 'bankable-agricultural-business-plans-coffee-fish-goats-uganda',
-  category: 'Agriculture',
-  date: '9 mars 2026',
-  readTime: '18 min de lecture',
-  excerpt: 'La plupart des demandes de prêts agricoles en Ouganda sont rejetées non pas parce que l\'idée agricole est mauvaise — mais parce que le plan d\'affaires ne parle pas le langage de l\'argent. Modèles financiers réels pour le café, la pisciculture et l\'élevage de chèvres.',
-  image: imgAgriBusiness,
-  imageAlt: 'Ferme caprine photorealistic en Ouganda — guide de planification d\'entreprise agricole pour l\'Afrique de l\'Est',
+  title: 'Pourquoi Vos Visiteurs Quittent Votre Site en 3 Secondes — Et Comment Les Retenir',
+  slug: 'why-visitors-leave-website-3-seconds',
+  category: 'Design Web & UX',
+  date: '13 mars 2026',
+  readTime: '10 min de lecture',
+  excerpt: 'La plupart des sites web perdent 40 % de leurs visiteurs avant même que la page soit chargée. Les 7 vraies raisons qui font fuir vos visiteurs — et des solutions concrètes pour chacune d\'elles.',
+  image: imgWebsiteUsers,
+  imageAlt: 'Visiteurs d\'un site web consultant une entreprise en ligne — réduire le taux de rebond et améliorer l\'expérience utilisateur',
 };
 
 const blogPosts = [
+  {
+    title: 'Plans d\'Affaires Bancables pour l\'Agriculture : Café, Pisciculture et Chèvres',
+    slug: 'bankable-agricultural-business-plans-coffee-fish-goats-uganda',
+    category: 'Agriculture',
+    date: '9 mars 2026',
+    readTime: '18 min de lecture',
+    excerpt: 'La plupart des demandes de prêts agricoles en Ouganda sont rejetées non pas parce que l\'idée agricole est mauvaise — mais parce que le plan d\'affaires ne parle pas le langage de l\'argent. Modèles financiers réels pour le café, la pisciculture et l\'élevage de chèvres.',
+    image: imgAgriBusiness,
+    imageAlt: 'Ferme caprine photorealistic en Ouganda — guide de planification d\'entreprise agricole pour l\'Afrique de l\'Est',
+  },
   {
     title: 'Pourquoi Votre Entreprise Doit Passer au Numérique Dès Aujourd\'hui',
     slug: 'business-must-go-digital',

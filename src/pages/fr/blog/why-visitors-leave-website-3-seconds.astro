@@ -1,0 +1,341 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/website-users--02.jpg';
+import imgPortrait from '@/assets/images/website-users--01.jpg';
+import imgLandscape1 from '@/assets/images/website-users--03.jpg';
+import imgLandscape2 from '@/assets/images/website-users--04.jpg';
+
+const lang: Lang = 'fr';
+const title = "Pourquoi Vos Visiteurs Quittent Votre Site en 3 Secondes — Et Comment Les Retenir";
+const description = "La plupart des sites web perdent 40 % de leurs visiteurs avant même que la page soit chargée. Les 7 vraies raisons qui font fuir vos visiteurs — et des solutions concrètes.";
+const date = "2026-03-13";
+const category = "Design Web & UX";
+const readTime = "10 min de lecture";
+const slug = "why-visitors-leave-website-3-seconds";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/fr/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "fr",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/fr/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Style C: Split Hero -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-16">
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 text-xs font-semibold bg-amber-accent/20 text-amber-accent rounded-full">{category}</span>
+          <span class="text-sm text-navy-500">{readTime}</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 leading-tight">
+          {title}
+        </h1>
+        <div class="mt-4 flex items-center gap-4 text-sm text-navy-500">
+          <span>Par Peter Bamuhigire</span>
+          <span class="w-1 h-1 rounded-full bg-navy-400"></span>
+          <time datetime={date}>13 mars 2026</time>
+        </div>
+        <p class="mt-6 text-lg text-navy-600 leading-relaxed">
+          Vous investissez pour attirer des visiteurs sur votre site. Ils repartent en quelques secondes — avant d'avoir lu un seul mot. Voici les sept raisons et ce qu'il faut corriger en premier.
+        </p>
+        <div class="mt-6">
+          <a href="/fr/contact/" class="inline-flex items-center gap-2 px-5 py-3 bg-amber-accent hover:bg-gold-600 text-white text-sm font-semibold rounded-lg transition-colors">
+            Obtenir un Audit Gratuit
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-lg h-72 md:h-96">
+        <Image
+          src={heroImg}
+          alt="Visiteurs d'un site web consultant une entreprise en ligne — réduire le taux de rebond et améliorer l'expérience utilisateur"
+          width={2222}
+          height={1481}
+          class="w-full h-full object-cover"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Retour au Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Retour au Blog
+    </a>
+  </div>
+
+  <!-- Corps de l'Article -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-warm prose-dropcap">
+
+      <p>Une cheffe d'entreprise à Abidjan m'a contacté l'an dernier avec un problème qu'elle ne parvenait pas à expliquer. Son site recevait du trafic — un bon trafic, des bonnes personnes. Ses campagnes Google Ads convertissaient. Mais ses leads s'étaient taris. Les appels commerciaux s'étaient arrêtés.</p>
+
+      <p>Nous avons ouvert ses statistiques ensemble. Durée moyenne des sessions : 11 secondes.</p>
+
+      <p>Onze secondes. Des visiteurs arrivaient sur sa page, jetaient un coup d'œil à ce qu'ils voyaient en premier, et repartaient avant d'avoir lu une seule phrase. Son site lui semblait clair parce qu'elle savait ce qu'il présentait. Ses visiteurs, eux, ne le savaient pas. Ils arrivaient avec une question et ne trouvaient pas de réponse assez vite. Alors ils partaient.</p>
+
+      <p>Ce scénario se répète sur des milliers de sites chaque jour. Vous investissez pour amener des visiteurs — Google Ads, référencement naturel, réseaux sociaux — et au moment où ils arrivent, quelque chose les fait repartir. Le coût n'est pas seulement un clic gaspillé. C'est chaque client qui était presque prêt à vous choisir, et qui a choisi quelqu'un d'autre.</p>
+
+      <p>Voici les sept raisons pour lesquelles les visiteurs quittent votre site en quelques secondes, et ce qu'il faut faire pour chacune d'elles.</p>
+
+      <hr />
+
+      <h2>1. Votre Page Met Trop Longtemps à Charger</h2>
+
+      <p>Trois secondes. C'est le seuil critique. Les études de Google montrent que lorsque le temps de chargement passe de 1 à 3 secondes, la probabilité qu'un visiteur rebondisse augmente de 32 %. À 5 secondes, ce chiffre grimpe à 90 %.</p>
+
+      <p>Les visiteurs n'attendent pas. Ils ont une page de résultats remplie d'alternatives à portée de clic. Si votre page est encore en train de charger, ils sont déjà partis.</p>
+
+      <p>Les causes les plus fréquentes :</p>
+
+      <ul>
+        <li><strong>Images non compressées.</strong> Une seule photo sortie directement d'un appareil photo peut peser 8 à 12 Mo. C'est tout le budget de votre page consommé par une seule image.</li>
+        <li><strong>Trop de plugins.</strong> Chaque extension charge des scripts. Dix plugins, dix requêtes supplémentaires. Vingt plugins, c'est la catastrophe.</li>
+        <li><strong>Hébergement mutualisé bon marché.</strong> Si votre serveur met 1,5 seconde à répondre avant d'envoyer le premier octet, vous êtes déjà en retard.</li>
+      </ul>
+
+      <p><strong>Ce qu'il faut faire :</strong> Testez votre URL avec Google PageSpeed Insights. Regardez votre score LCP (Largest Contentful Paint) — il doit être inférieur à 2,5 secondes. Compressez chaque image avant de la mettre en ligne. Visez moins de 150 Ko par image. Si vous utilisez WordPress, auditez vos extensions et supprimez tout ce que vous n'utilisez pas activement.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLandscape1}
+          alt="Chef d'entreprise vérifiant la vitesse de son site web sur ordinateur portable — améliorer la performance et réduire le taux de rebond"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Un site lent est une salle d'attente vide. Chaque seconde supplémentaire vous coûte un visiteur qui avait le choix.</figcaption>
+      </figure>
+
+      <h2>2. La Première Fenêtre Ne Répond Pas à « De Quoi S'Agit-Il ? »</h2>
+
+      <p>Quand un visiteur atterrit sur votre site, il se pose instantanément une question : <em>Est-ce ce que je cherchais ?</em></p>
+
+      <p>Il ne le fait pas consciemment. Il ne lit pas votre page À propos ni ne vérifie vos références. Il regarde ce qui est visible sans faire défiler la page — ce qu'on appelle « au-dessus de la ligne de flottaison » — et prend une décision en moins d'une seconde.</p>
+
+      <p>Si ce premier écran affiche une image générique avec les mots « Bienvenue dans l'Excellence au Service », il repart.</p>
+
+      <p>Votre titre principal doit répondre à trois questions simultanément :</p>
+      <ol>
+        <li>Que faites-vous ?</li>
+        <li>Pour qui le faites-vous ?</li>
+        <li>Pourquoi vous choisir plutôt qu'un autre ?</li>
+      </ol>
+
+      <p>« Conseil aux PME ambitieuses » vaut mieux que « Bienvenue ». « Logiciel comptable conçu pour les commerçants sénégalais » vaut mieux que « Des solutions modernes pour les entreprises modernes ».</p>
+
+      <p>J'ai travaillé sur le site d'un cabinet comptable à Douala. Leur titre d'origine était « Votre Partenaire de Croissance Financière ». Complètement générique — cela aurait pu désigner une banque, un conseiller financier ou une compagnie d'assurance. Nous l'avons remplacé par « Comptabilité et Fiscalité pour les PME de Douala — Nous Gérons la DGI Pour Que Vous Puissiez Vous Concentrer Sur Votre Activité ». Leurs demandes de contact ont doublé en un mois.</p>
+
+      <p><strong>Ce qu'il faut faire :</strong> Montrez votre page d'accueil à quelqu'un qui n'a jamais entendu parler de votre entreprise. Cachez le logo. Demandez-lui : « Que fait cette société, et pour qui ? » S'il ne peut pas répondre en cinq secondes, votre titre doit être retravaillé.</p>
+
+      <h2>3. Votre Site Ne S'Affiche Pas Correctement sur Téléphone</h2>
+
+      <p>Plus de 60 % du trafic web provient des appareils mobiles en Afrique de l'Ouest et en Afrique centrale. Dans certains marchés, ce chiffre approche les 80 %.</p>
+
+      <p>Si votre site a été conçu principalement pour le bureau et simplement « adapté » pour le mobile, les visiteurs sur téléphone rencontreront des textes minuscules, des boutons impossibles à cliquer avec le pouce, des images qui débordent de l'écran et des menus qui ne fonctionnent pas.</p>
+
+      <p>Ils ne feront pas d'effort. Il n'y a pas de fidélité à ce stade. Ils ne vous connaissent pas encore. Ils appuieront sur « retour » et essaieront le résultat suivant.</p>
+
+      <p>Le test est simple : ouvrez votre site sur votre propre téléphone. Pas sur une tablette, pas sur le simulateur de Chrome — votre vrai téléphone. Pouvez-vous lire le texte sans zoomer ? Pouvez-vous appuyer sur les boutons sans en toucher deux à la fois ? La mise en page a-t-elle du sens ?</p>
+
+      <figure class="my-8 flex justify-center">
+        <div class="max-w-sm">
+          <Image
+            src={imgPortrait}
+            alt="Personne consultant un site web sur téléphone mobile — design web responsive pour les entreprises africaines"
+            width={740}
+            height={1111}
+            class="article-img-portrait rounded-xl"
+            loading="lazy"
+          />
+          <figcaption>La majorité de vos visiteurs utilisent un téléphone. Concevez d'abord pour cet écran.</figcaption>
+        </div>
+      </figure>
+
+      <p><strong>Ce qu'il faut faire :</strong> Si vous construisez un nouveau site, concevez pour 375px d'abord et élargissez vers le bureau — pas l'inverse. Pour un site existant, Google Search Console vous indique les erreurs de convivialité mobile. Commencez par corriger « éléments cliquables trop proches » et « texte trop petit pour être lu ».</p>
+
+      <h2>4. La Navigation Est Confuse</h2>
+
+      <p>La navigation semble un détail. Ce n'en est pas un.</p>
+
+      <p>Quand un visiteur ne trouve pas ce qu'il cherche en deux clics, il suppose soit que l'information n'existe pas, soit que votre entreprise est désorganisée. Dans les deux cas, il repart.</p>
+
+      <p>Les erreurs de navigation les plus préjudiciables :</p>
+
+      <ul>
+        <li><strong>Trop d'options.</strong> Sept éléments ou plus dans un menu provoquent une paralysie décisionnelle. Les visiteurs hésitent, ne choisissent rien et partent. Limitez votre navigation principale à cinq éléments au maximum.</li>
+        <li><strong>Des noms originaux plutôt que des noms clairs.</strong> « Notre Histoire » au lieu de « À Propos ». « L'Espace Ressources » au lieu de « Documents ». Les visiteurs ne jouent pas à un jeu — ils veulent trouver ce dont ils ont besoin. Utilisez les mots qu'ils utilisent.</li>
+        <li><strong>Aucune hiérarchie visuelle.</strong> Si toutes les pages se ressemblent, les visiteurs ne savent pas où ils se trouvent. Ils perdent leurs repères et quittent le site.</li>
+      </ul>
+
+      <p><strong>Ce qu'il faut faire :</strong> Construisez votre navigation autour du parcours visiteur, pas de l'organigramme interne de votre entreprise. Un visiteur arrive, veut savoir ce que vous faites, comment vous pouvez l'aider, si vous êtes fiable, et comment vous joindre. Rendez ces quatre points faciles à trouver dans cet ordre.</p>
+
+      <h2>5. La Page Est un Mur de Texte</h2>
+
+      <p>Lire du texte sur un écran est difficile. Lire des paragraphes denses et ininterrompus sur un téléphone l'est encore plus.</p>
+
+      <p>Quand un visiteur atterrit sur une page sans sous-titres, sans espaces blancs, sans images et sans respiration visuelle, il fait défiler pendant deux secondes, décide que c'est trop d'effort, et part.</p>
+
+      <p>La solution n'est pas d'écrire moins. C'est de mieux structurer.</p>
+
+      <p>Tous les 2 ou 3 paragraphes, ajoutez un sous-titre qui résume ce que la section suivante contient. Utilisez des listes à puces quand vous énumérez trois éléments ou plus. Mettez en gras la phrase la plus importante d'une section. Découpez les longs paragraphes en deux paragraphes plus courts. Ajoutez une image tous les 400 à 600 mots.</p>
+
+      <p><strong>Ce qu'il faut faire :</strong> Examinez votre page de service la plus importante. Lisez uniquement les titres et la première phrase de chaque paragraphe. L'argument de la page reste-t-il compréhensible ? Un lecteur rapide saisit-il l'essentiel ? Si non, travaillez d'abord la mise en forme.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLandscape2}
+          alt="Site web bien structuré sur ordinateur portable — typographie claire et mise en forme pour améliorer l'engagement utilisateur"
+          width={2222}
+          height={1250}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Une bonne mise en forme ne signifie pas moins de contenu. Elle permet aux lecteurs de trouver ce qu'ils cherchent.</figcaption>
+      </figure>
+
+      <h2>6. Il N'y a Pas d'Étape Suivante Claire</h2>
+
+      <p>Voici ce qui surprend beaucoup de dirigeants : les visiteurs font ce qu'on leur dit de faire.</p>
+
+      <p>Si vous terminez une page avec des informations supplémentaires sur votre entreprise mais aucun appel à l'action, les visiteurs lisent, se sentent satisfaits, et repartent. Non pas parce qu'ils n'étaient pas intéressés. Mais parce que vous ne leur avez pas dit quoi faire ensuite.</p>
+
+      <p>Chaque page de votre site doit proposer une étape suivante claire. Pas cinq options, pas une rangée d'icônes de réseaux sociaux — une action principale.</p>
+
+      <ul>
+        <li>Pour une page de service : « Obtenir un devis gratuit » ou « Réserver une consultation ».</li>
+        <li>Pour un article de blog : « Découvrir nos services » ou « S'abonner à la newsletter ».</li>
+        <li>Pour une page À propos : « Voir nos réalisations » ou « Nous contacter ».</li>
+      </ul>
+
+      <p>L'appel à l'action doit être visible sans faire défiler la page. Il doit prendre la forme d'un bouton, pas d'un simple lien. Et il doit indiquer au visiteur ce qui se passe quand il clique — « Réserver un appel gratuit de 30 minutes » est plus efficace que « Nous contacter » parce que cela fixe des attentes claires.</p>
+
+      <p><strong>Ce qu'il faut faire :</strong> Auditez chaque page individuellement. Demandez-vous : « Quelle est l'action la plus précieuse qu'un visiteur pourrait effectuer depuis cette page ? » Rendez cette action impossible à manquer. Réduisez ou supprimez tout ce qui lui fait concurrence.</p>
+
+      <h2>7. Le Site Ne Paraît Pas Digne de Confiance</h2>
+
+      <p>Un visiteur qui ne fait pas confiance à votre site ne restera pas assez longtemps pour devenir client.</p>
+
+      <p>Les signaux de confiance ne se limitent pas aux certificats de sécurité — bien que HTTPS soit incontournable. Il s'agit surtout que le site <em>ressemble à une vraie entreprise</em>. Les visiteurs font cette évaluation en moins d'une seconde, de manière largement inconsciente.</p>
+
+      <p>Ce qui construit la confiance :</p>
+
+      <ul>
+        <li>Une photographie professionnelle de la personne ou de l'équipe (pas de photos de stock)</li>
+        <li>De vrais témoignages clients avec noms, entreprises et visages</li>
+        <li>Des résultats concrets (« nous avons économisé 14 heures par semaine à ce client ») plutôt que des affirmations vagues</li>
+        <li>Une adresse physique ou une zone d'intervention</li>
+        <li>Un numéro de téléphone visible sans avoir à le chercher</li>
+        <li>Un contenu manifestement maintenu à jour</li>
+      </ul>
+
+      <p>Ce qui détruit la confiance :</p>
+
+      <ul>
+        <li>Les photos de stock génériques de personnes en costume se serrant la main</li>
+        <li>Les mentions de copyright « © 2019 »</li>
+        <li>Les liens brisés ou les pages d'erreur</li>
+        <li>Les fautes d'orthographe et les erreurs grammaticales</li>
+        <li>L'absence totale de tarification — les visiteurs supposent alors que vous êtes trop cher</li>
+      </ul>
+
+      <p><strong>Ce qu'il faut faire :</strong> Ajoutez au moins deux témoignages clients authentiques sur votre page d'accueil, avec l'autorisation d'utiliser le nom complet et l'entreprise du client. Remplacez les photos de stock trop évidentes par de vraies photos. Mettez à jour l'année du copyright. Utilisez un vérificateur de liens brisés et corrigez tout ce qu'il trouve.</p>
+
+      <hr />
+
+      <h2>Le Fil Conducteur Derrière Ces Sept Problèmes</h2>
+
+      <p>Regardez cette liste à nouveau. La plupart de ces problèmes partagent la même cause profonde : le site a été conçu pour l'entreprise, pas pour le visiteur.</p>
+
+      <p>Le dirigeant sait ce qu'il fait. Il n'a pas besoin que le titre l'explique. Il sait où se trouvent les services. Il est à l'aise avec la mise en page parce qu'il l'a conçue. Mais il n'est pas le public cible.</p>
+
+      <p>Votre visiteur arrive comme un inconnu. Il a un problème et parcourt votre site à la recherche de preuves que vous pouvez le résoudre — rapidement, sans friction, sans risque.</p>
+
+      <p>Chaque seconde de confusion vous coûte quelqu'un qui était prêt à vous engager.</p>
+
+      <p>La bonne nouvelle : la plupart de ces corrections ne nécessitent pas de reconstruire votre site. Elles nécessitent de lire votre propre site comme un visiteur qui le découvrirait pour la première fois — puis de corriger ce qui prête à confusion, ce qui ralentit, ou ce qui ne dit pas quoi faire ensuite.</p>
+
+      <p>Commencez par une chose. Lancez PageSpeed Insights, changez votre titre, ou ajoutez un témoignage. Mesurez ce qui se passe. Passez à la suivante.</p>
+
+      <p>Onze secondes n'est pas une fatalité. C'est un diagnostic.</p>
+
+      <p>Si vous souhaitez un regard extérieur sur votre site — une analyse sérieuse de ce qui fait fuir vos visiteurs — <a href="/fr/contact/">contactez-nous</a>. Nous ferons le tour ensemble et vous donnerons une image claire de ce qu'il faut corriger et dans quel ordre. Vous pouvez également <a href="/fr/services/">découvrir nos services de création web</a> si vous envisagez une refonte plutôt qu'un correctif ponctuel.</p>
+
+    </div>
+
+    <!-- Biographie de l'Auteur -->
+    <div class="mt-12 pt-8 border-t border-amber-accent/30">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-amber-accent/10 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-amber-accent">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Consultant en Technologie et Stratégie d'Entreprise avec plus de 15 ans d'expérience dans plus de 10 pays africains. Fondateur de Chwezi Digital Solutions, basé à Kampala, Ouganda.</p>
+          <a href="/fr/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Obtenir un Audit Gratuit
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Retour au Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Retour à Tous les Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

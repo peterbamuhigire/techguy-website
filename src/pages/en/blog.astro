@@ -5,27 +5,38 @@ import CTASection from '@/components/CTASection.astro';
 import { Image } from 'astro:assets';
 import { t, type Lang } from '@/utils/i18n';
 
+import imgWebsiteUsers from '@/assets/images/website-users--02.jpg';
+import imgAgriBusiness from '@/assets/images/photorealistic-goat-farm.jpg';
 import imgDigitalBusiness from '@/assets/images/BLOG-MARCH-5-01.jpg';
 import imgCustomSoftware from '@/assets/images/blog-images-3.jpg';
 import imgItConsultant from '@/assets/images/blog-images-8.jpg';
 import imgErp from '@/assets/images/blog-images-1.jpg';
 import imgWebsiteCosts from '@/assets/images/blog-images-9.jpg';
-import imgAgriBusiness from '@/assets/images/photorealistic-goat-farm.jpg';
 
 const lang: Lang = 'en';
 
 const featuredPost = {
-  title: 'Writing Bankable Business Plans for Agriculture: Coffee, Fish and Goats',
-  slug: 'bankable-agricultural-business-plans-coffee-fish-goats-uganda',
-  category: 'Agriculture',
-  date: '9 March 2026',
-  readTime: '15 min read',
-  excerpt: 'Most agricultural loan applications in Uganda are rejected not because the farming idea is bad — but because the business plan doesn\'t speak the language of money. Real financial models for coffee, fish farming, and goat enterprises.',
-  image: imgAgriBusiness,
-  imageAlt: 'Photorealistic goat farm in Uganda — agricultural business planning guide for East Africa',
+  title: 'Why Visitors Leave Your Website After 3 Seconds — And How to Stop It',
+  slug: 'why-visitors-leave-website-3-seconds',
+  category: 'Web Design & UX',
+  date: '13 March 2026',
+  readTime: '8 min read',
+  excerpt: 'Most websites lose 40% of visitors before the page fully loads. Here are the 7 real reasons visitors leave in seconds — and practical fixes for each one.',
+  image: imgWebsiteUsers,
+  imageAlt: 'Website visitors browsing a business website on laptop — reduce bounce rate and improve user experience',
 };
 
 const blogPosts = [
+  {
+    title: 'Writing Bankable Business Plans for Agriculture: Coffee, Fish and Goats',
+    slug: 'bankable-agricultural-business-plans-coffee-fish-goats-uganda',
+    category: 'Agriculture',
+    date: '9 March 2026',
+    readTime: '15 min read',
+    excerpt: 'Most agricultural loan applications in Uganda are rejected not because the farming idea is bad — but because the business plan doesn\'t speak the language of money. Real financial models for coffee, fish farming, and goat enterprises.',
+    image: imgAgriBusiness,
+    imageAlt: 'Photorealistic goat farm in Uganda — agricultural business planning guide for East Africa',
+  },
   {
     title: 'Why Your Business Must Go Digital Today',
     slug: 'business-must-go-digital',

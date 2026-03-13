@@ -1,0 +1,341 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/website-users--02.jpg';
+import imgPortrait from '@/assets/images/website-users--01.jpg';
+import imgLandscape1 from '@/assets/images/website-users--03.jpg';
+import imgLandscape2 from '@/assets/images/website-users--04.jpg';
+
+const lang: Lang = 'en';
+const title = "Why Visitors Leave Your Website After 3 Seconds — And How to Stop It";
+const description = "Most websites lose 40% of visitors before the page fully loads. Here are the 7 real reasons visitors leave in seconds — and practical fixes for each one.";
+const date = "2026-03-13";
+const category = "Web Design & UX";
+const readTime = "8 min read";
+const slug = "why-visitors-leave-website-3-seconds";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Style C: Split Hero -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-16">
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="px-3 py-1 text-xs font-semibold bg-amber-accent/20 text-amber-accent rounded-full">{category}</span>
+          <span class="text-sm text-navy-500">{readTime}</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 leading-tight">
+          {title}
+        </h1>
+        <div class="mt-4 flex items-center gap-4 text-sm text-navy-500">
+          <span>By Peter Bamuhigire</span>
+          <span class="w-1 h-1 rounded-full bg-navy-400"></span>
+          <time datetime={date}>13 March 2026</time>
+        </div>
+        <p class="mt-6 text-lg text-navy-600 leading-relaxed">
+          You pay to get visitors to your site. Then they leave in seconds — before they've read a word. Here are the seven reasons it happens, and what to fix first.
+        </p>
+        <div class="mt-6">
+          <a href="/en/contact/" class="inline-flex items-center gap-2 px-5 py-3 bg-amber-accent hover:bg-gold-600 text-white text-sm font-semibold rounded-lg transition-colors">
+            Get a Free Website Review
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden shadow-lg h-72 md:h-96">
+        <Image
+          src={heroImg}
+          alt="Website visitors browsing a business website on laptop — reduce bounce rate and improve user experience"
+          width={2222}
+          height={1481}
+          class="w-full h-full object-cover"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-warm prose-dropcap">
+
+      <p>A business owner I spoke with last year had a problem she couldn't explain. Her website was getting traffic — good traffic, from the right people. Her Google Ads were converting. But her leads had dried up. Sales calls had gone quiet.</p>
+
+      <p>We pulled up her analytics together. Average session duration: 11 seconds.</p>
+
+      <p>Eleven seconds. People were landing on her page, glancing at whatever they saw first, and leaving before they'd read a single sentence. Her website looked fine to her because she knew what it was about. Her visitors didn't. They arrived with a question and couldn't find an answer fast enough. So they left.</p>
+
+      <p>This happens on thousands of websites every day. You pour money into getting people to your site — Google Ads, SEO, social media — and the moment they arrive, something sends them away. The cost isn't just a wasted click. It's every client who almost chose you and chose someone else instead.</p>
+
+      <p>Here are the seven reasons visitors leave in seconds, and what to do about each one.</p>
+
+      <hr />
+
+      <h2>1. Your Page Takes Too Long to Load</h2>
+
+      <p>Three seconds. That's the threshold. Studies from Google show that as page load time goes from 1 second to 3 seconds, the probability of someone bouncing increases by 32%. By the time you hit 5 seconds, that number jumps to 90%.</p>
+
+      <p>Visitors don't wait. They have a search results page full of alternatives one click away. If your page is still loading, they're already gone.</p>
+
+      <p>The most common culprits:</p>
+
+      <ul>
+        <li><strong>Uncompressed images.</strong> A single photograph uploaded straight from a camera can be 8–12MB. That's a full page budget gone on one image.</li>
+        <li><strong>Too many plugins.</strong> Every plugin loads scripts. Ten plugins, ten extra requests. Twenty plugins is a disaster.</li>
+        <li><strong>Cheap shared hosting.</strong> If your server takes 1.5 seconds just to respond before sending a single byte, you're already behind.</li>
+      </ul>
+
+      <p><strong>What to do:</strong> Run your URL through Google PageSpeed Insights. Look at your Largest Contentful Paint (LCP) score — it should be under 2.5 seconds. Compress every image before uploading. Aim for under 150KB per image. If you're on WordPress, audit your plugins and remove anything you don't actively use.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLandscape1}
+          alt="Business owner checking website performance on laptop — improve page speed and reduce bounce rate"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>A slow page is an empty waiting room. Every second costs you a visitor who had options.</figcaption>
+      </figure>
+
+      <h2>2. The First Screen Doesn't Answer "What Is This?"</h2>
+
+      <p>When someone lands on your website, they ask one question instantly: <em>Is this what I was looking for?</em></p>
+
+      <p>They don't ask it consciously. They don't read your About page or check your credentials. They glance at whatever appears above the fold — the content visible before scrolling — and make a decision in under a second.</p>
+
+      <p>If that first screen is a vague hero image with the words "Welcome to Excellence in Service", they leave.</p>
+
+      <p>Your headline must answer three questions at once:</p>
+      <ol>
+        <li>What do you do?</li>
+        <li>Who do you do it for?</li>
+        <li>Why should they choose you?</li>
+      </ol>
+
+      <p>"Business consulting for ambitious SMEs" is better than "Welcome." "Accounting software built for Kenyan retailers" is better than "Modern solutions for modern businesses."</p>
+
+      <p>I worked on a site for an accounting firm in Nairobi. Their original headline read "Your Partner in Financial Growth." Completely generic — could be a bank, a financial adviser, an insurance company. We changed it to "Accounting and Tax Filing for Nairobi SMEs — We Handle ITAX So You Don't Have To." Their contact form enquiries doubled within a month.</p>
+
+      <p><strong>What to do:</strong> Show your homepage to someone who's never heard of your business. Cover the logo. Ask them: "What does this company do, and who is it for?" If they can't answer in five seconds, your headline needs work.</p>
+
+      <h2>3. Your Website Looks Wrong on a Phone</h2>
+
+      <p>More than 60% of web traffic comes from mobile devices in East Africa. In some markets, it's closer to 75%.</p>
+
+      <p>If your site was designed primarily for desktop and then "adapted" for mobile, visitors on phones will hit tiny text, buttons that don't work when tapped with a thumb, images that bleed off-screen, and menus that break.</p>
+
+      <p>They won't struggle with it. There's no loyalty at this stage. They don't know you yet. They'll hit back and try the next result.</p>
+
+      <p>The test is simple: pull up your website on your own phone. Not a tablet, not Chrome's device simulator — your actual phone. Can you read the text without zooming? Can you tap the buttons without your finger hitting two at once? Does the layout make sense?</p>
+
+      <figure class="my-8 flex justify-center">
+        <div class="max-w-sm">
+          <Image
+            src={imgPortrait}
+            alt="Person browsing a website on mobile phone — mobile-responsive web design for African businesses"
+            width={740}
+            height={1111}
+            class="article-img-portrait rounded-xl"
+            loading="lazy"
+          />
+          <figcaption>Most of your visitors are on a phone. Design for that screen first.</figcaption>
+        </div>
+      </figure>
+
+      <p><strong>What to do:</strong> If you're building a new site, design for 375px first and expand to desktop — not the other way around. If you're auditing an existing site, <a href="https://search.google.com/search-console/" target="_blank" rel="noopener noreferrer">Google Search Console</a> shows you mobile usability errors. Fix the ones flagged as "clickable elements too close together" and "text too small to read" first.</p>
+
+      <h2>4. The Navigation Is Confusing</h2>
+
+      <p>Navigation seems like a small thing. It isn't.</p>
+
+      <p>When a visitor can't find what they're looking for within two clicks, they assume the information doesn't exist. Or they assume your business is disorganised. Either way, they leave.</p>
+
+      <p>The most damaging navigation mistakes:</p>
+
+      <ul>
+        <li><strong>Too many options.</strong> Seven or more items in a menu causes decision paralysis. Visitors stall, pick nothing, and leave. Keep your main navigation to five items maximum.</li>
+        <li><strong>Clever names instead of clear ones.</strong> "Our Journey" instead of "About". "The Vault" instead of "Resources". Visitors aren't playing a game — they want to find what they need. Use the words they use.</li>
+        <li><strong>No visual hierarchy.</strong> If every page looks the same, people can't tell where they are. They lose their sense of place on your site and bounce.</li>
+      </ul>
+
+      <p><strong>What to do:</strong> Map your site to the visitor's journey, not your company's internal structure. A visitor arrives, they want to know what you do, how you can help them, whether you're trustworthy, and how to reach you. Make those four things easy to find in that order.</p>
+
+      <h2>5. The Page Is a Wall of Text</h2>
+
+      <p>Reading text on a screen is hard. Reading dense, unbroken paragraphs on a phone is harder still.</p>
+
+      <p>When a visitor lands on a page that's solid text with no subheadings, no white space, no images, and no visual relief — they scroll for two seconds, decide it's too much work, and leave.</p>
+
+      <p>The fix isn't to write less. It's to format better.</p>
+
+      <p>Every 2–3 paragraphs, add a subheading that summarises what the next section covers. Use bullet points when listing three or more items. Bold the most important sentence in a section. Break long paragraphs into two shorter ones. Add an image every 400–600 words.</p>
+
+      <p><strong>What to do:</strong> Look at your most important service page. Read only the headings and the first sentence of each paragraph. Does the page's argument still make sense? Does a scanner get the gist? If not, your formatting needs work before anything else.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLandscape2}
+          alt="Well-designed website layout on laptop — clear typography and formatting improve user engagement"
+          width={2222}
+          height={1250}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Good formatting doesn't mean fewer words. It means readers can find what they came for.</figcaption>
+      </figure>
+
+      <h2>6. There's No Clear Next Step</h2>
+
+      <p>Here's something that surprises many business owners: people do what you tell them to do.</p>
+
+      <p>If you end a page with more information about your company and no call to action, visitors read it, feel satisfied, and leave. Not because they weren't interested. Because you didn't tell them what to do next.</p>
+
+      <p>Every page on your site needs one clear next step. Not five options, not a row of social icons — one primary action.</p>
+
+      <ul>
+        <li>For a service page: "Get a free quote" or "Book a consultation."</li>
+        <li>For a blog post: "Read our services page" or "Subscribe to our newsletter."</li>
+        <li>For an about page: "See our work" or "Contact us."</li>
+      </ul>
+
+      <p>The call to action needs to be visible without scrolling. It needs a button, not just a hyperlink. And it needs to tell the visitor what happens when they click — "Book a free 30-minute call" is more effective than "Contact us" because it sets expectations.</p>
+
+      <p><strong>What to do:</strong> Audit each page individually. Ask: "What is the single most valuable action a visitor could take from this page?" Make that action impossible to miss. Remove or reduce everything that competes with it.</p>
+
+      <h2>7. The Site Doesn't Feel Trustworthy</h2>
+
+      <p>A visitor who doesn't trust your website won't stay long enough to become a client.</p>
+
+      <p>Trust signals aren't just about security certificates — though HTTPS is non-negotiable. They're about whether the site <em>looks like a real business</em>. People make this assessment in under a second, mostly unconsciously.</p>
+
+      <p>What builds trust:</p>
+
+      <ul>
+        <li>A professional photograph of the person or team (not stock photography)</li>
+        <li>Real client testimonials with names, companies, and faces</li>
+        <li>Specific outcomes ("we saved this client 14 hours a week") rather than vague claims</li>
+        <li>A physical address or service area</li>
+        <li>A phone number that's visible without hunting for it</li>
+        <li>Content that's clearly kept up to date</li>
+      </ul>
+
+      <p>What destroys trust:</p>
+
+      <ul>
+        <li>Generic stock photos of people in suits shaking hands</li>
+        <li>Copyright notices that say © 2019</li>
+        <li>Broken links or error pages</li>
+        <li>Spelling mistakes and grammar errors</li>
+        <li>Prices that aren't visible anywhere</li>
+      </ul>
+
+      <p><strong>What to do:</strong> Add at least two real client testimonials to your homepage with permission to use the client's full name and company. Replace any obvious stock photography with real photos. Update your copyright year. Run a broken link checker and fix everything it finds.</p>
+
+      <hr />
+
+      <h2>The Pattern Behind All Seven Problems</h2>
+
+      <p>Look at this list again. Most of these problems share the same root cause: the website was built for the business, not for the visitor.</p>
+
+      <p>The business owner knows what they do. They don't need the headline to explain it. They know where the services are. They're comfortable with the layout because they designed it. But they're not the audience.</p>
+
+      <p>Your visitor arrives as a stranger. They have a problem and they're scanning your site for evidence that you can solve it — quickly, without friction, without risk.</p>
+
+      <p>Every second of confusion costs you someone who was ready to hire you.</p>
+
+      <p>The good news is that most of these fixes don't require rebuilding your site. They require reading your own website like a first-time visitor — then changing what confuses you, slows you down, or fails to tell you what to do next.</p>
+
+      <p>Start with one thing. Run PageSpeed Insights, change your headline, or add a testimonial. Measure what happens. Do the next thing.</p>
+
+      <p>Eleven seconds is not a destiny. It's a diagnostic.</p>
+
+      <p>If you'd like a fresh pair of eyes on your website — a proper review of what's sending visitors away — <a href="/en/contact/">get in touch</a>. I'll walk through it with you and give you a clear picture of what to fix and in what order. You can also <a href="/en/services/">explore the web design services</a> I offer if you're thinking about a rebuild rather than a patch.</p>
+
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-amber-accent/30">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-amber-accent/10 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-amber-accent">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Technology and Business Consultant with over 15 years of experience across more than 10 African countries. Founder of Chwezi Digital Solutions, based in Kampala, Uganda.</p>
+          <a href="/en/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Get a Free Website Review
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to All Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

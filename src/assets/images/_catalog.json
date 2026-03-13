@@ -404,6 +404,48 @@
       "notes": "General business planning image — wide landscape format"
     }
   },
+  "blog_images_website_ux": {
+    "website-users--01.jpg": {
+      "width": 2222,
+      "height": 3333,
+      "orientation": "portrait",
+      "description": "Person browsing a website on mobile phone — portrait orientation",
+      "article": "why-visitors-leave-website-3-seconds",
+      "role": "in-article",
+      "alt_en": "Person browsing a website on mobile phone — mobile-responsive web design for African businesses",
+      "alt_fr": "Personne consultant un site web sur téléphone mobile — design web responsive pour les entreprises africaines"
+    },
+    "website-users--02.jpg": {
+      "width": 2222,
+      "height": 1481,
+      "orientation": "landscape",
+      "description": "Website visitors browsing a business website on laptop — hero image",
+      "article": "why-visitors-leave-website-3-seconds",
+      "role": "featured",
+      "alt_en": "Website visitors browsing a business website on laptop — reduce bounce rate and improve user experience",
+      "alt_fr": "Visiteurs d'un site web consultant une entreprise en ligne — réduire le taux de rebond et améliorer l'expérience utilisateur"
+    },
+    "website-users--03.jpg": {
+      "width": 2222,
+      "height": 1481,
+      "orientation": "landscape",
+      "description": "Business owner checking website performance on laptop",
+      "article": "why-visitors-leave-website-3-seconds",
+      "role": "in-article",
+      "alt_en": "Business owner checking website performance on laptop — improve page speed and reduce bounce rate",
+      "alt_fr": "Chef d'entreprise vérifiant la vitesse de son site web sur ordinateur portable — améliorer la performance et réduire le taux de rebond"
+    },
+    "website-users--04.jpg": {
+      "width": 2222,
+      "height": 1250,
+      "orientation": "landscape",
+      "description": "Well-designed website layout displayed on laptop screen",
+      "article": "why-visitors-leave-website-3-seconds",
+      "role": "in-article",
+      "alt_en": "Well-designed website layout on laptop — clear typography and formatting improve user engagement",
+      "alt_fr": "Site web bien structuré sur ordinateur portable — typographie claire et mise en forme pour améliorer l'engagement utilisateur"
+    }
+  },
   "article_assignments": {
     "custom-software-africa": {
       "featured": "blog-images-3.jpg",
@@ -440,6 +482,12 @@
       "in_article": ["cherry-coffee-beans-branch-coffee-plant.jpg", "organic-coffee-beans-still-life.jpg", "FISH-01.jpg", "FISH-02.jpg"],
       "layout": "B",
       "accent": "emerald"
+    },
+    "why-visitors-leave-website-3-seconds": {
+      "featured": "website-users--02.jpg",
+      "in_article": ["website-users--03.jpg", "website-users--01.jpg", "website-users--04.jpg"],
+      "layout": "C",
+      "accent": "warm"
     }
   }
 }

@@ -313,14 +313,14 @@ HTML;
 
 // Send via PHPMailer
 try {
-    // Admin notification
+    // Admin notification (critical — must succeed)
     $mail = new PHPMailer(true);
     $mail->isSMTP();
     $mail->Host       = $smtpHost;
     $mail->SMTPAuth   = true;
     $mail->Username   = $smtpUser;
     $mail->Password   = $smtpPass;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->SMTPSecure = ($smtpPort === 465) ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = $smtpPort;
     $mail->CharSet    = 'UTF-8';
 
@@ -333,14 +333,22 @@ try {
     $mail->AltBody = "New enquiry from: {$name} <{$email}>\nPhone: {$phoneDisplay}\nCompany: {$companyDisplay}\nService: {$serviceDisplay}\nPreferred contact: {$contactMethodDisplay}\n\nMessage:\n{$message}";
     $mail->send();
 
-    // User confirmation
+} catch (Exception $e) {
+    error_log('Contact form admin email failed: ' . $e->getMessage());
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => $msg['server_error']]);
+    exit;
+}
+
+// User confirmation (best-effort — don't fail the form if this doesn't send)
+try {
     $mail2 = new PHPMailer(true);
     $mail2->isSMTP();
     $mail2->Host       = $smtpHost;
     $mail2->SMTPAuth   = true;
     $mail2->Username   = $smtpUser;
     $mail2->Password   = $smtpPass;
-    $mail2->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail2->SMTPSecure = ($smtpPort === 465) ? PHPMailer::ENCRYPTION_SMTPS : PHPMailer::ENCRYPTION_STARTTLS;
     $mail2->Port       = $smtpPort;
     $mail2->CharSet    = 'UTF-8';
 
@@ -351,11 +359,8 @@ try {
     $mail2->Body    = $confirmHtml;
     $mail2->AltBody = "Dear {$name},\n\nThank you for your enquiry. Peter will be in touch within 48 hours.\n\nPeter Bamuhigire\npeter@techguypeter.com\n+256 784 464178";
     $mail2->send();
-
 } catch (Exception $e) {
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => $msg['server_error']]);
-    exit;
+    error_log('Contact form user confirmation failed: ' . $e->getMessage());
 }
 
 echo json_encode(['success' => true, 'message' => $msg['success']]);

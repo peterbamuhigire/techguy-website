@@ -1,0 +1,692 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/african-entrepreneur-team-analyzing-business-reports.jpg';
+import imgCharts from '@/assets/images/financial-forex-business-chart-report.jpg';
+import imgLaptopCafe from '@/assets/images/african-american-business-man-using-laptop-cafe.jpg';
+import imgOffice from '@/assets/images/business-man-laptop-office-coffee.jpg';
+
+const lang: Lang = 'en';
+const title = "Why Even Small Businesses Need a Written Business Plan";
+const description = "A business plan isn't a document for banks — it's a thinking tool for the owner. Here's why every small business in Uganda and East Africa needs one, and what it costs you not to have it.";
+const date = "2026-03-17";
+const category = "Strategy";
+const readTime = "12 min read";
+const slug = "why-small-businesses-need-written-business-plan";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "en-GB",
+  "keywords": "small business plan Uganda, why write a business plan, business plan for small business East Africa, business planning for entrepreneurs Uganda",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Layout D: Editorial Masthead — centered header, full-width image strip below title -->
+  <section class="bp-masthead">
+    <div class="bp-masthead-inner">
+      <div class="bp-meta-row">
+        <span class="bp-category-pill">{category}</span>
+        <span class="bp-read-time">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          {readTime}
+        </span>
+      </div>
+      <h1 class="bp-headline">{title}</h1>
+      <div class="bp-byline">
+        <span>By Peter Bamuhigire</span>
+        <span class="bp-dot"></span>
+        <time datetime={date}>17 March 2026</time>
+        <span class="bp-dot"></span>
+        <a href="/en/services/" class="bp-byline-link">Business Planning Consulting</a>
+      </div>
+      <p class="bp-lede">
+        Most small business owners in Uganda and across East Africa have been operating for years — making sales, serving customers, reinvesting profits — without a single page of formal documentation. For a while, that works. Until the wall arrives.
+      </p>
+    </div>
+  </section>
+
+  <!-- Full-width featured image strip -->
+  <div class="bp-hero-strip">
+    <Image
+      src={heroImg}
+      alt="Business team in East Africa analysing company financial reports and documents — the case for a written small business plan Uganda"
+      width={2222}
+      height={1481}
+      class="bp-hero-img"
+      loading="eager"
+    />
+    <div class="bp-hero-caption">A team reviewing financial reports and charts — the discipline of writing down your numbers changes how you see your own business.</div>
+  </div>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-bp prose-dropcap">
+
+      <p>A supplier fails. A competitor opens across the road. A family emergency pulls cash from the business. The bank asks for a plan before extending credit. A potential partner wants to see the numbers. Suddenly the owner is trying to think strategically and operationally at the same time, under pressure, with no map.</p>
+
+      <p>A written business plan is not a document for other people. It is the map you build for yourself — before you need it. And in most markets across Uganda and East Africa, almost nobody has one. Which means that the business owner who does is operating at a systematic advantage over nearly every competitor in the room.</p>
+
+      <!-- Section 01 -->
+      <div class="bp-section-marker"><span class="bp-section-num">01</span><span class="bp-section-rule"></span></div>
+
+      <h2>The Myth: Plans Are Only for Companies Seeking Loans</h2>
+
+      <p>The most common reason small business owners give for not writing a plan is straightforward: "I'm not going to the bank." Or: "I'm too small for that kind of thing." Or, most revealing of all: "I already know my business."</p>
+
+      <p>This misunderstands what a business plan actually does.</p>
+
+      <p>Yes, a plan is required for a bank loan, a DFI grant, an investor pitch, or a government tender. But those are downstream uses. The primary purpose of a written business plan is to force disciplined thinking — to make you articulate, on paper, things that feel obvious in your head but turn out to be surprisingly unclear when you try to write them down.</p>
+
+      <p>Consider three questions that every business owner believes they can answer immediately:</p>
+
+      <ul>
+        <li>Who, exactly, is my best customer — and why do they choose me over the alternative?</li>
+        <li>At what level of monthly sales does my business actually break even?</li>
+        <li>If my largest customer stopped buying from me tomorrow, how many months could I survive?</li>
+      </ul>
+
+      <p>Most owners, asked to answer these in writing with real numbers, discover they don't know as precisely as they thought. The process of finding out — and then writing it down — is what a business plan is for.</p>
+
+      <!-- Section 02 -->
+      <div class="bp-section-marker"><span class="bp-section-num">02</span><span class="bp-section-rule"></span></div>
+
+      <h2>What a Written Plan Forces You to Confront</h2>
+
+      <p>Writing a business plan is not a bureaucratic exercise. It is a structured act of thinking. Each section forces a different question.</p>
+
+      <p><strong>The market analysis forces you to define your market precisely.</strong> Not "everyone who needs what I sell" — that is not a market, it is a wish. A written market analysis requires you to identify a specific segment of customers, estimate how many of them exist, explain why they currently have an unmet need or an inferior option, and state how your business reaches them. This exercise alone eliminates a large proportion of business ideas that sound viable but are not — because when you try to write this section, you realise you can't describe your customer clearly enough to find them.</p>
+
+      <p><strong>The competitive analysis forces you to be honest about your position.</strong> It's easy to say "our quality is better" or "we have strong customer relationships." It's harder to write, on paper: here are my three main competitors, here is what each of them charges, here is what they do better than me, and here is the specific reason a customer would choose me instead of them. That specificity is the difference between a strategy and a hope.</p>
+
+      <p><strong>The financial projections force you to confront the numbers.</strong> Many small businesses run on feel. The owner has a rough sense of whether last month was good or bad, but doesn't know the gross margin, has never calculated the break-even point, and can't say with confidence whether the business is generating or destroying capital. Building a financial projection — even a simple one-page spreadsheet — requires you to state every assumption explicitly: how many units you expect to sell, at what price, with what cost structure, over what seasonal pattern.</p>
+
+      <p><strong>The risk section forces you to think about what could go wrong.</strong> Business owners who have never done this exercise are systematically overexposed. They have no contingency for a bad season, no backup supplier, no answer for what happens if the main salesperson leaves. Writing a risk register — even a simple one — is the act of imagining the problems before they arrive, so that when one does arrive, you're not starting from zero.</p>
+
+      <!-- Insight callout: the knowing-without-writing gap -->
+      <div class="bp-insight-box">
+        <div class="bp-insight-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </div>
+        <p>The gap between "knowing your business" in your head and being able to write it down clearly is where most strategic errors live. The plan doesn't create knowledge — it surfaces what you actually know versus what you assumed you knew.</p>
+      </div>
+
+      <!-- Section 03 -->
+      <div class="bp-section-marker"><span class="bp-section-num">03</span><span class="bp-section-rule"></span></div>
+
+      <h2>The Cash Flow Problem That Kills Small Businesses</h2>
+
+      <p>The most common cause of small business failure is not bad products, bad ideas, or bad management. It is running out of cash at the wrong moment — often in a business that is technically profitable on paper.</p>
+
+      <p>This is one of the most important concepts in business finance, and it is almost entirely invisible to business owners who have never done a written cash flow projection.</p>
+
+      <p>Here is how it happens. A business wins a large order. To fulfil it, the owner buys stock and pays wages in advance. The customer pays 60 days later. For those 60 days, the business is cash-negative — even though the transaction will eventually be profitable. If other costs fall due in those 60 days (rent, loan repayment, supplier invoices), and the owner has no cash reserve and no overdraft facility, the business cannot meet its obligations. A profitable business, with a full order book, fails because of a cash timing gap.</p>
+
+      <p>A written cash flow projection — month by month — makes this problem visible before it happens. It shows the owner exactly which months cash will be tight, and gives time to negotiate a supplier payment extension, arrange a short-term facility, or adjust the sales and purchasing cycle to reduce the gap. The projection doesn't prevent bad luck. But it converts a crisis into a manageable problem — because you saw it coming.</p>
+
+      <figure class="my-10">
+        <Image
+          src={imgCharts}
+          alt="Financial charts and forex business report — understanding cash flow projections for small business Uganda"
+          width={2222}
+          height={1229}
+          class="article-img-landscape rounded-xl"
+          loading="lazy"
+        />
+        <figcaption>Cash flow projections convert future crises into visible, manageable problems — before they cost you real money.</figcaption>
+      </figure>
+
+      <!-- Section 04 -->
+      <div class="bp-section-marker"><span class="bp-section-num">04</span><span class="bp-section-rule"></span></div>
+
+      <h2>Even One Page Counts</h2>
+
+      <p>A business plan doesn't need to be a fifty-page document with glossy charts. For a small business, a credible working plan can fit on three to five pages. What matters is that the core questions have been answered in writing:</p>
+
+      <div class="bp-numbered-list">
+        <div class="bp-numbered-item">
+          <span class="bp-item-num">1</span>
+          <div>
+            <strong>What does the business do, and for whom?</strong>
+            <span>One clear paragraph — not a mission statement, a description a stranger can understand.</span>
+          </div>
+        </div>
+        <div class="bp-numbered-item">
+          <span class="bp-item-num">2</span>
+          <div>
+            <strong>What is the market size and who are the competitors?</strong>
+            <span>One or two paragraphs with real numbers, even if estimated from your own observation.</span>
+          </div>
+        </div>
+        <div class="bp-numbered-item">
+          <span class="bp-item-num">3</span>
+          <div>
+            <strong>What does the business sell, at what price, and what does it cost to deliver?</strong>
+            <span>A simple pricing and cost table — the foundation of your margin calculation.</span>
+          </div>
+        </div>
+        <div class="bp-numbered-item">
+          <span class="bp-item-num">4</span>
+          <div>
+            <strong>Monthly revenue, cost, and cash flow assumptions for the next twelve months.</strong>
+            <span>A one-page spreadsheet. This single sheet will surface your cash gaps before they happen.</span>
+          </div>
+        </div>
+        <div class="bp-numbered-item">
+          <span class="bp-item-num">5</span>
+          <div>
+            <strong>What are the three biggest risks, and what would you do if each one happened?</strong>
+            <span>Three bullet points. Written down, not held loosely in memory.</span>
+          </div>
+        </div>
+      </div>
+
+      <p>A business owner who has answered all five of these questions in writing understands their business more precisely than 80% of competitors who are operating on instinct alone. That precision shows up in better pricing decisions, fewer cash flow surprises, faster responses to competitive threats, and a stronger position when any outside party — a bank, a partner, a supplier offering credit — needs to be persuaded.</p>
+
+      <figure class="my-10">
+        <Image
+          src={imgLaptopCafe}
+          alt="Entrepreneur working on laptop in Kampala cafe — writing a simple small business plan Uganda"
+          width={2222}
+          height={1481}
+          class="article-img-landscape rounded-xl"
+          loading="lazy"
+        />
+        <figcaption>A workable business plan doesn't require a boardroom or a consultant. It requires the discipline to write down what you already know.</figcaption>
+      </figure>
+
+      <!-- Section 05 -->
+      <div class="bp-section-marker"><span class="bp-section-num">05</span><span class="bp-section-rule"></span></div>
+
+      <h2>Five Moments When a Written Plan Pays for Itself Immediately</h2>
+
+      <p>There are specific moments in the life of even the smallest business when a written plan moves from useful to essential.</p>
+
+      <div class="bp-moments-grid">
+        <div class="bp-moment-card">
+          <div class="bp-moment-num">1</div>
+          <h3>Hiring the First Employee</h3>
+          <p>Adding headcount is a significant fixed cost commitment. A written projection showing whether the business can carry that cost — at current and at reduced revenue — is the difference between a confident decision and an expensive mistake.</p>
+        </div>
+        <div class="bp-moment-card">
+          <div class="bp-moment-num">2</div>
+          <h3>Taking on Business Debt</h3>
+          <p>Whether it is a mobile money loan, a SACCO advance, or a bank facility, any borrowing against future cash flows should be supported by a written projection showing how it will be repaid, in which months, from which revenue.</p>
+        </div>
+        <div class="bp-moment-card">
+          <div class="bp-moment-num">3</div>
+          <h3>Entering a New Market or Adding a Product</h3>
+          <p>Expansion is where a profitable small business most commonly becomes an unprofitable one — because the owner moved too fast, underestimated costs, or stretched management capacity too thin. A written plan for the expansion shows whether it makes financial sense before the investment is made.</p>
+        </div>
+        <div class="bp-moment-card">
+          <div class="bp-moment-num">4</div>
+          <h3>Bringing in a Business Partner</h3>
+          <p>Any time a second person joins a business in a meaningful capacity, the terms of that relationship — responsibilities, profit sharing, ownership, decision rights — need to be in writing. A business plan is the natural anchor document for that conversation. Partners who skip it create ambiguity that almost always becomes conflict.</p>
+        </div>
+        <div class="bp-moment-card">
+          <div class="bp-moment-num">5</div>
+          <h3>Applying for Formal Credit or a Grant</h3>
+          <p>Even a small SACCO loan or a government youth enterprise grant will ask for a written plan. Having one ready — rather than assembling it under pressure in forty-eight hours — changes both the quality of the document and the confidence with which you can present it.</p>
+        </div>
+      </div>
+
+      <!-- Section 06 -->
+      <div class="bp-section-marker"><span class="bp-section-num">06</span><span class="bp-section-rule"></span></div>
+
+      <h2>The Competitive Advantage Nobody Talks About</h2>
+
+      <p>In most sectors in Uganda and East Africa, the majority of competing businesses in any given market have never written a business plan. This means that any owner who has done so — who knows their margins, their break-even, their seasonal cash flow pattern, and their top three competitive risks — is operating at a systematic informational advantage over almost every competitor in the market.</p>
+
+      <p>That advantage compounds over time. The business with a written plan makes fewer pricing errors, catches cash flow problems earlier, responds to competitive threats more precisely, and makes better hiring and expansion decisions. After five years, the gap between businesses that planned and businesses that did not is not a matter of luck. It is the accumulated result of thousands of better-informed decisions.</p>
+
+      <div class="pull-quote">
+        "The plan doesn't need to be perfect. It doesn't need to be long. It needs to be written — because the discipline of writing is what converts vague thinking into specific knowledge."
+      </div>
+
+      <p>The plan does not need to be perfect. It does not need to be long. It needs to be written — because the discipline of writing is what converts vague thinking into specific knowledge, and specific knowledge is what good decisions are built on.</p>
+
+      <figure class="my-10">
+        <Image
+          src={imgOffice}
+          alt="Businessman working on laptop in office — building a written business plan for a small business in Uganda"
+          width={2222}
+          height={1479}
+          class="article-img-landscape rounded-xl"
+          loading="lazy"
+        />
+        <figcaption>Business owners who plan in writing operate at a compounding informational advantage over competitors who rely on instinct alone.</figcaption>
+      </figure>
+
+      <h2>Where to Start</h2>
+
+      <p>Don't start with a template. Start with the five questions above. Write one paragraph answering each. Calculate your monthly revenue and costs. Look at the result honestly.</p>
+
+      <p>If the numbers don't add up, the plan has just done its most valuable job — before you committed real money to a faulty assumption. If they do add up, you now have the foundation of a document you can show a bank, a partner, or a potential investor.</p>
+
+      <p>Either way, you know more about your business than you did before you started writing.</p>
+
+      <p>If you'd like help building a business plan — the financial model, the market analysis, or the full document for a bank or DFI — <a href="/en/contact/">get in touch</a>. I work with business owners across Uganda and East Africa on <a href="/en/services/">business planning and strategy consulting</a>. I've seen what separates the plans that get funded from the ones that don't. The first conversation costs you nothing.</p>
+
+      <p>You can also <a href="/en/about/">read more about my background</a> and the work I've done across more than 10 African countries — the experience that informs what I know about what actually works in these markets.</p>
+
+    </div>
+
+    <!-- Key Takeaways -->
+    <div class="mt-10 bp-takeaways">
+      <div class="bp-takeaways-header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
+        Key Takeaways
+      </div>
+      <ul class="bp-takeaways-list">
+        <li>A business plan is not a document for banks — it is a thinking tool for the owner, and its primary value is internal.</li>
+        <li>Writing forces precision: owners who put their assumptions on paper almost always discover something important they did not know they did not know.</li>
+        <li>Cash flow projections are the single most valuable output of a simple business plan — they convert future cash crises into visible, manageable problems.</li>
+        <li>A credible working plan for a small business can be three to five pages — it does not need to be a formal report.</li>
+        <li>There are five specific moments — first hire, first debt, expansion, partnerships, and formal credit — where a written plan moves from useful to essential.</li>
+        <li>In most East African markets, having a written plan is a genuine competitive advantage, because almost nobody else has one.</li>
+      </ul>
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-navy-200">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-navy-100 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-navy-600">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Technology and Business Consultant with over 15 years of experience across more than 10 African countries. Specialist in business planning, ERP systems, and digital transformation for East African enterprises. Based in Kampala, Uganda.</p>
+          <a href="/en/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Discuss Your Business Plan
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to All Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<style>
+  /* ===== Layout D: Editorial Broadsheet ===== */
+  :root {
+    --bp-green: #1A6B3F;
+    --bp-green-light: #E8F5EE;
+    --bp-green-mid: #2E8B57;
+    --bp-green-dark: #0D4526;
+    --bp-green-muted: rgba(26, 107, 63, 0.12);
+  }
+
+  /* Masthead */
+  .bp-masthead {
+    background: var(--color-warm-white);
+    border-bottom: 3px solid var(--bp-green);
+    padding: 3rem 1rem 2rem;
+  }
+  .bp-masthead-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .bp-meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .bp-category-pill {
+    display: inline-block;
+    padding: 0.2rem 0.875rem;
+    background: var(--bp-green);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 9999px;
+  }
+  .bp-read-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    color: #6B7280;
+  }
+  .bp-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(1.875rem, 5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: #0D1526;
+    margin: 0 0 1rem;
+  }
+  .bp-byline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #6B7280;
+    margin-bottom: 1.5rem;
+  }
+  .bp-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #9CA3AF;
+  }
+  .bp-byline-link {
+    color: var(--bp-green);
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .bp-byline-link:hover { opacity: 0.75; }
+  .bp-lede {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #374151;
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+  }
+
+  /* Hero image strip */
+  .bp-hero-strip {
+    position: relative;
+    width: 100%;
+    max-height: 520px;
+    overflow: hidden;
+  }
+  .bp-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    max-height: 520px;
+  }
+  .bp-hero-caption {
+    background: var(--bp-green-dark);
+    color: #A7D4B8;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+
+  /* Section markers */
+  .bp-section-marker {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0 0;
+  }
+  .bp-section-num {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--bp-green-muted);
+    color: rgba(26, 107, 63, 0.15);
+    flex-shrink: 0;
+    letter-spacing: -0.05em;
+  }
+  .bp-section-rule {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--bp-green), transparent);
+    opacity: 0.3;
+  }
+
+  /* Insight box */
+  .bp-insight-box {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: var(--bp-green-dark);
+    color: #CEEADB;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 0.925rem;
+    line-height: 1.65;
+  }
+  .bp-insight-icon {
+    color: #6FCF97;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .bp-insight-box p {
+    margin: 0;
+    color: #CEEADB;
+  }
+
+  /* Numbered checklist */
+  .bp-numbered-list {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid rgba(26, 107, 63, 0.25);
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  .bp-numbered-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(26, 107, 63, 0.15);
+    font-size: 0.9rem;
+    background: #fff;
+  }
+  .bp-numbered-item:nth-child(even) {
+    background: var(--bp-green-light);
+  }
+  .bp-numbered-item:last-child {
+    border-bottom: none;
+  }
+  .bp-item-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: var(--bp-green);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .bp-numbered-item strong {
+    display: block;
+    color: #0D1526;
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+  }
+  .bp-numbered-item span {
+    color: #4B5563;
+    line-height: 1.5;
+  }
+
+  /* Five moments grid */
+  .bp-moments-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 640px) {
+    .bp-moments-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .bp-moment-card {
+    background: #fff;
+    border: 1px solid #E5E7EB;
+    border-left: 4px solid var(--bp-green);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    position: relative;
+  }
+  .bp-moment-num {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    color: rgba(26, 107, 63, 0.12);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.05em;
+  }
+  .bp-moment-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--bp-green-dark);
+    margin: 0 0 0.5rem;
+    line-height: 1.3;
+  }
+  .bp-moment-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #4B5563;
+    line-height: 1.6;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    border-left: 4px solid var(--bp-green);
+    background: var(--bp-green-light);
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--bp-green-dark);
+    line-height: 1.65;
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  /* Takeaways */
+  .bp-takeaways {
+    background: var(--bp-green-dark);
+    border-radius: 1rem;
+    padding: 1.75rem 2rem;
+  }
+  .bp-takeaways-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #6FCF97;
+    margin-bottom: 1rem;
+  }
+  .bp-takeaways-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .bp-takeaways-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: #CEEADB;
+    line-height: 1.6;
+  }
+  .bp-takeaways-list li::before {
+    content: "→";
+    color: #6FCF97;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  /* Prose overrides for this article */
+  .prose-bp h2 {
+    margin-top: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(26, 107, 63, 0.2);
+  }
+
+  /* Reading progress */
+  .reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--bp-green);
+    z-index: 1000;
+    transition: width 0.1s linear;
+    border-radius: 0 2px 2px 0;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

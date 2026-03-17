@@ -446,6 +446,58 @@
       "alt_fr": "Site web bien structuré sur ordinateur portable — typographie claire et mise en forme pour améliorer l'engagement utilisateur"
     }
   },
+  "blog_images_business_plan_article": {
+    "african-entrepreneur-team-analyzing-business-reports.jpg": {
+      "width": 2222,
+      "height": 1481,
+      "orientation": "landscape",
+      "description": "African entrepreneur team at startup company reading charts, documents and paperwork — diverse team of business people analysing financial reports from computer",
+      "article": "why-small-businesses-need-written-business-plan",
+      "role": "featured",
+      "alt_en": "Business team in East Africa analysing company financial reports and documents — the case for a written small business plan Uganda",
+      "alt_fr": "Équipe d'entrepreneurs africains analysant des rapports financiers et des documents — pourquoi rédiger un plan d'affaires pour PME en Afrique francophone"
+    },
+    "financial-forex-business-chart-report.jpg": {
+      "width": 2222,
+      "height": 1229,
+      "orientation": "landscape",
+      "description": "Financial forex business chart and report — financial data, graphs and projections",
+      "article": "why-small-businesses-need-written-business-plan",
+      "role": "in-article",
+      "alt_en": "Financial charts and forex business report — understanding cash flow projections for small business Uganda",
+      "alt_fr": "Rapports et graphiques financiers — comprendre les projections de trésorerie pour les PME en Afrique francophone"
+    },
+    "african-american-business-man-using-laptop-cafe.jpg": {
+      "width": 2222,
+      "height": 1481,
+      "orientation": "landscape",
+      "description": "African American business man using laptop in cafe — entrepreneur working",
+      "article": "why-small-businesses-need-written-business-plan",
+      "role": "in-article",
+      "alt_en": "Entrepreneur working on laptop in Kampala cafe — writing a simple small business plan Uganda",
+      "alt_fr": "Entrepreneur travaillant sur un ordinateur portable — rédaction d'un plan d'affaires simple pour PME en Afrique francophone"
+    },
+    "business-man-laptop-office-coffee.jpg": {
+      "width": 2222,
+      "height": 1479,
+      "orientation": "landscape",
+      "description": "Business man wearing black suit and glasses sitting in office with laptop, working and pouring sugar into coffee",
+      "article": "why-small-businesses-need-written-business-plan",
+      "role": "in-article",
+      "alt_en": "Businessman working on laptop in office — building a written business plan for a small business in Uganda",
+      "alt_fr": "Chef d'entreprise travaillant sur ordinateur portable au bureau — construire un plan d'affaires pour une petite entreprise en Afrique francophone"
+    },
+    "african-american-business-woman-with-phone.jpg": {
+      "width": 2222,
+      "height": 1481,
+      "orientation": "landscape",
+      "description": "African American business woman with phone — professional business portrait",
+      "article": "spare",
+      "role": "spare",
+      "alt_en": "Professional African business woman with smartphone",
+      "alt_fr": "Femme d'affaires africaine professionnelle avec smartphone"
+    }
+  },
   "article_assignments": {
     "custom-software-africa": {
       "featured": "blog-images-3.jpg",
@@ -488,6 +540,12 @@
       "in_article": ["website-users--03.jpg", "website-users--01.jpg", "website-users--04.jpg"],
       "layout": "C",
       "accent": "warm"
+    },
+    "why-small-businesses-need-written-business-plan": {
+      "featured": "african-entrepreneur-team-analyzing-business-reports.jpg",
+      "in_article": ["financial-forex-business-chart-report.jpg", "african-american-business-man-using-laptop-cafe.jpg", "business-man-laptop-office-coffee.jpg"],
+      "layout": "D",
+      "accent": "forest-green"
     }
   }
 }

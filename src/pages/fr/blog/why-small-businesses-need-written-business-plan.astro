@@ -1,0 +1,669 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/african-entrepreneur-team-analyzing-business-reports.jpg';
+import imgCharts from '@/assets/images/financial-forex-business-chart-report.jpg';
+import imgLaptopCafe from '@/assets/images/african-american-business-man-using-laptop-cafe.jpg';
+import imgOffice from '@/assets/images/business-man-laptop-office-coffee.jpg';
+
+const lang: Lang = 'fr';
+const title = "Même les Petites Entreprises ont Besoin d'un Plan d'Affaires Écrit";
+const description = "Un plan d'affaires n'est pas un document pour les banques — c'est un outil de réflexion pour le dirigeant. Voici pourquoi toute petite entreprise en Afrique francophone en a besoin, et ce qu'il vous en coûte de ne pas en avoir.";
+const date = "2026-03-17";
+const category = "Stratégie";
+const readTime = "14 min de lecture";
+const slug = "why-small-businesses-need-written-business-plan";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/fr/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "fr",
+  "keywords": "plan d'affaires petite entreprise Afrique, pourquoi rédiger un plan d'affaires, plan d'affaires PME Afrique francophone, entrepreneuriat OHADA",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/fr/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Layout D: Editorial Masthead -->
+  <section class="bp-masthead">
+    <div class="bp-masthead-inner">
+      <div class="bp-meta-row">
+        <span class="bp-category-pill">{category}</span>
+        <span class="bp-read-time">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          {readTime}
+        </span>
+      </div>
+      <h1 class="bp-headline">{title}</h1>
+      <div class="bp-byline">
+        <span>Par Peter Bamuhigire</span>
+        <span class="bp-dot"></span>
+        <time datetime={date}>17 mars 2026</time>
+        <span class="bp-dot"></span>
+        <a href="/fr/services/" class="bp-byline-link">Conseil en Planification d'Entreprise</a>
+      </div>
+      <p class="bp-lede">
+        La plupart des dirigeants de petites entreprises en Afrique francophone gèrent leurs activités depuis des années — en servant leurs clients, en réinvestissant leurs bénéfices — sans jamais avoir rédigé une seule page de documentation formelle. Pendant un temps, cela fonctionne. Jusqu'au jour où le mur surgit.
+      </p>
+    </div>
+  </section>
+
+  <!-- Full-width featured image strip -->
+  <div class="bp-hero-strip">
+    <Image
+      src={heroImg}
+      alt="Équipe d'entrepreneurs africains analysant des rapports financiers et des documents — pourquoi rédiger un plan d'affaires pour PME Afrique francophone"
+      width={2222}
+      height={1481}
+      class="bp-hero-img"
+      loading="eager"
+    />
+    <div class="bp-hero-caption">Une équipe qui examine ses chiffres en détail — la discipline d'écrire ses projections change la façon dont on perçoit sa propre entreprise.</div>
+  </div>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Retour au Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-bp prose-dropcap">
+
+      <p>Un fournisseur fait défaut. Un concurrent ouvre en face de chez vous. Une urgence familiale absorbe la trésorerie de l'entreprise. La banque exige un plan avant d'accorder un crédit. Un partenaire potentiel demande à voir les chiffres. Le dirigeant se retrouve alors à gérer l'opérationnel et le stratégique en même temps, sous pression, sans carte pour se repérer.</p>
+
+      <p>Un plan d'affaires écrit n'est pas un document destiné à d'autres personnes. C'est la carte que vous construisez pour vous-même — avant d'en avoir besoin. Et dans la plupart des marchés d'Afrique francophone, de Dakar à Kinshasa, presque personne ne l'a rédigé. Ce qui signifie que le dirigeant qui l'a fait opère avec un avantage informationnel systématique sur presque tous ses concurrents.</p>
+
+      <!-- Section 01 -->
+      <div class="bp-section-marker"><span class="bp-section-num">01</span><span class="bp-section-rule"></span></div>
+
+      <h2>Le Mythe : les Plans d'Affaires ne Concernent que les Grandes Entreprises</h2>
+
+      <p>La raison la plus courante avancée par les dirigeants de petites entreprises pour ne pas rédiger de plan est simple : « Je ne vais pas à la banque. » Ou encore : « Je suis trop petit pour ce genre de chose. » Ou, le plus révélateur : « Je connais déjà mon entreprise. »</p>
+
+      <p>Cette vision mécomprend fondamentalement ce que fait réellement un plan d'affaires.</p>
+
+      <p>Oui, un plan est requis pour un prêt bancaire, une subvention d'un bailleur de fonds, un argumentaire investisseur ou un marché public. Mais ce sont des usages en aval. L'objectif premier d'un plan d'affaires écrit est de forcer une réflexion disciplinée — de vous obliger à articuler, sur papier, des choses qui paraissent évidentes dans votre tête mais s'avèrent étonnamment floues lorsque vous essayez de les coucher par écrit.</p>
+
+      <p>Considérez trois questions auxquelles tout dirigeant croit pouvoir répondre immédiatement :</p>
+
+      <ul>
+        <li>Quel est précisément mon meilleur client — et pourquoi me choisit-il plutôt qu'une alternative ?</li>
+        <li>À quel niveau de chiffre d'affaires mensuel mon entreprise atteint-elle réellement son seuil de rentabilité ?</li>
+        <li>Si mon client principal cessait de m'acheter demain, combien de mois pourrais-je survivre ?</li>
+      </ul>
+
+      <p>La plupart des dirigeants, invités à répondre à ces questions par écrit avec de vrais chiffres, découvrent qu'ils ne savent pas avec autant de précision qu'ils le pensaient. Le processus de découverte — puis de mise par écrit — est précisément ce à quoi sert un plan d'affaires.</p>
+
+      <!-- Section 02 -->
+      <div class="bp-section-marker"><span class="bp-section-num">02</span><span class="bp-section-rule"></span></div>
+
+      <h2>Ce qu'un Plan Écrit Vous Oblige à Affronter</h2>
+
+      <p>Rédiger un plan d'affaires n'est pas un exercice bureaucratique. C'est un acte de réflexion structuré. Chaque section force une question différente.</p>
+
+      <p><strong>L'analyse de marché vous oblige à définir votre marché avec précision.</strong> Pas « tous ceux qui ont besoin de ce que je vends » — ce n'est pas un marché, c'est un vœu pieux. Une analyse de marché écrite vous demande d'identifier un segment spécifique de clients, d'estimer leur nombre, d'expliquer pourquoi ils ont actuellement un besoin non satisfait ou une option inférieure, et d'indiquer comment votre entreprise les atteint. Cet exercice élimine à lui seul une grande proportion d'idées d'entreprise qui semblent viables mais ne le sont pas — parce que lorsque vous essayez de rédiger cette section, vous réalisez que vous ne pouvez pas décrire votre client avec suffisamment de précision pour le trouver.</p>
+
+      <p><strong>L'analyse concurrentielle vous oblige à être honnête sur votre position.</strong> Il est facile de dire « notre qualité est meilleure » ou « nous avons de solides relations clients ». Il est plus difficile d'écrire, sur papier : voici mes trois principaux concurrents à Abidjan, voici ce que chacun facture, voici ce qu'ils font mieux que moi, et voici la raison précise pour laquelle un client me choisirait plutôt qu'eux. Cette précision est la différence entre une stratégie et un espoir.</p>
+
+      <p><strong>Les projections financières vous obligent à affronter les chiffres.</strong> Beaucoup de petites entreprises fonctionnent au ressenti. Le dirigeant a une idée vague de si le mois dernier s'est bien passé, mais ne connaît pas la marge brute, n'a jamais calculé le seuil de rentabilité, et ne peut pas dire avec certitude si son entreprise génère ou détruit du capital. Construire une projection financière — même une simple feuille de calcul d'une page — vous oblige à formuler explicitement chaque hypothèse : combien d'unités vous prévoyez de vendre, à quel prix, avec quelle structure de coûts, selon quelle saisonnalité.</p>
+
+      <p><strong>La section risques vous oblige à envisager ce qui pourrait mal tourner.</strong> Les dirigeants qui n'ont jamais réalisé cet exercice sont exposés de manière systématique. Ils n'ont aucun plan de contingence pour une mauvaise saison, pas de fournisseur de secours, pas de réponse à la question de ce qui se passe si leur commercial principal part. Rédiger un registre des risques — même simple — c'est imaginer les problèmes avant qu'ils arrivent, pour que lorsque l'un d'eux survient, vous ne repartiez pas de zéro.</p>
+
+      <!-- Insight callout -->
+      <div class="bp-insight-box">
+        <div class="bp-insight-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </div>
+        <p>L'écart entre « connaître son entreprise » dans sa tête et pouvoir l'écrire clairement est là où vivent la plupart des erreurs stratégiques. Le plan ne crée pas la connaissance — il révèle ce que vous savez réellement par opposition à ce que vous supposiez savoir.</p>
+      </div>
+
+      <!-- Section 03 -->
+      <div class="bp-section-marker"><span class="bp-section-num">03</span><span class="bp-section-rule"></span></div>
+
+      <h2>Le Problème de Trésorerie qui Tue les Petites Entreprises</h2>
+
+      <p>La cause la plus fréquente d'échec des petites entreprises n'est pas de mauvais produits, de mauvaises idées, ni une mauvaise gestion. C'est le manque de liquidités au mauvais moment — souvent dans une entreprise techniquement rentable sur le papier.</p>
+
+      <p>C'est l'un des concepts les plus importants en gestion financière, et il est presque entièrement invisible pour les dirigeants qui n'ont jamais réalisé de projection de trésorerie écrite.</p>
+
+      <p>Voici comment cela se produit. Une entreprise décroche une grosse commande. Pour l'honorer, le dirigeant achète du stock et paye les salaires en avance. Le client paie 60 jours plus tard. Pendant ces 60 jours, l'entreprise est en déficit de trésorerie — même si la transaction sera finalement rentable. Si d'autres charges arrivent à échéance dans ces 60 jours (loyer, remboursement de prêt, factures fournisseurs), et que le dirigeant n'a ni réserve de trésorerie ni facilité de découvert, l'entreprise ne peut pas honorer ses engagements. Une entreprise rentable, avec un carnet de commandes plein, échoue à cause d'un décalage de trésorerie.</p>
+
+      <p>Ce scénario est commun de Douala à Kinshasa, de Dakar à Abidjan. Le cadre SYSCOHADA, adopté par les 17 États membres de l'OHADA, fournit des outils comptables standardisés — mais ces outils ne peuvent protéger un dirigeant que s'il utilise ses chiffres pour anticiper, pas seulement pour constater après coup.</p>
+
+      <p>Une projection de trésorerie écrite — mois par mois — rend ce problème visible avant qu'il se produise. Elle montre exactement quels mois la trésorerie sera serrée, et laisse le temps de négocier une prolongation de délai de paiement fournisseur, de mettre en place une facilité à court terme, ou d'ajuster le cycle de ventes et d'achats pour réduire le décalage.</p>
+
+      <figure class="my-10">
+        <Image
+          src={imgCharts}
+          alt="Rapports et graphiques financiers — comprendre les projections de trésorerie pour les PME en Afrique francophone"
+          width={2222}
+          height={1229}
+          class="article-img-landscape rounded-xl"
+          loading="lazy"
+        />
+        <figcaption>Les projections de trésorerie transforment les crises futures en problèmes visibles et gérables — avant qu'elles vous coûtent de l'argent réel.</figcaption>
+      </figure>
+
+      <!-- Section 04 -->
+      <div class="bp-section-marker"><span class="bp-section-num">04</span><span class="bp-section-rule"></span></div>
+
+      <h2>Même Une Page Compte</h2>
+
+      <p>Un plan d'affaires n'a pas besoin d'être un document de cinquante pages avec des graphiques brillants. Pour une petite entreprise, un plan de travail crédible peut tenir en trois à cinq pages. Ce qui importe, c'est que les questions fondamentales aient reçu une réponse écrite :</p>
+
+      <div class="bp-numbered-list">
+        <div class="bp-numbered-item">
+          <span class="bp-item-num">1</span>
+          <div>
+            <strong>Que fait l'entreprise, et pour qui ?</strong>
+            <span>Un paragraphe clair — pas une déclaration de mission, une description qu'un inconnu peut comprendre.</span>
+          </div>
+        </div>
+        <div class="bp-numbered-item">
+          <span class="bp-item-num">2</span>
+          <div>
+            <strong>Quelle est la taille du marché et qui sont les concurrents ?</strong>
+            <span>Un ou deux paragraphes avec de vrais chiffres, même estimés à partir de votre propre observation du marché local.</span>
+          </div>
+        </div>
+        <div class="bp-numbered-item">
+          <span class="bp-item-num">3</span>
+          <div>
+            <strong>Que vend l'entreprise, à quel prix, et quel est le coût de production ou de livraison ?</strong>
+            <span>Un tableau simple de prix et de coûts — la base du calcul de votre marge.</span>
+          </div>
+        </div>
+        <div class="bp-numbered-item">
+          <span class="bp-item-num">4</span>
+          <div>
+            <strong>Hypothèses mensuelles de chiffre d'affaires, de coûts et de trésorerie pour les douze prochains mois.</strong>
+            <span>Une feuille de calcul d'une page. Cette seule feuille révèle vos décalages de trésorerie avant qu'ils se produisent.</span>
+          </div>
+        </div>
+        <div class="bp-numbered-item">
+          <span class="bp-item-num">5</span>
+          <div>
+            <strong>Quels sont les trois risques principaux, et que feriez-vous si chacun se concrétisait ?</strong>
+            <span>Trois points. Par écrit, pas simplement en mémoire.</span>
+          </div>
+        </div>
+      </div>
+
+      <p>Un dirigeant qui a répondu par écrit à ces cinq questions comprend son entreprise avec plus de précision que 80 % de ses concurrents qui opèrent sur l'instinct seul. Cette précision se traduit par de meilleures décisions de tarification, moins de surprises de trésorerie, des réponses plus rapides aux menaces concurrentielles, et une position plus solide face à tout interlocuteur extérieur — une banque comme Ecobank ou BOA, un partenaire commercial, ou un fournisseur offrant des délais de paiement.</p>
+
+      <figure class="my-10">
+        <Image
+          src={imgLaptopCafe}
+          alt="Entrepreneur travaillant sur un ordinateur portable — rédaction d'un plan d'affaires simple pour PME en Afrique francophone"
+          width={2222}
+          height={1481}
+          class="article-img-landscape rounded-xl"
+          loading="lazy"
+        />
+        <figcaption>Un plan d'affaires opérationnel ne nécessite pas de salle de conseil ni de consultant. Il exige la discipline de mettre par écrit ce que vous savez déjà.</figcaption>
+      </figure>
+
+      <!-- Section 05 -->
+      <div class="bp-section-marker"><span class="bp-section-num">05</span><span class="bp-section-rule"></span></div>
+
+      <h2>Cinq Moments où un Plan Écrit Devient Indispensable</h2>
+
+      <p>Il existe des moments précis dans la vie de la plus petite des entreprises où un plan écrit passe d'utile à indispensable.</p>
+
+      <div class="bp-moments-grid">
+        <div class="bp-moment-card">
+          <div class="bp-moment-num">1</div>
+          <h3>Le Premier Recrutement</h3>
+          <p>Embaucher un salarié est un engagement de coûts fixes significatif. Une projection écrite montrant si l'entreprise peut supporter ce coût — au niveau actuel et en cas de baisse de chiffre d'affaires — est la différence entre une décision éclairée et une erreur coûteuse.</p>
+        </div>
+        <div class="bp-moment-card">
+          <div class="bp-moment-num">2</div>
+          <h3>La Première Dette d'Entreprise</h3>
+          <p>Qu'il s'agisse d'un crédit mobile money, d'un prêt de mutuelle, ou d'un crédit bancaire, tout emprunt sur des flux futurs doit être accompagné d'une projection écrite montrant comment il sera remboursé, en quels mois, à partir de quel revenu.</p>
+        </div>
+        <div class="bp-moment-card">
+          <div class="bp-moment-num">3</div>
+          <h3>L'Expansion vers un Nouveau Marché ou Produit</h3>
+          <p>La croissance est le moment où une petite entreprise rentable devient le plus souvent non rentable — parce que le dirigeant a bougé trop vite, sous-estimé les coûts, ou tendu les capacités de gestion au-delà de leurs limites. Un plan d'expansion séparé montre si l'opération est financièrement viable avant l'investissement.</p>
+        </div>
+        <div class="bp-moment-card">
+          <div class="bp-moment-num">4</div>
+          <h3>L'Entrée d'un Associé</h3>
+          <p>Dès qu'une deuxième personne rejoint une entreprise de manière significative, les termes de cette relation — responsabilités, partage des bénéfices, propriété, droits de décision — doivent être par écrit. Un plan d'affaires est le document d'ancrage naturel de cette conversation. Les associés qui font l'impasse créent une ambiguïté qui se transforme presque toujours en conflit.</p>
+        </div>
+        <div class="bp-moment-card">
+          <div class="bp-moment-num">5</div>
+          <h3>Une Demande de Crédit ou de Subvention Formelle</h3>
+          <p>Même un petit prêt auprès d'une institution de microfinance ou une subvention d'un fonds gouvernemental — comme le FONACI en Côte d'Ivoire, la BNDE au Sénégal, ou le FPM en RDC — demandera un plan écrit. L'avoir prêt à l'avance change la qualité du document et la confiance avec laquelle vous le présentez.</p>
+        </div>
+      </div>
+
+      <!-- Section 06 -->
+      <div class="bp-section-marker"><span class="bp-section-num">06</span><span class="bp-section-rule"></span></div>
+
+      <h2>L'Avantage Concurrentiel dont Personne ne Parle</h2>
+
+      <p>Dans la plupart des secteurs en Afrique francophone — qu'il s'agisse du commerce à Abidjan, des services professionnels à Dakar, de la distribution à Douala ou de l'entrepreneuriat à Kinshasa — la grande majorité des entreprises concurrentes dans un marché donné n'ont jamais rédigé de plan d'affaires. Cela signifie que tout dirigeant qui l'a fait — qui connaît ses marges, son seuil de rentabilité, sa saisonnalité de trésorerie et ses trois principaux risques concurrentiels — dispose d'un avantage informationnel systématique sur presque tous les concurrents du marché.</p>
+
+      <p>Cet avantage se cumule dans le temps. L'entreprise dotée d'un plan écrit commet moins d'erreurs de tarification, détecte les problèmes de trésorerie plus tôt, répond aux menaces concurrentielles avec plus de précision, et prend de meilleures décisions de recrutement et d'expansion. Au bout de cinq ans, l'écart entre les entreprises qui ont planifié et celles qui ne l'ont pas fait n'est pas une question de chance. C'est le résultat cumulé de milliers de décisions mieux informées.</p>
+
+      <div class="pull-quote">
+        « Le plan n'a pas besoin d'être parfait. Il n'a pas besoin d'être long. Il doit être écrit — parce que la discipline de l'écriture est ce qui convertit la pensée vague en connaissance précise. »
+      </div>
+
+      <p>Le plan n'a pas besoin d'être parfait. Il n'a pas besoin d'être long. Il doit être écrit — parce que la discipline de l'écriture est ce qui convertit la pensée vague en connaissance précise, et la connaissance précise est ce sur quoi reposent les bonnes décisions.</p>
+
+      <figure class="my-10">
+        <Image
+          src={imgOffice}
+          alt="Chef d'entreprise travaillant sur ordinateur portable au bureau — construire un plan d'affaires pour une petite entreprise en Afrique francophone"
+          width={2222}
+          height={1479}
+          class="article-img-landscape rounded-xl"
+          loading="lazy"
+        />
+        <figcaption>Les dirigeants qui planifient par écrit opèrent avec un avantage informationnel cumulatif sur les concurrents qui s'appuient uniquement sur l'instinct.</figcaption>
+      </figure>
+
+      <h2>Par Où Commencer</h2>
+
+      <p>Ne commencez pas par un modèle. Commencez par les cinq questions ci-dessus. Rédigez un paragraphe pour répondre à chacune. Calculez votre chiffre d'affaires et vos coûts mensuels. Regardez le résultat honnêtement.</p>
+
+      <p>Si les chiffres ne s'additionnent pas, le plan vient d'accomplir son travail le plus précieux — avant que vous ayez engagé de l'argent réel dans une hypothèse erronée. S'ils s'additionnent, vous disposez désormais de la base d'un document que vous pouvez présenter à une banque, à un partenaire ou à un investisseur potentiel.</p>
+
+      <p>Dans tous les cas, vous en savez plus sur votre entreprise qu'avant de commencer à écrire.</p>
+
+      <p>Si vous souhaitez de l'aide pour construire un plan d'affaires — le modèle financier, l'analyse de marché, ou le document complet pour une banque ou un bailleur de fonds — <a href="/fr/contact/">prenez contact avec nous</a>. Je travaille avec des dirigeants d'entreprise en Afrique sur la <a href="/fr/services/">planification stratégique et le conseil aux entreprises</a>. J'ai vu ce qui sépare les plans qui obtiennent un financement de ceux qui ne l'obtiennent pas. Le premier échange ne vous coûte rien.</p>
+
+      <p>Vous pouvez également <a href="/fr/about/">en savoir plus sur mon parcours</a> et les travaux que j'ai menés dans plus de 10 pays africains — l'expérience qui fonde ce que je sais sur ce qui fonctionne réellement dans ces marchés.</p>
+
+    </div>
+
+    <!-- Key Takeaways -->
+    <div class="mt-10 bp-takeaways">
+      <div class="bp-takeaways-header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
+        Points Clés à Retenir
+      </div>
+      <ul class="bp-takeaways-list">
+        <li>Un plan d'affaires n'est pas un document pour les banques — c'est un outil de réflexion pour le dirigeant, et sa valeur première est interne.</li>
+        <li>L'écriture force la précision : les dirigeants qui mettent leurs hypothèses sur papier découvrent presque toujours quelque chose d'important qu'ils ne savaient pas qu'ils ignoraient.</li>
+        <li>Les projections de trésorerie sont le résultat le plus précieux d'un plan d'affaires simple — elles convertissent les crises de trésorerie futures en problèmes visibles et gérables.</li>
+        <li>Un plan opérationnel crédible pour une petite entreprise peut tenir en trois à cinq pages — il n'a pas besoin d'être un rapport formel.</li>
+        <li>Il existe cinq moments précis — premier recrutement, première dette, expansion, partenariat, et crédit formel — où un plan écrit passe d'utile à indispensable.</li>
+        <li>Dans la plupart des marchés francophones d'Afrique, avoir un plan écrit est un véritable avantage concurrentiel, parce que presque personne d'autre n'en a un.</li>
+      </ul>
+    </div>
+
+    <!-- Sources -->
+    <div class="mt-6 text-xs text-navy-400 leading-relaxed">
+      <em>Sources : Banque centrale des États de l'Afrique de l'Ouest (BCEAO), rapports sur le financement des PME 2024 ; OHADA, Acte Uniforme sur le droit comptable (SYSCOHADA révisé) ; Banque mondiale, Rapport Doing Business Afrique 2023 ; SFI, Analyses sectorielles PME Afrique subsaharienne 2022 ; Damodaran (2011), principes d'évaluation et de projection financière.</em>
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-navy-200">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-navy-100 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-navy-600">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Consultant en Technologie et en Entreprise avec plus de 15 ans d'expérience dans plus de 10 pays africains. Spécialiste en planification d'entreprise, systèmes ERP et transformation numérique pour les entreprises africaines. Basé à Kampala, en Ouganda.</p>
+          <a href="/fr/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Discuter de Votre Plan d'Affaires
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Retour à Tous les Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<style>
+  /* ===== Layout D: Editorial Broadsheet ===== */
+  :root {
+    --bp-green: #1A6B3F;
+    --bp-green-light: #E8F5EE;
+    --bp-green-mid: #2E8B57;
+    --bp-green-dark: #0D4526;
+    --bp-green-muted: rgba(26, 107, 63, 0.12);
+  }
+
+  .bp-masthead {
+    background: var(--color-warm-white);
+    border-bottom: 3px solid var(--bp-green);
+    padding: 3rem 1rem 2rem;
+  }
+  .bp-masthead-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .bp-meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .bp-category-pill {
+    display: inline-block;
+    padding: 0.2rem 0.875rem;
+    background: var(--bp-green);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 9999px;
+  }
+  .bp-read-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    color: #6B7280;
+  }
+  .bp-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(1.875rem, 5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: #0D1526;
+    margin: 0 0 1rem;
+  }
+  .bp-byline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #6B7280;
+    margin-bottom: 1.5rem;
+  }
+  .bp-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #9CA3AF;
+  }
+  .bp-byline-link {
+    color: var(--bp-green);
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .bp-byline-link:hover { opacity: 0.75; }
+  .bp-lede {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #374151;
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+  }
+  .bp-hero-strip {
+    position: relative;
+    width: 100%;
+    max-height: 520px;
+    overflow: hidden;
+  }
+  .bp-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    max-height: 520px;
+  }
+  .bp-hero-caption {
+    background: var(--bp-green-dark);
+    color: #A7D4B8;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+  .bp-section-marker {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0 0;
+  }
+  .bp-section-num {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(26, 107, 63, 0.15);
+    flex-shrink: 0;
+    letter-spacing: -0.05em;
+  }
+  .bp-section-rule {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--bp-green), transparent);
+    opacity: 0.3;
+  }
+  .bp-insight-box {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: var(--bp-green-dark);
+    color: #CEEADB;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    font-size: 0.925rem;
+    line-height: 1.65;
+  }
+  .bp-insight-icon {
+    color: #6FCF97;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .bp-insight-box p {
+    margin: 0;
+    color: #CEEADB;
+  }
+  .bp-numbered-list {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid rgba(26, 107, 63, 0.25);
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  .bp-numbered-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(26, 107, 63, 0.15);
+    font-size: 0.9rem;
+    background: #fff;
+  }
+  .bp-numbered-item:nth-child(even) { background: var(--bp-green-light); }
+  .bp-numbered-item:last-child { border-bottom: none; }
+  .bp-item-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background: var(--bp-green);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .bp-numbered-item strong {
+    display: block;
+    color: #0D1526;
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+  }
+  .bp-numbered-item span { color: #4B5563; line-height: 1.5; }
+  .bp-moments-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  @media (min-width: 640px) {
+    .bp-moments-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .bp-moment-card {
+    background: #fff;
+    border: 1px solid #E5E7EB;
+    border-left: 4px solid var(--bp-green);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+  }
+  .bp-moment-num {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    color: rgba(26, 107, 63, 0.12);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.05em;
+  }
+  .bp-moment-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--bp-green-dark);
+    margin: 0 0 0.5rem;
+    line-height: 1.3;
+  }
+  .bp-moment-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #4B5563;
+    line-height: 1.6;
+  }
+  .pull-quote {
+    border-left: 4px solid var(--bp-green);
+    background: var(--bp-green-light);
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--bp-green-dark);
+    line-height: 1.65;
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+  .bp-takeaways {
+    background: var(--bp-green-dark);
+    border-radius: 1rem;
+    padding: 1.75rem 2rem;
+  }
+  .bp-takeaways-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #6FCF97;
+    margin-bottom: 1rem;
+  }
+  .bp-takeaways-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .bp-takeaways-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: #CEEADB;
+    line-height: 1.6;
+  }
+  .bp-takeaways-list li::before {
+    content: "→";
+    color: #6FCF97;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+  .prose-bp h2 {
+    margin-top: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(26, 107, 63, 0.2);
+  }
+  .reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--bp-green);
+    z-index: 1000;
+    transition: width 0.1s linear;
+    border-radius: 0 2px 2px 0;
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

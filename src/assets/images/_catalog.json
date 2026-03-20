@@ -498,6 +498,44 @@
       "alt_fr": "Femme d'affaires africaine professionnelle avec smartphone"
     }
   },
+  "service_images_digital_marketing": {
+    "digital-marketing-1.jpg": {
+      "filename": "digital-marketing-1.jpg",
+      "path": "src/assets/images/services/digital-marketing-1.jpg",
+      "dimensions": { "width": 2222, "height": 1390 },
+      "alt": { "en": "Digital marketing technology and business growth concept", "fr": "Technologie de marketing numérique et croissance des affaires" },
+      "role": "featured",
+      "used_on": ["digital-marketing-strategy"],
+      "notes": "Wide shot of digital marketing tech concept — used as hero/section image on digital marketing service page"
+    },
+    "digital-marketing-2.jpg": {
+      "filename": "digital-marketing-2.jpg",
+      "path": "src/assets/images/services/digital-marketing-2.jpg",
+      "dimensions": { "width": 2222, "height": 1528 },
+      "alt": { "en": "Notebook with digital marketing strategy notes and tools", "fr": "Cahier avec notes de stratégie de marketing numérique" },
+      "role": "featured",
+      "used_on": ["digital-marketing-strategy"],
+      "notes": "Notebook and planning tools — used for strategy/planning sections on digital marketing page"
+    },
+    "social-media-1.jpg": {
+      "filename": "social-media-1.jpg",
+      "path": "src/assets/images/services/social-media-1.jpg",
+      "dimensions": { "width": 2222, "height": 1026 },
+      "alt": { "en": "Man holding social media icons with smartphone", "fr": "Homme tenant des icônes de médias sociaux avec smartphone" },
+      "role": "featured",
+      "used_on": ["digital-marketing-strategy", "services"],
+      "notes": "Smartphone with social media icons — used for social media strategy service section"
+    },
+    "social-media-2.jpg": {
+      "filename": "social-media-2.jpg",
+      "path": "src/assets/images/services/social-media-2.jpg",
+      "dimensions": { "width": 2222, "height": 1502 },
+      "alt": { "en": "Hands holding smartphone with social media concept", "fr": "Mains tenant un smartphone avec concept de médias sociaux" },
+      "role": "featured",
+      "used_on": ["digital-marketing-strategy", "services"],
+      "notes": "Hands holding phone — social media concept image for services page digital marketing section"
+    }
+  },
   "article_assignments": {
     "custom-software-africa": {
       "featured": "blog-images-3.jpg",

@@ -47,24 +47,26 @@ Peter Bamuhigire propose des services complets de conseil en technologie et en a
 
 ---
 
-## Conseil aux Entreprises
+## Planification & Stratégie d'Entreprise
 
-**Description courte** : Des services de conseil aux entreprises qui comblent l'écart entre les objectifs organisationnels et les processus opérationnels nécessaires pour les atteindre.
+**Description courte** : Des services de planification et de stratégie d'entreprise qui aident les organisations à structurer leur vision, à convaincre les financeurs et à mettre en œuvre des processus durables pour atteindre leurs objectifs.
 
-**Description détaillée** : La technologie n'est efficace que lorsqu'elle est au service de processus métier bien conçus. Le conseil aux entreprises de Peter s'appuie sur une expérience acquise auprès d'organisations de secteurs variés — distribution de produits de santé, recherche agricole, gestion immobilière, commerce de détail, et bien d'autres. Le cabinet aide les organisations à analyser leurs processus actuels, à identifier les inefficacités et à mettre en œuvre des améliorations qui produisent des résultats mesurables. De l'élaboration de plans d'affaires à la conception de cadres de suivi-évaluation, l'accent est mis sur un conseil pragmatique qui tient compte des réalités de votre marché, de vos équipes et de vos ressources. Il s'agit d'un conseil qui travaille à vos côtés — pas d'un rapport qui reste sur une étagère.
+**Description détaillée** : La technologie n'est efficace que lorsqu'elle est au service de processus métier bien conçus. Les services de planification et de stratégie de Peter s'appuient sur une expérience acquise auprès d'organisations de secteurs variés — distribution de produits de santé, recherche agricole, gestion immobilière, commerce de détail, et bien d'autres. Le cabinet accompagne les organisations à formaliser leur stratégie, à élaborer des plans d'affaires bancables à destination des banques, des institutions de financement du développement et des investisseurs, et à concevoir des cadres de suivi-évaluation rigoureux. L'accent est toujours mis sur un conseil pragmatique qui tient compte des réalités de votre marché, de vos équipes et de vos ressources — pas d'un rapport qui reste sur une étagère, mais d'un travail qui produit des résultats mesurables.
 
 **Livrables clés** :
-- Analyse et optimisation des processus métier
-- Élaboration de plans d'affaires et de propositions
-- Planification stratégique et définition d'objectifs
-- Conception de cadres de suivi-évaluation (S&E)
-- Gestion et coordination de projets
-- Alignement des équipes transversales et gestion du changement
-- Intelligence d'affaires et prise de décision fondée sur les données
+- Élaboration de plans d'affaires bancables (banques, IFD & investisseurs)
+- Planification stratégique & définition d'objectifs
+- Propositions commerciales & dossiers de subvention
+- Études de marché & études de faisabilité
+- Développement de pitch decks & coaching à la présentation
+- Conception de cadres de suivi-évaluation
+- Analyse & optimisation des processus métier
+
+**Page dédiée** : [/fr/business-planning-consulting-service/](/fr/business-planning-consulting-service/)
 
 **Tarif de départ** : Contactez-nous pour une consultation — les missions de conseil sont dimensionnées selon vos besoins spécifiques.
 
-**Photo** : [PHOTO NEEDED — business meeting or planning session]
+**Photo** : [PHOTO NEEDED — business planning or strategy session]
 
 ---
 
@@ -85,6 +87,63 @@ Peter Bamuhigire propose des services complets de conseil en technologie et en a
 **Tarif de départ** : Contactez-nous pour une consultation — les coûts de mise en œuvre dépendent de la taille du portefeuille et des exigences.
 
 **Photo** : [PHOTO NEEDED — property or real estate related imagery]
+
+---
+
+## Marketing Digital & Stratégie des Réseaux Sociaux
+
+**Description courte** : Des stratégies de marketing digital et de réseaux sociaux sur mesure pour aider les entreprises et organisations d'Afrique francophone à construire leur présence en ligne, engager leurs audiences et convertir leur visibilité en résultats concrets.
+
+**Description détaillée** : En Afrique francophone, la présence digitale n'est plus optionnelle — c'est un levier de compétitivité. Pourtant, beaucoup d'entreprises publient sans stratégie, investissent en publicité sans ROI mesurable, et peinent à transformer leur communauté en clients. Peter accompagne les organisations à construire une présence digitale cohérente, de l'audit initial jusqu'aux playbooks opérationnels et à la formation des équipes. Chaque mission repose sur une compréhension fine du contexte africain : usage dominant du mobile, pénétration de WhatsApp, dynamiques propres aux marchés francophones (Côte d'Ivoire, Sénégal, Cameroun, RDC, et au-delà). Le résultat : des stratégies actionnables, des équipes formées, et des systèmes qui continuent à créer de la valeur après la mission.
+
+**Page dédiée** : [/fr/strategie-marketing-digital/](/fr/strategie-marketing-digital/)
+
+### Stratégie Réseaux Sociaux
+Construisez une présence sur les réseaux sociaux qui reflète votre marque et parle à votre audience.
+
+**Livrables** :
+- Audit de marque et analyse de la présence actuelle
+- Définition des personas d'audience par marché cible
+- Stratégie par plateforme (WhatsApp, Facebook, Instagram, LinkedIn, TikTok, YouTube, X)
+- Calendrier de contenu mensuel et trimestriel
+- Guide de ton et charte éditoriale
+- Tableau de bord KPIs et protocole de reporting
+
+### Stratégie de Marketing Digital
+Un plan marketing intégré, du premier contact jusqu'à la fidélisation, adapté aux réalités du marché africain francophone.
+
+**Livrables** :
+- Stratégie full-funnel (notoriété, considération, conversion, fidélisation)
+- Cadre POEM — Paid, Owned & Earned Media
+- Système de communication WhatsApp (broadcasts, groupes, catalogue)
+- Stratégie e-mail et SMS marketing
+- Feuille de route contenu avec priorisation par canal
+- Modèle de mesure du ROI et indicateurs de performance
+
+### Playbooks de Plateformes
+Des manuels opérationnels clés en main pour chaque canal, conçus pour être utilisés directement par vos équipes.
+
+**Canaux couverts** :
+- WhatsApp Business & WhatsApp Business API
+- Facebook Pages & Facebook Ads
+- Instagram (organique & payant)
+- LinkedIn (personal branding & pages entreprise)
+- TikTok (stratégie de contenu vidéo court)
+- YouTube (stratégie de contenu long & Shorts)
+- X / Twitter (communication corporate & veille)
+
+### Formation & Renforcement des Capacités
+Des formations pratiques pour que vos équipes maîtrisent les outils et les stratégies du marketing digital.
+
+**Programmes disponibles** :
+- **Fondamentaux des Réseaux Sociaux** — panorama des plateformes, algorithmes, bonnes pratiques (tous niveaux)
+- **Atelier de Création de Contenu** — production de visuels, rédaction, formats vidéo adaptés à chaque plateforme
+- **Marketing Digital pour Dirigeants** — prise de décision stratégique, lecture des indicateurs, supervision des équipes digitales
+- **WhatsApp for Business** — utilisation avancée pour la relation client, la prospection et la fidélisation
+
+**Tarif de départ** : Contactez-nous pour une consultation — les missions sont dimensionnées selon vos objectifs, votre secteur et la taille de votre marché cible.
+
+**Photo** : [PHOTO NEEDED — digital marketing or social media strategy session]
 
 ---
 

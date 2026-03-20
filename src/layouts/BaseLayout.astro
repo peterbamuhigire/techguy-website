@@ -16,7 +16,15 @@ interface Props {
 const { title, description, lang, ogImage = '/og-image.jpg', page = '', noindex = false } = Astro.props;
 const altLang = lang === 'en' ? 'fr' : 'en';
 const currentPath = Astro.url.pathname.replace(`/${lang}`, '');
-const altUrl = `/${altLang}${currentPath || '/'}`;
+// Pages with different slugs per language
+const slugMap: Record<string, string> = {
+  'digital-marketing-strategy': 'strategie-marketing-digital',
+  'strategie-marketing-digital': 'digital-marketing-strategy',
+};
+const currentSlug = currentPath.replace(/^\//, '').replace(/\/$/, '');
+const altUrl = slugMap[currentSlug]
+  ? `/${altLang}/${slugMap[currentSlug]}/`
+  : `/${altLang}${currentPath || '/'}`;
 const siteUrl = 'https://techguypeter.com';
 const canonicalUrl = `${siteUrl}/${lang}${currentPath || '/'}`;
 

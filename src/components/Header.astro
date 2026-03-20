@@ -10,7 +10,15 @@ interface Props {
 const { lang } = Astro.props;
 const altLang = lang === 'en' ? 'fr' : 'en';
 const currentPath = Astro.url.pathname.replace(`/${lang}`, '');
-const altUrl = `/${altLang}${currentPath || '/'}`;
+// Pages with different slugs per language
+const slugMap: Record<string, string> = {
+  'digital-marketing-strategy': 'strategie-marketing-digital',
+  'strategie-marketing-digital': 'digital-marketing-strategy',
+};
+const currentSlug = currentPath.replace(/^\//, '').replace(/\/$/, '');
+const altUrl = slugMap[currentSlug]
+  ? `/${altLang}/${slugMap[currentSlug]}/`
+  : `/${altLang}${currentPath || '/'}`;
 
 const navItems = [
   { key: 'nav.home' as const, href: `/${lang}/` },

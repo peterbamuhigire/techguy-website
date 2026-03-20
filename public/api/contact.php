@@ -270,10 +270,59 @@ $adminHtml = <<<HTML
 </html>
 HTML;
 
-// Build user confirmation email
+// Build user confirmation email — language-aware
+$confirmSubject = ($lang === 'fr')
+    ? 'Votre demande a bien été reçue — Peter Bamuhigire'
+    : 'Your enquiry has been received — Peter Bamuhigire';
+
+$confirmAlt = ($lang === 'fr')
+    ? "Bonjour {$name},\n\nMerci pour votre message. Peter vous contactera dans les 48 heures pour planifier votre consultation.\n\nPeter Bamuhigire\npeter@techguypeter.com\n+256 784 464178"
+    : "Dear {$name},\n\nThank you for your enquiry. Peter will be in touch within 48 hours.\n\nPeter Bamuhigire\npeter@techguypeter.com\n+256 784 464178";
+
+if ($lang === 'fr') {
 $confirmHtml = <<<HTML
 <!DOCTYPE html>
-<html lang="{$h($lang)}">
+<html lang="fr">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f4f6f8;font-family:Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f6f8;padding:32px 0;">
+    <tr><td align="center">
+      <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+        <tr><td style="background:linear-gradient(135deg,#0C2340 0%,#1a3a5c 100%);padding:40px;">
+          <h1 style="margin:0;color:#F0C243;font-size:26px;font-weight:700;">Peter Bamuhigire</h1>
+          <p style="margin:8px 0 0;color:#94a3b8;font-size:14px;">Consultant IT &amp; Développeur Logiciel &mdash; Kampala, Ouganda</p>
+        </td></tr>
+        <tr><td style="padding:40px;">
+          <p style="margin:0 0 16px;font-size:16px;color:#1e293b;">Bonjour {$h($name)},</p>
+          <p style="margin:0 0 16px;font-size:15px;color:#334155;line-height:1.6;">
+            Merci de nous avoir contactés. Votre demande a bien été reçue et Peter vous répondra dans les <strong>48 heures</strong> pour planifier une consultation à un moment qui vous convient.
+          </p>
+          <p style="margin:0 0 32px;font-size:15px;color:#334155;line-height:1.6;">
+            En attendant, vous pouvez également le contacter sur WhatsApp au <strong>+256 784 464178</strong> pour toute question urgente.
+          </p>
+          <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:24px;">
+            <p style="margin:0 0 16px;font-size:13px;color:#64748b;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Récapitulatif de votre demande</p>
+            <p style="margin:0 0 8px;font-size:14px;color:#334155;"><strong>Service :</strong> {$h($serviceDisplay)}</p>
+            <p style="margin:0;font-size:14px;color:#334155;"><strong>Message :</strong> {$h(mb_substr($message, 0, 200))}...</p>
+          </div>
+          <div style="margin-top:32px;text-align:center;">
+            <a href="https://techguypeter.com" style="display:inline-block;background:#F0C243;color:#0C2340;font-weight:700;font-size:15px;padding:14px 32px;border-radius:6px;text-decoration:none;">Visiter TechGuyPeter.com</a>
+          </div>
+        </td></tr>
+        <tr><td style="background:#f8fafc;padding:24px 40px;border-top:1px solid #e2e8f0;text-align:center;">
+          <p style="margin:0;font-size:13px;color:#94a3b8;">Peter Bamuhigire &middot; peter@techguypeter.com &middot; +256 784 464178</p>
+          <p style="margin:6px 0 0;font-size:12px;color:#cbd5e1;">Ceci est une confirmation automatique. Veuillez ne pas répondre à cet e-mail.</p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>
+HTML;
+} else {
+$confirmHtml = <<<HTML
+<!DOCTYPE html>
+<html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
 <body style="margin:0;padding:0;background:#f4f6f8;font-family:Arial,sans-serif;">
   <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f6f8;padding:32px 0;">
@@ -310,6 +359,7 @@ $confirmHtml = <<<HTML
 </body>
 </html>
 HTML;
+}
 
 // Send via PHPMailer
 try {
@@ -355,9 +405,9 @@ try {
     $mail2->setFrom($fromEmail, $fromName);
     $mail2->addAddress($email, $name);
     $mail2->isHTML(true);
-    $mail2->Subject = 'Your enquiry has been received — Peter Bamuhigire';
+    $mail2->Subject = $confirmSubject;
     $mail2->Body    = $confirmHtml;
-    $mail2->AltBody = "Dear {$name},\n\nThank you for your enquiry. Peter will be in touch within 48 hours.\n\nPeter Bamuhigire\npeter@techguypeter.com\n+256 784 464178";
+    $mail2->AltBody = $confirmAlt;
     $mail2->send();
 } catch (Exception $e) {
     error_log('Contact form user confirmation failed: ' . $e->getMessage());

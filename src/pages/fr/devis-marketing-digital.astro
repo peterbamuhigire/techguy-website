@@ -1,0 +1,498 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import type { Lang } from '@/utils/i18n';
+
+const lang: Lang = 'fr';
+
+const steps = [
+  { number: 1, title: 'Coordonnées' },
+  { number: 2, title: 'Votre entreprise' },
+  { number: 3, title: 'Audience & objectifs' },
+  { number: 4, title: 'Présence actuelle' },
+  { number: 5, title: 'Identité de marque' },
+  { number: 6, title: 'Budget & attentes' },
+];
+---
+
+<BaseLayout
+  title="Devis Marketing Digital — Répondez à 10 Questions | Peter Bamuhigire"
+  description="Complétez notre questionnaire en 10 questions et recevez un devis personnalisé pour votre stratégie de marketing digital et réseaux sociaux dans les 48 heures."
+  lang={lang}
+  page="services"
+>
+
+  <!-- Hero Banner -->
+  <section class="bg-navy-900 pt-20 md:pt-24 pb-12 md:pb-16 geo-pattern">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-5">
+        <span class="text-gold-400 text-sm font-medium">Marketing Digital &amp; Stratégie Réseaux Sociaux</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold text-warm-white">
+        Obtenez votre devis personnalisé
+      </h1>
+      <p class="mt-4 text-lg text-navy-200 max-w-2xl mx-auto leading-relaxed">
+        Répondez à 10 questions ciblées sur votre entreprise et vos objectifs. Peter examinera vos réponses et vous enverra un devis personnalisé dans les <strong class="text-gold-300">48 heures</strong>.
+      </p>
+      <div class="mt-6 h-1 w-20 rounded-full bg-gold-400 mx-auto"></div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="py-16 md:py-24 bg-warm-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div
+        x-data="{
+          step: 1,
+          totalSteps: 6,
+          state: 'idle',
+          responseMessage: '',
+          fieldErrors: [],
+          csrfToken: '',
+          csrfTs: 0,
+          loadedAt: Math.floor(Date.now() / 1000),
+          formData: {
+            name: '',
+            email: '',
+            phone: '',
+            company: '',
+            q1: '',
+            q2: '',
+            q3: '',
+            q4: '',
+            q5: '',
+            q6: '',
+            q7: '',
+            q8: '',
+            q9: '',
+            q10: '',
+            website: ''
+          },
+          async init() {
+            try {
+              const res = await fetch('/api/csrf-token.php');
+              const d = await res.json();
+              this.csrfToken = d.token;
+              this.csrfTs = d.ts;
+            } catch(e) {}
+          },
+          validateStep() {
+            this.fieldErrors = [];
+            if (this.step === 1) {
+              if (!this.formData.name || this.formData.name.trim().length < 2) this.fieldErrors.push('name');
+              if (!this.formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.formData.email)) this.fieldErrors.push('email');
+            }
+            return this.fieldErrors.length === 0;
+          },
+          hasError(field) { return this.fieldErrors.includes(field); },
+          nextStep() {
+            if (!this.validateStep()) return;
+            if (this.step < this.totalSteps) {
+              this.step++;
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          },
+          prevStep() {
+            if (this.step > 1) {
+              this.step--;
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          },
+          async submitForm() {
+            if (!this.validateStep()) return;
+            this.state = 'submitting';
+            try {
+              const res = await fetch('/api/intake.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  ...this.formData,
+                  lang: 'fr',
+                  _csrf_token: this.csrfToken,
+                  _csrf_ts: this.csrfTs,
+                  _loaded_at: this.loadedAt
+                })
+              });
+              const data = await res.json();
+              this.responseMessage = data.message;
+              this.state = data.success ? 'success' : 'error';
+              if (data.success) window.scrollTo({ top: 0, behavior: 'smooth' });
+            } catch(e) {
+              this.responseMessage = 'Une erreur est survenue. Veuillez envoyer un e-mail directement à peter@techguypeter.com.';
+              this.state = 'error';
+            }
+          }
+        }"
+        x-init="init()"
+      >
+
+        <!-- Success State -->
+        <div x-show="state === 'success'" x-cloak class="text-center py-16">
+          <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 mb-6">
+            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h2 class="text-3xl font-bold text-navy-900 mb-4">Réponses reçues !</h2>
+          <p class="text-navy-600 text-lg leading-relaxed max-w-lg mx-auto mb-4" x-text="responseMessage"></p>
+          <p class="text-navy-500 text-sm">Un récapitulatif de vos réponses vous a été envoyé par e-mail pour vos archives.</p>
+          <a href="/fr/strategie-marketing-digital/" class="mt-8 inline-flex items-center gap-2 text-amber-accent font-semibold hover:underline">
+            ← Retour aux services Marketing Digital
+          </a>
+        </div>
+
+        <!-- Form Wizard -->
+        <div x-show="state !== 'success'">
+
+          <!-- Error Banner -->
+          <div x-show="state === 'error'" x-cloak class="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl">
+            <p class="text-red-700 text-sm" x-text="responseMessage"></p>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm font-medium text-navy-700">
+                Étape <span x-text="step"></span> sur <span x-text="totalSteps"></span>
+              </span>
+            </div>
+            <div class="h-2 bg-navy-100 rounded-full overflow-hidden">
+              <div
+                class="h-full bg-gold-400 rounded-full transition-all duration-500"
+                :style="`width: ${(step / totalSteps) * 100}%`"
+              ></div>
+            </div>
+            <!-- Step labels -->
+            <div class="mt-3 flex gap-1.5">
+              {steps.map(s => (
+                <div
+                  class="flex-1 text-center"
+                  :class={`step === ${s.number} ? 'opacity-100' : 'opacity-30'`}
+                >
+                  <div
+                    class="w-6 h-6 rounded-full mx-auto flex items-center justify-center text-xs font-bold transition-colors"
+                    :class={`step === ${s.number} ? 'bg-gold-400 text-navy-900' : step > ${s.number} ? 'bg-green-500 text-white' : 'bg-navy-200 text-navy-500'`}
+                  >
+                    <span x-show={`step <= ${s.number}`}>{s.number}</span>
+                    <svg x-show={`step > ${s.number}`} x-cloak class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p class="text-xs text-navy-600 mt-1 hidden sm:block">{s.title}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Honeypot -->
+          <div class="absolute opacity-0 -z-10 h-0 overflow-hidden" aria-hidden="true">
+            <input type="text" name="website" x-model="formData.website" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <!-- ====== ÉTAPE 1 : Coordonnées ====== -->
+          <div x-show="step === 1" class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+            <h2 class="text-2xl font-bold text-navy-900 mb-2">Commençons par vos coordonnées</h2>
+            <p class="text-navy-600 mb-8">Nous utiliserons ces informations pour vous envoyer votre devis personnalisé et adresser correctement votre dossier.</p>
+
+            <div class="space-y-5">
+              <!-- Name -->
+              <div>
+                <label for="intake-name" class="block text-sm font-medium text-navy-800 mb-1.5">
+                  Nom complet <span class="text-amber-accent" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="intake-name"
+                  x-model="formData.name"
+                  :class="hasError('name') ? 'border-red-400 bg-red-50' : 'border-navy-200'"
+                  class="w-full px-4 py-3 border rounded-lg text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-colors"
+                  placeholder="Votre nom complet"
+                  autocomplete="name"
+                />
+                <p x-show="hasError('name')" x-cloak class="mt-1.5 text-sm text-red-600">Veuillez saisir votre nom complet.</p>
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label for="intake-email" class="block text-sm font-medium text-navy-800 mb-1.5">
+                  Adresse e-mail <span class="text-amber-accent" aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="intake-email"
+                  x-model="formData.email"
+                  :class="hasError('email') ? 'border-red-400 bg-red-50' : 'border-navy-200'"
+                  class="w-full px-4 py-3 border rounded-lg text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-colors"
+                  placeholder="vous@entreprise.com"
+                  autocomplete="email"
+                />
+                <p x-show="hasError('email')" x-cloak class="mt-1.5 text-sm text-red-600">Veuillez saisir une adresse e-mail valide.</p>
+              </div>
+
+              <!-- Phone -->
+              <div>
+                <label for="intake-phone" class="block text-sm font-medium text-navy-800 mb-1.5">
+                  Téléphone / WhatsApp <span class="text-navy-400 font-normal text-xs ml-1">(optionnel)</span>
+                </label>
+                <input
+                  type="tel"
+                  id="intake-phone"
+                  x-model="formData.phone"
+                  class="w-full px-4 py-3 border border-navy-200 rounded-lg text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-colors"
+                  placeholder="+225 07 00 00 00 00"
+                  autocomplete="tel"
+                />
+              </div>
+
+              <!-- Company -->
+              <div>
+                <label for="intake-company" class="block text-sm font-medium text-navy-800 mb-1.5">
+                  Entreprise / Organisation <span class="text-navy-400 font-normal text-xs ml-1">(optionnel)</span>
+                </label>
+                <input
+                  type="text"
+                  id="intake-company"
+                  x-model="formData.company"
+                  class="w-full px-4 py-3 border border-navy-200 rounded-lg text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-colors"
+                  placeholder="Nom de votre entreprise"
+                  autocomplete="organization"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- ====== ÉTAPE 2 : Votre entreprise ====== -->
+          <div x-show="step === 2" x-cloak class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+            <h2 class="text-2xl font-bold text-navy-900 mb-2">Votre entreprise</h2>
+            <p class="text-navy-600 mb-8 text-sm leading-relaxed">Répondez aussi complètement que possible — plus vous apportez de contexte, plus votre devis sera précis. Toutes les questions à partir d'ici sont facultatives, mais plus vous y répondez, mieux c'est.</p>
+
+            <div class="space-y-8">
+              <div>
+                <label for="q1" class="block text-sm font-semibold text-navy-800 mb-1">
+                  1. Présentation de l'entreprise
+                </label>
+                <p class="text-sm text-navy-500 mb-2 leading-relaxed">Parlez-nous de votre entreprise : ce que vous faites, ce que vous vendez ou proposez, depuis combien de temps vous exercez, la taille de votre équipe et votre localisation.</p>
+                <textarea
+                  id="q1"
+                  x-model="formData.q1"
+                  rows="5"
+                  class="w-full px-4 py-3 border border-navy-200 rounded-lg text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-colors resize-none"
+                  placeholder="ex. Nous sommes une PME basée à Abidjan depuis 4 ans, spécialisée dans la distribution de produits agroalimentaires avec une équipe de 12 personnes..."
+                ></textarea>
+              </div>
+
+              <div>
+                <label for="q2" class="block text-sm font-semibold text-navy-800 mb-1">
+                  2. Proposition de valeur unique
+                </label>
+                <p class="text-sm text-navy-500 mb-2 leading-relaxed">Qu'est-ce qui différencie votre entreprise de vos concurrents ? Pourquoi un client devrait-il vous choisir plutôt que quelqu'un d'autre sur votre marché ?</p>
+                <textarea
+                  id="q2"
+                  x-model="formData.q2"
+                  rows="5"
+                  class="w-full px-4 py-3 border border-navy-200 rounded-lg text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-colors resize-none"
+                  placeholder="ex. Nous sommes le seul distributeur de la région à proposer une livraison en 24h et un suivi de commande en temps réel via WhatsApp..."
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- ====== ÉTAPE 3 : Audience & objectifs ====== -->
+          <div x-show="step === 3" x-cloak class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+            <h2 class="text-2xl font-bold text-navy-900 mb-2">Votre audience et vos objectifs</h2>
+            <p class="text-navy-600 mb-8 text-sm leading-relaxed">Comprendre qui vous souhaitez atteindre et ce que vous voulez accomplir est le fondement de toute stratégie.</p>
+
+            <div class="space-y-8">
+              <div>
+                <label for="q3" class="block text-sm font-semibold text-navy-800 mb-1">
+                  3. Audience cible
+                </label>
+                <p class="text-sm text-navy-500 mb-2 leading-relaxed">Décrivez votre client idéal comme une vraie personne. Indiquez sa tranche d'âge, son genre (si pertinent), sa localisation, son niveau de revenu ou segment économique, sa profession et le problème précis que votre entreprise résout pour lui. Si vous servez plusieurs types de clients, décrivez-les chacun.</p>
+                <textarea
+                  id="q3"
+                  x-model="formData.q3"
+                  rows="5"
+                  class="w-full px-4 py-3 border border-navy-200 rounded-lg text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-colors resize-none"
+                  placeholder="ex. Notre client principal est un responsable des achats dans une PME de 20 à 100 employés, basé à Dakar ou Abidjan, qui cherche des fournisseurs fiables à prix compétitifs sans les délais des importations..."
+                ></textarea>
+              </div>
+
+              <div>
+                <label for="q4" class="block text-sm font-semibold text-navy-800 mb-1">
+                  4. Objectifs sur les réseaux sociaux
+                </label>
+                <p class="text-sm text-navy-500 mb-2 leading-relaxed">Que voulez-vous que les réseaux sociaux accomplissent pour votre entreprise ? Qu'est-ce qui vous a poussé à vous concentrer sur cela maintenant, et à quoi ressemble le succès pour vous dans les 6 à 12 prochains mois ?</p>
+                <textarea
+                  id="q4"
+                  x-model="formData.q4"
+                  rows="5"
+                  class="w-full px-4 py-3 border border-navy-200 rounded-lg text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-colors resize-none"
+                  placeholder="ex. Nous voulons générer des demandes de devis directement depuis LinkedIn et WhatsApp. Le succès pour nous, c'est 20 leads qualifiés par mois d'ici 6 mois..."
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- ====== ÉTAPE 4 : Présence actuelle ====== -->
+          <div x-show="step === 4" x-cloak class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+            <h2 class="text-2xl font-bold text-navy-900 mb-2">Votre présence actuelle</h2>
+            <p class="text-navy-600 mb-8 text-sm leading-relaxed">Une image honnête de votre situation actuelle nous permet de construire une stratégie qui part de la réalité, non d'hypothèses.</p>
+
+            <div class="space-y-8">
+              <div>
+                <label for="q5" class="block text-sm font-semibold text-navy-800 mb-1">
+                  5. Présence actuelle sur les réseaux sociaux
+                </label>
+                <p class="text-sm text-navy-500 mb-2 leading-relaxed">Sur quelles plateformes êtes-vous actif actuellement ? Pour chacune, indiquez votre identifiant, le nombre approximate d'abonnés, la fréquence de publication et qui gère le compte aujourd'hui. Comment évalueriez-vous honnêtement vos performances actuelles — et qu'est-ce qui a fonctionné ou non jusqu'à présent ?</p>
+                <textarea
+                  id="q5"
+                  x-model="formData.q5"
+                  rows="6"
+                  class="w-full px-4 py-3 border border-navy-200 rounded-lg text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-colors resize-none"
+                  placeholder="ex. Facebook @notresentreprise — 2 300 abonnés, 2 publications/semaine gérées par l'assistante. Engagement faible. LinkedIn — pas encore actif. WhatsApp Business — utilisé pour les commandes mais sans stratégie de contenu..."
+                ></textarea>
+              </div>
+
+              <div>
+                <label for="q6" class="block text-sm font-semibold text-navy-800 mb-1">
+                  6. Concurrents
+                </label>
+                <p class="text-sm text-navy-500 mb-2 leading-relaxed">Nommez vos trois à cinq principaux concurrents. Pour chacun, indiquez les plateformes sur lesquelles ils sont présents et décrivez leur présence sur les réseaux sociaux. Quel concurrent admirez-vous le plus et pourquoi — et duquel voulez-vous vous distinguer clairement ?</p>
+                <textarea
+                  id="q6"
+                  x-model="formData.q6"
+                  rows="6"
+                  class="w-full px-4 py-3 border border-navy-200 rounded-lg text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-colors resize-none"
+                  placeholder="ex. Concurrent A — fort sur LinkedIn (3 000 abonnés), publications régulières mais très institutionnelles. Concurrent B — actif sur Facebook mais contenu peu engageant. J'admire la régularité du Concurrent A mais je veux un ton plus chaleureux et moins corporate..."
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- ====== ÉTAPE 5 : Identité de marque ====== -->
+          <div x-show="step === 5" x-cloak class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+            <h2 class="text-2xl font-bold text-navy-900 mb-2">Votre identité de marque</h2>
+            <p class="text-navy-600 mb-8 text-sm leading-relaxed">La façon dont votre marque s'exprime et se présente visuellement détermine si votre contenu paraît authentique ou générique. Soyez précis — cela aide énormément.</p>
+
+            <div class="space-y-8">
+              <div>
+                <label for="q7" class="block text-sm font-semibold text-navy-800 mb-1">
+                  7. Voix et personnalité de la marque
+                </label>
+                <p class="text-sm text-navy-500 mb-2 leading-relaxed">Si votre marque était une personne entrant dans une pièce, comment parlerait-elle, comment serait-elle habillée et comment se comporterait-elle ? Choisissez trois mots qui décrivent le ton de votre marque sur les réseaux sociaux. Nommez deux ou trois marques dont vous admirez le ton, et deux ou trois dont vous ne voulez absolument pas vous approcher.</p>
+                <textarea
+                  id="q7"
+                  x-model="formData.q7"
+                  rows="5"
+                  class="w-full px-4 py-3 border border-navy-200 rounded-lg text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-colors resize-none"
+                  placeholder="ex. Trois mots : expert, accessible, local. J'admire : Orange CI (clair et moderne), MTN (énergie et proximité). Ne pas ressembler à : grandes banques (froid, trop formel)..."
+                ></textarea>
+              </div>
+
+              <div>
+                <label for="q8" class="block text-sm font-semibold text-navy-800 mb-1">
+                  8. Identité visuelle
+                </label>
+                <p class="text-sm text-navy-500 mb-2 leading-relaxed">Décrivez votre identité visuelle : vos couleurs (avec les codes hex si vous les avez), vos polices et le statut de votre logo. Avez-vous une charte graphique existante ? Quel style visuel voulez-vous pour vos contenus sur les réseaux sociaux — et y a-t-il des styles à éviter ?</p>
+                <textarea
+                  id="q8"
+                  x-model="formData.q8"
+                  rows="5"
+                  class="w-full px-4 py-3 border border-navy-200 rounded-lg text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-colors resize-none"
+                  placeholder="ex. Couleurs : bleu marine (#1C3A6E) et orange (#E87722). Logo professionnel existant. Pas de charte graphique formelle. Nous voulons un look propre et moderne, avec des photos réelles de nos équipes. Éviter les visuels trop chargés..."
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- ====== ÉTAPE 6 : Budget & attentes ====== -->
+          <div x-show="step === 6" x-cloak class="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+            <h2 class="text-2xl font-bold text-navy-900 mb-2">Budget et attentes</h2>
+            <p class="text-navy-600 mb-8 text-sm leading-relaxed">Être ouvert sur votre budget et vos attentes permet à Peter de vous proposer quelque chose de réaliste et adapté à votre entreprise — plutôt qu'une offre générique.</p>
+
+            <div class="space-y-8">
+              <div>
+                <label for="q9" class="block text-sm font-semibold text-navy-800 mb-1">
+                  9. Ressources, budget et processus de validation
+                </label>
+                <p class="text-sm text-navy-500 mb-2 leading-relaxed">Quelles ressources de contenu avez-vous à disposition — photographie, capacité vidéo, quelqu'un prêt à apparaître en caméra, un membre de l'équipe qui écrit bien ? Quel est votre budget mensuel pour la gestion des réseaux sociaux et/ou la publicité payante ? Qui doit valider le contenu avant publication, et en combien de temps peut-il le faire ?</p>
+                <textarea
+                  id="q9"
+                  x-model="formData.q9"
+                  rows="6"
+                  class="w-full px-4 py-3 border border-navy-200 rounded-lg text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-colors resize-none"
+                  placeholder="ex. Nous avons un smartphone pour les photos et le gérant peut apparaître ponctuellement en vidéo. Budget : 300 000 FCFA/mois pour la gestion + 100 000 FCFA pour la publicité. Validation par le directeur commercial sous 24h..."
+                ></textarea>
+              </div>
+
+              <div>
+                <label for="q10" class="block text-sm font-semibold text-navy-800 mb-1">
+                  10. Fréquence de publication, restrictions et reporting
+                </label>
+                <p class="text-sm text-navy-500 mb-2 leading-relaxed">Quelles plateformes voulez-vous prioriser, et à quelle fréquence souhaitez-vous que du contenu soit publié ? Y a-t-il des sujets, mots ou approches que votre marque ne doit jamais utiliser ? À quelle fréquence souhaitez-vous des rapports de performance ? Y a-t-il autre chose — lancement imminent, défis passés, sensibilités, secteur réglementé — que nous devrions savoir avant de commencer ?</p>
+                <textarea
+                  id="q10"
+                  x-model="formData.q10"
+                  rows="6"
+                  class="w-full px-4 py-3 border border-navy-200 rounded-lg text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/50 focus:border-gold-400 transition-colors resize-none"
+                  placeholder="ex. Priorité : LinkedIn et WhatsApp. 3 publications/semaine sur LinkedIn, 2 messages WhatsApp/semaine. Ne jamais mentionner les concurrents nommément. Rapport mensuel en PDF. Nous lançons un nouveau produit en avril..."
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="mt-6 flex items-center justify-between gap-4">
+            <button
+              type="button"
+              x-show="step > 1"
+              @click="prevStep()"
+              class="inline-flex items-center gap-2 px-6 py-3 border-2 border-navy-200 text-navy-700 font-semibold rounded-lg hover:border-navy-400 transition-colors duration-200"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/>
+              </svg>
+              Précédent
+            </button>
+            <div x-show="step === 1"></div>
+
+            <button
+              type="button"
+              x-show="step < totalSteps"
+              @click="nextStep()"
+              class="ml-auto inline-flex items-center gap-2 px-8 py-3 bg-gold-400 hover:bg-gold-500 text-navy-900 font-bold rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg"
+            >
+              Étape suivante
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+              </svg>
+            </button>
+
+            <button
+              type="button"
+              x-show="step === totalSteps"
+              x-cloak
+              @click="submitForm()"
+              :disabled="state === 'submitting'"
+              class="ml-auto inline-flex items-center gap-2 px-8 py-3 bg-amber-accent hover:bg-amber-accent/90 text-white font-bold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              <span x-show="state !== 'submitting'">Envoyer et obtenir mon devis</span>
+              <span x-show="state === 'submitting'" x-cloak>Envoi en cours...</span>
+              <svg x-show="state !== 'submitting'" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Trust note -->
+          <p class="mt-6 text-center text-sm text-navy-400">
+            Vos réponses sont transmises de façon sécurisée et utilisées uniquement pour préparer votre devis. Peter vous répondra dans les 48 heures.
+          </p>
+
+        </div><!-- end form wizard -->
+      </div><!-- end x-data -->
+
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,526 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import SectionHeading from '@/components/SectionHeading.astro';
+import type { Lang } from '@/utils/i18n';
+
+import dmImg1 from '@/assets/images/services/digital-marketing-1.jpg';
+import dmImg2 from '@/assets/images/services/digital-marketing-2.jpg';
+import smImg1 from '@/assets/images/services/social-media-1.jpg';
+import smImg2 from '@/assets/images/services/social-media-2.jpg';
+
+const lang: Lang = 'en';
+
+const processSteps = [
+  {
+    number: '01',
+    title: 'Free Audit',
+    description: 'I start by reviewing your current digital presence and sending you a personalised video audit — a direct, honest breakdown of where your biggest opportunities are, with specific observations about your business. No obligation. No generic report.',
+  },
+  {
+    number: '02',
+    title: 'Strategy',
+    description: 'Based on the audit, I propose a focused strategy: the specific activities most likely to generate measurable results for your business, in your market, with your resources. We agree on the scope, timeline, and what success looks like before anything begins.',
+  },
+  {
+    number: '03',
+    title: 'Delivery',
+    description: 'I deliver a written strategy document — clear, actionable, and structured so your team can implement it with confidence. Where I am managing execution, I handle it directly and keep you informed throughout.',
+  },
+  {
+    number: '04',
+    title: 'Review & Optimise',
+    description: 'At the end of each period, I review what worked, what did not, and what we adjust. Strategy is not a document you file away — it is a living plan that improves as we learn more about what your audience responds to.',
+  },
+];
+
+const services = [
+  {
+    icon: 'chart',
+    title: 'Social Media Strategy',
+    subtitle: 'A clear, documented plan — so every post has a purpose.',
+    description:
+      'Most businesses post inconsistently, chase trends without a plan, and have no way of knowing whether their social media is working. I fix that. I design a documented social media strategy tailored to your specific business, your target audience, and the platforms that matter in your market.',
+    deliverables: [
+      'Brand and platform audit',
+      'Audience persona development',
+      'Platform strategy (Facebook, Instagram, WhatsApp, TikTok, YouTube, LinkedIn, X)',
+      'Content pillar framework',
+      '90-day content calendar',
+      'Tone of voice guide',
+      'KPIs and measurement framework',
+    ],
+    rightFor:
+      'You are tired of inconsistent, reactive posting and want a professional content operation you can manage in-house — with a clear strategy behind every decision.',
+  },
+  {
+    icon: 'megaphone',
+    title: 'Digital Marketing Strategy',
+    subtitle: 'A joined-up plan across every digital channel — not just social media.',
+    description:
+      'Social media is one piece of a larger puzzle. A complete digital marketing strategy connects your website, email, WhatsApp, search presence, and social channels into a single, coordinated system — one that attracts, nurtures, and converts customers at every stage of their journey.',
+    deliverables: [
+      'Full digital presence audit',
+      'Customer journey mapping',
+      'POEM channel strategy (Paid/Owned/Earned)',
+      'WhatsApp marketing system',
+      'Email and SMS marketing plan',
+      'Content marketing roadmap',
+      'ROI measurement framework',
+      '90-day implementation roadmap',
+    ],
+    rightFor:
+      'You want a complete digital marketing operation — not a collection of disconnected tactics. Particularly valuable if you have an existing customer base that has not been properly reactivated, or if you are preparing to scale.',
+  },
+  {
+    icon: 'device',
+    title: 'Platform Playbooks',
+    subtitle: 'A complete operating manual for one platform, built around your business.',
+    description:
+      'Not every business needs a full multi-channel strategy right now. Sometimes you need to master one platform before expanding. A Platform Playbook is a detailed, channel-specific operating system — the strategy, content framework, posting cadence, growth tactics, and KPIs for a single platform, custom-built for your brand.',
+    deliverables: [
+      'WhatsApp Business',
+      'Facebook',
+      'Instagram',
+      'LinkedIn (B2B focus)',
+      'TikTok',
+      'YouTube',
+      'X/Twitter',
+    ],
+    rightFor:
+      'Each playbook is a permanent reference document your team can use indefinitely — not a one-off presentation that gathers dust after the first week.',
+  },
+  {
+    icon: 'academic',
+    title: 'Training & Capacity Building',
+    subtitle: 'Learn to do it properly. Keep the skills forever.',
+    description:
+      'Some businesses do not need someone to manage their digital marketing for them — they need to build the capability in-house. I offer practical, hands-on training that transfers real skills to your team, your communications officer, or you as the business owner.',
+    deliverables: [
+      'Social Media Foundations',
+      'Content Creation Workshop',
+      'Digital Marketing for Business Owners',
+      'WhatsApp for Business',
+    ],
+    rightFor:
+      'Training is delivered in person in Kampala or online via Zoom. Every session includes reference materials and templates your team keeps.',
+  },
+];
+
+const reasons = [
+  {
+    title: 'I know this market.',
+    body: 'My strategies are built for Uganda and East Africa. I understand the platforms your customers actually use, the content that resonates locally, and the business realities — budget constraints, infrastructure, audience behaviour — that Western marketing playbooks ignore.',
+  },
+  {
+    title: 'You deal with me directly.',
+    body: 'There is no account team between us. When you have a question, you ask me. When I have a recommendation, I tell you directly. The thinking you are paying for is the thinking you get.',
+  },
+  {
+    title: 'I focus on outcomes, not activity.',
+    body: 'I measure my work against your business results — revenue, leads, customer retention — not follower counts and reach. If a tactic is not generating results, I say so and we change course.',
+  },
+  {
+    title: 'I am honest with you.',
+    body: 'If a platform is wrong for your business, I will tell you. If a campaign is not performing, I will flag it before you ask. I would rather lose a client than keep one by hiding the truth.',
+  },
+  {
+    title: 'I am precise and fast.',
+    body: 'Strategy documents delivered within 10 working days of briefing. No six-month onboarding processes before you see any output.',
+  },
+];
+
+const sectors = [
+  'Hospitality — hotels, restaurants, lodges, tourism operators',
+  'Healthcare — clinics, pharmacies, wellness centres',
+  'Retail and consumer goods',
+  'Professional services — legal, accounting, consulting',
+  'Education and training institutions',
+  'Financial services and fintech',
+  'Agriculture and agribusiness',
+  'NGOs and development organisations',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Digital Marketing & Social Media Strategy Consulting',
+  provider: {
+    '@type': 'Person',
+    name: 'Peter Bamuhigire',
+    url: 'https://techguypeter.com/en/about/',
+  },
+  areaServed: [
+    { '@type': 'Country', name: 'Uganda' },
+    { '@type': 'Country', name: 'Kenya' },
+    { '@type': 'Country', name: 'Tanzania' },
+  ],
+  serviceType: 'Digital Marketing Consulting',
+  description:
+    'Digital marketing strategy, social media strategy, platform playbooks (WhatsApp, Facebook, Instagram, LinkedIn, TikTok), WhatsApp Business marketing, and training for businesses in Uganda and East Africa.',
+};
+---
+
+<BaseLayout
+  title="Digital Marketing & Social Media Strategy — Uganda & East Africa | Peter Bamuhigire"
+  description="Digital marketing and social media strategy consultant based in Uganda. I help businesses across East Africa build strategies that generate real, measurable results."
+  lang={lang}
+  page="services"
+>
+
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <!-- ==============================
+       HERO
+       ============================== -->
+  <section class="relative bg-navy-950 overflow-hidden">
+    <div class="absolute inset-0 geo-pattern opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-900"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24">
+      <div class="py-16 md:py-20 lg:py-24 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+        <!-- Text column -->
+        <div>
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-6">
+            <span class="text-gold-400 text-sm font-medium">Digital Marketing &amp; Social Media Strategy</span>
+          </div>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-warm-white leading-tight">
+            Stop guessing.<br class="hidden sm:block" /> Start growing.
+          </h1>
+
+          <p class="mt-6 text-lg md:text-xl text-navy-200 leading-relaxed max-w-2xl">
+            I help businesses across Uganda and East Africa build digital marketing and social media strategies that generate real, measurable results — not just likes and impressions.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a
+              href="/en/contact/"
+              class="inline-flex items-center justify-center px-8 py-4 bg-amber-accent hover:bg-amber-accent/90 text-white text-lg font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-amber-accent/20 hover:shadow-xl hover:-translate-y-0.5"
+            >
+              Get a Free Audit
+              <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+              </svg>
+            </a>
+            <a
+              href="#how-i-work"
+              class="inline-flex items-center justify-center px-8 py-4 border-2 border-gold-400 text-gold-400 hover:bg-gold-400/10 text-lg font-semibold rounded-lg transition-all duration-300 hover:-translate-y-0.5"
+            >
+              See How I Can Help ↓
+            </a>
+          </div>
+
+          <div class="mt-6 h-1 w-16 rounded-full bg-gold-400"></div>
+        </div>
+
+        <!-- Image column — desktop only -->
+        <div class="relative hidden lg:block">
+          <div class="absolute -inset-4 bg-gradient-to-br from-gold-400/15 via-transparent to-navy-700/30 rounded-3xl rotate-1"></div>
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl -rotate-1">
+            <Image
+              src={dmImg1}
+              alt="Digital marketing strategy and analytics — Uganda and East Africa"
+              width={700}
+              height={440}
+              loading="eager"
+              class="w-full object-cover"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 40V10C360 30 720 0 1080 20C1260 30 1380 25 1440 20V40H0Z" fill="var(--color-warm-white)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==============================
+       WHO I AM
+       ============================== -->
+  <section class="bg-warm-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
+
+        <!-- Text -->
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-6">Hi, I'm Peter.</h2>
+
+          <p class="text-navy-600 leading-relaxed mb-5">
+            I am a digital marketing and social media strategy consultant working with businesses across Uganda and East Africa.
+          </p>
+          <p class="text-navy-600 leading-relaxed mb-5">
+            I work independently — which means when you hire me, you get me. Not a junior account manager, not an automated report, and not a generic strategy template pulled from a folder. You get my full attention, my direct thinking, and a strategy built specifically around your business.
+          </p>
+          <p class="text-navy-600 leading-relaxed">
+            My work sits at the intersection of technology and marketing. I understand the platforms your customers actually use, the content that moves East African audiences to act, and how to build digital systems that keep generating results long after our engagement ends. I do not sell activity. I sell outcomes.
+          </p>
+        </div>
+
+        <!-- Image -->
+        <div class="relative">
+          <div class="absolute -inset-3 bg-gradient-to-br from-gold-400/10 via-transparent to-navy-200/20 rounded-2xl rotate-1"></div>
+          <div class="relative rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src={dmImg2}
+              alt="Strategy planning and consulting — notebook and planning tools"
+              width={640}
+              height={440}
+              loading="lazy"
+              class="w-full object-cover"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       WHAT I DO
+       ============================== -->
+  <section class="bg-warm-cream py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-up">
+        <SectionHeading
+          title="What I Do"
+          subtitle="I offer a focused suite of digital marketing and social media strategy services. Everything I do is designed to answer one question: how do we turn your online presence into a business asset that generates revenue?"
+        />
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 fade-up">
+        {services.map((service) => (
+          <div class="bg-white rounded-2xl shadow-sm border border-navy-100 p-8 flex flex-col">
+
+            <!-- Icon -->
+            <div class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center mb-5 shrink-0">
+              {service.icon === 'chart' && (
+                <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/>
+                </svg>
+              )}
+              {service.icon === 'megaphone' && (
+                <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.34 15.84c-.688-.06-1.386-.09-2.09-.09H7.5a4.5 4.5 0 110-9h.75c.704 0 1.402-.03 2.09-.09m0 9.18c.253.962.584 1.892.985 2.783.247.55.06 1.21-.463 1.511l-.657.38c-.551.318-1.26.117-1.527-.461a20.845 20.845 0 01-1.44-4.282m3.102.069a18.03 18.03 0 01-.59-4.59c0-1.586.205-3.124.59-4.59m0 9.18a23.848 23.848 0 018.835 2.535M10.34 6.66a23.847 23.847 0 008.835-2.535m0 0A23.74 23.74 0 0018.795 3m.38 1.125a23.91 23.91 0 011.014 5.395m-1.014 8.855c-.118.38-.245.754-.38 1.125m.38-1.125a23.91 23.91 0 001.014-5.395m0-3.46c.495.413.811 1.035.811 1.73 0 .695-.316 1.317-.811 1.73m0-3.46a24.347 24.347 0 010 3.46"/>
+                </svg>
+              )}
+              {service.icon === 'device' && (
+                <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>
+                </svg>
+              )}
+              {service.icon === 'academic' && (
+                <svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/>
+                </svg>
+              )}
+            </div>
+
+            <h3 class="text-xl font-bold text-navy-900 mb-1">{service.title}</h3>
+            <p class="text-amber-accent text-sm italic mb-4">{service.subtitle}</p>
+
+            <p class="text-navy-600 leading-relaxed mb-6 text-sm">{service.description}</p>
+
+            <!-- Deliverables -->
+            <div class="space-y-2 mb-6 flex-1">
+              {service.deliverables.map((item) => (
+                <div class="flex items-start gap-2.5">
+                  <svg class="w-5 h-5 text-gold-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                  <span class="text-navy-700 text-sm">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <!-- Right for box -->
+            <div class="bg-navy-50 rounded-lg p-4 border border-navy-100">
+              <p class="text-xs font-semibold text-navy-500 uppercase tracking-wider mb-1">This service is right for you if:</p>
+              <p class="text-navy-700 text-sm leading-relaxed">{service.rightFor}</p>
+            </div>
+
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       HOW I WORK
+       ============================== -->
+  <section id="how-i-work" class="relative bg-navy-900 py-16 md:py-24 overflow-hidden">
+    <div class="absolute inset-0 geo-pattern opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-900/95 to-navy-900/90"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-up">
+        <SectionHeading
+          title="How I Work"
+          subtitle="Straightforward. Honest. Results first."
+          light
+        />
+      </div>
+
+      <!-- Desktop: horizontal timeline -->
+      <div class="hidden md:block fade-up">
+        <div class="relative">
+          <!-- Connecting line -->
+          <div class="absolute top-10 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-gold-400/20 via-gold-400/60 to-gold-400/20"></div>
+
+          <div class="grid grid-cols-4 gap-6 lg:gap-8">
+            {processSteps.map((step) => (
+              <div class="relative text-center group">
+                <div class="relative z-10 w-20 h-20 mx-auto rounded-full bg-navy-800 border-2 border-gold-400/40 flex items-center justify-center group-hover:border-gold-400 group-hover:bg-navy-700 transition-all duration-300">
+                  <span class="text-gold-400 font-bold text-lg font-heading">{step.number}</span>
+                </div>
+                <h3 class="mt-5 text-base font-bold text-warm-white">{step.title}</h3>
+                <p class="mt-2 text-navy-300 text-sm leading-relaxed">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile: vertical timeline -->
+      <div class="md:hidden fade-up">
+        <div class="relative ml-6">
+          <!-- Vertical line -->
+          <div class="absolute top-0 bottom-0 left-4 w-0.5 bg-gradient-to-b from-gold-400/20 via-gold-400/60 to-gold-400/20"></div>
+
+          <div class="space-y-8">
+            {processSteps.map((step) => (
+              <div class="relative flex items-start gap-6">
+                <div class="relative z-10 w-9 h-9 shrink-0 rounded-full bg-navy-800 border-2 border-gold-400/50 flex items-center justify-center">
+                  <span class="text-gold-400 font-bold text-xs font-heading">{step.number}</span>
+                </div>
+                <div class="pb-2">
+                  <h3 class="text-base font-bold text-warm-white">{step.title}</h3>
+                  <p class="mt-1 text-navy-300 text-sm leading-relaxed">{step.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       WHY WORK WITH ME
+       ============================== -->
+  <section class="bg-warm-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-up">
+        <SectionHeading title="Why Work With Me" />
+      </div>
+
+      <div class="fade-up">
+        <!-- First 4 in a 2×2 grid -->
+        <div class="grid lg:grid-cols-2 gap-6 mb-6">
+          {reasons.slice(0, 4).map((reason) => (
+            <div class="bg-warm-cream rounded-xl p-6 border-l-4 border-gold-400">
+              <h3 class="text-lg font-bold text-navy-900 mb-2">{reason.title}</h3>
+              <p class="text-navy-600 text-sm leading-relaxed">{reason.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- 5th card centred -->
+        <div class="max-w-2xl mx-auto">
+          <div class="bg-warm-cream rounded-xl p-6 border-l-4 border-gold-400">
+            <h3 class="text-lg font-bold text-navy-900 mb-2">{reasons[4].title}</h3>
+            <p class="text-navy-600 text-sm leading-relaxed">{reasons[4].body}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SECTORS
+       ============================== -->
+  <section class="bg-warm-cream py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="fade-up">
+        <SectionHeading
+          title="Sectors I Work With"
+          subtitle="I work across industries. If your customers are online — and in East Africa, they are — I can help you reach them more effectively."
+        />
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto fade-up">
+        {sectors.map((sector) => (
+          <div class="flex items-start gap-3">
+            <div class="mt-1.5 w-2 h-2 rounded-full bg-gold-500 shrink-0"></div>
+            <span class="text-navy-700 text-sm leading-relaxed">{sector}</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Social proof image row -->
+      <div class="mt-14 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto fade-up">
+        <div class="relative rounded-2xl overflow-hidden shadow-md">
+          <Image
+            src={smImg1}
+            alt="Social media strategy — using smartphone platforms in East Africa"
+            width={560}
+            height={260}
+            loading="lazy"
+            class="w-full object-cover"
+          />
+        </div>
+        <div class="relative rounded-2xl overflow-hidden shadow-md">
+          <Image
+            src={smImg2}
+            alt="Mobile-first digital marketing — hands holding smartphone"
+            width={560}
+            height={260}
+            loading="lazy"
+            class="w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       CTA
+       ============================== -->
+  <section class="relative bg-navy-950 py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 geo-pattern opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950/95 to-navy-950"></div>
+
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-warm-white mb-6">
+        Ready to grow?
+      </h2>
+      <p class="text-navy-200 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+        Start with a free digital audit. I will review your current online presence and send you a personalised video — a direct, no-fluff breakdown of your biggest digital marketing opportunities. No sales pitch. No obligation.
+      </p>
+      <a
+        href="/en/contact/"
+        class="inline-flex items-center justify-center px-10 py-4 bg-amber-accent hover:bg-amber-accent/90 text-white text-lg font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-amber-accent/20 hover:shadow-xl hover:-translate-y-0.5"
+      >
+        Request Your Free Audit
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+        </svg>
+      </a>
+      <div class="mt-6">
+        <a
+          href="/en/contact/"
+          class="text-gold-400 hover:text-gold-300 text-sm underline underline-offset-4 transition-colors duration-200"
+        >
+          Prefer to talk first? Book a 20-minute call →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -47,20 +47,20 @@ Peter Bamuhigire offers comprehensive technology and business consulting service
 
 ---
 
-## Business Consulting
+## Business Planning & Strategy
 
-**Short Description**: Business advisory services that bridge the gap between organisational goals and the operational processes needed to achieve them.
+**Short Description**: Bankable business plans, strategic frameworks, and market intelligence that help entrepreneurs and organisations secure funding, enter new markets, and achieve measurable growth.
 
-**Detailed Description**: Technology is only effective when it serves well-designed business processes. Peter's business consulting draws on experience working with organisations across diverse industries — health products distribution, agriculture research, property management, retail, and more. The practice helps organisations analyse their current processes, identify inefficiencies, and implement improvements that deliver measurable results. From business plan development to Monitoring & Evaluation framework design, the focus is on practical advisory that respects the realities of your market, your team, and your resources. This is consulting that works alongside you — not a report that sits on a shelf.
+**Detailed Description**: Strong business outcomes begin with rigorous planning. Peter's business planning and strategy practice works with entrepreneurs, SMEs, and established organisations to develop the documentation, frameworks, and strategic thinking they need to move forward with confidence. Whether you are seeking finance from a bank or development finance institution, applying for a grant, pitching to investors, or simply building a credible roadmap for your organisation's next phase — the practice delivers plans and strategies that are grounded in your market reality. With experience working across more than 10 African countries and diverse industries, Peter brings the analytical rigour and practical insight that turns business ideas into fundable, executable plans.
 
 **Key Deliverables**:
-- Business process analysis and optimisation
-- Business plan and proposal development
-- Strategic planning and objective setting
-- Monitoring & Evaluation (M&E) framework design
-- Project management and coordination
-- Cross-functional team alignment and change management
-- Business intelligence and data-driven decision-making
+- Business plan development (bankable plans for banks, DFIs & investors)
+- Strategic planning & objective setting
+- Business proposals & grant applications
+- Market research & feasibility studies
+- Pitch deck development & presentation coaching
+- M&E framework design
+- Business process analysis & optimisation
 
 **Starting Price**: Contact for a consultation — advisory engagements are scoped to your specific needs.
 
@@ -85,6 +85,42 @@ Peter Bamuhigire offers comprehensive technology and business consulting service
 **Starting Price**: Contact for a consultation — implementation costs depend on portfolio size and requirements.
 
 **Photo**: [PHOTO NEEDED — property or real estate related imagery]
+
+---
+
+## Digital Marketing & Social Media Strategy
+
+**Short Description**: Data-driven digital marketing strategies and social media playbooks that help organisations build their brand, grow their audience, and convert attention into revenue — across every relevant platform.
+
+**Detailed Description**: In today's market, a strong digital presence is not optional — it is a commercial imperative. Yet most organisations in Africa and beyond invest in social media without a documented strategy, consistent brand voice, or any way to measure return. Peter's digital marketing and social media strategy practice changes that. Drawing on full-funnel marketing thinking and deep familiarity with the platforms and channels that matter in African markets — including WhatsApp, Facebook, Instagram, LinkedIn, TikTok, YouTube, and X — the practice helps organisations move from ad hoc posting to strategic, measurable digital marketing. The output is not just a presentation: it is a working system your team can execute. A dedicated page for this service is available at [/en/digital-marketing-strategy/](/en/digital-marketing-strategy/).
+
+**Sub-Services**:
+
+### Social Media Strategy
+A comprehensive, documented social media strategy tailored to your organisation. Includes: audience personas and segmentation, platform selection rationale, content calendar framework, tone of voice guidelines, KPI definition, and reporting cadence.
+
+### Digital Marketing Strategy
+A full-funnel digital marketing strategy built on the POEM framework (Paid, Owned, Earned Media). Covers: WhatsApp marketing, email and SMS marketing, content marketing roadmap, campaign planning, and ROI measurement methodology.
+
+### Platform Playbooks
+Channel-specific operating manuals that your team can follow without guesswork. Playbooks available for: WhatsApp, Facebook, Instagram, LinkedIn, TikTok, YouTube, and X. Each playbook includes posting frequency, content formats, engagement tactics, and platform-specific best practices.
+
+### Training & Capacity Building
+Practical, workshop-based training programmes delivered in-person or online. Programmes include: Social Media Foundations, Content Creation Workshop, Digital Marketing for Business Owners, and WhatsApp for Business.
+
+**Key Deliverables**:
+- Documented social media strategy with audience personas and platform rationale
+- Full-funnel digital marketing strategy (POEM framework)
+- WhatsApp marketing integration and campaign design
+- Email and SMS marketing strategy and templates
+- Content calendar and content roadmap
+- Channel-specific platform playbooks (WhatsApp, Facebook, Instagram, LinkedIn, TikTok, YouTube, X)
+- KPI framework and ROI measurement methodology
+- Training workshops and capacity-building programmes
+
+**Starting Price**: Contact for a consultation — engagements range from standalone strategy documents to full training and implementation packages.
+
+**Photo**: [PHOTO NEEDED — digital marketing or social media strategy session]
 
 ---
 

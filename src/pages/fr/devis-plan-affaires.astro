@@ -1,0 +1,735 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import type { Lang } from '@/utils/i18n';
+
+const lang: Lang = 'fr';
+
+const steps = [
+  {
+    number: 1,
+    title: 'Vos coordonnées',
+    description: 'Nom, e-mail et téléphone pour vous envoyer votre devis.',
+  },
+  {
+    number: 2,
+    title: 'Votre entreprise',
+    description: 'Ce que fait votre entreprise, depuis combien de temps et sa structure juridique.',
+  },
+  {
+    number: 3,
+    title: 'Offre & marché',
+    description: 'Ce que vous proposez, qui sont vos clients et la taille de votre marché.',
+  },
+  {
+    number: 4,
+    title: 'Revenus & concurrence',
+    description: 'Comment vous gagnez de l\'argent, votre tarification et vos concurrents.',
+  },
+  {
+    number: 5,
+    title: 'Finances & le document',
+    description: 'Vos besoins en financement et le type de document dont vous avez besoin.',
+  },
+  {
+    number: 6,
+    title: 'Équipe & notes finales',
+    description: 'Les personnes derrière l\'entreprise et tout ce qu\'il faut savoir.',
+  },
+];
+---
+
+<BaseLayout
+  title="Devis Plan d'Affaires — Répondez à 10 Questions | Peter Bamuhigire"
+  description="Répondez à 10 questions ciblées sur votre entreprise et vos objectifs de financement. Peter examinera votre dossier et vous enverra un devis personnalisé pour un plan d'affaires bancable dans les 48 heures."
+  lang={lang}
+  page="services"
+>
+
+  <!-- ==============================
+       HERO
+       ============================== -->
+  <section class="bg-navy-950 pt-20 md:pt-24 pb-14 md:pb-18 geo-pattern relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950/60 to-navy-950/90"></div>
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-5">
+        <svg class="w-3.5 h-3.5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+        </svg>
+        <span class="text-gold-400 text-sm font-medium">Planification Stratégique &amp; Plan d'Affaires</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold text-warm-white leading-tight">
+        Démarrez votre dossier de plan d'affaires
+      </h1>
+      <p class="mt-4 text-lg text-navy-200 max-w-2xl mx-auto leading-relaxed">
+        Répondez à 10 questions ciblées sur votre entreprise. Peter examinera votre dossier et vous enverra un devis personnalisé, sans engagement, dans les <strong class="text-gold-300">48 heures</strong>.
+      </p>
+
+      <!-- Badges de confiance -->
+      <div class="mt-7 flex flex-wrap items-center justify-center gap-4 text-sm text-navy-300">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/>
+          </svg>
+          Confidentiel
+        </span>
+        <span class="text-navy-600">·</span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Environ 15 minutes
+        </span>
+        <span class="text-navy-600">·</span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Sans engagement
+        </span>
+        <span class="text-navy-600">·</span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+          </svg>
+          Réponse sous 48 heures
+        </span>
+      </div>
+
+      <div class="mt-6 h-1 w-20 rounded-full bg-gold-400 mx-auto"></div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SECTION FORMULAIRE
+       ============================== -->
+  <section class="py-14 md:py-20 bg-warm-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div
+        x-data="{
+          step: 1,
+          totalSteps: 6,
+          state: 'idle',
+          responseMessage: '',
+          fieldErrors: [],
+          csrfToken: '',
+          csrfTs: 0,
+          loadedAt: Math.floor(Date.now() / 1000),
+          formData: {
+            name: '',
+            email: '',
+            phone: '',
+            company: '',
+            q1: '',
+            q2: '',
+            q3: '',
+            q4: '',
+            q5: '',
+            q6: '',
+            q7: '',
+            q8: '',
+            q9: '',
+            q10: '',
+            website: ''
+          },
+          async init() {
+            try {
+              const res = await fetch('/api/csrf-token.php');
+              const d = await res.json();
+              this.csrfToken = d.token;
+              this.csrfTs = d.ts;
+            } catch(e) {}
+          },
+          validateStep() {
+            this.fieldErrors = [];
+            if (this.step === 1) {
+              if (!this.formData.name || this.formData.name.trim().length < 2) this.fieldErrors.push('name');
+              if (!this.formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.formData.email)) this.fieldErrors.push('email');
+            }
+            return this.fieldErrors.length === 0;
+          },
+          hasError(field) { return this.fieldErrors.includes(field); },
+          nextStep() {
+            if (!this.validateStep()) return;
+            if (this.step < this.totalSteps) {
+              this.step++;
+              this.$nextTick(() => window.scrollTo({ top: document.getElementById('form-anchor-fr').offsetTop - 80, behavior: 'smooth' }));
+            }
+          },
+          prevStep() {
+            if (this.step > 1) {
+              this.step--;
+              this.$nextTick(() => window.scrollTo({ top: document.getElementById('form-anchor-fr').offsetTop - 80, behavior: 'smooth' }));
+            }
+          },
+          answeredCount() {
+            const fields = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10'];
+            return fields.filter(f => this.formData[f] && this.formData[f].trim().length >= 20).length;
+          },
+          async submitForm() {
+            if (!this.validateStep()) return;
+            this.state = 'submitting';
+            try {
+              const res = await fetch('/api/business-plan-intake.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  ...this.formData,
+                  lang: 'fr',
+                  _csrf_token: this.csrfToken,
+                  _csrf_ts: this.csrfTs,
+                  _loaded_at: this.loadedAt
+                })
+              });
+              const data = await res.json();
+              this.responseMessage = data.message;
+              this.state = data.success ? 'success' : 'error';
+              if (data.success) window.scrollTo({ top: 0, behavior: 'smooth' });
+            } catch(e) {
+              this.responseMessage = 'Une erreur est survenue. Veuillez envoyer un e-mail directement à peter@techguypeter.com.';
+              this.state = 'error';
+            }
+          }
+        }"
+        x-init="init()"
+        id="form-anchor-fr"
+      >
+
+        <!-- ======= SUCCÈS ======= -->
+        <div x-show="state === 'success'" x-cloak class="text-center py-16 max-w-xl mx-auto">
+          <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 mb-6">
+            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h2 class="text-3xl font-bold text-navy-900 mb-3">Dossier reçu !</h2>
+          <p class="text-navy-600 text-lg leading-relaxed mb-3" x-text="responseMessage"></p>
+          <p class="text-navy-500 text-sm mb-2">Une copie de vos réponses vous a été envoyée par e-mail pour vos archives.</p>
+          <p class="text-navy-500 text-sm mb-8">Peter vous contactera dans les 48 heures. Pour toute urgence, WhatsApp <strong>+256 784 464178</strong>.</p>
+          <a href="/fr/business-planning-consulting-service/" class="inline-flex items-center gap-2 text-amber-accent font-semibold hover:underline">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/>
+            </svg>
+            Retour à nos services Plan d'Affaires
+          </a>
+        </div>
+
+        <!-- ======= FORMULAIRE ======= -->
+        <div x-show="state !== 'success'">
+
+          <!-- Bannière d'erreur -->
+          <div x-show="state === 'error'" x-cloak class="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl">
+            <p class="text-red-700 text-sm" x-text="responseMessage"></p>
+          </div>
+
+          <!-- Barre de progression -->
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm font-semibold text-navy-800">
+                Étape <span x-text="step"></span> sur <span x-text="totalSteps"></span>
+              </span>
+              <span class="text-xs text-navy-500 bg-navy-50 px-2.5 py-1 rounded-full">
+                <span x-text="answeredCount()"></span> questions répondues sur 10
+              </span>
+            </div>
+            <div class="h-2 bg-navy-100 rounded-full overflow-hidden">
+              <div
+                class="h-full bg-gold-400 rounded-full transition-all duration-500 ease-in-out"
+                :style="`width: ${(step / totalSteps) * 100}%`"
+              ></div>
+            </div>
+            <!-- Indicateurs d'étapes -->
+            <div class="mt-3 hidden sm:flex gap-1">
+              {steps.map(s => (
+                <div
+                  class="flex-1 text-center"
+                  :class={`step === ${s.number} ? 'opacity-100' : step > ${s.number} ? 'opacity-70' : 'opacity-30'`}
+                >
+                  <div
+                    class="w-7 h-7 rounded-full mx-auto flex items-center justify-center text-xs font-bold transition-all duration-300"
+                    :class={`step === ${s.number} ? 'bg-gold-400 text-navy-900 ring-2 ring-gold-400/30' : step > ${s.number} ? 'bg-green-500 text-white' : 'bg-navy-200 text-navy-500'`}
+                  >
+                    <span x-show={`step <= ${s.number}`} class="leading-none">{s.number}</span>
+                    <svg x-show={`step > ${s.number}`} x-cloak class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p class="text-xs text-navy-600 mt-1.5 leading-tight hidden md:block">{s.title}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Honeypot -->
+          <div class="absolute opacity-0 -z-10 h-0 overflow-hidden" aria-hidden="true">
+            <input type="text" name="website" x-model="formData.website" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <!-- Mise en page desktop: barre latérale + carte -->
+          <div class="lg:grid lg:grid-cols-[220px_1fr] lg:gap-8 lg:items-start">
+
+            <!-- ===== BARRE LATÉRALE (desktop uniquement) ===== -->
+            <aside class="hidden lg:block sticky top-28">
+              <nav aria-label="Étapes du formulaire" class="space-y-1">
+                {steps.map(s => (
+                  <div
+                    class="flex items-start gap-3 px-3 py-3 rounded-xl transition-all duration-200"
+                    :class={`step === ${s.number} ? 'bg-navy-900 shadow-sm' : step > ${s.number} ? 'opacity-60' : 'opacity-40'`}
+                  >
+                    <div
+                      class="w-7 h-7 shrink-0 rounded-full flex items-center justify-center text-xs font-bold mt-0.5 transition-all duration-200"
+                      :class={`step === ${s.number} ? 'bg-gold-400 text-navy-900' : step > ${s.number} ? 'bg-green-500 text-white' : 'bg-navy-200 text-navy-500'`}
+                    >
+                      <span x-show={`step <= ${s.number}`} class="leading-none">{s.number}</span>
+                      <svg x-show={`step > ${s.number}`} x-cloak class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p
+                        class="text-sm font-semibold leading-tight transition-colors duration-200"
+                        :class={`step === ${s.number} ? 'text-gold-400' : step > ${s.number} ? 'text-green-400' : 'text-navy-400'`}
+                      >{s.title}</p>
+                      <p
+                        class="text-xs leading-snug mt-0.5 hidden xl:block"
+                        :class={`step === ${s.number} ? 'text-navy-300' : 'text-navy-500'`}
+                      >{s.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </nav>
+
+              <div class="mt-6 p-4 bg-navy-50 rounded-xl border border-navy-100">
+                <p class="text-xs text-navy-600 leading-relaxed">
+                  <strong class="text-navy-800 block mb-1">Vos réponses sont confidentielles.</strong>
+                  Elles sont utilisées uniquement pour préparer votre devis personnalisé. Peter ne les communiquera pas à des tiers.
+                </p>
+              </div>
+            </aside>
+
+            <!-- ===== ZONE PRINCIPALE ===== -->
+            <div>
+
+              <!-- ====== ÉTAPE 1 : Coordonnées ====== -->
+              <div x-show="step === 1" class="bg-white rounded-2xl shadow-sm border border-navy-100 p-6 md:p-8">
+                <div class="mb-6">
+                  <h2 class="text-2xl font-bold text-navy-900">Commençons par vos coordonnées</h2>
+                  <p class="mt-1.5 text-navy-500 text-sm leading-relaxed">Nous les utiliserons pour rédiger votre dossier correctement et vous envoyer votre devis personnalisé.</p>
+                </div>
+
+                <div class="space-y-5">
+                  <div>
+                    <label for="bp-fr-name" class="block text-sm font-semibold text-navy-800 mb-1.5">
+                      Nom complet <span class="text-amber-accent" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="bp-fr-name"
+                      x-model="formData.name"
+                      :class="hasError('name') ? 'border-red-400 bg-red-50' : 'border-navy-200 focus:border-gold-400'"
+                      class="w-full px-4 py-3 border rounded-xl text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/30 transition-all duration-200 text-base"
+                      placeholder="Votre nom complet"
+                      autocomplete="name"
+                    />
+                    <p x-show="hasError('name')" x-cloak class="mt-1.5 text-sm text-red-600">Veuillez entrer votre nom complet.</p>
+                  </div>
+
+                  <div>
+                    <label for="bp-fr-email" class="block text-sm font-semibold text-navy-800 mb-1.5">
+                      Adresse e-mail <span class="text-amber-accent" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="bp-fr-email"
+                      x-model="formData.email"
+                      :class="hasError('email') ? 'border-red-400 bg-red-50' : 'border-navy-200 focus:border-gold-400'"
+                      class="w-full px-4 py-3 border rounded-xl text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/30 transition-all duration-200 text-base"
+                      placeholder="vous@entreprise.com"
+                      autocomplete="email"
+                    />
+                    <p x-show="hasError('email')" x-cloak class="mt-1.5 text-sm text-red-600">Veuillez entrer une adresse e-mail valide.</p>
+                  </div>
+
+                  <div>
+                    <label for="bp-fr-phone" class="block text-sm font-semibold text-navy-800 mb-1.5">
+                      Téléphone / WhatsApp
+                      <span class="text-navy-400 font-normal text-xs ml-1">(facultatif — pour vous joindre plus rapidement)</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="bp-fr-phone"
+                      x-model="formData.phone"
+                      class="w-full px-4 py-3 border border-navy-200 rounded-xl text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all duration-200 text-base"
+                      placeholder="+225 07 00 00 00 00"
+                      autocomplete="tel"
+                    />
+                  </div>
+
+                  <div>
+                    <label for="bp-fr-company" class="block text-sm font-semibold text-navy-800 mb-1.5">
+                      Nom de l'entreprise / organisation
+                      <span class="text-navy-400 font-normal text-xs ml-1">(facultatif)</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="bp-fr-company"
+                      x-model="formData.company"
+                      class="w-full px-4 py-3 border border-navy-200 rounded-xl text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all duration-200 text-base"
+                      placeholder="Nom de votre entreprise (ou laissez vide si pas encore nommée)"
+                      autocomplete="organization"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- ====== ÉTAPE 2 : Votre entreprise & le problème ====== -->
+              <div x-show="step === 2" x-cloak class="space-y-5">
+                <div class="bg-white rounded-2xl shadow-sm border border-navy-100 p-6 md:p-8">
+                  <div class="mb-5">
+                    <span class="inline-block text-xs font-bold text-gold-600 uppercase tracking-wider mb-2">Question 1 sur 10</span>
+                    <h2 class="text-xl md:text-2xl font-bold text-navy-900">Parlez-nous de votre entreprise</h2>
+                    <p class="mt-2 text-navy-500 text-sm leading-relaxed">
+                      Que fait votre entreprise ? Depuis combien de temps fonctionne-t-elle — ou s'agit-il d'une nouvelle idée ? Dans quel secteur opère-t-elle, où est-elle basée, combien de personnes y travaillent, et quelle est sa structure juridique — par exemple, entreprise individuelle, SARL, SA, coopérative ? Si elle a déjà un nom, veuillez l'inclure.
+                    </p>
+                  </div>
+                  <textarea
+                    id="fr-q1"
+                    x-model="formData.q1"
+                    rows="7"
+                    class="w-full px-4 py-3 border border-navy-200 rounded-xl text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all duration-200 resize-none text-base leading-relaxed"
+                    placeholder="Ex. : Abidjan Fresh SARL est une entreprise de distribution de produits frais créée il y a deux ans à Abidjan, en Côte d'Ivoire. Nous approvisionnons huit hôtels et quinze restaurants. Nous sommes une SARL avec quatre employés permanents..."
+                  ></textarea>
+                  <div class="mt-4 flex gap-3 p-4 bg-amber-50 border border-amber-100 rounded-xl">
+                    <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
+                    </svg>
+                    <p class="text-xs text-amber-800 leading-relaxed">
+                      <strong>Pourquoi nous posons cette question :</strong> Plus vous donnez de contexte sur le stade de développement et la structure de votre entreprise, plus Peter peut adapter le plan à l'audience ciblée — comité de crédit bancaire, IFD ou investisseurs.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-navy-100 p-6 md:p-8">
+                  <div class="mb-5">
+                    <span class="inline-block text-xs font-bold text-gold-600 uppercase tracking-wider mb-2">Question 2 sur 10</span>
+                    <h2 class="text-xl md:text-2xl font-bold text-navy-900">Quel problème résolvez-vous ?</h2>
+                    <p class="mt-2 text-navy-500 text-sm leading-relaxed">
+                      Quelle lacune du marché votre entreprise comble-t-elle ? Qui rencontre ce problème et pourquoi n'est-il pas bien servi aujourd'hui ? Qu'est-ce qui vous a amené à identifier cette opportunité — une expérience personnelle, une étude, un manque que vous avez observé — et pourquoi est-ce le bon moment d'agir ?
+                    </p>
+                  </div>
+                  <textarea
+                    id="fr-q2"
+                    x-model="formData.q2"
+                    rows="6"
+                    class="w-full px-4 py-3 border border-navy-200 rounded-xl text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all duration-200 resize-none text-base leading-relaxed"
+                    placeholder="Ex. : Les hôtels à Abidjan peinent à obtenir des produits frais de qualité de manière régulière car les fournisseurs existants sont peu fiables. J'ai identifié ce manque après trois ans en tant que chef de cuisine au Sofitel..."
+                  ></textarea>
+                  <div class="mt-4 flex gap-3 p-4 bg-amber-50 border border-amber-100 rounded-xl">
+                    <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
+                    </svg>
+                    <p class="text-xs text-amber-800 leading-relaxed">
+                      <strong>Pourquoi nous posons cette question :</strong> La première question d'un bailleur de fonds est toujours : « pourquoi cette entreprise doit-elle exister ? » Votre réponse devient l'argument d'ouverture du plan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ====== ÉTAPE 3 : Offre & Clients ====== -->
+              <div x-show="step === 3" x-cloak class="space-y-5">
+                <div class="bg-white rounded-2xl shadow-sm border border-navy-100 p-6 md:p-8">
+                  <div class="mb-5">
+                    <span class="inline-block text-xs font-bold text-gold-600 uppercase tracking-wider mb-2">Question 3 sur 10</span>
+                    <h2 class="text-xl md:text-2xl font-bold text-navy-900">Décrivez votre produit ou service</h2>
+                    <p class="mt-2 text-navy-500 text-sm leading-relaxed">
+                      Décrivez ce que votre entreprise propose en langage simple, du point de vue du client. Est-ce encore une idée, un prototype, quelque chose que vous testez, ou déjà en vente ? Quelles sont les caractéristiques les plus importantes et comment cela fonctionne-t-il concrètement ?
+                    </p>
+                  </div>
+                  <textarea
+                    id="fr-q3"
+                    x-model="formData.q3"
+                    rows="6"
+                    class="w-full px-4 py-3 border border-navy-200 rounded-xl text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all duration-200 resize-none text-base leading-relaxed"
+                    placeholder="Ex. : Nous collectons des produits frais dans les marchés de gros chaque matin et les livrons aux clients avant 7h. Nous garantissons la livraison le jour même, le tri de qualité sur place, et une politique de substitution garantie — si nous ne pouvons pas livrer un article, nous prévenons le client la veille avant 17h..."
+                  ></textarea>
+                  <div class="mt-4 flex gap-3 p-4 bg-amber-50 border border-amber-100 rounded-xl">
+                    <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
+                    </svg>
+                    <p class="text-xs text-amber-800 leading-relaxed">
+                      <strong>Pourquoi nous posons cette question :</strong> Une description claire de l'offre est essentielle — les bailleurs de fonds doivent comprendre exactement ce qu'on leur demande de financer.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-navy-100 p-6 md:p-8">
+                  <div class="mb-5">
+                    <span class="inline-block text-xs font-bold text-gold-600 uppercase tracking-wider mb-2">Question 4 sur 10</span>
+                    <h2 class="text-xl md:text-2xl font-bold text-navy-900">Qui sont vos clients ?</h2>
+                    <p class="mt-2 text-navy-500 text-sm leading-relaxed">
+                      Décrivez le type de personne ou d'organisation qui achèterait chez vous — âge, localisation, niveau de revenu ou type d'entreprise si c'est une vente B2B. Combien de clients potentiels pensez-vous qu'il existe, même approximativement ? Votre marché est-il local, national ou international ? Avez-vous déjà vendu à des clients — et si oui, qui ?
+                    </p>
+                  </div>
+                  <textarea
+                    id="fr-q4"
+                    x-model="formData.q4"
+                    rows="6"
+                    class="w-full px-4 py-3 border border-navy-200 rounded-xl text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all duration-200 resize-none text-base leading-relaxed"
+                    placeholder="Ex. : Nos clients sont des hôtels 3 à 5 étoiles et des restaurants haut de gamme à Abidjan. Il existe environ 150 établissements dans notre segment cible. Nous approvisionnons actuellement 8 hôtels et 15 restaurants. Pour l'instant, nous sommes concentrés sur Abidjan..."
+                  ></textarea>
+                  <div class="mt-4 flex gap-3 p-4 bg-amber-50 border border-amber-100 rounded-xl">
+                    <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
+                    </svg>
+                    <p class="text-xs text-amber-800 leading-relaxed">
+                      <strong>Pourquoi nous posons cette question :</strong> La taille du marché et les preuves de vente existantes sont parmi les éléments les plus scrutés de tout plan d'affaires. Même des chiffres approximatifs sont utiles à ce stade.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ====== ÉTAPE 4 : Revenus & Concurrence ====== -->
+              <div x-show="step === 4" x-cloak class="space-y-5">
+                <div class="bg-white rounded-2xl shadow-sm border border-navy-100 p-6 md:p-8">
+                  <div class="mb-5">
+                    <span class="inline-block text-xs font-bold text-gold-600 uppercase tracking-wider mb-2">Question 5 sur 10</span>
+                    <h2 class="text-xl md:text-2xl font-bold text-navy-900">Comment générez-vous des revenus ?</h2>
+                    <p class="mt-2 text-navy-500 text-sm leading-relaxed">
+                      Décrivez votre tarification — ce que vous facturez, comment vous avez fixé ce prix, et si les clients paient une seule fois ou de manière récurrente. Par quels canaux vendez-vous — boutique physique, agents, en ligne, vente directe ? Avez-vous déjà des ventes, et si oui, à quoi ressemblent ces chiffres ?
+                    </p>
+                  </div>
+                  <textarea
+                    id="fr-q5"
+                    x-model="formData.q5"
+                    rows="6"
+                    class="w-full px-4 py-3 border border-navy-200 rounded-xl text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all duration-200 resize-none text-base leading-relaxed"
+                    placeholder="Ex. : Nous facturons au kilogramme livré — les prix varient selon le type de produit, en moyenne 2 500 FCFA/kg. Les clients commandent via WhatsApp avant 17h pour une livraison le lendemain. Le chiffre d'affaires mensuel est d'environ 7 500 000 FCFA. Les marges sont d'environ 25 %..."
+                  ></textarea>
+                  <div class="mt-4 flex gap-3 p-4 bg-amber-50 border border-amber-100 rounded-xl">
+                    <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
+                    </svg>
+                    <p class="text-xs text-amber-800 leading-relaxed">
+                      <strong>Pourquoi nous posons cette question :</strong> La clarté du modèle de revenus détermine directement comment les projections financières sont construites. Même des chiffres approximatifs aident Peter à structurer des prévisions réalistes sur cinq ans.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-navy-100 p-6 md:p-8">
+                  <div class="mb-5">
+                    <span class="inline-block text-xs font-bold text-gold-600 uppercase tracking-wider mb-2">Question 6 sur 10</span>
+                    <h2 class="text-xl md:text-2xl font-bold text-navy-900">Qui sont vos concurrents ?</h2>
+                    <p class="mt-2 text-navy-500 text-sm leading-relaxed">
+                      Qui d'autre propose quelque chose de similaire à vos clients cibles — directement ou comme alternative ? Pourquoi un client vous choisirait-il plutôt qu'eux ? Avez-vous un avantage durable — un processus unique, une relation privilégiée, un accès exclusif ? Y a-t-il des marques connues ou de grands acteurs dans ce secteur ?
+                    </p>
+                  </div>
+                  <textarea
+                    id="fr-q6"
+                    x-model="formData.q6"
+                    rows="6"
+                    class="w-full px-4 py-3 border border-navy-200 rounded-xl text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all duration-200 resize-none text-base leading-relaxed"
+                    placeholder="Ex. : Principaux concurrents : les grossistes du marché de Cocody et les services d'approvisionnement internes des hôtels. Nous nous différencions par notre livraison garantie à 5h du matin et notre politique zéro substitution sans préavis. Nos relations directes avec les producteurs nous donnent un avantage de coût d'environ 15 %..."
+                  ></textarea>
+                  <div class="mt-4 flex gap-3 p-4 bg-amber-50 border border-amber-100 rounded-xl">
+                    <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
+                    </svg>
+                    <p class="text-xs text-amber-800 leading-relaxed">
+                      <strong>Pourquoi nous posons cette question :</strong> « Nous n'avons pas de concurrents » est le signal d'alarme le plus courant dans tout plan d'affaires. Un paysage concurrentiel bien documenté montre au bailleur de fonds que vous comprenez votre marché.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ====== ÉTAPE 5 : Finances & Le Document ====== -->
+              <div x-show="step === 5" x-cloak class="space-y-5">
+                <div class="bg-white rounded-2xl shadow-sm border border-navy-100 p-6 md:p-8">
+                  <div class="mb-5">
+                    <span class="inline-block text-xs font-bold text-gold-600 uppercase tracking-wider mb-2">Question 7 sur 10</span>
+                    <h2 class="text-xl md:text-2xl font-bold text-navy-900">Quelle est votre situation financière ?</h2>
+                    <p class="mt-2 text-navy-500 text-sm leading-relaxed">
+                      Quelle est la situation financière actuelle de l'entreprise — génère-t-elle des revenus, est-elle à l'équilibre, ou est-elle en phase de pré-revenus ? A-t-elle reçu des financements, des prêts ou des investissements à ce jour — et si oui, combien et de qui ? Quel montant recherchez-vous maintenant, et à quoi servirait-il précisément ? Avez-vous des projections financières existantes, même approximatives ?
+                    </p>
+                  </div>
+                  <textarea
+                    id="fr-q7"
+                    x-model="formData.q7"
+                    rows="7"
+                    class="w-full px-4 py-3 border border-navy-200 rounded-xl text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all duration-200 resize-none text-base leading-relaxed"
+                    placeholder="Ex. : Chiffre d'affaires actuel de 7,5 M FCFA/mois, rentable au niveau opérationnel. Nous avons autofinancé les 18 premiers mois avec 4 M FCFA d'épargne personnelle. Nous cherchons maintenant 45 M FCFA sous forme de prêt bancaire pour acquérir un véhicule réfrigéré (32 M FCFA) et agrandir notre capacité de stockage frigorifique (13 M FCFA). Nous avons un tableau de flux de trésorerie Excel que je peux partager..."
+                  ></textarea>
+                  <div class="mt-4 flex gap-3 p-4 bg-amber-50 border border-amber-100 rounded-xl">
+                    <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
+                    </svg>
+                    <p class="text-xs text-amber-800 leading-relaxed">
+                      <strong>Pourquoi nous posons cette question :</strong> Le montant demandé et son utilisation déterminent toute la structure financière du plan, notamment le calcul du ratio de couverture du service de la dette (DSCR/RCSD).
+                    </p>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-navy-100 p-6 md:p-8">
+                  <div class="mb-5">
+                    <span class="inline-block text-xs font-bold text-gold-600 uppercase tracking-wider mb-2">Question 8 sur 10</span>
+                    <h2 class="text-xl md:text-2xl font-bold text-navy-900">Quel document attendez-vous de nous ?</h2>
+                    <p class="mt-2 text-navy-500 text-sm leading-relaxed">
+                      Qu'allons-nous produire pour vous ? Par exemple : un plan d'affaires complet, un pitch deck investisseur, une proposition de prêt bancaire, une demande de subvention, une étude de faisabilité, ou un résumé exécutif. Qui le lira — un chargé de crédit, un investisseur, un comité de subvention, un organisme gouvernemental ? Quand en avez-vous besoin, et y a-t-il des exigences de format ou de longueur ?
+                    </p>
+                  </div>
+                  <textarea
+                    id="fr-q8"
+                    x-model="formData.q8"
+                    rows="6"
+                    class="w-full px-4 py-3 border border-navy-200 rounded-xl text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all duration-200 resize-none text-base leading-relaxed"
+                    placeholder="Ex. : Un plan d'affaires complet et un pitch deck pour un prêt auprès d'Ecobank Côte d'Ivoire. Le chargé de crédit examinera d'abord, puis le comité de crédit. J'en ai besoin pour le 15 mars. La banque n'a pas spécifié de format mais préfère des plans de moins de 40 pages. Je souhaite aussi un résumé exécutif de 2 pages pour la réunion initiale..."
+                  ></textarea>
+                  <div class="mt-4 flex gap-3 p-4 bg-amber-50 border border-amber-100 rounded-xl">
+                    <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
+                    </svg>
+                    <p class="text-xs text-amber-800 leading-relaxed">
+                      <strong>Pourquoi nous posons cette question :</strong> Un plan destiné à un chargé de crédit bancaire est structuré très différemment de celui destiné à un investisseur en capital-risque. L'audience définit l'argument. C'est la question la plus importante du dossier.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ====== ÉTAPE 6 : Équipe & Notes finales ====== -->
+              <div x-show="step === 6" x-cloak class="space-y-5">
+                <div class="bg-white rounded-2xl shadow-sm border border-navy-100 p-6 md:p-8">
+                  <div class="mb-5">
+                    <span class="inline-block text-xs font-bold text-gold-600 uppercase tracking-wider mb-2">Question 9 sur 10</span>
+                    <h2 class="text-xl md:text-2xl font-bold text-navy-900">Qui dirige cette entreprise ?</h2>
+                    <p class="mt-2 text-navy-500 text-sm leading-relaxed">
+                      Qui sont les personnes clés — fondateurs, directeurs ou managers ? Quelle est leur formation, leurs qualifications ou leur expérience pertinente ? Y a-t-il des lacunes évidentes dans l'équipe, et si oui, comment comptez-vous les combler ? Avez-vous des conseillers, des membres du conseil d'administration ou des mentors qui soutiennent l'entreprise ?
+                    </p>
+                  </div>
+                  <textarea
+                    id="fr-q9"
+                    x-model="formData.q9"
+                    rows="6"
+                    class="w-full px-4 py-3 border border-navy-200 rounded-xl text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all duration-200 resize-none text-base leading-relaxed"
+                    placeholder="Ex. : Fondatrice : Adja Koné, 8 ans comme responsable achats au Pullman Abidjan — elle connaît parfaitement le côté acheteur. Directeur des opérations : Ibrahim Coulibaly, 5 ans en logistique. Nous sommes actuellement faibles en finance — nous prévoyons de recruter un comptable à temps partiel. Nous avons un conseiller à la Chambre de Commerce d'Abidjan..."
+                  ></textarea>
+                  <div class="mt-4 flex gap-3 p-4 bg-amber-50 border border-amber-100 rounded-xl">
+                    <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
+                    </svg>
+                    <p class="text-xs text-amber-800 leading-relaxed">
+                      <strong>Pourquoi nous posons cette question :</strong> Les bailleurs de fonds financent les personnes avant les idées. Un profil solide de l'équipe dirigeante peut significativement renforcer la crédibilité de l'ensemble du plan.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm border border-navy-100 p-6 md:p-8">
+                  <div class="mb-5">
+                    <span class="inline-block text-xs font-bold text-gold-600 uppercase tracking-wider mb-2">Question 10 sur 10</span>
+                    <h2 class="text-xl md:text-2xl font-bold text-navy-900">Y a-t-il autre chose à savoir ?</h2>
+                    <p class="mt-2 text-navy-500 text-sm leading-relaxed">
+                      Y a-t-il quelque chose que nous devons savoir avant de commencer ? Par exemple : votre secteur est réglementé et nécessite des licences spécifiques ; vous avez déjà sollicité un financement et été refusé ; un associé ou investisseur doit approuver le plan avant soumission ; certaines informations sont confidentielles ; ou d'autres circonstances particulières.
+                    </p>
+                  </div>
+                  <textarea
+                    id="fr-q10"
+                    x-model="formData.q10"
+                    rows="6"
+                    class="w-full px-4 py-3 border border-navy-200 rounded-xl text-navy-900 placeholder-navy-400 focus:outline-none focus:ring-2 focus:ring-gold-400/30 focus:border-gold-400 transition-all duration-200 resize-none text-base leading-relaxed"
+                    placeholder="Ex. : Nous avons soumis un dossier à Ecobank l'année dernière et avons été refusés — ils ont estimé que nos projections de trésorerie étaient trop optimistes. Par ailleurs, notre secteur (alimentation) nécessite des certifications de l'ANADER et de l'ANSSA. Le plan doit être approuvé par notre associé silencieux avant soumission — elle répond généralement sous une semaine..."
+                  ></textarea>
+                  <div class="mt-4 flex gap-3 p-4 bg-amber-50 border border-amber-100 rounded-xl">
+                    <svg class="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
+                    </svg>
+                    <p class="text-xs text-amber-800 leading-relaxed">
+                      <strong>Pourquoi nous posons cette question :</strong> Un refus antérieur est une information précieuse — il nous dit exactement ce que le bailleur a trouvé peu convaincant et nous permet de l'adresser directement. Le contexte réglementaire façonne la section risques.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Ce qui se passe ensuite -->
+                <div class="bg-navy-900 rounded-2xl p-6 md:p-8 text-warm-white">
+                  <h3 class="text-lg font-bold text-gold-400 mb-4">Ce qui se passe après votre soumission</h3>
+                  <div class="space-y-4">
+                    {[
+                      { step: '1', text: 'Peter examine votre dossier — généralement dans les quelques heures suivant la réception.' },
+                      { step: '2', text: 'Vous recevez un devis personnalisé par e-mail dans les 48 heures, avec une portée claire et un calendrier.' },
+                      { step: '3', text: 'Si vous acceptez, nous planifions un appel de découverte d\'une heure pour approfondir les détails.' },
+                      { step: '4', text: 'Le travail commence. Vous êtes informé à chaque étape clé tout au long de la mission de six semaines.' },
+                    ].map(item => (
+                      <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-gold-400/10 border border-gold-400/30 flex items-center justify-center shrink-0 mt-0.5">
+                          <span class="text-gold-400 text-xs font-bold">{item.step}</span>
+                        </div>
+                        <p class="text-navy-300 text-sm leading-relaxed">{item.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- fin zone principale -->
+          </div><!-- fin grille desktop -->
+
+          <!-- Boutons de navigation -->
+          <div class="mt-6 flex items-center justify-between gap-4">
+            <button
+              type="button"
+              x-show="step > 1"
+              @click="prevStep()"
+              class="inline-flex items-center gap-2 px-6 py-3 border-2 border-navy-200 text-navy-700 font-semibold rounded-xl hover:border-navy-400 hover:bg-navy-50 transition-all duration-200"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"/>
+              </svg>
+              Précédent
+            </button>
+            <div x-show="step === 1"></div>
+
+            <button
+              type="button"
+              x-show="step < totalSteps"
+              @click="nextStep()"
+              class="ml-auto inline-flex items-center gap-2 px-8 py-3 bg-gold-400 hover:bg-gold-500 text-navy-900 font-bold rounded-xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+            >
+              Continuer
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+              </svg>
+            </button>
+
+            <button
+              type="button"
+              x-show="step === totalSteps"
+              x-cloak
+              @click="submitForm()"
+              :disabled="state === 'submitting'"
+              class="ml-auto inline-flex items-center gap-2 px-8 py-3.5 bg-amber-accent hover:bg-amber-accent/90 text-white font-bold rounded-xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed text-base"
+            >
+              <span x-show="state !== 'submitting'">Soumettre mon dossier &amp; demander un devis</span>
+              <span x-show="state === 'submitting'" x-cloak class="flex items-center gap-2">
+                <svg class="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                </svg>
+                Envoi en cours...
+              </span>
+              <svg x-show="state !== 'submitting'" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Note de confiance -->
+          <p class="mt-5 text-center text-sm text-navy-400">
+            Votre dossier est envoyé de manière sécurisée et utilisé uniquement pour préparer votre devis. Minimum 3 questions requises pour soumettre.
+            <a href="/fr/business-planning-consulting-service/" class="underline hover:text-navy-600 ml-1">En savoir plus sur notre service →</a>
+          </p>
+
+        </div><!-- fin formulaire -->
+      </div><!-- fin x-data -->
+
+    </div>
+  </section>
+
+</BaseLayout>

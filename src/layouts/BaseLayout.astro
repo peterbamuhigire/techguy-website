@@ -20,6 +20,8 @@ const currentPath = Astro.url.pathname.replace(`/${lang}`, '');
 const slugMap: Record<string, string> = {
   'digital-marketing-strategy': 'strategie-marketing-digital',
   'strategie-marketing-digital': 'digital-marketing-strategy',
+  'business-plan-intake': 'devis-plan-affaires',
+  'devis-plan-affaires': 'business-plan-intake',
 };
 const currentSlug = currentPath.replace(/^\//, '').replace(/\/$/, '');
 const altUrl = slugMap[currentSlug]

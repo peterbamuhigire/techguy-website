@@ -536,6 +536,48 @@
       "notes": "Hands holding phone — social media concept image for services page digital marketing section"
     }
   },
+  "blog_images_ux_apps": {
+    "ux-team-designing-systems.jpg": {
+      "width": 2222,
+      "height": 1481,
+      "orientation": "landscape",
+      "description": "UX/UI design team brainstorming and designing mobile app interface on multiple screens — collaborative design process",
+      "article": "how-to-create-apps-people-love",
+      "role": "featured",
+      "alt_en": "UX and UI design team working on mobile app interface — user experience design best practices for web and mobile applications",
+      "alt_fr": "Équipe UX et UI concevant une interface d'application mobile — meilleures pratiques de design d'expérience utilisateur"
+    },
+    "ux-designs-ui-wireframe.jpg": {
+      "width": 2222,
+      "height": 1245,
+      "orientation": "landscape",
+      "description": "UI design wireframes and user interface mockups spread across design workspace",
+      "article": "how-to-create-apps-people-love",
+      "role": "in-article",
+      "alt_en": "UI design wireframes and user interface mockups — app design best practices for web and mobile",
+      "alt_fr": "Maquettes et wireframes de conception d'interface utilisateur — meilleures pratiques de design UX pour applications web et mobiles"
+    },
+    "ux-designer-brainstorming-mobile-app.jpg": {
+      "width": 2222,
+      "height": 3333,
+      "orientation": "portrait",
+      "description": "Close-up of UX developer/UI designer brainstorming about mobile app interface wireframe at desk with colour codes and customer brief",
+      "article": "how-to-create-apps-people-love",
+      "role": "in-article",
+      "alt_en": "UX developer brainstorming mobile app interface wireframe at desk — user experience design process",
+      "alt_fr": "Développeur UX réfléchissant à l'interface d'une application mobile avec wireframes — processus de conception d'expérience utilisateur"
+    },
+    "ux-notebook-3d-concept.jpg": {
+      "width": 2222,
+      "height": 1250,
+      "orientation": "landscape",
+      "description": "UX notebook and mobile app website concept in 3D rendering — UX/UI front-end design planning",
+      "article": "how-to-create-apps-people-love",
+      "role": "in-article",
+      "alt_en": "UX notebook and mobile app concept 3D rendering — planning user experience for web and mobile applications",
+      "alt_fr": "Conception UX d'application web et mobile avec notebook et rendu 3D — planification de l'expérience utilisateur"
+    }
+  },
   "article_assignments": {
     "custom-software-africa": {
       "featured": "blog-images-3.jpg",
@@ -584,6 +626,12 @@
       "in_article": ["financial-forex-business-chart-report.jpg", "african-american-business-man-using-laptop-cafe.jpg", "business-man-laptop-office-coffee.jpg"],
       "layout": "D",
       "accent": "forest-green"
+    },
+    "how-to-create-apps-people-love": {
+      "featured": "ux-team-designing-systems.jpg",
+      "in_article": ["ux-designs-ui-wireframe.jpg", "ux-designer-brainstorming-mobile-app.jpg", "ux-notebook-3d-concept.jpg"],
+      "layout": "A",
+      "accent": "gold"
     }
   }
 }

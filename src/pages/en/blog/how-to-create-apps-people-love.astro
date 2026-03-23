@@ -1,0 +1,367 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/ux-team-designing-systems.jpg';
+import imgLandscape from '@/assets/images/ux-designs-ui-wireframe.jpg';
+import imgPortrait from '@/assets/images/ux-designer-brainstorming-mobile-app.jpg';
+import imgLandscape2 from '@/assets/images/ux-notebook-3d-concept.jpg';
+
+const lang: Lang = 'en';
+const title = "How to Create Apps and Systems That People Love to Use";
+const description = "Practical UI and UX principles for web and mobile apps — from first impressions to micro-interactions — that turn frustrated users into loyal ones.";
+const date = "2026-03-23";
+const category = "UI/UX Design";
+const readTime = "9 min read";
+const slug = "how-to-create-apps-people-love";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Layout A: Centred Navy Hero -->
+  <section class="bg-navy-900 pt-20 md:pt-24 pb-14 geo-pattern">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="flex items-center justify-center gap-3 mb-5">
+        <span class="px-3 py-1 text-xs font-semibold bg-gold-400/20 text-gold-300 rounded-full">{category}</span>
+        <span class="text-sm text-navy-300">{readTime}</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-white leading-tight">
+        {title}
+      </h1>
+      <div class="mt-5 flex items-center justify-center gap-4 text-sm text-navy-300">
+        <span>By Peter Bamuhigire</span>
+        <span class="w-1 h-1 rounded-full bg-navy-500"></span>
+        <time datetime={date}>23 March 2026</time>
+      </div>
+      <p class="mt-5 text-base md:text-lg text-navy-200 leading-relaxed max-w-2xl mx-auto">
+        {description}
+      </p>
+      <div class="mt-7">
+        <a href="/en/contact/" class="inline-flex items-center gap-2 px-5 py-3 bg-gold-400 hover:bg-gold-500 text-navy-900 text-sm font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-gold-300 focus:ring-offset-2 focus:ring-offset-navy-900">
+          Discuss Your Project
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Image — pulled up to overlap the hero -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
+    <div class="rounded-2xl overflow-hidden shadow-2xl h-72 md:h-[440px]">
+      <Image
+        src={heroImg}
+        alt="UX and UI design team working on mobile app interface — user experience design for web and mobile applications in East Africa"
+        width={2222}
+        height={1481}
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+    </div>
+  </div>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-gold prose-dropcap">
+
+      <p>A client called me last year, frustrated. His team had spent eight months and a significant budget building a stock management system. It worked perfectly — accurate data, real-time updates, full reporting. His staff refused to use it. They kept pen-and-paper records on the side because the system was "too complicated." Six months later, the system was gathering digital dust.</p>
+
+      <p>The software was technically correct. Nobody loved using it.</p>
+
+      <p>This is the gap between building a system that works and building a system people want to use. You don't close it with more features. You close it with deliberate attention to how people think, how they move through an interface, and how the whole experience makes them feel.</p>
+
+      <p>Here is what I have learnt from building web and mobile applications across retail, healthcare, logistics, and hospitality — about what separates the tools people love from the ones they endure.</p>
+
+      <hr />
+
+      <h2>The First Ten Seconds Decide Everything</h2>
+
+      <p>A user forms a strong first impression within ten seconds of opening your app. This is not an estimate — it is measurable. Research from usability expert Steve Krug shows that users make snap judgements about whether an app is worth their time before they have read a single sentence.</p>
+
+      <p>Your opening screen has one job: show the user what they can do, not what the system is.</p>
+
+      <p>Bad opening screens say: "Welcome to StockMaster Pro 4.2. Please read the documentation before proceeding."</p>
+
+      <p>Good opening screens say: "Good morning, Sarah. You have 3 low-stock alerts and 2 pending deliveries."</p>
+
+      <p>The difference is orientation. The good screen tells Sarah what is happening in her world, right now. It respects her time and assumes she came here to get something done.</p>
+
+      <p><strong>What this means practically:</strong></p>
+      <ul>
+        <li>Lead with the user's most common task, not a generic dashboard</li>
+        <li>Show live data immediately — don't make users click to "load"</li>
+        <li>Avoid splash screens, mandatory tutorials, or login walls before value is shown</li>
+        <li>Use the user's name and context wherever you have it</li>
+      </ul>
+
+      <h2>Clarity Beats Cleverness Every Time</h2>
+
+      <p>Most interfaces that frustrate users share a common trait: the designer was proud of a clever idea the user never asked for.</p>
+
+      <p>Animated navigation drawers that swipe from unexpected directions. Icons without labels. Menus nested three levels deep because someone wanted a "clean" look. These feel smart in a design review. In daily use, they exhaust people.</p>
+
+      <p>I had a client in the restaurant industry who wanted a POS terminal with a minimal interface — just icons, no text, to keep it "modern and clean." We built it. Trained the staff. Within two weeks, they had printed paper labels and taped them underneath every icon on the screen.</p>
+
+      <p>Labels were added in the next update.</p>
+
+      <p>Clarity means a user should be able to look at any screen and answer three questions in under five seconds:</p>
+
+      <ol>
+        <li>Where am I?</li>
+        <li>What can I do here?</li>
+        <li>What happened after my last action?</li>
+      </ol>
+
+      <p>If any of those answers require hunting, guessing, or reading documentation, you have a clarity problem.</p>
+
+      <p><strong>Quick clarity tests to run on any app:</strong></p>
+      <ul>
+        <li>Cover the logo and navigation — can a new user still tell what section they are in?</li>
+        <li>Show the app to someone who has never used it — what is the first thing they try to click?</li>
+        <li>After a form submission, is it obvious whether the action succeeded or failed?</li>
+      </ul>
+
+      <h2>Respect the Mental Models Your Users Already Have</h2>
+
+      <p>People come to your app with years of experience using other apps. They have learnt that the back arrow goes back. That a trash can icon deletes. That a search bar at the top searches the current page.</p>
+
+      <p>When you break these conventions — even for a "better" design reason — users experience cognitive friction. That pause is where frustration begins.</p>
+
+      <p>One of Jakob Nielsen's core usability heuristics is to match the system to the real world: use the language and concepts the user already knows. On a web app for a pharmacy, call the section "Dispensing" — not "Transaction Fulfilment Module." On a mobile app for a school, call the parent's view "My Children" — not "Student Dependant Dashboard."</p>
+
+      <p>Words matter. Structure matters. Icons matter. Deviations from convention must earn their place — they need to be significantly better, not just different.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLandscape}
+          alt="UI design wireframes and user interface mockups — app design best practices for web and mobile"
+          width={2222}
+          height={1245}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>The best interface is one your users already know how to use — because it respects the mental models they bring with them.</figcaption>
+      </figure>
+
+      <h2>Mobile UX Is Not Smaller Desktop UX</h2>
+
+      <p>Many apps are designed on a desktop computer and then "made responsive" for mobile. You can see it immediately: tiny buttons, dense text, navigation that requires mouse-level precision to tap.</p>
+
+      <p>Mobile users are different in ways that change your design decisions:</p>
+
+      <p><strong>They are often in motion.</strong> A desktop user sits with full concentration. A mobile user may be standing in a warehouse, holding a product in one hand, tapping your app with a thumb.</p>
+
+      <p><strong>Their sessions are shorter.</strong> Desktop users sit down to complete tasks. Mobile users check in briefly, take an action, and leave. Design for five-minute interactions, not extended work sessions.</p>
+
+      <p><strong>They make mistakes more often.</strong> Fat-finger errors are real. The minimum recommended tap target size is 44×44 points — roughly 7mm square. Smaller than that and users spend as much time correcting accidental taps as completing tasks.</p>
+
+      <p><strong>Their context changes.</strong> Outdoor sunlight, indoor darkness, loud environments, one-handed use — mobile design must survive conditions that desktop design never faces.</p>
+
+      <p>The answer is not to enlarge everything. It is to redesign the mobile experience from scratch, asking what a mobile user most needs to accomplish — not porting the desktop interface to a smaller screen.</p>
+
+      <h2>Feedback Loops: Tell the User What Just Happened</h2>
+
+      <p>Every action a user takes needs a response. Not eventually. Immediately.</p>
+
+      <p>The human brain interprets silence after an action as failure. If a user taps "Save" and nothing changes for more than 300 milliseconds, they will tap it again. And again. Then they will tell their colleagues the app "always double-saves."</p>
+
+      <p><strong>Feedback comes in three layers:</strong></p>
+
+      <p><strong>Immediate feedback (0–100ms):</strong> The button changes state the moment it is tapped — it darkens, animates, shows a spinner. This tells the user: your tap registered.</p>
+
+      <p><strong>Process feedback (100ms–a few seconds):</strong> A progress bar, a spinning indicator, a "Saving…" label. This tells the user: something is happening.</p>
+
+      <p><strong>Result feedback (on completion):</strong> A green tick, a success message, a notification update. This tells the user: it worked, here is the outcome.</p>
+
+      <p>Miss any layer and users feel uncertain. Uncertain users repeat actions, call support, or lose confidence in the system entirely.</p>
+
+      <p>Micro-interactions — those small animations and state changes — are not decoration. They are communication. A well-placed animation that confirms an item was added to a cart tells a story in 200 milliseconds that would take a sentence to write.</p>
+
+      <figure class="my-8 flex justify-center">
+        <div class="max-w-sm w-full">
+          <Image
+            src={imgPortrait}
+            alt="UX developer brainstorming mobile app interface wireframe at desk — user experience design process"
+            width={740}
+            height={1111}
+            class="article-img-portrait rounded-xl w-full"
+            loading="lazy"
+          />
+          <figcaption>Every tap deserves a response. Silence after an action signals failure to the user's brain — even when nothing went wrong.</figcaption>
+        </div>
+      </figure>
+
+      <h2>Speed Is a Feature, Not a Bonus</h2>
+
+      <p>Slow apps feel broken. This sounds obvious but is regularly underestimated in development priorities.</p>
+
+      <p>Google found that 53% of mobile users abandon a page that takes longer than three seconds to load. That is more than half your potential users gone before they have seen your interface.</p>
+
+      <p>But perceived speed matters as much as actual speed. An app that loads in one second but shows nothing until complete feels slower than one that takes two seconds but starts showing content immediately.</p>
+
+      <p>Design patterns that improve perceived speed:</p>
+      <ul>
+        <li><strong>Skeleton screens:</strong> Show the shape of content before data loads. Users see something is coming, rather than staring at a blank screen.</li>
+        <li><strong>Optimistic UI:</strong> Act as if the server will succeed before it confirms. Mark a task done immediately — roll back with an explanation only if the server fails.</li>
+        <li><strong>Progressive loading:</strong> Show important content first. Product names and prices appear instantly; images load after.</li>
+        <li><strong>Cached data:</strong> Show yesterday's data instantly while today's data loads in the background. A user who sees slightly stale figures is far less frustrated than one staring at a spinner.</li>
+      </ul>
+
+      <h2>Put Real Users in Front of Your App Early</h2>
+
+      <p>The most effective thing you can do for your app's usability is watch five real users try to use it before you think it is finished.</p>
+
+      <p>Not polished. Not perfect. Just functional enough to test.</p>
+
+      <p>Jakob Nielsen's research shows that five users uncover approximately 85% of usability problems. You don't need a large study. You need five people who match your target audience, a set of realistic tasks, and the discipline to watch without guiding.</p>
+
+      <p>What you see is often uncomfortable. Users click the wrong button repeatedly. They misread a carefully worded label. They look for a feature you were certain was obvious and don't find it.</p>
+
+      <p>Every one of those moments is a gift. It is cheaper to fix a design problem in testing than after launch.</p>
+
+      <p>The key rule: during a usability test, you must not help. When a user is stuck, let them be stuck. What they do when stuck — whether they hunt for help, try random options, or give up — tells you more than what they do when everything goes right.</p>
+
+      <h2>Accessibility Is Good Design, Not Extra Work</h2>
+
+      <p>Accessibility is often treated as a checkbox added at the end of a project. This leads to patched-in solutions that help no one and annoy everyone.</p>
+
+      <p>The better frame: accessible design is well-considered design. When you ensure adequate colour contrast, you help the 8% of men with colour blindness — and everyone using your app in bright sunlight. When you support keyboard navigation, you help users with motor impairments — and power users who prefer shortcuts. When you write meaningful button labels, you help screen reader users — and everyone who skims.</p>
+
+      <p>At minimum, every app should meet these standards:</p>
+      <ul>
+        <li>Colour contrast ratio of at least 4.5:1 for normal text</li>
+        <li>All interactive elements reachable by keyboard</li>
+        <li>No information conveyed by colour alone</li>
+        <li>All images have descriptive alt text</li>
+        <li>Form fields have visible, persistent labels — not placeholder text that disappears on focus</li>
+      </ul>
+
+      <p>These are not burdens. They are signs of a team that thought carefully about the full range of people who will use their product.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLandscape2}
+          alt="UX notebook and mobile app concept 3D rendering — planning user experience for web and mobile applications"
+          width={2222}
+          height={1250}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Testing with real users before launch uncovers 85% of usability problems — at a fraction of the cost of fixing them after.</figcaption>
+      </figure>
+
+      <h2>Design the Error States, Not Just the Happy Path</h2>
+
+      <p>Most design work happens on the happy path — the sequence of screens when everything goes right. Create account. Log in. Complete task. Log out.</p>
+
+      <p>The problem is that users regularly don't follow the happy path. They mistype passwords. They submit incomplete forms. They lose internet connection mid-upload. They try to access a page they are not permitted to see.</p>
+
+      <p>Error states need as much design attention as success states. "Error: 403" or "An unexpected error occurred" breaks user confidence immediately. A well-designed error message explains what went wrong and what the user should do next.</p>
+
+      <p><strong>Good error messages:</strong></p>
+      <ul>
+        <li>Say what went wrong in plain language: "Your session has expired — please log in again."</li>
+        <li>Tell the user what to do next: "Check your internet connection and try again."</li>
+        <li>Preserve any work done where possible: "Your draft has been saved."</li>
+        <li>Never blame the user: "Something went wrong on our end."</li>
+      </ul>
+
+      <p>Empty states are also frequently neglected. A blank table with no explanation tells a new user nothing. An empty state that says "You have no orders yet — add your first product to get started" tells them exactly where to begin.</p>
+
+      <hr />
+
+      <h2>The App People Love Is the One That Gets Out of the Way</h2>
+
+      <p>Every principle in this article points to the same underlying idea: the best interfaces are invisible. The user is not thinking about buttons and menus. They are thinking about the task they came to complete.</p>
+
+      <p>Great UX is achieved when the system disappears — when ordering stock, processing a sale, or filling in a patient record feels as natural as writing on paper.</p>
+
+      <p>Getting there requires discipline. It requires saying no to extra features that add complexity. It requires testing with real users rather than trusting your own familiarity with the system. It requires caring about the three-second load time, the error message nobody reads carefully, and the button that is 2mm too small.</p>
+
+      <p>These details compound. A system where every small decision was made thoughtfully feels entirely different from one where they were left to chance. The client I opened with — the one whose staff kept paper records alongside the system — eventually rebuilt it. Same data. Same logic. This time, with the people who would use it in the room from day one. The paper went away.</p>
+
+      <p>If you are building a web or mobile application and want to get the UX right from the start — not retrofit it after launch — that is the kind of work we do. <a href="/en/contact/">Get in touch</a> and let us talk through what your users need. You can also explore our <a href="/en/services/">software development services</a> or see what we have built on our <a href="/en/portfolio/">portfolio page</a>.</p>
+
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-gold-300/40">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-gold-400/10 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-gold-600">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Technology and Business Consultant with over 15 years of experience across more than 10 African countries. Founder of Chwezi Digital Solutions, based in Kampala, Uganda.</p>
+          <a href="/en/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Discuss Your App Project
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to All Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

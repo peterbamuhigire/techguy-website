@@ -5,6 +5,7 @@ import CTASection from '@/components/CTASection.astro';
 import { Image } from 'astro:assets';
 import { t, type Lang } from '@/utils/i18n';
 
+import imgUxApps from '@/assets/images/ux-team-designing-systems.jpg';
 import imgWebsiteUsers from '@/assets/images/website-users--02.jpg';
 import imgAgriBusiness from '@/assets/images/photorealistic-goat-farm.jpg';
 import imgDigitalBusiness from '@/assets/images/BLOG-MARCH-5-01.jpg';
@@ -17,17 +18,27 @@ import imgBusinessPlan from '@/assets/images/african-entrepreneur-team-analyzing
 const lang: Lang = 'en';
 
 const featuredPost = {
-  title: 'Why Even Small Businesses Need a Written Business Plan',
-  slug: 'why-small-businesses-need-written-business-plan',
-  category: 'Strategy',
-  date: '17 March 2026',
-  readTime: '12 min read',
-  excerpt: 'Think a written business plan is only for big companies seeking loans? Here\'s why every small business owner needs one — and what it costs you not to have it.',
-  image: imgBusinessPlan,
-  imageAlt: 'Business team in East Africa analysing financial reports — why small businesses need a written business plan Uganda',
+  title: 'How to Create Apps and Systems That People Love to Use',
+  slug: 'how-to-create-apps-people-love',
+  category: 'UI/UX Design',
+  date: '23 March 2026',
+  readTime: '9 min read',
+  excerpt: 'Practical UI and UX principles for web and mobile apps — from first impressions to micro-interactions — that turn frustrated users into loyal ones.',
+  image: imgUxApps,
+  imageAlt: 'UX and UI design team working on mobile app interface — user experience design best practices for web and mobile applications',
 };
 
 const blogPosts = [
+  {
+    title: 'Why Even Small Businesses Need a Written Business Plan',
+    slug: 'why-small-businesses-need-written-business-plan',
+    category: 'Strategy',
+    date: '17 March 2026',
+    readTime: '12 min read',
+    excerpt: 'Think a written business plan is only for big companies seeking loans? Here\'s why every small business owner needs one — and what it costs you not to have it.',
+    image: imgBusinessPlan,
+    imageAlt: 'Business team in East Africa analysing financial reports — why small businesses need a written business plan Uganda',
+  },
   {
     title: 'Why Visitors Leave Your Website After 3 Seconds — And How to Stop It',
     slug: 'why-visitors-leave-website-3-seconds',

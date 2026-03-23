@@ -5,6 +5,7 @@ import CTASection from '@/components/CTASection.astro';
 import { Image } from 'astro:assets';
 import { t, type Lang } from '@/utils/i18n';
 
+import imgUxApps from '@/assets/images/ux-team-designing-systems.jpg';
 import imgWebsiteUsers from '@/assets/images/website-users--02.jpg';
 import imgAgriBusiness from '@/assets/images/photorealistic-goat-farm.jpg';
 import imgDigitalBusiness from '@/assets/images/BLOG-MARCH-5-01.jpg';
@@ -17,17 +18,27 @@ import imgBusinessPlan from '@/assets/images/african-entrepreneur-team-analyzing
 const lang: Lang = 'fr';
 
 const featuredPost = {
-  title: 'Même les Petites Entreprises ont Besoin d\'un Plan d\'Affaires Écrit',
-  slug: 'why-small-businesses-need-written-business-plan',
-  category: 'Stratégie',
-  date: '17 mars 2026',
-  readTime: '14 min de lecture',
-  excerpt: 'Un plan d\'affaires n\'est pas un document pour les banques — c\'est un outil de réflexion pour le dirigeant. Voici pourquoi toute petite entreprise en Afrique francophone en a besoin.',
-  image: imgBusinessPlan,
-  imageAlt: 'Équipe d\'entrepreneurs africains analysant des rapports financiers — pourquoi les petites entreprises ont besoin d\'un plan d\'affaires écrit',
+  title: 'Comment Créer des Applications que les Gens Adorent Utiliser',
+  slug: 'how-to-create-apps-people-love',
+  category: 'UI/UX Design',
+  date: '23 mars 2026',
+  readTime: '11 min de lecture',
+  excerpt: 'Principes pratiques d\'UX et d\'UI pour les applications web et mobiles — de la première impression aux micro-interactions — qui fidélisent vraiment vos utilisateurs en Afrique.',
+  image: imgUxApps,
+  imageAlt: 'Équipe UX et UI concevant une interface d\'application mobile — meilleures pratiques de design d\'expérience utilisateur',
 };
 
 const blogPosts = [
+  {
+    title: 'Même les Petites Entreprises ont Besoin d\'un Plan d\'Affaires Écrit',
+    slug: 'why-small-businesses-need-written-business-plan',
+    category: 'Stratégie',
+    date: '17 mars 2026',
+    readTime: '14 min de lecture',
+    excerpt: 'Un plan d\'affaires n\'est pas un document pour les banques — c\'est un outil de réflexion pour le dirigeant. Voici pourquoi toute petite entreprise en Afrique francophone en a besoin.',
+    image: imgBusinessPlan,
+    imageAlt: 'Équipe d\'entrepreneurs africains analysant des rapports financiers — pourquoi les petites entreprises ont besoin d\'un plan d\'affaires écrit',
+  },
   {
     title: 'Pourquoi Vos Visiteurs Quittent Votre Site en 3 Secondes — Et Comment Les Retenir',
     slug: 'why-visitors-leave-website-3-seconds',

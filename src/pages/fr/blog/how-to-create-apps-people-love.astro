@@ -1,0 +1,367 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/ux-team-designing-systems.jpg';
+import imgLandscape from '@/assets/images/ux-designs-ui-wireframe.jpg';
+import imgPortrait from '@/assets/images/ux-designer-brainstorming-mobile-app.jpg';
+import imgLandscape2 from '@/assets/images/ux-notebook-3d-concept.jpg';
+
+const lang: Lang = 'fr';
+const title = "Comment Créer des Applications que les Gens Adorent Utiliser";
+const description = "Principes pratiques d'UX et d'UI pour les applications web et mobiles — de la première impression aux micro-interactions — qui fidélisent vraiment vos utilisateurs.";
+const date = "2026-03-23";
+const category = "UI/UX Design";
+const readTime = "11 min de lecture";
+const slug = "how-to-create-apps-people-love";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/fr/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "fr-FR",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/fr/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Barre de progression de lecture -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Layout A: En-tête centré sur fond marine -->
+  <section class="bg-navy-900 pt-20 md:pt-24 pb-14 geo-pattern">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="flex items-center justify-center gap-3 mb-5">
+        <span class="px-3 py-1 text-xs font-semibold bg-gold-400/20 text-gold-300 rounded-full">{category}</span>
+        <span class="text-sm text-navy-300">{readTime}</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-white leading-tight">
+        {title}
+      </h1>
+      <div class="mt-5 flex items-center justify-center gap-4 text-sm text-navy-300">
+        <span>Par Peter Bamuhigire</span>
+        <span class="w-1 h-1 rounded-full bg-navy-500"></span>
+        <time datetime={date}>23 mars 2026</time>
+      </div>
+      <p class="mt-5 text-base md:text-lg text-navy-200 leading-relaxed max-w-2xl mx-auto">
+        {description}
+      </p>
+      <div class="mt-7">
+        <a href="/fr/contact/" class="inline-flex items-center gap-2 px-5 py-3 bg-gold-400 hover:bg-gold-500 text-navy-900 text-sm font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-gold-300 focus:ring-offset-2 focus:ring-offset-navy-900">
+          Discuter de Votre Projet
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image à la une — chevauchant le hero -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
+    <div class="rounded-2xl overflow-hidden shadow-2xl h-72 md:h-[440px]">
+      <Image
+        src={heroImg}
+        alt="Équipe UX et UI concevant une interface d'application mobile — conception d'expérience utilisateur pour applications web et mobiles en Afrique"
+        width={2222}
+        height={1481}
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+    </div>
+  </div>
+
+  <!-- Retour au blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Retour au Blog
+    </a>
+  </div>
+
+  <!-- Corps de l'article -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-gold prose-dropcap">
+
+      <p>Un directeur commercial d'Abidjan m'a contacté l'an dernier, épuisé par la frustration. Son équipe avait passé huit mois et un budget conséquent à construire un système de gestion des stocks. Le résultat fonctionnait parfaitement — données précises, mises à jour en temps réel, rapports complets. Son personnel refusait de l'utiliser. Les employés continuaient leurs cahiers de bord en parallèle parce que le système était "trop compliqué." Six mois plus tard, l'outil ne servait plus à rien.</p>
+
+      <p>Le logiciel était techniquement irréprochable. Personne ne prenait plaisir à l'utiliser.</p>
+
+      <p>C'est là le fossé entre construire un système qui fonctionne et construire un système que les gens ont envie d'utiliser. Ce fossé, vous ne le comblez pas en ajoutant des fonctionnalités. Vous le comblez en prêtant une attention délibérée à la façon dont les gens pensent, se déplacent dans une interface, et à la façon dont l'expérience entière les fait se sentir.</p>
+
+      <p>Voici ce que j'ai appris en construisant des applications web et mobiles pour des secteurs aussi variés que le commerce de détail, la santé, la logistique et la restauration — à travers toute l'Afrique — sur ce qui distingue les outils que l'on aime des outils que l'on supporte.</p>
+
+      <hr />
+
+      <h2>Les Dix Premières Secondes Décident de Tout</h2>
+
+      <p>Un utilisateur forme une impression forte dans les dix secondes qui suivent l'ouverture d'une application. Ce n'est pas une estimation — c'est mesurable. Les travaux de l'expert en ergonomie Steve Krug montrent que les utilisateurs portent un jugement sur la valeur d'une application avant d'avoir lu une seule phrase.</p>
+
+      <p>Votre écran d'accueil n'a qu'un seul rôle : montrer à l'utilisateur ce qu'il peut faire, pas ce qu'est le système.</p>
+
+      <p>Un mauvais écran d'accueil dit : « Bienvenue dans StockGest Pro 4.2. Veuillez lire la documentation avant de continuer. »</p>
+
+      <p>Un bon écran d'accueil dit : « Bonjour, Aminata. Vous avez 3 alertes de stock bas et 2 livraisons en attente. »</p>
+
+      <p>La différence, c'est l'orientation. Le bon écran dit à Aminata ce qui se passe dans son univers professionnel, en ce moment précis. Il respecte son temps et part du principe qu'elle est venue pour accomplir quelque chose.</p>
+
+      <p><strong>Ce que cela signifie concrètement :</strong></p>
+      <ul>
+        <li>Mettez en avant la tâche la plus fréquente de l'utilisateur, pas un tableau de bord générique</li>
+        <li>Affichez les données en temps réel immédiatement — n'obligez pas l'utilisateur à cliquer sur « charger »</li>
+        <li>Évitez les écrans de démarrage, les tutoriels obligatoires ou les écrans de connexion avant d'avoir montré de la valeur</li>
+        <li>Utilisez le nom et le contexte de l'utilisateur partout où vous en disposez</li>
+      </ul>
+
+      <h2>La Clarté l'Emporte Toujours sur l'Ingéniosité</h2>
+
+      <p>La plupart des interfaces qui frustrent les utilisateurs ont un trait commun : le concepteur était fier d'une idée astucieuse que l'utilisateur n'avait jamais demandée.</p>
+
+      <p>Des tiroirs de navigation animés qui s'ouvrent dans des directions inattendues. Des icônes sans libellés. Des menus imbriqués sur trois niveaux parce que quelqu'un voulait un look "épuré". Ce type de décisions semble brillant lors d'une revue de design. Dans l'usage quotidien, il épuise les gens.</p>
+
+      <p>J'ai travaillé avec un client dans le secteur de la restauration à Dakar qui voulait un terminal de point de vente minimaliste — rien que des icônes, sans texte, pour paraître « moderne et propre ». Nous l'avons construit. Le personnel a été formé. En deux semaines, ils avaient imprimé des étiquettes en papier et les avaient collées sous chaque icône de l'écran.</p>
+
+      <p>Les libellés ont été ajoutés dans la mise à jour suivante.</p>
+
+      <p>La clarté signifie qu'un utilisateur doit pouvoir regarder n'importe quel écran et répondre à trois questions en moins de cinq secondes :</p>
+
+      <ol>
+        <li>Où suis-je ?</li>
+        <li>Que puis-je faire ici ?</li>
+        <li>Que s'est-il passé après ma dernière action ?</li>
+      </ol>
+
+      <p>Si l'une de ces réponses nécessite de chercher, de deviner ou de lire la documentation, vous avez un problème de clarté.</p>
+
+      <p><strong>Tests de clarté rapides pour toute application :</strong></p>
+      <ul>
+        <li>Couvrez le logo et la navigation — un nouvel utilisateur peut-il encore savoir dans quelle section il se trouve ?</li>
+        <li>Montrez l'application à quelqu'un qui ne l'a jamais utilisée — quelle est la première chose qu'il essaie de cliquer ?</li>
+        <li>Après une soumission de formulaire, est-il évident que l'action a réussi ou échoué ?</li>
+      </ul>
+
+      <h2>Respectez les Modèles Mentaux de Vos Utilisateurs</h2>
+
+      <p>Les utilisateurs arrivent sur votre application avec des années d'expérience d'autres applications. Ils ont appris que la flèche retour permet de revenir en arrière. Qu'une icône de corbeille supprime. Qu'une barre de recherche en haut de l'écran permet de rechercher dans la page en cours.</p>
+
+      <p>Lorsque vous brisez ces conventions — même pour une raison de "meilleur" design — les utilisateurs ressentent une friction cognitive. Cette hésitation, c'est là que la frustration commence.</p>
+
+      <p>L'une des heuristiques fondamentales d'utilisabilité de Jakob Nielsen consiste à faire correspondre le système au monde réel : utiliser le langage et les concepts que l'utilisateur connaît déjà. Dans une application web pour une pharmacie, appelez la section « Délivrance » — pas « Module de traitement des transactions ». Dans une application mobile pour une école, appelez la vue des parents « Mes Enfants » — pas « Tableau de bord des dependants étudiants ».</p>
+
+      <p>Les mots comptent. La structure compte. Les icônes comptent. Toute déviation par rapport aux conventions doit justifier sa place — elle doit être significativement meilleure, pas simplement différente.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLandscape}
+          alt="Maquettes et wireframes de conception d'interface utilisateur — meilleures pratiques de design UX pour applications web et mobiles"
+          width={2222}
+          height={1245}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>La meilleure interface est celle que vos utilisateurs savent déjà utiliser — parce qu'elle respecte les modèles mentaux qu'ils apportent avec eux.</figcaption>
+      </figure>
+
+      <h2>L'UX Mobile N'est Pas un Desktop en Plus Petit</h2>
+
+      <p>Beaucoup d'applications sont conçues sur un ordinateur de bureau, puis "rendues responsive" pour mobile. Le résultat se voit immédiatement : boutons minuscules, texte dense, éléments de navigation qui nécessitent une précision de souris pour être activés au doigt.</p>
+
+      <p>Les utilisateurs mobiles sont différents, de manières qui influencent vos décisions de conception :</p>
+
+      <p><strong>Ils sont souvent en mouvement.</strong> Un utilisateur de bureau travaille avec une concentration totale. Un utilisateur mobile peut se trouver debout dans un entrepôt à Douala, tenant un produit d'une main et tapant sur votre application avec un pouce.</p>
+
+      <p><strong>Leurs sessions sont plus courtes.</strong> Les utilisateurs de bureau s'assoient pour accomplir des tâches. Les utilisateurs mobiles s'y connectent brièvement, effectuent une action et repartent. Concevez pour des interactions de cinq minutes, pas pour des sessions de travail prolongées.</p>
+
+      <p><strong>Ils font plus d'erreurs.</strong> Les erreurs de « gros doigt » sont réelles. La taille minimale recommandée pour une cible tactile est de 44×44 points — environ 7 mm carrés. En deçà, les utilisateurs passent autant de temps à corriger des tapotements accidentels qu'à accomplir leurs tâches.</p>
+
+      <p><strong>Leur contexte change.</strong> Soleil en plein air, obscurité intérieure, environnements bruyants, utilisation à une main — le design mobile doit résister à des conditions que le design de bureau n'affronte jamais.</p>
+
+      <p>La solution n'est pas d'agrandir tout le contenu. C'est de repenser l'expérience mobile from scratch, en se demandant ce que l'utilisateur mobile a le plus besoin d'accomplir — et non de transposer l'interface de bureau sur un écran plus petit.</p>
+
+      <h2>Boucles de Retour : Dites à l'Utilisateur Ce Qui Vient de Se Passer</h2>
+
+      <p>Chaque action qu'un utilisateur effectue dans votre application nécessite une réponse. Pas éventuellement. Immédiatement.</p>
+
+      <p>Le cerveau humain interprète le silence après une action comme un échec. Si un utilisateur appuie sur « Enregistrer » et que rien ne change pendant plus de 300 millisecondes, il va réessayer. Puis encore. Ensuite, il dira à ses collègues que l'application « enregistre toujours en double ».</p>
+
+      <p><strong>Le retour d'information se décline en trois niveaux :</strong></p>
+
+      <p><strong>Retour immédiat (0–100 ms) :</strong> Le bouton change d'état au moment précis où il est tapé — il s'assombrit, s'anime, affiche un indicateur de chargement. Cela dit à l'utilisateur : votre action a bien été enregistrée.</p>
+
+      <p><strong>Retour de traitement (100 ms – quelques secondes) :</strong> Une barre de progression, un indicateur rotatif, un libellé « Enregistrement en cours… ». Cela dit à l'utilisateur : quelque chose se passe.</p>
+
+      <p><strong>Retour de résultat (à la fin) :</strong> Une coche verte, un message de confirmation, une mise à jour de badge de notification. Cela dit à l'utilisateur : c'est fait, voici le résultat.</p>
+
+      <p>Manquez l'un de ces niveaux et les utilisateurs se sentent incertains. Les utilisateurs incertains répètent des actions, appellent le support ou perdent confiance dans le système.</p>
+
+      <p>Les micro-interactions — ces petites animations et changements d'état — ne sont pas de la décoration. Ce sont de la communication. Une animation bien placée qui confirme qu'un article a été ajouté à un panier raconte une histoire en 200 millisecondes qui nécessiterait une phrase entière à rédiger.</p>
+
+      <figure class="my-8 flex justify-center">
+        <div class="max-w-sm w-full">
+          <Image
+            src={imgPortrait}
+            alt="Développeur UX réfléchissant à l'interface d'une application mobile avec wireframes — processus de conception d'expérience utilisateur"
+            width={740}
+            height={1111}
+            class="article-img-portrait rounded-xl w-full"
+            loading="lazy"
+          />
+          <figcaption>Chaque action mérite une réponse. Le silence après une action signale un échec au cerveau de l'utilisateur — même si rien n'a mal tourné.</figcaption>
+        </div>
+      </figure>
+
+      <h2>La Vitesse Est une Fonctionnalité, Pas un Bonus</h2>
+
+      <p>Les applications lentes donnent l'impression d'être cassées. Cela semble évident, mais c'est régulièrement sous-estimé dans les priorités de développement.</p>
+
+      <p>Google a constaté que 53 % des utilisateurs mobiles abandonnent une page qui met plus de trois secondes à charger. C'est plus de la moitié de vos utilisateurs potentiels qui disparaissent avant d'avoir vu votre interface.</p>
+
+      <p>Mais la vitesse perçue compte autant que la vitesse réelle. Une application qui se charge en une seconde mais n'affiche rien jusqu'à la fin semble plus lente qu'une application qui prend deux secondes mais commence à montrer du contenu immédiatement.</p>
+
+      <p>Les modèles de conception qui améliorent la vitesse perçue :</p>
+      <ul>
+        <li><strong>Les écrans squelettes :</strong> Affichez la forme du contenu avant que les données ne se chargent. Les utilisateurs voient que quelque chose arrive.</li>
+        <li><strong>L'UI optimiste :</strong> Agissez comme si le serveur allait réussir avant qu'il ne le confirme. Marquez immédiatement une tâche comme terminée — annulez avec une explication uniquement si le serveur échoue.</li>
+        <li><strong>Le chargement progressif :</strong> Affichez d'abord le contenu le plus important. Les noms de produits et les prix apparaissent instantanément ; les images se chargent ensuite.</li>
+        <li><strong>Les données mises en cache :</strong> Affichez instantanément les données d'hier pendant que celles d'aujourd'hui se chargent en arrière-plan. Un utilisateur qui voit des chiffres légèrement obsolètes est beaucoup moins frustré qu'un utilisateur qui fixe un écran de chargement.</li>
+      </ul>
+
+      <h2>Mettez de Vrais Utilisateurs Face à Votre Application Tôt</h2>
+
+      <p>La chose la plus efficace que vous puissiez faire pour l'utilisabilité de votre application est d'observer cinq vrais utilisateurs l'utiliser avant que vous la pensiez terminée.</p>
+
+      <p>Pas polie. Pas parfaite. Juste suffisamment fonctionnelle pour être testée.</p>
+
+      <p>Les recherches de Jakob Nielsen montrent que cinq utilisateurs révèlent environ 85 % des problèmes d'utilisabilité. Vous n'avez pas besoin d'une grande étude. Vous avez besoin de cinq personnes correspondant à votre public cible, d'un ensemble de tâches réalistes, et de la discipline nécessaire pour observer sans guider.</p>
+
+      <p>Ce que vous verrez est souvent inconfortable. Les utilisateurs cliquent plusieurs fois sur le mauvais bouton. Ils mal lisent un libellé soigneusement rédigé. Ils cherchent une fonctionnalité que vous étiez certain de rendre évidente et ne la trouvent pas.</p>
+
+      <p>Chacun de ces moments est un cadeau. Il est moins coûteux de corriger un problème de conception lors des tests qu'après le lancement.</p>
+
+      <p>La règle essentielle : lors d'un test d'utilisabilité, vous ne devez pas aider. Quand un utilisateur est bloqué, laissez-le être bloqué. Ce qu'il fait lorsqu'il est bloqué — qu'il cherche de l'aide, essaie des options au hasard, ou abandonne — vous en apprend plus que ce qu'il fait quand tout se passe bien.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLandscape2}
+          alt="Conception UX d'application web et mobile avec notebook et rendu 3D — planification de l'expérience utilisateur pour les entreprises africaines"
+          width={2222}
+          height={1250}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Tester avec de vrais utilisateurs avant le lancement révèle 85 % des problèmes d'utilisabilité — à une fraction du coût d'une correction après déploiement.</figcaption>
+      </figure>
+
+      <h2>L'Accessibilité Est un Bon Design, Pas un Travail Supplémentaire</h2>
+
+      <p>L'accessibilité est souvent traitée comme une case à cocher en fin de projet. Cela conduit à des solutions bricolées qui n'aident personne et agacent tout le monde.</p>
+
+      <p>Le meilleur cadre de pensée : un design accessible est un design bien réfléchi. Lorsque vous garantissez un contraste de couleurs adéquat, vous aidez les 8 % d'hommes atteints de daltonisme — et aussi tous ceux qui utilisent votre application en plein soleil. Lorsque vous supportez la navigation au clavier, vous aidez les utilisateurs avec des handicaps moteurs — et aussi les utilisateurs avancés qui préfèrent les raccourcis. Lorsque vous rédigez des libellés de boutons pertinents, vous aidez les utilisateurs de lecteurs d'écran — et aussi tous ceux qui parcourent rapidement l'interface.</p>
+
+      <p>Au minimum, chaque application devrait respecter ces standards :</p>
+      <ul>
+        <li>Ratio de contraste des couleurs d'au moins 4,5:1 pour le texte normal</li>
+        <li>Tous les éléments interactifs accessibles au clavier</li>
+        <li>Aucune information transmise par la couleur seule</li>
+        <li>Toutes les images ont un texte alternatif descriptif</li>
+        <li>Les champs de formulaire ont des libellés visibles et permanents — pas du texte de substitution qui disparaît à la mise au point</li>
+      </ul>
+
+      <p>Ce ne sont pas des contraintes. Ce sont les marques d'une équipe qui a soigneusement réfléchi à l'ensemble des personnes qui utiliseront son produit.</p>
+
+      <h2>Concevez les États d'Erreur, Pas Seulement le Chemin Idéal</h2>
+
+      <p>La plupart du travail de conception se fait sur le chemin idéal — la séquence d'écrans quand tout se passe bien. Créer un compte. Se connecter. Terminer une tâche. Se déconnecter.</p>
+
+      <p>Le problème est que les utilisateurs ne suivent régulièrement pas ce chemin idéal. Ils saisissent mal leurs mots de passe. Ils soumettent des formulaires incomplets. Ils perdent la connexion internet au milieu d'un téléchargement. Ils essaient d'accéder à une page à laquelle ils n'ont pas la permission d'accéder.</p>
+
+      <p>Les états d'erreur nécessitent autant d'attention à la conception que les états de succès. « Erreur : 403 » ou « Une erreur inattendue s'est produite » brise immédiatement la confiance des utilisateurs. Un message d'erreur bien conçu explique ce qui s'est mal passé et ce que l'utilisateur doit faire ensuite.</p>
+
+      <p><strong>Les bons messages d'erreur :</strong></p>
+      <ul>
+        <li>Expliquent ce qui s'est mal passé en langage clair : « Votre session a expiré — veuillez vous reconnecter. »</li>
+        <li>Indiquent à l'utilisateur la prochaine étape : « Vérifiez votre connexion internet et réessayez. »</li>
+        <li>Préservent le travail effectué dans la mesure du possible : « Votre brouillon a été sauvegardé. »</li>
+        <li>Ne blâment jamais l'utilisateur : « Une erreur s'est produite de notre côté. »</li>
+      </ul>
+
+      <p>Les états vides sont également souvent négligés. Un tableau vide sans explication ne dit rien à un nouvel utilisateur. Un état vide qui dit « Vous n'avez pas encore de commandes — ajoutez votre premier produit pour commencer » lui indique exactement par où commencer.</p>
+
+      <hr />
+
+      <h2>L'Application que les Gens Adorent Est Celle qui S'efface</h2>
+
+      <p>Chaque principe de cet article pointe vers la même idée fondamentale : les meilleures interfaces sont invisibles. L'utilisateur ne pense pas aux boutons et aux menus. Il pense à la tâche qu'il est venu accomplir.</p>
+
+      <p>Un excellent UX est atteint quand le système disparaît — quand commander du stock, traiter une vente ou remplir un dossier patient semble aussi naturel qu'écrire sur papier.</p>
+
+      <p>Y parvenir exige de la discipline. Il faut dire non aux fonctionnalités supplémentaires qui ajoutent de la complexité. Il faut tester avec de vrais utilisateurs plutôt que de se fier à sa propre familiarité avec le système. Il faut se soucier du temps de chargement de trois secondes, du message d'erreur que personne ne lira attentivement, et du bouton qui est 2 mm trop petit.</p>
+
+      <p>Ces détails s'accumulent. Un système dans lequel chaque petite décision a été prise avec soin produit une expérience radicalement différente de celui où elles ont été laissées au hasard. Le directeur commercial d'Abidjan dont je vous ai parlé au début a finalement reconstruit son système. Mêmes données. Même logique. Cette fois-ci, avec les personnes qui allaient l'utiliser dans la salle dès le premier jour. Les cahiers de bord ont disparu.</p>
+
+      <p>Si vous construisez une application web ou mobile et souhaitez que l'UX soit juste dès le départ — et non rectifiée après le lancement — c'est exactement le type de travail que nous faisons. <a href="/fr/contact/">Contactez-nous</a> et parlons ensemble de ce dont vos utilisateurs ont besoin. Vous pouvez également explorer nos <a href="/fr/services/">services de développement logiciel</a> ou découvrir nos réalisations sur notre <a href="/fr/portfolio/">page portfolio</a>.</p>
+
+    </div>
+
+    <!-- Biographie de l'auteur -->
+    <div class="mt-12 pt-8 border-t border-gold-300/40">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-gold-400/10 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-gold-600">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Consultant en technologie et développement des affaires avec plus de 15 ans d'expérience dans plus de 10 pays africains. Fondateur de Chwezi Digital Solutions, basé à Kampala, Ouganda.</p>
+          <a href="/fr/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Discuter de Votre Projet
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Retour au blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Retour à Tous les Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

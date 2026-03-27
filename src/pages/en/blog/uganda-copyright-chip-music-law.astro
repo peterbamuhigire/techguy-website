@@ -1,0 +1,404 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/music-man-wireless-speaker-orange.jpg';
+import imgCopyright from '@/assets/images/copyright-license-patent-concept.jpg';
+import imgVinyls from '@/assets/images/black-man-vinyl-records.jpg';
+import imgDrums from '@/assets/images/musician-drums-laptop-home-studio.jpg';
+import imgWoman from '@/assets/images/woman-headphones-side-profile.jpg';
+import imgLaptop from '@/assets/images/aerial-laptop-wooden-table.jpg';
+import imgHeadphones from '@/assets/images/music-guy-headphones-jeans.jpg';
+
+const lang: Lang = 'en';
+const title = "Uganda's Bar Chip Law Will Not Protect Our Musicians — But This Might";
+const description = "Minister Mao's plan to install monitoring chips in every Ugandan bar sounds bold. Here's why it won't work, and what government should actually do to protect — and export — Ugandan music.";
+const date = "2026-03-27";
+const category = "Technology & Policy";
+const readTime = "14 min read";
+const slug = "uganda-copyright-chip-music-law";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src} altUrl="/fr/blog/loi-droit-auteur-ouganda-puce-bars/">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Layout C: Full-bleed dark image hero with gradient overlay -->
+  <section class="relative min-h-[520px] md:min-h-[600px] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <Image
+        src={heroImg}
+        alt="Young man in orange sweater holding wireless speaker — Uganda music copyright law enforcement chip bars"
+        width={2222}
+        height={1250}
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/70 to-navy-900/20"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 pt-32 md:pb-20">
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class="px-3 py-1 text-xs font-semibold bg-gold-400/20 text-gold-300 rounded-full uppercase tracking-wider">{category}</span>
+        <span class="text-sm text-navy-300">{readTime}</span>
+        <span class="text-navy-500">·</span>
+        <time class="text-sm text-navy-300" datetime={date}>27 March 2026</time>
+      </div>
+      <h1 class="text-3xl md:text-5xl lg:text-[3.25rem] font-bold text-warm-white leading-tight max-w-3xl">
+        Uganda's Bar Chip Law Will Not Protect Our Musicians — But This Might
+      </h1>
+      <p class="mt-5 text-base md:text-xl text-navy-200 leading-relaxed max-w-2xl">
+        Minister Norbert Mao, flanked by Eddy Kenzo, declared that every bar in Uganda will install a monitoring chip to enforce copyright law. The idea is well-intentioned. The execution will fail — and possibly hurt the very artists it seeks to protect.
+      </p>
+      <div class="mt-5 flex items-center gap-2 text-sm text-navy-400">
+        <span>By <a href="/en/about/" class="text-gold-400 hover:underline font-medium">Peter Bamuhigire</a></span>
+        <span>·</span>
+        <span>IT Consultant, Kampala</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <a href="/en/blog/" class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-gold prose-dropcap">
+
+      <p>On a Tuesday evening at a bar somewhere in Kampala, a DJ plugs in a USB drive loaded with 4,000 songs. He has spent a decade building that library — local artists, afrobeats, dancehall, gospel remixes, a few tracks he recorded himself. The crowd starts moving before the first chorus finishes. The night is alive.</p>
+
+      <p>Now imagine a government-issued chip is installed in the sound system, attempting to identify every one of those songs, log them in a central database, and transmit usage data to a royalty collection agency. In theory, every artist on that USB drive gets paid when their song plays. Noble idea. Clean concept. Except the chip doesn't know it's a remix. It can't tell if the file came from <a href="https://www.djerycom.ug/" target="_blank" rel="noopener noreferrer">DJ Erycom</a>, from YouTube, or from a friend's phone. It freezes when the DJ blends two tracks together. And by 2 a.m., the bar owner has quietly switched to a second speaker system that has no chip at all.</p>
+
+      <p>That is the problem with Uganda's proposed copyright chip in one paragraph. Not the intent — the intent is right. The execution is where this falls apart.</p>
+
+      <hr />
+
+      <h2>What Minister Mao Actually Announced</h2>
+
+      <p>Uganda's Minister of Justice and Constitutional Affairs, Norbert Mao, made headlines when he announced that bars and places of entertainment would be required to install monitoring hardware to enforce copyright law. The announcement came with the presence of Eddy Kenzo, one of Uganda's most globally recognised musicians, lending the proposal both celebrity weight and genuine musician buy-in.</p>
+
+      <p>The stated goal is fair and overdue: Ugandan musicians are not adequately compensated when their songs are played commercially. A wedding venue plays Vinka, a bar plays A Pass every night, a restaurant loops Sheebah for six hours straight — and the artist gets nothing. The existing copyright framework exists on paper; enforcement is almost nonexistent.</p>
+
+      <p>So the chip idea was born. Hardware in every bar. Technology as enforcer. Problem solved.</p>
+
+      <p>Except it isn't that simple. Not even close.</p>
+
+      <h2>The Law Already Exists — Enforcement Has Always Been the Problem</h2>
+
+      <p>Before discussing the chip, it is worth being precise about the legal context. Uganda already has a comprehensive copyright framework.</p>
+
+      <p>The <strong>Copyright and Neighbouring Rights Act, 2006 (Act 19, Cap. 222)</strong> has been on the books for nearly twenty years. It defines public places — explicitly listing bars, clubs, restaurants, concert halls, and other commercial establishments — as venues where public performance licensing applies. It establishes the rights of performers, producers, and broadcasting companies. It creates the legal mechanism for collecting societies to operate. It sets out offences, penalties, and enforcement powers including the right to enter and inspect premises.</p>
+
+      <p>In 2010, Regulations were passed under that Act to operationalise it. And in September 2025, those Regulations were amended again by <strong>S.I. 2025 No. 73</strong> — the Copyright and Neighbouring Rights (Amendment) Regulations, 2025 — signed by Minister Mao himself. That amendment updates registration procedures and fee schedules for copyright registration.</p>
+
+      <p>The law exists. The regulations exist. The legal rights of musicians exist.</p>
+
+      <p>What has never existed is effective enforcement. And that is the problem the chip proposal is trying to solve. The question is not whether enforcement is needed — of course it is. The question is whether a hardware device is the right instrument for that enforcement, twenty years after the law was written.</p>
+
+      <p>I would argue it is not.</p>
+
+      <hr />
+
+      <h2>Music Is Not a Barcode: The Technical Problem</h2>
+
+      <p>The chip proposal assumes that music playback in a bar is a controlled, structured environment — like a supermarket scanner reading a barcode. It is not.</p>
+
+      <p>DJs in Uganda operate with a level of creative freedom that makes automated identification genuinely difficult. A DJ mixes one track into another, running two songs simultaneously for 30 seconds before one fades. He drops a spoken word intro from a local MC over a foreign instrumental. He plays a version of a song that was uploaded to <a href="https://www.howwe.ug/audio" target="_blank" rel="noopener noreferrer">Howwe.ug</a> with a slightly different master than what's in any central database. His friend gave him an unreleased track from a studio session that has never been formally registered.</p>
+
+      <p>For the chip to work, it would need to:</p>
+
+      <ul>
+        <li>Identify songs in real time from ambient audio — not from a clean digital signal</li>
+        <li>Distinguish between originals and remixes</li>
+        <li>Handle simultaneous playback during DJ transitions</li>
+        <li>Match against a comprehensive, maintained database of registered Ugandan music</li>
+        <li>Transmit that data securely over an internet connection</li>
+        <li>Prevent tampering or bypass</li>
+        <li>Handle power cuts, connectivity drops, and device failures gracefully</li>
+      </ul>
+
+      <p>This is not a chip problem. This is a full-stack software and infrastructure engineering challenge that even Spotify — with billions of dollars and decades of engineering — has not solved perfectly for live, ambient environments.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgCopyright}
+          alt="Copyright, license, patent and trademark concept — Uganda music copyright law enforcement"
+          width={2222}
+          height={1526}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Copyright law is clear on paper. Enforcement in a live music environment — where tracks are mixed, remixed, and played from informal sources — is an entirely different engineering problem.</figcaption>
+      </figure>
+
+      <h2>Where Ugandans Actually Get Their Music</h2>
+
+      <p>Any serious proposal for music royalty enforcement in Uganda must start by honestly answering one question: where does the music actually come from?</p>
+
+      <p>The answer is not streaming platforms with clean licensing metadata. Most of the music played in Ugandan bars and homes is sourced from a handful of well-established local download sites that have built enormous audiences precisely because they are free, fast, and loaded with local content:</p>
+
+      <ul>
+        <li><strong><a href="https://musiclibrary.ug/" target="_blank" rel="noopener noreferrer">MusicLibrary.ug</a></strong> — one of Uganda's most visited music portals, offering free downloads across genres</li>
+        <li><strong><a href="https://www.djerycom.ug/" target="_blank" rel="noopener noreferrer">DJ Erycom</a></strong> — arguably the most influential music distribution site in Uganda. DJ Erycom has not only popularised Ugandan artists domestically; he has actively helped musicians hold concerts in the diaspora and expanded their reach internationally. A remarkable example of organic music promotion.</li>
+        <li><strong><a href="https://www.howwe.ug/audio" target="_blank" rel="noopener noreferrer">Howwe.ug</a></strong> — a long-running Ugandan entertainment platform that has been a home for local music and at one point even ran its own awards ceremonies</li>
+        <li><strong><a href="https://play.mdundo.com/" target="_blank" rel="noopener noreferrer">Mdundo</a></strong> — a regional music platform popular across East Africa</li>
+        <li><strong><a href="https://www.afrocharts.com/country?id=uga" target="_blank" rel="noopener noreferrer">Afrocharts</a></strong> — tracking and distributing Ugandan Afro music regionally</li>
+        <li><strong>YouTube</strong> — where artists themselves upload their own music, and where tools like <a href="https://app.ytdown.to/en23/" target="_blank" rel="noopener noreferrer">YTDown</a> and <a href="https://publer.com/tools/youtube-video-downloader" target="_blank" rel="noopener noreferrer">Publer</a> make downloading as simple as pasting a link</li>
+      </ul>
+
+      <p>Here is the critical point: many of these artists upload their own music to YouTube themselves. They post on DJ Erycom themselves. They share their music on WhatsApp groups and ask friends to spread it. The very acts of "free distribution" that a chip would try to track and monetise are acts the musicians themselves actively participate in.</p>
+
+      <p>A chip in a bar cannot distinguish between a song downloaded from a licensed platform and one the DJ got from a YouTube downloader tool two years ago. The data trail is broken before it starts.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgVinyls}
+          alt="Black man posing with vinyl records — Ugandan music distribution and music download culture"
+          width={2222}
+          height={3333}
+          class="article-img-portrait"
+          loading="lazy"
+        />
+        <figcaption>Uganda's music culture runs deep — but the distribution ecosystem that feeds bars, clubs, and home speakers operates largely outside formal licensing frameworks. Any enforcement mechanism must account for this reality, not pretend it doesn't exist.</figcaption>
+      </figure>
+
+      <h2>The Nigerian Elephant in the Room</h2>
+
+      <p>Here is an unintended consequence that nobody in that press conference room appears to have modelled: if copyright enforcement becomes strict and financially risky for playing Ugandan music, DJs will shift their playlists toward music that carries no enforcement burden.</p>
+
+      <p>Nigerian music is already dominant in Ugandan venues. Burna Boy, Wizkid, Davido, Asake, Ruger — these artists are played every night across Kampala, Jinja, Mbarara, and Gulu. Their music is beloved. And crucially, Nigerian artists and their labels operate under a very different commercial logic.</p>
+
+      <p>Nigerian stars earn most of their money from concerts, endorsements, brand deals, and regional touring. They <em>want</em> their music played everywhere because the more it plays, the more demand it generates for the live performance. Their model is built on exposure first, monetisation second. They are unlikely to pursue local Ugandan bars aggressively through a chip-based system.</p>
+
+      <p>Ugandan artists, on the other hand, are exactly the people this system is designed to collect for. They're smaller. They're local. They're the ones the collection agency will actually pursue. And so a perverse incentive emerges: playing Ugandan music becomes the regulated, expensive, risky choice, while playing Nigerian music costs nothing.</p>
+
+      <p>The result could be a Kampala bar scene that is even more dominated by Lagos than it already is — not because Ugandan music is worse, but because the policy design made it the more expensive option.</p>
+
+      <div class="pull-quote">
+        "A policy meant to protect Ugandan musicians could make playing their music the most expensive choice on the DJ's playlist."
+      </div>
+
+      <h2>A System Built for Fraud</h2>
+
+      <p>Any enforcement mechanism that relies on hardware installed at thousands of venues and maintained by bar owners creates structural opportunities for manipulation. Uganda has a sophisticated informal economy. People are resourceful. When a system creates financial pain, people find creative ways around it.</p>
+
+      <p>The bypass options are straightforward:</p>
+
+      <ul>
+        <li><strong>The second speaker system.</strong> A bar installs the chip on one output. The DJ connects to a separate amplifier that routes to the same speakers. The chip hears nothing.</li>
+        <li><strong>The dead device.</strong> The chip "breaks" every few weeks. The bar owner "reports it." The repair takes time. In the meantime, music plays without logging.</li>
+        <li><strong>Fake reporting.</strong> If the system allows any form of manual entry or override, the data will be manipulated to favour artists who share revenue with the operators — or to avoid royalties for popular tracks entirely.</li>
+        <li><strong>Selective enforcement.</strong> If the regulatory body only has capacity to audit a fraction of venues, bar owners near regulatory offices comply. Everyone else takes their chances.</li>
+      </ul>
+
+      <p>Enforcement systems that create this many bypass opportunities don't produce accurate data. They produce <em>compliant-looking</em> data, which is much worse — because it gives everyone false confidence that the system is working.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgDrums}
+          alt="Musician at home playing drums and mixing with a laptop — home studio music production Uganda"
+          width={2222}
+          height={1478}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Ugandan musicians are producing genuinely world-class music from home studios. The problem is not production quality — it is the infrastructure for distribution, enforcement, and international market access.</figcaption>
+      </figure>
+
+      <h2>What Actually Works: The Platform Approach</h2>
+
+      <p>There is a better way. Not hardware. Software.</p>
+
+      <p>The Uganda Revenue Authority enforces tax compliance not by inspecting every transaction manually but by requiring businesses to use <strong>EFRIS</strong> — the Electronic Fiscal Receipting and Invoicing System. Vendors issue receipts through URA-connected software. The data flows automatically. Auditors can pull a business's complete transaction history without ever visiting the premises.</p>
+
+      <p>Music royalty collection can follow exactly the same logic. Instead of a chip, require bars and clubs above a certain size to use <strong>auditable music streaming and DJ software platforms</strong> that:</p>
+
+      <ul>
+        <li>Log every track played with timestamp, venue ID, and song duration</li>
+        <li>Sync data in real time to a central rights management database</li>
+        <li>Generate transparent monthly usage reports accessible to rights holders</li>
+        <li>Allow the royalty collection agency to audit any venue's playback history</li>
+        <li>Integrate with existing DJ workflow tools — not replace them</li>
+      </ul>
+
+      <p>This approach is more difficult to bypass without leaving a clear digital trace. It is software — updatable, patchable, improvable over time. And it can be built by Ugandan developers.</p>
+
+      <p>One example already exists. <strong><a href="https://songboost.app/" target="_blank" rel="noopener noreferrer">Songboost</a></strong>, built by Ugandan developer Elijah Kitaka, tracks radio airplay across Uganda, Kenya, Tanzania, Rwanda, and Nigeria. It demonstrates that a locally-built platform can solve a cross-border music tracking problem at scale — without any hardware mandate.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgWoman}
+          alt="Woman wearing headphones listening to music — music streaming platforms and digital rights management Africa"
+          width={2222}
+          height={3333}
+          class="article-img-portrait"
+          loading="lazy"
+        />
+        <figcaption>Digital platforms, not embedded chips, offer the most reliable path to accurate music tracking. The data they generate is richer, harder to fake, and more useful to artists and rights holders alike.</figcaption>
+      </figure>
+
+      <h2>The Role of Local Developers</h2>
+
+      <p>Uganda has software engineers. Good ones. The country produces more computer science graduates annually than most people realise, and a growing community of independent developers is building products for African markets from offices — and bedrooms — across Kampala.</p>
+
+      <p>What those developers lack is not talent. It is a government that creates commercial conditions for their tools to succeed.</p>
+
+      <p>Instead of mandating a chip from an unknown hardware supplier, the government should issue an open API specification for a music tracking standard, then invite Ugandan developers to build compliant solutions. Multiple platforms competing for the market. DJs and bar owners choosing the tool that fits their workflow. Artists choosing the platform that gives them the clearest data. The market produces the best solution.</p>
+
+      <p>This approach also means artists must actually sign up and embrace the platform — which is the only genuine sign that a system is working. A government-controlled chip gets installed whether musicians like it or not. A developer-built platform gets adopted because it is genuinely useful.</p>
+
+      <p>The DJ Erycom example is instructive here. DJ Erycom has done more for Ugandan music's international reach than most formal institutions. Not through regulation. Through a platform that artists, DJs, and fans all chose to use because it served them. That is the model worth studying.</p>
+
+      <hr />
+
+      <h2>What Government Should Actually Do</h2>
+
+      <p>If the goal is to protect Ugandan music, a chip in a bar is the wrong lever. Here are levers that would actually move things:</p>
+
+      <h3>1. Sponsor High-Quality Video and Audio Production</h3>
+
+      <p>The gap between Ugandan and Nigerian music in international markets is not talent. It is production value and marketing spend. Nigerian record labels invest seriously in high-definition music videos, professional mixing, international distribution deals, and playlist placement on Spotify and Apple Music.</p>
+
+      <p>A government-backed fund that co-finances professional audio and video production for Ugandan artists — the way many governments support film industries — would do more for local music in five years than any chip will do in twenty. When Ugandan music looks and sounds like it belongs on global platforms, it gets on global platforms. When it gets on global platforms, our musicians can hold concerts in London, Toronto, Dubai, and Atlanta — not just Kololo.</p>
+
+      <h3>2. Tax Breaks on Performances and Equipment</h3>
+
+      <p>The cost of holding a quality concert in Uganda is prohibitive. Venue hire, sound equipment, lighting, security, promotion — artists often barely break even on domestic shows. Tax relief on performance income and on professional music equipment (recording gear, mixing consoles, studio monitors) would lower the cost of being a serious musician in Uganda.</p>
+
+      <p>Lower production costs mean more artists can afford quality. More quality means more international competitiveness. More international competitiveness means concerts in markets where tickets cost $50 — not 50,000 shillings.</p>
+
+      <h3>3. Invest in Professional Music Education</h3>
+
+      <p>Uganda has music courses at the university level. They need expansion, modernisation, and proper resourcing. Music production, audio engineering, music business, copyright law, digital distribution — these are the skills that turn a talented singer into a sustainable career artist. Makerere and other institutions can offer these at scale if given the budget to hire the right faculty and equip the right studios.</p>
+
+      <h3>4. Open International Doors</h3>
+
+      <p>Uganda's musicians become internationally marketable when Uganda's government actively opens those doors. Cultural exchange agreements with the UK, US, Canada, and Gulf countries. Facilitated visas for artists going to perform abroad. Government-backed showcases at international music festivals. Trade missions that include the creative industries, not just agriculture and manufacturing.</p>
+
+      <p>The music industry eventually saturates domestically. There are only so many concerts Kampala can hold, only so many shillings in the local market. International expansion is not a luxury for successful artists — it is a survival strategy for the entire industry.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLaptop}
+          alt="Aerial view of laptop on wooden table — music tech platform development Uganda Africa"
+          width={2222}
+          height={1477}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>The future of music rights management in Africa will be built on software platforms, not hardware chips. Uganda's developers are ready to build those platforms — if government creates the right conditions.</figcaption>
+      </figure>
+
+      <h2>The Artists Must Be at the Table</h2>
+
+      <p>One of the clearest signs that a system will fail is when the people it claims to serve don't trust it enough to use it voluntarily. A government-mandated chip gets compliance. It does not get trust.</p>
+
+      <p>The right approach inverts the model: build a platform transparent enough, useful enough, and fair enough that artists actively choose to register their music on it. When an artist can log in and see exactly where their song played, how many times, and how much they've earned — and when they receive that money without fighting a collection agency for it — they will promote the platform to their fellow musicians themselves.</p>
+
+      <p>That kind of artist buy-in cannot be mandated. It has to be earned by designing a system that genuinely serves them.</p>
+
+      <div class="pull-quote">
+        "A system that musicians actively sign up for tells you more about its quality than any government mandate ever could."
+      </div>
+
+      <h2>Protecting Music Starts With Valuing It</h2>
+
+      <p>On that Tuesday evening back in Kampala, the DJ with the 4,000-song USB drive is still there. He is playing Sheebah. He is playing Vinka. He is playing Azawi. The crowd still moves.</p>
+
+      <p>He will keep playing those songs whether or not a chip watches him. The question is whether the artists who made those songs will benefit — and whether Uganda will eventually be the country that exports its music to the world, rather than just consuming everyone else's.</p>
+
+      <p>A chip won't get us there. But local platforms, smart policy, production investment, and genuine artist buy-in might.</p>
+
+      <p>I work with technology teams across Africa building systems that are auditable, scalable, and trusted by the people who use them. If you are building something in the music tech or IP management space, <a href="/en/contact/">I would be glad to talk through the architecture</a>. And if you are a government stakeholder reading this, my offer is the same — the technical problems here are genuinely solvable, with the right approach.</p>
+
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-14 pt-8 border-t border-navy-100 flex gap-5 items-start">
+      <div class="w-14 h-14 rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center flex-shrink-0">
+        <span class="text-gold-400 font-bold text-lg">PB</span>
+      </div>
+      <div>
+        <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+        <p class="text-sm text-navy-500 mt-1">IT Consultant & Software Developer based in Kampala, Uganda. 15+ years building software systems and digital infrastructure across East and West Africa. Peter has built platforms for health, agriculture, property, retail, and financial services — sectors where data accuracy and trust are non-negotiable.</p>
+        <div class="flex gap-4 mt-3">
+          <a href="/en/about/" class="text-sm text-amber-accent hover:underline">About Peter</a>
+          <a href="/en/services/" class="text-sm text-amber-accent hover:underline">Services</a>
+          <a href="/en/contact/" class="text-sm text-amber-accent hover:underline">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Mid-article CTA Banner -->
+  <div class="bg-navy-900 py-10 md:py-14 geo-pattern relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-navy-900/95 to-navy-900/90"></div>
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-400 text-sm font-semibold uppercase tracking-wider mb-3">Building Music Tech or Rights Management Systems?</p>
+      <h2 class="text-2xl md:text-3xl font-bold text-warm-white mb-4">Uganda's Developers Can Build What the Chip Cannot</h2>
+      <p class="text-navy-200 mb-7 leading-relaxed">I build auditable, scalable software platforms for African markets. If you're working on music tracking, royalty management, or creative industry infrastructure — let's talk.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/contact/" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold-400 hover:bg-gold-500 text-navy-900 font-semibold rounded-lg transition-colors">
+          Start a Conversation
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/en/services/" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-gold-400/50 text-gold-300 hover:border-gold-400 font-semibold rounded-lg transition-colors">
+          View Software Services
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <CTASection lang={lang} />
+
+</BaseLayout>
+
+<script>
+  // Reading progress bar
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      bar.style.width = `${Math.min(progress, 100)}%`;
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  });
+</script>

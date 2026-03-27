@@ -1,0 +1,382 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/music-guy-headphones-jeans.jpg';
+import imgCopyright from '@/assets/images/copyright-license-patent-concept.jpg';
+import imgVinyls from '@/assets/images/black-man-vinyl-records.jpg';
+import imgDrums from '@/assets/images/musician-drums-laptop-home-studio.jpg';
+import imgWoman from '@/assets/images/woman-headphones-side-profile.jpg';
+import imgLaptop from '@/assets/images/aerial-laptop-wooden-table.jpg';
+import imgSpeaker from '@/assets/images/music-man-wireless-speaker-orange.jpg';
+
+const lang: Lang = 'fr';
+const title = "La Puce dans les Bars Ougandais : Ce Que l'Afrique Francophone Doit Comprendre";
+const description = "Le ministre ougandais Norbert Mao veut installer des puces dans tous les bars pour protéger les droits des musiciens. Un système ingénieux en théorie — mais pratiquement impossible à appliquer. Analyse depuis Kampala.";
+const date = "2026-03-27";
+const category = "Technologie & Politique";
+const readTime = "16 min de lecture";
+const slug = "loi-droit-auteur-ouganda-puce-bars";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/fr/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "fr-FR",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/fr/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src} altUrl="/en/blog/uganda-copyright-chip-music-law/">
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Layout C variant: Full-bleed dark image hero for FR -->
+  <section class="relative min-h-[520px] md:min-h-[600px] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <Image
+        src={heroImg}
+        alt="Homme avec casque audio veste en jean — loi droit d'auteur Ouganda musique bars puce surveillance"
+        width={2222}
+        height={1481}
+        class="w-full h-full object-cover object-top"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/75 to-navy-900/25"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 pt-32 md:pb-20">
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class="px-3 py-1 text-xs font-semibold bg-gold-400/20 text-gold-300 rounded-full uppercase tracking-wider">{category}</span>
+        <span class="text-sm text-navy-300">{readTime}</span>
+        <span class="text-navy-500">·</span>
+        <time class="text-sm text-navy-300" datetime={date}>27 mars 2026</time>
+      </div>
+      <h1 class="text-3xl md:text-5xl lg:text-[3.25rem] font-bold text-warm-white leading-tight max-w-3xl">
+        La Puce dans les Bars Ougandais : Ce Que l'Afrique Francophone Doit Comprendre
+      </h1>
+      <p class="mt-5 text-base md:text-xl text-navy-200 leading-relaxed max-w-2xl">
+        Le ministre Norbert Mao, aux côtés du musicien Eddy Kenzo, vient d'annoncer que tous les bars ougandais seront équipés d'une puce de surveillance musicale. L'intention est noble. Mais sur le terrain, cela ne fonctionnera pas — et voici pourquoi.
+      </p>
+      <div class="mt-5 flex items-center gap-2 text-sm text-navy-400">
+        <span>Par <a href="/fr/about/" class="text-gold-400 hover:underline font-medium">Peter Bamuhigire</a></span>
+        <span>·</span>
+        <span>Consultant IT, Kampala</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Retour au blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+    <a href="/fr/blog/" class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Retour au Blog
+    </a>
+  </div>
+
+  <!-- Corps de l'article -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-gold prose-dropcap">
+
+      <p>J'ai passé un peu plus d'un an à Kampala. Avant d'y poser mes valises, je ne savais pas grand-chose de la scène musicale ougandaise. Je connaissais Burna Boy, Wizkid, quelques noms congolais. Ce que j'ai découvert en Ouganda m'a surpris : une industrie musicale vivante, créative, fière, avec des artistes qui produisent depuis des studios installés dans des pièces de dix mètres carrés et qui remplissent des salles entières chaque week-end à Kampala.</p>
+
+      <p>Mais j'ai aussi constaté quelque chose que nos frères et sœurs d'Abidjan, de Douala, de Kinshasa ou de Lomé reconnaîtront immédiatement : les musiciens travaillent énormément et ne touchent presque rien sur les diffusions commerciales. Un bar joue leurs chansons toute la nuit. Un restaurant les met en boucle pendant des heures. Une cérémonie de mariage les diffuse devant deux cents personnes. L'artiste, lui, ne voit pas un franc.</p>
+
+      <p>C'est ce problème que le ministre ougandais de la Justice et des Affaires constitutionnelles, Norbert Mao, a tenté de résoudre avec une annonce spectaculaire : installer des puces de surveillance dans tous les bars et établissements de divertissement du pays pour détecter la musique jouée, identifier les œuvres, et déclencher le versement automatique de redevances aux artistes. Flanqué d'Eddy Kenzo — l'un des musiciens ougandais les plus connus internationalement — il a présenté ce projet comme une révolution pour l'industrie créative.</p>
+
+      <p>Je comprends l'enthousiasme. Je partage la préoccupation. Mais je dois vous dire, en toute honnêteté d'ami, que ce système ne fonctionnera pas — du moins pas comme annoncé.</p>
+
+      <hr />
+
+      <h2>Ce Que Dit la Loi Ougandaise — et Depuis Combien de Temps</h2>
+
+      <p>Pour comprendre la situation, il faut d'abord savoir que l'Ouganda n'est pas en train de créer un droit d'auteur. Ce droit existe depuis <strong>1988</strong>, renforcé par la <strong>loi sur le droit d'auteur et les droits voisins de 2006</strong> (<em>Copyright and Neighbouring Rights Act, Act 19, Cap. 222</em>). Cette loi définit clairement les lieux publics — bars, clubs, restaurants, salles de concert — comme des espaces soumis à licence de diffusion. Elle crée les sociétés de gestion collective. Elle établit les infractions et les sanctions.</p>
+
+      <p>En 2010, des règlements d'application ont été adoptés. En septembre 2025, ces règlements ont été modifiés par l'<strong>arrêté SI 2025 n° 73</strong>, signé par le ministre Mao lui-même, pour mettre à jour les procédures d'enregistrement et les barèmes de frais.</p>
+
+      <p>Voilà vingt ans que le cadre juridique existe. Le problème n'a jamais été l'absence de loi. Le problème a toujours été l'application. Et c'est précisément ce que la puce est censée résoudre.</p>
+
+      <p>La question n'est donc pas : faut-il protéger les droits des musiciens ougandais ? Bien sûr que oui. La question est : une puce matérielle dans chaque bar est-elle le bon instrument pour y parvenir ?</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgCopyright}
+          alt="Concept droit d'auteur licence brevet marque — loi copyright musique Afrique droit voisins"
+          width={2222}
+          height={1526}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Le cadre juridique ougandais pour la propriété intellectuelle musicale existe depuis 2006. Le défi n'a jamais été le droit — c'est l'application. Une puce matérielle ne résoudra pas un problème que vingt ans de loi n'ont pas réussi à régler par eux-mêmes.</figcaption>
+      </figure>
+
+      <h2>La Musique n'est Pas un Code-Barres</h2>
+
+      <p>Permettez-moi d'être technique un moment, parce que c'est important.</p>
+
+      <p>Le projet de puce suppose qu'identifier la musique dans un bar en temps réel est un problème simple. Ce n'est pas le cas. Dans nos contextes africains — et j'inclus ici Abidjan, Douala et Kinshasa autant que Kampala — les DJ ne se contentent pas de lire des pistes les unes après les autres. Ils mixent. Ils superposent. Ils jouent des remixes qu'ils ont eux-mêmes créés. Ils diffusent des morceaux téléchargés depuis des plateformes locales, depuis YouTube, depuis des clés USB échangées entre amis.</p>
+
+      <p>Pour fonctionner correctement, la puce devrait :</p>
+
+      <ul>
+        <li>Identifier des chansons depuis un signal audio ambiant — pas depuis un fichier numérique propre</li>
+        <li>Distinguer les originaux des remixes, des mashups et des reprises</li>
+        <li>Gérer la lecture simultanée lors des transitions de DJ</li>
+        <li>Correspondre à une base de données exhaustive de musique ougandaise enregistrée</li>
+        <li>Transmettre des données en temps réel via une connexion internet stable</li>
+        <li>Résister aux tentatives de contournement</li>
+        <li>Fonctionner malgré les coupures de courant — une réalité quotidienne à Kampala comme à Abidjan</li>
+      </ul>
+
+      <p>Ce n'est pas un problème de puce. C'est un défi d'ingénierie logicielle et d'infrastructure à part entière — que même Spotify, avec ses milliards de dollars et ses milliers d'ingénieurs, n'a pas résolu pour les environnements de diffusion en direct et en milieu ambiant.</p>
+
+      <h2>Où les Ougandais Téléchargent Réellement Leur Musique</h2>
+
+      <p>Ici, j'ai appris quelque chose en vivant à Kampala que je n'aurais pas compris depuis Abidjan. L'écosystème de distribution musicale ougandais est vaste, décentralisé, et largement informel.</p>
+
+      <p>Il n'y a pas un seul Netflix de la musique ougandaise. Il y en a plusieurs dizaines. Les plus connus sont <strong>MusicLibrary.ug</strong>, <strong>DJ Erycom</strong> — un site extrêmement populaire dont le propriétaire a d'ailleurs aidé plusieurs artistes ougandais à organiser des concerts dans la diaspora — <strong>Howwe.ug</strong>, qui allait jusqu'à organiser ses propres cérémonies de remise de prix, <strong>Mdundo</strong>, et <strong>Afrocharts</strong>.</p>
+
+      <p>Et YouTube. Un nombre considérable d'artistes ougandais mettent eux-mêmes leur musique sur YouTube. Ce sont eux qui alimentent les téléchargements. Des outils en ligne permettent d'extraire ces fichiers audio en quelques secondes. Ce que la puce devrait surveiller, c'est souvent du contenu que l'artiste a lui-même diffusé gratuitement.</p>
+
+      <p>Voilà le paradoxe central : une bonne partie de la "piraterie" que le système cherche à combattre est en réalité une stratégie de promotion choisie par les artistes eux-mêmes. DJ Erycom ne vole pas les musiciens ougandais — il les aide à se faire connaître. La puce, elle, ne fera pas cette distinction.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgVinyls}
+          alt="Homme noir posant avec des vinyles — culture musicale Ouganda distribution musique Afrique"
+          width={2222}
+          height={3333}
+          class="article-img-portrait"
+          loading="lazy"
+        />
+        <figcaption>La culture musicale ougandaise est profonde et fière. Mais l'écosystème de distribution — téléchargements gratuits, plateformes locales, partages sur WhatsApp — est décentralisé d'une façon que nul dispositif matériel ne peut surveiller efficacement.</figcaption>
+      </figure>
+
+      <h2>La Musique Nigériane Profite du Vide</h2>
+
+      <p>Voici une conséquence que personne ne semble avoir modélisée : si appliquer les droits d'auteur sur la musique ougandaise devient coûteux et risqué pour les propriétaires de bars, les DJ iront vers la musique qui ne présente aucun risque d'amende.</p>
+
+      <p>La musique nigériane est déjà omniprésente dans les bars ougandais. Burna Boy, Asake, Ruger, Davido — je les entendais jouer tous les soirs à Kampala. Et les maisons de disques nigérianes, dans leur grande majorité, ne poursuivront pas des bars ougandais pour des redevances locales. Leur modèle économique est différent : elles gagnent leur argent sur les concerts, les endorsements, les tournées régionales. Plus la musique tourne dans les bars d'Afrique de l'Est, plus la demande pour leurs concerts augmente. C'est un modèle d'exposition d'abord, de monétisation ensuite.</p>
+
+      <p>Les artistes ougandais, eux, sont précisément la cible que le système cherche à protéger — et donc celle pour laquelle les amendes s'appliqueront. Résultat : jouer de la musique ougandaise devient l'option réglementée et potentiellement coûteuse, tandis que la musique nigériane circule librement.</p>
+
+      <div class="pull-quote">
+        "Un système conçu pour protéger les musiciens ougandais pourrait involontairement rendre leur musique l'option la plus chère dans leur propre pays."
+      </div>
+
+      <h2>Un Dispositif Conçu Pour Être Contourné</h2>
+
+      <p>Tout mécanisme d'application basé sur du matériel installé dans des milliers d'établissements — et maintenu par leurs propriétaires — crée des possibilités de manipulation. En Ouganda comme en Côte d'Ivoire, les acteurs économiques informels sont ingénieux face aux contraintes administratives.</p>
+
+      <p>Les contournements les plus évidents :</p>
+
+      <ul>
+        <li><strong>Le deuxième système sonore.</strong> La puce est installée sur une sortie. Le DJ se connecte sur une autre, reliée aux mêmes enceintes. La puce n'entend rien.</li>
+        <li><strong>La panne chronique.</strong> Le dispositif "tombe en panne" régulièrement. La réparation prend du temps. Entre-temps, la musique tourne sans enregistrement.</li>
+        <li><strong>La falsification des données.</strong> Si le système autorise des entrées manuelles ou des corrections, les données seront manipulées — pour avantager certains artistes, pour éviter des redevances sur des titres populaires.</li>
+        <li><strong>L'application sélective.</strong> Si l'agence de régulation n'a la capacité de contrôler qu'une fraction des établissements, seuls ceux situés à proximité des bureaux officiels respecteront les règles.</li>
+      </ul>
+
+      <p>Ces systèmes ne produisent pas des données exactes. Ils produisent des données qui <em>semblent</em> conformes — ce qui est bien plus dangereux, car cela donne à tout le monde la fausse impression que le système fonctionne.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgDrums}
+          alt="Musicien jouant batterie et mixant avec laptop — studio maison production musicale Ouganda Afrique"
+          width={2222}
+          height={1478}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Les musiciens ougandais produisent de la musique de qualité mondiale depuis des studios domestiques. Le problème n'est pas la production — c'est l'infrastructure de gestion des droits et d'accès aux marchés internationaux.</figcaption>
+      </figure>
+
+      <h2>Ce Qui Fonctionne : L'Approche par les Plateformes</h2>
+
+      <p>Il existe une meilleure voie. Pas du matériel. Du logiciel.</p>
+
+      <p>En Ouganda, l'Autorité Fiscale ougandaise (URA) a résolu un problème similaire avec EFRIS — un système de facturation électronique qui oblige les commerçants à utiliser un logiciel certifié pour émettre leurs reçus. Les données circulent automatiquement. Les auditeurs accèdent à l'historique complet d'un commerce sans jamais se déplacer.</p>
+
+      <p>La gestion des droits musicaux peut suivre exactement la même logique. Au lieu d'une puce, obliger les établissements au-dessus d'un certain seuil à utiliser des <strong>plateformes de streaming et de DJ auditables</strong> qui :</p>
+
+      <ul>
+        <li>Enregistrent chaque titre diffusé avec horodatage, identifiant du lieu et durée</li>
+        <li>Synchronisent les données en temps réel avec une base de gestion des droits</li>
+        <li>Génèrent des rapports mensuels transparents accessibles aux ayants droit</li>
+        <li>Permettent à l'agence de régulation d'auditer l'historique de diffusion de n'importe quel établissement</li>
+      </ul>
+
+      <p>Ce modèle est beaucoup plus difficile à contourner sans laisser de trace numérique. Il est logiciel — donc modifiable, améliorable, extensible dans le temps. Et il peut être développé par des ingénieurs ougandais.</p>
+
+      <p>Un exemple existe déjà : <strong>Songboost</strong>, développé par l'Ougandais Elijah Kitaka, suit les diffusions radio en Ouganda, au Kenya, en Tanzanie, au Rwanda et au Nigeria. Il prouve qu'une plateforme locale peut résoudre un problème de traçabilité musicale transfrontalière — sans aucun mandat matériel.</p>
+
+      <p>Dans notre région francophone, nous connaissons des enjeux similaires autour de l'<strong>OAPI</strong> (Organisation Africaine de la Propriété Intellectuelle) et des sociétés de gestion comme le <strong>BURIDA</strong> en Côte d'Ivoire ou la <strong>SOCAM</strong> au Cameroun. Ces structures ont les mêmes défis d'application que l'Ouganda. La réponse logicielle que je décris ici est transposable — et nos développeurs francophones pourraient aussi la construire.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgWoman}
+          alt="Femme avec casque audio de profil — plateformes streaming musique droits numériques Afrique"
+          width={2222}
+          height={3333}
+          class="article-img-portrait"
+          loading="lazy"
+        />
+        <figcaption>Les plateformes numériques offrent le chemin le plus fiable vers une traçabilité musicale précise. Les données qu'elles génèrent sont plus riches, plus difficiles à falsifier, et bien plus utiles pour les artistes et les ayants droit.</figcaption>
+      </figure>
+
+      <h2>Le Rôle des Développeurs Locaux</h2>
+
+      <p>L'Ouganda a des ingénieurs logiciels capables. Le pays forme chaque année davantage de diplômés en informatique qu'on ne le croit, et une communauté grandissante de développeurs indépendants construit des produits pour les marchés africains depuis Kampala.</p>
+
+      <p>Ce qui leur manque n'est pas le talent. C'est un gouvernement qui crée les conditions commerciales pour que leurs outils réussissent.</p>
+
+      <p>Au lieu d'imposer une puce d'un fournisseur matériel inconnu, le gouvernement devrait publier une spécification d'API ouverte pour un standard de traçabilité musicale, puis inviter les développeurs ougandais à construire des solutions conformes. Plusieurs plateformes en concurrence sur le marché. Des DJ et des propriétaires de bars qui choisissent l'outil qui correspond à leur flux de travail. Des artistes qui choisissent la plateforme qui leur donne les données les plus claires.</p>
+
+      <p>Cette approche signifie aussi que les artistes doivent s'inscrire et adopter la plateforme — ce qui est le seul signe réel qu'un système fonctionne. Une puce gouvernementale est installée que les musiciens le veuillent ou non. Une plateforme développée localement est adoptée parce qu'elle est genuinement utile.</p>
+
+      <p>Je vis et travaille dans cette réalité chaque jour. En tant que consultant technologique, j'ai vu des systèmes d'application imposés de l'extérieur mourir en quelques mois. Et j'ai vu des plateformes que les utilisateurs ont choisies — même imparfaites — survivre et s'améliorer pendant des années.</p>
+
+      <hr />
+
+      <h2>Ce Que le Gouvernement Ougandais Devrait Vraiment Faire</h2>
+
+      <p>Si l'objectif est de protéger et de promouvoir la musique ougandaise, une puce dans un bar est le mauvais levier. Voici les leviers qui feraient vraiment bouger les choses — et qui devraient résonner pour nos gouvernements francophones également :</p>
+
+      <h3>1. Financer la Production Professionnelle de Qualité</h3>
+
+      <p>L'écart entre la musique ougandaise et la musique nigériane sur les marchés internationaux n'est pas une question de talent. C'est une question de valeur de production et de budget marketing. Les labels nigérians investissent massivement dans des clips en haute définition, des mixages professionnels, des accords de distribution internationale et des placements en playlist sur Spotify et Apple Music.</p>
+
+      <p>Un fonds gouvernemental qui cofinance la production audio et vidéo professionnelle pour les artistes ougandais — à la manière dont de nombreux gouvernements soutiennent les industries cinématographiques — ferait plus pour la musique locale en cinq ans que n'importe quelle puce en vingt. Quand la musique ougandaise est à la hauteur des standards des plateformes mondiales, elle accède aux plateformes mondiales. Et quand elle est sur les plateformes mondiales, nos musiciens peuvent organiser des concerts à Londres, Toronto, Dubaï et Atlanta.</p>
+
+      <h3>2. Réductions Fiscales sur les Spectacles et l'Équipement</h3>
+
+      <p>Le coût d'organisation d'un concert de qualité en Ouganda est prohibitif. Les artistes rentrent souvent à peine dans leurs frais sur les spectacles locaux. Des exonérations fiscales sur les revenus de spectacle et sur l'équipement professionnel (matériel d'enregistrement, consoles de mixage, moniteurs de studio) réduiraient le coût d'être un musicien sérieux en Ouganda.</p>
+
+      <p>Des coûts de production réduits signifient plus d'artistes capables de produire une musique de qualité. Plus de qualité signifie plus de compétitivité internationale. Plus de compétitivité internationale signifie des concerts sur des marchés où les billets coûtent l'équivalent de 180 000 shillings — pas 50 000.</p>
+
+      <h3>3. Investir dans la Formation Musicale Professionnelle</h3>
+
+      <p>L'Ouganda dispose de cursus de musique dans ses universités. Ils ont besoin d'être développés, modernisés et correctement dotés en ressources. Production musicale, ingénierie du son, gestion musicale, droit d'auteur, distribution numérique — ce sont les compétences qui transforment un chanteur talentueux en une carrière d'artiste viable. Ces formations peuvent être proposées à grande échelle si les universités reçoivent les budgets nécessaires.</p>
+
+      <h3>4. Ouvrir les Portes Internationales</h3>
+
+      <p>Les musiciens ougandais deviennent commercialisables à l'international quand le gouvernement ougandais ouvre activement ces portes. Des accords d'échange culturel avec le Royaume-Uni, les États-Unis, le Canada et les pays du Golfe. Des visas facilités pour les artistes qui partent se produire à l'étranger. Des vitrines soutenues par le gouvernement lors des grands festivals de musique internationaux. Des missions commerciales qui incluent les industries créatives.</p>
+
+      <p>Le marché musical finit par saturer au niveau national. Il n'y a qu'un nombre limité de concerts que Kampala peut accueillir. L'expansion internationale n'est pas un luxe pour les artistes à succès — c'est une stratégie de survie pour toute l'industrie.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLaptop}
+          alt="Vue aérienne ordinateur portable table en bois — développement plateforme technologie musicale Afrique"
+          width={2222}
+          height={1477}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>L'avenir de la gestion des droits musicaux en Afrique se construira sur des plateformes logicielles, pas sur des puces matérielles. Les développeurs ougandais et francophones africains sont prêts à bâtir ces plateformes — si les gouvernements créent les bonnes conditions.</figcaption>
+      </figure>
+
+      <h2>Un Mot pour Nos Frères Francophones</h2>
+
+      <p>Je rentre bientôt à Abidjan. Et en préparant ce retour, je me rends compte que ce débat ougandais nous concerne directement.</p>
+
+      <p>En Côte d'Ivoire, le BURIDA collecte les droits depuis des années — avec des résultats inégaux et une confiance des artistes souvent fragile. Au Cameroun, la SOCAM fait face aux mêmes défis structurels. En RDC, pays le plus francophone du monde et membre de la Communauté d'Afrique de l'Est depuis 2022, la question des droits musicaux est encore plus complexe, à cheval entre les cadres anglophone et francophone.</p>
+
+      <p>Dans tous ces contextes, la tentation est la même : trouver un dispositif technique qui "force" la conformité. Une puce. Un logiciel obligatoire. Un registre centralisé contrôlé par l'État.</p>
+
+      <p>Ce que j'ai appris à Kampala — et ce que j'essaie de vous transmettre — c'est que les systèmes qui fonctionnent vraiment sont ceux que les artistes choisissent d'utiliser parce qu'ils leur font confiance. Pas ceux qui leur sont imposés parce que le gouvernement l'a décidé.</p>
+
+      <p>L'Ouganda a le talent musical. Nous avons le talent musical. Ce dont nous avons tous besoin, c'est de politiques qui permettent à ce talent de devenir une industrie — pas de dispositifs qui créent des illusions de conformité tout en enrichissant quelques intermédiaires.</p>
+
+      <div class="pull-quote">
+        "Les systèmes qui fonctionnent vraiment sont ceux que les artistes choisissent d'utiliser — pas ceux qui leur sont imposés."
+      </div>
+
+      <h2>Conclusion : De la Puce à la Plateforme</h2>
+
+      <p>Je suis retourné dans ce bar de Kampala la semaine avant mon départ. Le même DJ. La même énergie. Il jouait Sheebah, puis Vinka, puis une chanson que je n'avais jamais entendue — une artiste émergente dont le nom est apparu dans les crédits d'un clip que j'ai regardé plus tard sur YouTube.</p>
+
+      <p>Ces chansons continueront à jouer, avec ou sans puce. La question est de savoir si les artistes qui les ont créées seront un jour payés équitablement — et si l'Ouganda sera finalement le pays qui exporte sa musique vers le monde, plutôt que de simplement consommer celle de tout le monde.</p>
+
+      <p>Une puce n'y changera rien. Des plateformes transparentes, des politiques intelligentes, un investissement réel dans la production et la formation — cela, oui, pourrait changer les choses.</p>
+
+      <p>C'est le message que je rapporte d'Ouganda. Puisse-t-il être utile au-delà des frontières.</p>
+
+    </div>
+
+    <!-- Biographie de l'auteur -->
+    <div class="mt-14 pt-8 border-t border-navy-100 flex gap-5 items-start">
+      <div class="w-14 h-14 rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center flex-shrink-0">
+        <span class="text-gold-400 font-bold text-lg">PB</span>
+      </div>
+      <div>
+        <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+        <p class="text-sm text-navy-500 mt-1">Consultant IT et développeur logiciel basé à Kampala, Ouganda. Plus de 15 ans d'expérience dans la conception de systèmes logiciels et d'infrastructures numériques en Afrique de l'Est et de l'Ouest — Ouganda, Kenya, Tanzanie, Rwanda, RDC, Sénégal, Sierra Leone, Guinée.</p>
+        <div class="flex gap-4 mt-3">
+          <a href="/fr/about/" class="text-sm text-amber-accent hover:underline">À propos de Peter</a>
+          <a href="/fr/services/" class="text-sm text-amber-accent hover:underline">Services</a>
+          <a href="/fr/contact/" class="text-sm text-amber-accent hover:underline">Prendre Contact</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Bannière CTA -->
+  <div class="bg-navy-900 py-10 md:py-14 geo-pattern relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-navy-900/95 to-navy-900/90"></div>
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-400 text-sm font-semibold uppercase tracking-wider mb-3">Vous Développez une Solution de Gestion des Droits Musicaux ?</p>
+      <h2 class="text-2xl md:text-3xl font-bold text-warm-white mb-4">Les Développeurs Africains Peuvent Construire Ce Que la Puce Ne Peut Pas</h2>
+      <p class="text-navy-200 mb-7 leading-relaxed">Je conçois des plateformes logicielles auditables et évolutives pour les marchés africains. Si vous travaillez sur la traçabilité musicale, la gestion des droits ou l'infrastructure des industries créatives — parlons-en.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/fr/contact/" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold-400 hover:bg-gold-500 text-navy-900 font-semibold rounded-lg transition-colors">
+          Démarrer une Conversation
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/fr/services/" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-gold-400/50 text-gold-300 hover:border-gold-400 font-semibold rounded-lg transition-colors">
+          Voir les Services Logiciels
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <CTASection lang={lang} />
+
+</BaseLayout>
+
+<script>
+  // Reading progress bar
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      bar.style.width = `${Math.min(progress, 100)}%`;
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  });
+</script>

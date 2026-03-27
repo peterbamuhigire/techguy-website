@@ -129,7 +129,7 @@ const breadcrumbSchema = {
 <html lang={lang} class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>{title}</title>
   <meta name="description" content={description} />
   <meta name="author" content="Peter Bamuhigire" />
@@ -206,7 +206,13 @@ const breadcrumbSchema = {
     gsap.registerPlugin(ScrollTrigger);
 
     document.addEventListener('astro:page-load', () => {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
       gsap.utils.toArray<HTMLElement>('.fade-up').forEach((el) => {
+        if (reducedMotion) {
+          gsap.set(el, { opacity: 1, y: 0 });
+          return;
+        }
         gsap.fromTo(el,
           { opacity: 0, y: 30 },
           { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
@@ -217,8 +223,12 @@ const breadcrumbSchema = {
 
       gsap.utils.toArray<HTMLElement>('.counter').forEach((el) => {
         const target = parseInt(el.dataset.target || '0');
+        if (reducedMotion) {
+          el.innerText = String(target);
+          return;
+        }
         gsap.fromTo(el, { innerText: 0 }, {
-          innerText: target, duration: 2, ease: 'power1.out',
+          innerText: target, duration: 1.2, ease: 'power1.out',
           snap: { innerText: 1 },
           scrollTrigger: { trigger: el, start: 'top 85%', once: true },
         });

@@ -1,3 +1,21 @@
----
-return Astro.redirect('/en/');
----
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting…</title>
+  <!--
+    Zero-flash redirect to French.
+    A synchronous <script> in <head> fires BEFORE the browser paints any body
+    content, so the user never sees this page. The meta-refresh below is a
+    no-JS fallback only.
+  -->
+  <script is:inline>window.location.replace('/fr/');</script>
+  <meta http-equiv="refresh" content="0;url=/fr/" />
+  <link rel="canonical" href="https://techguypeter.com/fr/" />
+</head>
+<body>
+  <noscript>
+    <p><a href="/fr/">Cliquez ici pour continuer / Click here to continue</a></p>
+  </noscript>
+</body>
+</html>

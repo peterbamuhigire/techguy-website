@@ -4,18 +4,37 @@
   <meta charset="utf-8" />
   <title>Redirecting…</title>
   <!--
-    Zero-flash redirect to French.
-    A synchronous <script> in <head> fires BEFORE the browser paints any body
-    content, so the user never sees this page. The meta-refresh below is a
-    no-JS fallback only.
+    Smart language redirect — zero flash.
+    A synchronous <script> in <head> fires BEFORE the browser paints anything.
+    Reads the visitor's browser/device language and routes them to the right version:
+      French device  → /fr/
+      All other      → /en/
+    The meta-refresh below is a no-JS fallback only (defaults to French).
   -->
-  <script is:inline>window.location.replace('/fr/');</script>
+  <script is:inline>
+    (function () {
+      var langs = [];
+      if (navigator.languages && navigator.languages.length) {
+        langs = Array.prototype.slice.call(navigator.languages);
+      } else if (navigator.language) {
+        langs = [navigator.language];
+      } else if (navigator.userLanguage) {
+        langs = [navigator.userLanguage];
+      }
+      var primary = (langs[0] || 'en').toLowerCase().slice(0, 2);
+      window.location.replace(primary === 'fr' ? '/fr/' : '/en/');
+    })();
+  </script>
+  <!-- No-JS fallback: default to French -->
   <meta http-equiv="refresh" content="0;url=/fr/" />
   <link rel="canonical" href="https://techguypeter.com/fr/" />
 </head>
 <body>
   <noscript>
-    <p><a href="/fr/">Cliquez ici pour continuer / Click here to continue</a></p>
+    <p>
+      <a href="/fr/">Continuer en français</a> &nbsp;|&nbsp;
+      <a href="/en/">Continue in English</a>
+    </p>
   </noscript>
 </body>
 </html>

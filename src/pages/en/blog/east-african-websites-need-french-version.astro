@@ -1,0 +1,353 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/african-american-business-man-using-laptop-cafe.jpg';
+import imgLandscape1 from '@/assets/images/financial-forex-business-chart-report.jpg';
+import imgPortrait from '@/assets/images/african-american-business-woman-with-phone.jpg';
+import imgLandscape2 from '@/assets/images/african-entrepreneur-team-analyzing-business-reports.jpg';
+
+const lang: Lang = 'en';
+const title = "Why East African Websites Must Have a French Version";
+const description = "DRC joined the EAC in 2022, adding 109 million French speakers to East Africa. Your English-only website is invisible to them. Here's how to fix that.";
+const date = "2026-03-27";
+const category = "Web Design & Strategy";
+const readTime = "11 min read";
+const slug = "east-african-websites-need-french-version";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Style B: Editorial Light Hero — left-aligned, warm-white background -->
+  <section class="bg-warm-white pt-24 md:pt-28 pb-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="px-3 py-1 text-xs font-semibold bg-navy-900 text-gold-400 rounded-full uppercase tracking-wider">{category}</span>
+          <span class="text-sm text-navy-400">{readTime}</span>
+          <span class="text-sm text-navy-400">·</span>
+          <time class="text-sm text-navy-400" datetime={date}>27 March 2026</time>
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-navy-900 leading-tight">
+          Why East African Websites Must Have a French Version
+        </h1>
+        <p class="mt-5 text-lg md:text-xl text-navy-600 leading-relaxed max-w-2xl">
+          The DRC's entry into the EAC placed 109 million French-speaking consumers inside East Africa's trade bloc. Your English-only website is invisible to most of them. Here is what to do about it.
+        </p>
+        <div class="mt-5 flex items-center gap-3 text-sm text-navy-500">
+          <span>By <a href="/en/about/" class="text-amber-accent hover:underline font-medium">Peter Bamuhigire</a></span>
+          <span>·</span>
+          <span>IT Consultant & Software Developer, Kampala</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Image — full-width editorial treatment -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+    <div class="rounded-2xl overflow-hidden shadow-xl h-72 md:h-[480px]">
+      <Image
+        src={heroImg}
+        alt="African businessman using a laptop at a café — bilingual website East Africa, French website for East African businesses"
+        width={2222}
+        height={1481}
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+    </div>
+  </div>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <a href="/en/blog/" class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-gold prose-dropcap">
+
+      <p>A procurement manager in Kinshasa opened her browser on a Tuesday morning last quarter. She was sourcing a supplier for logistics management software — a contract worth $180,000. Three East African companies were on her shortlist. Two were Ugandan. One was Kenyan.</p>
+
+      <p>She went to each website in turn. The first Ugandan vendor: English only. She spent two minutes looking for a French contact option and found nothing. She sent an email in French, never heard back. The second Ugandan company: also English only — and their contact form had no way to enter a message longer than 140 characters. The Kenyan firm had a French version. Partial. Some pages were clearly machine-translated, with sentences that read like they'd been fed through a blender. But enough was there to show intent. She called them. They won the contract.</p>
+
+      <p>The two Ugandan companies still don't know what happened. They didn't track where that lead came from. They assumed their English websites were fine.</p>
+
+      <p>This is the story playing out across East Africa right now. And since the Democratic Republic of Congo formally became the seventh member of the East African Community in March 2022, it is playing out at a scale that most East African business owners have not yet fully understood.</p>
+
+      <p>This article explains why a French version of your business website is no longer optional for East African companies — it is a commercial necessity. I'll also explain exactly what "bilingual" means in practice, why machine translation isn't the answer, and how to make your website automatically open in the right language based on the device visiting it.</p>
+
+      <hr />
+
+      <h2>What DRC's EAC Membership Actually Changed</h2>
+
+      <p>When the DRC joined the EAC, most of the business coverage focused on trade corridors, border procedures, and tariff schedules. Fewer people asked the more commercially important question: who are these 109 million new people in the bloc, and what language do they do business in?</p>
+
+      <p>French. Entirely French.</p>
+
+      <p>The Democratic Republic of Congo is — according to the Organisation internationale de la Francophonie's landmark 2022 report — the country with the <strong>largest French-speaking population in the world</strong>. Larger than France itself. Larger than Canada. Approximately 45 million Congolese people actively use French for business, education, and government. French is not a secondary language in DRC. It is the language of every formal contract, every government institution, every corporate boardroom. An English-only website in the DRC market is the equivalent of a French-only website trying to sell to Kampala.</p>
+
+      <p>Before DRC's entry, the EAC had around 230 million people spread across six nations. After DRC — and Somalia's accession in November 2023 — the bloc now covers <strong>more than 340 million people</strong>, making it the largest regional trading bloc in Africa by population, larger than ECOWAS.</p>
+
+      <p>Three of the eight EAC member states now have French as an official language: the DRC, Rwanda, and Burundi. Their combined French-speaking populations represent over 50 million people who will land on your business website in a language most of them don't prefer to use commercially.</p>
+
+      <h2>The Numbers That Should Change Your Next Website Decision</h2>
+
+      <p>Let me put the numbers plainly, because the scale matters:</p>
+
+      <ul>
+        <li><strong>340 million</strong> — EAC combined population across all eight members (2026 estimate)</li>
+        <li><strong>109 million</strong> — DRC population alone, the single largest member state</li>
+        <li><strong>~45 million</strong> — active French speakers in DRC (OIF 2022 data)</li>
+        <li><strong>50+ million</strong> — combined francophone population across EAC's French-official members</li>
+        <li><strong>3 of 8</strong> — EAC member nations with French as an official language</li>
+        <li><strong>~$360 billion</strong> — estimated combined EAC GDP in 2026</li>
+        <li><strong>15% annually</strong> — rate at which mobile internet users are growing across the EAC</li>
+      </ul>
+
+      <p>If your business sells across borders within the EAC — and the whole point of the Community is to make that easier — then roughly one in seven of the people in your market conducts business primarily in French. If you're in logistics, pharmaceuticals, agriculture, real estate, financial services, or professional consulting, the DRC is an active procurement market. Its companies are looking for suppliers right now.</p>
+
+      <p>Your English-only website tells them you haven't thought about them.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLandscape1}
+          alt="Business market data and financial charts — East African Community market statistics showing EAC growth after DRC accession"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>The EAC's combined market now exceeds 340 million people and an estimated $360 billion in GDP — with French the dominant commercial language for nearly one in seven of those consumers.</figcaption>
+      </figure>
+
+      <h2>The Google Translate Trap</h2>
+
+      <p>One of the most common responses I see is the Google Translate widget. A business owner realises they need French, installs the browser plugin on their site, and considers the problem solved. I understand the appeal completely: it is instant, free, and requires no technical knowledge.</p>
+
+      <p>It is also a different kind of problem.</p>
+
+      <p>Machine translation handles common phrases reasonably well. It fails at industry-specific terminology. It fails at brand voice. It turns a carefully crafted service description into something that reads like a first-year language student wrote it on a bad day. Congolese business professionals read French every day. They know immediately when they are reading a machine output.</p>
+
+      <p>Worse than sounding unpolished, machine translation sometimes gets things factually wrong. Legal clauses, service terms, pricing tables, and technical specifications are exactly the content where errors cause real problems — and exactly where machine translators generate their most confident mistakes.</p>
+
+      <p>I have reviewed competitor websites for clients preparing to enter francophone markets. The consistent pattern: pages with obvious machine translation have higher exit rates from French-speaking visitors than from English-speaking ones. The visitors arrive, spend about twelve seconds on the page, and leave. They didn't find your service inadequate. They found your presentation of it inadequate.</p>
+
+      <p>Professional translation for a standard 10–15 page business website costs between $800 and $2,000 with a qualified industry-specialist translator. That is a one-time investment that keeps working for years. A single mid-size contract from a DRC procurement team covers that cost many times over.</p>
+
+      <h2>What "Bilingual Website" Actually Means</h2>
+
+      <p>A bilingual website is not a translated website. The distinction matters in practice.</p>
+
+      <p>Translation is converting words. A bilingual business website is a full parallel version of your commercial presence — same pages, same structure, same calls to action — designed to feel native to French-speaking visitors. When the French version is done well, a Congolese visitor does not feel they are reading a site built for someone else and adapted for them. They feel the site was built for them.</p>
+
+      <p>In technical terms, a proper bilingual website includes:</p>
+
+      <ul>
+        <li>Separate URL paths for each language (<code>/en/</code> and <code>/fr/</code>)</li>
+        <li>All navigation, buttons, form labels, and error messages translated — not just the main body text</li>
+        <li>French-language SEO: page titles, meta descriptions, and headings optimised for French search queries</li>
+        <li>Hreflang tags in the HTML head, telling Google precisely which page to show to which language audience</li>
+        <li>Cultural adaptation where needed — not just linguistic translation</li>
+      </ul>
+
+      <p>That last point deserves expansion. A service description that works for a Ugandan audience may need different framing for a Congolese one. The professional context is different. The regulatory environment is different. The relationship expectations are different. A good French website is not your English content with the words changed. It is your English content with the message recalibrated for the audience.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgPortrait}
+          alt="African businesswoman using a smartphone — mobile bilingual website for French-speaking East African market"
+          width={800}
+          height={1200}
+          class="article-img-portrait"
+          loading="lazy"
+        />
+        <figcaption>Over 80% of internet access in the EAC is via mobile. A bilingual site must work flawlessly at every screen size — and open in the right language before the visitor has to look for a switch.</figcaption>
+      </figure>
+
+      <h2>How Your Website Detects a Visitor's Language and Switches Automatically</h2>
+
+      <p>This is where most clients lean forward in the meeting, because the idea is elegant — and it matters more than most people realise.</p>
+
+      <p>Every modern browser and device stores the user's preferred language. An Android phone set to French sends that preference in the browser's HTTP headers with every website request. When a French-speaking visitor from Kinshasa loads your site, their device announces it: <em>this user prefers French</em>.</p>
+
+      <p>With a small piece of code in your website's head section, you can read that preference and redirect the visitor to the French version automatically. Silently. No language picker. No flag to click. No hunting. They arrive on a page that feels like it was made for them before they have had time to notice anything was different.</p>
+
+      <p>The technical implementation uses a synchronous JavaScript check that executes before the browser renders any visible content. This is crucial — a poorly implemented redirect shows a flash of English text before switching, which breaks the illusion. Done correctly, the visitor never sees the English version at all.</p>
+
+      <p>The logic is simple:</p>
+      <ol>
+        <li>Read the visitor's primary browser language preference</li>
+        <li>If it starts with "fr" — redirect to <code>/fr/</code></li>
+        <li>Otherwise — redirect to <code>/en/</code></li>
+        <li>A language switcher in the header lets users override the automatic choice</li>
+      </ol>
+
+      <p>Search engines are not affected. Google's Googlebot crawls both versions separately via the hreflang links, indexes them independently, and shows the right version to the right search user. Your English SEO and your French SEO work in parallel without interfering with each other.</p>
+
+      <p>Users who manually switch language can be remembered via a small cookie, so returning visitors land on their preferred version without being redirected again. This is the experience users expect from professional websites in 2026 — and it is entirely achievable on any modern web platform.</p>
+
+      <hr />
+
+      <div class="pull-quote">
+        "When her materials arrive in English only, a Congolese manager assumes the supplier hasn't thought about the DRC market yet."
+      </div>
+
+      <h2>What I Have Seen Working Across Francophone Africa</h2>
+
+      <p>I spent several years working with Dynapharm Africa, a pharmaceutical distribution company operating across West and Central Africa. The brief was to unify their ERP systems across three countries — Senegal, Sierra Leone, and Guinea — all operating different software, different chart of accounts, different reporting formats.</p>
+
+      <p>Every meeting, every training session, every system walkthrough had to work in French. The local teams were entirely capable professionals. They understood inventory management, procurement workflows, and financial controls at a sophisticated level. What they found genuinely disruptive was working with documentation and systems that weren't in their language. When we brought the ERP interfaces into French, staff adoption time dropped by about 40 per cent. Not because they were smarter — they already were — but because the language friction was gone.</p>
+
+      <p>One procurement manager in Conakry told me something I remember clearly. She said: "When a system or a document arrives in English, I start assuming I'll need to translate it myself before I can trust it. That's extra work I didn't agree to." She wasn't complaining. She was describing a practical reality.</p>
+
+      <p>Your website is the first document a potential Congolese client sees from you. If it arrives in English, they start their relationship with you carrying that extra work.</p>
+
+      <p>Since DRC joined the EAC, I have helped several East African businesses add French versions to their websites as part of broader digital strategy projects. The common outcome: French-language enquiries that were previously zero become a meaningful share of inbound leads within three to six months of launch, simply because the site now appears in French-language Google searches and converts those visitors into enquiries.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLandscape2}
+          alt="African business team reviewing reports and analytics — East African companies expanding into francophone market with bilingual websites"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>East African businesses that have built bilingual digital presences are winning contracts in DRC, Rwanda, and Burundi that English-only competitors cannot even see.</figcaption>
+      </figure>
+
+      <h2>Five Questions to Ask Before You Build Your French Version</h2>
+
+      <p>Not every business needs the same kind of bilingual website. Before starting, be clear on these:</p>
+
+      <ol>
+        <li><strong>Who is your French-speaking audience?</strong> DRC corporate procurement is different from a Rwandan retail consumer. The tone, the terminology, and the content priorities differ significantly. Knowing who you are writing for shapes every decision.</li>
+        <li><strong>Which pages need French first?</strong> You don't have to launch everything at once. Start with your homepage, your main services or products page, and your contact page. These three pages cover 80 per cent of what a new visitor needs to decide whether to reach out.</li>
+        <li><strong>Who will translate — and how specialised are they?</strong> A general French translator is better than nothing. A translator who knows your industry is significantly better. For technical, legal, or financial content, specialist translation is not optional.</li>
+        <li><strong>How will you handle French enquiries?</strong> If your website opens in French and a Congolese prospect sends you an enquiry in French, can you respond in French? If not, manage expectations on the contact page — even a brief "We work in English and French" builds confidence.</li>
+        <li><strong>What are your French SEO targets?</strong> The search terms your French-speaking clients use are different from the English ones. "Logiciel de gestion d'inventaire Kinshasa" is not the same as "inventory software Kinshasa." Build a basic French keyword list before you brief the translator, so the translation is written with search intent in mind.</li>
+      </ol>
+
+      <h2>The Competitive Window Is Still Open — But Not for Long</h2>
+
+      <p>Right now, the majority of East African business websites are English only. That means a French-speaking Congolese client searching for an East African software developer, logistics partner, or consultant will find very few results in their language. The competition for French-language search rankings in the EAC market is relatively light.</p>
+
+      <p>That will change. Every month, more East African businesses realise what the DRC market means and add French to their digital presence. The companies building bilingual websites now are capturing search rankings, building brand recognition, and closing contracts in a market their competitors haven't entered yet.</p>
+
+      <p>A year from now, that window will be smaller. Two years from now, it will be a crowded space. The advantage belongs to the companies that move first.</p>
+
+      <p>Your website is the least expensive salesperson you have. It works every hour of every day, doesn't require a travel budget, and can be in Kinshasa and Kampala simultaneously. Make it speak French, and it starts working for you in the largest francophone market in the world — one that is now, officially, part of your trading bloc.</p>
+
+      <hr />
+
+      <h2>How to Make Your Website Bilingual</h2>
+
+      <p>If you are ready to add a French version to your business website, the process follows a clear sequence:</p>
+
+      <ol>
+        <li><strong>Audit your current content.</strong> List every page, every form, and every piece of UI text that needs translation. Include navigation labels, button text, error messages, and email confirmations — not just the page body copy.</li>
+        <li><strong>Engage a professional translator.</strong> Brief them with your industry context, your target audience, and a glossary of your key service terms in both languages. Good translators ask questions. If yours doesn't, that's a signal.</li>
+        <li><strong>Build the French URL structure.</strong> Your French pages should live at <code>/fr/page-name/</code>. This separates them cleanly from the English version and gives you the ability to optimise each independently for search.</li>
+        <li><strong>Add hreflang tags.</strong> These tell Google the relationship between your English and French pages and ensure the right version ranks for the right search language.</li>
+        <li><strong>Implement the language detection redirect.</strong> The script in your site's head reads the visitor's browser language and routes them automatically. A language toggle in the header lets them switch if they prefer.</li>
+        <li><strong>Build French-specific SEO.</strong> Translate and optimise your page titles and meta descriptions for French search queries. These are different words, not translated words.</li>
+      </ol>
+
+      <p>If your website is built on a modern platform — Astro, WordPress, Webflow, or similar — adding a bilingual structure is a well-understood technical process. It is not a full rebuild. It is an expansion.</p>
+
+      <p>I build bilingual websites for East African businesses as part of my <a href="/en/services/">web development and digital strategy services</a>. If you are ready to stop being invisible to 50 million French-speaking consumers in your own trading bloc, <a href="/en/contact/">get in touch and we'll talk through what your specific site needs</a>.</p>
+
+      <p>The DRC market is open. The question is whether your website is.</p>
+
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-14 pt-8 border-t border-navy-100 flex gap-5 items-start">
+      <div class="w-14 h-14 rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center flex-shrink-0">
+        <span class="text-gold-400 font-bold text-lg">PB</span>
+      </div>
+      <div>
+        <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+        <p class="text-sm text-navy-500 mt-1">IT Consultant & Software Developer based in Kampala, Uganda. 15+ years building software, websites, and digital strategies for businesses across East and West Africa. Peter has worked in Uganda, Kenya, Tanzania, Rwanda, DRC, Senegal, Sierra Leone, and Guinea.</p>
+        <div class="flex gap-4 mt-3">
+          <a href="/en/about/" class="text-sm text-amber-accent hover:underline">About Peter</a>
+          <a href="/en/services/" class="text-sm text-amber-accent hover:underline">Services</a>
+          <a href="/en/contact/" class="text-sm text-amber-accent hover:underline">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Mid-article CTA Banner -->
+  <div class="bg-navy-900 py-10 md:py-14 geo-pattern relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-navy-900/95 to-navy-900/90"></div>
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-400 text-sm font-semibold uppercase tracking-wider mb-3">Ready to Add French to Your Website?</p>
+      <h2 class="text-2xl md:text-3xl font-bold text-warm-white mb-4">Stop Being Invisible to 50 Million French Speakers in Your Trading Bloc</h2>
+      <p class="text-navy-200 mb-7 leading-relaxed">I build bilingual business websites for East African companies — professional translation, automatic language detection, and full French SEO. Let's discuss what your site needs.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/en/contact/" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold-400 hover:bg-gold-500 text-navy-900 font-semibold rounded-lg transition-colors">
+          Get a Free Consultation
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/en/services/" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-gold-400/50 text-gold-300 hover:border-gold-400 font-semibold rounded-lg transition-colors">
+          View Web Services
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <CTASection lang={lang} />
+
+</BaseLayout>
+
+<script>
+  // Reading progress bar
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      bar.style.width = `${Math.min(progress, 100)}%`;
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  });
+</script>

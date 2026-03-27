@@ -1,0 +1,344 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/business-man-laptop-office-coffee.jpg';
+import imgLandscape1 from '@/assets/images/financial-forex-business-chart-report.jpg';
+import imgPortrait from '@/assets/images/african-american-business-woman-with-phone.jpg';
+import imgLandscape2 from '@/assets/images/african-entrepreneur-team-analyzing-business-reports.jpg';
+
+const lang: Lang = 'fr';
+const title = "Pourquoi Votre Site Web Africain a Besoin d'une Version Anglaise";
+const description = "Pour concurrencer à l'échelle mondiale, les entreprises africaines francophones ont besoin d'un site web bilingue. Voici comment construire un site français-anglais qui convertit.";
+const date = "2026-03-27";
+const category = "Stratégie Numérique";
+const readTime = "12 min de lecture";
+const slug = "sites-web-africains-version-anglaise";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/fr/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "fr-FR",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/fr/blog/${slug}/`
+  }
+};
+---
+
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Style D: Warm-cream editorial avec accent navy et bandeau initial -->
+  <section class="bg-warm-cream pt-24 md:pt-28 pb-0">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Bandeau d'accroche -->
+      <div class="border-l-4 border-amber-accent pl-5 mb-8 max-w-2xl">
+        <p class="text-amber-accent font-semibold text-sm uppercase tracking-widest mb-1">Point de vue professionnel</p>
+        <p class="text-navy-700 text-lg italic leading-relaxed">"Votre site web est peut-être parfait en français. Mais en dehors de l'Afrique francophone, personne ne peut vous lire."</p>
+      </div>
+      <div class="max-w-3xl pb-10">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="px-3 py-1 text-xs font-semibold bg-amber-accent text-white rounded-full uppercase tracking-wider">{category}</span>
+          <span class="text-sm text-navy-400">{readTime}</span>
+          <span class="text-sm text-navy-400">·</span>
+          <time class="text-sm text-navy-400" datetime={date}>27 mars 2026</time>
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-navy-900 leading-tight">
+          Pourquoi Votre Site Web Africain a Besoin d'une Version Anglaise
+        </h1>
+        <p class="mt-5 text-lg md:text-xl text-navy-600 leading-relaxed max-w-2xl">
+          L'Afrique francophone représente une économie de plus de 600 milliards de dollars. Mais les marchés anglophones — Londres, Lagos, Nairobi, New York — représentent dix fois plus. Voici pourquoi votre présence numérique doit parler les deux langues.
+        </p>
+        <div class="mt-5 flex items-center gap-3 text-sm text-navy-500">
+          <span>Par <a href="/fr/about/" class="text-amber-accent hover:underline font-medium">Peter Bamuhigire</a></span>
+          <span>·</span>
+          <span>Consultant IT & Développeur, Kampala</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image héros -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+    <div class="rounded-2xl overflow-hidden shadow-xl h-72 md:h-[480px]">
+      <Image
+        src={heroImg}
+        alt="Professionnel africain travaillant sur son ordinateur portable dans un café — site web bilingue français anglais pour entreprises africaines"
+        width={2222}
+        height={1481}
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+    </div>
+  </div>
+
+  <!-- Retour au Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <a href="/fr/blog/" class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Retour au blog
+    </a>
+  </div>
+
+  <!-- Corps de l'article -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-warm prose-dropcap">
+
+      <p>Un responsable achats de Lagos cherchait un partenaire technologique pour son groupe de distribution pharmaceutique. Budget disponible : 250 000 dollars. Il avait identifié trois entreprises candidates — une en Côte d'Ivoire, une au Cameroun, une en Ouganda. Les deux premières avaient des sites web uniquement en français. La troisième, l'entreprise ougandaise, avait un site bilingue anglais-français.</p>
+
+      <p>Il a contacté l'entreprise ougandaise en premier. Non pas parce qu'elle était meilleure. Mais parce que c'était la seule dont il pouvait lire le site sans effort.</p>
+
+      <p>Les deux entreprises francophones ne sauront jamais qu'elles ont perdu ce marché. Leur site web n'était pas visible pour ce client. Pas parce que leurs services étaient insuffisants. Parce que leur présence numérique était invisible dans sa langue.</p>
+
+      <p>Ce scénario se répète chaque semaine dans les marchés anglophones d'Afrique, d'Europe et d'Amérique du Nord. Les entreprises africaines francophones ont des expertises réelles, des capacités techniques sérieuses et des offres compétitives — mais leur site web les confine au seul marché francophone, qui représente environ 15 % de l'économie africaine totale.</p>
+
+      <p>Cet article explique pourquoi votre entreprise a besoin d'une version anglaise de son site web, comment construire cette présence de façon professionnelle, et comment faire en sorte que votre site s'ouvre automatiquement dans la bonne langue selon l'appareil du visiteur.</p>
+
+      <hr />
+
+      <h2>La Géographie Économique que Votre Site Web Ignore</h2>
+
+      <p>Voici une réalité que peu d'entrepreneurs francophones ont mise en chiffres :</p>
+
+      <p>L'Afrique anglophone — Nigeria, Kenya, Ghana, Afrique du Sud, Tanzanie, Ouganda, Éthiopie — représente à elle seule plus de <strong>2,5 milliards de dollars de PIB cumulé</strong> et abrite plus de <strong>700 millions de personnes</strong>. Le Nigeria seul a un PIB supérieur à celui de toute l'Afrique francophone réunie.</p>
+
+      <p>Au niveau mondial, l'anglais est la langue des affaires internationales. Voici les marchés auxquels votre site web francophone ne peut pas accéder sans une version anglaise :</p>
+
+      <ul>
+        <li><strong>Le marché britannique</strong> — destination naturelle pour les exportateurs africains, avec une diaspora africaine importante et des relations commerciales bien établies avec le continent</li>
+        <li><strong>Le marché nord-américain</strong> — États-Unis et Canada anglophone, avec des programmes d'investissement en Afrique qui cherchent activement des partenaires locaux</li>
+        <li><strong>La Communauté d'Afrique de l'Est (EAC)</strong> — depuis l'adhésion de la RDC en 2022, un bloc de plus de 340 millions de personnes dont la majorité conduit ses affaires en anglais</li>
+        <li><strong>Les institutions financières internationales</strong> — Banque mondiale, IFC, AFD, USAID, tous leurs processus de sourcing et d'appel d'offres fonctionnent en anglais</li>
+        <li><strong>Les plateformes B2B mondiales</strong> — LinkedIn, Upwork, les marketplaces spécialisées : l'anglais est la lingua franca du commerce numérique international</li>
+      </ul>
+
+      <p>Un site web uniquement en français vous ferme l'accès à tous ces marchés. Pas parce que vos concurrents anglophones sont meilleurs. Parce qu'ils sont lisibles.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLandscape1}
+          alt="Graphiques de données économiques et financières — marchés anglophones africains et internationaux accessibles avec un site web bilingue"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>L'Afrique anglophone représente environ 85 % du PIB africain total. Un site web bilingue est le passeport numérique qui ouvre l'accès à ces marchés.</figcaption>
+      </figure>
+
+      <h2>Ce que Vos Concurrents Anglophones Font Déjà</h2>
+
+      <p>Regardons les choses objectivement. En ce moment, une entreprise kenyane de logistique, une startup ghanéenne de fintech et une société sud-africaine de conseil IT ont toutes le même avantage structurel sur vous : leur site web est en anglais par défaut, ce qui leur donne accès à 90 % des requêtes de recherche professionnelles mondiales.</p>
+
+      <p>Ils ne sont pas nécessairement plus compétents. Ils ne proposent pas nécessairement de meilleures conditions. Mais ils sont trouvables. Et dans l'économie numérique de 2026, être trouvable est souvent plus important qu'être le meilleur.</p>
+
+      <p>J'ai travaillé avec des équipes commerciales dans plusieurs pays francophones d'Afrique. Le constat est constant : leurs commerciaux les plus efficaces parlent anglais, parce que leurs clients les plus rentables viennent souvent de marchés anglophones ou internationaux. Leurs sites web, eux, restent entièrement en français — ce qui crée une incohérence entre la stratégie commerciale réelle et la vitrine numérique.</p>
+
+      <p>Votre site web devrait refléter la réalité de vos ambitions commerciales, pas les limiter.</p>
+
+      <h2>Le Piège de la Traduction Automatique</h2>
+
+      <p>La réaction la plus fréquente que je rencontre : "Nous avons installé un plugin de traduction automatique. Notre site est disponible en anglais." Je comprends l'intention. L'exécution, malheureusement, produit souvent l'effet inverse de celui recherché.</p>
+
+      <p>Les outils de traduction automatique — Google Translate, DeepL en mode automatique, les plugins WordPress — font un travail acceptable sur les phrases courantes. Ils échouent sur la terminologie sectorielle spécialisée. Ils échouent sur le ton professionnel. Ils transforment un texte de présentation soigné en quelque chose qui ressemble à une première version brouillon passée dans un traducteur de voyage.</p>
+
+      <p>Un acheteur britannique, un responsable RH canadien ou un DG nigérian qui lit votre site web traduit automatiquement le sait immédiatement. Il n'a pas besoin de comparer avec l'original. Le résultat porte la marque d'une traduction machine : des formulations maladroites, des termes techniques mal rendus, une absence totale de fluidité naturelle.</p>
+
+      <p>Pire encore : les erreurs de traduction automatique se concentrent précisément là où elles font le plus de dégâts — dans les descriptions de services, les clauses contractuelles et les conditions tarifaires. Ce sont exactement les zones où un client potentiel doit avoir confiance dans la précision de ce qu'il lit.</p>
+
+      <p>Le coût d'une traduction professionnelle pour un site web de 10 à 15 pages — avec un traducteur spécialisé dans votre secteur — se situe entre 600 000 et 1 500 000 FCFA selon la complexité du contenu. C'est un investissement ponctuel qui travaille pour vous pendant des années. Un seul contrat décroché grâce à la version anglaise de votre site couvre cet investissement plusieurs fois.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgPortrait}
+          alt="Femme d'affaires africaine utilisant son téléphone mobile — site web bilingue français anglais accessible sur mobile pour les marchés anglophones"
+          width={800}
+          height={1200}
+          class="article-img-portrait"
+          loading="lazy"
+        />
+        <figcaption>Plus de 75 % des visites professionnelles se font via mobile. Votre version anglaise doit être parfaitement lisible sur tous les appareils — et s'ouvrir automatiquement pour les visiteurs anglophones.</figcaption>
+      </figure>
+
+      <h2>Ce que Signifie Réellement un Site Web Bilingue</h2>
+
+      <p>Un site web bilingue n'est pas un site traduit. Cette distinction est importante en pratique.</p>
+
+      <p>Traduire, c'est convertir des mots d'une langue à une autre. Un site web bilingue professionnel, c'est une présence commerciale complète et parallèle — mêmes pages, même structure, mêmes appels à l'action — mais conçue pour que le visiteur anglophone sente que ce site a été fait pour lui, pas adapté pour lui après coup.</p>
+
+      <p>En pratique, un site bilingue bien construit comprend :</p>
+
+      <ul>
+        <li>Des chemins d'URL séparés pour chaque langue (<code>/fr/</code> en version principale, <code>/en/</code> en version secondaire)</li>
+        <li>Toute l'interface traduite : navigation, boutons, formulaires, messages d'erreur, confirmations</li>
+        <li>Un référencement naturel (SEO) optimisé pour les requêtes en anglais — ce sont des mots différents, pas des mots traduits</li>
+        <li>Des balises hreflang dans le code HTML, qui indiquent à Google quelle version montrer à quel utilisateur selon sa langue</li>
+        <li>Une adaptation culturelle là où c'est nécessaire — pas seulement une traduction linguistique</li>
+      </ul>
+
+      <p>Ce dernier point mérite qu'on s'y arrête. Une description de service efficace pour un client abidjanais peut nécessiter un cadrage différent pour un prospect londonien ou nairobian. Le contexte professionnel est différent. Les attentes en matière de preuve sociale sont différentes. Les décisions d'achat reposent sur des signaux différents.</p>
+
+      <p>Un bon site en anglais ne se contente pas de reprendre votre contenu français avec les mots changés. Il recalibre le message pour un lecteur anglophone.</p>
+
+      <h2>Le Modèle Recommandé : Français en Priorité, Anglais sur Invitation Automatique</h2>
+
+      <p>Voici le modèle que je recommande à mes clients francophones, et c'est exactement celui que nous avons mis en place sur ce site :</p>
+
+      <p><strong>Le français est la langue principale.</strong> Votre site web s'ouvre en français par défaut pour les appareils dont la langue système est le français. Votre contenu le plus riche, le plus soigné et le plus développé est en français. C'est votre marché naturel, votre audience principale, votre territoire de prédilection.</p>
+
+      <p><strong>L'anglais s'ouvre automatiquement pour les appareils anglophones.</strong> Chaque navigateur et chaque appareil mobile communique la langue préférée de l'utilisateur au serveur lors de chaque requête. Un simple script dans l'en-tête de votre site lit cette préférence et redirige silencieusement le visiteur vers la version anglaise, sans qu'il ait à chercher un bouton ou un drapeau.</p>
+
+      <p>La redirection est invisible. Elle s'exécute avant que le navigateur affiche quoi que ce soit à l'écran. L'utilisateur anglophone arrive directement sur une page en anglais — il ne voit jamais la version française. L'utilisateur francophone arrive directement sur une page en français. Aucune friction. Aucun moment de confusion.</p>
+
+      <p>Un sélecteur de langue dans l'en-tête permet à tout utilisateur de changer manuellement de version s'il le souhaite. Un visiteur francophone peut consulter la version anglaise. Un visiteur anglophone peut consulter la version française. La redirection automatique est une aide, pas une contrainte.</p>
+
+      <hr />
+
+      <div class="pull-quote">
+        "Votre site web est votre commercial le moins coûteux — disponible 24h/24, sans frais de déplacement, capable d'être à Dakar et à Londres simultanément."
+      </div>
+
+      <h2>Ce que J'ai Observé sur le Terrain en Afrique Francophone et Anglophone</h2>
+
+      <p>J'ai travaillé pendant plusieurs années avec Dynapharm Africa, une entreprise de distribution pharmaceutique présente dans plusieurs pays d'Afrique de l'Ouest et Centrale. La mission consistait à unifier leurs systèmes ERP dans trois pays — Sénégal, Sierra Leone et Guinée — chacun utilisant des logiciels différents, des plans comptables différents, des formats de reporting différents.</p>
+
+      <p>Ce qui m'a le plus frappé n'était pas technique. C'était commercial. Les équipes commerciales locales avaient des difficultés réelles à conclure des partenariats avec des fournisseurs anglophones — non pas parce que leur offre était insuffisante, mais parce que leur documentation de présentation, leurs propositions commerciales et leur présence en ligne étaient entièrement en français. Leurs interlocuteurs anglophones devaient faire un effort supplémentaire pour comprendre ce qu'ils proposaient.</p>
+
+      <p>Quand nous avons développé des supports de présentation bilingues — et plus tard des versions anglaises de leurs plateformes numériques — les résultats ont été immédiats. Des partenariats avec des fournisseurs au Kenya et en Ouganda se sont concrétisés en quelques semaines, alors qu'ils stagnaient depuis des mois. La compétence était déjà là. La lisibilité manquait.</p>
+
+      <p>Cette expérience m'a confirmé quelque chose que j'observe désormais systématiquement : pour une entreprise africaine francophone, la version anglaise de son site web n'est pas un luxe ou une ambition lointaine. C'est un investissement commercial direct, avec un retour mesurable.</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLandscape2}
+          alt="Équipe d'entrepreneurs africains analysant des rapports commerciaux — stratégie de site web bilingue français-anglais pour l'expansion internationale"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Les entreprises africaines francophones qui ont construit une présence numérique bilingue accèdent à des marchés et des partenariats que leurs concurrents monolingues ne peuvent pas atteindre.</figcaption>
+      </figure>
+
+      <h2>Cinq Questions à Poser Avant de Construire Votre Version Anglaise</h2>
+
+      <p>Toutes les entreprises n'ont pas besoin du même type de site web bilingue. Avant de commencer, clarifiez ces points :</p>
+
+      <ol>
+        <li><strong>Qui est votre audience anglophone cible ?</strong> Un acheteur nigérian dans l'industrie pétrolière, un responsable RH britannique, et un entrepreneur kényan dans la tech lisent l'anglais — mais leurs attentes, leur vocabulaire professionnel et leurs critères de décision sont très différents. Savoir pour qui vous écrivez oriente toutes les décisions.</li>
+        <li><strong>Quelles pages traduire en premier ?</strong> Vous n'avez pas besoin de tout traduire d'un seul coup. Commencez par la page d'accueil, la page principale de services ou produits, et la page de contact. Ces trois pages couvrent 80 % de ce qu'un nouveau visiteur a besoin pour décider de vous contacter.</li>
+        <li><strong>Qui traduit, et quelle est sa spécialisation sectorielle ?</strong> Un traducteur généraliste est mieux que rien. Un traducteur qui maîtrise votre secteur est significativement meilleur. Pour du contenu technique, juridique ou financier, la spécialisation n'est pas optionnelle.</li>
+        <li><strong>Comment allez-vous gérer les demandes en anglais ?</strong> Si votre site s'ouvre en anglais pour un prospect londonien et qu'il vous envoie un e-mail en anglais, êtes-vous en mesure de répondre en anglais ? Si non, gérez les attentes sur la page de contact. Même un bref "Nous travaillons en français et en anglais" renforce la confiance.</li>
+        <li><strong>Quels sont vos objectifs SEO en anglais ?</strong> Les requêtes de recherche de vos clients anglophones sont différentes de vos requêtes francophones. "IT consulting Abidjan" et "conseil informatique Abidjan" sont deux requêtes distinctes, pour deux audiences différentes. Construisez une liste de mots-clés anglais avant de briefer le traducteur, pour que la traduction soit écrite avec l'intention de recherche en tête.</li>
+      </ol>
+
+      <h2>La Fenêtre d'Opportunité est Encore Ouverte</h2>
+
+      <p>En ce moment, la majorité des sites web d'entreprises africaines francophones sont entièrement en français. Cela signifie qu'un prospect anglophone qui recherche un consultant en gestion à Abidjan, un prestataire logistique à Douala, ou un développeur de logiciels à Dakar trouvera très peu de résultats dans sa langue.</p>
+
+      <p>La concurrence pour les classements de recherche en anglais dans les marchés africains francophones est, à ce jour, relativement faible. Les entreprises qui construisent leur présence anglophone maintenant capturent ces positions en premier.</p>
+
+      <p>Dans douze mois, cette fenêtre sera plus étroite. Dans deux ans, ce sera un espace concurrentiel. L'avantage appartient à ceux qui bougent en premier.</p>
+
+      <p>Votre site web est votre commercial le moins coûteux. Il travaille à toutes les heures, sans frais de déplacement, sans congés, capable d'être à Dakar et à Londres au même moment. Donnez-lui l'anglais — et il commence à travailler pour vous dans des marchés que vos concurrents n'ont pas encore ouverts.</p>
+
+      <hr />
+
+      <h2>Comment Rendre Votre Site Bilingue Français-Anglais</h2>
+
+      <p>Si vous êtes prêt à ajouter une version anglaise à votre site web, voici la séquence recommandée :</p>
+
+      <ol>
+        <li><strong>Auditez votre contenu existant.</strong> Listez toutes les pages, tous les formulaires, et tous les éléments d'interface qui nécessitent une traduction. Incluez la navigation, les boutons, les messages d'erreur, et les confirmations — pas uniquement le corps des pages.</li>
+        <li><strong>Engagez un traducteur professionnel.</strong> Briefez-le sur votre secteur, votre audience cible, et un glossaire de vos termes métiers dans les deux langues. Un bon traducteur pose des questions. Si le vôtre n'en pose pas, c'est un signal d'alerte.</li>
+        <li><strong>Construisez la structure d'URL anglaise.</strong> Vos pages anglaises doivent se trouver à <code>/en/nom-de-page/</code>. Cela les sépare clairement de la version française et vous permet d'optimiser chacune indépendamment pour le référencement.</li>
+        <li><strong>Ajoutez les balises hreflang.</strong> Elles indiquent à Google la relation entre vos pages françaises et anglaises, et garantissent que la bonne version est classée pour la bonne langue de recherche.</li>
+        <li><strong>Implémentez la détection automatique de langue.</strong> Le script dans l'en-tête de votre site lit la langue du navigateur du visiteur et le redirige automatiquement. Un sélecteur de langue dans l'en-tête lui permet de changer s'il le souhaite.</li>
+        <li><strong>Construisez votre SEO anglophone.</strong> Traduisez et optimisez vos titres de pages et méta-descriptions pour les requêtes de recherche en anglais. Ce sont des mots différents — pas des mots traduits.</li>
+      </ol>
+
+      <p>Si votre site est construit sur une plateforme moderne — Astro, WordPress, Webflow, ou similaire — ajouter une structure bilingue est un processus technique bien documenté. Ce n'est pas une refonte complète. C'est une extension.</p>
+
+      <p>Je construis des <a href="/fr/services/">sites web bilingues pour des entreprises africaines</a> dans le cadre de mes services de développement web et de stratégie numérique. Si vous souhaitez que votre entreprise devienne visible dans les marchés anglophones, <a href="/fr/contact/">contactez-moi et nous discuterons de ce que votre site nécessite concrètement</a>.</p>
+
+      <p>Le marché anglophone est ouvert. La question est de savoir si votre site web peut y entrer.</p>
+
+    </div>
+
+    <!-- Biographie de l'auteur -->
+    <div class="mt-14 pt-8 border-t border-navy-100 flex gap-5 items-start">
+      <div class="w-14 h-14 rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center flex-shrink-0">
+        <span class="text-gold-400 font-bold text-lg">PB</span>
+      </div>
+      <div>
+        <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+        <p class="text-sm text-navy-500 mt-1">Consultant IT et développeur de logiciels basé à Kampala, Ouganda. Plus de 15 ans d'expérience dans la construction de logiciels, sites web et stratégies numériques pour des entreprises en Afrique de l'Est et de l'Ouest. Peter a travaillé en Ouganda, Kenya, Tanzanie, Rwanda, RDC, Sénégal, Sierra Leone et Guinée.</p>
+        <div class="flex gap-4 mt-3">
+          <a href="/fr/about/" class="text-sm text-amber-accent hover:underline">À propos</a>
+          <a href="/fr/services/" class="text-sm text-amber-accent hover:underline">Services</a>
+          <a href="/fr/contact/" class="text-sm text-amber-accent hover:underline">Nous contacter</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Bannière CTA intermédiaire -->
+  <div class="bg-navy-900 py-10 md:py-14 geo-pattern relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-navy-900/95 to-navy-900/90"></div>
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-400 text-sm font-semibold uppercase tracking-wider mb-3">Prêt à Ajouter l'Anglais à Votre Site ?</p>
+      <h2 class="text-2xl md:text-3xl font-bold text-warm-white mb-4">Rendez Votre Entreprise Visible dans les Marchés Anglophones d'Afrique et au-delà</h2>
+      <p class="text-navy-200 mb-7 leading-relaxed">Je construis des sites web bilingues français-anglais pour des entreprises africaines — traduction professionnelle, détection automatique de la langue, et SEO complet dans les deux langues. Discutons de ce que votre site nécessite.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/fr/contact/" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold-400 hover:bg-gold-500 text-navy-900 font-semibold rounded-lg transition-colors">
+          Obtenir une Consultation Gratuite
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/fr/services/" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-gold-400/50 text-gold-300 hover:border-gold-400 font-semibold rounded-lg transition-colors">
+          Voir les Services Web
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <CTASection lang={lang} />
+
+</BaseLayout>
+
+<script>
+  // Barre de progression de lecture
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      bar.style.width = `${Math.min(progress, 100)}%`;
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  });
+</script>

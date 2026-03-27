@@ -1,40 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>Redirecting…</title>
-  <!--
-    Smart language redirect — zero flash.
-    A synchronous <script> in <head> fires BEFORE the browser paints anything.
-    Reads the visitor's browser/device language and routes them to the right version:
-      French device  → /fr/
-      All other      → /en/
-    The meta-refresh below is a no-JS fallback only (defaults to French).
-  -->
-  <script is:inline>
-    (function () {
-      var langs = [];
-      if (navigator.languages && navigator.languages.length) {
-        langs = Array.prototype.slice.call(navigator.languages);
-      } else if (navigator.language) {
-        langs = [navigator.language];
-      } else if (navigator.userLanguage) {
-        langs = [navigator.userLanguage];
-      }
-      var primary = (langs[0] || 'en').toLowerCase().slice(0, 2);
-      window.location.replace(primary === 'fr' ? '/fr/' : '/en/');
-    })();
-  </script>
-  <!-- No-JS fallback: default to French -->
-  <meta http-equiv="refresh" content="0;url=/fr/" />
-  <link rel="canonical" href="https://techguypeter.com/fr/" />
-</head>
-<body>
-  <noscript>
-    <p>
-      <a href="/fr/">Continuer en français</a> &nbsp;|&nbsp;
-      <a href="/en/">Continue in English</a>
-    </p>
-  </noscript>
-</body>
+---
+// src/pages/index.astro
+// Root redirect — detects browser language, sends to /fr/ or /en/
+// No body content: prevents any flash before redirect fires
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <script is:inline>
+      (function () {
+        var langs = [];
+        if (navigator.languages && navigator.languages.length) {
+          langs = Array.prototype.slice.call(navigator.languages);
+        } else if (navigator.language) {
+          langs = [navigator.language];
+        } else if (navigator.userLanguage) {
+          langs = [navigator.userLanguage];
+        }
+        // startsWith('fr') catches fr, fr-FR, fr-BE, fr-CD, fr-CI, fr-CM, fr-SN, fr-RW …
+        var lang = (langs[0] || 'en').toLowerCase();
+        var dest = lang.startsWith('fr') ? '/fr/' : '/en/';
+        window.location.replace(dest);
+      })();
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0;url=/en/" />
+    </noscript>
+  </head>
+  <body></body>
 </html>

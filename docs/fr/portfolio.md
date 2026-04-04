@@ -116,6 +116,33 @@ Une sélection de produits développés, de projets open-source auxquels Peter a
 
 ---
 
+### Medic8
+
+**Client** : Produit propriétaire — Chwezi Core Concepts
+
+**Catégorie** : SaaS / Gestion de la santé
+
+**Résumé** : Système de gestion hospitalière pour cliniques et hôpitaux — dossiers patients, rendez-vous, facturation, pharmacie et gestion de laboratoire sur une seule plateforme.
+
+**Description complète** : Medic8 est un système complet de gestion hospitalière développé par Chwezi Core Concepts sous la direction technique de Peter Bamuhigire. La plateforme propose une suite intégrée de modules conçus pour rationaliser les opérations des cliniques et hôpitaux — de l'enregistrement des patients et des dossiers de santé électroniques à la planification des rendez-vous, en passant par la facturation, la dispensation pharmaceutique et la gestion de laboratoire. Conçu pour répondre aux défis opérationnels spécifiques des établissements de santé en Afrique et au-delà, Medic8 permet aux professionnels de santé de se concentrer sur les soins aux patients plutôt que sur la charge administrative. Le système prend en charge le déploiement multi-établissements, permettant aux groupes hospitaliers de gérer plusieurs sites depuis une plateforme centralisée.
+
+**Points clés** :
+- Dossiers de santé électroniques et enregistrement des patients
+- Planification des rendez-vous et gestion des files d'attente
+- Facturation avec prise en charge des assurances
+- Dispensation pharmaceutique et gestion des stocks
+- Commande d'analyses de laboratoire et suivi des résultats
+- Déploiement multi-établissements pour les groupes hospitaliers
+
+**Stack technique** : PHP, MySQL, application web
+
+**Lien** : https://medic8.app
+
+**Photos** :
+- MEDIC8-01.jpg — Tableau de bord du système de gestion hospitalière Medic8
+
+---
+
 ## Projets open-source
 
 ---

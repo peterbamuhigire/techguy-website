@@ -324,6 +324,44 @@
       "category": "websites",
       "alt_en": "TechGuy Peter website screenshot",
       "alt_fr": "Capture d'\u00c3\u00a9cran du site web TechGuy Peter"
+    },
+    "website-medic8.app.jpg": {
+      "width": 2222,
+      "height": 1461,
+      "orientation": "landscape",
+      "description": "Medic8 healthcare management system website screenshot — patient records, appointments, billing, pharmacy and laboratory management",
+      "category": "websites",
+      "alt_en": "Medic8 healthcare management system website screenshot",
+      "alt_fr": "Capture d'\u00e9cran du site web du syst\u00e8me de gestion hospitalière Medic8"
+    }
+  },
+  "portfolio_medic8": {
+    "MEDIC8-01.jpg": {
+      "width": 2222,
+      "height": 1461,
+      "orientation": "landscape",
+      "description": "Medic8 healthcare management system dashboard screenshot",
+      "category": "portfolio",
+      "alt_en": "Medic8 healthcare management system dashboard",
+      "alt_fr": "Tableau de bord du syst\u00e8me de gestion hospitalière Medic8"
+    },
+    "MEDIC8-02.jpg": {
+      "width": 2222,
+      "height": 1481,
+      "orientation": "landscape",
+      "description": "Heart-shaped stethoscope with medical record on blue uniform — healthcare technology concept",
+      "category": "portfolio",
+      "alt_en": "Stethoscope with medical record representing healthcare management technology",
+      "alt_fr": "St\u00e9thoscope avec dossier m\u00e9dical repr\u00e9sentant la technologie de gestion de la sant\u00e9"
+    },
+    "MEDIC8-03.jpg": {
+      "width": 2222,
+      "height": 1478,
+      "orientation": "landscape",
+      "description": "Male nurse working at a clinic — healthcare professional using digital systems",
+      "category": "portfolio",
+      "alt_en": "Healthcare professional working at a clinic with digital management systems",
+      "alt_fr": "Professionnel de sant\u00e9 travaillant dans une clinique avec des syst\u00e8mes de gestion num\u00e9riques"
     }
   },
   "blog_images_march5": {

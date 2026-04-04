@@ -116,6 +116,33 @@ A selection of products built, open-source projects contributed, and consulting 
 
 ---
 
+### Medic8
+
+**Client**: Proprietary product — Chwezi Core Concepts
+
+**Category**: SaaS / Healthcare Management
+
+**Short Summary**: A healthcare management system for clinics and hospitals — patient records, appointments, billing, pharmacy, and laboratory management in one platform.
+
+**Full Description**: Medic8 is a comprehensive healthcare management system developed by Chwezi Core Concepts under the lead development of Peter Bamuhigire. The platform provides an integrated suite of modules designed to streamline the operations of clinics and hospitals — from patient registration and electronic health records to appointment scheduling, billing, pharmacy dispensing, and laboratory management. Built to address the specific operational challenges faced by healthcare facilities in East Africa and beyond, Medic8 enables medical professionals to focus on patient care rather than administrative burden. The system supports multi-facility deployment, ensuring healthcare groups can manage multiple locations from a centralised platform.
+
+**Key Highlights**:
+- Electronic health records and patient registration
+- Appointment scheduling and queue management
+- Billing and invoicing with insurance support
+- Pharmacy dispensing and stock management
+- Laboratory test ordering and results tracking
+- Multi-facility deployment for healthcare groups
+
+**Tech Stack**: PHP, MySQL, web-based
+
+**Link**: https://medic8.app
+
+**Photos**:
+- MEDIC8-01.jpg — Medic8 healthcare management system dashboard
+
+---
+
 ## Open-Source Projects
 
 ---

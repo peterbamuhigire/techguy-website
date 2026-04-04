@@ -63,34 +63,6 @@ A selection of products built, open-source projects contributed, and consulting 
 
 ---
 
-### Chwezi Server Manager
-
-**Client**: Proprietary product — Chwezi Digital Solutions
-
-**Category**: DevOps / Server Administration
-
-**Short Summary**: A self-hosted server management tool providing complete server administration from a single dashboard.
-
-**Full Description**: Chwezi Server Manager is a self-hosted web application that simplifies server administration tasks into a clean, unified interface. The tool handles domain management, SSL certificate provisioning, database operations, scheduled task management, activity monitoring, Git repository connections, and WordPress deployment — all from one dashboard. Built to address the practical needs of developers and system administrators who manage their own infrastructure, the tool reduces the complexity of server management without requiring expensive third-party hosting platforms.
-
-**Key Highlights**:
-- Domain management and DNS configuration
-- SSL certificate provisioning and renewal
-- Database operations and backup management
-- Scheduled task management
-- Activity monitoring and logging
-- Git connections and WordPress deployment
-- Complete server administration from a single dashboard
-
-**Tech Stack**: PHP
-
-**Link**: https://github.com/peterbamuhigire/server-manager
-
-**Photos**:
-- [SCREENSHOT NEEDED — Server Manager dashboard]
-
----
-
 ### Longhorn ERP
 
 **Client**: Flagship product — Chwezi Core Systems

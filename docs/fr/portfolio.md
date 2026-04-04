@@ -63,34 +63,6 @@ Une sélection de produits développés, de projets open-source auxquels Peter a
 
 ---
 
-### Chwezi Server Manager
-
-**Client** : Produit propriétaire — Chwezi Digital Solutions
-
-**Catégorie** : DevOps / Administration de serveurs
-
-**Résumé** : Outil auto-hébergé de gestion de serveurs offrant une administration complète depuis un tableau de bord unique.
-
-**Description complète** : Chwezi Server Manager est une application web auto-hébergée qui simplifie les tâches d'administration de serveurs au sein d'une interface claire et unifiée. L'outil prend en charge la gestion des domaines, l'approvisionnement des certificats SSL, les opérations de base de données, la gestion des tâches planifiées, la surveillance de l'activité, les connexions aux dépôts Git et le déploiement WordPress — le tout depuis un seul tableau de bord. Conçu pour répondre aux besoins pratiques des développeurs et administrateurs systèmes qui gèrent leur propre infrastructure, cet outil réduit la complexité de l'administration serveur sans nécessiter de plateformes d'hébergement tierces coûteuses.
-
-**Points clés** :
-- Gestion des domaines et configuration DNS
-- Approvisionnement et renouvellement des certificats SSL
-- Opérations de base de données et gestion des sauvegardes
-- Gestion des tâches planifiées
-- Surveillance et journalisation de l'activité
-- Connexions Git et déploiement WordPress
-- Administration complète du serveur depuis un tableau de bord unique
-
-**Stack technique** : PHP
-
-**Lien** : https://github.com/peterbamuhigire/server-manager
-
-**Photos** :
-- [SCREENSHOT NEEDED — Server Manager dashboard]
-
----
-
 ### Longhorn ERP
 
 **Client** : Produit phare — Chwezi Core Systems

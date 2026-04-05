@@ -115,6 +115,38 @@ A selection of products built, open-source projects contributed, and consulting 
 
 ---
 
+### Academia Pro
+
+**Client**: Proprietary product — Chwezi Core Systems
+
+**Category**: SaaS / EdTech / School Management
+
+**Short Summary**: An integrated school management system and e-learning platform purpose-built for East African schools — automating fee collection, examinations, attendance, payroll, and more in a single platform.
+
+**Full Description**: Academia Pro is a multi-tenant SaaS platform developed by Chwezi Core Systems, with Peter Bamuhigire as lead developer, specifically designed for the operational needs of Ugandan and East African schools. The platform automates core school operations including fee collection via mobile money (MTN and Airtel), exam grading aligned with national standards, three-term billing cycles, and ministry-compliant enrolment returns. The system provides differentiated dashboards for administrators, teachers, students, parents, and bursars, with role-based access control throughout. A companion Android application supports low-bandwidth environments, optimised for 2G/3G connectivity — a critical requirement for many schools across the region. The platform also includes Luganda localisation, making it accessible to Ugandan users in their local language.
+
+**Key Highlights**:
+- 12 core modules: Student Information, Fees Collection, Attendance, Examinations, Academics Setup, Front Office, Notice Board, Homework, Download Centre, Certificates & IDs, Calendar & To-do, Reports & Analytics
+- Mobile money integration (MTN, Airtel) for automated fee collection and receipts
+- National exam format pre-configuration with customisable internal grading scales
+- Ministry-compliant enrolment returns and analytics dashboards
+- PAYE, NSSF, and LST statutory payroll deductions
+- Multi-campus management available in Pro tier
+- Android app optimised for low-bandwidth (2G/3G) environments
+- Luganda localisation for local language accessibility
+- Three-tier pricing: Starter, Growth, Pro with add-on modules
+
+**Tech Stack**: PHP, MySQL, Android (web-based with Android app)
+
+**Link**: https://academiapro.app
+
+**Photos**:
+- ACADEMIAPRO-01.jpg — Academia Pro school management system dashboard
+- ACADEMIAPRO-02.jpg — Student using e-learning platform
+- ACADEMIAPRO-03.jpg — E-learning technology concept
+
+---
+
 ## Open-Source Projects
 
 ---

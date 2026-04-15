@@ -5,7 +5,9 @@ dist/
 
 # PHP dependencies and runtime data
 vendor/
-data/
+/data/
+/public/data/
+# Do NOT ignore src/data/ — that is Astro source code
 
 # OS files
 .DS_Store

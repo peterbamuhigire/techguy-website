@@ -1,0 +1,231 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+import CTASection from '@/components/CTASection.astro';
+import ProofBlock from '@/components/ProofBlock.astro';
+import FAQSection from '@/components/FAQSection.astro';
+
+import websiteDevImg from '@/assets/images/services/website-dev-1.jpg';
+import blogImg5 from '@/assets/images/blog-images-5.jpg';
+
+const lang: Lang = 'fr';
+
+const faqs = [
+  {
+    question: 'Combien coûte un site web en Afrique francophone ?',
+    answer: "Un site vitrine de 5 pages débute à partir de 600 000 à 1 000 000 FCFA (environ 900 à 1 500 USD) pour la conception, le développement et le référencement de base. Un devis formel est remis sous 24 heures après un entretien de cadrage, sans engagement.",
+  },
+  {
+    question: 'Mon site sera-t-il visible dans les résultats de recherche locaux ?',
+    answer: "Oui, si il est correctement construit. Chaque site livré par ce cabinet inclut la configuration de Google Search Console, le référencement on-page pour le marché cible, et un guide d'optimisation Google Business Profile. Ce ne sont pas des options — elles font partie de la livraison standard.",
+  },
+  {
+    question: 'Pouvez-vous créer un site bilingue anglais-français ?',
+    answer: "Oui. Le développement de sites bilingues anglais-français est une compétence spécifique de ce cabinet, développée notamment sur le site techguypeter.com lui-même, qui est entièrement bilingue avec une architecture hreflang conforme aux recommandations de Google.",
+  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Développeur Web Afrique — Peter Bamuhigire',
+  description: "Création de sites web professionnels pour les entreprises d'Afrique francophone. Sites rapides, optimisés pour mobile et référencés dans les moteurs de recherche locaux.",
+  url: 'https://techguypeter.com/fr/developpement-web-afrique/',
+  areaServed: [
+    'Sénégal', "Côte d'Ivoire", 'Cameroun', 'RDC', 'Mali', 'Togo', 'Bénin', 'Burkina Faso', 'Sierra Leone', 'Guinée',
+  ].map((name) => ({ '@type': 'Country', name })),
+  serviceType: ['Création de sites web', 'Développement web', 'SEO', 'Sites web bilingues'],
+  knowsLanguage: ['fr', 'en'],
+  provider: {
+    '@type': 'Person',
+    name: 'Peter Bamuhigire',
+    url: 'https://techguypeter.com/fr/',
+    sameAs: [
+      'https://linkedin.com/in/peterbamuhigire',
+      'https://github.com/peterbamuhigire',
+    ],
+  },
+};
+---
+
+<BaseLayout
+  title="Développeur Web Afrique — Création Site Web Professionnel | Peter Bamuhigire"
+  description="Création de sites web professionnels pour les entreprises d'Afrique francophone. Sites rapides, optimisés pour mobile et référencés dans les moteurs de recherche locaux. Bilingue anglais-français. Devis formel sous 24 heures."
+  lang={lang}
+  page="services"
+  altUrl="/en/website-development-east-africa/"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <!-- ==============================
+       HERO
+       ============================== -->
+  <section class="relative overflow-hidden bg-navy-950">
+    <div class="absolute inset-0 geo-pattern opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-900"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 md:pt-24">
+      <div class="py-16 md:py-20 lg:py-24 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-6">
+          <span class="text-gold-400 text-sm font-medium">Création de sites web — Afrique francophone</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
+          Création de sites web professionnels pour les entreprises africaines — rapides, bien référencés, conçus pour convertir
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-navy-200 leading-relaxed max-w-2xl">
+          Un site web pour une entreprise africaine doit se charger rapidement sur les réseaux mobiles disponibles dans la région, se positionner dans les résultats de recherche locaux, et convaincre des visiteurs issus de marchés où les signaux de confiance et de crédibilité locale sont différents de ceux des marchés occidentaux. Ce cabinet conçoit pour ces trois exigences simultanément.
+        </p>
+
+        <div class="mt-4 h-1 w-16 rounded-full bg-gold-400"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       BODY COPY
+       ============================== -->
+  <section class="bg-warm-white py-16 md:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-16 lg:grid-cols-[1fr_320px] lg:gap-12">
+
+        <!-- Main content -->
+        <div class="space-y-12">
+
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">
+              Pourquoi la plupart des sites web africains sous-performent
+            </h2>
+            <p class="mt-5 text-navy-700 leading-relaxed">
+              Le site web type d'une entreprise africaine est construit sur un thème WordPress générique, chargé d'extensions qui le ralentissent, et optimisé pour personne en particulier. Il se charge en 8 à 12 secondes sur une connexion 3G — ce qui signifie que la majorité de vos clients potentiels quitteront la page avant qu'elle ait fini de charger.
+            </p>
+            <p class="mt-4 text-navy-700 leading-relaxed">
+              Les sites web développés par ce cabinet sont différents sur trois points précis : ils sont construits comme des sites statiques — pas de requêtes de base de données au chargement, pas de WordPress, pas de scripts inutiles — ce qui leur permet de se charger en moins de 2 secondes sur une connexion 3G ; ils sont construits avec un référencement local africain dès le départ, pas en option ; et ils sont conçus avec un objectif de conversion unique.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">
+              Référencement local pour les marchés africains francophones
+            </h2>
+            <p class="mt-5 text-navy-700 leading-relaxed">
+              Un site web qui n'apparaît pas dans les résultats de recherche locaux est un site web qui n'existe pas pour la plupart de vos clients potentiels. Chaque site livré par ce cabinet comprend : la configuration de Google Search Console, le référencement on-page de base pour le marché cible (Sénégal, Côte d'Ivoire, Cameroun, RDC — selon le cas), et un guide d'optimisation de la fiche Google Business Profile.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">
+              Sites bilingues anglais-français
+            </h2>
+            <p class="mt-5 text-navy-700 leading-relaxed">
+              Pour les organisations qui opèrent à la fois dans des marchés anglophones et francophones — ou qui souhaitent atteindre les deux audiences — ce cabinet développe des sites web bilingues anglais-français avec une architecture i18n propre, une gestion des hreflang conforme aux recommandations de Google, et un contenu adapté à chaque langue plutôt que simplement traduit.
+            </p>
+          </div>
+
+          <!-- Pricing section -->
+          <div class="rounded-2xl bg-warm-cream px-7 py-8 border border-amber-200/40">
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">
+              Combien coûte un site web en Afrique francophone ?
+            </h2>
+            <p class="mt-5 text-navy-700 leading-relaxed">
+              Le coût d'un site web varie selon la portée du projet. Un site vitrine de 5 pages débute à partir de 600 000 à 1 000 000 FCFA (environ 900 à 1 500 USD) pour la conception, le développement et le référencement de base. Un site plus complexe avec e-commerce, système de réservation ou application web sur mesure est devisé individuellement après un entretien de cadrage.
+            </p>
+            <p class="mt-4 text-navy-700 leading-relaxed">
+              Un devis formel écrit est remis dans les 24 heures suivant l'entretien initial. Aucun engagement n'est requis.
+            </p>
+            <a
+              href="/fr/contact/"
+              class="mt-6 inline-flex items-center gap-2 rounded-lg bg-amber-accent px-6 py-3 text-sm font-semibold text-white transition hover:bg-gold-600"
+            >
+              Demander un devis sous 24 h
+            </a>
+          </div>
+
+          <!-- Countries block -->
+          <div class="rounded-xl bg-navy-950 px-6 py-5">
+            <p class="text-sm font-semibold uppercase tracking-widest text-gold-400">Marchés desservis</p>
+            <p class="mt-3 text-base text-navy-200 leading-relaxed">
+              Sénégal · Côte d'Ivoire · Cameroun · RDC · Mali · Togo · Bénin · Burkina Faso · Sierra Leone · Guinée
+            </p>
+          </div>
+
+          <!-- Language switch panel -->
+          <div class="bg-navy-50 rounded-xl p-6 border border-navy-100">
+            <p class="text-sm font-semibold text-navy-900">English version available</p>
+            <p class="text-sm text-navy-600 mt-1">This page is available in English for East African markets.</p>
+            <a href="/en/website-development-east-africa/" class="inline-flex items-center text-sm font-semibold text-gold-400 hover:text-amber-500 mt-3 gap-1.5">View in English →</a>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="space-y-6">
+          <div class="sticky top-24 space-y-6">
+            <Image
+              src={websiteDevImg}
+              alt="Création de sites web professionnels pour les entreprises africaines"
+              class="w-full rounded-2xl object-cover shadow-lg"
+              width={320}
+              height={240}
+              loading="lazy"
+            />
+
+            <ProofBlock
+              title="Portefeuille de sites web en Afrique"
+              summary="Architecture statique sur l'ensemble des projets : chargement en moins de 2 secondes sur connexion 3G, mobile-first, Google Search Console vérifié, référencement local dès le départ. Clients en Ouganda, Sierra Leone, Sénégal et Afrique de l'Est."
+            />
+
+            <!-- Key stats -->
+            <div class="rounded-xl border border-navy-100 bg-white p-5 shadow-sm space-y-4">
+              {[
+                { stat: '< 2 sec', label: 'Chargement sur 3G' },
+                { stat: '95–100', label: 'Score Lighthouse' },
+                { stat: '24 h', label: 'Devis sous 24 heures' },
+              ].map((item) => (
+                <div class="flex items-center gap-4">
+                  <p class="text-2xl font-bold text-gold-600 tabular-nums">{item.stat}</p>
+                  <p class="text-sm text-navy-600">{item.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div class="rounded-xl border border-navy-100 bg-white p-5 shadow-sm">
+              <p class="text-sm font-semibold text-navy-900">Devis gratuit sous 24 h</p>
+              <p class="mt-2 text-sm text-navy-600">Décrivez votre activité. Un devis écrit vous parvient dans les 24 heures.</p>
+              <a
+                href="/fr/contact/"
+                class="mt-4 inline-block w-full rounded-lg bg-amber-accent px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-gold-600"
+              >
+                Demander un devis
+              </a>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FAQ
+       ============================== -->
+  <FAQSection
+    title="Questions fréquentes"
+    subtitle="Réponses aux questions les plus courantes sur la création de sites web pour les entreprises africaines."
+    faqs={faqs}
+  />
+
+  <!-- ==============================
+       CTA
+       ============================== -->
+  <CTASection
+    lang={lang}
+    title="Obtenez un devis pour votre site web"
+    subtitle="Décrivez votre activité et ce que vous attendez d'un site web. Un devis écrit vous parvient dans les 24 heures."
+    ctaLabel="Demander un devis"
+    ctaHref="/fr/contact/"
+  />
+
+</BaseLayout>

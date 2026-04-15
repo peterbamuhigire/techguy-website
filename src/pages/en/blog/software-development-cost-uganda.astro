@@ -1,0 +1,375 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/blog-images-3.jpg';
+import img2 from '@/assets/images/blog-images-2.jpg';
+import img11 from '@/assets/images/blog-images-11.jpg';
+import img13 from '@/assets/images/blog-images-13.jpg';
+
+const lang: Lang = 'en';
+const title = "How Much Does Software Development Cost in Uganda? — A Transparent Breakdown";
+const description = "Software development costs in Uganda explained: from simple websites to custom ERP systems. What factors affect price, what to expect for each type of project, and where the common pricing traps are.";
+const date = "2026-05-05";
+const category = "Technology";
+const readTime = "10 min read";
+const slug = "software-development-cost-uganda";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/blog/${slug}/`
+  },
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does a website cost in Uganda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A simple 5-page business website costs between UGX 2,000,000–5,000,000 (approximately USD 550–1,400) for design, development, and basic SEO setup. A WordPress site with a content management system runs UGX 3,000,000–8,000,000. These ranges are based on actual Kampala market pricing for 2025/2026."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is custom software development cheaper than buying an off-the-shelf system in Uganda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not always. Off-the-shelf systems have lower upfront costs but significant hidden costs: licensing, customisation, workarounds for the features it lacks, and ongoing licence fees. Custom development has higher upfront costs but no recurring licence fees and no workaround overhead. Over 3–5 years, custom development is often less expensive than heavily customised off-the-shelf alternatives."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the cheapest way to get software built in Uganda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The cheapest individual quote is rarely the cheapest overall cost. A UGX 2,000,000 website that requires UGX 5,000,000 in fixes 6 months later costs more than a UGX 4,000,000 website that works properly. The best measure is total cost of ownership over 3 years, not the initial invoice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who owns the software after it is built?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This varies by contract. You should confirm in writing before signing: who owns the source code, whether you receive the source files at delivery, whether the developer retains any rights, and whether you can engage a different developer for maintenance. A reputable practice will confirm source code ownership in the contract."
+        }
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Style B: Contained Hero -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-16">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="px-3 py-1 text-xs font-semibold bg-gold-400 text-navy-900 rounded-full">{category}</span>
+      <span class="text-sm text-navy-500">{readTime}</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 leading-tight max-w-3xl">
+      How much does software development cost in Uganda? A transparent breakdown
+    </h1>
+    <div class="mt-4 flex items-center gap-4 text-sm text-navy-500">
+      <span>By Peter Bamuhigire</span>
+      <span class="w-1 h-1 rounded-full bg-navy-400"></span>
+      <time datetime={date}>5 May 2026</time>
+    </div>
+    <div class="mt-8 rounded-2xl overflow-hidden">
+      <Image
+        src={heroImg}
+        alt="Software developer in Kampala working on a custom application — Uganda software development costs"
+        width={2222}
+        height={2222}
+        class="w-full h-[350px] md:h-[450px] object-cover"
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-gold">
+
+      <!-- Quick Answer Box -->
+      <div class="not-prose bg-gold-50 border-l-4 border-gold-400 rounded-r-xl p-5 mb-8">
+        <p class="text-xs font-semibold uppercase tracking-widest text-gold-700 mb-2">Quick Answer</p>
+        <p class="text-navy-800 text-base leading-relaxed">Software development in Uganda costs between UGX 2,000,000–5,000,000 (USD 550–1,400) for a simple website and UGX 30,000,000–200,000,000+ (USD 8,000–55,000+) for a full ERP system. The wide range reflects real differences in scope, quality, and what is included in the price.</p>
+      </div>
+
+      <p>Software development costs in Uganda are poorly documented, widely misquoted, and frequently misunderstood by buyers and sellers alike. A Ugandan business owner who has received three proposals for a similar system and found prices ranging from UGX 2,000,000 to UGX 50,000,000 for what appears to be the same thing is not unusual — they are the norm. The variation is real, and most of it is explained by factors that the proposals themselves rarely disclose. This article explains how software development in Uganda is actually priced, what those prices cover, what they do not cover, and what a reasonable budget looks like for each category of software project. It is written from 15 years of building and commissioning software in Uganda and across East Africa — so the figures here are not aspirational; they are based on actual Ugandan market pricing.</p>
+
+      <h2>The four categories of software development in Uganda</h2>
+
+      <p>Before any price discussion is meaningful, you need to understand that "software development" in Uganda refers to at least four fundamentally different categories of work. Quoting a price without specifying the category is like quoting a price for "construction" without saying whether you mean a garden wall or a commercial building.</p>
+
+      <p><strong>Simple static websites</strong> are brochure-style sites — typically five to ten pages — that present information without any user accounts, databases, or dynamic content. They display your services, location, contact details, and perhaps a gallery. They do not require a login, do not store data, and cannot be updated by the business owner without developer assistance. Because they involve no backend logic, they are the least expensive category and the fastest to build. A competent developer can complete one in two to four weeks.</p>
+
+      <p><strong>WordPress and CMS-backed websites</strong> add a content management system — usually WordPress — so that the business owner can update text, images, and blog posts without calling a developer. They may also include contact forms, basic SEO tools, and social media integration. The underlying architecture is more complex than a static site, and the developer must configure both the CMS and any plugins or custom themes. Maintenance is an ongoing consideration because WordPress installations require regular security updates.</p>
+
+      <p><strong>Custom web applications</strong> are database-driven systems where users log in, data is stored and retrieved, and the system performs business logic. Examples include booking systems, inventory management tools, membership portals, e-commerce platforms, and client management systems. The distinction from a simple website is fundamental: a web application has a backend — a server, a database, and application logic — that the website does not. Building one requires substantially more time, skill, and testing than a static or CMS site.</p>
+
+      <p><strong>ERP and enterprise systems</strong> are multi-module platforms that manage core business operations — typically combining finance, human resources, inventory, procurement, sales, and reporting in a single integrated system. These are the most complex and expensive category, requiring months of development, extensive requirements gathering, and careful integration with other systems such as mobile money platforms, banking APIs, and government reporting frameworks. They are also the category where the gap between a good build and a poor one is most consequential for the business.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img2}
+          alt="Team reviewing software requirements in Kampala — the foundation of accurate software development costing"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Accurate software development quotes begin with thorough requirements gathering</figcaption>
+      </figure>
+
+      <h2>Price ranges by category (UGX and USD)</h2>
+
+      <p>The following ranges are based on actual Kampala market pricing for competent, professional delivery — not the cheapest option available, and not international agency rates. They assume clear requirements, a professional developer or small team, and delivery that includes testing and basic documentation.</p>
+
+      <div class="not-prose overflow-x-auto my-6">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-navy-900 text-warm-white">
+              <th class="text-left px-4 py-3 font-semibold rounded-tl-lg">Project Type</th>
+              <th class="text-left px-4 py-3 font-semibold">UGX Range</th>
+              <th class="text-left px-4 py-3 font-semibold rounded-tr-lg">USD Equivalent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b border-navy-100">
+              <td class="px-4 py-3 font-medium text-navy-800">Simple static website (5–10 pages)</td>
+              <td class="px-4 py-3 text-navy-700">2,000,000 – 5,000,000</td>
+              <td class="px-4 py-3 text-navy-700">USD 550 – 1,400</td>
+            </tr>
+            <tr class="border-b border-navy-100 bg-navy-50">
+              <td class="px-4 py-3 font-medium text-navy-800">WordPress / CMS website</td>
+              <td class="px-4 py-3 text-navy-700">3,000,000 – 8,000,000</td>
+              <td class="px-4 py-3 text-navy-700">USD 800 – 2,200</td>
+            </tr>
+            <tr class="border-b border-navy-100">
+              <td class="px-4 py-3 font-medium text-navy-800">Custom web application</td>
+              <td class="px-4 py-3 text-navy-700">8,000,000 – 40,000,000+</td>
+              <td class="px-4 py-3 text-navy-700">USD 2,200 – 11,000+</td>
+            </tr>
+            <tr class="border-b border-navy-100 bg-navy-50">
+              <td class="px-4 py-3 font-medium text-navy-800">Mobile application (iOS / Android)</td>
+              <td class="px-4 py-3 text-navy-700">15,000,000 – 80,000,000+</td>
+              <td class="px-4 py-3 text-navy-700">USD 4,000 – 22,000+</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-navy-800 rounded-bl-lg">ERP / enterprise system</td>
+              <td class="px-4 py-3 text-navy-700">30,000,000 – 200,000,000+</td>
+              <td class="px-4 py-3 text-navy-700 rounded-br-lg">USD 8,000 – 55,000+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The ranges within each category are wide because they reflect genuine variation in delivery quality and scope. A UGX 8,000,000 custom web application and a UGX 40,000,000 custom web application are not the same thing with different price tags — they represent different levels of complexity, different numbers of features, different standards of testing, and often fundamentally different architecture decisions that will affect how the system performs and scales over the next three to five years.</p>
+
+      <p>Several factors consistently push costs toward the upper end of each range. Larger numbers of user roles and permission levels require more architecture work. Integration with external systems — mobile money APIs, banking platforms, government portals, SMS gateways — adds significant complexity. Offline functionality, which is often a genuine requirement in Uganda given variable connectivity and load-shedding, requires a different technical architecture entirely. Multi-language support, audit trails, and complex reporting all add to the build cost. The experience level of the developers matters too: a senior developer who charges more per hour will typically complete the same work in less time and with fewer post-launch fixes.</p>
+
+      <h2>What the price includes — and what it does not</h2>
+
+      <p>One of the most common sources of conflict between software developers and their clients in Uganda is the gap between what the client assumed was included in the price and what the developer intended to deliver. This gap is almost always the result of an inadequate proposal — one that describes what will be built without clarifying what will not be.</p>
+
+      <p><strong>Hosting</strong> is frequently excluded. A developer who quotes UGX 5,000,000 for a website may not be including the hosting server, domain name, or SSL certificate. Annual hosting costs in Uganda typically run between UGX 600,000 and UGX 3,000,000 per year depending on the server specification required.</p>
+
+      <p><strong>Maintenance</strong> is almost always excluded from an initial build quote. After your system is launched, it will require ongoing updates, security patches, and bug fixes. Establishing a maintenance agreement before signing the build contract prevents disputes later.</p>
+
+      <p><strong>Training</strong> is often excluded or underspecified. A system that your team cannot use is worthless. Confirm whether the quote includes staff training, and if so, how many sessions, in what format, and covering which user roles.</p>
+
+      <p><strong>Source code ownership</strong> is one of the most frequently overlooked clauses in Ugandan software contracts. Some developers retain ownership of the source code and license it to the client, meaning you cannot engage a different developer for maintenance without starting over. Always confirm in writing that you receive full source code ownership at delivery.</p>
+
+      <p><strong>Post-launch bug fixes</strong> vary widely. Some developers include a 30-day warranty period; others consider delivery final the moment they hand over the system. Confirm the warranty period and what it covers before signing.</p>
+
+      <p>Five questions to ask before signing any software development contract in Uganda:</p>
+      <ol>
+        <li>Does this quote include hosting, domain, and SSL — and if not, what is the estimated annual cost?</li>
+        <li>Who owns the source code at delivery, and will I receive all source files?</li>
+        <li>What is the post-launch warranty period, and what does it cover?</li>
+        <li>Is staff training included, and if so, what does it cover and how many sessions?</li>
+        <li>What is the maintenance arrangement after the warranty period ends?</li>
+      </ol>
+
+      <figure class="my-8">
+        <Image
+          src={img11}
+          alt="Software development contract review in Kampala — understanding what is included in the price"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Always confirm in writing what the quoted price includes — and what it does not</figcaption>
+      </figure>
+
+      <h2>Why proposals vary so much in Uganda</h2>
+
+      <p>The UGX 2,000,000 to UGX 50,000,000 range for apparently similar projects is not random — it reflects several predictable sources of variation that most proposals do not disclose.</p>
+
+      <p><strong>Different scope assumptions</strong> are the most common cause. One developer quotes for a five-page website; another quotes for a five-page website plus a blog, a contact form with email notifications, Google Analytics integration, basic SEO configuration, and a mobile-responsive design. The deliverables are different, but the proposals use the same phrase: "business website."</p>
+
+      <p><strong>Quality of delivery</strong> varies enormously in the Ugandan market. A junior developer working alone will charge less than a senior developer, but will typically take longer, require more client involvement, and produce code that is harder to maintain and extend. The lower-cost quote often produces a higher total cost of ownership over three years.</p>
+
+      <p><strong>Outsourcing arrangements</strong> are common but often undisclosed. Some Kampala-based firms act as intermediaries, subcontracting the actual development to cheaper developers elsewhere in Uganda or in other countries. This is not inherently problematic, but it affects accountability, communication quality, and what happens when something goes wrong.</p>
+
+      <p><strong>Maintenance model differences</strong> significantly affect upfront pricing. A developer who prices for a clean handover with full documentation and source code transfer will charge more upfront than one who intends to retain you as a dependency for ongoing maintenance fees.</p>
+
+      <h2>How to evaluate a software development proposal in Uganda</h2>
+
+      <p>When comparing proposals, price alone is the least useful criterion. These five factors provide a more complete picture of what you are actually buying.</p>
+
+      <p><strong>1. Specificity of scope.</strong> A quality proposal describes each feature, each user role, each integration, and each deliverable explicitly. Vague proposals produce scope disputes. If a proposal says "we will build you a management system," ask for a feature-by-feature breakdown before accepting it.</p>
+
+      <p><strong>2. Evidence of similar completed work.</strong> Ask for references and examples of similar projects delivered in Uganda. A developer who has built inventory management systems for Ugandan businesses understands the UGX arithmetic, the mobile money integration requirements, and the offline functionality needs that a developer without that experience will discover (at your expense) mid-project.</p>
+
+      <p><strong>3. Milestone-based payment structure.</strong> A reputable developer will accept payment tied to defined deliverables — a percentage upfront, further payments at specified milestones, and a final payment at handover. Avoid any arrangement that requires full payment upfront or payment on calendar dates rather than deliverables.</p>
+
+      <p><strong>4. Clarity on post-launch support.</strong> Ask what happens if a bug is discovered six weeks after launch. The answer reveals the developer's confidence in their own work and their commitment to the relationship beyond the invoice.</p>
+
+      <p><strong>5. Who will actually be doing the work.</strong> Some firms win contracts with senior staff and deliver with juniors. Ask for the names and experience levels of the developers who will be assigned to your project.</p>
+
+      <p>Our <a href="/en/software-development-uganda/">software development practice in Uganda</a> publishes transparent pricing and fixed-scope engagement models specifically to address the uncertainty that has plagued software procurement in the Ugandan market. If you have a project in mind, the starting point is always a scoping conversation — not a quote.</p>
+
+      <figure class="my-8 flex justify-center">
+        <div class="max-w-sm">
+          <Image
+            src={img13}
+            alt="Developer reviewing a software specification document — the foundation of transparent software pricing"
+            width={800}
+            height={1000}
+            class="article-img-portrait rounded-xl"
+            loading="lazy"
+          />
+          <figcaption>A detailed specification is the only foundation for an honest quote</figcaption>
+        </div>
+      </figure>
+
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mt-12 pt-8 border-t border-gold-300">
+      <h2 class="text-2xl font-bold text-navy-900 mb-6">Frequently asked questions</h2>
+      <div class="space-y-6">
+
+        <details class="group border border-navy-100 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-6 py-4 cursor-pointer bg-warm-white hover:bg-gold-50 transition-colors">
+            <span class="font-semibold text-navy-900">How much does a website cost in Uganda?</span>
+            <svg class="w-5 h-5 text-gold-600 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 py-4 bg-white text-navy-700 leading-relaxed">
+            A simple 5-page business website costs between UGX 2,000,000–5,000,000 (approximately USD 550–1,400) for design, development, and basic SEO setup. A WordPress site with a content management system runs UGX 3,000,000–8,000,000. These ranges are based on actual Kampala market pricing for 2025/2026.
+          </div>
+        </details>
+
+        <details class="group border border-navy-100 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-6 py-4 cursor-pointer bg-warm-white hover:bg-gold-50 transition-colors">
+            <span class="font-semibold text-navy-900">Is custom software development cheaper than buying an off-the-shelf system in Uganda?</span>
+            <svg class="w-5 h-5 text-gold-600 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 py-4 bg-white text-navy-700 leading-relaxed">
+            Not always. Off-the-shelf systems have lower upfront costs but significant hidden costs: licensing, customisation, workarounds for the features it lacks, and ongoing licence fees. Custom development has higher upfront costs but no recurring licence fees and no workaround overhead. Over 3–5 years, custom development is often less expensive than heavily customised off-the-shelf alternatives.
+          </div>
+        </details>
+
+        <details class="group border border-navy-100 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-6 py-4 cursor-pointer bg-warm-white hover:bg-gold-50 transition-colors">
+            <span class="font-semibold text-navy-900">What is the cheapest way to get software built in Uganda?</span>
+            <svg class="w-5 h-5 text-gold-600 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 py-4 bg-white text-navy-700 leading-relaxed">
+            The cheapest individual quote is rarely the cheapest overall cost. A UGX 2,000,000 website that requires UGX 5,000,000 in fixes 6 months later costs more than a UGX 4,000,000 website that works properly. The best measure is total cost of ownership over 3 years, not the initial invoice.
+          </div>
+        </details>
+
+        <details class="group border border-navy-100 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-6 py-4 cursor-pointer bg-warm-white hover:bg-gold-50 transition-colors">
+            <span class="font-semibold text-navy-900">Who owns the software after it is built?</span>
+            <svg class="w-5 h-5 text-gold-600 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 py-4 bg-white text-navy-700 leading-relaxed">
+            This varies by contract. You should confirm in writing before signing: who owns the source code, whether you receive the source files at delivery, whether the developer retains any rights, and whether you can engage a different developer for maintenance. A reputable practice will confirm source code ownership in the contract.
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-gold-300">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-gold-100 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-gold-700">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Technology and Business Consultant with over 15 years of experience across more than 10 African countries. Founder of Chwezi Digital Solutions, based in Kampala, Uganda.</p>
+          <a href="/en/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Get in Touch
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to All Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

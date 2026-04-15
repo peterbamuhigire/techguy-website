@@ -1,0 +1,254 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+import CTASection from '@/components/CTASection.astro';
+import ProofBlock from '@/components/ProofBlock.astro';
+import FAQSection from '@/components/FAQSection.astro';
+
+import websiteDevImg from '@/assets/images/services/website-dev-1.jpg';
+import techSupportImg from '@/assets/images/services/tech-support-1.jpg';
+
+const lang: Lang = 'en';
+
+const countries = [
+  { name: 'Uganda', note: 'Headquarters' },
+  { name: 'Kenya', note: 'Local SEO' },
+  { name: 'Tanzania', note: 'Local SEO' },
+  { name: 'Rwanda', note: 'Local SEO' },
+  { name: 'Ethiopia', note: 'Regional' },
+  { name: 'Burundi', note: 'Regional' },
+];
+
+const faqs = [
+  {
+    question: 'Can you build a website for a Kenyan or Tanzanian business from Kampala?',
+    answer: 'Yes. The practice builds and maintains websites for organisations across East Africa from Kampala. Remote collaboration works well for website projects — site requirements, content, and feedback are managed via brief documents, video calls, and shared review links. In-country visits are available but rarely needed for website projects.',
+  },
+  {
+    question: 'Will my website rank in Kenyan or Tanzanian Google search results?',
+    answer: 'Yes, if it is built correctly. Every website from this practice includes on-page SEO targeting the specific market (country-level domain or ccTLD recommendation, local keyword targeting, Google Search Console verification, and a Google Business Profile setup brief). These are standard inclusions, not add-ons.',
+  },
+  {
+    question: 'Do you build bilingual websites for organisations operating in English and French markets?',
+    answer: 'Yes. Bilingual English-French websites are a specific capability of this practice, developed through building and maintaining a bilingual site (techguypeter.com itself) and through experience with Francophone African markets including Senegal, Sierra Leone, and Côte d\'Ivoire.',
+  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Website Development East Africa — Peter Bamuhigire',
+  description: 'Professional website design and development for East African businesses. Fast-loading, mobile-first websites that rank in local and regional Google search results.',
+  url: 'https://techguypeter.com/en/website-development-east-africa/',
+  areaServed: [
+    'Uganda', 'Kenya', 'Tanzania', 'Rwanda', 'Ethiopia', 'Burundi',
+  ].map((name) => ({ '@type': 'Country', name })),
+  serviceType: ['Website Design', 'Web Development', 'SEO', 'Multilingual Website Development'],
+  provider: {
+    '@type': 'Person',
+    name: 'Peter Bamuhigire',
+    url: 'https://techguypeter.com/en/',
+    sameAs: [
+      'https://linkedin.com/in/peterbamuhigire',
+      'https://github.com/peterbamuhigire',
+    ],
+  },
+};
+---
+
+<BaseLayout
+  title="Website Developer East Africa — Professional Web Design | Peter Bamuhigire, Kampala"
+  description="Professional website design and development for East African businesses. Fast-loading, mobile-first websites that rank in local and regional Google search results. Serving Uganda, Kenya, Tanzania, Rwanda, and beyond. Based in Kampala."
+  lang={lang}
+  page="services"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <!-- ==============================
+       HERO
+       ============================== -->
+  <section class="relative bg-navy-950 overflow-hidden">
+    <div class="absolute inset-0 geo-pattern opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-900"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24">
+      <div class="py-16 md:py-20 lg:py-24 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-6">
+          <span class="text-gold-400 text-sm font-medium">East Africa Website Development</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
+          Website development for East African businesses — built for the networks and markets you operate in
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-navy-200 leading-relaxed max-w-2xl">
+          A business website for the East African market must perform on mobile networks, rank in local and regional Google search results, and convert visitors from a context where trust signals and local credibility markers differ from those in Western markets. This practice builds for all three.
+        </p>
+
+        <div class="mt-6 h-1 w-16 rounded-full bg-gold-400"></div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a
+            href="/en/contact/"
+            class="inline-block px-8 py-4 bg-amber-accent hover:bg-gold-600 text-white text-lg font-semibold rounded-lg transition-colors shadow-lg shadow-amber-accent/20"
+          >
+            Request a website quote
+          </a>
+          <a
+            href="/en/portfolio/"
+            class="inline-block px-8 py-4 border-2 border-gold-400 text-gold-400 hover:bg-gold-400/10 text-lg font-semibold rounded-lg transition-colors"
+          >
+            See the portfolio
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 40L1440 40L1440 0C1200 30 960 40 720 35C480 30 240 10 0 0L0 40Z" fill="rgb(var(--color-warm-white, 250 247 242))" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==============================
+       BODY COPY
+       ============================== -->
+  <section class="bg-warm-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-12 lg:gap-16">
+
+        <!-- Main prose -->
+        <div class="lg:col-span-2 space-y-12">
+
+          <div class="prose prose-navy max-w-none">
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">What East African businesses need from a website that most web designers miss</h2>
+            <p class="text-navy-700 leading-relaxed mt-4">
+              The East African internet user is predominantly mobile. The East African mobile network varies from fibre-fast 4G LTE in Nairobi CBD to 2G EDGE in secondary towns. A website built on a standard WordPress theme with unoptimised images and a dozen plugins will load in 8–12 seconds on a 3G connection — which means most potential clients will leave before it finishes loading.
+            </p>
+            <p class="text-navy-700 leading-relaxed mt-4">
+              The websites built by this practice are static sites — no database queries on page load, no WordPress overhead, no unnecessary scripts. They load in under 2 seconds on a 3G connection. They are built with mobile-first design from the start, not retrofitted from a desktop design.
+            </p>
+          </div>
+
+          <div class="prose prose-navy max-w-none">
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">Local SEO for East African markets</h2>
+            <p class="text-navy-700 leading-relaxed mt-4">
+              A website that cannot be found in local search results is a website that does not exist for most potential clients. Every website delivered by this practice includes Google Search Console setup, basic on-page SEO for the target market (Uganda, Kenya, Tanzania, Rwanda — whichever applies), and a Google Business Profile optimisation brief.
+            </p>
+            <p class="text-navy-700 leading-relaxed mt-4">
+              These are not add-ons — they are included because a website without them is incomplete.
+            </p>
+          </div>
+
+          <div class="prose prose-navy max-w-none">
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">Multilingual websites for English-French markets</h2>
+            <p class="text-navy-700 leading-relaxed mt-4">
+              For organisations operating across both anglophone and francophone East and West African markets, this practice builds bilingual English-French websites with clean i18n architecture, Google-recommended hreflang implementation, and content adapted to each language rather than simply translated.
+            </p>
+          </div>
+
+          <!-- Countries served -->
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900 mb-6">Markets served</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {countries.map((country) => (
+                <div class="bg-warm-cream rounded-xl p-4 border border-navy-100">
+                  <p class="font-bold text-navy-900">{country.name}</p>
+                  <p class="text-xs text-navy-500 mt-0.5">{country.note}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Cross-link to Uganda -->
+          <div class="bg-navy-50 rounded-xl p-6 border border-navy-100">
+            <p class="text-sm font-semibold text-navy-900">Based in Uganda?</p>
+            <p class="text-sm text-navy-600 mt-1">See the Uganda-specific web design page for Uganda pricing in UGX, Uganda SEO context, and local references.</p>
+            <a href="/en/website-development-uganda/" class="inline-flex items-center text-sm font-semibold text-gold-400 hover:text-amber-500 mt-3 gap-1.5">Website development Uganda →</a>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-8">
+          <div class="overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src={websiteDevImg}
+              alt="Website development for East African businesses — mobile-first and fast-loading"
+              class="w-full h-56 object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <ProofBlock
+            title="30+ East African websites delivered"
+            summary="Static-site architecture across all projects: sub-2-second load on 3G, mobile-first, Google Search Console verified, local SEO from day one. Clients across Uganda, Kenya, East Africa, and West Africa."
+          />
+
+          <div class="bg-warm-cream rounded-2xl p-6 border border-navy-100">
+            <h3 class="text-sm font-semibold uppercase tracking-widest text-navy-500 mb-4">Standard inclusions</h3>
+            <ul class="space-y-3 text-sm text-navy-700">
+              <li class="flex items-start gap-2">
+                <span class="text-gold-400 mt-0.5 shrink-0">▸</span>
+                Mobile-first, responsive design
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gold-400 mt-0.5 shrink-0">▸</span>
+                Sub-2-second load on 3G networks
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gold-400 mt-0.5 shrink-0">▸</span>
+                Google Search Console setup
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gold-400 mt-0.5 shrink-0">▸</span>
+                Local SEO for target market
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gold-400 mt-0.5 shrink-0">▸</span>
+                Google Business Profile brief
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gold-400 mt-0.5 shrink-0">▸</span>
+                Bilingual (EN/FR) option available
+              </li>
+            </ul>
+          </div>
+
+          <div class="overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src={techSupportImg}
+              alt="Website performance and technical support for East African organisations"
+              class="w-full h-48 object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FAQ
+       ============================== -->
+  <FAQSection
+    title="Common questions about East Africa website development"
+    subtitle="Remote delivery, local SEO, and bilingual builds across the EAC region."
+    faqs={faqs}
+  />
+
+  <!-- ==============================
+       CTA
+       ============================== -->
+  <CTASection
+    lang={lang}
+    title="Get a quote for your East Africa website"
+    subtitle="Describe your business and what you need from a website. A written quote arrives within 24 hours."
+    ctaLabel="Request a website quote"
+  />
+
+</BaseLayout>

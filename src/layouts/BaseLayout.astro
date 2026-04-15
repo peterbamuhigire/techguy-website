@@ -43,6 +43,17 @@ const slugMap: Record<string, string> = {
   'devis-plan-affaires': 'business-plan-intake',
   pricing: 'tarifs',
   tarifs: 'pricing',
+  // Geo page cross-language mappings
+  'it-consulting-east-africa': 'consultant-informatique-afrique',
+  'consultant-informatique-afrique': 'it-consulting-east-africa',
+  'software-development-east-africa': 'developpement-logiciel-afrique',
+  'developpement-logiciel-afrique': 'software-development-east-africa',
+  'website-development-east-africa': 'developpement-web-afrique',
+  'developpement-web-afrique': 'website-development-east-africa',
+  // Uganda pages map to Francophone Africa equivalents (closest FR service match)
+  'it-consulting-uganda': 'consultant-informatique-afrique',
+  'software-development-uganda': 'developpement-logiciel-afrique',
+  'website-development-uganda': 'developpement-web-afrique',
 };
 const currentSlug = currentPath.replace(/^\//, '').replace(/\/$/, '');
 const altUrl =

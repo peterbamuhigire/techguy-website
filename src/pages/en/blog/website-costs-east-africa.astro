@@ -1,0 +1,288 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import FAQSection from '@/components/FAQSection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/blog-images-9.jpg';
+import img10 from '@/assets/images/blog-images-10.jpg';
+import img12 from '@/assets/images/blog-images-12.jpg';
+import img17 from '@/assets/images/blog-images-17.jpg';
+
+const lang: Lang = 'en';
+const title = "What Does a Website Cost in East Africa? — Honest 2025 Pricing";
+const description = "Up-to-date website pricing for East Africa in 2025. Costs in Uganda, Kenya, Tanzania, and Rwanda — what each type of website costs, what drives the price, and what to always include.";
+const date = "2026-06-02";
+const category = "Technology";
+const readTime = "8 min read";
+const slug = "website-costs-east-africa";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/blog/${slug}/`
+  }
+};
+
+const faqs = [
+  {
+    question: "How much does a website cost in Kenya?",
+    answer: "A professionally built business website in Kenya typically costs KES 80,000–200,000 (approximately USD 600–1,500) for a 5-page static site with SEO setup and mobile-first design. WordPress sites with a CMS run KES 100,000–350,000. Custom web applications are priced individually. Nairobi prices tend to be 20-30% higher than comparable work in Kampala."
+  },
+  {
+    question: "How much does a website cost in Uganda?",
+    answer: "A professionally built business website in Uganda starts from UGX 2,000,000–5,000,000 (approximately USD 550–1,400) for a static site with basic SEO. WordPress sites run UGX 3,000,000–8,000,000. These are Kampala market prices for quality-tier work — cheaper proposals exist but typically cut corners on SEO setup, mobile performance, or post-launch support."
+  },
+  {
+    question: "What is the cheapest I can build a business website for in East Africa?",
+    answer: "Template-based DIY platforms (Wix, Squarespace) can produce a website for USD 15–50/month in subscription fees, with no upfront cost. The limitation is performance on East African mobile networks (these platforms are built for fast connections), limited SEO customisation, and no local support. For a business that needs to rank in local search results and load quickly on 3G, a professionally built static site is significantly more effective."
+  }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Hero -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-16">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="px-3 py-1 text-xs font-semibold bg-gold-400 text-navy-900 rounded-full">{category}</span>
+      <span class="text-sm text-navy-500">{readTime}</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 leading-tight max-w-3xl">
+      What does a website cost in East Africa? Honest 2025 pricing
+    </h1>
+    <div class="mt-4 flex items-center gap-4 text-sm text-navy-500">
+      <span>By Peter Bamuhigire</span>
+      <span class="w-1 h-1 rounded-full bg-navy-400"></span>
+      <time datetime={date}>2 June 2026</time>
+    </div>
+    <div class="mt-8 rounded-2xl overflow-hidden">
+      <Image
+        src={heroImg}
+        alt="East African professional reviewing website proposals on a laptop — website pricing in Uganda, Kenya, Tanzania, and Rwanda"
+        width={2222}
+        height={1481}
+        class="w-full h-[350px] md:h-[450px] object-cover"
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-gold">
+
+      <!-- Quick Answer -->
+      <div class="bg-gold-50 border-l-4 border-gold-400 rounded-r-xl p-6 mb-8">
+        <p class="text-xs font-semibold uppercase tracking-wider text-gold-700 mb-2">Quick Answer</p>
+        <p class="text-navy-800 leading-relaxed">A standard business website in East Africa costs between <strong>USD 400–1,500</strong> for a professionally built static site with basic SEO setup. WordPress sites run USD 600–2,500. Custom web applications start from USD 2,500. Prices vary across Uganda, Kenya, Tanzania, and Rwanda — with Nairobi prices typically 20–30% higher than Kampala for similar work.</p>
+      </div>
+
+      <p>The question "how much does a website cost?" gets a different answer in Nairobi than it does in Kampala, and a different answer again in Dar es Salaam. Prices for what appears to be the same product — a standard business website — range from USD 300 to USD 5,000 across East Africa, and most of that range is explained by genuine differences in what is delivered, not by market price variation. This guide is for East African businesses comparing proposals and wanting to understand what the numbers mean.</p>
+
+      <h2>Why website prices vary so much in East Africa</h2>
+
+      <p>The single largest driver of price variation is not which city you are in — it is who is actually doing the work and what they are delivering. A USD 400 website proposal and a USD 1,500 proposal can describe the same deliverable ("a 5-page business website") while representing completely different products in practice.</p>
+
+      <p>The first explanation is <strong>offshore outsourcing</strong>. A significant share of web development proposals in East Africa come from local "agencies" that are in fact brokers — they take your brief, send it to a developer in India, Bangladesh, or Eastern Europe, add a margin, and deliver a product that nobody locally built or understands. The delivered site may look fine, but when it breaks — and it will — the local contact has no ability to fix it. When you need changes, you are back to the same slow, opaque process.</p>
+
+      <p>The second driver is <strong>what is excluded from the quoted price</strong>. Many cheap proposals quote for "the site" but exclude domain registration, hosting setup, SSL certificates, on-page SEO, mobile testing, Google Search Console configuration, and any post-launch support. Each of these costs money. A USD 400 site that requires USD 600 in add-ons to function properly is a USD 1,000 site — except the client discovers this after signing.</p>
+
+      <p>The third factor is <strong>template versus custom design</strong>. A site built on a USD 59 WordPress theme with the placeholder text swapped out for your content takes two days to build. A site designed from scratch — with a unique visual identity, layouts suited to your content, and code written for your specific requirements — takes three to four weeks. Both can be described as "a professional business website." They are not the same product.</p>
+
+      <p>Finally, there is the question of <strong>maintenance models</strong>. Some providers quote a low upfront price and recover their margin through mandatory monthly maintenance contracts that are difficult to exit. Others quote a higher upfront price and provide 30 to 90 days of support included. The total cost over two years is often lower with the higher upfront quote.</p>
+
+      <h2>Price benchmarks by country and type (2025)</h2>
+
+      <p>These are market rates for quality-tier work — meaning professionally designed, mobile-optimised, SEO-ready sites delivered by competent local teams. Cheaper exists in every market; so does more expensive.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img10}
+          alt="Professional reviewing website development pricing in East Africa on a laptop"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Website pricing across East Africa reflects real differences in what is delivered, not simply market variation</figcaption>
+      </figure>
+
+      <p><strong>Uganda (Kampala market)</strong></p>
+      <ul>
+        <li>Static site, 5 pages, with SEO: UGX 2,000,000–5,000,000 (USD 540–1,350)</li>
+        <li>WordPress site with CMS: UGX 3,000,000–8,000,000 (USD 810–2,160)</li>
+        <li>Custom web application: from UGX 9,000,000 (from USD 2,430)</li>
+      </ul>
+
+      <p><strong>Kenya (Nairobi market)</strong></p>
+      <ul>
+        <li>Static site, 5 pages, with SEO: KES 80,000–200,000 (USD 600–1,500)</li>
+        <li>WordPress site with CMS: KES 100,000–350,000 (USD 750–2,600)</li>
+        <li>Custom web application: from KES 350,000 (from USD 2,600)</li>
+      </ul>
+
+      <p><strong>Tanzania (Dar es Salaam market)</strong></p>
+      <ul>
+        <li>Static site, 5 pages, with SEO: TZS 1,300,000–3,200,000 (USD 500–1,200)</li>
+        <li>WordPress site with CMS: TZS 1,800,000–5,500,000 (USD 700–2,100)</li>
+        <li>Custom web application: from TZS 6,500,000 (from USD 2,500)</li>
+      </ul>
+
+      <p><strong>Rwanda (Kigali market)</strong></p>
+      <ul>
+        <li>Static site, 5 pages, with SEO: RWF 550,000–1,400,000 (USD 500–1,250)</li>
+        <li>WordPress site with CMS: RWF 750,000–2,500,000 (USD 680–2,250)</li>
+        <li>Custom web application: from RWF 2,750,000 (from USD 2,500)</li>
+      </ul>
+
+      <p>USD prices are broadly comparable across the region. Where a Nairobi provider quotes USD 1,500 and a Kampala provider quotes USD 1,200 for what sounds like the same brief, the price difference is rarely explained by market rate alone — it is usually explained by what is included, the seniority of the team, and the design quality.</p>
+
+      <p>For <a href="/en/website-development-east-africa/">website development across East Africa</a>, the regional market is maturing rapidly, but quality gaps between providers remain wide.</p>
+
+      <h2>What every East African business website must include</h2>
+
+      <p>East Africa has some of the highest mobile internet penetration rates in the world, and the majority of web traffic across Uganda, Kenya, Tanzania, and Rwanda arrives via mobile devices — frequently on 3G connections or congested 4G networks. A website built for desktop-first, fast-connection environments will fail most of your actual visitors before they read a single word about your business.</p>
+
+      <p><strong>Mobile-first design</strong> is not a feature — it is the baseline. Your site must be designed for 375px screen widths first, then enhanced for tablets and desktops. Layouts that were designed for desktop and "made responsive" afterwards are rarely truly mobile-first; they show in the awkward compressed layouts on smaller screens.</p>
+
+      <p><strong>Google Search Console setup</strong> is the single most overlooked item in East African web proposals. If your site is not verified in Search Console, you have no visibility into how Google is indexing your pages, which search terms bring visitors, or whether there are crawl errors suppressing your rankings.</p>
+
+      <p><strong>On-page SEO for local search</strong> means your page titles, meta descriptions, heading structure, and content are optimised for the specific search terms your East African customers use. "Web designer Kampala" and "web developer Uganda" are different queries with different search volumes and different competition profiles.</p>
+
+      <p><strong>Google Business Profile</strong> is essential for any business serving a local market. A profile correctly configured with your address, phone number, hours, and services category is often the first thing a local searcher sees — before they ever visit your website.</p>
+
+      <p><strong>Speed optimisation for 3G networks</strong> means compressed images, minimal JavaScript, and a page weight that loads in under three seconds on a slow mobile connection. Most template WordPress sites load 8–15 seconds on 3G. Most well-built static sites load in under two seconds on the same connection.</p>
+
+      <p><strong>An SSL certificate</strong> (the padlock icon in the browser bar) is now included free by most hosting providers, but it must be correctly configured. Sites without SSL are marked "Not Secure" in Chrome — a trust signal failure that costs you conversions.</p>
+
+      <h2>What distinguishes a USD 400 website from a USD 1,500 one in East Africa</h2>
+
+      <figure class="my-8 flex justify-center">
+        <div class="max-w-sm">
+          <Image
+            src={img12}
+            alt="UX designer planning a website layout — the difference between budget and professional website development in East Africa"
+            width={2222}
+            height={1481}
+            class="article-img-landscape rounded-xl"
+            loading="lazy"
+          />
+          <figcaption>Good website design requires planning — not just template selection</figcaption>
+        </div>
+      </figure>
+
+      <p>The differences between a USD 400 proposal and a USD 1,500 proposal in this market are consistent and predictable.</p>
+
+      <p><strong>Performance on 3G.</strong> A budget site typically loads in 8–15 seconds on a 3G mobile connection. A quality site loads in under 2–3 seconds. On East African mobile networks, where a significant portion of your audience is browsing, this difference determines whether most visitors ever see your content. Google's ranking algorithm also factors page speed directly into search rankings.</p>
+
+      <p><strong>Design quality.</strong> A USD 400 site is almost always a modified template. The layout, typography, and visual hierarchy are designed for a generic business in a generic market. A USD 1,500 site is designed for your business — the visual identity reflects your brand, the content hierarchy reflects how your customers make decisions, and the calls to action reflect how your business generates leads.</p>
+
+      <p><strong>SEO groundwork.</strong> A quality-tier site is delivered with properly structured headings, optimised page titles, configured Search Console, a submitted sitemap, and at least basic keyword research to inform the copy. A budget site is delivered with whatever SEO the template happened to include — which is usually nothing useful.</p>
+
+      <p><strong>Source file delivery.</strong> Do you own your website files, or does your developer retain them? Quality providers deliver source files and document their code. If a budget provider vanishes, a new developer should be able to pick up the work — but only if the code is yours and documented.</p>
+
+      <p><strong>Post-launch support.</strong> A USD 400 proposal typically includes zero support after handover. A USD 1,500 proposal typically includes 30–90 days of support during which the developer fixes bugs, answers questions, and helps your team get comfortable with the new site. This matters enormously during the first month when small issues arise.</p>
+
+      <p><strong>Whether the developer is actually local.</strong> A locally based developer can meet you, understands the business environment, is reachable during your working hours, and can be held accountable. An outsourced developer operating through a local broker is none of these things. Ask your provider directly: "Who will actually build this site, and where are they based?"</p>
+
+      <p>For businesses in Uganda specifically, our work in <a href="/en/website-development-uganda/">website development in Uganda</a> covers these distinctions in more detail — including what to look for in a Kampala-market web development proposal.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img17}
+          alt="Team reviewing website performance metrics — mobile speed and SEO are essential for East African business websites"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Mobile performance is not optional for East African business websites — it is the baseline your customers experience</figcaption>
+      </figure>
+
+      <p>The website market in East Africa is competitive, and that competition has driven prices down in ways that are not always in the buyer's interest. The businesses that make sound decisions treat a website not as a one-time expense to minimise, but as a commercial asset to invest in. A site that loads quickly on 3G, ranks for your target search terms, and converts visitors into enquiries is worth ten times a site that merely exists.</p>
+
+      <p>If you are evaluating proposals and want a frank conversation about what you should expect for your budget, <a href="/en/contact/">get in touch</a> — a 20-minute conversation is usually enough to clarify what a given proposal actually delivers.</p>
+
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-gold-300">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-gold-100 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-gold-700">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Technology and Business Consultant with over 15 years of experience across more than 10 African countries. Founder of Chwezi Digital Solutions, based in Kampala, Uganda.</p>
+          <a href="/en/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Get in Touch
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to All Articles
+      </a>
+    </div>
+  </article>
+
+  <FAQSection
+    title="Frequently asked questions about website costs in East Africa"
+    subtitle="Honest answers to the pricing questions East African businesses ask most often."
+    faqs={faqs}
+  />
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

@@ -1,0 +1,308 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import FAQSection from '@/components/FAQSection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/business-man-laptop-office-coffee.jpg';
+import imgLandscape1 from '@/assets/images/african-entrepreneur-team-analyzing-business-reports.jpg';
+import imgPortrait from '@/assets/images/african-american-business-woman-with-phone.jpg';
+import imgLandscape2 from '@/assets/images/ux-team-designing-systems.jpg';
+
+const lang: Lang = 'fr';
+const title = "Combien Coûte un Site Web en Afrique Francophone ? — Guide des Prix 2025";
+const description = "Prix des sites web en Afrique francophone en 2025 : Sénégal, Côte d'Ivoire, Cameroun, RDC. Ce que comprend chaque gamme de prix et ce qu'il faut toujours inclure dans votre projet web.";
+const date = "2026-06-16";
+const category = "Technologie";
+const readTime = "8 min de lecture";
+const slug = "cout-site-web-afrique";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/fr/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "fr-FR",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/fr/blog/${slug}/`
+  }
+};
+
+const faqs = [
+  {
+    question: "Combien coûte un site web au Sénégal ?",
+    answer: "Un site web professionnel au Sénégal coûte entre 600 000 et 1 000 000 FCFA (environ 900 à 1 500 USD) pour un site vitrine statique de 5 pages avec référencement de base. Un site WordPress avec système de gestion de contenu coûte entre 800 000 et 2 000 000 FCFA. Ces fourchettes reflètent la tarification du marché dakarois pour un travail de qualité — des offres moins chères existent mais coupent généralement sur le référencement, la performance mobile ou le support post-lancement."
+  },
+  {
+    question: "Combien coûte un site web en Côte d'Ivoire ?",
+    answer: "Les prix en Côte d'Ivoire sont comparables au Sénégal pour des prestations similaires : 600 000 à 1 200 000 FCFA pour un site vitrine professionnel, 900 000 à 2 500 000 FCFA pour un site WordPress avec CMS. Abidjan dispose d'un marché de développement web plus dense que Dakar, avec une plus grande variation dans la qualité des prestataires."
+  },
+  {
+    question: "Puis-je obtenir un site web en français et en anglais ?",
+    answer: "Oui. Le développement de sites bilingues anglais-français est une compétence spécifique de ce cabinet. Le site techguypeter.com lui-même est entièrement bilingue avec une architecture i18n correcte, des balises hreflang conformes aux recommandations de Google, et un contenu adapté à chaque langue — pas simplement traduit."
+  }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Barre de progression de lecture -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- En-tête éditorial — Style D cohérent avec les autres articles FR -->
+  <section class="bg-warm-cream pt-24 md:pt-28 pb-0">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Bandeau d'accroche -->
+      <div class="border-l-4 border-amber-accent pl-5 mb-8 max-w-2xl">
+        <p class="text-amber-accent font-semibold text-sm uppercase tracking-widest mb-1">Guide pratique des prix</p>
+        <p class="text-navy-700 text-lg italic leading-relaxed">"Un site web à 150 000 FCFA et un site à 1 500 000 FCFA peuvent tous deux s'appeler 'site professionnel'. La différence, c'est ce qui est réellement livré."</p>
+      </div>
+      <div class="max-w-3xl pb-10">
+        <div class="flex items-center gap-3 mb-5">
+          <span class="px-3 py-1 text-xs font-semibold bg-amber-accent text-white rounded-full uppercase tracking-wider">{category}</span>
+          <span class="text-sm text-navy-400">{readTime}</span>
+          <span class="text-sm text-navy-400">·</span>
+          <time class="text-sm text-navy-400" datetime={date}>16 juin 2026</time>
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-navy-900 leading-tight">
+          Combien coûte un site web en Afrique francophone ? Guide des prix 2025
+        </h1>
+        <p class="mt-5 text-lg md:text-xl text-navy-600 leading-relaxed max-w-2xl">
+          De Dakar à Douala, d'Abidjan à Kinshasa, les prix pour ce qui semble être « le même site web » varient du simple au dixième. Ce guide vous explique ce que les chiffres signifient réellement.
+        </p>
+        <div class="mt-5 flex items-center gap-3 text-sm text-navy-500">
+          <span>Par <a href="/fr/about/" class="text-amber-accent hover:underline font-medium">Peter Bamuhigire</a></span>
+          <span>·</span>
+          <span>Consultant IT & Développeur, Kampala</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image héros -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
+    <div class="rounded-2xl overflow-hidden shadow-xl h-72 md:h-[480px]">
+      <Image
+        src={heroImg}
+        alt="Entrepreneur africain francophone travaillant sur son ordinateur portable dans un café — coût et prix d'un site web en Afrique francophone"
+        width={2222}
+        height={1481}
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+    </div>
+  </div>
+
+  <!-- Retour au blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <a href="/fr/blog/" class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Retour au blog
+    </a>
+  </div>
+
+  <!-- Corps de l'article -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-warm prose-dropcap">
+
+      <!-- Réponse rapide -->
+      <div class="bg-amber-accent/10 border-l-4 border-amber-accent rounded-r-xl p-6 mb-8">
+        <p class="text-xs font-semibold uppercase tracking-wider text-amber-accent mb-2">Réponse directe</p>
+        <p class="text-navy-800 leading-relaxed">Un site vitrine professionnel en Afrique francophone coûte entre <strong>600 000 et 1 000 000 FCFA</strong> (900 à 1 500 USD) pour un site statique de 5 pages avec référencement de base. Un site WordPress avec CMS coûte entre 800 000 et 2 000 000 FCFA. Une application web sur mesure commence à partir de 2 500 000 FCFA.</p>
+      </div>
+
+      <p>La question « combien coûte un site web ? » reçoit une réponse différente à Abidjan, à Dakar et à Douala. Les prix pour ce qui semble être le même produit — un site web d'entreprise standard — varient de 150 000 FCFA à plus de 2 000 000 FCFA en Afrique francophone, et une grande partie de cet écart s'explique par des différences réelles dans ce qui est livré, pas uniquement par des variations de marché. Ce guide est destiné aux entreprises africaines francophones qui comparent des devis et souhaitent comprendre ce que les chiffres signifient réellement.</p>
+
+      <h2>Pourquoi les prix des sites web varient autant en Afrique francophone</h2>
+
+      <p>La première explication est la <strong>sous-traitance non déclarée</strong>. Une part importante des devis web en Afrique francophone provient de prestataires locaux qui externalisent le développement vers des pays à coût plus bas — Inde, Bangladesh, Europe de l'Est — ajoutent une marge, et livrent un produit que personne en local n'a construit ni ne comprend. Le site peut sembler correct à la livraison, mais lorsqu'un problème survient — et il surviendra — votre contact local n'a pas la capacité de le résoudre. Vous vous retrouvez dépendant du même processus opaque pour le moindre changement.</p>
+
+      <p>La deuxième cause de variation est <strong>ce qui est exclu du devis</strong>. De nombreux devis bas de gamme couvrent « le site » mais excluent l'enregistrement du nom de domaine, la configuration de l'hébergement, le certificat SSL, le référencement on-page, les tests mobiles, la configuration de Google Search Console, et tout support post-lancement. Chacun de ces éléments a un coût. Un site à 200 000 FCFA qui nécessite 400 000 FCFA en prestations complémentaires pour fonctionner correctement est en réalité un site à 600 000 FCFA — sauf que le client le découvre après avoir signé.</p>
+
+      <p>La troisième variable est <strong>le template contre le design sur mesure</strong>. Un site construit sur un thème WordPress à 50 USD avec le texte de substitution remplacé par votre contenu prend deux jours à réaliser. Un site conçu à partir de zéro — avec une identité visuelle unique, des mises en page adaptées à votre contenu, et un code écrit pour vos besoins spécifiques — prend trois à quatre semaines. Les deux peuvent être décrits comme « un site web professionnel ». Ce ne sont pas les mêmes produits.</p>
+
+      <p>La quatrième dimension est le <strong>modèle de maintenance</strong>. Certains prestataires proposent un prix initial bas et récupèrent leur marge via des contrats de maintenance mensuels obligatoires difficiles à rompre. D'autres proposent un prix initial plus élevé avec 30 à 90 jours de support inclus. Sur deux ans, le coût total est souvent inférieur avec le devis initial plus élevé. Il est essentiel de calculer le coût total sur la durée, pas seulement le coût à la signature.</p>
+
+      <p>Enfin, la <strong>qualité réelle du prestataire</strong> — son niveau d'expérience, ses compétences SEO, sa connaissance du marché africain, sa capacité à vous accompagner dans le temps — représente une part réelle de la valeur livrée, même si elle n'est pas visible sur une ligne de devis.</p>
+
+      <h2>Grille tarifaire par type de site (2025)</h2>
+
+      <figure class="my-8">
+        <Image
+          src={imgLandscape1}
+          alt="Équipe d'entrepreneurs africains analysant des données numériques — investissement site web Afrique francophone"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Investir dans un site web professionnel, c'est investir dans votre présence commerciale numérique à long terme</figcaption>
+      </figure>
+
+      <p>Les fourchettes ci-dessous reflètent la tarification pour un travail de qualité réelle — site conçu de manière professionnelle, optimisé pour le mobile, prêt pour le référencement, livré par une équipe compétente. Des offres moins chères existent sur chaque marché ; des offres plus chères aussi.</p>
+
+      <p><strong>Site vitrine statique — 5 pages</strong><br/>
+      Idéal pour les TPE, professions libérales, consultants, et toute entreprise dont le site est une vitrine de présentation sans gestion de contenu régulière.</p>
+      <ul>
+        <li>Fourchette de prix : 600 000 à 1 000 000 FCFA (environ 900 à 1 500 USD)</li>
+        <li>Délai de réalisation : 3 à 5 semaines pour un travail sérieux</li>
+        <li>Ce qui doit être inclus : design sur mesure, optimisation mobile, SEO on-page de base, configuration Google Search Console, certificat SSL, formulaire de contact fonctionnel, 30 jours de support post-lancement</li>
+      </ul>
+
+      <p>Note sur le FCFA : la monnaie FCFA est partagée entre les pays de l'UEMOA (Sénégal, Côte d'Ivoire, Mali, Togo, Bénin, Burkina Faso, Guinée-Bissau) et la CEMAC (Cameroun, Tchad, République centrafricaine, Congo, Gabon, Guinée équatoriale). Le taux de change est fixe vis-à-vis de l'euro (1 EUR = 655,957 FCFA), ce qui rend les prix en FCFA comparables d'un pays à l'autre dans ces zones.</p>
+
+      <p><strong>Site WordPress avec CMS</strong><br/>
+      Recommandé pour les entreprises qui publient régulièrement du contenu (articles, actualités, offres d'emploi) et qui souhaitent gérer leur site en autonomie.</p>
+      <ul>
+        <li>Fourchette de prix : 800 000 à 2 000 000 FCFA (environ 1 200 à 3 000 USD)</li>
+        <li>Délai de réalisation : 4 à 7 semaines</li>
+        <li>Ce qui doit être inclus : tout ce du site statique, plus formation à l'utilisation du CMS, migration éventuelle de contenu existant, plugin de référencement configuré, sauvegardes automatiques</li>
+      </ul>
+
+      <p><strong>Application web sur mesure</strong><br/>
+      Pour les projets avec des fonctionnalités spécifiques : portail client, système de réservation, plateforme e-commerce, outil de gestion interne.</p>
+      <ul>
+        <li>Fourchette de prix : à partir de 2 500 000 FCFA (3 700 USD et plus)</li>
+        <li>Délai de réalisation : 2 à 6 mois selon la complexité</li>
+        <li>Le prix varie fortement selon les fonctionnalités — un devis précis nécessite une phase de cadrage</li>
+      </ul>
+
+      <h2>Ce que tout site web d'entreprise africaine doit inclure</h2>
+
+      <figure class="my-8">
+        <Image
+          src={imgPortrait}
+          alt="Femme d'affaires africaine consultant son site web sur mobile — optimisation mobile pour l'Afrique francophone"
+          width={800}
+          height={1200}
+          class="article-img-portrait"
+          loading="lazy"
+        />
+        <figcaption>En Afrique francophone, plus de 70 % des visites web se font via mobile. Un site non optimisé pour mobile perd la majorité de ses visiteurs potentiels.</figcaption>
+      </figure>
+
+      <p>L'Afrique francophone présente l'un des taux de pénétration mobile les plus élevés au monde pour l'accès à internet. Au Sénégal, en Côte d'Ivoire, au Cameroun et en RDC, la grande majorité du trafic web arrive via des appareils mobiles — souvent sur des connexions 3G ou des réseaux 4G congestionnés. Un site conçu prioritairement pour les ordinateurs de bureau, avec une connexion rapide comme hypothèse implicite, échouera pour la majorité de vos visiteurs réels avant même qu'ils aient lu une ligne de votre contenu.</p>
+
+      <p><strong>Le design mobile-first</strong> n'est pas une option — c'est le point de départ. Votre site doit être conçu pour un écran de 375 pixels de large en premier lieu, puis amélioré pour les tablettes et ordinateurs. Les sites conçus pour desktop et « rendus responsives » après coup ne sont presque jamais vraiment optimisés pour mobile : cela se voit dans les mises en page compressées, les boutons trop petits pour être cliqués au doigt, et les textes tronqués.</p>
+
+      <p><strong>La configuration de Google Search Console</strong> est l'élément le plus souvent absent des sites web africains. Si votre site n'est pas vérifié dans Search Console, vous n'avez aucune visibilité sur la façon dont Google indexe vos pages, sur les requêtes qui amènent des visiteurs, ni sur les éventuelles erreurs d'exploration qui suppriment votre classement.</p>
+
+      <p><strong>Le référencement on-page pour la recherche locale</strong> signifie que vos titres de pages, méta-descriptions, structure de titres, et contenu sont optimisés pour les requêtes spécifiques que vos clients africains francophones utilisent réellement. « Consultant informatique Dakar » et « développeur web Abidjan » sont des requêtes différentes avec des volumes et des profils de concurrence distincts.</p>
+
+      <p><strong>Le profil Google Business</strong> est indispensable pour toute entreprise qui sert un marché local. Un profil correctement configuré avec votre adresse, numéro de téléphone, horaires et catégorie de services est souvent la première chose qu'un chercheur local voit — avant même de visiter votre site.</p>
+
+      <p><strong>L'optimisation de la vitesse pour les connexions 3G</strong> signifie des images compressées, un JavaScript minimal, et un poids de page qui se charge en moins de trois secondes sur une connexion mobile lente. La plupart des sites WordPress non optimisés chargent en 8 à 15 secondes sur 3G. Un site statique bien construit charge en moins de deux secondes sur la même connexion.</p>
+
+      <p><strong>Le certificat SSL</strong> (le cadenas dans la barre du navigateur) est désormais inclus gratuitement par la plupart des hébergeurs, mais il doit être correctement configuré. Les sites sans SSL sont marqués « Non sécurisé » dans Chrome — un signal de défiance qui coûte des conversions.</p>
+
+      <h2>Ce qui distingue un site à 600 000 FCFA d'un site à 1 500 000 FCFA</h2>
+
+      <p>Les différences entre une proposition à 600 000 FCFA et une à 1 500 000 FCFA dans ce marché sont constantes et prévisibles.</p>
+
+      <p><strong>La performance sur mobile et 3G.</strong> Un site bas de gamme charge généralement en 8 à 15 secondes sur une connexion 3G mobile. Un site de qualité charge en moins de 2 à 3 secondes. Sur les réseaux mobiles africains, où une part significative de votre audience navigue, cette différence détermine si la plupart des visiteurs voient même votre contenu. L'algorithme de classement de Google intègre également la vitesse de chargement comme facteur direct de positionnement.</p>
+
+      <p><strong>La qualité du design.</strong> Un site à 600 000 FCFA est presque toujours un template modifié. La mise en page, la typographie et la hiérarchie visuelle ont été conçues pour une entreprise générique dans un marché générique. Un site à 1 500 000 FCFA est conçu pour votre entreprise — l'identité visuelle reflète votre marque, la hiérarchie du contenu reflète la façon dont vos clients prennent leurs décisions, et les appels à l'action reflètent la manière dont votre entreprise génère des prospects.</p>
+
+      <p><strong>Le travail SEO initial.</strong> Un site de qualité est livré avec une structure de titres correctement organisée, des titres de pages optimisés, Search Console configuré, un sitemap soumis, et au minimum une recherche de mots-clés de base pour orienter le contenu. Un site bas de gamme est livré avec le SEO que le template incluait par défaut — ce qui est généralement insuffisant.</p>
+
+      <p><strong>La livraison des fichiers source.</strong> Êtes-vous propriétaire des fichiers de votre site, ou votre prestataire les conserve-t-il ? Les prestataires sérieux livrent les fichiers source et documentent leur code. Si un prestataire disparaît, un nouveau développeur doit pouvoir reprendre le travail — mais seulement si le code vous appartient et est documenté.</p>
+
+      <p><strong>Le support post-lancement.</strong> Une proposition à 600 000 FCFA inclut généralement zéro support après la livraison. Une proposition à 1 500 000 FCFA inclut typiquement 30 à 90 jours de support pendant lesquels le développeur corrige les bugs, répond aux questions, et vous aide à vous familiariser avec votre nouveau site. C'est particulièrement important durant le premier mois, quand de petits problèmes surgissent inévitablement.</p>
+
+      <p><strong>La localisation réelle du prestataire.</strong> Un prestataire basé localement peut vous rencontrer, comprend l'environnement des affaires, est joignable pendant vos heures de travail, et peut être tenu responsable de ses engagements. Un prestataire externalisé opérant via un intermédiaire local n'offre aucune de ces garanties. Demandez directement à votre prestataire : « Qui va réellement construire ce site, et où sont-ils basés ? »</p>
+
+      <figure class="my-8">
+        <Image
+          src={imgLandscape2}
+          alt="Équipe web africaine en train de concevoir un site — développement web professionnel en Afrique francophone"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>Un site web professionnel est un actif commercial — son coût doit être évalué sur la durée, pas uniquement à la signature</figcaption>
+      </figure>
+
+      <p>Le marché du développement web en Afrique francophone est compétitif, et cette concurrence a fait baisser les prix d'une manière qui ne sert pas toujours les intérêts des acheteurs. Les entreprises qui prennent les meilleures décisions traitent un site web non pas comme une dépense unique à minimiser, mais comme un actif commercial dans lequel investir. Un site qui charge rapidement sur 3G, se positionne sur vos requêtes cibles, et convertit les visiteurs en prospects vaut dix fois un site qui se contente d'exister.</p>
+
+      <p>Pour aller plus loin sur la présence numérique en Afrique, consultez notre service de <a href="/fr/developpement-web-afrique/">développement web pour l'Afrique francophone</a>. Si vous souhaitez une conversation franche sur ce qu'un devis précis devrait vous promettre, <a href="/fr/contact/">contactez-nous</a> — un échange de 20 minutes suffit généralement pour clarifier ce qu'une proposition donnée livre réellement.</p>
+
+    </div>
+
+    <!-- Biographie de l'auteur -->
+    <div class="mt-14 pt-8 border-t border-navy-100 flex gap-5 items-start">
+      <div class="w-14 h-14 rounded-full bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center flex-shrink-0">
+        <span class="text-gold-400 font-bold text-lg">PB</span>
+      </div>
+      <div>
+        <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+        <p class="text-sm text-navy-500 mt-1">Consultant IT et développeur de logiciels basé à Kampala, Ouganda. Plus de 15 ans d'expérience dans la construction de logiciels, sites web et stratégies numériques pour des entreprises en Afrique de l'Est et de l'Ouest. Peter a travaillé en Ouganda, Kenya, Tanzanie, Rwanda, RDC, Sénégal, Sierra Leone et Guinée.</p>
+        <div class="flex gap-4 mt-3">
+          <a href="/fr/about/" class="text-sm text-amber-accent hover:underline">À propos</a>
+          <a href="/fr/services/" class="text-sm text-amber-accent hover:underline">Services</a>
+          <a href="/fr/contact/" class="text-sm text-amber-accent hover:underline">Nous contacter</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Bannière CTA intermédiaire -->
+  <div class="bg-navy-900 py-10 md:py-14 geo-pattern relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-navy-900/95 to-navy-900/90"></div>
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gold-400 text-sm font-semibold uppercase tracking-wider mb-3">Prêt à Lancer Votre Projet Web ?</p>
+      <h2 class="text-2xl md:text-3xl font-bold text-warm-white mb-4">Un Site Web Professionnel, Rapide et Visible — Pour les Marchés d'Afrique Francophone</h2>
+      <p class="text-navy-200 mb-7 leading-relaxed">Nous concevons des sites web pour des entreprises africaines francophones : design sur mesure, optimisation mobile, référencement local, et support post-lancement inclus. Obtenez un devis honnête et détaillé.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/fr/contact/" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-gold-400 hover:bg-gold-500 text-navy-900 font-semibold rounded-lg transition-colors">
+          Obtenir un Devis Gratuit
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/fr/services/" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-gold-400/50 text-gold-300 hover:border-gold-400 font-semibold rounded-lg transition-colors">
+          Voir les Services Web
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <FAQSection
+    title="Questions fréquentes sur le coût d'un site web en Afrique"
+    subtitle="Des réponses directes aux questions que les entreprises africaines francophones posent le plus souvent."
+    faqs={faqs}
+  />
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  // Barre de progression de lecture
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      bar.style.width = `${Math.min(progress, 100)}%`;
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  });
+</script>

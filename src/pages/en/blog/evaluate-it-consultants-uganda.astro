@@ -1,0 +1,295 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import heroImg from '@/assets/images/blog-images-7.jpg';
+import img4 from '@/assets/images/blog-images-4.jpg';
+import img16 from '@/assets/images/blog-images-16.jpg';
+import img10 from '@/assets/images/blog-images-10.jpg';
+
+const lang: Lang = 'en';
+const title = "How to Evaluate IT Consultants in Uganda — 7 Questions That Separate Good from Bad";
+const description = "Choosing an IT consultant in Uganda: the 7 questions to ask before hiring. What good answers look like, what red flags sound like, and why most Ugandan businesses get this wrong.";
+const date = "2026-05-12";
+const category = "Business";
+const readTime = "9 min read";
+const slug = "evaluate-it-consultants-uganda";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire — Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/blog/${slug}/`
+  },
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much does IT consulting cost in Uganda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ICT consulting costs in Uganda vary by engagement type. A systems audit for a small-to-medium organisation typically runs UGX 3,000,000–8,000,000 (USD 800–2,200). Ongoing advisory retainers start from USD 750/month. Project-based engagements (ERP implementation, network infrastructure) are scoped and quoted individually. The diagnostic call to establish whether an engagement is right for your organisation is free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What qualifications should an IT consultant in Uganda have?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Relevant qualifications (ITIL, PRINCE2, vendor certifications) are useful signals, but not sufficient on their own. More important: a track record of completed projects with verifiable outcomes, experience with Ugandan business environments specifically, and no conflicts of interest with the vendors they recommend."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know if my IT consultant is recommending the right solution?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ask directly: do you have a financial relationship with the vendor you are recommending? A good consultant will tell you exactly what their relationship is. If the answer is evasive, that is your answer."
+        }
+      }
+    ]
+  }
+};
+---
+
+<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <!-- Style B: Contained Hero -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 md:pt-16">
+    <div class="flex items-center gap-3 mb-4">
+      <span class="px-3 py-1 text-xs font-semibold bg-gold-400 text-navy-900 rounded-full">{category}</span>
+      <span class="text-sm text-navy-500">{readTime}</span>
+    </div>
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 leading-tight max-w-3xl">
+      How to evaluate IT consultants in Uganda — 7 questions that separate good from bad
+    </h1>
+    <div class="mt-4 flex items-center gap-4 text-sm text-navy-500">
+      <span>By Peter Bamuhigire</span>
+      <span class="w-1 h-1 rounded-full bg-navy-400"></span>
+      <time datetime={date}>12 May 2026</time>
+    </div>
+    <div class="mt-8 rounded-2xl overflow-hidden">
+      <Image
+        src={heroImg}
+        alt="Business meeting in Kampala — evaluating an IT consultant before hiring"
+        width={2222}
+        height={2222}
+        class="w-full h-[350px] md:h-[450px] object-cover"
+        loading="eager"
+      />
+    </div>
+  </section>
+
+  <!-- Back to Blog -->
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+    <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      Back to Blog
+    </a>
+  </div>
+
+  <!-- Article Body -->
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <div class="prose prose-accent-gold">
+
+      <p>Most Ugandan businesses hire an IT consultant the same way they would hire any other supplier: they ask a few people for recommendations, receive a proposal or two, compare the prices, and choose the cheapest option that appears credible. This approach produces consultant relationships that average 18 months before the client starts looking again — usually after a failed implementation, a system that was never adopted, or a set of recommendations that turned out to be vendor talking points. The alternative is not complicated. Seven questions, asked directly and listened to honestly, will identify whether an IT consultant has genuine competence in the specific problem you need solved.</p>
+
+      <h2>Why the cheapest proposal is almost always the wrong choice</h2>
+
+      <p>In most procurement categories, a lower price for equivalent goods is a straightforward win. Software and ICT consulting are different, because the output is not a commodity — it is a complex, bespoke service whose quality is nearly impossible to assess before delivery. This creates a market where underqualified providers can appear credible until the project is underway and the problems surface.</p>
+
+      <p>The consultants who submit the lowest proposals in Uganda typically fall into one of four patterns: they have underestimated the scope and will return for additional fees once they are locked in; they intend to deliver a minimal version of what was promised and dispute anything beyond that; they are relying on junior staff or uncontracted freelancers who have no accountability to the client; or they have a vendor arrangement that means their recommendation is already decided before they have heard a word about your business.</p>
+
+      <p>None of these patterns produce good outcomes for the client. A failed technology project in Uganda does not just cost the contract price — it costs the staff time spent on a non-functional system, the reputational damage of missed deadlines, the cost of procuring a replacement, and often several months of operational disruption. The price of getting this wrong consistently exceeds the money saved by choosing the cheapest option.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img4}
+          alt="IT infrastructure review in a Ugandan office — selecting the right consultant determines project outcomes"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>The decision you make at procurement shapes everything that follows</figcaption>
+      </figure>
+
+      <h2>The 7 questions to ask every IT consultant in Uganda</h2>
+
+      <p>These questions are designed to be asked directly in a first meeting or a formal proposal process. They are not trick questions — a competent consultant will welcome them. A consultant who deflects, hedges, or becomes evasive when asked these questions has told you something important.</p>
+
+      <p><strong>Question 1: Have you worked inside the type of organisation I am running?</strong></p>
+
+      <p>Industry-specific experience matters more than general technical competence. A consultant who has implemented ERP systems for manufacturing companies in Kampala understands the workflow patterns, the reporting requirements, the regulatory context, and the human dynamics that make or break an implementation in that environment. A consultant without that experience will learn on your project — at your expense. A good answer names specific organisations, describes the challenges encountered, and explains what was learned. A red flag is a vague reference to "similar work" without specifics, or a pivot to technical credentials rather than business outcomes.</p>
+
+      <p><strong>Question 2: What is your relationship with the vendors you recommend?</strong></p>
+
+      <p>Many IT consultants in Uganda receive referral fees, commissions, or reseller margins from the software and hardware vendors they recommend. This is not automatically disqualifying — but it must be disclosed. A consultant who recommends a particular ERP platform while receiving 20% of the licence fee from that vendor has a conflict of interest that should be declared and factored into your evaluation. A good answer is direct and complete: "We are a certified reseller for X and receive Y% referral commission. We also recommend competitors where they are a better fit, which you can verify by speaking with these clients." A red flag is any evasion, denial, or pivot to the quality of the recommended product rather than a straight answer about the financial relationship.</p>
+
+      <p><strong>Question 3: Can you show me the last two systems you implemented — and speak to the clients using them?</strong></p>
+
+      <p>Portfolio claims are easy to make and hard to verify without direct contact. Asking specifically for the last two implementations — not the best two — reduces the ability to cherry-pick. And asking to speak with the clients, not just see screenshots, tests whether the relationship is real and whether the outcomes were positive enough that the client is willing to recommend the consultant. A good answer produces names, contact details, and a willingness to facilitate the introduction. A red flag is any reason why speaking directly with past clients is difficult, inappropriate, or impossible.</p>
+
+      <p><strong>Question 4: What happens when the project hits a problem?</strong></p>
+
+      <p>Every non-trivial technology project encounters problems. The question is not whether problems will arise but how the consultant handles them. Ask for a specific example of a project that ran into difficulty and walk through exactly what happened: when was the problem identified, how was the client informed, what options were presented, and what was the outcome? A good answer describes a situation with genuine difficulty, honest communication to the client, a structured response, and a resolved outcome. A red flag is the claim that projects do not hit problems, or an answer that attributes all past difficulties to client behaviour without acknowledging any consultant responsibility.</p>
+
+      <p><strong>Question 5: Who will actually be doing the work?</strong></p>
+
+      <p>The consultant you meet in the sales process is not always the consultant who will be assigned to your project. Some firms win contracts with their most senior people and deliver with their most junior. Ask directly: which members of your team will be assigned to this project, what are their roles, and can I meet them before signing? Also ask whether any of the work will be subcontracted — and if so, to whom, and what is the quality assurance process. A good answer is transparent about the team structure, provides names and experience levels, and offers an introduction. A red flag is vagueness about team composition, resistance to pre-signing introductions, or undisclosed subcontracting arrangements.</p>
+
+      <p><strong>Question 6: What does success look like, and how will we measure it?</strong></p>
+
+      <p>This question separates consultants who are oriented toward outcomes from those who are oriented toward deliverables. Delivering a functional system is a deliverable. Achieving a 30% reduction in procurement processing time is an outcome. The best consultants in Uganda frame their work in terms of the business problem being solved, not just the technical artefact being produced. Ask the consultant to define, in measurable terms, what success looks like for your specific project — and how you will both know if you have achieved it. A good answer is specific and business-oriented, tied to your actual operations. A red flag is a definition of success that is entirely within the consultant's control (system delivered on time, features implemented) with no reference to whether the system actually solves your problem.</p>
+
+      <p><strong>Question 7: What are the total costs — including implementation, training, licensing, and ongoing maintenance?</strong></p>
+
+      <p>The quoted project fee is rarely the total cost. Ask the consultant to walk you through every cost category over a three-year period: the initial build or implementation, any software licensing fees (annual or per-user), the cost of staff training, post-launch support and maintenance, and any infrastructure costs (hosting, hardware, connectivity). A good answer produces a structured breakdown that acknowledges each category, even if some cannot be precisely estimated at the proposal stage. A red flag is a total cost figure presented without a breakdown, or a dismissal of ongoing costs as "minimal" without explanation.</p>
+
+      <figure class="my-8">
+        <Image
+          src={img16}
+          alt="Consultant presenting a technology proposal in a Kampala boardroom"
+          width={2222}
+          height={1481}
+          class="article-img-landscape"
+          loading="lazy"
+        />
+        <figcaption>A structured proposal process protects you from consultants who cannot answer the hard questions</figcaption>
+      </figure>
+
+      <h2>Red flags that appear professional</h2>
+
+      <p>Some of the most damaging consultant relationships in Uganda begin with presentations that appear highly professional. Polished decks, impressive-sounding credentials, and confident delivery can mask the absence of genuine competence or honest intent. These are the red flags that are easiest to miss precisely because they wear professional clothing.</p>
+
+      <p><strong>Credentials without track record.</strong> Certificates, industry memberships, and vendor accreditations are genuine signals of baseline competence — but they are not evidence of delivery. A consultant with six certifications and no verifiable completed projects in Uganda is less useful to you than one with no certifications and five successful local implementations. Always weight the portfolio over the certificate wall.</p>
+
+      <p><strong>Vendor-recommended consultants.</strong> When a software vendor recommends a specific consulting firm to implement their product, the recommendation is almost certainly coloured by a commercial relationship between the two parties. This does not make the recommended firm incompetent, but it means the vendor's recommendation should not be your primary selection criterion. Conduct your own evaluation using these seven questions regardless of who recommended the consultant.</p>
+
+      <p><strong>Excessive disclaimers in the statement of work.</strong> A statement of work that contains more text about what the consultant is not responsible for than about what they are delivering is a signal of defensive contracting rather than confident professional engagement. A consultant who trusts their own work does not need to hedge every clause.</p>
+
+      <p><strong>Vague scoping language.</strong> Phrases like "we will configure the system to meet your needs," "all standard features will be included," and "we will work iteratively to deliver what you require" are not scope definitions — they are scope deferrals. Any language that substitutes flexibility for specificity is an invitation to a later dispute about what was actually agreed.</p>
+
+      <p>Our <a href="/en/it-consulting-uganda/">ICT consulting practice in Uganda</a> is built on the opposite of these patterns: fixed scope, transparent pricing, no vendor commissions, and verifiable references from completed projects. We welcome all seven of these questions and can answer each one with specifics. If you are evaluating consultants for an upcoming project, <a href="/en/contact/">start with a conversation</a> — no commitment required.</p>
+
+      <figure class="my-8 flex justify-center">
+        <div class="max-w-sm">
+          <Image
+            src={img10}
+            alt="Technology professional reviewing documentation — due diligence in IT consultant selection"
+            width={800}
+            height={1000}
+            class="article-img-portrait rounded-xl"
+            loading="lazy"
+          />
+          <figcaption>Due diligence before signing is always less costly than remediation after</figcaption>
+        </div>
+      </figure>
+
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mt-12 pt-8 border-t border-gold-300">
+      <h2 class="text-2xl font-bold text-navy-900 mb-6">Frequently asked questions</h2>
+      <div class="space-y-6">
+
+        <details class="group border border-navy-100 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-6 py-4 cursor-pointer bg-warm-white hover:bg-gold-50 transition-colors">
+            <span class="font-semibold text-navy-900">How much does IT consulting cost in Uganda?</span>
+            <svg class="w-5 h-5 text-gold-600 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 py-4 bg-white text-navy-700 leading-relaxed">
+            ICT consulting costs in Uganda vary by engagement type. A systems audit for a small-to-medium organisation typically runs UGX 3,000,000–8,000,000 (USD 800–2,200). Ongoing advisory retainers start from USD 750/month. Project-based engagements (ERP implementation, network infrastructure) are scoped and quoted individually. The diagnostic call to establish whether an engagement is right for your organisation is free.
+          </div>
+        </details>
+
+        <details class="group border border-navy-100 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-6 py-4 cursor-pointer bg-warm-white hover:bg-gold-50 transition-colors">
+            <span class="font-semibold text-navy-900">What qualifications should an IT consultant in Uganda have?</span>
+            <svg class="w-5 h-5 text-gold-600 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 py-4 bg-white text-navy-700 leading-relaxed">
+            Relevant qualifications (ITIL, PRINCE2, vendor certifications) are useful signals, but not sufficient on their own. More important: a track record of completed projects with verifiable outcomes, experience with Ugandan business environments specifically, and no conflicts of interest with the vendors they recommend.
+          </div>
+        </details>
+
+        <details class="group border border-navy-100 rounded-xl overflow-hidden">
+          <summary class="flex items-center justify-between px-6 py-4 cursor-pointer bg-warm-white hover:bg-gold-50 transition-colors">
+            <span class="font-semibold text-navy-900">How do I know if my IT consultant is recommending the right solution?</span>
+            <svg class="w-5 h-5 text-gold-600 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          </summary>
+          <div class="px-6 py-4 bg-white text-navy-700 leading-relaxed">
+            Ask directly: do you have a financial relationship with the vendor you are recommending? A good consultant will tell you exactly what their relationship is. If the answer is evasive, that is your answer.
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <!-- Author Bio -->
+    <div class="mt-12 pt-8 border-t border-gold-300">
+      <div class="flex items-start gap-4">
+        <div class="w-14 h-14 rounded-full bg-gold-100 flex items-center justify-center flex-shrink-0">
+          <span class="text-xl font-bold text-gold-700">PB</span>
+        </div>
+        <div>
+          <p class="font-semibold text-navy-900">Peter Bamuhigire</p>
+          <p class="text-sm text-navy-600 mt-1">Technology and Business Consultant with over 15 years of experience across more than 10 African countries. Founder of Chwezi Digital Solutions, based in Kampala, Uganda.</p>
+          <a href="/en/contact/" class="inline-flex items-center gap-1 mt-2 text-sm font-medium text-amber-accent hover:text-gold-700 transition-colors">
+            Get in Touch
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-8">
+      <a href={`/${lang}/blog/`} class="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-amber-accent transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to All Articles
+      </a>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const update = () => {
+      const scroll = window.scrollY;
+      const height = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = height > 0 ? `${(scroll / height) * 100}%` : '0%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+</script>

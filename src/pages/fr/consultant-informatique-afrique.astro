@@ -1,0 +1,217 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+import CTASection from '@/components/CTASection.astro';
+import ProofBlock from '@/components/ProofBlock.astro';
+import FAQSection from '@/components/FAQSection.astro';
+
+import businessStrategyImg from '@/assets/images/services/business-strategy.jpg';
+
+const lang: Lang = 'fr';
+
+const faqs = [
+  {
+    question: 'Travaillez-vous uniquement avec des grandes entreprises ?',
+    answer: "Non. Le cabinet travaille avec des organisations de toutes tailles : PME, ONG, institutions, administrations et grandes entreprises en Afrique francophone. La méthode s'adapte à la taille et aux ressources de votre organisation.",
+  },
+  {
+    question: 'Pouvez-vous travailler à distance depuis Kampala ?',
+    answer: "Oui. La grande majorité des missions de conseil ICT est gérée à distance. Les visites en pays se planifient dans le cadre de la mission lorsqu'elles sont nécessaires — notamment pour les formations du personnel ou les audits sur site.",
+  },
+  {
+    question: 'Vos prestations sont-elles compatibles avec les normes OHADA et SYSCOHADA ?',
+    answer: "Oui. La connaissance des cadres OHADA et SYSCOHADA est intégrée dans la méthodologie d'audit et de mise en œuvre ERP pour les marchés francophones africains. Les recommandations prennent en compte les exigences comptables et de reporting spécifiques à ces cadres réglementaires.",
+  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Consultant Informatique Afrique — Peter Bamuhigire',
+  description: "Conseil ICT indépendant pour les entreprises d'Afrique francophone. Stratégie technologique, mise en œuvre ERP et audit des systèmes.",
+  url: 'https://techguypeter.com/fr/consultant-informatique-afrique/',
+  areaServed: [
+    'Sénégal', "Côte d'Ivoire", 'Cameroun', 'RDC', 'Mali', 'Togo', 'Bénin', 'Burkina Faso', 'Sierra Leone', 'Guinée',
+  ].map((name) => ({ '@type': 'Country', name })),
+  serviceType: ['Conseil ICT', 'Stratégie technologique', 'Mise en œuvre ERP', 'Audit des systèmes'],
+  knowsLanguage: ['fr', 'en'],
+  provider: {
+    '@type': 'Person',
+    name: 'Peter Bamuhigire',
+    url: 'https://techguypeter.com/fr/',
+    sameAs: [
+      'https://linkedin.com/in/peterbamuhigire',
+      'https://github.com/peterbamuhigire',
+    ],
+  },
+};
+---
+
+<BaseLayout
+  title="Consultant Informatique Afrique — Conseil ICT & Stratégie Technologique | Peter Bamuhigire"
+  description="Conseil ICT indépendant pour les entreprises d'Afrique francophone. Stratégie technologique, mise en œuvre ERP et audit des systèmes pour les organisations au Sénégal, Côte d'Ivoire, Cameroun, RDC et au-delà. Bilingue anglais-français. Basé à Kampala."
+  lang={lang}
+  page="services"
+  altUrl="/en/it-consulting-east-africa/"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <!-- ==============================
+       HERO
+       ============================== -->
+  <section class="relative overflow-hidden bg-navy-950">
+    <div class="absolute inset-0 geo-pattern opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-900"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 md:pt-24">
+      <div class="py-16 md:py-20 lg:py-24 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-6">
+          <span class="text-gold-400 text-sm font-medium">Conseil ICT — Afrique francophone</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
+          Conseil ICT indépendant pour les organisations d'Afrique francophone qui ont besoin de plus que des recommandations génériques
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-navy-200 leading-relaxed max-w-2xl">
+          La plupart des conseils technologiques disponibles pour les entreprises africaines proviennent des vendeurs qui commercialisent leurs propres produits. Peter Bamuhigire propose une alternative : un conseil ICT indépendant, sans affiliation à aucun fournisseur, fondé sur 15 ans d'expérience au sein d'organisations africaines — en anglais et en français.
+        </p>
+
+        <div class="mt-4 h-1 w-16 rounded-full bg-gold-400"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       BODY COPY
+       ============================== -->
+  <section class="bg-warm-white py-16 md:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-16 lg:grid-cols-[1fr_320px] lg:gap-12">
+
+        <!-- Main content -->
+        <div class="space-y-12">
+
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">
+              Pourquoi les entreprises francophones africaines ont besoin d'un conseil ICT différent
+            </h2>
+            <p class="mt-5 text-navy-700 leading-relaxed">
+              Les marchés d'Afrique francophone — qu'il s'agisse de Côte d'Ivoire, du Sénégal, du Cameroun, de la RDC ou du Mali — partagent un ensemble de défis technologiques que les cabinets de conseil occidentaux ne traitent pas de manière adéquate : des opérations multilingues en français et dans des langues locales, des infrastructures de connectivité variables selon les villes et les régions, des cadres réglementaires OHADA et SYSCOHADA qui conditionnent les exigences comptables et de reporting, et le besoin de systèmes que le personnel non technique peut utiliser sans assistance informatique permanente.
+            </p>
+            <p class="mt-4 text-navy-700 leading-relaxed">
+              Ce cabinet a été construit à l'intérieur de cet environnement. L'expérience opérationnelle en Afrique de l'Ouest — Sierra Leone, Sénégal, Guinée — a produit une méthode de conseil ICT conçue pour les réalités spécifiques des marchés africains francophones.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">
+              Ce que comprend une mission de conseil ICT
+            </h2>
+            <p class="mt-5 text-navy-700 leading-relaxed">
+              Chaque mission commence par un audit honnête de votre situation technologique actuelle : ce qui fonctionne, ce qui vous coûte plus que nécessaire, les risques que vous supportez, et l'écart entre ce que votre technologie actuelle permet et ce que votre organisation a besoin de faire. Cet audit produit un plan d'action priorisé — pas une liste de souhaits, mais une séquence d'actions ordonnées par impact et faisabilité.
+            </p>
+            <p class="mt-4 text-navy-700 leading-relaxed">
+              Les missions récentes en Afrique francophone ont couvert : la mise en œuvre et l'unification de systèmes ERP au Sénégal et en Sierra Leone, la formation bilingue du personnel (français-anglais), l'audit et la restructuration d'infrastructure réseau, et l'élaboration de politiques ICT conformes aux cadres réglementaires locaux.
+            </p>
+          </div>
+
+          <!-- Services list -->
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">Services proposés</h2>
+            <ul class="mt-6 space-y-4">
+              {[
+                { name: 'Stratégie ICT', desc: 'Feuille de route technologique et plan d\'action priorisé' },
+                { name: 'Audit des systèmes', desc: 'Évaluation indépendante de vos coûts et risques technologiques actuels' },
+                { name: 'Sélection et mise en œuvre ERP', desc: 'Conseil neutre vis-à-vis des fournisseurs et gestion de la mise en œuvre' },
+                { name: 'Politique ICT et gouvernance', desc: 'Documentation, procédures et formations' },
+                { name: 'Évaluation des fournisseurs technologiques', desc: 'Évaluation indépendante avant signature de contrat' },
+              ].map((item) => (
+                <li class="flex gap-4 rounded-xl border border-navy-100 bg-white p-5 shadow-sm shadow-navy-900/5">
+                  <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold-400/15">
+                    <svg class="h-3.5 w-3.5 text-gold-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                  <div>
+                    <p class="font-semibold text-navy-900">{item.name}</p>
+                    <p class="mt-0.5 text-sm text-navy-600">{item.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Countries block -->
+          <div class="rounded-xl bg-navy-950 px-6 py-5">
+            <p class="text-sm font-semibold uppercase tracking-widest text-gold-400">Pays desservis</p>
+            <p class="mt-3 text-base text-navy-200 leading-relaxed">
+              Sénégal · Côte d'Ivoire · Cameroun · RDC · Mali · Togo · Bénin · Burkina Faso · Sierra Leone · Guinée
+            </p>
+          </div>
+
+          <!-- Language switch panel -->
+          <div class="bg-navy-50 rounded-xl p-6 border border-navy-100">
+            <p class="text-sm font-semibold text-navy-900">English version available</p>
+            <p class="text-sm text-navy-600 mt-1">This page is available in English for East African markets.</p>
+            <a href="/en/it-consulting-east-africa/" class="inline-flex items-center text-sm font-semibold text-gold-400 hover:text-amber-500 mt-3 gap-1.5">View in English →</a>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="space-y-6">
+          <div class="sticky top-24 space-y-6">
+            <Image
+              src={businessStrategyImg}
+              alt="Consultant ICT Peter Bamuhigire en session de travail"
+              class="w-full rounded-2xl object-cover shadow-lg"
+              width={320}
+              height={240}
+              loading="lazy"
+            />
+
+            <ProofBlock
+              title="Dynapharm Africa — unification ERP en Afrique de l'Ouest"
+              summary="Systèmes ERP en Sierra Leone, Sénégal et Ouganda unifiés sur une seule plateforme. Formation bilingue (français-anglais) dispensée dans les délais sur trois pays."
+            />
+
+            <div class="rounded-xl border border-navy-100 bg-white p-5 shadow-sm">
+              <p class="text-sm font-semibold text-navy-900">Réservez un diagnostic gratuit</p>
+              <p class="mt-2 text-sm text-navy-600">30 minutes pour évaluer votre situation ICT, sans engagement.</p>
+              <a
+                href="/fr/contact/"
+                class="mt-4 inline-block w-full rounded-lg bg-amber-accent px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-gold-600"
+              >
+                Réserver un appel
+              </a>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FAQ
+       ============================== -->
+  <FAQSection
+    title="Questions fréquentes"
+    subtitle="Réponses aux questions les plus courantes sur le conseil ICT pour les entreprises africaines."
+    faqs={faqs}
+  />
+
+  <!-- ==============================
+       CTA
+       ============================== -->
+  <CTASection
+    lang={lang}
+    title="Commençons par un diagnostic"
+    subtitle="Le premier entretien est un diagnostic de 30 minutes — pas une démarche commerciale. À l'issue de cet échange, vous saurez si ce cabinet correspond à votre situation."
+    ctaLabel="Réserver un appel diagnostic ICT"
+    ctaHref="/fr/contact/"
+  />
+
+</BaseLayout>

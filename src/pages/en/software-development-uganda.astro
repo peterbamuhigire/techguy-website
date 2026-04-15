@@ -1,0 +1,281 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+import CTASection from '@/components/CTASection.astro';
+import ProofBlock from '@/components/ProofBlock.astro';
+import FAQSection from '@/components/FAQSection.astro';
+
+import heroImg from '@/assets/images/services/software-dev-1.jpg';
+import bodyImg from '@/assets/images/services/software-dev-2.jpg';
+
+const lang: Lang = 'en';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Peter Bamuhigire — Software Development Uganda',
+  description:
+    'Custom software development in Uganda. Web applications, ERP systems, mobile apps, and SaaS platforms built for Ugandan business environments. Based in Kampala.',
+  url: 'https://techguypeter.com/en/software-development-uganda/',
+  image: 'https://techguypeter.com/og-image.jpg',
+  priceRange: 'UGX 8,000,000–200,000,000+ per project',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Kampala',
+    addressCountry: 'UG',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Kampala', containedInPlace: { '@type': 'Country', name: 'Uganda' } },
+    { '@type': 'Country', name: 'Uganda' },
+  ],
+  serviceType: ['Software Development', 'ERP Systems', 'Mobile App Development', 'Web Application Development'],
+  provider: {
+    '@type': 'Person',
+    name: 'Peter Bamuhigire',
+    url: 'https://techguypeter.com/en/',
+    jobTitle: 'Software Developer & ICT Consultant',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Kampala',
+      addressCountry: 'UG',
+    },
+  },
+};
+
+const faqs = [
+  {
+    question: 'How much does custom software development cost in Uganda?',
+    answer:
+      'Custom software costs in Uganda range from UGX 8,000,000–40,000,000+ (USD 2,200–11,000+) for web applications, and UGX 30,000,000–200,000,000+ (USD 8,000–55,000+) for ERP systems. The range is wide because scope varies significantly. A 30-minute diagnostic call will produce a realistic budget estimate for your specific requirement at no charge.',
+  },
+  {
+    question: 'What technologies do you use?',
+    answer:
+      'Modern web technologies: PHP, MySQL, Python, and JavaScript (React/Vue) depending on the requirement. All code is documented, tested, and delivered with source files and training materials.',
+  },
+  {
+    question: 'How long does a software project take in Uganda?',
+    answer:
+      'A custom web application typically takes 6–16 weeks from specification to delivery. An ERP implementation takes 3–9 months depending on the number of modules and the complexity of data migration. These timelines are based on actual Uganda projects, not estimates.',
+  },
+];
+
+const products = [
+  {
+    name: 'Maduuka',
+    description:
+      'Business management software for Ugandan SMEs. Handles UGX, mobile money, offline mode, and multiple users. Built for the Ugandan retail and hospitality environment.',
+    href: 'https://maduuka.com',
+  },
+  {
+    name: 'Aqar',
+    description:
+      'Property management software for Ugandan landlords and estate agents. Rent collection, tenant records, maintenance tracking, and reporting in UGX.',
+    href: 'https://aqarproperty.co.uk',
+  },
+  {
+    name: 'Longhorn ERP',
+    description:
+      'Enterprise resource planning for Ugandan and East African businesses. Multi-currency, multi-branch, multi-user. Handles Ugandan tax reporting requirements.',
+    href: '/en/contact/',
+  },
+];
+---
+
+<BaseLayout
+  title="Software Developer Uganda — Custom Software & ERP Systems | Peter Bamuhigire, Kampala"
+  description="Custom software development in Uganda. Web applications, ERP systems, mobile apps, and SaaS platforms built for Ugandan business environments. Based in Kampala. 15 years' experience across Uganda and East Africa."
+  lang={lang}
+  page="services"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
+  <!-- ==============================
+       HERO
+       ============================== -->
+  <section class="relative bg-navy-950 overflow-hidden">
+    <div class="absolute inset-0 geo-pattern opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-900"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24">
+      <div class="py-16 md:py-20 lg:py-24 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-6">
+          <span class="text-gold-400 text-sm font-medium">Software Development · Uganda</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
+          Custom software development in Uganda — built for the business environments here, not elsewhere
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-navy-200 leading-relaxed max-w-2xl">
+          Off-the-shelf software is built for the average business in the market it was designed for. If your business operates in Uganda — with Ugandan connectivity, a Ugandan workforce, and Ugandan business processes — off-the-shelf software produces workarounds, not solutions. Peter Bamuhigire has spent 15 years building software that works in the actual environment it has to operate in.
+        </p>
+
+        <div class="mt-4 h-1 w-16 rounded-full bg-gold-400"></div>
+
+        <div class="mt-8">
+          <a
+            href="/en/contact/"
+            class="inline-flex items-center px-7 py-3.5 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-amber-accent/20 hover:-translate-y-0.5"
+          >
+            Describe your requirement
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 40V10C360 30 720 0 1080 20C1260 30 1380 25 1440 20V40H0Z" fill="var(--color-warm-white)" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==============================
+       BODY COPY — SECTION 1
+       ============================== -->
+  <section class="bg-warm-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <!-- Text -->
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-6">
+            The difference between software built for Uganda and software adapted for Uganda
+          </h2>
+          <p class="text-navy-600 leading-relaxed">
+            A Ugandan property management system needs to handle payment in UGX, track tenants by their national ID format, and work on the mobile network infrastructure available in Kampala and secondary towns — not the 100Mbps fibre connections Western software assumes. A Ugandan POS system needs to handle load-shedding gracefully: offline mode, local data storage, sync when power and connectivity return. The three proprietary platforms built by this practice — Maduuka (business management), Aqar (property management), and Longhorn ERP — were designed from the ground up for this reality. They handle the Uganda-specific edge cases: mobile money integration, offline operation, UGX currency, Luganda and English interface options, and variable connectivity.
+          </p>
+        </div>
+
+        <!-- Image -->
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-3xl bg-gradient-to-br from-gold-400/10 to-navy-900/5 blur-2xl"></div>
+          <Image
+            src={heroImg}
+            alt="Software development for Ugandan businesses in Kampala"
+            class="relative rounded-2xl shadow-2xl shadow-navy-900/20 w-full object-cover aspect-[4/3]"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       BODY COPY — SECTION 2
+       ============================== -->
+  <section class="bg-warm-cream py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <!-- Image (left on desktop) -->
+        <div class="relative order-2 lg:order-1">
+          <div class="absolute -inset-4 rounded-3xl bg-gradient-to-br from-navy-900/10 to-gold-400/5 blur-2xl"></div>
+          <Image
+            src={bodyImg}
+            alt="Custom software development process and consultation in Uganda"
+            class="relative rounded-2xl shadow-2xl shadow-navy-900/20 w-full object-cover aspect-[4/3]"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Text -->
+        <div class="order-1 lg:order-2">
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-6">
+            Custom development for organisations that need something built to their specifications
+          </h2>
+          <p class="text-navy-600 leading-relaxed">
+            Where an existing platform doesn't cover the requirement, custom software is built from a specification derived from the organisation's actual processes — not a generalised template. Custom engagements have covered ICT management systems for research institutions, staff management systems for hospitality groups operating across multiple Uganda locations, and data management platforms for NGOs operating in rural Uganda.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       PRODUCTS GRID
+       ============================== -->
+  <section class="bg-warm-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-navy-900">Proprietary platforms built for Uganda</h2>
+        <p class="mt-4 text-lg text-navy-600">
+          Three production systems — not prototypes — serving Ugandan and East African organisations today.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <div class="rounded-2xl border border-navy-100 bg-white p-6 shadow-sm shadow-navy-900/5 flex flex-col">
+            <div class="mb-4 w-10 h-10 rounded-xl bg-gold-400/10 flex items-center justify-center">
+              <svg class="w-5 h-5 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-navy-900 mb-3">{product.name}</h3>
+            <p class="text-navy-600 text-sm leading-relaxed flex-grow">{product.description}</p>
+            <a
+              href={product.href}
+              class="inline-flex items-center mt-5 text-sm font-semibold text-gold-400 hover:text-amber-500 gap-1.5"
+            >
+              Learn more →
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       PROOF BLOCK
+       ============================== -->
+  <section class="bg-navy-950 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-gold-400 mb-6">Work in context</p>
+        <ProofBlock
+          title="Staff management system — hospitality group, Uganda"
+          summary="Multi-location staff management and payroll system deployed across 4 Uganda hospitality properties. Offline-capable, UGX payroll, management reporting in real time."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FAQ
+       ============================== -->
+  <FAQSection
+    title="Common questions about software development in Uganda"
+    subtitle="Questions asked most often by Ugandan organisations before starting a development engagement."
+    faqs={faqs}
+  />
+
+  <!-- ==============================
+       CROSS-LINK
+       ============================== -->
+  <section class="bg-warm-white py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <div class="bg-navy-50 rounded-xl p-6 border border-navy-100">
+          <p class="text-sm font-semibold text-navy-900">East Africa-wide project?</p>
+          <p class="text-sm text-navy-600 mt-1">This practice builds and deploys software across East Africa. See the East Africa software development page for regional context and multi-country deployments.</p>
+          <a href="/en/software-development-east-africa/" class="inline-flex items-center text-sm font-semibold text-gold-400 hover:text-amber-500 mt-3 gap-1.5">Software development across East Africa →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       CTA
+       ============================== -->
+  <CTASection
+    lang={lang}
+    title="Describe your software requirement"
+    subtitle="The first step is a 30-minute diagnostic to establish whether your requirement is better served by an existing platform or a custom build — and what a realistic budget looks like."
+    ctaLabel="Start the conversation"
+  />
+</BaseLayout>

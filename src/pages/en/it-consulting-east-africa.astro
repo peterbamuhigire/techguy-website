@@ -1,0 +1,227 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+import CTASection from '@/components/CTASection.astro';
+import ProofBlock from '@/components/ProofBlock.astro';
+import FAQSection from '@/components/FAQSection.astro';
+
+import businessStrategyImg from '@/assets/images/services/business-strategy.jpg';
+
+const lang: Lang = 'en';
+
+const countries = [
+  'Uganda', 'Kenya', 'Tanzania', 'Rwanda', 'Ethiopia', 'Burundi', 'South Sudan',
+];
+
+const faqs = [
+  {
+    question: 'Do you work with organisations in Kenya and Tanzania, or only Uganda?',
+    answer: 'Yes. The practice works with organisations across East Africa — Uganda, Kenya, Tanzania, Rwanda, Ethiopia, Burundi, and South Sudan. Remote engagements are managed from Kampala; in-country visits are scoped into the engagement as needed.',
+  },
+  {
+    question: 'Can you handle multi-country ICT projects that span several East African markets?',
+    answer: 'Yes — and this is a specific competency of the practice. The methodology for cross-border ICT engagements was developed during a role managing ICT operations across Uganda, Sierra Leone, and Senegal simultaneously. The practice understands the regulatory, language, and infrastructure differences between East African markets.',
+  },
+  {
+    question: 'What languages do you work in?',
+    answer: 'English and French. For organisations operating in francophone markets alongside anglophone ones, the practice can manage bilingual staff training, bilingual system documentation, and bilingual communications throughout the engagement.',
+  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'ICT Consulting East Africa — Peter Bamuhigire',
+  description: 'Independent ICT consulting across East Africa. Technology strategy, ERP implementation, and systems advisory for organisations in Uganda, Kenya, Tanzania, Rwanda, and Ethiopia.',
+  url: 'https://techguypeter.com/en/it-consulting-east-africa/',
+  areaServed: [
+    'Uganda', 'Kenya', 'Tanzania', 'Rwanda', 'Ethiopia', 'Burundi', 'South Sudan',
+  ].map((name) => ({ '@type': 'Country', name })),
+  serviceType: ['ICT Consulting', 'IT Strategy', 'ERP Implementation', 'Cross-border Technology Management'],
+  provider: {
+    '@type': 'Person',
+    name: 'Peter Bamuhigire',
+    url: 'https://techguypeter.com/en/',
+    sameAs: [
+      'https://linkedin.com/in/peterbamuhigire',
+      'https://github.com/peterbamuhigire',
+    ],
+  },
+};
+---
+
+<BaseLayout
+  title="IT Consultant East Africa — ICT Consulting & Technology Strategy | Peter Bamuhigire"
+  description="Independent ICT consulting across East Africa. Technology strategy, ERP implementation, and systems advisory for organisations in Uganda, Kenya, Tanzania, Rwanda, and Ethiopia. Bilingual in English and French. Based in Kampala."
+  lang={lang}
+  page="services"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <!-- ==============================
+       HERO
+       ============================== -->
+  <section class="relative bg-navy-950 overflow-hidden">
+    <div class="absolute inset-0 geo-pattern opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-900"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24">
+      <div class="py-16 md:py-20 lg:py-24 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-6">
+          <span class="text-gold-400 text-sm font-medium">East Africa ICT Consulting</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
+          ICT consulting for organisations operating across East Africa's most demanding business environments
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-navy-200 leading-relaxed max-w-2xl">
+          Most East African organisations get their technology advice from vendors selling a product or from consultants with frameworks designed for different markets. Peter Bamuhigire offers a third option: independent ICT consulting built around 15 years of working inside East and West African organisations — and no incentive to recommend any particular solution.
+        </p>
+
+        <div class="mt-6 h-1 w-16 rounded-full bg-gold-400"></div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a
+            href="/en/contact/"
+            class="inline-block px-8 py-4 bg-amber-accent hover:bg-gold-600 text-white text-lg font-semibold rounded-lg transition-colors shadow-lg shadow-amber-accent/20"
+          >
+            Book a diagnostic call
+          </a>
+          <a
+            href="/en/about/"
+            class="inline-block px-8 py-4 border-2 border-gold-400 text-gold-400 hover:bg-gold-400/10 text-lg font-semibold rounded-lg transition-colors"
+          >
+            About the practice
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 40L1440 40L1440 0C1200 30 960 40 720 35C480 30 240 10 0 0L0 40Z" fill="rgb(var(--color-warm-white, 250 247 242))" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==============================
+       BODY COPY
+       ============================== -->
+  <section class="bg-warm-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-12 lg:gap-16">
+
+        <!-- Main prose -->
+        <div class="lg:col-span-2 space-y-12">
+
+          <div class="prose prose-navy max-w-none">
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">Why East African organisations need different ICT advice</h2>
+            <p class="text-navy-700 leading-relaxed mt-4">
+              East African business environments share technology challenges that Western consulting frameworks don't adequately address: multi-country operations across EAC borders with different regulatory environments; multilingual workforces requiring systems in English, Swahili, French, and sometimes Kinyarwanda or Amharic; connectivity conditions varying from fibre in Nairobi CBD to 2G in secondary towns; and the constant tension between enterprise-grade technology and the staffing resources available to operate it.
+            </p>
+            <p class="text-navy-700 leading-relaxed mt-4">
+              The ICT consulting practice here was built inside this environment — not designed for it in theory. The methodology was developed through 15 years of engagements across Uganda, Kenya, Sierra Leone, Senegal, and Rwanda.
+            </p>
+          </div>
+
+          <div class="prose prose-navy max-w-none">
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">Cross-border ICT engagements</h2>
+            <p class="text-navy-700 leading-relaxed mt-4">
+              Engagements spanning multiple East African countries require specific competencies that generalist ICT consultants rarely have: experience navigating different national regulatory frameworks for data and technology, ability to manage staff training across multiple office locations, and direct experience of infrastructure differences between markets.
+            </p>
+            <p class="text-navy-700 leading-relaxed mt-4">
+              These are not theoretical competencies — they are the product of running ICT operations across three countries simultaneously at Dynapharm Africa. The practice works with organisations based in any East African country and with organisations headquartered outside the region that need an East Africa technology partner.
+            </p>
+          </div>
+
+          <!-- Countries served -->
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900 mb-6">Countries served</h2>
+            <div class="flex flex-wrap gap-3">
+              {countries.map((country) => (
+                <span class="inline-flex items-center px-4 py-2 rounded-full bg-navy-900 text-warm-white text-sm font-semibold border border-gold-400/20">
+                  {country}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <!-- Cross-link to Uganda -->
+          <div class="bg-navy-50 rounded-xl p-6 border border-navy-100">
+            <p class="text-sm font-semibold text-navy-900">Based in Uganda specifically?</p>
+            <p class="text-sm text-navy-600 mt-1">This practice is headquartered in Kampala. See the dedicated Uganda ICT consulting page for Uganda-specific context, pricing in UGX, and local references.</p>
+            <a href="/en/it-consulting-uganda/" class="inline-flex items-center text-sm font-semibold text-gold-400 hover:text-amber-500 mt-3 gap-1.5">ICT consulting Uganda →</a>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <div class="space-y-8">
+          <div class="overflow-hidden rounded-2xl shadow-lg">
+            <Image
+              src={businessStrategyImg}
+              alt="ICT consulting strategy session for an East African organisation"
+              class="w-full h-56 object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <ProofBlock
+            title="Dynapharm Africa — cross-border ICT operations"
+            summary="ICT operations managed across Sierra Leone, Senegal, and Uganda simultaneously. ERP unified across all three markets. Bilingual (English-French) staff training delivered in each country."
+          />
+
+          <div class="bg-warm-cream rounded-2xl p-6 border border-navy-100">
+            <h3 class="text-sm font-semibold uppercase tracking-widest text-navy-500 mb-4">What this practice offers</h3>
+            <ul class="space-y-3 text-sm text-navy-700">
+              <li class="flex items-start gap-2">
+                <span class="text-gold-400 mt-0.5 shrink-0">▸</span>
+                Technology strategy and systems assessment
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gold-400 mt-0.5 shrink-0">▸</span>
+                ERP selection, implementation, and handover
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gold-400 mt-0.5 shrink-0">▸</span>
+                Cross-border ICT operations management
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gold-400 mt-0.5 shrink-0">▸</span>
+                Bilingual (English-French) advisory
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gold-400 mt-0.5 shrink-0">▸</span>
+                Staff training across multiple locations
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FAQ
+       ============================== -->
+  <FAQSection
+    title="Common questions about East Africa ICT consulting"
+    subtitle="How the practice handles cross-border and multi-market technology engagements."
+    faqs={faqs}
+  />
+
+  <!-- ==============================
+       CTA
+       ============================== -->
+  <CTASection
+    lang={lang}
+    title="Start with a diagnostic"
+    subtitle="The first conversation is a 30-minute diagnostic — not a sales call. Peter will tell you honestly whether this practice is the right fit for your East Africa technology challenge."
+    ctaLabel="Book an ICT diagnostic call"
+  />
+
+</BaseLayout>

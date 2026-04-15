@@ -1,0 +1,221 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+import CTASection from '@/components/CTASection.astro';
+import ProofBlock from '@/components/ProofBlock.astro';
+import FAQSection from '@/components/FAQSection.astro';
+
+import softwareDevImg from '@/assets/images/services/software-dev-1.jpg';
+import blogImg8 from '@/assets/images/blog-images-8.jpg';
+
+const lang: Lang = 'fr';
+
+const products = [
+  {
+    name: 'Maduuka',
+    tagline: 'Gestion d\'entreprise pour PME africaines',
+    description: 'Logiciel de gestion d\'entreprise pour PME africaines. Multi-devises, mobile-first, capable de fonctionner hors ligne. Conçu pour les réalités du commerce africain.',
+  },
+  {
+    name: 'Aqar',
+    tagline: 'Gestion immobilière africaine',
+    description: 'Logiciel de gestion immobilière pour propriétaires et agents immobiliers africains. Encaissement des loyers en monnaie locale, gestion des locataires, suivi des travaux.',
+  },
+  {
+    name: 'Longhorn ERP',
+    tagline: 'ERP multi-pays pour l\'Afrique',
+    description: 'Planification des ressources d\'entreprise pour les organisations multi-pays africaines. Multi-devises, multi-sites, multilingue. Déployé en Ouganda, au Kenya et en Afrique de l\'Ouest.',
+  },
+];
+
+const faqs = [
+  {
+    question: 'Vos plateformes sont-elles compatibles avec les paiements mobiles africains ?',
+    answer: "Oui. L'intégration des paiements mobiles (Orange Money, Wave, MTN Mobile Money, Airtel Money) est intégrée nativement dans nos plateformes — pas comme une option supplémentaire. Cela reflète la réalité des paiements pour les entreprises africaines.",
+  },
+  {
+    question: 'Pouvez-vous développer des logiciels conformes aux normes SYSCOHADA ?',
+    answer: "Oui. La conformité SYSCOHADA pour les rapports financiers et comptables est intégrée dans la conception de Longhorn ERP et dans les spécifications de tout développement sur mesure destiné aux marchés d'Afrique francophone.",
+  },
+  {
+    question: 'Combien coûte le développement d\'un logiciel sur mesure en Afrique ?',
+    answer: "Les coûts varient selon la portée du projet : une application web sur mesure débute autour de 2 200 à 11 000 USD ; un système ERP de 8 000 à 55 000 USD et plus. Un diagnostic de 30 minutes permet d'établir une estimation budgétaire réaliste pour votre besoin spécifique, sans engagement.",
+  },
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Développeur Logiciel Afrique — Peter Bamuhigire',
+  description: "Développement logiciel sur mesure pour les entreprises d'Afrique francophone. Applications web, systèmes ERP, applications mobiles et plateformes SaaS adaptées aux réalités africaines.",
+  url: 'https://techguypeter.com/fr/developpement-logiciel-afrique/',
+  areaServed: [
+    'Sénégal', "Côte d'Ivoire", 'Cameroun', 'RDC', 'Mali', 'Togo', 'Bénin', 'Burkina Faso', 'Sierra Leone', 'Guinée', 'Rwanda', 'Ouganda',
+  ].map((name) => ({ '@type': 'Country', name })),
+  serviceType: ['Développement logiciel', 'Systèmes ERP', 'Applications mobiles', 'Développement sur mesure'],
+  knowsLanguage: ['fr', 'en'],
+  provider: {
+    '@type': 'Person',
+    name: 'Peter Bamuhigire',
+    url: 'https://techguypeter.com/fr/',
+    sameAs: [
+      'https://linkedin.com/in/peterbamuhigire',
+      'https://github.com/peterbamuhigire',
+    ],
+  },
+};
+---
+
+<BaseLayout
+  title="Développeur Logiciel Afrique — Développement Logiciel Sur Mesure | Peter Bamuhigire"
+  description="Développement logiciel sur mesure pour les entreprises d'Afrique francophone. Applications web, systèmes ERP, applications mobiles et plateformes SaaS adaptées aux réalités africaines. Bilingue anglais-français. Basé à Kampala, Ouganda."
+  lang={lang}
+  page="services"
+  altUrl="/en/software-development-east-africa/"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+
+  <!-- ==============================
+       HERO
+       ============================== -->
+  <section class="relative overflow-hidden bg-navy-950">
+    <div class="absolute inset-0 geo-pattern opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-900"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 md:pt-24">
+      <div class="py-16 md:py-20 lg:py-24 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-6">
+          <span class="text-gold-400 text-sm font-medium">Développement logiciel — Afrique</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
+          Développement logiciel sur mesure pour les entreprises africaines — conçu pour vos réalités, pas pour celles d'ailleurs
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-navy-200 leading-relaxed max-w-2xl">
+          Les logiciels standard sont conçus pour le marché dans lequel ils ont été développés. Si votre organisation opère en Afrique francophone — avec ses infrastructures de connectivité, ses équipes multilingues, ses cadres réglementaires OHADA et ses processus métier spécifiques — les logiciels standard produisent des contournements, pas des solutions.
+        </p>
+
+        <div class="mt-4 h-1 w-16 rounded-full bg-gold-400"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       BODY COPY
+       ============================== -->
+  <section class="bg-warm-white py-16 md:py-24">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-16 lg:grid-cols-[1fr_320px] lg:gap-12">
+
+        <!-- Main content -->
+        <div class="space-y-12">
+
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">
+              Ce qui distingue le développement logiciel africain du développement logiciel générique
+            </h2>
+            <p class="mt-5 text-navy-700 leading-relaxed">
+              Un système de gestion pour une entreprise à Abidjan ou à Dakar doit gérer le paiement mobile (Orange Money, Wave, MTN Mobile Money), fonctionner en mode hors ligne lorsque la connectivité est intermittente, prendre en charge les rapports financiers conformes aux normes SYSCOHADA, et être utilisable par un personnel dont le niveau de compétence technique varie considérablement.
+            </p>
+            <p class="mt-4 text-navy-700 leading-relaxed">
+              Les trois plateformes propriétaires développées par ce cabinet — Maduuka (gestion d'entreprise), Aqar (gestion immobilière) et Longhorn ERP (planification des ressources d'entreprise) — ont été conçues de zéro pour ces réalités. Elles gèrent nativement les cas spécifiques à l'Afrique : intégration de la monnaie mobile, fonctionnement hors ligne, interfaces multilingues et conformité aux cadres comptables locaux.
+            </p>
+          </div>
+
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">
+              Développement sur mesure pour les organisations avec des besoins spécifiques
+            </h2>
+            <p class="mt-5 text-navy-700 leading-relaxed">
+              Lorsque les plateformes existantes ne couvrent pas le besoin, un développement sur mesure est réalisé à partir d'une spécification dérivée des processus réels de l'organisation — pas d'un modèle générique. Les missions de développement sur mesure récentes ont couvert : des systèmes de gestion ERP pour la distribution pharmaceutique en Afrique de l'Ouest, des plateformes de gestion des données pour des institutions de recherche, et des systèmes de suivi logistique pour des entreprises de distribution opérant sur plusieurs marchés africains.
+            </p>
+          </div>
+
+          <!-- Products grid -->
+          <div>
+            <h2 class="text-2xl md:text-3xl font-bold text-navy-900">Plateformes propriétaires</h2>
+            <div class="mt-6 grid gap-5 sm:grid-cols-3">
+              {products.map((product) => (
+                <div class="rounded-2xl border border-navy-100 bg-white p-6 shadow-sm shadow-navy-900/5">
+                  <p class="text-xs font-semibold uppercase tracking-widest text-gold-600">{product.tagline}</p>
+                  <h3 class="mt-2 text-xl font-bold text-navy-900">{product.name}</h3>
+                  <p class="mt-3 text-sm text-navy-600 leading-relaxed">{product.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Countries block -->
+          <div class="rounded-xl bg-navy-950 px-6 py-5">
+            <p class="text-sm font-semibold uppercase tracking-widest text-gold-400">Marchés desservis</p>
+            <p class="mt-3 text-base text-navy-200 leading-relaxed">
+              Sénégal · Côte d'Ivoire · Cameroun · RDC · Mali · Togo · Bénin · Burkina Faso · Sierra Leone · Guinée · Rwanda · Ouganda
+            </p>
+          </div>
+
+          <!-- Language switch panel -->
+          <div class="bg-navy-50 rounded-xl p-6 border border-navy-100">
+            <p class="text-sm font-semibold text-navy-900">English version available</p>
+            <p class="text-sm text-navy-600 mt-1">This page is available in English for East African markets.</p>
+            <a href="/en/software-development-east-africa/" class="inline-flex items-center text-sm font-semibold text-gold-400 hover:text-amber-500 mt-3 gap-1.5">View in English →</a>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="space-y-6">
+          <div class="sticky top-24 space-y-6">
+            <Image
+              src={softwareDevImg}
+              alt="Développement logiciel sur mesure pour les entreprises africaines"
+              class="w-full rounded-2xl object-cover shadow-lg"
+              width={320}
+              height={240}
+              loading="lazy"
+            />
+
+            <ProofBlock
+              title="Dynapharm Africa — ERP multi-pays en Afrique de l'Ouest"
+              summary="Systèmes ERP en Sierra Leone, Sénégal et Ouganda unifiés sur une seule plateforme. Formation bilingue dispensée. Déployé dans les délais sur trois pays."
+            />
+
+            <div class="rounded-xl border border-navy-100 bg-white p-5 shadow-sm">
+              <p class="text-sm font-semibold text-navy-900">Parlez-nous de votre projet</p>
+              <p class="mt-2 text-sm text-navy-600">Diagnostic de 30 minutes pour évaluer votre besoin, sans engagement.</p>
+              <a
+                href="/fr/contact/"
+                class="mt-4 inline-block w-full rounded-lg bg-amber-accent px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-gold-600"
+              >
+                Démarrer la conversation
+              </a>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FAQ
+       ============================== -->
+  <FAQSection
+    title="Questions fréquentes"
+    subtitle="Réponses aux questions les plus courantes sur le développement logiciel pour les entreprises africaines."
+    faqs={faqs}
+  />
+
+  <!-- ==============================
+       CTA
+       ============================== -->
+  <CTASection
+    lang={lang}
+    title="Décrivez votre besoin logiciel"
+    subtitle="La première étape est un diagnostic de 30 minutes pour déterminer si votre besoin est mieux satisfait par une plateforme existante ou un développement sur mesure."
+    ctaLabel="Démarrer la conversation"
+    ctaHref="/fr/contact/"
+  />
+
+</BaseLayout>

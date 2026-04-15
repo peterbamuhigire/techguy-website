@@ -1,0 +1,356 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+import CTASection from '@/components/CTASection.astro';
+import ProofBlock from '@/components/ProofBlock.astro';
+import FAQSection from '@/components/FAQSection.astro';
+
+import heroImg from '@/assets/images/services/website-dev-1.jpg';
+import bodyImg from '@/assets/images/services/website-dev-2.jpg';
+
+const lang: Lang = 'en';
+
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Peter Bamuhigire — Website Development Uganda',
+  description:
+    'Professional website design and development in Uganda. Fast-loading, mobile-first websites for Ugandan businesses. Based in Kampala. Formal quote within 24 hours.',
+  url: 'https://techguypeter.com/en/website-development-uganda/',
+  image: 'https://techguypeter.com/og-image.jpg',
+  priceRange: 'From UGX 3,000,000',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Kampala',
+    addressCountry: 'UG',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Kampala', containedInPlace: { '@type': 'Country', name: 'Uganda' } },
+    { '@type': 'Country', name: 'Uganda' },
+  ],
+  serviceType: ['Website Design', 'Web Development', 'SEO', 'Mobile Website Development'],
+  provider: {
+    '@type': 'Person',
+    name: 'Peter Bamuhigire',
+    url: 'https://techguypeter.com/en/',
+    jobTitle: 'Web Developer & ICT Consultant',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Kampala',
+      addressCountry: 'UG',
+    },
+  },
+  offers: {
+    '@type': 'Offer',
+    priceSpecification: {
+      '@type': 'PriceSpecification',
+      priceCurrency: 'UGX',
+      minPrice: '3000000',
+    },
+    description: 'Professional website design and development for Ugandan businesses',
+  },
+};
+
+const faqs = [
+  {
+    question: 'How much does a website cost in Uganda?',
+    answer:
+      'A simple 5-page business website from this practice starts from UGX 3,000,000–5,000,000 (approximately USD 800–1,400) for design, development, and basic SEO setup. A full quote specific to your requirements is provided within 24 hours of a briefing call.',
+  },
+  {
+    question: 'How long does a website take to build in Uganda?',
+    answer:
+      'A standard business website typically takes 2–4 weeks from approved brief to delivery. Complex websites with custom features take longer. Timeline is confirmed in the initial proposal.',
+  },
+  {
+    question: 'Do you provide ongoing website support after launch?',
+    answer:
+      'Yes. Monthly support packages start from USD 200/month and include content updates, performance monitoring, security maintenance, and basic SEO reporting. These are optional — many clients manage their own content after a handover training session.',
+  },
+];
+
+const differentiators = [
+  {
+    title: 'Loads in under a second on 3G',
+    description:
+      'Built as static sites with no database, no WordPress, no unnecessary scripts. Performance is engineered in, not bolted on.',
+  },
+  {
+    title: 'Uganda-specific SEO from the start',
+    description:
+      'Not retrofitted. Schema markup, page titles, and content structure are optimised for Ugandan search queries from day one.',
+  },
+  {
+    title: 'Designed around one conversion goal',
+    description:
+      'Every page has a clear reason to make contact. Visitors know what to do next — and how to do it.',
+  },
+];
+---
+
+<BaseLayout
+  title="Website Developer Uganda — Professional Web Design Kampala | Peter Bamuhigire"
+  description="Professional website design and development in Uganda. Fast-loading, mobile-first websites for Ugandan businesses. Based in Kampala. Formal quote within 24 hours."
+  lang={lang}
+  page="services"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />
+
+  <!-- ==============================
+       HERO
+       ============================== -->
+  <section class="relative bg-navy-950 overflow-hidden">
+    <div class="absolute inset-0 geo-pattern opacity-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-950/95 to-navy-900"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24">
+      <div class="py-16 md:py-20 lg:py-24 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-6">
+          <span class="text-gold-400 text-sm font-medium">Website Development · Uganda</span>
+        </div>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
+          Professional website design for Ugandan businesses — built fast, built to rank, built to last
+        </h1>
+
+        <p class="mt-6 text-lg md:text-xl text-navy-200 leading-relaxed max-w-2xl">
+          A website for a Ugandan business must load quickly on mobile networks, rank well in Ugandan Google search results, and convert visitors into enquiries. Most websites built for Ugandan businesses fail at least one of these three. Peter Bamuhigire's web development practice builds sites that pass all three — because all three are built into the specification from the start.
+        </p>
+
+        <div class="mt-4 h-1 w-16 rounded-full bg-gold-400"></div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a
+            href="/en/contact/"
+            class="inline-flex items-center justify-center px-7 py-3.5 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-amber-accent/20 hover:-translate-y-0.5"
+          >
+            Get a quote within 24 hours
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+          <a
+            href="/en/portfolio/"
+            class="inline-flex items-center justify-center px-7 py-3.5 border-2 border-gold-400 text-gold-400 hover:bg-gold-400/10 font-semibold rounded-lg transition-colors"
+          >
+            View portfolio
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+        <path d="M0 40V10C360 30 720 0 1080 20C1260 30 1380 25 1440 20V40H0Z" fill="var(--color-warm-white)" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==============================
+       THREE DIFFERENTIATORS
+       ============================== -->
+  <section class="bg-warm-white py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-6">
+        {differentiators.map((item, index) => (
+          <div class="rounded-2xl border border-navy-100 bg-white p-6 shadow-sm shadow-navy-900/5">
+            <div class="text-3xl font-bold text-gold-400/30 mb-3">0{index + 1}</div>
+            <h3 class="text-lg font-bold text-navy-900 mb-2">{item.title}</h3>
+            <p class="text-sm text-navy-600 leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       BODY COPY — SECTION 1
+       ============================== -->
+  <section class="bg-warm-cream py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <!-- Text -->
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-6">
+            Why most websites built for Ugandan businesses underperform
+          </h2>
+          <p class="text-navy-600 leading-relaxed">
+            The typical Ugandan business website is built on a generic WordPress theme, loaded with plugins that slow it down, and optimised for nobody in particular. It loads slowly on the mobile networks most Ugandan users are on. It does not rank for the search terms potential clients are actually using. And it does not give the visitor a clear reason to make contact. The websites built by this practice are different in three specific ways: they are built as static sites (no database, no WordPress, no unnecessary scripts — they load in under a second on a 3G connection); they are built with Uganda-specific SEO from the start (not retrofitted); and they are designed with a single conversion goal in mind.
+          </p>
+        </div>
+
+        <!-- Image -->
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-3xl bg-gradient-to-br from-gold-400/10 to-navy-900/5 blur-2xl"></div>
+          <Image
+            src={heroImg}
+            alt="Professional website design for Ugandan businesses"
+            class="relative rounded-2xl shadow-2xl shadow-navy-900/20 w-full object-cover aspect-[4/3]"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       BODY COPY — SECTION 2
+       ============================== -->
+  <section class="bg-warm-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <!-- Image (left on desktop) -->
+        <div class="relative order-2 lg:order-1">
+          <div class="absolute -inset-4 rounded-3xl bg-gradient-to-br from-navy-900/10 to-gold-400/5 blur-2xl"></div>
+          <Image
+            src={bodyImg}
+            alt="Website development process and handover in Kampala, Uganda"
+            class="relative rounded-2xl shadow-2xl shadow-navy-900/20 w-full object-cover aspect-[4/3]"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Text -->
+        <div class="order-1 lg:order-2">
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-6">
+            What a website development engagement includes
+          </h2>
+          <p class="text-navy-600 leading-relaxed mb-6">
+            Every website engagement begins with a brief — your business, your audience, your goals, and your existing online presence. Websites are delivered with: responsive mobile-first design, page load time under 2 seconds on mobile networks, Google Search Console connected and verified, basic on-page SEO in place, and a handover session explaining how to update content. Ongoing support packages are available for businesses that want monthly SEO, content updates, and performance monitoring after launch.
+          </p>
+
+          <ul class="space-y-3">
+            {[
+              'Responsive mobile-first design',
+              'Page load under 2 seconds on mobile networks',
+              'Google Search Console connected and verified',
+              'On-page SEO for Uganda-specific search terms',
+              'Handover session with content update training',
+            ].map((item) => (
+              <li class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-gold-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-navy-700 text-sm">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       PRICING SECTION
+       ============================== -->
+  <section class="bg-warm-cream py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-6">What a website costs in Uganda</h2>
+        <p class="text-navy-600 leading-relaxed">
+          Website costs in Uganda vary by scope. A simple 5-page business website starts from UGX 3,000,000–5,000,000 (approximately USD 800–1,400) for design, development, and basic SEO. A complex site with e-commerce, booking systems, or a custom web application is scoped individually. A formal written quote is provided within 24 hours of the initial briefing. There is no obligation to proceed.
+        </p>
+
+        <div class="mt-8 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl border border-navy-200 bg-white p-6 shadow-sm">
+            <p class="text-xs font-semibold uppercase tracking-wider text-navy-500 mb-3">Business website</p>
+            <p class="text-3xl font-bold text-navy-900">From UGX 3M</p>
+            <p class="text-sm text-navy-500 mt-0.5">~USD 800</p>
+            <ul class="mt-4 space-y-2">
+              {['Up to 8 pages', 'Mobile-first design', 'Basic on-page SEO', 'Google Search Console setup', 'Handover training'].map((item) => (
+                <li class="flex items-center gap-2 text-sm text-navy-600">
+                  <svg class="w-4 h-4 text-gold-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-gold-400/30 bg-white p-6 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 right-0 px-3 py-1 bg-gold-400 text-navy-900 text-xs font-bold rounded-bl-xl">
+              Custom quote
+            </div>
+            <p class="text-xs font-semibold uppercase tracking-wider text-navy-500 mb-3">Complex site or web app</p>
+            <p class="text-3xl font-bold text-navy-900">Scoped individually</p>
+            <p class="text-sm text-navy-500 mt-0.5">Quote within 24 hours</p>
+            <ul class="mt-4 space-y-2">
+              {['E-commerce', 'Booking systems', 'Custom web applications', 'Multi-language sites', 'CRM integrations'].map((item) => (
+                <li class="flex items-center gap-2 text-sm text-navy-600">
+                  <svg class="w-4 h-4 text-gold-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <a
+            href="/en/contact/"
+            class="inline-flex items-center px-7 py-3.5 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-amber-accent/20 hover:-translate-y-0.5"
+          >
+            Request a written quote
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       PROOF BLOCK
+       ============================== -->
+  <section class="bg-navy-950 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-gold-400 mb-6">Work in context</p>
+        <ProofBlock
+          title="Portfolio of 30+ Uganda websites"
+          summary="Static-site architecture used across all projects: sub-1-second load times on 3G networks, Google Search Console verified, mobile-first from the start. Clients include professional services firms, NGOs, hospitality, and e-commerce businesses in Kampala and across Uganda."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       FAQ
+       ============================== -->
+  <FAQSection
+    title="Common questions about website development in Uganda"
+    subtitle="Questions asked most often by Ugandan businesses before commissioning a website."
+    faqs={faqs}
+  />
+
+  <!-- ==============================
+       CROSS-LINK
+       ============================== -->
+  <section class="bg-warm-white py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <div class="bg-navy-50 rounded-xl p-6 border border-navy-100">
+          <p class="text-sm font-semibold text-navy-900">Working across East Africa?</p>
+          <p class="text-sm text-navy-600 mt-1">This practice builds websites for organisations across the region. See the East Africa web development page for regional context and multi-language site capabilities.</p>
+          <a href="/en/website-development-east-africa/" class="inline-flex items-center text-sm font-semibold text-gold-400 hover:text-amber-500 mt-3 gap-1.5">Website development across East Africa →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       CTA
+       ============================== -->
+  <CTASection
+    lang={lang}
+    title="Get a quote for your Uganda website"
+    subtitle="Describe your business and what you need from a website. A written quote arrives within 24 hours."
+    ctaLabel="Request a website quote"
+  />
+</BaseLayout>

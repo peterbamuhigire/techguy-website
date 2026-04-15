@@ -1,0 +1,48 @@
+---
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  faqs: FAQItem[];
+}
+
+const { title, subtitle, faqs } = Astro.props;
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<section class="bg-warm-white py-16 md:py-24">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-navy-900">{title}</h2>
+      {subtitle && <p class="mt-4 text-lg text-navy-600">{subtitle}</p>}
+    </div>
+    <div class="mt-10 space-y-4">
+      {faqs.map((faq) => (
+        <details class="group rounded-2xl border border-navy-100 bg-white p-6 shadow-sm shadow-navy-900/5">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-navy-900">
+            <span>{faq.question}</span>
+            <span class="text-gold-600 transition group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-4 text-navy-600 leading-relaxed">{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

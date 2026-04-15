@@ -1,0 +1,39 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page not found | Peter Bamuhigire"
+  description="The page you requested could not be found. Continue to the main site and explore services, case studies, and articles."
+  lang="en"
+  noindex={true}
+>
+  <section class="geo-pattern bg-navy-950 py-24 md:py-32">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold uppercase tracking-[0.28em] text-gold-400">404</p>
+      <h1 class="mt-4 text-4xl font-bold text-warm-white md:text-6xl">This page does not exist.</h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-navy-200">
+        The link may be outdated, the page may have moved, or the URL may have been typed incorrectly.
+        Use one of the routes below to continue.
+      </p>
+      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="/en/" class="rounded-xl bg-amber-accent px-6 py-3 font-semibold text-white transition hover:bg-gold-600">Go to the homepage</a>
+        <a href="/en/contact/" class="rounded-xl border border-gold-400 px-6 py-3 font-semibold text-gold-400 transition hover:bg-gold-400/10">Book a consultation</a>
+      </div>
+      <div class="mt-12 grid gap-4 text-left md:grid-cols-3">
+        <a href="/en/services/" class="rounded-2xl border border-navy-700 bg-navy-900/60 p-5 text-warm-white">
+          <p class="font-semibold">Services</p>
+          <p class="mt-2 text-sm text-navy-300">See software, ICT strategy, and authority website offers.</p>
+        </a>
+        <a href="/en/portfolio/" class="rounded-2xl border border-navy-700 bg-navy-900/60 p-5 text-warm-white">
+          <p class="font-semibold">Proof</p>
+          <p class="mt-2 text-sm text-navy-300">Review flagship systems and examples of the work.</p>
+        </a>
+        <a href="/en/blog/" class="rounded-2xl border border-navy-700 bg-navy-900/60 p-5 text-warm-white">
+          <p class="font-semibold">Insights</p>
+          <p class="mt-2 text-sm text-navy-300">Read articles on digital strategy, software, and business systems.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

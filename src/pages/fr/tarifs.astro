@@ -1,0 +1,66 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import OfferTierCard from '@/components/OfferTierCard.astro';
+import type { Lang } from '@/utils/i18n';
+import { siteConfig } from '@/data/site';
+
+const lang: Lang = 'fr';
+---
+
+<BaseLayout
+  title="Tarifs et fit commercial | Peter Bamuhigire"
+  description="Repere de tarifs pour les sites d'autorite, les systemes numeriques et les retainers post-lancement."
+  lang={lang}
+  page="pricing"
+  altUrl="/en/pricing/"
+>
+  <section class="geo-pattern bg-navy-950 pt-24 pb-16 md:pt-32 md:pb-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl fade-up">
+        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold-400">Transparence tarifaire</p>
+        <h1 class="mt-4 text-4xl font-bold text-warm-white md:text-6xl">Un travail strategique merite une clarte commerciale reelle.</h1>
+        <p class="mt-6 text-lg leading-relaxed text-navy-200">
+          Cette page sert a juger rapidement le fit: le niveau de travail implique, le type de client vise et les options de suivi apres lancement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-warm-white py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mt-10 grid gap-6 lg:grid-cols-3">
+        {siteConfig.offers.projectTiers.map((tier) => (
+          <div class="fade-up">
+            <OfferTierCard name={tier.name} price={tier.price} description={tier.descriptionFr} bullets={tier.bulletsFr} />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-navy-50 py-16 md:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="fade-up max-w-3xl">
+        <h2 class="text-3xl font-bold text-navy-900 md:text-5xl">Retainers</h2>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+        {siteConfig.offers.retainers.map((retainer) => (
+          <article class="fade-up rounded-3xl border border-navy-100 bg-white p-6 shadow-sm shadow-navy-900/5">
+            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-amber-accent">{retainer.price}</p>
+            <h3 class="mt-3 text-xl font-bold text-navy-900">{retainer.nameFr}</h3>
+            <p class="mt-4 text-sm leading-relaxed text-navy-600">{retainer.summaryFr}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    lang={lang}
+    title="Si le fit est bon, la prochaine etape est un appel diagnostic."
+    subtitle="Expliquez le contexte business, la pression commerciale et le niveau d'accompagnement recherche."
+    ctaHref="/fr/contact/"
+    ctaLabel="Reserver un appel diagnostic"
+  />
+</BaseLayout>

@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import type { Lang } from '@/utils/i18n';
+import { authorProfile, siteConfig } from '@/data/site';
 
 interface Props {
   title: string;
@@ -12,120 +13,161 @@ interface Props {
   page?: string;
   noindex?: boolean;
   altUrl?: string;
+  articleMeta?: {
+    title: string;
+    description: string;
+    publishedTime: string;
+    modifiedTime?: string;
+    image?: string;
+  };
 }
 
-const { title, description, lang, ogImage = '/og-image.jpg', page = '', noindex = false, altUrl: altUrlProp } = Astro.props;
+const {
+  title,
+  description,
+  lang,
+  ogImage = '/og-image.jpg',
+  page = '',
+  noindex = false,
+  altUrl: altUrlProp,
+  articleMeta,
+} = Astro.props;
+
 const altLang = lang === 'en' ? 'fr' : 'en';
+const siteUrl = siteConfig.siteUrl;
 const currentPath = Astro.url.pathname.replace(`/${lang}`, '');
-// Pages with different slugs per language
 const slugMap: Record<string, string> = {
   'digital-marketing-strategy': 'strategie-marketing-digital',
   'strategie-marketing-digital': 'digital-marketing-strategy',
   'business-plan-intake': 'devis-plan-affaires',
   'devis-plan-affaires': 'business-plan-intake',
+  pricing: 'tarifs',
+  tarifs: 'pricing',
 };
 const currentSlug = currentPath.replace(/^\//, '').replace(/\/$/, '');
-// Rule: explicit altUrl > slugMap lookup > same-path swap
-const altUrl = altUrlProp
-  ?? (slugMap[currentSlug] ? `/${altLang}/${slugMap[currentSlug]}/` : `/${altLang}${currentPath || '/'}`);
-const siteUrl = 'https://techguypeter.com';
+const altUrl =
+  altUrlProp ??
+  (slugMap[currentSlug] ? `/${altLang}/${slugMap[currentSlug]}/` : `/${altLang}${currentPath || '/'}`);
 const canonicalUrl = `${siteUrl}/${lang}${currentPath || '/'}`;
 
-// Breadcrumb data
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
+const bingVerification = import.meta.env.PUBLIC_BING_VERIFICATION;
+const hasAnalytics = Boolean(gaMeasurementId);
+
 const breadcrumbItems: { name: string; url: string }[] = [
   { name: lang === 'en' ? 'Home' : 'Accueil', url: `${siteUrl}/${lang}/` },
 ];
+
 if (page && page !== 'home') {
   const pageNames: Record<string, Record<string, string>> = {
     services: { en: 'Services', fr: 'Services' },
     websites: { en: 'Websites', fr: 'Sites Web' },
     portfolio: { en: 'Software', fr: 'Logiciels' },
-    about: { en: 'About', fr: 'À Propos' },
+    about: { en: 'About', fr: 'A Propos' },
     contact: { en: 'Contact', fr: 'Contact' },
     blog: { en: 'Blog', fr: 'Blog' },
+    pricing: { en: 'Pricing', fr: 'Tarifs' },
   };
+
   breadcrumbItems.push({
     name: pageNames[page]?.[lang] || page,
     url: canonicalUrl,
   });
 }
 
-// ProfessionalService structured data (on every page)
-const professionalServiceSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Peter Bamuhigire — IT Consultant & Software Developer",
-  "url": siteUrl,
-  "logo": `${siteUrl}/og-image.jpg`,
-  "image": `${siteUrl}/og-image.jpg`,
-  "description": "IT consulting, software development, website design, and business advisory services in Kampala, Uganda. Serving clients across East Africa and internationally.",
-  "telephone": "+256784464178",
-  "email": "peter@techguypeter.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Bukoto",
-    "addressLocality": "Kampala",
-    "addressCountry": "UG"
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Peter Bamuhigire',
+  url: siteUrl,
+  logo: `${siteUrl}/og-image.jpg`,
+  image: `${siteUrl}/og-image.jpg`,
+  description:
+    'Authority websites, software systems, ICT consulting, and business strategy for serious organisations operating across Africa.',
+  telephone: '+256784464178',
+  email: 'peter@techguypeter.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Bukoto',
+    addressLocality: 'Kampala',
+    addressCountry: 'UG',
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 0.3476,
-    "longitude": 32.5936
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 0.3476,
+    longitude: 32.5936,
   },
-  "areaServed": [
-    { "@type": "Country", "name": "Uganda" },
-    { "@type": "Country", "name": "Kenya" },
-    { "@type": "Country", "name": "Tanzania" },
-    { "@type": "Country", "name": "Rwanda" },
-    { "@type": "Country", "name": "Democratic Republic of the Congo" },
-    { "@type": "Country", "name": "Senegal" },
-    { "@type": "Country", "name": "Sierra Leone" },
-    { "@type": "Country", "name": "Guinea" },
-    { "@type": "Country", "name": "United Kingdom" }
+  areaServed: [
+    { '@type': 'Country', name: 'Uganda' },
+    { '@type': 'Country', name: 'Kenya' },
+    { '@type': 'Country', name: 'Tanzania' },
+    { '@type': 'Country', name: 'Rwanda' },
+    { '@type': 'Country', name: 'Democratic Republic of the Congo' },
+    { '@type': 'Country', name: 'Senegal' },
+    { '@type': 'Country', name: 'Sierra Leone' },
+    { '@type': 'Country', name: 'Guinea' },
+    { '@type': 'Country', name: 'United Kingdom' },
   ],
-  "serviceType": [
-    "IT Consulting",
-    "Software Development",
-    "Website Design",
-    "Web Development",
-    "ICT Strategy",
-    "ERP Systems",
-    "Business Consulting",
-    "Property Management Software"
+  serviceType: [
+    'Authority Website Systems',
+    'Software Development',
+    'ICT Consulting',
+    'ERP Systems',
+    'Business Planning',
+    'Digital Strategy',
   ],
-  "knowsLanguage": ["en", "fr"],
-  "founder": {
-    "@type": "Person",
-    "name": "Peter Bamuhigire",
-    "jobTitle": "IT Consultant & Software Developer",
-    "url": `${siteUrl}/en/about/`,
-    "sameAs": [
-      "https://linkedin.com/in/peterbamuhigire",
-      "https://github.com/peterbamuhigire",
-      "https://twitter.com/peterbamu"
-    ]
+  knowsLanguage: ['en', 'fr'],
+  founder: {
+    '@type': 'Person',
+    name: authorProfile.name,
+    jobTitle: authorProfile.titleEn,
+    url: `${siteUrl}/en/about/`,
+    sameAs: authorProfile.sameAs,
   },
-  "sameAs": [
-    "https://linkedin.com/in/peterbamuhigire",
-    "https://github.com/peterbamuhigire",
-    "https://twitter.com/peterbamu",
-    "https://facebook.com/pbamu",
-    "https://instagram.com/peterbamuhigire"
-  ]
+  sameAs: [
+    ...authorProfile.sameAs,
+    'https://facebook.com/pbamu',
+    'https://instagram.com/peterbamuhigire',
+  ],
 };
 
-// BreadcrumbList structured data
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Peter Bamuhigire',
+  url: siteUrl,
+  inLanguage: [lang],
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${siteUrl}/${lang}/blog/?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: authorProfile.name,
+  jobTitle: lang === 'en' ? authorProfile.titleEn : authorProfile.titleFr,
+  description: lang === 'en' ? authorProfile.bioEn : authorProfile.bioFr,
+  url: `${siteUrl}/${lang}/about/`,
+  image: `${siteUrl}/og-image.jpg`,
+  sameAs: authorProfile.sameAs,
+};
+
 const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": breadcrumbItems.map((item, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "name": item.name,
-    "item": item.url
-  }))
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.name,
+    item: item.url,
+  })),
 };
 ---
+
 <!DOCTYPE html>
 <html lang={lang} class="scroll-smooth">
 <head>
@@ -136,53 +178,51 @@ const breadcrumbSchema = {
   <meta name="author" content="Peter Bamuhigire" />
   {noindex && <meta name="robots" content="noindex, nofollow" />}
 
-  <!-- Canonical & Hreflang -->
   <link rel="canonical" href={canonicalUrl} />
-  <link rel="alternate" hreflang={lang === 'en' ? 'en-GB' : 'fr-FR'} href={`${siteUrl}/${lang}${currentPath || '/'}`} />
-  <link rel="alternate" hreflang={altLang === 'en' ? 'en-GB' : 'fr-FR'} href={`${siteUrl}${altUrl}`} />
+  <link rel="alternate" hreflang={lang === 'en' ? 'en' : 'fr'} href={`${siteUrl}/${lang}${currentPath || '/'}`} />
+  <link rel="alternate" hreflang={altLang === 'en' ? 'en' : 'fr'} href={`${siteUrl}${altUrl}`} />
   <link rel="alternate" hreflang="x-default" href={`${siteUrl}/en${currentPath || '/'}`} />
 
-  <!-- Geo Targeting — Kampala, Uganda -->
   <meta name="geo.region" content="UG-102" />
   <meta name="geo.placename" content="Kampala" />
   <meta name="geo.position" content="0.3476;32.5936" />
   <meta name="ICBM" content="0.3476, 32.5936" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={`${siteUrl}${ogImage}`} />
   <meta property="og:url" content={canonicalUrl} />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content={lang === 'en' ? 'en_GB' : 'fr_FR'} />
-  <meta property="og:site_name" content="Peter Bamuhigire — IT Consultant & Software Developer, Kampala" />
+  <meta property="og:type" content={articleMeta ? 'article' : 'website'} />
+  <meta property="og:locale" content={lang === 'en' ? 'en_GB' : 'fr'} />
+  <meta property="og:site_name" content="Peter Bamuhigire - Authority Websites, Software and ICT Strategy" />
+  {articleMeta && <meta property="article:published_time" content={articleMeta.publishedTime} />}
+  {articleMeta?.modifiedTime && <meta property="article:modified_time" content={articleMeta.modifiedTime} />}
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@peterbamu" />
   <meta name="twitter:creator" content="@peterbamu" />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <!-- Google Analytics 4 -->
-  <!-- TODO: Replace G-XXXXXXXXXX with your real Measurement ID from https://analytics.google.com -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
+  {hasAnalytics && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+      <script is:inline define:vars={{ gaMeasurementId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', gaMeasurementId, { page_path: window.location.pathname });
+      </script>
+    </>
+  )}
 
-  <!-- Search Console & Bing Webmaster Verification -->
-  <!-- TODO: Replace with token from https://search.google.com/search-console (HTML tag method) -->
-  <meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN" />
-  <!-- TODO: Replace with token from https://www.bing.com/webmasters (HTML meta tag method) -->
-  <meta name="msvalidate.01" content="REPLACE_WITH_BING_TOKEN" />
+  {gscVerification && <meta name="google-site-verification" content={gscVerification} />}
+  {bingVerification && <meta name="msvalidate.01" content={bingVerification} />}
 
-  <!-- Structured Data -->
-  <script type="application/ld+json" set:html={JSON.stringify(professionalServiceSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </head>
 <body class="min-h-screen flex flex-col bg-warm-white text-navy-900">
@@ -193,46 +233,172 @@ const breadcrumbSchema = {
   </main>
   <Footer lang={lang} />
 
-  <!-- Alpine.js -->
   <script>
     import Alpine from 'alpinejs';
     window.Alpine = Alpine;
     Alpine.start();
   </script>
 
-  <!-- GSAP scroll animations -->
-  <script>
+  <script define:vars={{ page }}>
     import { gsap } from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
     gsap.registerPlugin(ScrollTrigger);
 
     document.addEventListener('astro:page-load', () => {
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const trackedDepths = new Set();
+      const gtag = typeof window !== 'undefined' ? window.gtag : undefined;
 
-      gsap.utils.toArray<HTMLElement>('.fade-up').forEach((el) => {
+      const fireEvent = (eventName, params = {}) => {
+        if (typeof gtag === 'function') {
+          gtag('event', eventName, params);
+        }
+      };
+
+      gsap.utils.toArray('.fade-up').forEach((el) => {
         if (reducedMotion) {
           gsap.set(el, { opacity: 1, y: 0 });
           return;
         }
-        gsap.fromTo(el,
+
+        gsap.fromTo(
+          el,
           { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
-            scrollTrigger: { trigger: el, start: 'top 85%', once: true }
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: { trigger: el, start: 'top 85%', once: true },
           }
         );
       });
 
-      gsap.utils.toArray<HTMLElement>('.counter').forEach((el) => {
-        const target = parseInt(el.dataset.target || '0');
+      gsap.utils.toArray('.counter').forEach((el) => {
+        const target = parseInt(el.dataset.target || '0', 10);
         if (reducedMotion) {
           el.innerText = String(target);
           return;
         }
-        gsap.fromTo(el, { innerText: 0 }, {
-          innerText: target, duration: 1.2, ease: 'power1.out',
-          snap: { innerText: 1 },
-          scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+
+        gsap.fromTo(
+          el,
+          { innerText: 0 },
+          {
+            innerText: target,
+            duration: 1.2,
+            ease: 'power1.out',
+            snap: { innerText: 1 },
+            scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+          }
+        );
+      });
+
+      document.querySelectorAll('a[href]').forEach((link) => {
+        link.addEventListener('click', () => {
+          const href = link.getAttribute('href') || '';
+          const sourceSection = link.closest('section')?.getAttribute('id') || 'page';
+          const isExternal = href.startsWith('http') && !href.startsWith(window.location.origin);
+          const label = link.textContent?.trim() || href;
+
+          if (link.matches('[data-cta], .cta-button, .bg-amber-accent')) {
+            fireEvent('cta_click', {
+              cta_label: label,
+              cta_position: sourceSection,
+              destination: href,
+            });
+            return;
+          }
+
+          if (isExternal) {
+            fireEvent('outbound_click', {
+              outbound_url: href,
+              link_text: label,
+              source_section: sourceSection,
+            });
+            return;
+          }
+
+          fireEvent('internal_link_click', {
+            destination: href,
+            link_text: label,
+            source_section: sourceSection,
+          });
         });
+      });
+
+      document.querySelectorAll('form').forEach((form) => {
+        const formId = form.id || form.getAttribute('name') || 'site-form';
+        let started = false;
+
+        form.querySelectorAll('input, textarea, select').forEach((field) => {
+          field.addEventListener('focus', () => {
+            if (!started) {
+              fireEvent('form_start', { form_id: formId, form_location: window.location.pathname });
+              started = true;
+            }
+          }, { once: true });
+        });
+
+        form.addEventListener('submit', () => {
+          fireEvent('form_submit_attempt', { form_id: formId });
+        });
+      });
+
+      document.querySelectorAll('form[action="#"]').forEach((form) => {
+        form.addEventListener('submit', async (event) => {
+          const emailField = form.querySelector('input[type="email"]');
+          const successContainer = form.parentElement?.parentElement?.querySelector('[x-show="submitted"]');
+          const lang = document.documentElement.lang === 'fr' ? 'fr' : 'en';
+          const email = emailField?.value?.trim();
+
+          if (!email) return;
+
+          try {
+            await fetch('/api/newsletter.php', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email, lang }),
+            });
+            fireEvent('newsletter_signup', {
+              signup_source: window.location.pathname,
+              form_id: form.getAttribute('id') || 'newsletter-inline',
+            });
+          } catch (error) {
+            if (successContainer) {
+              successContainer.innerHTML = `<div class="inline-flex items-center gap-3 rounded-xl bg-red-50 px-6 py-4 text-red-700 shadow-sm">${lang === 'fr' ? "Impossible d'enregistrer votre inscription." : 'Could not save your subscription.'}</div>`;
+            }
+          }
+        });
+      });
+
+      const trackScrollDepth = () => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollableHeight <= 0) return;
+
+        const percentage = Math.round((window.scrollY / scrollableHeight) * 100);
+        [25, 50, 75, 90].forEach((depth) => {
+          if (percentage >= depth && !trackedDepths.has(depth)) {
+            trackedDepths.add(depth);
+            fireEvent('scroll_depth', {
+              percent_scrolled: depth,
+              page_type: page || 'page',
+            });
+          }
+        });
+      };
+
+      window.addEventListener('scroll', trackScrollDepth, { passive: true });
+      trackScrollDepth();
+
+      [30, 60, 180].forEach((seconds) => {
+        window.setTimeout(() => {
+          fireEvent('time_on_page', {
+            seconds_elapsed: seconds,
+            page_type: page || 'page',
+          });
+        }, seconds * 1000);
       });
     });
   </script>

@@ -1,0 +1,16 @@
+---
+interface Props {
+  name: string;
+  title: string;
+  bio: string;
+}
+
+const { name, title, bio } = Astro.props;
+---
+
+<section class="rounded-2xl border border-navy-100 bg-warm-cream p-6 md:p-8">
+  <p class="text-xs font-semibold uppercase tracking-[0.24em] text-amber-accent">About the author</p>
+  <h2 class="mt-3 text-2xl font-bold text-navy-900">{name}</h2>
+  <p class="mt-1 text-sm font-medium text-navy-500">{title}</p>
+  <p class="mt-4 text-navy-700 leading-relaxed">{bio}</p>
+</section>

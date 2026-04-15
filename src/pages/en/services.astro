@@ -535,14 +535,40 @@ const processSteps = [
     </div>
   </section>
 
+  <section class="bg-warm-cream py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl fade-up">
+        <SectionHeading
+          title="Ongoing Support"
+          subtitle="The work does not need to end at launch. If the website or system matters commercially, support should be structured from the start."
+        />
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5 fade-up">
+        {[
+          ['Authority Care', 'USD 750/mo', 'Hosting oversight, updates, backups, uptime checks, and issue triage.'],
+          ['Search Growth', 'USD 1,250/mo', 'SEO improvements, internal linking, page expansion, and search opportunity reviews.'],
+          ['Content Engine', 'USD 1,500/mo', 'Article production, buyer education, and authority-building content support.'],
+          ['Conversion Sprint', 'USD 2,000/mo', 'CTA optimisation, form improvement, and page refinement for stronger conversion.'],
+          ['Strategic Tech Partner', 'USD 3,000/mo', 'An ongoing adviser for digital systems, reporting, architecture, and post-launch decisions.'],
+        ].map(([name, fee, summary]) => (
+          <article class="rounded-3xl border border-navy-100 bg-white p-6 shadow-sm shadow-navy-900/5">
+            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-amber-accent">{fee}</p>
+            <h3 class="mt-3 text-xl font-bold text-navy-900">{name}</h3>
+            <p class="mt-4 text-sm leading-relaxed text-navy-600">{summary}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- ==============================
        CTA SECTION
        ============================== -->
   <div class="fade-up">
     <CTASection
       lang={lang}
-      title="Ready to discuss your project?"
-      subtitle="Every engagement begins with a conversation. Book a consultation to explore how Peter's experience can serve your organisation."
+      title="Need strategy-led delivery rather than generic implementation?"
+      subtitle="Use the diagnostic call to explain what the current website, system, or process is failing to do and what a stronger outcome should look like."
     />
   </div>
 

@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import AuthorBox from '@/components/AuthorBox.astro';
 import CTASection from '@/components/CTASection.astro';
+import QuickAnswer from '@/components/QuickAnswer.astro';
 import { Image } from 'astro:assets';
 import type { Lang } from '@/utils/i18n';
+import { authorProfile } from '@/data/site';
 
 import heroImg from '@/assets/images/businesswoman-interacting-with-ai-hologram-office.jpg';
 import imgAiData from '@/assets/images/ai-artificial-intelligence-engineering-big-data-ai-machine-learning-use-generative-ai.jpg';
@@ -43,7 +46,20 @@ const articleSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description} lang={lang} page="blog" ogImage={heroImg.src}>
+<BaseLayout
+  title={title}
+  description={description}
+  lang={lang}
+  page="blog"
+  ogImage={heroImg.src}
+  articleMeta={{
+    title,
+    description,
+    publishedTime: date,
+    modifiedTime: date,
+    image: heroImg.src,
+  }}
+>
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
 
   <!-- Reading Progress Bar -->
@@ -85,9 +101,18 @@ const articleSchema = {
   <!-- Article Body -->
   <article class="py-12 md:py-16">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuickAnswer
+        title="Quick answer"
+        answer="AI belongs in enterprise software when it improves visibility, speeds up decisions, and solves a specific operational problem without forcing a full system replacement."
+        bullets={[
+          'Start with one measurable use case.',
+          'Keep human review in the loop.',
+          'Treat data quality and cost control as implementation requirements.',
+        ]}
+      />
 
       <!-- Opener -->
-      <div class="prose prose-accent-navy">
+      <div class="prose prose-accent-navy mt-10">
         <p class="text-xl text-navy-700 leading-relaxed font-medium mb-6">
           A manufacturing company in Kampala was losing stock. Not to theft — to bad data. Their system showed 400 units in the warehouse. A physical count found 280. The gap had been building for months because nobody had time to run the reconciliation reports, and when they did, nobody acted on the numbers before the next shipment arrived.
         </p>
@@ -271,18 +296,12 @@ const articleSchema = {
         </ul>
       </div>
 
-      <!-- Author Bio -->
-      <div class="mt-12 flex items-start gap-5 p-6 bg-navy-50 rounded-2xl">
-        <div class="w-14 h-14 rounded-full bg-navy-800 flex-shrink-0 flex items-center justify-center text-gold-400 font-bold text-xl">P</div>
-        <div>
-          <p class="font-bold text-navy-900">Peter Bamuhigire</p>
-          <p class="text-sm text-navy-500 mt-1">Technology & Business Consultant with 15+ years of experience building enterprise software, ERP systems, and SaaS platforms across 10+ African countries. Based in Kampala, Uganda.</p>
-          <div class="mt-3 flex flex-wrap gap-3">
-            <a href="/en/about/" class="text-sm text-amber-accent hover:text-gold-700 font-medium transition-colors">About Peter →</a>
-            <a href="/en/portfolio/" class="text-sm text-amber-accent hover:text-gold-700 font-medium transition-colors">Portfolio →</a>
-            <a href="/en/contact/" class="text-sm text-amber-accent hover:text-gold-700 font-medium transition-colors">Get in Touch →</a>
-          </div>
-        </div>
+      <div class="mt-12">
+        <AuthorBox
+          name={authorProfile.name}
+          title={authorProfile.titleEn}
+          bio={authorProfile.bioEn}
+        />
       </div>
 
     </div>

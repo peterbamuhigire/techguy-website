@@ -1,0 +1,99 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import imgAiDataReadiness from '@/assets/images/ai-data-readiness-dashboard.jpg';
+import imgAiEnterprise from '@/assets/images/businesswoman-interacting-with-ai-hologram-office.jpg';
+
+const lang: Lang = 'fr';
+
+const aiPosts = [
+  {
+    title: "Avant d'Acheter l'IA, Nettoyez les Données de Votre Entreprise",
+    slug: 'avant-dacheter-lia-nettoyez-vos-donnees-dentreprise',
+    category: 'Préparation IA',
+    date: '7 mai 2026',
+    readTime: '10 min de lecture',
+    excerpt: "L'IA n'est utile que si les données de base sont fiables. Un audit pratique de 30 jours pour les PME d'Afrique francophone.",
+    image: imgAiDataReadiness,
+    imageAlt: "Professionnel examinant des tableaux de bord d'analyse IA sur ordinateur portable et téléphone",
+  },
+  {
+    title: "L'IA dans les Logiciels d'Entreprise : Cinq Usages Pratiques pour Réduire les Coûts",
+    slug: 'ia-dans-les-logiciels-dentreprise',
+    category: 'IA pour les entreprises',
+    date: '7 avril 2026',
+    readTime: '9 min de lecture',
+    excerpt: "Cinq usages concrets de l'IA dans les logiciels de gestion : questions en langage naturel, analyse de documents, alertes prédictives, intelligence client et synthèses de performance.",
+    image: imgAiEnterprise,
+    imageAlt: "Dirigeante interagissant avec une interface d'intelligence artificielle dans un bureau",
+  },
+];
+---
+
+<BaseLayout
+  title="Analyses IA pour les Entreprises Africaines - Peter Bamuhigire"
+  description="Articles pratiques sur l'intelligence artificielle, l'automatisation, les agents IA, les données, la gouvernance et les logiciels de gestion pour les organisations africaines."
+  lang={lang}
+  page="ai"
+>
+  <section class="bg-navy-900 pt-20 md:pt-24 pb-12 md:pb-16 geo-pattern">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white">
+        Analyses IA pour les Entreprises Africaines
+      </h1>
+      <p class="mt-4 text-lg md:text-xl text-navy-200 max-w-2xl mx-auto">
+        Des articles pratiques sur l'intelligence artificielle, l'automatisation, les données, les logiciels et la gouvernance pour les organisations en Afrique francophone : Côte d'Ivoire, RDC, Sénégal, Mali, Togo et au-delà.
+      </p>
+      <div class="mt-6 h-1 w-20 rounded-full bg-gold-400 mx-auto"></div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-warm-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold text-amber-accent uppercase tracking-wider mb-6">Articles IA</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        {aiPosts.map((post) => (
+          <a href={`/${lang}/ai/${post.slug}/`} class="fade-up group bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden block">
+            <div class="h-52 overflow-hidden relative">
+              <Image
+                src={post.image}
+                alt={post.imageAlt}
+                width={800}
+                height={500}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="inline-flex items-center px-3 py-1 text-xs font-semibold bg-white/90 backdrop-blur-sm text-navy-800 rounded-full">
+                  {post.category}
+                </span>
+              </div>
+            </div>
+            <div class="p-5 md:p-6">
+              <div class="flex items-center gap-3 mb-3 text-sm text-navy-500">
+                <time>{post.date}</time>
+                <span class="w-1 h-1 rounded-full bg-navy-300"></span>
+                <span>{post.readTime}</span>
+              </div>
+              <h2 class="text-lg md:text-xl font-bold text-navy-900 group-hover:text-amber-accent transition-colors leading-snug">
+                {post.title}
+              </h2>
+              <p class="mt-2 text-sm text-navy-600 line-clamp-3">
+                {post.excerpt}
+              </p>
+              <div class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-amber-accent group-hover:text-gold-700 transition-colors">
+                Lire l'Article
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection lang={lang} />
+</BaseLayout>

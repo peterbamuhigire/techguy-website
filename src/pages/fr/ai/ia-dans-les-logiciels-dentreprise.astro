@@ -1,0 +1,219 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import AuthorBox from '@/components/AuthorBox.astro';
+import CTASection from '@/components/CTASection.astro';
+import QuickAnswer from '@/components/QuickAnswer.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+import { authorProfile } from '@/data/site';
+
+import heroImg from '@/assets/images/businesswoman-interacting-with-ai-hologram-office.jpg';
+import imgAiData from '@/assets/images/ai-artificial-intelligence-engineering-big-data-ai-machine-learning-use-generative-ai.jpg';
+import imgItExpert from '@/assets/images/it-expert-interacting-with-ai-llm-chatbot-pc-software-development-startup.jpg';
+
+const lang: Lang = 'fr';
+const title = "L'IA dans les Logiciels d'Entreprise : Cinq Usages Pratiques pour Réduire les Coûts";
+const description = "L'IA dans les logiciels de gestion pour les entreprises africaines : cinq usages pratiques, des questions en langage naturel aux alertes prédictives.";
+const date = "2026-04-07";
+const category = "Technologie & IA";
+const readTime = "9 min de lecture";
+const slug = "ia-dans-les-logiciels-dentreprise";
+const siteUrl = "https://techguypeter.com";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/fr/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire - Conseil en Technologie & Entreprise",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "fr",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/fr/ai/${slug}/`
+  }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  lang={lang}
+  page="ai"
+  ogImage={heroImg.src}
+  articleMeta={{
+    title,
+    description,
+    publishedTime: date,
+    modifiedTime: date,
+    image: heroImg.src,
+  }}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <section class="relative min-h-[540px] md:min-h-[620px] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <Image
+        src={heroImg}
+        alt="Dirigeante utilisant une interface d'intelligence artificielle dans un environnement professionnel"
+        width={1600}
+        height={900}
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-900/70 to-navy-900/30"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="px-3 py-1 text-xs font-semibold bg-gold-400 text-navy-900 rounded-full uppercase tracking-wider">{category}</span>
+        <span class="text-sm text-navy-200">{readTime}</span>
+        <span class="text-sm text-navy-300">·</span>
+        <time class="text-sm text-navy-200" datetime={date}>7 avril 2026</time>
+      </div>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-white leading-tight max-w-3xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-navy-200 max-w-2xl leading-relaxed">
+        L'IA devient utile quand elle résout un problème précis dans les systèmes que l'équipe utilise déjà.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-gold-400 flex items-center justify-center text-navy-900 font-bold text-sm">P</div>
+        <span class="text-sm text-navy-200">Par <a href="/fr/about/" class="text-gold-300 hover:text-gold-200 transition-colors">Peter Bamuhigire</a></span>
+      </div>
+    </div>
+  </section>
+
+  <article class="py-12 md:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuickAnswer
+        title="Réponse rapide"
+        answer="L'IA a sa place dans les logiciels d'entreprise lorsqu'elle améliore la visibilité, accélère les décisions et traite un problème opérationnel mesurable sans remplacer tout le système."
+        bullets={[
+          "Commencez par un seul cas d'usage mesurable.",
+          'Gardez une validation humaine sur les décisions importantes.',
+          'Traitez la qualité des données et le contrôle des coûts comme des exigences du projet.',
+        ]}
+      />
+
+      <div class="prose prose-accent-navy mt-10">
+        <p class="text-xl text-navy-700 leading-relaxed font-medium mb-6">
+          Une entreprise de distribution à Abidjan perdait du stock entre ses points de vente et son entrepôt. Le problème n'était pas seulement le vol. Le système affichait une quantité, le terrain en montrait une autre, et personne ne voyait l'écart assez tôt pour agir.
+        </p>
+
+        <p>Ce cas résume bien la vraie promesse de l'intelligence artificielle dans les logiciels de gestion. Pas des robots, pas de la science-fiction, mais une couche d'intelligence au-dessus des systèmes existants : comptabilité, inventaire, ventes, achats, ressources humaines et tableaux de bord.</p>
+
+        <p>Voici cinq usages réalistes pour les entreprises en Afrique francophone : Côte d'Ivoire, RDC, Sénégal, Mali, Togo, Cameroun et autres marchés où la croissance dépend de meilleurs systèmes, de données fiables et d'une exécution disciplinée.</p>
+
+        <h2>1. Poser des questions à vos propres données</h2>
+        <p>Beaucoup de dirigeants ont déjà les données dont ils ont besoin, mais elles sont enfermées dans des rapports difficiles à générer. Une interface IA permet de demander : "Quels clients n'ont pas payé depuis 45 jours ?" ou "Quels produits se vendent plus vite que prévu ?" Le système répond à partir des données internes, avec les droits d'accès de l'utilisateur.</p>
+
+        <h2>2. Lire les factures et les documents</h2>
+        <p>Les équipes comptables passent encore beaucoup de temps à saisir les factures, bons de livraison, reçus et relevés bancaires. L'IA peut extraire les fournisseurs, montants, taxes, lignes de produits et numéros de facture. Le personnel ne disparaît pas : il vérifie les champs signalés comme incertains et garde la responsabilité finale.</p>
+      </div>
+
+      <figure class="my-10 rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={imgAiData}
+          alt="Intelligence artificielle analysant les données d'une entreprise"
+          width={900}
+          height={500}
+          class="w-full h-[280px] md:h-[360px] object-cover"
+          loading="lazy"
+        />
+        <figcaption class="px-4 py-3 bg-navy-50 text-sm text-navy-500 text-center">
+          L'IA est plus utile lorsqu'elle lit les données déjà produites par vos systèmes.
+        </figcaption>
+      </figure>
+
+      <div class="prose prose-accent-navy">
+        <h2>3. Recevoir des alertes avant que le problème coûte cher</h2>
+        <p>L'IA peut repérer les anomalies : un produit qui va manquer dans huit jours, un client important qui paie plus lentement, une succursale dont les coûts alimentaires augmentent, ou un véhicule dont la consommation de carburant dérive. Ces alertes ne remplacent pas le manager. Elles lui donnent simplement l'information plus tôt.</p>
+
+        <h2>4. Comprendre les clients à risque</h2>
+        <p>Dans la distribution, l'hôtellerie, les services professionnels ou le SaaS, les signaux de départ sont souvent visibles avant la perte du client : commandes plus petites, fréquence réduite, plaintes répétées, absence d'activité. Une bonne couche IA peut classer ces signaux et proposer au commercial ou au responsable client qui contacter en priorité.</p>
+      </div>
+
+      <figure class="my-10 rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={imgItExpert}
+          alt="Spécialiste informatique utilisant un outil IA pour analyser des tendances clients"
+          width={900}
+          height={600}
+          class="w-full h-[300px] md:h-[380px] object-cover object-top"
+          loading="lazy"
+        />
+        <figcaption class="px-4 py-3 bg-navy-50 text-sm text-navy-500 text-center">
+          Les meilleurs usages de l'IA combinent automatisation, données locales et jugement humain.
+        </figcaption>
+      </figure>
+
+      <div class="prose prose-accent-navy">
+        <h2>5. Produire des synthèses de performance</h2>
+        <p>Un dirigeant n'a pas toujours besoin d'un tableau Excel de quarante onglets. Il a souvent besoin d'une synthèse claire : ce qui a augmenté, ce qui a baissé, ce qui exige une décision, et ce qui semble anormal. C'est souvent le premier module IA à tester, car il s'appuie sur des données existantes et donne rapidement de la valeur.</p>
+
+        <h2>Ce qu'il faut vérifier avant d'investir</h2>
+        <p>La qualité des données reste la base. Si les ventes sont mal enregistrées, l'IA résumera de mauvaises ventes. Le coût d'utilisation doit aussi être contrôlé, surtout si beaucoup d'employés interrogent le système. Enfin, les sorties IA doivent garder une trace : quelle donnée a été lue, quelle réponse a été générée, qui l'a validée et quelle action a suivi.</p>
+
+        <p>Le meilleur point de départ n'est pas une grande transformation IA. C'est un cas d'usage simple, mesurable et réversible. Pour beaucoup d'entreprises africaines, une synthèse hebdomadaire de performance ou une alerte d'inventaire bien configurée produira plus de valeur qu'un grand projet vague appelé "transformation digitale".</p>
+      </div>
+
+      <div class="mt-12 bg-navy-900 text-warm-white rounded-2xl p-6 md:p-8">
+        <h2 class="text-xl font-bold text-gold-400 mb-5">À retenir</h2>
+        <ul class="space-y-3">
+          {[
+            "L'IA doit renforcer les systèmes existants, pas les remplacer sans raison.",
+            "Les premiers gains viennent souvent des rapports, documents, alertes et synthèses.",
+            "La qualité des données, la sécurité et la validation humaine sont indispensables.",
+            "Commencez petit, mesurez le résultat, puis étendez seulement ce qui fonctionne.",
+          ].map(point => (
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-5 h-5 rounded-full bg-gold-400 text-navy-900 flex-shrink-0 flex items-center justify-center">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-navy-200 text-sm leading-relaxed">{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-12">
+        <AuthorBox
+          name={authorProfile.name}
+          title={authorProfile.titleFr}
+          bio={authorProfile.bioFr}
+        />
+      </div>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = docHeight > 0 ? `${Math.min((scrollTop / docHeight) * 100, 100)}%` : '0%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  });
+</script>

@@ -1,0 +1,321 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import AuthorBox from '@/components/AuthorBox.astro';
+import CTASection from '@/components/CTASection.astro';
+import QuickAnswer from '@/components/QuickAnswer.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+import { authorProfile } from '@/data/site';
+
+import heroImg from '@/assets/images/ai-data-readiness-dashboard.jpg';
+import imgForecasting from '@/assets/images/ai-data-readiness-forecasting.jpg';
+import imgResearch from '@/assets/images/ai-data-readiness-research.jpg';
+
+const lang: Lang = 'fr';
+const title = "Avant d'Acheter l'IA, Nettoyez les Données de Votre Entreprise";
+const description = "Guide pratique pour les PME d'Afrique francophone : nettoyez vos données avant d'investir dans des tableaux de bord IA, alertes prédictives, scoring client ou rapports automatisés.";
+const date = "2026-05-07";
+const category = "Préparation IA";
+const readTime = "10 min de lecture";
+const slug = "avant-dacheter-lia-nettoyez-vos-donnees-dentreprise";
+const siteUrl = "https://techguypeter.com";
+
+const auditSteps = [
+  {
+    week: "Jours 1-7",
+    title: "Identifier la source officielle",
+    text: "Listez tous les endroits où l'entreprise enregistre les ventes, le stock, les paiements, les clients, les achats et les données fiscales. Décidez quelle source fait foi pour chaque type de donnée.",
+  },
+  {
+    week: "Jours 8-14",
+    title: "Standardiser les noms et les codes",
+    text: "Nettoyez les noms de produits, clients, agences, fournisseurs et employés. Supprimez les doublons et adoptez une règle de nommage que toute l'équipe peut appliquer.",
+  },
+  {
+    week: "Jours 15-21",
+    title: "Réconcilier les chiffres",
+    text: "Comparez caisse/POS, facturation électronique, mobile money, relevés bancaires, inventaire physique, factures et fichiers Excel. Corrigez d'abord les écarts qui influencent les décisions importantes.",
+  },
+  {
+    week: "Jours 22-30",
+    title: "Verrouiller les règles de gestion",
+    text: "Définissez qui saisit quoi, qui valide les corrections, qui peut exporter les rapports et quels tableaux de bord sont assez fiables pour guider la direction.",
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/fr/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire - Conseil en Technologie & Entreprise",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "fr",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/fr/ai/${slug}/`
+  }
+};
+---
+
+<BaseLayout
+  title={`${title} - Peter Bamuhigire`}
+  description={description}
+  lang={lang}
+  page="ai"
+  ogImage={heroImg.src}
+  altUrl="/en/ai/before-you-buy-ai-clean-your-business-data/"
+  articleMeta={{
+    title,
+    description,
+    publishedTime: date,
+    modifiedTime: date,
+    image: heroImg.src,
+  }}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <section class="relative min-h-[540px] md:min-h-[640px] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <Image
+        src={heroImg}
+        alt="Professionnel examinant des tableaux de bord d'analyse IA sur ordinateur portable et téléphone"
+        width={1600}
+        height={960}
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-900/75 to-navy-900/25"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class="px-3 py-1 text-xs font-semibold bg-gold-400 text-navy-900 rounded-full uppercase tracking-wider">{category}</span>
+        <span class="text-sm text-navy-200">{readTime}</span>
+        <span class="text-sm text-navy-300">.</span>
+        <time class="text-sm text-navy-200" datetime={date}>7 mai 2026</time>
+      </div>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-white leading-tight max-w-3xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-navy-200 max-w-2xl leading-relaxed">
+        L'IA peut aider une entreprise à repérer les tendances plus vite, mais elle ne peut pas sauver des données incohérentes, dupliquées, en retard ou fausses.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-gold-400 flex items-center justify-center text-navy-900 font-bold text-sm">P</div>
+        <span class="text-sm text-navy-200">Par <a href="/fr/about/" class="text-gold-300 hover:text-gold-200 transition-colors">Peter Bamuhigire</a></span>
+      </div>
+    </div>
+  </section>
+
+  <article class="py-12 md:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuickAnswer
+        title="Réponse rapide"
+        answer="Avant d'acheter des tableaux de bord IA, des alertes prédictives, du scoring client ou des rapports automatiques, assurez-vous que vos données de base sont assez propres pour être fiables. Si la caisse, le mobile money, la banque, l'inventaire, la facturation électronique et les fichiers Excel se contredisent, l'IA produira des réponses convaincantes à partir de mauvaises données."
+        bullets={[
+          "Commencez par choisir la source officielle pour les ventes, le stock, les clients, les achats et les paiements.",
+          "Standardisez les noms de produits et de clients avant d'ajouter une couche d'analyse IA.",
+          "Utilisez un audit de 30 jours pour réconcilier les stocks, supprimer les doublons, définir les droits d'accès et créer quelques rapports fiables.",
+        ]}
+      />
+
+      <div class="prose prose-accent-navy mt-10">
+        <p class="text-xl text-navy-700 leading-relaxed font-medium mb-6">
+          Une entreprise de distribution à Abidjan voulait un assistant IA pour recommander les réapprovisionnements. Le dirigeant imaginait poser la question : "Que devons-nous commander cette semaine ?" et recevoir une réponse claire. Le problème n'était pas le modèle IA. Le problème était la donnée. Le même produit existait sous plusieurs noms. La caisse affichait du stock qui n'était plus en rayon. Des paiements mobile money n'étaient pas rapprochés des factures. Certaines ventes manuelles n'avaient jamais été saisies.
+        </p>
+
+        <p>Si cette entreprise avait acheté l'IA en premier, le résultat aurait semblé moderne mais serait resté faux. Le système aurait produit des recommandations à partir de dossiers désordonnés. Il aurait pu conseiller de retarder une commande parce que la base de données disait qu'il restait du stock, alors que les clients ne trouvaient plus le produit.</p>
+
+        <p>C'est la leçon la plus importante pour beaucoup de PME en Côte d'Ivoire, en RDC, au Sénégal, au Mali, au Togo et dans d'autres marchés francophones : l'IA n'est pas un cache-misère opérationnel. C'est un accélérateur. Si les données sont fiables, elle aide à poser de meilleures questions, voir les problèmes plus tôt et préparer des rapports utiles plus vite. Si les données sont confuses, elle rend simplement la confusion plus convaincante.</p>
+
+        <h2>Pourquoi de mauvaises données rendent l'IA dangereusement sûre d'elle</h2>
+
+        <p>La plupart des outils IA pour l'entreprise apprennent à partir des données qu'on leur connecte : ventes, stock, relevés bancaires, clients, factures, paiements mobile money, prêts, dossiers patients, achats et journaux d'activité. Lorsque ces informations sont incohérentes, l'IA n'a pas de vérité fiable sur laquelle travailler.</p>
+
+        <p>L'erreur devient alors difficile à repérer. Une feuille Excel mal construite semble parfois assez confuse pour inviter à la vérification. Une réponse IA peut être élégante même quand l'entrée est faible. Elle peut écrire un paragraphe clair, afficher un graphique propre ou proposer une prévision. La présentation s'améliore, mais les faits de base peuvent rester cassés.</p>
+
+        <p>Pour un propriétaire de PME, un directeur financier, un responsable d'agence, une institution de microfinance, une clinique ou un groupe de restaurants, ces erreurs deviennent vite concrètes : mauvais bons de commande, mauvaises prévisions de trésorerie, mauvais suivis clients, mauvaises alertes de stock et mauvaises réunions de direction.</p>
+      </div>
+
+      <figure class="my-10 rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={imgForecasting}
+          alt="Tableaux de bord IA et graphiques utilisés pour l'analyse des données d'entreprise"
+          width={900}
+          height={600}
+          class="w-full h-[280px] md:h-[360px] object-cover"
+          loading="lazy"
+        />
+        <figcaption class="px-4 py-3 bg-navy-50 text-sm text-navy-500 text-center">
+          Les tableaux de bord IA ne valent que par la qualité des chiffres qui les alimentent.
+        </figcaption>
+      </figure>
+
+      <div class="prose prose-accent-navy">
+        <h2>Les problèmes de données que les PME reconnaissent déjà</h2>
+
+        <p>Il n'est pas nécessaire d'organiser un audit technique lourd pour savoir où les difficultés commencent. La plupart des équipes peuvent les nommer rapidement.</p>
+
+        <ul>
+          <li><strong>Les noms de produits ne sont pas cohérents.</strong> "Riz 25kg", "riz 25", "sac riz 25 kg" et le nom du fournisseur peuvent désigner le même produit.</li>
+          <li><strong>Les agences enregistrent les mêmes opérations différemment.</strong> Une agence saisit l'huile par litre, une autre par carton, une autre par montant de facture.</li>
+          <li><strong>Le stock physique ne correspond pas au système.</strong> L'entrepôt, la boutique et la comptabilité racontent trois histoires différentes.</li>
+          <li><strong>Les clients sont dupliqués.</strong> Le même client existe sous un nom personnel, un nom d'entreprise, un numéro de téléphone et un surnom.</li>
+          <li><strong>Les paiements ne sont pas rapprochés.</strong> Orange Money, Wave, MoMo, relevés bancaires, caisse, reçus manuels et factures restent dans des fichiers séparés.</li>
+          <li><strong>Les mises à jour arrivent trop tard.</strong> Un prêt de microfinance est marqué à jour alors que le remboursement est déjà en retard, ou une clinique met à jour son stock après la dispensation du médicament.</li>
+        </ul>
+
+        <p>Avec l'IA, ces petits désordres deviennent des risques de décision. Ils déterminent si la prévision reflète la réalité ou répète simplement les faiblesses cachées du système.</p>
+
+        <h2>À quoi ressemble une donnée "assez propre" ?</h2>
+
+        <p>Des données propres ne signifient pas des données parfaites. Une PME ne peut pas toujours arrêter ses opérations pendant six mois pour un grand projet de gouvernance. L'objectif est plus pratique : rendre les principaux dossiers de décision cohérents, actuels et traçables.</p>
+
+        <p>Pour une entreprise de distribution, cela veut dire des noms de produits standardisés, des stocks rapprochés régulièrement et des ventes reliées aux paiements. Pour un groupe de restaurants, cela veut dire des achats, recettes, pertes et ventes de succursales exprimés dans les mêmes unités. Pour une institution de microfinance, cela veut dire des profils membres, dates de remboursement, retards et restructurations mis à jour rapidement. Pour une clinique, cela veut dire séparer le stock utilisable, le stock expiré, les sorties et les livraisons fournisseurs.</p>
+
+        <div class="bg-gold-50 border border-gold-200 rounded-2xl p-5 md:p-6 my-8">
+          <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-2">Un test simple</p>
+          <p class="text-navy-700 leading-relaxed mb-0">Si deux employés compétents extraient le même rapport le même jour depuis le système convenu, ils doivent obtenir la même réponse. Sinon, le projet IA arrive trop tôt.</p>
+        </div>
+
+        <h2>Un audit de préparation IA en 30 jours</h2>
+
+        <p>L'approche la plus utile est un audit court et ciblé. Il ne doit pas corriger toute l'histoire de l'entreprise. Il doit nettoyer les données qui influencent les premiers cas d'usage IA : alertes de stock, rapports de direction, scoring client, synthèses de trésorerie, analyse de documents ou alertes prédictives.</p>
+      </div>
+
+      <div class="my-10 space-y-4">
+        {auditSteps.map((step) => (
+          <div class="bg-white border border-navy-100 rounded-2xl p-5 md:p-6 shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+              <span class="inline-flex w-fit px-3 py-1 rounded-full bg-navy-900 text-gold-300 text-xs font-semibold uppercase tracking-wider">
+                {step.week}
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-navy-900">{step.title}</h3>
+                <p class="mt-2 text-navy-600 leading-relaxed">{step.text}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose prose-accent-navy">
+        <h2>Commencez par la source officielle</h2>
+
+        <p>La première décision n'est pas technique. Elle est managériale : quel système fait foi pour chaque partie de l'activité ?</p>
+
+        <p>Les ventes peuvent être dans la caisse ou le POS. Les factures fiscales peuvent être dans une plateforme de facturation électronique. Les paiements peuvent venir d'Orange Money, Wave, MoMo, d'une banque ou d'espèces. Le stock peut être dans un module d'inventaire. Le suivi client peut vivre dans WhatsApp, Excel ou un CRM. L'IA ne peut pas décider seule quelle source gagne quand elles se contredisent.</p>
+
+        <h2>Exemples locaux : où les mauvaises données cassent l'IA</h2>
+
+        <h3>Distribution et commerce de gros</h3>
+        <p>Une entreprise veut que l'IA recommande les quantités à commander. Le modèle regarde la vitesse de vente, le stock, les délais fournisseurs et la saisonnalité. Si les noms de produits sont dupliqués et les retours mal enregistrés, l'IA lira mal la demande.</p>
+
+        <h3>Restaurants et coût matière</h3>
+        <p>Un groupe de restaurants à Dakar veut des alertes lorsque le coût matière augmente. Cela ne fonctionne que si les agences enregistrent les achats dans les mêmes unités. Sinon, l'IA compare des chiffres qui ne parlent pas le même langage.</p>
+
+        <h3>Microfinance et risque de remboursement</h3>
+        <p>Une institution de microfinance veut prédire les retards de remboursement. Le modèle a besoin d'historiques à jour, de statuts exacts, de notes de restructuration et de profils clients propres. Si les retards sont saisis tard, le scoring devient trompeur.</p>
+
+        <h3>Cliniques et stock de médicaments</h3>
+        <p>Une clinique à Kinshasa veut des alertes sur les médicaments. Le système doit distinguer le stock utilisable, le stock expiré, les sorties patient, les livraisons et les délais fournisseurs. Si le stock expiré reste mélangé au stock disponible, l'alerte peut devenir dangereuse.</p>
+      </div>
+
+      <figure class="my-10 rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={imgResearch}
+          alt="Professionnelle africaine consultant des données numériques et des recherches IA sur téléphone"
+          width={900}
+          height={600}
+          class="w-full h-[300px] md:h-[380px] object-cover object-center"
+          loading="lazy"
+        />
+        <figcaption class="px-4 py-3 bg-navy-50 text-sm text-navy-500 text-center">
+          Les bons projets IA commencent par des règles métier que les équipes comprennent et appliquent.
+        </figcaption>
+      </figure>
+
+      <div class="prose prose-accent-navy">
+        <h2>Des données propres ont déjà de la valeur, même sans IA</h2>
+
+        <p>C'est pourquoi l'audit de préparation vaut la peine même avant d'approuver un budget IA. Les bénéfices arrivent immédiatement.</p>
+
+        <p>La comptabilité devient plus simple parce que les transactions se rapprochent plus vite. La conformité fiscale s'améliore parce que caisse, factures, reçus et banque racontent la même histoire. Le contrôle du stock devient plus fiable. Le service client s'améliore parce que l'équipe voit le bon historique. Les réunions de direction s'appuient sur des chiffres acceptés, pas sur des fichiers concurrents.</p>
+
+        <h2>Quand l'entreprise est prête pour l'IA</h2>
+
+        <p>Une fois les dossiers de base assez propres, commencez petit. Ne commencez pas par un grand programme de "transformation IA". Choisissez un cas d'usage où la donnée existe, la décision est claire et le bénéfice peut être mesuré.</p>
+
+        <p>Les bons premiers cas d'usage incluent une synthèse hebdomadaire de direction, des alertes de rupture sur les produits rapides, la détection de doublons clients, l'extraction de factures fournisseurs, les suggestions de suivi client ou les résumés de performance par agence.</p>
+
+        <p>Dans les <a href="/fr/services/">systèmes de gestion et projets logiciels que j'accompagne</a>, l'IA fonctionne mieux comme une couche disciplinée au-dessus de flux de travail solides. Elle doit lire des données fiables, respecter les droits d'accès, montrer ses hypothèses et laisser les décisions importantes aux personnes responsables.</p>
+
+        <h2>Le vrai ordre de travail</h2>
+
+        <p>L'ordre est simple : nettoyer les dossiers, stabiliser le flux de travail, définir les rapports, puis ajouter l'IA là où elle accélère une décision. Beaucoup d'entreprises veulent sauter les trois premières étapes parce que l'IA semble plus excitante. C'est exactement ainsi que des outils coûteux deviennent inutilisés.</p>
+
+        <p>Si votre entreprise ne peut pas faire confiance aujourd'hui à son rapport de stock, sa liste clients, son registre de factures, son état de remboursement ou son rapport d'agence, l'IA ne doit pas être le prochain achat. La préparation des données doit l'être.</p>
+      </div>
+
+      <div class="mt-12 bg-navy-900 text-warm-white rounded-2xl p-6 md:p-8">
+        <h2 class="text-xl font-bold text-gold-400 mb-5">À retenir</h2>
+        <ul class="space-y-3">
+          {[
+            "L'IA ne corrige pas des dossiers peu fiables. Elle peut surtout les rendre plus convaincants.",
+            "Caisse, mobile money, banque, facturation, stock, factures et fichiers Excel doivent être rapprochés avant de faire confiance aux rapports IA.",
+            "Une donnée assez propre est cohérente, actuelle, traçable et gérée par des règles claires.",
+            "Un audit de 30 jours peut identifier la source officielle, standardiser les noms, supprimer les doublons, rapprocher stock et paiements, et définir des rapports fiables.",
+            "Ce travail améliore déjà la comptabilité, la conformité fiscale, le stock, le service client et les rapports de direction.",
+            "Après la préparation, commencez avec un seul cas d'usage IA mesurable.",
+          ].map(point => (
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-5 h-5 rounded-full bg-gold-400 text-navy-900 flex-shrink-0 flex items-center justify-center">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-navy-200 text-sm leading-relaxed">{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-12">
+        <AuthorBox
+          name={authorProfile.name}
+          title={authorProfile.titleFr}
+          bio={authorProfile.bioFr}
+        />
+      </div>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = docHeight > 0 ? `${Math.min((scrollTop / docHeight) * 100, 100)}%` : '0%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  });
+</script>

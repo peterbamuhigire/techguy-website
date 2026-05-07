@@ -1,0 +1,99 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+
+import imgAiDataReadiness from '@/assets/images/ai-data-readiness-dashboard.jpg';
+import imgAiEnterprise from '@/assets/images/businesswoman-interacting-with-ai-hologram-office.jpg';
+
+const lang: Lang = 'en';
+
+const aiPosts = [
+  {
+    title: 'Before You Buy AI, Clean Your Business Data',
+    slug: 'before-you-buy-ai-clean-your-business-data',
+    category: 'AI Readiness',
+    date: '7 May 2026',
+    readTime: '10 min read',
+    excerpt: 'AI becomes useful only when the records underneath it are reliable. A practical 30-day data readiness audit for Ugandan and East African SMEs.',
+    image: imgAiDataReadiness,
+    imageAlt: 'Business professional reviewing AI analytics dashboards on laptop and phone',
+  },
+  {
+    title: 'AI in Enterprise Software: Five Practical Uses That Cut Costs and Sharpen Decisions',
+    slug: 'ai-in-enterprise-software',
+    category: 'AI for Business Systems',
+    date: '7 April 2026',
+    readTime: '9 min read',
+    excerpt: 'Five concrete AI applications built into the software your team already uses: natural language queries, document analysis, predictive alerts, customer intelligence, and management briefings.',
+    image: imgAiEnterprise,
+    imageAlt: 'Business executive interacting with AI hologram in an enterprise office environment',
+  },
+];
+---
+
+<BaseLayout
+  title="AI Insights for African Businesses - Peter Bamuhigire"
+  description="Practical articles on artificial intelligence, automation, AI agents, data, governance, and business software for Ugandan and East African organisations."
+  lang={lang}
+  page="ai"
+>
+  <section class="bg-navy-900 pt-20 md:pt-24 pb-12 md:pb-16 geo-pattern">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white">
+        AI Insights for African Businesses
+      </h1>
+      <p class="mt-4 text-lg md:text-xl text-navy-200 max-w-2xl mx-auto">
+        Practical writing on artificial intelligence, automation, data, software, and governance for organisations working in Uganda and East Africa.
+      </p>
+      <div class="mt-6 h-1 w-20 rounded-full bg-gold-400 mx-auto"></div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 bg-warm-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-sm font-semibold text-amber-accent uppercase tracking-wider mb-6">AI Articles</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        {aiPosts.map((post) => (
+          <a href={`/${lang}/ai/${post.slug}/`} class="fade-up group bg-white rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden block">
+            <div class="h-52 overflow-hidden relative">
+              <Image
+                src={post.image}
+                alt={post.imageAlt}
+                width={800}
+                height={500}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="inline-flex items-center px-3 py-1 text-xs font-semibold bg-white/90 backdrop-blur-sm text-navy-800 rounded-full">
+                  {post.category}
+                </span>
+              </div>
+            </div>
+            <div class="p-5 md:p-6">
+              <div class="flex items-center gap-3 mb-3 text-sm text-navy-500">
+                <time>{post.date}</time>
+                <span class="w-1 h-1 rounded-full bg-navy-300"></span>
+                <span>{post.readTime}</span>
+              </div>
+              <h2 class="text-lg md:text-xl font-bold text-navy-900 group-hover:text-amber-accent transition-colors leading-snug">
+                {post.title}
+              </h2>
+              <p class="mt-2 text-sm text-navy-600 line-clamp-3">
+                {post.excerpt}
+              </p>
+              <div class="mt-4 inline-flex items-center gap-1 text-sm font-medium text-amber-accent group-hover:text-gold-700 transition-colors">
+                Read Article
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTASection lang={lang} />
+</BaseLayout>

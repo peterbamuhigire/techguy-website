@@ -802,7 +802,38 @@
       "alt_fr": "Conception UX d'application web et mobile avec notebook et rendu 3D — planification de l'expérience utilisateur"
     }
   },
-  "article_assignments": {
+  "blog_images_ai_data_readiness": {
+    "ai-data-readiness-dashboard.jpg": {
+      "width": 2222,
+      "height": 1481,
+      "orientation": "landscape",
+      "description": "Business professional using laptop and phone with AI analytics dashboards and financial data overlays",
+      "article": "before-you-buy-ai-clean-your-business-data",
+      "role": "featured-og",
+      "alt_en": "Business professional reviewing AI analytics dashboards on laptop and phone",
+      "alt_fr": "Professionnel examinant des tableaux de bord d'analyse IA sur ordinateur portable et telephone"
+    },
+    "ai-data-readiness-forecasting.jpg": {
+      "width": 2222,
+      "height": 1478,
+      "orientation": "landscape",
+      "description": "Hands using laptop with AI, charts, and business forecasting data overlays",
+      "article": "before-you-buy-ai-clean-your-business-data",
+      "role": "in-article",
+      "alt_en": "AI dashboards and charts used for business data analysis",
+      "alt_fr": "Tableaux de bord IA et graphiques utilises pour l'analyse des donnees d'entreprise"
+    },
+    "ai-data-readiness-research.jpg": {
+      "width": 2222,
+      "height": 1482,
+      "orientation": "landscape",
+      "description": "African business professional using phone while reviewing digital AI and data research overlays",
+      "article": "before-you-buy-ai-clean-your-business-data",
+      "role": "in-article",
+      "alt_en": "African business professional reviewing digital data and AI research on a phone",
+      "alt_fr": "Professionnelle africaine consultant des donnees numeriques et des recherches IA sur telephone"
+    }
+  },  "article_assignments": {
     "custom-software-africa": {
       "featured": "blog-images-3.jpg",
       "in_article": [
@@ -890,6 +921,15 @@
         "ux-designs-ui-wireframe.jpg",
         "ux-designer-brainstorming-mobile-app.jpg",
         "ux-notebook-3d-concept.jpg"
+      ],
+      "layout": "A",
+      "accent": "gold"
+    },
+    "before-you-buy-ai-clean-your-business-data": {
+      "featured": "ai-data-readiness-dashboard.jpg",
+      "in_article": [
+        "ai-data-readiness-forecasting.jpg",
+        "ai-data-readiness-research.jpg"
       ],
       "layout": "A",
       "accent": "gold"

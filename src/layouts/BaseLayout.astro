@@ -54,12 +54,21 @@ const slugMap: Record<string, string> = {
   'it-consulting-uganda': 'consultant-informatique-afrique',
   'software-development-uganda': 'developpement-logiciel-afrique',
   'website-development-uganda': 'developpement-web-afrique',
+  'ai/ai-in-enterprise-software': 'ai/ia-dans-les-logiciels-dentreprise',
+  'ai/ia-dans-les-logiciels-dentreprise': 'ai/ai-in-enterprise-software',
+  'ai/before-you-buy-ai-clean-your-business-data': 'ai/avant-dacheter-lia-nettoyez-vos-donnees-dentreprise',
+  'ai/avant-dacheter-lia-nettoyez-vos-donnees-dentreprise': 'ai/before-you-buy-ai-clean-your-business-data',
 };
 const currentSlug = currentPath.replace(/^\//, '').replace(/\/$/, '');
 const altUrl =
   altUrlProp ??
   (slugMap[currentSlug] ? `/${altLang}/${slugMap[currentSlug]}/` : `/${altLang}${currentPath || '/'}`);
 const canonicalUrl = `${siteUrl}/${lang}${currentPath || '/'}`;
+const defaultUrl = lang === 'en'
+  ? `/${lang}${currentPath || '/'}`
+  : altUrl.startsWith('/en/')
+    ? altUrl
+    : `/en${currentPath || '/'}`;
 
 const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION;
@@ -78,6 +87,7 @@ if (page && page !== 'home') {
     about: { en: 'About', fr: 'A Propos' },
     contact: { en: 'Contact', fr: 'Contact' },
     blog: { en: 'Blog', fr: 'Blog' },
+    ai: { en: 'AI', fr: 'IA' },
     pricing: { en: 'Pricing', fr: 'Tarifs' },
   };
 
@@ -192,7 +202,7 @@ const breadcrumbSchema = {
   <link rel="canonical" href={canonicalUrl} />
   <link rel="alternate" hreflang={lang === 'en' ? 'en' : 'fr'} href={`${siteUrl}/${lang}${currentPath || '/'}`} />
   <link rel="alternate" hreflang={altLang === 'en' ? 'en' : 'fr'} href={`${siteUrl}${altUrl}`} />
-  <link rel="alternate" hreflang="x-default" href={`${siteUrl}/en${currentPath || '/'}`} />
+  <link rel="alternate" hreflang="x-default" href={`${siteUrl}${defaultUrl}`} />
 
   <meta name="geo.region" content="UG-102" />
   <meta name="geo.placename" content="Kampala" />

@@ -1,0 +1,335 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import AuthorBox from '@/components/AuthorBox.astro';
+import CTASection from '@/components/CTASection.astro';
+import QuickAnswer from '@/components/QuickAnswer.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+import { authorProfile } from '@/data/site';
+
+import heroImg from '@/assets/images/ai-data-readiness-dashboard.jpg';
+import imgForecasting from '@/assets/images/ai-data-readiness-forecasting.jpg';
+import imgResearch from '@/assets/images/ai-data-readiness-research.jpg';
+
+const lang: Lang = 'en';
+const title = "Before You Buy AI, Clean Your Business Data";
+const description = "A practical guide for Ugandan and East African SMEs: clean your business data before investing in AI dashboards, alerts, scoring, or automated reports.";
+const date = "2026-05-07";
+const category = "AI Readiness";
+const readTime = "10 min read";
+const slug = "before-you-buy-ai-clean-your-business-data";
+const siteUrl = "https://techguypeter.com";
+
+const auditSteps = [
+  {
+    week: "Days 1-7",
+    title: "Find the system of record",
+    text: "List every place the business records sales, stock, payments, customers, purchases, and tax data. Decide which system is the official source for each record type.",
+  },
+  {
+    week: "Days 8-14",
+    title: "Standardise names and codes",
+    text: "Clean product names, customer names, branch names, supplier names, and staff names. Remove duplicates and agree on one naming rule that everyone can follow.",
+  },
+  {
+    week: "Days 15-21",
+    title: "Reconcile the numbers",
+    text: "Compare POS, EFRIS, mobile money, bank statements, stock counts, invoices, and manual spreadsheets. Mark the gaps and fix the highest-value records first.",
+  },
+  {
+    week: "Days 22-30",
+    title: "Lock the operating rules",
+    text: "Define who enters what, who approves changes, who can export reports, and which five management reports are trusted enough to guide decisions.",
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire - Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/ai/${slug}/`
+  }
+};
+---
+
+<BaseLayout
+  title={`${title} - Peter Bamuhigire`}
+  description={description}
+  lang={lang}
+  page="ai"
+  ogImage={heroImg.src}
+  altUrl="/fr/ai/avant-dacheter-lia-nettoyez-vos-donnees-dentreprise/"
+  articleMeta={{
+    title,
+    description,
+    publishedTime: date,
+    modifiedTime: date,
+    image: heroImg.src,
+  }}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <section class="relative min-h-[540px] md:min-h-[640px] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <Image
+        src={heroImg}
+        alt="Business professional reviewing AI analytics dashboards on laptop and phone"
+        width={1600}
+        height={960}
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-900/75 to-navy-900/25"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class="px-3 py-1 text-xs font-semibold bg-gold-400 text-navy-900 rounded-full uppercase tracking-wider">{category}</span>
+        <span class="text-sm text-navy-200">{readTime}</span>
+        <span class="text-sm text-navy-300">.</span>
+        <time class="text-sm text-navy-200" datetime={date}>7 May 2026</time>
+      </div>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-white leading-tight max-w-3xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-navy-200 max-w-2xl leading-relaxed">
+        AI can help a business see patterns faster, but it cannot rescue records that are inconsistent, duplicated, delayed, or wrong. Clean data is the first AI investment most SMEs need.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-gold-400 flex items-center justify-center text-navy-900 font-bold text-sm">P</div>
+        <span class="text-sm text-navy-200">By <a href="/en/about/" class="text-gold-300 hover:text-gold-200 transition-colors">Peter Bamuhigire</a></span>
+      </div>
+    </div>
+  </section>
+
+  <article class="py-12 md:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuickAnswer
+        title="Quick answer"
+        answer="Before buying AI dashboards, predictive alerts, customer scoring, or automatic reports, make sure your core business records are clean enough to trust. If POS, EFRIS, mobile money, bank statements, inventory counts, and spreadsheets disagree, AI will produce confident answers from unreliable data."
+        bullets={[
+          'Start by identifying the official system of record for sales, stock, customers, purchases, and payments.',
+          'Standardise product and customer names before adding AI analysis.',
+          'Use a 30-day audit to reconcile stock, clean duplicates, assign permissions, and create trusted reports.',
+        ]}
+      />
+
+      <div class="prose prose-accent-navy mt-10">
+        <p class="text-xl text-navy-700 leading-relaxed font-medium mb-6">
+          A wholesale shop in Kampala wanted an AI stock assistant. The owner imagined asking, "What should I reorder this week?" and receiving a neat answer. The problem was not the AI model. The problem was the stock data. One product appeared under three names. The POS showed cartons available that were not on the shelf. Mobile money payments had been received but not matched to invoices. Some manual invoices had never entered the system.
+        </p>
+
+        <p>If that business had bought AI first, the result would have looked impressive and still been wrong. The system would have produced recommendations from dirty records. It might have told the owner to delay a reorder because the database said stock was available, while the customer-facing shelf was empty.</p>
+
+        <p>This is the most important AI lesson for many Ugandan and East African SMEs: AI is not a magic cover for operational disorder. It is an accelerator. If the underlying data is reliable, AI helps you ask better questions, notice problems earlier, and prepare useful reports faster. If the underlying data is confused, AI simply makes the confusion sound authoritative.</p>
+
+        <h2>Why Bad Data Makes AI Confidently Wrong</h2>
+
+        <p>Most business AI tools do not know your company from experience. They learn from the data you connect to them: sales records, stock ledgers, bank feeds, customer lists, EFRIS entries, supplier invoices, loan schedules, clinic stock cards, and staff activity logs. When those records are inconsistent, the AI has no reliable ground truth.</p>
+
+        <p>That creates a dangerous kind of error. A normal spreadsheet error often looks messy enough to invite checking. AI output can look polished even when the input is weak. It may write a clear paragraph, show a neat chart, or give a confident forecast. The presentation improves, but the facts underneath may still be broken.</p>
+
+        <p>For a business owner, CFO, operations manager, SACCO manager, clinic administrator, or restaurant group, this matters because AI mistakes are rarely abstract. They become wrong purchase orders, wrong cash-flow expectations, wrong customer follow-ups, wrong stock alerts, and wrong management meetings.</p>
+      </div>
+
+      <figure class="my-10 rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={imgForecasting}
+          alt="AI dashboards and charts used for business data analysis"
+          width={900}
+          height={600}
+          class="w-full h-[280px] md:h-[360px] object-cover"
+          loading="lazy"
+        />
+        <figcaption class="px-4 py-3 bg-navy-50 text-sm text-navy-500 text-center">
+          AI dashboards are useful only when the numbers feeding them have been reconciled and standardised.
+        </figcaption>
+      </figure>
+
+      <div class="prose prose-accent-navy">
+        <h2>The Data Problems Most SMEs Already Recognise</h2>
+
+        <p>You do not need a technical audit to know where many of the problems are. Most management teams can name them quickly.</p>
+
+        <ul>
+          <li><strong>Product names are inconsistent.</strong> "Sugar 50kg", "50kg sugar", "Kakira sugar 50", and "Kakira 50kg" may refer to the same item, but the system treats them as four products.</li>
+          <li><strong>Branches record the same activity differently.</strong> One restaurant branch records cooking oil by litre, another by carton, and another by supplier invoice line.</li>
+          <li><strong>Stock counts do not match the system.</strong> The warehouse, shop floor, and accounting system each tell a different story.</li>
+          <li><strong>Customer records are duplicated.</strong> The same buyer appears under a personal name, company name, phone number, and nickname.</li>
+          <li><strong>Payment records are not reconciled.</strong> Mobile money, bank statements, POS settlements, manual receipts, and invoices sit in separate places.</li>
+          <li><strong>Updates happen late.</strong> A SACCO loan status is marked current when the repayment is already late, or a clinic medicine stock card is updated after the medicine has already been dispensed.</li>
+        </ul>
+
+        <p>These are not small clerical issues once AI enters the picture. They decide whether an AI forecast reflects reality or just repeats the system's hidden weaknesses.</p>
+
+        <h2>What Clean Enough Data Looks Like</h2>
+
+        <p>Clean data does not mean perfect data. Many SMEs cannot pause operations for a six-month master data project, and they do not need to. The goal is to reach a level where the main records used for decisions are consistent, current, and traceable.</p>
+
+        <p>For a trading business, that means product names are standardised, stock balances are reconciled regularly, and sales can be matched to payments. For a restaurant group, it means purchases, recipes, wastage, and branch sales use the same units. For a SACCO, it means member profiles, repayment dates, arrears status, and rescheduled loans are updated promptly. For a clinic, it means usable stock, expired stock, dispensed medicine, and supplier deliveries are separated clearly.</p>
+
+        <p>AI should be connected after the business can answer basic questions from normal reports without arguing about which spreadsheet is right.</p>
+
+        <div class="bg-gold-50 border border-gold-200 rounded-2xl p-5 md:p-6 my-8">
+          <p class="text-sm font-semibold text-navy-700 uppercase tracking-wider mb-2">A practical standard</p>
+          <p class="text-navy-700 leading-relaxed mb-0">If two competent staff members pull the same management report from the agreed system on the same day, they should get the same answer. If they do not, the AI project is premature.</p>
+        </div>
+
+        <h2>A 30-Day AI Data Readiness Audit</h2>
+
+        <p>The fastest useful approach is a focused 30-day audit. It should not try to fix every historical error. It should clean the records that affect the first AI use cases: stock alerts, management reports, customer scoring, cash-flow summaries, document analysis, or predictive warnings.</p>
+      </div>
+
+      <div class="my-10 space-y-4">
+        {auditSteps.map((step) => (
+          <div class="bg-white border border-navy-100 rounded-2xl p-5 md:p-6 shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+              <span class="inline-flex w-fit px-3 py-1 rounded-full bg-navy-900 text-gold-300 text-xs font-semibold uppercase tracking-wider">
+                {step.week}
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-navy-900">{step.title}</h3>
+                <p class="mt-2 text-navy-600 leading-relaxed">{step.text}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose prose-accent-navy">
+        <h2>Start With the System of Record</h2>
+
+        <p>The first decision is not technical. It is managerial: which system is the official record for each part of the business?</p>
+
+        <p>Sales may live in the POS. Tax invoices may live in EFRIS. Payments may live in mobile money statements and bank feeds. Stock may live in an inventory module. Customer follow-up may live in WhatsApp, Excel, or a CRM. AI cannot resolve this by itself. The business must decide which source wins when records conflict.</p>
+
+        <p>For example, if the POS says a sale happened but there is no mobile money or bank settlement, is it an unpaid invoice, a cash sale, a posting delay, or an error? If the stock system says 20 boxes are available and the physical count says 12, who investigates, who approves the correction, and where is the reason recorded?</p>
+
+        <p>These rules matter because AI tools need a reliable chain of meaning. Without it, the model sees data points but not business truth.</p>
+
+        <h2>Local Examples: Where Bad Data Breaks AI</h2>
+
+        <h3>Wholesale and Distribution</h3>
+
+        <p>A wholesale business wants AI to recommend reorder quantities. The model looks at sales velocity, stock on hand, supplier lead times, and seasonality. But if product names are duplicated and returns are not posted correctly, the AI will misread demand. It may recommend stock for slow-moving items while ignoring products that are actually selling out.</p>
+
+        <h3>Restaurants and Food Cost</h3>
+
+        <p>A restaurant group wants AI to warn when food cost is rising. That only works if branches record purchases consistently. If one branch records beef by kilogram, another by supplier invoice, and another by cash purchase total, the AI cannot compare branches fairly. The owner may blame staff performance when the real issue is inconsistent measurement.</p>
+
+        <h3>SACCOs and Credit Risk</h3>
+
+        <p>A SACCO wants member repayment predictions. The model needs repayment history, loan status, arrears days, rescheduling notes, and member profile data. If arrears are updated late or rescheduled loans are not marked properly, the AI may score risk incorrectly. In a lending environment, that affects real people and real money.</p>
+
+        <h3>Clinics and Medicine Stock</h3>
+
+        <p>A clinic wants AI stock alerts for medicines. The model needs to know current stock, expired stock, usable stock, dispensing history, supplier lead times, and reorder levels. If expired medicine remains mixed with usable stock in the system, alerts become dangerous. The system may say medicine is available when it cannot legally or safely be dispensed.</p>
+      </div>
+
+      <figure class="my-10 rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={imgResearch}
+          alt="African business professional reviewing digital data and AI research on a phone"
+          width={900}
+          height={600}
+          class="w-full h-[300px] md:h-[380px] object-cover object-center"
+          loading="lazy"
+        />
+        <figcaption class="px-4 py-3 bg-navy-50 text-sm text-navy-500 text-center">
+          The best AI projects begin with business rules that ordinary staff can understand and follow.
+        </figcaption>
+      </figure>
+
+      <div class="prose prose-accent-navy">
+        <h2>Clean Data Has Value Even If You Delay AI</h2>
+
+        <p>This is why the data readiness audit is worth doing even before an AI budget is approved. Clean records improve the business immediately.</p>
+
+        <p>Accounting becomes easier because transactions reconcile faster. Tax compliance improves because EFRIS, POS, invoices, and receipts tell the same story. Inventory control improves because stock counts can be trusted. Customer service improves because staff can see the correct customer history. Management reporting improves because meetings are based on agreed numbers, not competing spreadsheets.</p>
+
+        <p>Those benefits do not depend on AI. They are normal business gains. AI simply becomes more powerful after those gains are in place.</p>
+
+        <h2>When the Business Is Ready for AI</h2>
+
+        <p>Once the core records are clean enough, start small. Do not begin with a broad "AI transformation" project. Choose one use case where the data is available, the decision is clear, and the benefit can be measured.</p>
+
+        <p>Good first use cases include a weekly management briefing, stockout alerts for fast-moving items, duplicate customer detection, supplier invoice extraction, customer follow-up suggestions, or branch performance summaries. Each one can be tested against actual business outcomes: fewer stockouts, faster reporting, cleaner customer records, fewer posting errors, or earlier management action.</p>
+
+        <p>In the <a href="/en/services/">business systems and software projects I work on</a>, AI is strongest when it is added as a disciplined layer on top of sound workflows. It should read from trusted records, respect user permissions, show its assumptions, and leave important decisions with responsible people.</p>
+
+        <h2>The Real Order of Work</h2>
+
+        <p>The right order is simple: clean the records, stabilise the workflow, define the reports, then add AI where it can accelerate a decision. Many businesses want to skip the first three steps because AI feels more exciting. That is exactly how expensive tools become unused tools.</p>
+
+        <p>If your business cannot trust its stock report, customer list, invoice register, repayment schedule, or branch performance report today, AI should not be the next purchase. Data readiness should be.</p>
+
+        <p>Once that foundation is in place, AI stops being a magic promise and becomes a practical business tool: faster questions, earlier alerts, better summaries, and fewer blind spots. That is the version worth buying.</p>
+      </div>
+
+      <div class="mt-12 bg-navy-900 text-warm-white rounded-2xl p-6 md:p-8">
+        <h2 class="text-xl font-bold text-gold-400 mb-5">Key Takeaways</h2>
+        <ul class="space-y-3">
+          {[
+            "AI cannot fix unreliable records. It will usually make bad data look more convincing.",
+            "EFRIS, POS, mobile money, bank statements, stock counts, invoices, and spreadsheets must reconcile before AI reports can be trusted.",
+            "Clean enough data means records are consistent, current, traceable, and governed by clear operating rules.",
+            "A 30-day audit can identify the system of record, standardise names, remove duplicates, reconcile stock and payments, and define trusted reports.",
+            "The audit has immediate value even without AI because it improves accounting, tax compliance, inventory control, customer service, and management reporting.",
+            "After the data is ready, begin with one measurable AI use case instead of a broad transformation programme.",
+          ].map(point => (
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-5 h-5 rounded-full bg-gold-400 text-navy-900 flex-shrink-0 flex items-center justify-center">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-navy-200 text-sm leading-relaxed">{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-12">
+        <AuthorBox
+          name={authorProfile.name}
+          title={authorProfile.titleEn}
+          bio={authorProfile.bioEn}
+        />
+      </div>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = docHeight > 0 ? `${Math.min((scrollTop / docHeight) * 100, 100)}%` : '0%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  });
+</script>

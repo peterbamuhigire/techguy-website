@@ -1,0 +1,308 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import AuthorBox from '@/components/AuthorBox.astro';
+import CTASection from '@/components/CTASection.astro';
+import QuickAnswer from '@/components/QuickAnswer.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+import { authorProfile } from '@/data/site';
+
+import heroImg from '@/assets/images/ai-retail-shopping-cart-hero.jpg';
+import imgSales from '@/assets/images/ai-retail-sales-growth.jpg';
+import imgAnalytics from '@/assets/images/ai-retail-analytics-tablet.jpg';
+
+const lang: Lang = 'en';
+const title = "AI for Retail Shops, Supermarkets, and Mini-Markets in East Africa";
+const description = "A practical AI roadmap for Ugandan and East African retailers: cut stockouts, detect shrinkage, plan promotions, and grow margins without buying expensive computer-vision hardware.";
+const date = "2026-05-08";
+const category = "AI for Retail";
+const readTime = "11 min read";
+const slug = "ai-for-retail-shops-supermarkets-east-africa";
+const siteUrl = "https://techguypeter.com";
+
+const maturityLadder = [
+  {
+    level: "Level 1",
+    title: "POS and stock discipline",
+    text: "Standardise product codes, units, prices, and supplier records. Reconcile stock, sales, and payments daily. AI is not connected yet — but the data is finally ready for it.",
+  },
+  {
+    level: "Level 2",
+    title: "Dashboards and stockout alerts",
+    text: "Connect simple AI summaries to clean POS data: fast/slow movers, near-expiry items, low-stock alerts, branch comparisons, and supplier reliability scores.",
+  },
+  {
+    level: "Level 3",
+    title: "Predictive reordering and promotions",
+    text: "Use sales velocity, weather, paydays, holidays, and school terms to forecast demand. Test promotions against margin, not just turnover.",
+  },
+  {
+    level: "Level 4",
+    title: "Customer and catalogue intelligence",
+    text: "Identify regular customers across phone numbers, generate WhatsApp catalogue copy from product photos, and personalise reminders without spamming.",
+  },
+  {
+    level: "Level 5",
+    title: "Selective computer vision",
+    text: "Only when the business case is proven: queue-length cameras, shelf monitoring, or shrinkage detection — limited to outlets where the volume justifies the spend.",
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire - Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/ai/${slug}/`
+  }
+};
+---
+
+<BaseLayout
+  title={`${title} - Peter Bamuhigire`}
+  description={description}
+  lang={lang}
+  page="ai"
+  ogImage={heroImg.src}
+  altUrl="/fr/ai/ia-commerce-detail-afrique-francophone/"
+  articleMeta={{
+    title,
+    description,
+    publishedTime: date,
+    modifiedTime: date,
+    image: heroImg.src,
+  }}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <section class="relative min-h-[540px] md:min-h-[640px] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <Image
+        src={heroImg}
+        alt="Retailer using AI tools and a shopping cart icon to plan stock and sales"
+        width={1600}
+        height={960}
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-900/75 to-navy-900/25"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class="px-3 py-1 text-xs font-semibold bg-gold-400 text-navy-900 rounded-full uppercase tracking-wider">{category}</span>
+        <span class="text-sm text-navy-200">{readTime}</span>
+        <span class="text-sm text-navy-300">.</span>
+        <time class="text-sm text-navy-200" datetime={date}>8 May 2026</time>
+      </div>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-white leading-tight max-w-3xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-navy-200 max-w-2xl leading-relaxed">
+        Most East African retailers do not need cashierless stores or smart carts. They need fewer stockouts, less shrinkage, sharper promotions, and faster catalogue work. AI can do that — once the basics are right.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-gold-400 flex items-center justify-center text-navy-900 font-bold text-sm">P</div>
+        <span class="text-sm text-navy-200">By <a href="/en/about/" class="text-gold-300 hover:text-gold-200 transition-colors">Peter Bamuhigire</a></span>
+      </div>
+    </div>
+  </section>
+
+  <article class="py-12 md:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuickAnswer
+        title="Quick answer"
+        answer="The realistic AI opportunity for retailers in Uganda and East Africa is not autonomous stores. It is using clean POS, inventory, supplier, and customer data to reduce stockouts, detect shrinkage, understand fast-moving products, plan promotions, and speed up catalogue work."
+        bullets={[
+          'Start with POS and stock discipline before buying any AI tool.',
+          'Add alerts and dashboards next — fast/slow movers, near-expiry, low stock.',
+          'Save computer vision and smart carts for last, only when volume justifies the spend.',
+        ]}
+      />
+
+      <div class="prose prose-accent-navy mt-10">
+        <p class="text-xl text-navy-700 leading-relaxed font-medium mb-6">
+          The retail magazines from April 2026 are full of frictionless shopping, computer vision checkout, smart carts, product recognition, and AI-powered store analytics. Most Ugandan supermarkets, mini-markets, pharmacies, hardware shops, and bookstores are not ready for any of that — and, more importantly, they do not need it. The realistic opportunity is smaller, cheaper, and far more useful.
+        </p>
+
+        <p>It looks like this: a supermarket in Ntinda gets an alert that baby formula is selling faster than expected and may run out before the next supplier delivery. A pharmacy in Mbarara identifies products that often expire before sale. A hardware shop in Nakawa sees that a Saturday promotion increased traffic but reduced margin. A mini-market in Kireka turns product photos into a clean WhatsApp catalogue in minutes instead of days.</p>
+
+        <p>None of those examples need a smart cart. They need clean POS data, an inventory system that is updated honestly, and one or two AI features bolted onto records the business already keeps. That is where this article focuses.</p>
+
+        <h2>The Problems Retailers Already Feel</h2>
+
+        <p>Before discussing AI, it helps to name the problems most East African retailers can describe without help from a consultant. They are familiar because they cost money every week.</p>
+
+        <ul>
+          <li><strong>Queues during peak hours.</strong> Friday evenings, paydays, weekends, and the days before Christmas, Eid, or Easter are predictable but rarely staffed for properly.</li>
+          <li><strong>Wrong stock counts.</strong> The system says ten cartons; the shelf has two; the storeroom has four; nobody is sure where the rest went.</li>
+          <li><strong>Expired products.</strong> Pharmacies, supermarkets, and groceries lose real money on items that quietly cross their best-before date.</li>
+          <li><strong>Slow-moving inventory.</strong> Cash sits in stock that is not selling while popular lines run out.</li>
+          <li><strong>Manual price changes.</strong> Supplier price increases, promotions, and tax changes are entered by hand, with errors and delays.</li>
+          <li><strong>Cash leakage.</strong> Refunds, voids, "no sale" drawer opens, and small adjustments add up over months.</li>
+          <li><strong>Copy-cat promotions.</strong> Discounts are launched because a competitor did the same thing, not because the data suggests they will work.</li>
+        </ul>
+
+        <p>This is the everyday reality. Any AI roadmap that ignores these problems is selling the wrong product.</p>
+      </div>
+
+      <figure class="my-10 rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={imgSales}
+          alt="AI sales growth concept showing shopping cart and rising chart"
+          width={900}
+          height={900}
+          class="w-full h-[320px] md:h-[420px] object-cover object-center"
+          loading="lazy"
+        />
+        <figcaption class="px-4 py-3 bg-navy-50 text-sm text-navy-500 text-center">
+          AI helps retailers see what their POS already records — once the records are reliable.
+        </figcaption>
+      </figure>
+
+      <div class="prose prose-accent-navy">
+        <h2>Where AI Genuinely Helps in an East African Retailer</h2>
+
+        <p>AI is most useful when it is connected to data the retailer already has: the POS log, the inventory module, supplier invoices, expiry dates, and (where it exists) customer records from loyalty cards, WhatsApp orders, or mobile money. The right starting question is not "what can AI do?" It is "which decisions am I already making weekly that AI could speed up or sharpen?"</p>
+
+        <h3>Stockout Prevention</h3>
+        <p>A supermarket in Ntinda sells baby formula every day. Demand jumps slightly when paydays cluster around the 25th of the month and ahead of school terms. A simple AI alert reads the last twelve weeks of POS sales, the current stock, and the supplier's lead time, and warns the manager three days before the shelf will be empty. The decision — call the supplier, switch brands, or accept a one-day gap — stays with a person.</p>
+
+        <h3>Expiry and Shrinkage</h3>
+        <p>A pharmacy can flag products whose remaining shelf life is shorter than their average days-to-sell. The system does not have to be clever; it just has to compare two numbers the pharmacy already records. The same logic applies to chilled items in a supermarket, dairy in a mini-market, or seasonal stock in a bookshop after exam season.</p>
+
+        <h3>Margin-Aware Promotion Review</h3>
+        <p>A hardware shop in Nakawa runs a weekend promotion on paint. Traffic doubles, sales rise — but margin per ticket falls because customers buy only the discounted item and skip the brushes, rollers, and tape that usually go with it. A short AI summary of basket composition before, during, and after the promotion shows whether the campaign actually paid for itself. That is much more useful than a turnover headline.</p>
+
+        <h3>Faster Catalogue Work for WhatsApp and Online Shops</h3>
+        <p>A mini-market that wants to sell on WhatsApp Business or set up an online shop can use AI to turn a product photo into a clean description, suggest a category, write a short marketing line, and prepare a price list. What used to take an entire weekend can take an afternoon. The owner still reviews the descriptions, but does not start from a blank page.</p>
+
+        <h3>Supplier and Branch Comparisons</h3>
+        <p>A retail group with three or four branches can use AI to summarise weekly performance: which supplier delivered late, which branch under-performed on a specific category, which products turned faster in one location than another. The AI does not replace the manager; it cuts the time spent producing the report.</p>
+
+        <h2>What Is Not Yet Practical for Most SMEs</h2>
+
+        <p>It is worth being honest about what the magazines describe but most East African retailers should not buy yet. Cashierless layouts, smart carts, ceiling-mounted computer vision cameras, and gait-tracking analytics are expensive, hardware-heavy, and depend on stable connectivity, reliable power, and very disciplined catalogue management. They make sense in a few flagship supermarkets in Kampala, Nairobi, Kigali, or Dar es Salaam — not in a 60-square-metre mini-market in Kireka.</p>
+
+        <p>The recommended path is the opposite of the showroom demo. Data first, then alerts, then simple AI summaries, then selective automation, and only then — if the volume justifies it — vision-based analytics. Skipping the early steps is how retailers end up with cameras pointing at shelves that the system cannot even name correctly.</p>
+      </div>
+
+      <figure class="my-10 rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={imgAnalytics}
+          alt="Retail managers reviewing data analytics and infographics on a tablet"
+          width={900}
+          height={500}
+          class="w-full h-[280px] md:h-[360px] object-cover object-center"
+          loading="lazy"
+        />
+        <figcaption class="px-4 py-3 bg-navy-50 text-sm text-navy-500 text-center">
+          The first AI a retailer should buy is a better view of the data they already produce every day.
+        </figcaption>
+      </figure>
+
+      <div class="prose prose-accent-navy">
+        <h2>A Retail AI Maturity Ladder</h2>
+
+        <p>The simplest way to plan an AI roadmap is to climb a ladder. Each level should be working before the next is funded.</p>
+      </div>
+
+      <div class="my-10 space-y-4">
+        {maturityLadder.map((step) => (
+          <div class="bg-white border border-navy-100 rounded-2xl p-5 md:p-6 shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+              <span class="inline-flex w-fit px-3 py-1 rounded-full bg-navy-900 text-gold-300 text-xs font-semibold uppercase tracking-wider">
+                {step.level}
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-navy-900">{step.title}</h3>
+                <p class="mt-2 text-navy-600 leading-relaxed">{step.text}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose prose-accent-navy">
+        <h2>How to Start Without Wasting Money</h2>
+
+        <p>Begin with one painful, expensive question and build the smallest tool that answers it. "Which fast-moving items are about to run out before the next delivery?" is a good first question, because the answer can be tested against reality the same week. So is "Which products in this branch are quietly expiring?" and "Did last weekend's promotion actually improve margin?"</p>
+
+        <p>Pick one. Connect it to the POS export and inventory file. Run it for a month. Compare the AI's recommendation with what the manager would have done anyway. If the AI catches three stockouts that would otherwise have happened, or flags ten near-expiry products in time to discount them, the tool has paid for itself.</p>
+
+        <p>This connects directly to <a href="/en/ai/before-you-buy-ai-clean-your-business-data/">the data readiness audit covered in an earlier article</a>: the AI cannot help if the POS, inventory, and supplier records do not reconcile. In the <a href="/en/services/">retail and trading software projects I work on</a>, AI value usually appears in the first three months once basic stock discipline is in place — not before.</p>
+
+        <h2>What This Looks Like in Twelve Months</h2>
+
+        <p>A serious retailer who follows this path realistically expects, within a year, to have: standardised product codes and units across all branches; a daily reconciliation of POS, stock, and bank/mobile-money settlement; weekly AI-generated summaries of fast and slow movers, near-expiry items, branch performance, and supplier reliability; and one or two predictive alerts (stockouts, expiry, margin drift) that the management team trusts enough to act on.</p>
+
+        <p>That is enough to recover most of the cash currently lost to stockouts, expiry, shrinkage, and bad promotions. It is also enough to make a smart-cart conversation, in three or five years, finally make sense — because by then the underlying data will deserve the cameras.</p>
+
+        <p>The retail AI worth buying today is the version that helps a manager make better decisions on Monday morning. The futuristic version can wait until the basics earn their place.</p>
+      </div>
+
+      <div class="mt-12 bg-navy-900 text-warm-white rounded-2xl p-6 md:p-8">
+        <h2 class="text-xl font-bold text-gold-400 mb-5">Key Takeaways</h2>
+        <ul class="space-y-3">
+          {[
+            "Most East African retailers should ignore cashierless stores and smart carts for now and focus on smaller AI wins built on POS and inventory data.",
+            "The realistic AI use cases are stockout alerts, expiry detection, margin-aware promotion review, faster catalogue work, and supplier and branch comparisons.",
+            "Computer vision, smart carts, and cashierless layouts are not yet practical for typical supermarkets, mini-markets, pharmacies, hardware shops, or bookshops.",
+            "A five-level retail AI maturity ladder runs from POS and stock discipline up to selective computer vision, with each step earning the next.",
+            "Start with one painful question, connect it to existing data, and measure the AI tool against what a manager would have done anyway.",
+          ].map(point => (
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-5 h-5 rounded-full bg-gold-400 text-navy-900 flex-shrink-0 flex items-center justify-center">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-navy-200 text-sm leading-relaxed">{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-12">
+        <AuthorBox
+          name={authorProfile.name}
+          title={authorProfile.titleEn}
+          bio={authorProfile.bioEn}
+        />
+      </div>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = docHeight > 0 ? `${Math.min((scrollTop / docHeight) * 100, 100)}%` : '0%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  });
+</script>

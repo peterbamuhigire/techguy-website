@@ -1,0 +1,307 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import AuthorBox from '@/components/AuthorBox.astro';
+import CTASection from '@/components/CTASection.astro';
+import QuickAnswer from '@/components/QuickAnswer.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+import { authorProfile } from '@/data/site';
+
+import heroImg from '@/assets/images/ai-schools-students-coding-hero.jpg';
+import imgNotes from '@/assets/images/ai-schools-student-notes.jpg';
+import imgLearning from '@/assets/images/ai-schools-learning-ai.jpg';
+
+const lang: Lang = 'fr';
+const title = "IA dans les Écoles Francophones : Former au Lieu d'Interdire";
+const description = "Une politique IA pratique pour les écoles d'Afrique francophone : usages acceptables et interdits, formation des enseignants, protection des données élèves, et équité numérique au cœur de la stratégie.";
+const date = "2026-05-08";
+const category = "IA et Éducation";
+const readTime = "11 min de lecture";
+const slug = "ia-ecoles-afrique-francophone";
+const siteUrl = "https://techguypeter.com";
+
+const checklistItems = [
+  {
+    item: "Charte d'usage acceptable",
+    text: "Un document court, signé par l'équipe pédagogique et partagé avec les parents, qui précise ce que l'IA peut et ne peut pas faire dans les devoirs, le travail en classe et les évaluations.",
+  },
+  {
+    item: "Formation des enseignants",
+    text: "Chaque enseignant doit savoir utiliser un outil IA approuvé et reconnaître les défaillances courantes : informations inventées, formulations biaisées, données obsolètes.",
+  },
+  {
+    item: "Communication parents",
+    text: "Les parents doivent comprendre, en français simple, ce qui est autorisé à la maison, comment repérer un travail produit par IA, et comment soutenir — sans remplacer — l'effort de leur enfant.",
+  },
+  {
+    item: "Règles sur les données élèves",
+    text: "Aucun nom, photo, note, donnée médicale ou information familiale ne doit être saisi dans un outil IA public. Les outils approuvés doivent avoir une politique de données claire.",
+  },
+  {
+    item: "Refonte des évaluations",
+    text: "Les contrôles et examens doivent être repensés pour que l'IA ne puisse pas faire l'essentiel du travail : plus d'oraux, d'écrits surveillés, de brouillons versionnés et de notation par étapes.",
+  },
+  {
+    item: "Citation et transparence",
+    text: "Quand l'IA est utilisée légitimement (brainstorming, résumé, traduction), l'élève doit le déclarer — comme il le fait déjà pour un manuel ou un site web.",
+  },
+  {
+    item: "Cybersécurité de base",
+    text: "Le Wi-Fi de l'école, les appareils et les comptes doivent avoir une protection minimale : mots de passe forts, MFA pour le personnel, logiciels à jour, règles claires sur les appareils personnels.",
+  },
+  {
+    item: "Procédure disciplinaire",
+    text: "Une démarche prévisible et juste face à un usage abusif : avertissement et accompagnement la première fois, sanctions sérieuses pour récidive ou fraude aux examens.",
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/fr/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire - Conseil en Technologie & Entreprise",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "fr",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/fr/ai/${slug}/`
+  }
+};
+---
+
+<BaseLayout
+  title={`${title} - Peter Bamuhigire`}
+  description={description}
+  lang={lang}
+  page="ai"
+  ogImage={heroImg.src}
+  altUrl="/en/ai/ai-policy-for-schools-east-africa/"
+  articleMeta={{
+    title,
+    description,
+    publishedTime: date,
+    modifiedTime: date,
+    image: heroImg.src,
+  }}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <section class="relative min-h-[540px] md:min-h-[640px] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <Image
+        src={heroImg}
+        alt="Élèves apprenant à coder et à utiliser l'IA dans une salle de classe moderne"
+        width={1600}
+        height={900}
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-900/75 to-navy-900/25"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class="px-3 py-1 text-xs font-semibold bg-gold-400 text-navy-900 rounded-full uppercase tracking-wider">{category}</span>
+        <span class="text-sm text-navy-200">{readTime}</span>
+        <span class="text-sm text-navy-300">.</span>
+        <time class="text-sm text-navy-200" datetime={date}>8 mai 2026</time>
+      </div>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-white leading-tight max-w-3xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-navy-200 max-w-2xl leading-relaxed">
+        Les écoles de Côte d'Ivoire, du Sénégal, de RDC, du Mali, du Togo et du Cameroun font déjà face à l'IA, qu'elles aient ou non une politique officielle. Une interdiction simple n'enseigne rien aux élèves. L'usage responsable, oui.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-gold-400 flex items-center justify-center text-navy-900 font-bold text-sm">P</div>
+        <span class="text-sm text-navy-200">Par <a href="/fr/about/" class="text-gold-300 hover:text-gold-200 transition-colors">Peter Bamuhigire</a></span>
+      </div>
+    </div>
+  </section>
+
+  <article class="py-12 md:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuickAnswer
+        title="Réponse rapide"
+        answer="Les écoles ne devraient ni interdire l'IA dans la panique, ni laisser les élèves s'en servir sans cadre. La bonne réponse est une charte écrite qui sépare l'usage légitime (résumer un cours, générer des questions de révision, traduire, brainstormer, soutenir des élèves à besoins spécifiques) de l'usage interdit (rendre un travail entièrement IA comme personnel, utiliser l'IA pendant un examen fermé, partager des données d'élèves, ou citer une réponse IA sans la vérifier)."
+        bullets={[
+          "Remplacer l'interdiction générale par une charte d'usage acceptable claire.",
+          "Former les enseignants, repenser les évaluations, protéger les données élèves.",
+          "Mettre l'équité numérique au cœur de la politique IA, pas en annexe.",
+        ]}
+      />
+
+      <div class="prose prose-accent-navy mt-10">
+        <p class="text-xl text-navy-700 leading-relaxed font-medium mb-6">
+          Les écoles d'Abidjan, Dakar, Kinshasa, Lomé, Bamako, Douala ou Cotonou font déjà face à l'IA, qu'elles aient ou non une charte officielle. Les élèves l'utilisent pour leurs devoirs. Les enseignants l'utilisent pour préparer leurs cours. Les parents s'inquiètent de la triche. Les directions s'inquiètent de la confidentialité des données. Ne rien décider, c'est en pratique laisser les élèves les mieux informés en profiter et les autres se débrouiller seuls.
+        </p>
+
+        <p>Une interdiction totale paraît simple. C'est aussi une manière de faire semblant que le monde du travail dans lequel ces élèves entrent n'existe pas. Universités, employeurs, ONG, ministères, banques et cliniques utilisent des outils IA chaque jour. La vraie question n'est pas si les élèves rencontreront l'IA ; c'est s'ils la rencontreront pour la première fois à l'école, encadrés, ou seuls, sur le téléphone d'un ami, sans aucune règle.</p>
+
+        <p>Cet article propose une politique IA pratique que les écoles francophones — primaires, secondaires, professionnelles ou supérieures — peuvent adapter à leur contexte. Ce n'est pas un article de recherche. C'est un document de travail qu'un chef d'établissement pourrait réellement adopter.</p>
+
+        <h2>Usages Acceptables : Ce que l'IA Peut Faire Légitimement à l'École</h2>
+
+        <p>La première mission d'une charte IA scolaire est de dire clairement ce qui est autorisé. Quand les règles sont nettes, élèves et enseignants arrêtent de deviner et de se cacher.</p>
+
+        <p>Les usages acceptables peuvent inclure : résumer ses notes après le cours pour faciliter la révision ; générer des questions d'entraînement sur un chapitre étudié ; traduire une explication dans une langue mieux maîtrisée par l'élève ; brainstormer un plan de dissertation avant d'écrire le devoir ; préparer des quiz ou des fiches d'exercices pour un enseignant ; soutenir des élèves dyslexiques, malvoyants ou en difficulté de lecture ; aider un enseignant à rédiger une lettre aux parents, une fiche de séquence ou une note de service ; et expliquer un concept différemment quand le manuel est trop dense.</p>
+
+        <p>Aucun de ces usages ne remplace la réflexion. Ils accélèrent les tâches mécaniques de l'apprentissage et de l'enseignement, pour laisser plus de temps à ce qui compte vraiment : la discussion, la pratique et le retour individuel.</p>
+
+        <h2>Usages Interdits : la Ligne à Tenir Fermement</h2>
+
+        <p>La même charte doit être tout aussi nette sur ce que l'IA n'est pas autorisée à faire. Sont interdits : rendre un travail rédigé par IA comme s'il était personnel ; utiliser l'IA pendant un devoir surveillé, un examen ou un contrôle fermé ; produire du contenu haineux, dangereux ou inapproprié ; partager des données d'élèves — noms, notes, informations médicales, situation familiale, photographies — avec un outil IA public ; reprendre une réponse IA sans la confronter à un manuel, à un enseignant ou à une source crédible ; et utiliser l'IA pour usurper l'identité d'un enseignant, d'un parent ou d'un autre élève.</p>
+
+        <p>Les trois premiers points sont évidents. Le quatrième — les données élèves — est le plus sous-estimé. Un enseignant qui colle une liste de classe dans un chatbot public pour "remettre la mise en forme" vient de partager les noms d'enfants avec un service dont l'école n'a jamais examiné la politique de données. C'est un sujet de confidentialité bien avant d'être un sujet d'IA.</p>
+      </div>
+
+      <figure class="my-10 rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={imgNotes}
+          alt="Élève prenant des notes de révision à partir de documents de recherche"
+          width={900}
+          height={600}
+          class="w-full h-[300px] md:h-[380px] object-cover object-center"
+          loading="lazy"
+        />
+        <figcaption class="px-4 py-3 bg-navy-50 text-sm text-navy-500 text-center">
+          L'IA est défendable quand elle accélère le travail mécanique — et que l'élève fait toujours le raisonnement.
+        </figcaption>
+      </figure>
+
+      <div class="prose prose-accent-navy">
+        <h2>Pourquoi l'Équité Numérique Est au Cœur de la Politique</h2>
+
+        <p>Beaucoup d'écoles francophones travaillent encore avec des contraintes qui rendent une politique IA plus complexe qu'il n'y paraît : accès inégal aux appareils, couverture Wi-Fi limitée, formation des enseignants insuffisante, hygiène cybersécurité faible, et soutien à la maison très différent d'un élève à l'autre. Ignorer ces réalités, c'est risquer qu'une politique IA creuse silencieusement les écarts qu'elle prétend réduire.</p>
+
+        <p>Si seuls les élèves disposant d'un smartphone à la maison utilisent l'IA, l'école produit deux catégories d'élèves — ceux dont les devoirs sont polis par un outil et ceux dont ils ne le sont pas — sans jamais l'avoir voulu. Si les enseignants ne sont pas formés, ils ne peuvent pas distinguer un élève qui utilise bien l'IA d'un élève qui copie sa sortie. Si le réseau de l'école n'est pas sécurisé, les données élèves sont exposées chaque fois qu'un enseignant se connecte sur un réseau ouvert.</p>
+
+        <p>La charte doit traiter ces points comme partie intégrante du sujet IA, pas comme un problème informatique à part. Cela veut dire décider, ouvertement : ce qui est prévu pour les élèves sans appareil à domicile (par exemple un accès IA encadré pendant les heures d'étude) ; comment les enseignants sont accompagnés en temps de formation et en matériel ; et quels contrôles cybersécurité minimaux l'école finance réellement cette année — pas dans un plan futur jamais voté.</p>
+
+        <h2>Un Contexte Local Qu'il Faut Prendre en Compte</h2>
+
+        <p>Une politique IA pour l'Afrique francophone n'est pas une copie d'une politique américaine ou européenne. Les réalités locales comptent. Les classes sont souvent nombreuses, ce qui rend l'évaluation par processus plus difficile mais aussi plus indispensable. Les programmes nationaux et les organes d'examen (BAC ivoirien, BFEM et BAC sénégalais, BEPC et BAC togolais, EXETAT en RDC, BEPC camerounais) fixent toujours les règles de la fraude, et la politique de l'école doit s'aligner avec elles, pas les contredire. Le multilinguisme — français, lingala, swahili, wolof, dioula, bambara, fon, ewe — fait de la traduction une tâche IA légitime et utile, pas un contournement.</p>
+
+        <p>Le coût compte aussi. Peu d'écoles peuvent se permettre des abonnements IA d'entreprise pour chaque élève. La charte doit être honnête sur les outils approuvés, ceux qui sont tolérés, ceux qui sont interdits — et accepter de revoir cette liste chaque trimestre puisque le marché change vite.</p>
+
+        <h2>Repenser l'Évaluation pour que l'IA ne la Fasse pas à la Place de l'Élève</h2>
+
+        <p>La partie la plus inconfortable d'une politique IA scolaire est l'évaluation. Si un enseignant donne aujourd'hui la même dissertation qu'il y a cinq ans, l'IA peut probablement produire une réponse correcte en trente secondes. La réponse honnête n'est pas d'interdire l'IA ; c'est de repenser l'épreuve.</p>
+
+        <p>Cela peut signifier : plus d'écrits en classe sous surveillance ; oraux de soutenance où l'élève doit défendre l'argumentaire qu'il a "écrit" ; tâches en plusieurs étapes où notes préparatoires, brouillons et version finale sont notés ; questions liées à des discussions précises de la classe, à des cas d'étude locaux ou à un travail pratique que l'IA ne peut pas suivre ; et évaluations par projet où le processus est observé, pas seulement le rendu final.</p>
+
+        <p>Bien menée, cette refonte réduit aussi une autre forme de triche qui existait bien avant l'IA : copies d'anciens élèves, sites de devoirs vendus, groupes WhatsApp d'échange. Une meilleure évaluation est utile à l'école, que l'IA existe ou non.</p>
+      </div>
+
+      <figure class="my-10 rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={imgLearning}
+          alt="Personnes apprenant les avantages de l'intelligence artificielle avec des schémas"
+          width={900}
+          height={600}
+          class="w-full h-[300px] md:h-[380px] object-cover object-center"
+          loading="lazy"
+        />
+        <figcaption class="px-4 py-3 bg-navy-50 text-sm text-navy-500 text-center">
+          La culture IA fait désormais partie de l'éducation, comme la culture internet est devenue incontournable il y a une génération.
+        </figcaption>
+      </figure>
+
+      <div class="prose prose-accent-navy">
+        <h2>Une Liste de Contrôle pour Préparer l'École</h2>
+
+        <p>Avant d'annoncer une politique, passez l'école à une courte liste de contrôle. Si la majorité des points sont absents, la politique ne survivra pas au contact de la salle de classe.</p>
+      </div>
+
+      <div class="my-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+        {checklistItems.map((c) => (
+          <div class="bg-white border border-navy-100 rounded-2xl p-5 shadow-sm">
+            <h3 class="text-base font-bold text-navy-900 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+              {c.item}
+            </h3>
+            <p class="mt-2 text-sm text-navy-600 leading-relaxed">{c.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose prose-accent-navy">
+        <h2>Comment la Mettre en Place sans Drame</h2>
+
+        <p>Un déploiement réaliste prend un trimestre, pas un week-end. Les premières semaines servent à la consultation : direction, censeurs, chefs de département, responsable informatique, et au moins un représentant des parents. Les semaines suivantes servent à rédiger la charte en français clair (et un résumé en langue locale pour les parents quand c'est utile), à former les enseignants sur un seul outil approuvé, et à présenter la charte au conseil des élèves pour qu'elle ne soit pas annoncée dans une assemblée surprise.</p>
+
+        <p>Une fois en place, elle doit être révisée chaque trimestre. Les outils IA évoluent vite. Une politique qui cite des produits par leur marque sera dépassée dans l'année ; une politique qui pose des principes, des catégories autorisées et une liste courte d'outils approuvés vieillira beaucoup mieux.</p>
+
+        <p>C'est la même logique que j'applique pour toute politique technologique avec les écoles et les entreprises que j'accompagne — depuis <a href="/fr/ai/avant-dacheter-lia-nettoyez-vos-donnees-dentreprise/">la préparation des données</a> jusqu'à l'adoption logicielle plus sûre : des règles sans formation ne fonctionnent pas, et une formation sans règles ne dure pas. Les deux doivent partir ensemble.</p>
+
+        <h2>L'Argument de Fond</h2>
+
+        <p>La culture IA responsable fait désormais partie de l'éducation, au même titre que la culture internet est devenue incontournable il y a une génération. Les écoles n'ont pas refusé d'enseigner l'usage d'internet parce que certains élèves en abusaient. Elles ont enseigné la recherche, la citation, l'évaluation des sources et les bases de la sécurité. L'IA mérite le même traitement, dans les mêmes termes, avec le même sérieux.</p>
+
+        <p>Une école qui interdit l'IA en bloc ne protège pas ses élèves. Elle se protège elle-même d'une conversation difficile. Les élèves utiliseront l'IA de toute façon — chez eux, sur le téléphone d'un camarade, après les examens. Le seul vrai choix de l'école, c'est d'être dans cette conversation ou de laisser ses élèves la mener seuls.</p>
+
+        <p>Les écoles francophones qui réussiront ce virage dans les deux ou trois prochaines années diplômeront des élèves capables d'utiliser l'IA, de la juger, de la vérifier et de la refuser quand il le faut. Ce n'est pas une compétence secondaire. Dans le monde du travail dans lequel ces élèves entrent, cela devient la compétence centrale.</p>
+      </div>
+
+      <div class="mt-12 bg-navy-900 text-warm-white rounded-2xl p-6 md:p-8">
+        <h2 class="text-xl font-bold text-gold-400 mb-5">À Retenir</h2>
+        <ul class="space-y-3">
+          {[
+            "Les écoles ne peuvent pas éviter l'IA en l'interdisant. Élèves, enseignants et parents l'utilisent déjà, avec ou sans cadre.",
+            "Une charte IA pratique sépare les usages acceptables (révision, traduction, brainstorming, accessibilité, préparation de cours) des usages interdits (rendre un travail IA comme personnel, fraude aux examens, partage de données élèves, citation IA non vérifiée).",
+            "L'équité numérique doit être au cœur de la politique. Sans accès aux appareils, sans formation des enseignants et sans cybersécurité de base, les outils IA creusent les écarts existants.",
+            "L'évaluation doit être repensée : plus d'oraux, d'écrits surveillés, de brouillons versionnés et de questions ancrées localement que l'IA ne peut pas traiter.",
+            "Une liste de contrôle en huit points — charte, formation, parents, données, refonte des évaluations, citation, cybersécurité, procédure disciplinaire — est le minimum d'une école sérieuse.",
+            "La culture IA fait partie de l'éducation comme la culture internet : pas optionnelle, pas optionnelle à enseigner.",
+          ].map(point => (
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-5 h-5 rounded-full bg-gold-400 text-navy-900 flex-shrink-0 flex items-center justify-center">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-navy-200 text-sm leading-relaxed">{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-12">
+        <AuthorBox
+          name={authorProfile.name}
+          title={authorProfile.titleFr}
+          bio={authorProfile.bioFr}
+        />
+      </div>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = docHeight > 0 ? `${Math.min((scrollTop / docHeight) * 100, 100)}%` : '0%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  });
+</script>

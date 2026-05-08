@@ -1,0 +1,307 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import AuthorBox from '@/components/AuthorBox.astro';
+import CTASection from '@/components/CTASection.astro';
+import QuickAnswer from '@/components/QuickAnswer.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+import { authorProfile } from '@/data/site';
+
+import heroImg from '@/assets/images/ai-schools-students-coding-hero.jpg';
+import imgNotes from '@/assets/images/ai-schools-student-notes.jpg';
+import imgLearning from '@/assets/images/ai-schools-learning-ai.jpg';
+
+const lang: Lang = 'en';
+const title = "AI for Schools: Responsible Use Instead of Panic Bans";
+const description = "A practical AI policy for Ugandan and East African schools: separate acceptable from unacceptable use, train teachers, protect student data, and close the digital equity gap.";
+const date = "2026-05-08";
+const category = "AI in Education";
+const readTime = "11 min read";
+const slug = "ai-policy-for-schools-east-africa";
+const siteUrl = "https://techguypeter.com";
+
+const checklistItems = [
+  {
+    item: "Acceptable-use policy",
+    text: "A short written document, signed by staff and shared with parents, that lists what AI may and may not be used for in classwork, homework, and assessments.",
+  },
+  {
+    item: "Teacher training",
+    text: "Every teacher should be able to use one approved AI tool confidently and recognise common failure modes such as fabricated facts, biased phrasing, and outdated information.",
+  },
+  {
+    item: "Parent communication",
+    text: "Parents need plain-language guidance on what is allowed at home, how to spot AI-generated work, and how to support — not replace — their child's effort.",
+  },
+  {
+    item: "Student data rules",
+    text: "No student names, photos, marks, medical notes, or family details should be entered into a public AI tool. Approved tools must have a clear data policy.",
+  },
+  {
+    item: "Assessment redesign",
+    text: "Coursework and exams must be redesigned so that AI cannot do most of the work. More oral defence, in-class writing, drafts with version history, and process-based marking.",
+  },
+  {
+    item: "Citation expectations",
+    text: "Where AI is used legitimately (brainstorming, summarising, translation), students must declare it — the way they already cite a textbook or website.",
+  },
+  {
+    item: "Cyber controls",
+    text: "School Wi-Fi, devices, and accounts must have basic protection: strong passwords, MFA on staff accounts, updated software, and clear rules on personal devices.",
+  },
+  {
+    item: "Disciplinary process",
+    text: "A predictable, fair procedure for AI misuse, with first-time guidance and serious consequences for repeated offences or assessment fraud.",
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/en/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire - Technology & Business Consulting",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "en-GB",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/en/ai/${slug}/`
+  }
+};
+---
+
+<BaseLayout
+  title={`${title} - Peter Bamuhigire`}
+  description={description}
+  lang={lang}
+  page="ai"
+  ogImage={heroImg.src}
+  altUrl="/fr/ai/ia-ecoles-afrique-francophone/"
+  articleMeta={{
+    title,
+    description,
+    publishedTime: date,
+    modifiedTime: date,
+    image: heroImg.src,
+  }}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <section class="relative min-h-[540px] md:min-h-[640px] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <Image
+        src={heroImg}
+        alt="Students learning to code and use AI on laptops in a modern classroom"
+        width={1600}
+        height={900}
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-900/75 to-navy-900/25"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class="px-3 py-1 text-xs font-semibold bg-gold-400 text-navy-900 rounded-full uppercase tracking-wider">{category}</span>
+        <span class="text-sm text-navy-200">{readTime}</span>
+        <span class="text-sm text-navy-300">.</span>
+        <time class="text-sm text-navy-200" datetime={date}>8 May 2026</time>
+      </div>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-white leading-tight max-w-3xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-navy-200 max-w-2xl leading-relaxed">
+        Schools in Uganda and East Africa are already facing AI, whether they have a policy or not. A blanket ban feels simple, but it does not prepare learners for the workplace they are entering. Responsible use is the better answer.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-gold-400 flex items-center justify-center text-navy-900 font-bold text-sm">P</div>
+        <span class="text-sm text-navy-200">By <a href="/en/about/" class="text-gold-300 hover:text-gold-200 transition-colors">Peter Bamuhigire</a></span>
+      </div>
+    </div>
+  </section>
+
+  <article class="py-12 md:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuickAnswer
+        title="Quick answer"
+        answer="Schools should not ban AI in panic, and they should not let learners use it without guidance. The right response is a written acceptable-use policy that separates legitimate use (summarising notes, generating revision questions, translating, brainstorming, supporting learning needs) from unacceptable use (passing AI work off as original, using AI in closed assessments, leaking student data, or trusting AI answers without verification)."
+        bullets={[
+          'Replace blanket bans with a clear acceptable-use policy.',
+          'Train teachers; redesign assessments; protect student data.',
+          'Treat digital equity as a core part of the AI policy, not an afterthought.',
+        ]}
+      />
+
+      <div class="prose prose-accent-navy mt-10">
+        <p class="text-xl text-navy-700 leading-relaxed font-medium mb-6">
+          Schools in Uganda, Kenya, Rwanda, Tanzania, and across East Africa are already facing AI — whether they have a written policy or not. Students use it for homework. Teachers use it for lesson preparation. Parents worry about cheating. Administrators worry about data privacy. Doing nothing is, in practice, a decision to let the most informed pupils benefit and the rest figure it out alone.
+        </p>
+
+        <p>A blanket ban feels simple. It is also a way of pretending the workplace these learners are entering does not exist. Universities, employers, NGOs, government departments, banks, and clinics all use AI tools every day. The question is not whether learners will encounter AI; it is whether they will encounter it for the first time at school, with guidance, or alone, on a borrowed phone, with no rules at all.</p>
+
+        <p>This article proposes a practical AI policy that East African schools — primary, secondary, vocational, and tertiary — can adapt to their own context. It is not a research paper. It is a working document a head teacher could realistically adopt.</p>
+
+        <h2>Acceptable Use: What AI Can Legitimately Do in a School</h2>
+
+        <p>The first job of a school AI policy is to name, plainly, what is allowed. When the rules are clear, students and teachers stop guessing and stop hiding.</p>
+
+        <p>Acceptable use can include: summarising notes after class to make revision easier; generating practice questions on a topic the teacher has taught; translating an explanation into a language the learner understands better; brainstorming an essay outline before writing the actual essay; preparing quizzes or worksheets for a teacher; supporting students with reading difficulties, dyslexia, or visual impairment; helping a teacher draft a parents' letter, a lesson plan, or a school notice; and explaining a concept in a different way when the textbook is too dense.</p>
+
+        <p>None of these uses replace the thinking. They make the routine parts of learning and teaching faster, so more time is left for the parts that actually matter — discussion, practice, and feedback.</p>
+
+        <h2>Unacceptable Use: Where the Line Has To Be Firm</h2>
+
+        <p>The same policy must be equally clear about what AI is not for. Unacceptable use includes: submitting AI-written work as the student's own; using AI during closed assessments, exams, or supervised tests; generating harmful, hateful, or sexually inappropriate content; sharing private student data — names, marks, medical notes, family information, photographs — with public AI tools; relying on AI answers without checking them against a textbook, a teacher, or a credible source; and using AI to impersonate teachers, parents, or other students.</p>
+
+        <p>The first three are obvious. The fourth — student data — is the one most schools underestimate. A teacher who pastes a class list into a public chatbot to "tidy up the formatting" has just shared the names of children with a service whose data practices the school has never reviewed. That is a privacy issue long before it is an AI issue.</p>
+      </div>
+
+      <figure class="my-10 rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={imgNotes}
+          alt="Student making revision notes from research papers"
+          width={900}
+          height={600}
+          class="w-full h-[300px] md:h-[380px] object-cover object-center"
+          loading="lazy"
+        />
+        <figcaption class="px-4 py-3 bg-navy-50 text-sm text-navy-500 text-center">
+          AI is most defensible when it speeds up routine work — and the student still does the thinking.
+        </figcaption>
+      </figure>
+
+      <div class="prose prose-accent-navy">
+        <h2>Why Digital Equity Belongs at the Centre of the Policy</h2>
+
+        <p>Many East African schools still struggle with realities that make AI policy harder than it sounds: uneven device access, patchy Wi-Fi coverage, limited teacher training, weak cyber hygiene, and very different home support from one learner to the next. If those realities are ignored, an AI policy can quietly widen the very gaps it claims to close.</p>
+
+        <p>If only learners with smartphones at home get to use AI, the school may produce two classes of student — those whose homework is polished by a tool and those whose is not — without ever intending to. If teachers are not trained, they cannot tell the difference between a learner using AI well and a learner copying its output. If the school's network is insecure, student data is exposed every time a teacher logs in over an open connection.</p>
+
+        <p>The policy should treat these as part of the AI conversation, not a separate IT problem. That means deciding, openly, what happens for learners who do not have devices at home (in-school AI access during prep time, for example), how teachers are supported with their own training time and devices, and what minimum cyber controls the school will actually fund this year — not in some unfunded future plan.</p>
+
+        <h2>Local Context That Cannot Be Ignored</h2>
+
+        <p>An East African AI policy is not a copy of an American or European one. The local realities matter. Class sizes are often large, which makes process-based assessment harder but also more important. National curricula and exam boards (UNEB, KCSE, NECTA, REB) still set the terms for what counts as cheating, so the school's policy must align with those rules, not contradict them. Multilingual classrooms — English alongside Luganda, Runyankole, Acholi, Kiswahili, Kinyarwanda — mean translation is a legitimate, useful AI task, not a workaround for laziness.</p>
+
+        <p>Cost matters too. Most schools cannot afford enterprise AI subscriptions for every learner. The policy should be honest about which tools are approved, which are tolerated, and which are off-limits, and it should be willing to revise the list every term as the market changes.</p>
+
+        <h2>Redesigning Assessment So AI Can't Do It For Them</h2>
+
+        <p>The most uncomfortable part of any school AI policy is the assessment piece. If a teacher sets the same essay they set five years ago, AI can probably produce a passable answer in thirty seconds. The honest response is not to ban AI; it is to redesign the task.</p>
+
+        <p>That can mean: more in-class writing under supervision; oral defence of written work, where a learner has to explain the argument they "wrote"; multi-stage tasks where rough notes, drafts, and final versions all carry marks; questions tied to specific class discussions, local case studies, or practical work that AI has no context for; and project-based assessment where the process is observed, not just the final document.</p>
+
+        <p>Done well, this also reduces a different kind of cheating that existed long before AI: copying from older students, essay-mill websites, and shared WhatsApp groups. Better assessment is good for the school whether or not AI exists.</p>
+      </div>
+
+      <figure class="my-10 rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={imgLearning}
+          alt="People learning the advantages of artificial intelligence with diagrams"
+          width={900}
+          height={600}
+          class="w-full h-[300px] md:h-[380px] object-cover object-center"
+          loading="lazy"
+        />
+        <figcaption class="px-4 py-3 bg-navy-50 text-sm text-navy-500 text-center">
+          AI literacy is now part of education, the same way internet literacy became unavoidable a generation ago.
+        </figcaption>
+      </figure>
+
+      <div class="prose prose-accent-navy">
+        <h2>A School AI Readiness Checklist</h2>
+
+        <p>Before announcing a policy, run the school against a short readiness checklist. If most items are missing, the policy will not survive contact with the classroom.</p>
+      </div>
+
+      <div class="my-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+        {checklistItems.map((c) => (
+          <div class="bg-white border border-navy-100 rounded-2xl p-5 shadow-sm">
+            <h3 class="text-base font-bold text-navy-900 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-gold-400"></span>
+              {c.item}
+            </h3>
+            <p class="mt-2 text-sm text-navy-600 leading-relaxed">{c.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose prose-accent-navy">
+        <h2>How to Roll It Out Without Drama</h2>
+
+        <p>A practical rollout takes one term, not one weekend. The first few weeks are for consultation: head teacher, deputies, heads of department, the IT lead, and at least one parent representative. The next weeks are for writing the policy in plain English (and at least one local language summary for parents), training teachers on one approved tool, and previewing the policy with the student council so it is not sprung on the school in an assembly.</p>
+
+        <p>Once it is in place, it has to be reviewed every term. AI tools change quickly. A policy that names specific products by brand will be out of date within a year; a policy that names principles, allowed categories, and a small approved-tools list will age much better.</p>
+
+        <p>This is the same logic that applies to any technology policy I help schools and businesses think through — from <a href="/en/ai/before-you-buy-ai-clean-your-business-data/">data readiness</a> to safer software adoption: rules without training do not work, and training without rules does not last. The two have to ship together.</p>
+
+        <h2>The Underlying Argument</h2>
+
+        <p>Responsible AI literacy is now part of education, in the same way that internet literacy became unavoidable a generation ago. Schools did not refuse to teach students how to use the internet because some students misused it. They taught search, citation, source evaluation, and basic safety. AI deserves the same treatment, on the same terms, with the same seriousness.</p>
+
+        <p>A school that bans AI outright is not protecting its learners. It is protecting itself from a difficult conversation. The students will use AI anyway — at home, on a friend's phone, after exams. The school's only real choice is whether to be in that conversation or to leave its learners to have it alone.</p>
+
+        <p>The schools that get this right in the next two or three years will graduate students who can use AI, judge it, verify it, and refuse it when appropriate. That is not a soft skill. In the workplace these learners are heading into, it is becoming the core one.</p>
+      </div>
+
+      <div class="mt-12 bg-navy-900 text-warm-white rounded-2xl p-6 md:p-8">
+        <h2 class="text-xl font-bold text-gold-400 mb-5">Key Takeaways</h2>
+        <ul class="space-y-3">
+          {[
+            "Schools cannot avoid AI by banning it. Students, teachers, and parents are already using AI tools, with or without guidance.",
+            "A practical school AI policy separates acceptable use (revision, translation, brainstorming, accessibility, lesson prep) from unacceptable use (passing AI work as original, exam cheating, leaking student data, using unverified AI answers).",
+            "Digital equity must sit at the centre of the policy. Without device access, teacher training, and basic cyber controls, AI tools widen existing gaps.",
+            "Assessment has to be redesigned: more oral defence, in-class writing, multi-stage drafts, and locally grounded questions AI cannot answer well.",
+            "An eight-item readiness checklist — policy, training, parent communication, data rules, assessment redesign, citation, cyber controls, disciplinary process — is the minimum a serious school should ship.",
+            "AI literacy belongs in education the way internet literacy already does: not optional, not optional to teach.",
+          ].map(point => (
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-5 h-5 rounded-full bg-gold-400 text-navy-900 flex-shrink-0 flex items-center justify-center">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-navy-200 text-sm leading-relaxed">{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-12">
+        <AuthorBox
+          name={authorProfile.name}
+          title={authorProfile.titleEn}
+          bio={authorProfile.bioEn}
+        />
+      </div>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = docHeight > 0 ? `${Math.min((scrollTop / docHeight) * 100, 100)}%` : '0%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  });
+</script>

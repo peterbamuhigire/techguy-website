@@ -1,0 +1,308 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import AuthorBox from '@/components/AuthorBox.astro';
+import CTASection from '@/components/CTASection.astro';
+import QuickAnswer from '@/components/QuickAnswer.astro';
+import { Image } from 'astro:assets';
+import type { Lang } from '@/utils/i18n';
+import { authorProfile } from '@/data/site';
+
+import heroImg from '@/assets/images/ai-retail-shopping-cart-hero.jpg';
+import imgSales from '@/assets/images/ai-retail-sales-growth.jpg';
+import imgAnalytics from '@/assets/images/ai-retail-analytics-tablet.jpg';
+
+const lang: Lang = 'fr';
+const title = "IA et Commerce de Détail en Afrique Francophone : Par Où Commencer ?";
+const description = "Une feuille de route IA réaliste pour les boutiques, mini-marchés, supermarchés, pharmacies et quincailleries d'Afrique francophone : moins de ruptures, moins de pertes, meilleures marges, sans caisses sans personnel ni caméras intelligentes.";
+const date = "2026-05-08";
+const category = "IA pour le commerce";
+const readTime = "11 min de lecture";
+const slug = "ia-commerce-detail-afrique-francophone";
+const siteUrl = "https://techguypeter.com";
+
+const maturityLadder = [
+  {
+    level: "Niveau 1",
+    title: "Discipline POS et stock",
+    text: "Standardiser les codes produits, les unités, les prix et les fiches fournisseurs. Rapprocher chaque jour stock, ventes et paiements. L'IA n'est pas encore branchée, mais la donnée est enfin prête.",
+  },
+  {
+    level: "Niveau 2",
+    title: "Tableaux de bord et alertes de rupture",
+    text: "Connecter des synthèses IA simples au POS propre : produits rapides ou lents, articles proches de l'expiration, stock bas, comparaisons d'agences, fiabilité fournisseurs.",
+  },
+  {
+    level: "Niveau 3",
+    title: "Réapprovisionnement et promotions prédictifs",
+    text: "Utiliser la vitesse de vente, la météo, les jours de paie, les fêtes religieuses et les calendriers scolaires pour prévoir la demande. Évaluer les promotions sur la marge, pas seulement le chiffre.",
+  },
+  {
+    level: "Niveau 4",
+    title: "Connaissance client et catalogue",
+    text: "Reconnaître les clients réguliers à travers leurs numéros, transformer des photos de produits en fiches WhatsApp Business, personnaliser les rappels sans spammer.",
+  },
+  {
+    level: "Niveau 5",
+    title: "Vision par ordinateur ciblée",
+    text: "Seulement quand le retour est prouvé : caméras de file d'attente, suivi des rayons ou détection de pertes — limités aux points de vente dont le volume justifie l'investissement.",
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": title,
+  "author": {
+    "@type": "Person",
+    "name": "Peter Bamuhigire",
+    "url": `${siteUrl}/fr/about/`
+  },
+  "datePublished": date,
+  "dateModified": date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Peter Bamuhigire - Conseil en Technologie & Entreprise",
+    "url": siteUrl
+  },
+  "description": description,
+  "image": `${siteUrl}${heroImg.src}`,
+  "inLanguage": "fr",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `${siteUrl}/fr/ai/${slug}/`
+  }
+};
+---
+
+<BaseLayout
+  title={`${title} - Peter Bamuhigire`}
+  description={description}
+  lang={lang}
+  page="ai"
+  ogImage={heroImg.src}
+  altUrl="/en/ai/ai-for-retail-shops-supermarkets-east-africa/"
+  articleMeta={{
+    title,
+    description,
+    publishedTime: date,
+    modifiedTime: date,
+    image: heroImg.src,
+  }}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <div id="reading-progress" class="reading-progress" style="width: 0%"></div>
+
+  <section class="relative min-h-[540px] md:min-h-[640px] flex items-end overflow-hidden">
+    <div class="absolute inset-0">
+      <Image
+        src={heroImg}
+        alt="Commerçant utilisant des outils IA et un panier d'achats pour piloter son stock"
+        width={1600}
+        height={960}
+        class="w-full h-full object-cover object-center"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-900/75 to-navy-900/25"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-16">
+      <div class="flex flex-wrap items-center gap-3 mb-5">
+        <span class="px-3 py-1 text-xs font-semibold bg-gold-400 text-navy-900 rounded-full uppercase tracking-wider">{category}</span>
+        <span class="text-sm text-navy-200">{readTime}</span>
+        <span class="text-sm text-navy-300">.</span>
+        <time class="text-sm text-navy-200" datetime={date}>8 mai 2026</time>
+      </div>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-white leading-tight max-w-3xl">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg text-navy-200 max-w-2xl leading-relaxed">
+        Les commerces de Côte d'Ivoire, du Sénégal, de RDC, du Mali, du Togo, du Cameroun ou du Bénin n'ont pas besoin de magasins sans caisse. Ils ont besoin de moins de ruptures, moins de pertes, de meilleures promotions et d'un catalogue produit créé plus vite. L'IA peut le faire — quand les bases sont là.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-gold-400 flex items-center justify-center text-navy-900 font-bold text-sm">P</div>
+        <span class="text-sm text-navy-200">Par <a href="/fr/about/" class="text-gold-300 hover:text-gold-200 transition-colors">Peter Bamuhigire</a></span>
+      </div>
+    </div>
+  </section>
+
+  <article class="py-12 md:py-16">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuickAnswer
+        title="Réponse rapide"
+        answer="Pour la plupart des boutiques, mini-marchés, supermarchés, pharmacies, librairies et quincailleries d'Afrique francophone, l'opportunité IA réaliste n'est pas le magasin autonome. C'est utiliser des données POS, stock, fournisseurs et clients propres pour réduire les ruptures, détecter les pertes, repérer les produits rapides, mieux planifier les promotions et accélérer la création des fiches produits."
+        bullets={[
+          "Commencez par la discipline POS et stock avant d'acheter le moindre outil IA.",
+          "Ajoutez ensuite alertes et tableaux de bord : produits rapides ou lents, expirations, ruptures.",
+          "Gardez la vision par ordinateur et les caisses intelligentes pour la fin, seulement si le volume le justifie.",
+        ]}
+      />
+
+      <div class="prose prose-accent-navy mt-10">
+        <p class="text-xl text-navy-700 leading-relaxed font-medium mb-6">
+          Les magazines décrivent depuis des mois des magasins sans caisse, la vision par ordinateur, les paniers intelligents et l'analyse fine du parcours client. Pour la grande majorité des commerces d'Abidjan, Dakar, Kinshasa, Lomé, Bamako, Douala, Cotonou ou Brazzaville, ces technologies ne sont pas le bon point de départ. L'opportunité utile est plus modeste, beaucoup moins coûteuse, et bien plus rentable.
+        </p>
+
+        <p>Concrètement : un supermarché à Treichville reçoit une alerte que le lait infantile se vend plus vite que d'habitude et risque la rupture avant la prochaine livraison. Une pharmacie à Dakar repère les produits qui expirent souvent avant la vente. Une quincaillerie à Lomé voit qu'une promotion a augmenté le passage en caisse mais a réduit la marge moyenne. Un commerçant à Kinshasa transforme une photo de produit en fiche propre pour WhatsApp Business ou une boutique en ligne en quelques minutes.</p>
+
+        <p>Aucun de ces cas ne nécessite un panier intelligent. Tous reposent sur des données POS et stock honnêtement saisies, plus une ou deux fonctions IA branchées sur des dossiers que l'entreprise tient déjà. C'est sur ce périmètre que cet article se concentre.</p>
+
+        <h2>Les Problèmes que les Commerçants Connaissent Déjà</h2>
+
+        <p>Avant de parler d'IA, il faut nommer les problèmes que la plupart des dirigeants peuvent décrire sans aide. Ils sont familiers parce qu'ils coûtent de l'argent chaque semaine.</p>
+
+        <ul>
+          <li><strong>Files d'attente aux heures de pointe.</strong> Vendredi soir, fins de mois, week-ends, veilles de fêtes religieuses ou de rentrée scolaire : prévisibles, rarement bien dotés en personnel.</li>
+          <li><strong>Stocks faux.</strong> Le système indique dix cartons, le rayon en a deux, la réserve en a quatre, et personne ne sait où sont passés les autres.</li>
+          <li><strong>Produits expirés.</strong> Pharmacies, supermarchés et épiceries perdent de l'argent réel sur des articles qui dépassent silencieusement leur date.</li>
+          <li><strong>Stocks lents.</strong> Le cash dort dans des produits qui ne tournent pas pendant que les références populaires sont en rupture.</li>
+          <li><strong>Changements de prix manuels.</strong> Hausses fournisseurs, promotions, fiscalité : saisis à la main, avec erreurs et retards.</li>
+          <li><strong>Fuites de caisse.</strong> Remboursements, annulations, ouvertures de tiroir "sans vente", petits ajustements : tout cela s'accumule.</li>
+          <li><strong>Promotions copiées.</strong> Les remises sont lancées parce qu'un concurrent l'a fait, pas parce que la donnée le justifie.</li>
+        </ul>
+
+        <p>C'est la réalité quotidienne. Toute feuille de route IA qui ignore ces problèmes propose le mauvais produit.</p>
+      </div>
+
+      <figure class="my-10 rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={imgSales}
+          alt="Concept IA et croissance des ventes avec panier d'achats et graphique en hausse"
+          width={900}
+          height={900}
+          class="w-full h-[320px] md:h-[420px] object-cover object-center"
+          loading="lazy"
+        />
+        <figcaption class="px-4 py-3 bg-navy-50 text-sm text-navy-500 text-center">
+          L'IA aide les commerçants à voir ce que leur POS enregistre déjà — quand les données sont fiables.
+        </figcaption>
+      </figure>
+
+      <div class="prose prose-accent-navy">
+        <h2>Là où l'IA Aide Réellement un Commerce Francophone</h2>
+
+        <p>L'IA est utile quand elle est connectée à des données que le commerçant possède déjà : journal POS, module d'inventaire, factures fournisseurs, dates d'expiration, et — quand ils existent — fichiers clients issus d'une carte de fidélité, de WhatsApp Business ou du mobile money (Orange Money, Wave, MoMo, Moov). La bonne question n'est pas "que peut faire l'IA ?". C'est "quelles décisions hebdomadaires l'IA pourrait-elle accélérer ou affiner ?".</p>
+
+        <h3>Prévention des Ruptures</h3>
+        <p>Un supermarché à Cocody vend du lait infantile chaque jour. La demande monte légèrement autour des fins de mois et avant les rentrées scolaires. Une alerte IA simple lit les douze dernières semaines de ventes, le stock actuel, le délai du fournisseur, et prévient le gérant trois jours avant que le rayon ne soit vide. La décision — appeler le fournisseur, changer de marque, accepter un jour de creux — reste humaine.</p>
+
+        <h3>Expirations et Pertes</h3>
+        <p>Une pharmacie peut signaler les produits dont la durée de vie restante est plus courte que leur délai moyen d'écoulement. Le système ne doit pas être génial ; il doit comparer deux chiffres que la pharmacie possède déjà. La même logique vaut pour les produits frais d'un supermarché, les laitages d'un mini-marché ou les manuels scolaires d'une librairie après les examens.</p>
+
+        <h3>Promotions Évaluées sur la Marge</h3>
+        <p>Une quincaillerie à Lomé lance une promotion peinture le week-end. Le passage double, le chiffre d'affaires monte — mais la marge par ticket baisse parce que les clients prennent uniquement le produit en promo et oublient pinceaux, rouleaux et adhésifs qui suivent normalement. Une courte synthèse IA de la composition du panier, avant, pendant et après la promotion, montre si la campagne s'est vraiment payée elle-même. C'est plus utile qu'un titre sur le chiffre d'affaires.</p>
+
+        <h3>Catalogue WhatsApp et Boutique en Ligne</h3>
+        <p>Un mini-marché qui veut vendre sur WhatsApp Business ou créer une boutique en ligne peut utiliser l'IA pour transformer une photo en description propre, suggérer une catégorie, écrire une accroche commerciale et préparer une liste de prix. Ce qui prenait un week-end entier peut prendre un après-midi. Le propriétaire revoit toujours les fiches, mais ne part plus d'une page blanche.</p>
+
+        <h3>Comparaisons Fournisseurs et Agences</h3>
+        <p>Un groupe de trois ou quatre points de vente peut utiliser l'IA pour synthétiser la performance hebdomadaire : quel fournisseur a livré en retard, quelle agence a sous-performé sur une catégorie, quel produit tourne plus vite à un endroit. L'IA ne remplace pas le directeur ; elle réduit le temps passé à produire le rapport.</p>
+
+        <h2>Ce Qui N'Est Pas Encore Réaliste pour la Plupart des PME</h2>
+
+        <p>Soyons honnêtes : ce que les magazines décrivent et que la plupart des commerces francophones ne devraient pas acheter aujourd'hui. Les agencements sans caisse, les paniers intelligents, les caméras de vision plafonnières et l'analyse de démarche sont chers, lourds en matériel, et dépendent d'une connectivité stable, d'une électricité fiable et d'une discipline catalogue très solide. Ils ont du sens dans quelques magasins phares à Abidjan, Dakar ou Kinshasa — pas dans une boutique de 60 mètres carrés à Yopougon ou à Médina.</p>
+
+        <p>Le chemin recommandé est l'inverse de la démonstration commerciale. Données d'abord, puis alertes, puis synthèses IA simples, puis automatisation sélective, et seulement à la fin — si le volume le justifie — l'analyse par vision. Sauter les premières étapes, c'est comme installer des caméras qui pointent sur des rayons que le système ne sait même pas nommer correctement.</p>
+      </div>
+
+      <figure class="my-10 rounded-2xl overflow-hidden shadow-md">
+        <Image
+          src={imgAnalytics}
+          alt="Responsables de magasin examinant des analyses de données et infographies sur tablette"
+          width={900}
+          height={500}
+          class="w-full h-[280px] md:h-[360px] object-cover object-center"
+          loading="lazy"
+        />
+        <figcaption class="px-4 py-3 bg-navy-50 text-sm text-navy-500 text-center">
+          La première IA qu'un commerçant doit acheter, c'est une meilleure lecture des données qu'il produit déjà.
+        </figcaption>
+      </figure>
+
+      <div class="prose prose-accent-navy">
+        <h2>Une Échelle de Maturité IA pour le Commerce</h2>
+
+        <p>La façon la plus simple de planifier une feuille de route IA est de gravir une échelle. Chaque niveau doit fonctionner avant que le suivant soit financé.</p>
+      </div>
+
+      <div class="my-10 space-y-4">
+        {maturityLadder.map((step) => (
+          <div class="bg-white border border-navy-100 rounded-2xl p-5 md:p-6 shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-start gap-3">
+              <span class="inline-flex w-fit px-3 py-1 rounded-full bg-navy-900 text-gold-300 text-xs font-semibold uppercase tracking-wider">
+                {step.level}
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-navy-900">{step.title}</h3>
+                <p class="mt-2 text-navy-600 leading-relaxed">{step.text}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose prose-accent-navy">
+        <h2>Comment Démarrer Sans Gaspiller</h2>
+
+        <p>Commencez par une question coûteuse et concrète, puis construisez le plus petit outil qui y répond. "Quels articles rapides risquent la rupture avant la prochaine livraison ?" est une bonne première question, parce que la réponse peut être confrontée à la réalité dans la même semaine. Idem pour : "Quels produits de cette agence expirent silencieusement ?" et "La promotion du week-end a-t-elle vraiment amélioré la marge ?"</p>
+
+        <p>Choisissez-en une seule. Branchez l'export POS et le fichier de stock. Faites tourner l'outil un mois. Comparez la recommandation IA à ce que le gérant aurait fait de toute façon. Si l'IA évite trois ruptures et signale dix produits proches de l'expiration à temps pour les solder, l'outil s'est déjà payé.</p>
+
+        <p>Cela rejoint directement <a href="/fr/ai/avant-dacheter-lia-nettoyez-vos-donnees-dentreprise/">l'audit de préparation des données présenté dans un article précédent</a> : l'IA ne peut pas aider si POS, stock et factures fournisseurs ne se rapprochent pas. Dans les <a href="/fr/services/">projets logiciels de commerce et de distribution que j'accompagne</a>, la valeur IA apparaît généralement dans les trois premiers mois — une fois la discipline de stock en place, pas avant.</p>
+
+        <h2>À Quoi Cela Ressemble en Douze Mois</h2>
+
+        <p>Un commerce sérieux qui suit ce chemin peut raisonnablement, en un an : avoir des codes produits et unités standardisés sur toutes les agences ; rapprocher chaque jour POS, stock, banque et mobile money ; recevoir chaque semaine des synthèses IA des produits rapides et lents, des expirations, de la performance par agence et de la fiabilité des fournisseurs ; et disposer d'une ou deux alertes prédictives (rupture, expiration, dérive de marge) dans lesquelles l'équipe a vraiment confiance.</p>
+
+        <p>C'est suffisant pour récupérer la majeure partie du cash perdu aujourd'hui en ruptures, expirations, démarques et promotions mal calibrées. C'est aussi suffisant pour que la conversation sur le panier intelligent — dans trois ou cinq ans — ait enfin du sens, parce que la donnée méritera alors les caméras.</p>
+
+        <p>L'IA pour le commerce qui vaut la peine d'être achetée aujourd'hui est celle qui aide un gérant à mieux décider lundi matin. La version futuriste peut attendre que les bases aient gagné leur place.</p>
+      </div>
+
+      <div class="mt-12 bg-navy-900 text-warm-white rounded-2xl p-6 md:p-8">
+        <h2 class="text-xl font-bold text-gold-400 mb-5">À Retenir</h2>
+        <ul class="space-y-3">
+          {[
+            "La plupart des commerces d'Afrique francophone doivent ignorer pour l'instant les magasins sans caisse et les paniers intelligents pour se concentrer sur des gains IA plus modestes basés sur le POS et le stock.",
+            "Les cas d'usage réalistes sont : alertes de rupture, détection d'expiration, évaluation des promotions sur la marge, création de catalogue WhatsApp, comparaisons fournisseurs et agences.",
+            "Vision par ordinateur, paniers intelligents et caisses sans personnel ne sont pas encore adaptés à la majorité des supermarchés, mini-marchés, pharmacies, quincailleries ou librairies.",
+            "Une échelle de maturité IA en cinq niveaux part de la discipline POS et stock pour aller jusqu'à la vision sélective, chaque marche méritant la suivante.",
+            "Commencez par une seule question coûteuse, branchez-la aux données existantes et mesurez l'outil IA contre ce que le gérant aurait fait de toute façon.",
+          ].map(point => (
+            <li class="flex items-start gap-3">
+              <span class="mt-1 w-5 h-5 rounded-full bg-gold-400 text-navy-900 flex-shrink-0 flex items-center justify-center">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-navy-200 text-sm leading-relaxed">{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="mt-12">
+        <AuthorBox
+          name={authorProfile.name}
+          title={authorProfile.titleFr}
+          bio={authorProfile.bioFr}
+        />
+      </div>
+    </div>
+  </article>
+
+  <CTASection lang={lang} />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const bar = document.getElementById('reading-progress');
+    if (!bar) return;
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = docHeight > 0 ? `${Math.min((scrollTop / docHeight) * 100, 100)}%` : '0%';
+    };
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  });
+</script>

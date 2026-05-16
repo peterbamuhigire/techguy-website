@@ -1,0 +1,273 @@
+# Canonical CI Pipeline — website-skills engine
+#
+# Every client project built on the engine inherits this workflow into
+# .github/workflows/website.yml via `scripts/install-canonical-ci.sh`.
+# Edits to this file must be made here, not in downstream copies.
+#
+# Any client project that does not run this pipeline cannot claim to have
+# shipped on the world-class engine.
+#
+# Expected project conventions:
+#   package.json scripts:   build, lint, typecheck, test:unit, test:e2e
+#   dist output:            ./dist
+#   skills submodule path:  .claude/skills/
+#   env:                    see secrets section below
+#
+# Pipeline order is fixed; do not reorder without a decision entry under
+# project-log/decisions/.
+
+name: website
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: website-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '20'
+  SKILLS_DIR: .claude/skills
+
+jobs:
+  install:
+    name: 1 · Install dependencies
+    runs-on: ubuntu-latest
+    outputs:
+      cache-hit: ${{ steps.cache.outputs.cache-hit }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          lfs: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - id: cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-deps-${{ hashFiles('package-lock.json') }}
+      - run: npm ci
+
+  lint:
+    name: 2 · Lint + type-check
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+
+  unit:
+    name: 3 · Unit tests
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      - run: npm run test:unit
+
+  build:
+    name: 4 · Build
+    needs: [lint, unit]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive, lfs: true }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 7
+
+  e2e-smoke:
+    name: 5 · E2E smoke
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with: { name: dist, path: dist }
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+
+  metadata-audit:
+    name: 6 · Metadata audit
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive }
+      - uses: actions/download-artifact@v4
+        with: { name: dist, path: dist }
+      - name: title/description/og/hreflang audit
+        run: bash $SKILLS_DIR/scripts/metadata-audit.sh dist
+
+  perf-gate:
+    name: 7 · Performance gate
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with: { name: dist, path: dist }
+      - run: bash $SKILLS_DIR/scripts/perf-gate.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: perf-reports, path: reports/ }
+
+  a11y-gate:
+    name: 8 · Accessibility gate
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with: { name: dist, path: dist }
+      - run: bash $SKILLS_DIR/scripts/a11y-gate.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: a11y-reports, path: reports/a11y/ }
+
+  visual-qa:
+    name: 9 · Visual QA
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive, lfs: true }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - uses: actions/download-artifact@v4
+        with: { name: dist, path: dist }
+      - run: bash $SKILLS_DIR/scripts/visual-qa.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: visual-reports, path: reports/visual/ }
+
+  security-gate:
+    name: 10 · Security + compliance gate
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive }
+      - uses: actions/setup-node@v4
+        with: { node-version: '20', cache: 'npm' }
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with: { name: dist, path: dist }
+      - run: bash $SKILLS_DIR/scripts/security-gate.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with: { name: security-reports, path: reports/security/ }
+
+  drift-check:
+    name: 11 · Documentation drift check
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive }
+      - run: bash $SKILLS_DIR/scripts/drift-check.sh
+
+  design-quality-score:
+    name: 12 · Design quality score (advisory on PR, blocking on main)
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive }
+      - uses: actions/download-artifact@v4
+        with: { name: dist, path: dist }
+      - id: score
+        run: bash $SKILLS_DIR/scripts/design-quality-score.sh
+        continue-on-error: ${{ github.event_name == 'pull_request' }}
+      - if: steps.score.outcome == 'failure' && github.ref == 'refs/heads/main'
+        run: exit 1
+
+  deploy:
+    name: 13 · Deploy (main only, gates green)
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs:
+      - e2e-smoke
+      - metadata-audit
+      - perf-gate
+      - a11y-gate
+      - visual-qa
+      - security-gate
+      - drift-check
+      - design-quality-score
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive }
+      - uses: actions/download-artifact@v4
+        with: { name: dist, path: dist }
+      - name: deploy
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
+        run: bash $SKILLS_DIR/deploy/templates/deploy-runner.sh
+
+  post-deploy-smoke:
+    name: 14 · Post-deploy smoke
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive }
+      - run: bash $SKILLS_DIR/scripts/post-deploy-smoke.sh "${{ vars.PRODUCTION_URL }}"
+
+  rollback-ready:
+    name: 15 · Rollback automation hook
+    if: failure() && github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: [deploy, post-deploy-smoke]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: recursive }
+      - name: rollback
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          DEPLOY_PATH: ${{ vars.DEPLOY_PATH }}
+        run: bash $SKILLS_DIR/scripts/rollback.sh

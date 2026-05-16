@@ -5,6 +5,7 @@ import { t, type Lang } from '@/utils/i18n';
 interface Props {
   title: string;
   url: string;
+  href?: string;
   description: string;
   techStack: string[];
   image: ImageMetadata;
@@ -14,7 +15,8 @@ interface Props {
   id: string;
 }
 
-const { title, url, description, techStack, image, imageAlt, isSelf = false, lang, id } = Astro.props;
+const { title, url, href, description, techStack, image, imageAlt, isSelf = false, lang, id } = Astro.props;
+const visitHref = href ?? `https://${url}`;
 ---
 
 <div x-data="{ open: false }">
@@ -156,7 +158,7 @@ const { title, url, description, techStack, image, imageAlt, isSelf = false, lan
           <div class="mt-6 flex flex-wrap gap-3">
             {!isSelf && (
               <a
-                href={`https://${url}`}
+                href={visitHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 px-6 py-3 bg-amber-accent hover:bg-gold-600 text-white font-semibold rounded-lg transition-colors"

@@ -16,10 +16,23 @@ import imgDynagric from '@assets/images/website-dynagricug.com.jpg';
 import imgTooke from '@assets/images/website-tookeonline.com.jpg';
 import imgMedic8 from '@assets/images/website-medic8.app.jpg';
 import imgAcademia from '@assets/images/website-academiapro.app.jpg';
+import imgRecordAfrica from '@assets/images/website-recordafricamusic.com.jpg';
 
 const lang: Lang = 'en';
 
-const websites = [
+type WebsitePortfolioItem = {
+  id: string;
+  title: string;
+  url: string;
+  href?: string;
+  description: string;
+  techStack: string[];
+  image: ImageMetadata;
+  imageAlt: string;
+  isSelf?: boolean;
+};
+
+const websites: WebsitePortfolioItem[] = [
   {
     id: 'maduuka',
     title: 'Maduuka',
@@ -64,6 +77,15 @@ const websites = [
     techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
     image: imgDynapharm,
     imageAlt: 'Dynapharm Africa health products website',
+  },
+  {
+    id: 'recordafrica',
+    title: 'Record Africa',
+    url: 'recordafricamusic.com',
+    description: 'Bilingual brand website for Record Africa — a Kampala-based record label and cultural platform exporting African sound to global audiences, with artist development, production, curation, sync, and mailing-list launch infrastructure.',
+    techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
+    image: imgRecordAfrica,
+    imageAlt: 'Record Africa music label and cultural platform website',
   },
   {
     id: 'birdc',
@@ -129,7 +151,7 @@ const collectionSchema = {
       "item": {
         "@type": "WebSite",
         "name": site.title,
-        "url": `https://${site.url}`,
+        "url": site.href ?? `https://${site.url}`,
       }
     }))
   }
@@ -171,6 +193,7 @@ const collectionSchema = {
             id={site.id}
             title={site.title}
             url={site.url}
+            href={site.href}
             description={site.description}
             techStack={site.techStack}
             image={site.image}

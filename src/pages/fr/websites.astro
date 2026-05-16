@@ -16,14 +16,28 @@ import imgDynagric from '@assets/images/website-dynagricug.com.jpg';
 import imgTooke from '@assets/images/website-tookeonline.com.jpg';
 import imgMedic8 from '@assets/images/website-medic8.app.jpg';
 import imgAcademia from '@assets/images/website-academiapro.app.jpg';
+import imgRecordAfrica from '@assets/images/website-recordafricamusic.com.jpg';
 
 const lang: Lang = 'fr';
 
-const websites = [
+type WebsitePortfolioItem = {
+  id: string;
+  title: string;
+  url: string;
+  href?: string;
+  description: string;
+  techStack: string[];
+  image: ImageMetadata;
+  imageAlt: string;
+  isSelf?: boolean;
+};
+
+const websites: WebsitePortfolioItem[] = [
   {
     id: 'maduuka',
     title: 'Maduuka',
     url: 'maduuka.com',
+    href: 'https://maduuka.com/fr/',
     description: 'Site vitrine de la plateforme de gestion tout-en-un Maduuka — point de vente, inventaire, comptabilité, pharmacie et restauration au service des PME dans huit pays africains.',
     techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
     image: imgMaduuka,
@@ -33,6 +47,7 @@ const websites = [
     id: 'aqar',
     title: 'Aqar Property',
     url: 'aqarproperty.co.uk',
+    href: 'https://aqarproperty.co.uk/fr/',
     description: 'Site produit du logiciel de gestion immobilière Aqar — bases de données locataires, suivi des loyers, planification de la maintenance et rapports financiers. Développé chez Chwezi Core Systems.',
     techStack: ['WordPress', 'Elementor', 'PHP'],
     image: imgAqar,
@@ -42,6 +57,7 @@ const websites = [
     id: 'medic8',
     title: 'Medic8',
     url: 'medic8.app',
+    href: 'https://medic8.app/fr/',
     description: 'Site produit de Medic8 — un système de gestion hospitalière couvrant les dossiers patients, les rendez-vous, la facturation, la pharmacie et la gestion de laboratoire pour les cliniques et hôpitaux en Afrique.',
     techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
     image: imgMedic8,
@@ -60,15 +76,27 @@ const websites = [
     id: 'dynapharm',
     title: 'Dynapharm Africa',
     url: 'dynapharmafrica.com',
+    href: 'https://dynapharmafrica.com/fr/',
     description: 'Site e-commerce bilingue pour Dynapharm Africa — présentant plus de 90 produits naturels de santé répartis en huit catégories, avec une plateforme de recrutement de distributeurs dans plus de 40 pays africains.',
     techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
     image: imgDynapharm,
     imageAlt: 'Site web de Dynapharm Africa, produits de santé naturels',
   },
   {
+    id: 'recordafrica',
+    title: 'Record Africa',
+    url: 'recordafricamusic.com',
+    href: 'https://recordafricamusic.com/fr/',
+    description: 'Site bilingue de marque pour Record Africa — un label musical et une plateforme culturelle basés à Kampala, dédiés à révéler, produire et exporter le son africain vers les publics internationaux.',
+    techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
+    image: imgRecordAfrica,
+    imageAlt: 'Site web du label musical et de la plateforme culturelle Record Africa',
+  },
+  {
     id: 'birdc',
     title: 'BIRDC',
     url: 'birdc.ug',
+    href: 'https://birdc.ug/fr/',
     description: 'Site institutionnel trilingue du Banana Industrial Research and Development Centre — institution de référence en recherche bananière en Afrique, présentant les programmes de R&D, la gamme de produits Tooke et les installations de formation à Bushenyi, Ouganda.',
     techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
     image: imgBirdc,
@@ -78,6 +106,7 @@ const websites = [
     id: 'dynagric',
     title: 'Dynagric Eco Tours',
     url: 'dynagricug.com',
+    href: 'https://dynagricug.com/fr/',
     description: 'Site bilingue de Dynagric Eco Tours Ouganda — présentant l\'aquaculture et la pisciculture, l\'agriculture biologique, l\'élevage, les visites de ferme et les programmes de formation, avec une chaîne de valeur agricole complète sous un même toit.',
     techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
     image: imgDynagric,
@@ -87,6 +116,7 @@ const websites = [
     id: 'tooke',
     title: 'Tooke Online',
     url: 'tookeonline.com',
+    href: 'https://tookeonline.com/fr/',
     description: 'Site e-commerce trilingue de Tooke Online — présentant des produits à base de farine de banane sans gluten issus de deux décennies de recherche, avec un système de commande en ligne au service des consommateurs soucieux de leur santé en Afrique de l\'Est.',
     techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
     image: imgTooke,
@@ -96,6 +126,7 @@ const websites = [
     id: 'academia',
     title: 'Academia Pro',
     url: 'academiapro.app',
+    href: 'https://academiapro.app/fr/',
     description: 'Site produit d\'Academia Pro — un système intégré de gestion scolaire et plateforme e-learning pour les établissements d\'Afrique de l\'Est, développé par Chwezi Core Systems. Couvre les frais de scolarité, examens, présences, paie et 12 modules essentiels.',
     techStack: ['Astro', 'Tailwind CSS', 'Alpine.js'],
     image: imgAcademia,
@@ -105,6 +136,7 @@ const websites = [
     id: 'techguy',
     title: 'TechGuy Peter',
     url: 'techguypeter.com',
+    href: 'https://techguypeter.com/fr/',
     description: 'Le site que vous consultez en ce moment — portfolio professionnel de Peter Bamuhigire, consultant IT et développeur logiciel basé à Kampala, Ouganda. Plus de 15 ans d\'expérience au service d\'organisations dans plus de 10 pays africains et à l\'international.',
     techStack: ['Astro', 'Tailwind CSS', 'Alpine.js', 'GSAP'],
     image: imgTechguy,
@@ -129,7 +161,7 @@ const collectionSchema = {
       "item": {
         "@type": "WebSite",
         "name": site.title,
-        "url": `https://${site.url}`,
+        "url": site.href ?? `https://${site.url}`,
       }
     }))
   }
@@ -171,6 +203,7 @@ const collectionSchema = {
             id={site.id}
             title={site.title}
             url={site.url}
+            href={site.href}
             description={site.description}
             techStack={site.techStack}
             image={site.image}

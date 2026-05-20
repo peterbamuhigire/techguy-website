@@ -28,26 +28,26 @@ default_og_image: "/og-image.png"
 
 ### Homepage
 
-**Title**: (57 chars)
+**Title**: (~70 chars)
 ```
-Technology & Business Consultant in Africa | Peter Bamuhigire
+Business Management Systems & Software Development | Peter Bamuhigire
 ```
 
-**Description**: (158 chars)
+**Description**: (~170 chars)
 ```
-Software development, ICT consulting, and business advisory across 10+ African countries. 15+ years of experience. Book a consultation with Peter Bamuhigire.
+Custom business management systems, ERP, and software developed, deployed, and maintained for organisations across Uganda, East Africa, and francophone Africa.
 ```
 
 ### Services
 
-**Title**: (58 chars)
+**Title**: (~70 chars)
 ```
-Software Development & ICT Consulting Services | TechGuyPeter
+Business Management Systems, Software & Website Development | Services
 ```
 
-**Description**: (159 chars)
+**Description**: (~175 chars)
 ```
-Custom software development, ERP implementation, ICT strategy, and business consulting. Practical technology solutions for organisations across Africa and beyond.
+Custom ERP, SaaS, business management systems, websites, and ICT consulting. Lifecycle delivery — developed, deployed, and maintained for organisations across Africa.
 ```
 
 ### Portfolio

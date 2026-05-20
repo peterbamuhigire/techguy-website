@@ -5,14 +5,33 @@ import { t } from '@/utils/i18n';
 import type { Lang } from '@/utils/i18n';
 import SectionHeading from '@/components/SectionHeading.astro';
 import CTASection from '@/components/CTASection.astro';
+import { siteConfig } from '@/data/site';
 
 import softwareDevImg from '@/assets/images/services/software-dev-1.jpg';
 import techSupportImg from '@/assets/images/services/tech-support-1.jpg';
 import businessStrategyImg from '@/assets/images/services/business-strategy.jpg';
-import businessDevImg from '@/assets/images/services/business-dev-1.jpg';
 import socialMediaImg from '@/assets/images/services/social-media-2.jpg';
 
 const lang: Lang = 'en';
+
+const lifecycleStages = [
+  {
+    label: 'Develop',
+    description: 'Requirements engineering, systems analysis, architecture, and build. Full-stack web applications in PHP, Python, and JavaScript; Android apps in Kotlin with Jetpack Compose and offline-first design; multi-tenant SaaS platforms on clean API foundations. Every build is preceded by a thorough understanding of the business processes it must support.',
+  },
+  {
+    label: 'Deploy',
+    description: 'Environment setup, secure infrastructure provisioning, data migration from legacy systems and spreadsheets, user training, and phased rollout. Deployment is treated as its own discipline, not an afterthought, because most system failures originate at the handover.',
+  },
+  {
+    label: 'Manage',
+    description: "Ongoing administration, user support, performance monitoring, access governance, and security oversight. Once a system is live, the practice can operate it on the client's behalf or work alongside an in-house team — whichever fits the organisation.",
+  },
+  {
+    label: 'Maintain',
+    description: 'Updates, feature evolution as the business changes, infrastructure care, and lifecycle planning. Maintenance retainers are SLA-backed and scoped to the criticality of the system, with clear response commitments rather than best-effort promises.',
+  },
+];
 
 const processSteps = [
   {
@@ -33,19 +52,19 @@ const processSteps = [
   {
     number: '04',
     title: 'Implementation',
-    description: 'Hands-on delivery with regular progress updates. Peter works alongside your team, not in isolation.',
+    description: "Hands-on delivery with regular progress updates. The practice works alongside your team, not in isolation.",
   },
   {
     number: '05',
-    title: 'Support',
-    description: 'Ongoing support, training, and advisory to ensure your solutions continue to deliver value long after the initial engagement.',
+    title: 'Support — Manage & Maintain',
+    description: 'For business management systems, software, and websites, the engagement does not end at handover. Ongoing administration, user support, performance monitoring, security oversight, feature evolution, and infrastructure care are offered under SLA-backed maintenance retainers — the develop-deploy-manage-maintain lifecycle delivered in practice.',
   },
 ];
 ---
 
 <BaseLayout
-  title="IT Consulting & Software Development — Kampala, Uganda"
-  description="Software development, website design, ICT consulting, and ERP systems in Kampala, Uganda. IT consultant serving East Africa and beyond."
+  title="Business Management Systems & Software Development — Africa"
+  description="Business management systems and custom software developed, deployed, managed, and maintained as a continuous discipline. Complementary websites, ICT consulting, and business advisory across anglophone and francophone Africa."
   lang={lang}
   page="services"
 >
@@ -64,11 +83,11 @@ const processSteps = [
         </div>
 
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
-          IT Consulting &amp; Software Development Services
+          Business Management Systems &amp; Software Development
         </h1>
 
         <p class="mt-6 text-lg md:text-xl text-navy-200 leading-relaxed max-w-2xl">
-          Peter Bamuhigire offers comprehensive technology and business consulting services, built on over 15 years of practical experience across more than 10 African countries. Every engagement is grounded in a simple principle: technology should serve business outcomes.
+          Custom business management systems and software — developed, deployed, managed, and maintained as a single continuous discipline. Complementary website development, ICT consulting, and business advisory sit alongside the systems core, built on more than 15 years of practical experience across over 10 African countries.
         </p>
 
         <div class="mt-4 h-1 w-16 rounded-full bg-gold-400"></div>
@@ -84,37 +103,40 @@ const processSteps = [
   </section>
 
   <!-- ==============================
-       SERVICE 1: SOFTWARE DEVELOPMENT
+       SERVICE 1: BUSINESS MANAGEMENT SYSTEMS & SOFTWARE DEVELOPMENT
        ============================== -->
-  <section id="software-development" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
+  <section id="business-management-systems" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start fade-up">
         <!-- Text -->
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-50 border border-navy-100 mb-5">
             <svg class="w-4 h-4 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/>
             </svg>
-            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Service</span>
+            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Primary Service</span>
           </div>
 
-          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Software Development</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Business Management Systems &amp; Software Development</h2>
 
-          <p class="text-navy-600 leading-relaxed mb-8">
-            Software development is at the core of this practice. With deep experience in full-stack web development, mobile application development, and SaaS platform architecture, Peter builds systems designed for real-world use. Every project begins with understanding your business processes, identifying where technology can create genuine value, and designing solutions that your team can actually use. The approach favours proven, maintainable technology stacks, rigorous database design, and clean API architecture — because reliable systems are built on solid foundations.
+          <p class="text-navy-600 leading-relaxed mb-6">
+            Business management systems are at the core of this practice. The work spans ERP implementations, multi-tenant SaaS platforms, custom internal systems, and Android mobile applications — all built to solve specific operational problems rather than to demonstrate technology. Every engagement follows the same lifecycle: develop, deploy, manage, and maintain. That commitment to the full lifecycle is what distinguishes the practice from one-shot project work, and it is demonstrated through in-house systems such as Maduuka (a multi-tenant SaaS business management platform) and Aqar (a property management platform — the practice's PropTech vertical), both developed, operated, and maintained directly by the practice. Regional ERP delivery, including Longhorn ERP implementations, applies the same discipline to third-party systems.
           </p>
 
           <!-- Deliverables grid -->
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-navy-900 mb-3">Key Deliverables</h3>
           <div class="grid sm:grid-cols-2 gap-3">
             {[
-              'Full-stack web application development',
-              'Android mobile app development',
-              'SaaS platform architecture',
-              'ERP implementation & customisation',
-              'Database design & optimisation',
-              'REST API design & integration',
+              'ERP implementation & customisation (incl. regional Longhorn ERP)',
+              'Custom business management systems',
+              'SaaS platform architecture & multi-tenant design',
+              'Android mobile app development (Kotlin, Jetpack Compose)',
+              'Full-stack web application development (PHP, Python, JS)',
+              'Database design, optimisation & management',
+              'REST API design & third-party integration',
               'AI-assisted development workflows',
-              'Legacy system modernisation',
+              'Legacy system modernisation & data migration',
+              'Ongoing system management & SLA-backed maintenance retainers',
             ].map((item) => (
               <div class="flex items-start gap-2.5">
                 <svg class="w-5 h-5 text-gold-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -124,6 +146,10 @@ const processSteps = [
               </div>
             ))}
           </div>
+
+          <p class="text-navy-600 leading-relaxed mt-6 text-sm">
+            <span class="font-semibold text-navy-900">Flagship in-house systems:</span> Maduuka (multi-tenant SaaS business management), Aqar (property management — the practice's PropTech vertical), and Longhorn ERP (regional ERP delivery across East and West Africa). These systems serve as proof that the develop-deploy-manage-maintain lifecycle is operated in practice, not merely described.
+          </p>
 
           <a
             href="/en/contact/"
@@ -151,13 +177,107 @@ const processSteps = [
           </div>
         </div>
       </div>
+
+      <!-- Full Lifecycle mini-grid -->
+      <div class="mt-12 md:mt-16 fade-up">
+        <div class="flex items-end justify-between flex-wrap gap-4 mb-6">
+          <h3 class="text-2xl md:text-3xl font-bold text-navy-900">The Full Lifecycle</h3>
+          <p class="text-navy-600 text-sm max-w-md">Develop, deploy, manage, maintain — operated as one continuous discipline, not handed over and forgotten.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {lifecycleStages.map((stage, index) => (
+            <article class="relative rounded-2xl border border-navy-100 bg-warm-cream/60 p-6 shadow-sm shadow-navy-900/5 h-full">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-sm font-bold text-amber-accent font-heading">0{index + 1}</span>
+                <div class="h-px flex-1 bg-gold-400/40"></div>
+              </div>
+              <h4 class="text-lg font-bold text-navy-900 mb-2">{stage.label}</h4>
+              <p class="text-navy-600 text-sm leading-relaxed">{stage.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ==============================
-       SERVICE 2: ICT CONSULTING & STRATEGY
+       SERVICE 2: WEBSITE DEVELOPMENT
        ============================== -->
-  <section id="ict-consulting" class="bg-warm-cream py-16 md:py-24 scroll-mt-24">
+  <section id="website-development" class="bg-warm-cream py-16 md:py-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
+        <!-- Image (left on desktop) -->
+        <!-- [PHOTO NEEDED — website browser or design mockup; currently reusing socialMediaImg as nearest stand-in] -->
+        <div class="relative order-2 lg:order-1">
+          <div class="absolute -inset-3 bg-gradient-to-bl from-gold-400/10 via-transparent to-navy-200/20 rounded-2xl rotate-1"></div>
+          <div class="relative rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src={socialMediaImg}
+              alt="Digital presence and strategy-led website development"
+              width={640}
+              height={480}
+              loading="lazy"
+              class="w-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-50 border border-navy-100 mb-5">
+            <svg class="w-4 h-4 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v18m16.5-18v18M3 7.5h18M3 16.5h18M3 12h18M5.625 21h12.75A1.875 1.875 0 0020.25 19.125V4.875A1.875 1.875 0 0018.375 3H5.625A1.875 1.875 0 003.75 4.875v14.25c0 1.036.84 1.875 1.875 1.875z"/>
+            </svg>
+            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Service</span>
+          </div>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Website Development</h2>
+
+          <p class="text-navy-600 leading-relaxed mb-6">
+            <span class="font-semibold text-navy-900">Strategy-led websites that carry reputation and convert serious enquiries</span> — for organisations whose digital presence has commercial weight.
+          </p>
+
+          <p class="text-navy-600 leading-relaxed mb-8">
+            Website development remains a meaningful part of the practice, positioned as a complement to the systems work. Every site begins with a diagnosis of positioning, audience, and the commercial role the website is expected to play, and is then built on a performance-first stack — Astro with Tailwind, zero JavaScript by default, and Lighthouse scores in the 95–100 range as a baseline rather than an aspiration. Multilingual capability (English, French, and Kiswahili) is built in from the outset, as is structured SEO, schema markup, and analytics. The work suits consultancies, institutions, technical firms, and funded ventures — organisations for whom a website is operational infrastructure rather than a brochure.
+          </p>
+
+          <!-- Deliverables grid -->
+          <div class="grid sm:grid-cols-2 gap-3">
+            {[
+              'Strategy-led design & development (Astro, Tailwind, zero-JS)',
+              'Positioning, messaging & proof architecture',
+              'Multilingual capability (EN / FR / SW)',
+              'SEO, schema, analytics & conversion tracking',
+              'Hosting setup & post-launch retainers',
+              'Existing site audits & rebuilds',
+            ].map((item) => (
+              <div class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-gold-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-navy-700 text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="/en/contact/"
+            class="inline-flex items-center mt-8 px-6 py-3 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            {t('cta.book', lang)}
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SERVICE 3: ICT CONSULTING & STRATEGY
+       ============================== -->
+  <section id="ict-consulting" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
         <!-- Image (left on desktop) -->
@@ -187,7 +307,7 @@ const processSteps = [
           <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">ICT Consulting & Strategy</h2>
 
           <p class="text-navy-600 leading-relaxed mb-8">
-            Many organisations invest in technology without a clear strategy — purchasing systems that do not integrate, building infrastructure that does not scale, or adopting tools that staff cannot use effectively. Peter's ICT consulting addresses this gap. Drawing on experience managing ICT operations across multiple countries and organisations — from multinational health products companies to national research institutions — the practice provides strategic guidance grounded in operational reality.
+            Many organisations invest in technology without a clear strategy — purchasing systems that do not integrate, building infrastructure that does not scale, or adopting tools that staff cannot use effectively. The practice's ICT consulting addresses this gap. Drawing on experience managing ICT operations across multiple countries and organisations — from multinational health-product distributors operating across eight African countries to national research institutions — it provides strategic guidance grounded in operational reality. Whether the brief is to assess current infrastructure, plan a digital transformation, or select the right vendors, the perspective is that of someone who has built and operated these systems in challenging environments.
           </p>
 
           <!-- Deliverables grid -->
@@ -225,9 +345,9 @@ const processSteps = [
   </section>
 
   <!-- ==============================
-       SERVICE 3: BUSINESS PLANNING & STRATEGY
+       SERVICE 4: BUSINESS PLANNING & STRATEGY
        ============================== -->
-  <section id="business-planning" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
+  <section id="business-planning" class="bg-warm-cream py-16 md:py-24 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
         <!-- Text -->
@@ -242,7 +362,7 @@ const processSteps = [
           <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Business Planning & Strategy</h2>
 
           <p class="text-navy-600 leading-relaxed mb-8">
-            Peter's business consulting practice centres on helping organisations and entrepreneurs develop the plans, strategies, and documentation they need to grow, secure funding, and operate with clarity. Drawing on 15 years of experience across diverse industries in Africa and internationally, the practice offers practical strategic support that goes beyond frameworks — grounded in real business realities.
+            The practice helps organisations and entrepreneurs develop the plans, strategies, and documentation they need to grow, secure funding, and operate with clarity. Drawing on 15 years of experience across diverse industries in Africa and internationally, it offers practical strategic support that goes beyond frameworks — grounded in real business realities, with the analytical rigour and practical insight needed to turn business ideas into fundable, executable plans.
           </p>
 
           <!-- Deliverables grid -->
@@ -310,9 +430,9 @@ const processSteps = [
   </section>
 
   <!-- ==============================
-       SERVICE 4: DIGITAL MARKETING & SOCIAL MEDIA STRATEGY
+       SERVICE 5: DIGITAL MARKETING & SOCIAL MEDIA STRATEGY
        ============================== -->
-  <section id="digital-marketing" class="bg-warm-cream py-16 md:py-24 scroll-mt-24">
+  <section id="digital-marketing" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
         <!-- Image (left on desktop) -->
@@ -342,7 +462,7 @@ const processSteps = [
           <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Digital Marketing & Social Media Strategy</h2>
 
           <p class="text-navy-600 leading-relaxed mb-8">
-            Most businesses post inconsistently, chase trends without a plan, and have no way of knowing whether their digital marketing is working. Peter designs comprehensive digital marketing and social media strategies tailored specifically for Uganda and East Africa — built around the platforms your customers actually use, the content that moves local audiences to act, and a measurement framework tied to real business results, not vanity metrics.
+            Across African markets, social channels now do work that brochures and trade shows used to do — but most organisations post inconsistently and have no way of knowing whether their digital marketing is working. The practice designs comprehensive digital marketing and social media strategies built around full-funnel thinking (POEM), the platforms that matter in African markets (WhatsApp, Facebook, Instagram, LinkedIn, TikTok, YouTube, X), and a measurement framework tied to real business results — not vanity metrics.
           </p>
 
           <!-- Deliverables grid -->
@@ -394,75 +514,6 @@ const processSteps = [
             class="inline-flex items-center mt-8 px-6 py-3 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
           >
             Get a Free Quote
-            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==============================
-       SERVICE 5: PROPERTY MANAGEMENT TECHNOLOGY
-       ============================== -->
-  <section id="property-management" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
-        <!-- Image (left on desktop) -->
-        <div class="relative order-2 lg:order-1">
-          <div class="absolute -inset-3 bg-gradient-to-bl from-gold-400/10 via-transparent to-navy-200/20 rounded-2xl rotate-1"></div>
-          <div class="relative rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src={businessDevImg}
-              alt="Property management and PropTech solutions"
-              width={640}
-              height={480}
-              loading="lazy"
-              class="w-full object-cover"
-            />
-          </div>
-        </div>
-
-        <!-- Text -->
-        <div class="order-1 lg:order-2">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-50 border border-navy-100 mb-5">
-            <svg class="w-4 h-4 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5M3.75 3v18m4.5-18v18m4.5-18v18m4.5-18v18M6 6.75h.008v.008H6V6.75zm0 3.75h.008v.008H6v-.008zm0 3.75h.008v.008H6v-.008zm4.5-7.5h.008v.008h-.008V6.75zm0 3.75h.008v.008h-.008v-.008zm0 3.75h.008v.008h-.008v-.008zm4.5-7.5h.008v.008h-.008V6.75zm0 3.75h.008v.008h-.008v-.008zm0 3.75h.008v.008h-.008v-.008z"/>
-            </svg>
-            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Service</span>
-          </div>
-
-          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Property Management Technology</h2>
-
-          <p class="text-navy-600 leading-relaxed mb-8">
-            Property management remains one of the most under-digitised sectors across Africa and in many international markets. Peter has developed Aqar, a dedicated property management platform, and works with landlords and property management firms to bring their operations into structured, reliable digital systems. Whether you manage five properties or fifty, the practice helps you move from spreadsheets and paper records to a system that tracks tenants, monitors rent collection, schedules maintenance, and generates financial reports.
-          </p>
-
-          <!-- Deliverables grid -->
-          <div class="grid sm:grid-cols-2 gap-3">
-            {[
-              'Aqar Property Management implementation',
-              'Property portfolio digitisation',
-              'Tenant management system setup',
-              'Maintenance tracking & scheduling',
-              'Financial reporting & rent dashboards',
-              'Custom PropTech solution development',
-            ].map((item) => (
-              <div class="flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-gold-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <span class="text-navy-700 text-sm">{item}</span>
-              </div>
-            ))}
-          </div>
-
-          <a
-            href="/en/contact/"
-            class="inline-flex items-center mt-8 px-6 py-3 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
-          >
-            {t('cta.book', lang)}
             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
             </svg>
@@ -544,17 +595,11 @@ const processSteps = [
         />
       </div>
       <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5 fade-up">
-        {[
-          ['Authority Care', 'USD 750/mo', 'Hosting oversight, updates, backups, uptime checks, and issue triage.'],
-          ['Search Growth', 'USD 1,250/mo', 'SEO improvements, internal linking, page expansion, and search opportunity reviews.'],
-          ['Content Engine', 'USD 1,500/mo', 'Article production, buyer education, and authority-building content support.'],
-          ['Conversion Sprint', 'USD 2,000/mo', 'CTA optimisation, form improvement, and page refinement for stronger conversion.'],
-          ['Strategic Tech Partner', 'USD 3,000/mo', 'An ongoing adviser for digital systems, reporting, architecture, and post-launch decisions.'],
-        ].map(([name, fee, summary]) => (
+        {siteConfig.offers.retainers.map((retainer) => (
           <article class="rounded-3xl border border-navy-100 bg-white p-6 shadow-sm shadow-navy-900/5">
-            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-amber-accent">{fee}</p>
-            <h3 class="mt-3 text-xl font-bold text-navy-900">{name}</h3>
-            <p class="mt-4 text-sm leading-relaxed text-navy-600">{summary}</p>
+            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-amber-accent">{retainer.price}</p>
+            <h3 class="mt-3 text-xl font-bold text-navy-900">{retainer.nameEn}</h3>
+            <p class="mt-4 text-sm leading-relaxed text-navy-600">{retainer.summaryEn}</p>
           </article>
         ))}
       </div>
@@ -577,47 +622,47 @@ const processSteps = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Custom Software Development",
+    "name": "Business Management Systems & Software Development",
     "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/en/about/" },
-    "areaServed": [{ "@type": "Country", "name": "Uganda" }, { "@type": "Country", "name": "Kenya" }, { "@type": "Country", "name": "Tanzania" }],
-    "serviceType": "Software Development",
-    "description": "Full-stack web applications, Android mobile apps, SaaS platforms, ERP systems, and REST API development for African businesses."
+    "areaServed": [{ "@type": "Country", "name": "Uganda" }, { "@type": "Country", "name": "Kenya" }, { "@type": "Country", "name": "Tanzania" }, { "@type": "Country", "name": "Rwanda" }, { "@type": "Country", "name": "Senegal" }],
+    "serviceType": "Business Management Systems",
+    "description": "Custom business management systems and software developed, deployed, managed, and maintained as a continuous discipline. ERP implementation, multi-tenant SaaS platforms, Android mobile apps, full-stack web applications, REST APIs, and SLA-backed maintenance retainers for organisations across Africa."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Website Development",
+    "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/en/about/" },
+    "areaServed": [{ "@type": "Country", "name": "Uganda" }, { "@type": "Country", "name": "Kenya" }, { "@type": "Country", "name": "Tanzania" }, { "@type": "Country", "name": "Senegal" }],
+    "serviceType": "Website Development",
+    "description": "Strategy-led websites built on a performance-first stack (Astro, Tailwind, zero-JS by default). Multilingual, SEO-structured, schema-marked-up sites for consultancies, institutions, technical firms, and funded ventures across Africa."
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "ICT Consulting & Strategy",
     "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/en/about/" },
-    "areaServed": [{ "@type": "Country", "name": "Uganda" }, { "@type": "Country", "name": "Kenya" }, { "@type": "Country", "name": "Tanzania" }],
+    "areaServed": [{ "@type": "Country", "name": "Uganda" }, { "@type": "Country", "name": "Kenya" }, { "@type": "Country", "name": "Tanzania" }, { "@type": "Country", "name": "Senegal" }],
     "serviceType": "IT Consulting",
-    "description": "IT infrastructure assessment, digital transformation roadmaps, systems analysis, and technology strategy for organisations in East Africa."
+    "description": "IT infrastructure assessment, digital transformation roadmaps, systems analysis, vendor selection, and technology strategy for organisations across anglophone and francophone Africa."
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Business Planning & Strategy",
     "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/en/about/" },
-    "areaServed": [{ "@type": "Country", "name": "Uganda" }, { "@type": "Country", "name": "Kenya" }, { "@type": "Country", "name": "Tanzania" }],
+    "areaServed": [{ "@type": "Country", "name": "Uganda" }, { "@type": "Country", "name": "Kenya" }, { "@type": "Country", "name": "Tanzania" }, { "@type": "Country", "name": "Senegal" }],
     "serviceType": "Business Consulting",
-    "description": "Business plan development, strategic planning, business proposals, market research, feasibility studies, pitch deck development, M&E frameworks, and business process optimisation for African organisations."
+    "description": "Bankable business plan development, strategic planning, business proposals, market research, feasibility studies, pitch deck development, M&E frameworks, and business process optimisation for African organisations."
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Digital Marketing & Social Media Strategy",
     "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/en/about/" },
-    "areaServed": [{ "@type": "Country", "name": "Uganda" }, { "@type": "Country", "name": "Kenya" }, { "@type": "Country", "name": "Tanzania" }],
+    "areaServed": [{ "@type": "Country", "name": "Uganda" }, { "@type": "Country", "name": "Kenya" }, { "@type": "Country", "name": "Tanzania" }, { "@type": "Country", "name": "Senegal" }],
     "serviceType": "Digital Marketing Consulting",
-    "description": "Digital marketing strategy, social media strategy, platform playbooks, WhatsApp marketing systems, and training for businesses in Uganda and East Africa."
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Property Management Technology",
-    "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/en/about/" },
-    "areaServed": [{ "@type": "Country", "name": "Uganda" }, { "@type": "Country", "name": "Kenya" }, { "@type": "Country", "name": "Tanzania" }],
-    "serviceType": "Property Management Software",
-    "description": "Aqar property management platform implementation and custom PropTech solutions for landlords and property managers across Africa."
+    "description": "Full-funnel digital marketing strategy (POEM), social media playbooks, WhatsApp marketing systems, and capacity-building training for organisations across African markets."
   }
 ])} />
 

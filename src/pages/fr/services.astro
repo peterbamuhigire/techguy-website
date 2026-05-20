@@ -5,25 +5,44 @@ import { t } from '@/utils/i18n';
 import type { Lang } from '@/utils/i18n';
 import SectionHeading from '@/components/SectionHeading.astro';
 import CTASection from '@/components/CTASection.astro';
+import { siteConfig } from '@/data/site';
 
 import softwareDevImg from '@/assets/images/services/software-dev-1.jpg';
 import techSupportImg from '@/assets/images/services/tech-support-1.jpg';
 import businessStrategyImg from '@/assets/images/services/business-strategy.jpg';
-import businessDevImg from '@/assets/images/services/business-dev-1.jpg';
 import socialMediaImg from '@/assets/images/services/social-media-2.jpg';
 
 const lang: Lang = 'fr';
+
+const lifecycleStages = [
+  {
+    label: 'Développer',
+    description: 'Ingénierie des exigences, analyse des systèmes, architecture et construction. Applications web full-stack en PHP, Python et JavaScript ; applications mobiles Android en Kotlin avec Jetpack Compose et conception offline-first ; plateformes SaaS multi-tenants reposant sur des fondations API propres. Toute construction est précédée d\'une compréhension approfondie des processus métier qu\'elle doit soutenir.',
+  },
+  {
+    label: 'Déployer',
+    description: 'Mise en place des environnements, provisionnement d\'infrastructures sécurisées, migration des données depuis les systèmes existants et les tableurs, formation des utilisateurs et déploiement par phases. Le déploiement est traité comme une discipline à part entière, car la plupart des échecs de système trouvent leur origine au moment de la bascule.',
+  },
+  {
+    label: 'Exploiter',
+    description: 'Administration courante, support utilisateurs, supervision des performances, gouvernance des accès et surveillance de la sécurité. Une fois le système en production, le cabinet peut l\'exploiter pour le compte du client ou travailler aux côtés d\'une équipe interne — selon ce qui convient à l\'organisation.',
+  },
+  {
+    label: 'Maintenir',
+    description: 'Mises à jour, évolution fonctionnelle au rythme du changement de l\'activité, entretien de l\'infrastructure et planification du cycle de vie. Les forfaits de maintenance sont assortis d\'un engagement de service (SLA) et dimensionnés selon la criticité du système, avec des délais de réponse contractuels.',
+  },
+];
 
 const processSteps = [
   {
     number: '01',
     title: 'Découverte',
-    description: 'Une consultation initiale pour comprendre votre organisation, vos défis et vos objectifs. C\'est une conversation, pas un argumentaire de vente.',
+    description: 'Une consultation initiale pour comprendre votre organisation, vos défis et vos objectifs. Un échange, pas un argumentaire commercial.',
   },
   {
     number: '02',
     title: 'Analyse',
-    description: 'Une évaluation approfondie de vos systèmes, processus et besoins actuels. Identifier ce qui fonctionne, ce qui ne fonctionne pas, et où se trouvent les opportunités.',
+    description: 'Une évaluation approfondie de vos systèmes, processus et besoins actuels. Identifier ce qui fonctionne, ce qui ne fonctionne pas, et où se situent les opportunités.',
   },
   {
     number: '03',
@@ -32,20 +51,20 @@ const processSteps = [
   },
   {
     number: '04',
-    title: 'Mise en Œuvre',
-    description: 'Une exécution concrète avec des mises à jour régulières sur l\'avancement. Peter travaille aux côtés de votre équipe, pas de manière isolée.',
+    title: 'Mise en œuvre',
+    description: 'Une exécution concrète avec des points d\'avancement réguliers. Le cabinet travaille aux côtés de votre équipe, jamais en vase clos.',
   },
   {
     number: '05',
-    title: 'Accompagnement',
-    description: 'Un accompagnement continu, une formation et des conseils pour garantir que vos solutions continuent à apporter de la valeur bien après la mission initiale.',
+    title: 'Accompagnement — Exploiter & maintenir',
+    description: 'Pour les systèmes de gestion d\'entreprise, les logiciels et les sites web, la mission ne s\'arrête pas à la livraison. Administration courante, support utilisateurs, supervision des performances, surveillance de la sécurité, évolution fonctionnelle et entretien de l\'infrastructure sont assurés sous contrats de maintenance avec engagement de service (SLA) — le cycle développer-déployer-exploiter-maintenir concrétisé.',
   },
 ];
 ---
 
 <BaseLayout
-  title="Développement Logiciel & Conseil TIC — Afrique Francophone"
-  description="Développement logiciel, conseil TIC et systèmes ERP en Afrique francophone. Plus de 15 ans d'expérience dans plus de 10 pays africains."
+  title="Systèmes de gestion d'entreprise & développement logiciel — Afrique"
+  description="Systèmes de gestion d'entreprise et logiciels sur mesure développés, déployés, exploités et maintenus comme une seule discipline continue. Développement de sites web, conseil TIC et conseil aux entreprises en complément, à travers l'Afrique francophone et anglophone."
   lang={lang}
   page="services"
 >
@@ -60,15 +79,15 @@ const processSteps = [
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24">
       <div class="py-16 md:py-20 lg:py-24 max-w-3xl">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-400/20 mb-6">
-          <span class="text-gold-400 text-sm font-medium">Ce Que Nous Offrons</span>
+          <span class="text-gold-400 text-sm font-medium">Ce que nous proposons</span>
         </div>
 
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-white leading-tight">
-          Développement Logiciel &amp; Conseil IT en Afrique
+          Systèmes de gestion d'entreprise &amp; développement logiciel
         </h1>
 
         <p class="mt-6 text-lg md:text-xl text-navy-200 leading-relaxed max-w-2xl">
-          Peter Bamuhigire propose des services complets en technologie et conseil aux entreprises, fondés sur plus de 15 ans d'expérience pratique dans plus de 10 pays africains. Chaque mission repose sur un principe simple : la technologie doit servir les résultats de l'entreprise.
+          Systèmes de gestion d'entreprise et logiciels sur mesure — développés, déployés, exploités et maintenus comme une seule discipline continue. Le développement de sites web, le conseil TIC et le conseil aux entreprises viennent compléter ce socle, fort de plus de 15 ans d'expérience dans plus de 10 pays africains.
         </p>
 
         <div class="mt-4 h-1 w-16 rounded-full bg-gold-400"></div>
@@ -84,37 +103,40 @@ const processSteps = [
   </section>
 
   <!-- ==============================
-       SERVICE 1: SOFTWARE DEVELOPMENT
+       SERVICE 1: SYSTÈMES DE GESTION D'ENTREPRISE & DÉVELOPPEMENT LOGICIEL
        ============================== -->
-  <section id="software-development" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
+  <section id="business-management-systems" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start fade-up">
         <!-- Text -->
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-50 border border-navy-100 mb-5">
             <svg class="w-4 h-4 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/>
             </svg>
-            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Service</span>
+            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Service principal</span>
           </div>
 
-          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Développement Logiciel</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Systèmes de gestion d'entreprise &amp; développement logiciel</h2>
 
-          <p class="text-navy-600 leading-relaxed mb-8">
-            Le développement logiciel est au cœur de cette pratique. Fort d'une expérience approfondie en développement web full-stack, en développement d'applications mobiles et en architecture de plateformes SaaS, Peter conçoit des systèmes pensés pour une utilisation concrète. Chaque projet commence par la compréhension de vos processus métier, l'identification des domaines où la technologie peut créer une véritable valeur, et la conception de solutions que votre équipe peut réellement utiliser. L'approche privilégie des stacks technologiques éprouvés et maintenables, une conception rigoureuse des bases de données et une architecture API propre — car les systèmes fiables reposent sur des fondations solides.
+          <p class="text-navy-600 leading-relaxed mb-6">
+            Les systèmes de gestion d'entreprise sont au cœur de cette pratique. Le travail couvre les mises en œuvre d'ERP, les plateformes SaaS multi-tenants, les systèmes internes sur mesure et les applications mobiles Android — tous conçus pour résoudre des problèmes opérationnels précis plutôt que pour faire étalage de technologie. Chaque mission suit le même cycle de vie : développer, déployer, exploiter et maintenir. Cet engagement sur le cycle de vie complet distingue le cabinet du travail au coup par coup, et il se vérifie à travers des systèmes développés en interne tels que Maduuka (plateforme SaaS multi-tenants de gestion d'entreprise) et Aqar (plateforme de gestion immobilière — le pôle PropTech du cabinet), toutes deux développées, exploitées et maintenues directement par le cabinet. La livraison d'ERP régionaux, notamment Longhorn ERP, applique la même discipline aux systèmes tiers.
           </p>
 
           <!-- Deliverables grid -->
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-navy-900 mb-3">Livrables clés</h3>
           <div class="grid sm:grid-cols-2 gap-3">
             {[
-              'Développement d\'applications web full-stack',
-              'Développement d\'applications mobiles Android',
-              'Architecture de plateformes SaaS',
-              'Implémentation & personnalisation d\'ERP',
-              'Conception & optimisation de bases de données',
-              'Conception & intégration d\'API REST',
-              'Workflows de développement assistés par l\'IA',
-              'Modernisation de systèmes existants',
+              'Mise en œuvre & personnalisation d\'ERP (dont Longhorn ERP régional)',
+              'Systèmes de gestion d\'entreprise sur mesure',
+              'Architecture de plateformes SaaS multi-tenants',
+              'Applications mobiles Android (Kotlin, Jetpack Compose)',
+              'Applications web full-stack (PHP, Python, JavaScript)',
+              'Conception, optimisation & administration de bases de données',
+              'Conception d\'API REST & intégration de services tiers',
+              'Flux de développement assistés par l\'IA',
+              'Modernisation de systèmes existants & migration des données',
+              'Exploitation continue & contrats de maintenance avec SLA',
             ].map((item) => (
               <div class="flex items-start gap-2.5">
                 <svg class="w-5 h-5 text-gold-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
@@ -124,6 +146,10 @@ const processSteps = [
               </div>
             ))}
           </div>
+
+          <p class="text-navy-600 leading-relaxed mt-6 text-sm">
+            <span class="font-semibold text-navy-900">Systèmes phares développés en interne :</span> Maduuka (SaaS multi-tenants de gestion d'entreprise), Aqar (gestion immobilière — le pôle PropTech du cabinet) et Longhorn ERP (livraison d'ERP régionaux en Afrique de l'Est et de l'Ouest). Ces systèmes apportent la preuve que le cycle développer-déployer-exploiter-maintenir est réellement opéré, et pas seulement décrit.
+          </p>
 
           <a
             href="/fr/contact/"
@@ -151,13 +177,107 @@ const processSteps = [
           </div>
         </div>
       </div>
+
+      <!-- Cycle complet mini-grid -->
+      <div class="mt-12 md:mt-16 fade-up">
+        <div class="flex items-end justify-between flex-wrap gap-4 mb-6">
+          <h3 class="text-2xl md:text-3xl font-bold text-navy-900">Le cycle complet</h3>
+          <p class="text-navy-600 text-sm max-w-md">Développer, déployer, exploiter, maintenir — une seule discipline continue, et non une remise et un oubli.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {lifecycleStages.map((stage, index) => (
+            <article class="relative rounded-2xl border border-navy-100 bg-warm-cream/60 p-6 shadow-sm shadow-navy-900/5 h-full">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-sm font-bold text-amber-accent font-heading">0{index + 1}</span>
+                <div class="h-px flex-1 bg-gold-400/40"></div>
+              </div>
+              <h4 class="text-lg font-bold text-navy-900 mb-2">{stage.label}</h4>
+              <p class="text-navy-600 text-sm leading-relaxed">{stage.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ==============================
-       SERVICE 2: ICT CONSULTING & STRATEGY
+       SERVICE 2: DÉVELOPPEMENT WEB
        ============================== -->
-  <section id="ict-consulting" class="bg-warm-cream py-16 md:py-24 scroll-mt-24">
+  <section id="website-development" class="bg-warm-cream py-16 md:py-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
+        <!-- Image (gauche en desktop) -->
+        <!-- [PHOTO NEEDED — website browser or design mockup; currently reusing socialMediaImg as nearest stand-in] -->
+        <div class="relative order-2 lg:order-1">
+          <div class="absolute -inset-3 bg-gradient-to-bl from-gold-400/10 via-transparent to-navy-200/20 rounded-2xl rotate-1"></div>
+          <div class="relative rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src={socialMediaImg}
+              alt="Présence numérique et développement de sites web pilotés par la stratégie"
+              width={640}
+              height={480}
+              loading="lazy"
+              class="w-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Texte -->
+        <div class="order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-50 border border-navy-100 mb-5">
+            <svg class="w-4 h-4 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v18m16.5-18v18M3 7.5h18M3 16.5h18M3 12h18M5.625 21h12.75A1.875 1.875 0 0020.25 19.125V4.875A1.875 1.875 0 0018.375 3H5.625A1.875 1.875 0 003.75 4.875v14.25c0 1.036.84 1.875 1.875 1.875z"/>
+            </svg>
+            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Service</span>
+          </div>
+
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Développement web</h2>
+
+          <p class="text-navy-600 leading-relaxed mb-6">
+            <span class="font-semibold text-navy-900">Des sites web pilotés par la stratégie, qui portent la réputation et convertissent les demandes sérieuses</span> — pour les organisations dont la présence numérique a un poids commercial.
+          </p>
+
+          <p class="text-navy-600 leading-relaxed mb-8">
+            Le développement web demeure une composante significative du cabinet, positionnée en complément du travail sur les systèmes. Chaque site démarre par un diagnostic du positionnement, des audiences et du rôle commercial que le site est censé jouer, puis se construit sur une pile orientée performance — Astro avec Tailwind, zéro JavaScript par défaut, et des scores Lighthouse compris entre 95 et 100 traités comme un prérequis et non une ambition. La capacité multilingue (français, anglais et kiswahili) est intégrée dès la conception, tout comme le SEO structuré, le balisage schema et la mesure analytique. Cette approche convient aux cabinets de conseil, aux institutions, aux entreprises techniques et aux jeunes entreprises financées par des investisseurs — des organisations pour lesquelles un site web constitue un outil opérationnel à part entière, et non une simple plaquette.
+          </p>
+
+          <!-- Livrables -->
+          <div class="grid sm:grid-cols-2 gap-3">
+            {[
+              'Conception & développement pilotés par la stratégie (Astro, Tailwind, zéro JS)',
+              'Positionnement, message & architecture des preuves',
+              'Capacité multilingue (FR / EN / SW)',
+              'SEO, schema, analytique & suivi des conversions',
+              'Mise en place de l\'hébergement & forfaits post-lancement',
+              'Audits & refontes de sites existants',
+            ].map((item) => (
+              <div class="flex items-start gap-2.5">
+                <svg class="w-5 h-5 text-gold-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-navy-700 text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="/fr/contact/"
+            class="inline-flex items-center mt-8 px-6 py-3 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            {t('cta.book', lang)}
+            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
+       SERVICE 3: CONSEIL & STRATÉGIE TIC
+       ============================== -->
+  <section id="ict-consulting" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
         <!-- Image (left on desktop) -->
@@ -184,10 +304,10 @@ const processSteps = [
             <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Service</span>
           </div>
 
-          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Conseil & Stratégie TIC</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Conseil & stratégie TIC</h2>
 
           <p class="text-navy-600 leading-relaxed mb-8">
-            De nombreuses organisations investissent dans la technologie sans stratégie claire — en achetant des systèmes qui ne s'intègrent pas, en construisant une infrastructure qui ne passe pas à l'échelle, ou en adoptant des outils que le personnel ne peut pas utiliser efficacement. Le conseil en TIC de Peter comble cette lacune. S'appuyant sur une expérience de gestion des opérations TIC dans plusieurs pays et organisations — des entreprises multinationales de produits de santé aux institutions nationales de recherche — la pratique fournit des orientations stratégiques ancrées dans la réalité opérationnelle.
+            De nombreuses organisations investissent dans la technologie sans stratégie claire — en acquérant des systèmes qui ne s'intègrent pas, en bâtissant des infrastructures qui ne passent pas à l'échelle, ou en adoptant des outils que les équipes ne peuvent pas utiliser efficacement. Le conseil TIC du cabinet comble cette lacune. Fort de l'expérience acquise dans la gestion d'opérations TIC à travers plusieurs pays et plusieurs organisations — depuis des distributeurs multinationaux de produits de santé présents dans huit pays africains, notamment en Afrique de l'Ouest francophone, jusqu'à des institutions nationales de recherche —, le cabinet fournit un accompagnement stratégique ancré dans la réalité opérationnelle. Qu'il s'agisse d'évaluer l'infrastructure existante, de planifier une transformation numérique, de sélectionner les bons fournisseurs ou de cadrer une démarche de conformité (notamment dans les environnements régis par l'OHADA), la perspective est celle d'un praticien qui a construit et exploité ces systèmes dans des environnements exigeants.
           </p>
 
           <!-- Deliverables grid -->
@@ -225,9 +345,9 @@ const processSteps = [
   </section>
 
   <!-- ==============================
-       SERVICE 3: BUSINESS CONSULTING
+       SERVICE 4: PLANIFICATION & STRATÉGIE D'ENTREPRISE
        ============================== -->
-  <section id="planification-entreprise" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
+  <section id="business-planning" class="bg-warm-cream py-16 md:py-24 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
         <!-- Text -->
@@ -239,10 +359,10 @@ const processSteps = [
             <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Service</span>
           </div>
 
-          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Planification & Stratégie d'Entreprise</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Planification & stratégie d'entreprise</h2>
 
           <p class="text-navy-600 leading-relaxed mb-8">
-            La pratique de conseil aux entreprises de Peter se concentre sur l'accompagnement des organisations et entrepreneurs dans l'élaboration des plans, stratégies et documents dont ils ont besoin pour croître, obtenir des financements et opérer avec clarté. Fort de 15 ans d'expérience dans des secteurs variés en Afrique et à l'international, la pratique propose un accompagnement stratégique concret qui va au-delà des cadres théoriques — ancré dans les réalités concrètes des entreprises africaines.
+            Le cabinet accompagne entrepreneurs, PME et organisations établies dans l'élaboration des plans, des cadres et de la réflexion stratégique nécessaires pour avancer avec confiance. Que l'objectif soit d'obtenir un financement auprès d'une banque commerciale (Ecobank, Bank of Africa) ou d'une institution de financement du développement (BCEAO, BDEAC, AFD, BAD), de répondre à un appel à subventions, de présenter un projet à des investisseurs ou de construire une feuille de route crédible, les livrables sont ancrés dans la réalité du marché et conformes aux exigences applicables (notamment le référentiel SYSCOHADA dans les pays OHADA).
           </p>
 
           <!-- Deliverables grid -->
@@ -322,9 +442,9 @@ const processSteps = [
   </section>
 
   <!-- ==============================
-       SERVICE 4: MARKETING DIGITAL & STRATÉGIE DES RÉSEAUX SOCIAUX
+       SERVICE 5: MARKETING DIGITAL & STRATÉGIE DES MÉDIAS SOCIAUX
        ============================== -->
-  <section id="marketing-digital" class="bg-warm-cream py-16 md:py-24 scroll-mt-24">
+  <section id="digital-marketing" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
         <!-- Image (left on desktop) -->
@@ -354,7 +474,7 @@ const processSteps = [
           <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Marketing Digital & Stratégie des Réseaux Sociaux</h2>
 
           <p class="text-navy-600 leading-relaxed mb-8">
-            La plupart des entreprises publient de manière irrégulière, suivent les tendances sans plan défini et n'ont aucun moyen de mesurer l'efficacité de leur présence numérique. Peter conçoit des stratégies de marketing digital et de réseaux sociaux adaptées spécifiquement aux entreprises d'Afrique francophone — en tenant compte des plateformes réellement utilisées par vos clients, des contenus qui suscitent l'engagement local, et d'un cadre de mesure ancré dans les résultats business concrets, et non dans les métriques de vanité.
+            Sur les marchés africains, les canaux sociaux assument désormais le rôle que tenaient autrefois les brochures et les salons professionnels — mais la plupart des organisations publient de manière irrégulière et n'ont aucun moyen de mesurer si tout cela produit des résultats. Le cabinet conçoit des stratégies de marketing digital pilotées par la donnée et construites sur le cadre POEM (Paid, Owned, Earned Media), avec une familiarité approfondie des plateformes qui comptent sur les marchés africains (WhatsApp, Facebook, Instagram, LinkedIn, TikTok, YouTube, X).
           </p>
 
           <!-- Deliverables grid -->
@@ -406,75 +526,6 @@ const processSteps = [
             class="inline-flex items-center mt-8 px-6 py-3 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
           >
             Obtenir un devis gratuit
-            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==============================
-       SERVICE 5: PROPERTY MANAGEMENT TECHNOLOGY
-       ============================== -->
-  <section id="property-management" class="bg-warm-white py-16 md:py-24 scroll-mt-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center fade-up">
-        <!-- Image (left on desktop) -->
-        <div class="relative order-2 lg:order-1">
-          <div class="absolute -inset-3 bg-gradient-to-bl from-gold-400/10 via-transparent to-navy-200/20 rounded-2xl rotate-1"></div>
-          <div class="relative rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src={businessDevImg}
-              alt="Solutions de gestion immobilière et PropTech"
-              width={640}
-              height={480}
-              loading="lazy"
-              class="w-full object-cover"
-            />
-          </div>
-        </div>
-
-        <!-- Text -->
-        <div class="order-1 lg:order-2">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-50 border border-navy-100 mb-5">
-            <svg class="w-4 h-4 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5M3.75 3v18m4.5-18v18m4.5-18v18m4.5-18v18M6 6.75h.008v.008H6V6.75zm0 3.75h.008v.008H6v-.008zm0 3.75h.008v.008H6v-.008zm4.5-7.5h.008v.008h-.008V6.75zm0 3.75h.008v.008h-.008v-.008zm0 3.75h.008v.008h-.008v-.008zm4.5-7.5h.008v.008h-.008V6.75zm0 3.75h.008v.008h-.008v-.008zm0 3.75h.008v.008h-.008v-.008z"/>
-            </svg>
-            <span class="text-navy-700 text-xs font-semibold uppercase tracking-wider">Service</span>
-          </div>
-
-          <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-5">Technologie de Gestion Immobilière</h2>
-
-          <p class="text-navy-600 leading-relaxed mb-8">
-            La gestion immobilière reste l'un des secteurs les moins numérisés en Afrique et sur de nombreux marchés internationaux. Peter a développé Aqar, une plateforme dédiée à la gestion immobilière, et accompagne les propriétaires et les sociétés de gestion immobilière dans la structuration de leurs opérations au sein de systèmes numériques fiables. Que vous gériez cinq propriétés ou cinquante, la pratique vous aide à passer des tableurs et des registres papier à un système qui suit les locataires, surveille la collecte des loyers, planifie la maintenance et génère des rapports financiers.
-          </p>
-
-          <!-- Deliverables grid -->
-          <div class="grid sm:grid-cols-2 gap-3">
-            {[
-              'Implémentation d\'Aqar Property Management',
-              'Numérisation de portefeuilles immobiliers',
-              'Mise en place de systèmes de gestion locative',
-              'Suivi & planification de la maintenance',
-              'Rapports financiers & tableaux de bord des loyers',
-              'Développement de solutions PropTech sur mesure',
-            ].map((item) => (
-              <div class="flex items-start gap-2.5">
-                <svg class="w-5 h-5 text-gold-500 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <span class="text-navy-700 text-sm">{item}</span>
-              </div>
-            ))}
-          </div>
-
-          <a
-            href="/fr/contact/"
-            class="inline-flex items-center mt-8 px-6 py-3 bg-amber-accent hover:bg-amber-accent/90 text-white font-semibold rounded-lg transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5"
-          >
-            {t('cta.book', lang)}
             <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
             </svg>
@@ -548,13 +599,36 @@ const processSteps = [
   </section>
 
   <!-- ==============================
+       ONGOING SUPPORT — RETAINERS
+       ============================== -->
+  <section class="bg-warm-cream py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl fade-up">
+        <SectionHeading
+          title="Accompagnement continu"
+          subtitle="Le travail n'a pas vocation à s'arrêter à la livraison. Lorsque le site ou le système a un poids commercial, l'accompagnement doit être structuré dès le départ."
+        />
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-5 fade-up">
+        {siteConfig.offers.retainers.map((retainer) => (
+          <article class="rounded-3xl border border-navy-100 bg-white p-6 shadow-sm shadow-navy-900/5">
+            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-amber-accent">{retainer.price}</p>
+            <h3 class="mt-3 text-xl font-bold text-navy-900">{retainer.nameFr}</h3>
+            <p class="mt-4 text-sm leading-relaxed text-navy-600">{retainer.summaryFr}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ==============================
        CTA SECTION
        ============================== -->
   <div class="fade-up">
     <CTASection
       lang={lang}
       title="Prêt à discuter de votre projet ?"
-      subtitle="Chaque mission commence par une conversation. Réservez une consultation pour découvrir comment l'expérience de Peter peut servir votre organisation."
+      subtitle="Chaque mission commence par un échange. Réservez une consultation pour découvrir comment ces services peuvent accompagner votre organisation."
     />
   </div>
 
@@ -563,47 +637,47 @@ const processSteps = [
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Développement Logiciel Sur Mesure",
+    "name": "Systèmes de gestion d'entreprise & développement logiciel",
     "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/fr/about/" },
-    "areaServed": [{ "@type": "Country", "name": "Sénégal" }, { "@type": "Country", "name": "Côte d'Ivoire" }, { "@type": "Country", "name": "Cameroun" }, { "@type": "Country", "name": "Uganda" }],
-    "serviceType": "Développement Logiciel",
-    "description": "Applications web full-stack, applications mobiles Android, plateformes SaaS, systèmes ERP et développement d'API REST pour les entreprises africaines."
+    "areaServed": [{ "@type": "Country", "name": "Sénégal" }, { "@type": "Country", "name": "Côte d'Ivoire" }, { "@type": "Country", "name": "Cameroun" }, { "@type": "Country", "name": "République démocratique du Congo" }, { "@type": "Country", "name": "Uganda" }],
+    "serviceType": "Systèmes de gestion d'entreprise",
+    "description": "Systèmes de gestion d'entreprise et logiciels sur mesure développés, déployés, exploités et maintenus comme une discipline continue. Mises en œuvre d'ERP, plateformes SaaS multi-tenants, applications mobiles Android, applications web full-stack, API REST et contrats de maintenance avec SLA pour les organisations à travers l'Afrique."
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Conseil TIC & Stratégie Numérique",
+    "name": "Développement web",
     "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/fr/about/" },
     "areaServed": [{ "@type": "Country", "name": "Sénégal" }, { "@type": "Country", "name": "Côte d'Ivoire" }, { "@type": "Country", "name": "Cameroun" }, { "@type": "Country", "name": "Uganda" }],
-    "serviceType": "Conseil en Informatique",
-    "description": "Évaluation des infrastructures IT, feuilles de route de transformation numérique, analyse des systèmes et stratégie technologique pour les organisations en Afrique francophone."
+    "serviceType": "Développement web",
+    "description": "Sites web pilotés par la stratégie sur une pile orientée performance (Astro, Tailwind, zéro JS par défaut). Sites multilingues, à structuration SEO et balisage schema, pour cabinets de conseil, institutions, entreprises techniques et jeunes entreprises financées en Afrique."
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Planification & Stratégie d'Entreprise",
+    "name": "Conseil & stratégie TIC",
     "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/fr/about/" },
     "areaServed": [{ "@type": "Country", "name": "Sénégal" }, { "@type": "Country", "name": "Côte d'Ivoire" }, { "@type": "Country", "name": "Cameroun" }, { "@type": "Country", "name": "Uganda" }],
-    "serviceType": "Conseil aux Entreprises",
-    "description": "Élaboration de plans d'affaires bancables, planification stratégique, propositions commerciales, études de marché, pitch decks et cadres de suivi-évaluation pour les organisations et entrepreneurs en Afrique."
+    "serviceType": "Conseil en informatique",
+    "description": "Évaluation d'infrastructures IT, feuilles de route de transformation numérique, analyse des systèmes, sélection de fournisseurs et stratégie technologique pour les organisations en Afrique francophone et anglophone, y compris les environnements OHADA."
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Marketing Digital & Stratégie des Réseaux Sociaux",
+    "name": "Planification & stratégie d'entreprise",
     "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/fr/about/" },
     "areaServed": [{ "@type": "Country", "name": "Sénégal" }, { "@type": "Country", "name": "Côte d'Ivoire" }, { "@type": "Country", "name": "Cameroun" }, { "@type": "Country", "name": "Uganda" }],
-    "serviceType": "Conseil en Marketing Digital",
-    "description": "Stratégie de marketing digital, stratégie réseaux sociaux, playbooks de plateformes, systèmes de marketing WhatsApp Business et formation pour les entreprises en Afrique francophone."
+    "serviceType": "Conseil aux entreprises",
+    "description": "Élaboration de plans d'affaires bancables (Ecobank, BOA, BCEAO, AFD, BAD), planification stratégique, propositions commerciales, études de marché, pitch decks et cadres de suivi-évaluation pour les organisations en Afrique, conformes au référentiel SYSCOHADA dans les pays OHADA."
   },
   {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Technologie de Gestion Immobilière",
+    "name": "Marketing digital & stratégie des médias sociaux",
     "provider": { "@type": "Person", "name": "Peter Bamuhigire", "url": "https://techguypeter.com/fr/about/" },
     "areaServed": [{ "@type": "Country", "name": "Sénégal" }, { "@type": "Country", "name": "Côte d'Ivoire" }, { "@type": "Country", "name": "Cameroun" }, { "@type": "Country", "name": "Uganda" }],
-    "serviceType": "Logiciel de Gestion Immobilière",
-    "description": "Implémentation de la plateforme Aqar de gestion immobilière et solutions PropTech personnalisées pour les propriétaires et gestionnaires immobiliers en Afrique."
+    "serviceType": "Conseil en marketing digital",
+    "description": "Stratégie de marketing digital full-funnel (cadre POEM), playbooks par plateforme (WhatsApp, Facebook, Instagram, LinkedIn, TikTok, YouTube, X), marketing WhatsApp et formations pour les organisations sur les marchés africains."
   }
 ])} />
 

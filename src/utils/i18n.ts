@@ -17,8 +17,9 @@ const ui = {
   en: {
     'nav.home': 'Home',
     'nav.services': 'Services',
+    'nav.software': 'Software',
     'nav.websites': 'Websites',
-    'nav.portfolio': 'Software',
+    'nav.portfolio': 'Portfolio',
     'nav.about': 'About',
     'nav.blog': 'Blog',
     'nav.ai': 'AI',
@@ -77,8 +78,9 @@ const ui = {
   fr: {
     'nav.home': 'Accueil',
     'nav.services': 'Services',
+    'nav.software': 'Logiciels',
     'nav.websites': 'Sites Web',
-    'nav.portfolio': 'Logiciels',
+    'nav.portfolio': 'Réalisations',
     'nav.about': 'À Propos',
     'nav.blog': 'Blog',
     'nav.ai': 'IA',

@@ -1,36 +1,72 @@
 # Services
 
-Peter Bamuhigire propose des services complets de conseil en technologie et en affaires, appuyés sur plus de 15 ans d'expérience pratique dans plus de 10 pays africains. Chaque mission repose sur un principe simple : la technologie doit être au service des résultats de l'entreprise. L'accent est toujours mis sur des solutions pragmatiques, durables et adaptées aux réalités de votre environnement opérationnel.
+Le cabinet s'organise autour d'une idée directrice : les systèmes d'entreprise doivent être développés, déployés, exploités et maintenus comme une discipline continue — et non livrés puis oubliés. Le cœur de la pratique est la conception de systèmes de gestion d'entreprise sur mesure et le développement logiciel pour des organisations dont les opérations doivent reposer sur une technologie conçue pour elles. En complément de cette activité principale, le développement de sites web et le conseil aux entreprises sont proposés comme des capacités distinctes et complémentaires, destinées aux clients dont les besoins s'étendent dans ces directions. Fort de plus de quinze ans d'expérience dans plus de dix pays africains — de l'Afrique de l'Ouest francophone (Sénégal, Guinée) à l'Afrique centrale (RDC) et à l'Afrique de l'Est —, le cabinet voit la plupart de ses missions débuter comme un projet pour devenir une relation opérationnelle de long terme.
 
 ---
 
-## Développement Logiciel
+## Systèmes de gestion d'entreprise & développement logiciel
 
-**Description courte** : Des solutions logicielles sur mesure — applications web, applications mobiles et plateformes SaaS complètes — conçues pour répondre aux défis spécifiques de votre entreprise.
+**Description courte** : Systèmes de gestion d'entreprise et logiciels sur mesure de bout en bout — développés, déployés, exploités et maintenus comme une seule discipline continue.
 
-**Description détaillée** : Le développement logiciel est au cœur de ce cabinet. Fort d'une expertise approfondie en développement web full-stack, en développement d'applications mobiles et en architecture de plateformes SaaS, Peter conçoit des systèmes pensés pour un usage concret. Chaque projet commence par la compréhension de vos processus métier, l'identification des domaines où la technologie peut créer une véritable valeur ajoutée, et la conception de solutions que vos équipes pourront réellement utiliser. L'approche privilégie des piles technologiques éprouvées et maintenables, une conception rigoureuse des bases de données et une architecture API propre — car des systèmes fiables reposent sur des fondations solides. De la modernisation de systèmes existants aux flux de développement assistés par l'IA, le cabinet livre des logiciels performants en environnement de production, en Afrique et au-delà.
+**Description détaillée** : Les systèmes de gestion d'entreprise sont au cœur de cette pratique. Le travail couvre les mises en œuvre d'ERP, les plateformes SaaS multi-tenants, les systèmes internes sur mesure et les applications mobiles Android — tous conçus pour résoudre des problèmes opérationnels précis plutôt que pour faire étalage de technologie. Chaque mission suit le même cycle de vie : développer, déployer, exploiter et maintenir. C'est cet engagement sur le cycle de vie complet qui distingue le cabinet du travail au coup par coup, et il se vérifie à travers des systèmes développés en interne tels que Maduuka (une plateforme SaaS multi-tenants de gestion d'entreprise) et Aqar (une plateforme de gestion immobilière), toutes deux développées, exploitées et maintenues directement par le cabinet. La livraison d'ERP régionaux, notamment les mises en œuvre de Longhorn ERP, applique la même discipline aux systèmes tiers.
+
+### Le cycle complet
+
+**Développer** — Ingénierie des exigences, analyse des systèmes, architecture et construction. Applications web full-stack en PHP, Python et JavaScript ; applications mobiles Android en Kotlin avec Jetpack Compose et conception offline-first ; plateformes SaaS multi-tenants reposant sur des fondations API propres. Toute construction est précédée d'une compréhension approfondie des processus métier qu'elle doit soutenir.
+
+**Déployer** — Mise en place des environnements, provisionnement d'infrastructures sécurisées, migration des données depuis les systèmes existants et les tableurs, formation des utilisateurs et déploiement par phases. Le déploiement est traité comme une discipline à part entière, et non comme une étape secondaire, car la plupart des échecs de système trouvent leur origine au moment de la bascule.
+
+**Exploiter** — Administration courante, support utilisateurs, supervision des performances, gouvernance des accès et surveillance de la sécurité. Une fois le système en production, le cabinet peut l'exploiter pour le compte du client ou travailler aux côtés d'une équipe interne — selon ce qui convient à l'organisation.
+
+**Maintenir** — Mises à jour, évolution fonctionnelle au rythme du changement de l'activité, entretien de l'infrastructure et planification du cycle de vie. Les forfaits de maintenance sont assortis d'un engagement de service (SLA) et dimensionnés selon la criticité du système, avec des délais de réponse contractuels plutôt que une simple obligation de moyens.
 
 **Livrables clés** :
-- Développement d'applications web full-stack (PHP, Python, JavaScript)
-- Développement d'applications mobiles Android (Kotlin, Jetpack Compose) avec fonctionnalité hors-ligne prioritaire
+- Mise en œuvre et personnalisation de systèmes ERP (y compris les déploiements régionaux de Longhorn ERP)
+- Systèmes de gestion d'entreprise sur mesure, conçus pour des exigences opérationnelles précises
 - Architecture de plateformes SaaS et conception de systèmes multi-tenants
-- Mise en œuvre et personnalisation de systèmes ERP
-- Conception, optimisation et gestion de bases de données (MySQL, PostgreSQL)
+- Développement d'applications mobiles Android (Kotlin, Jetpack Compose, offline-first)
+- Développement d'applications web full-stack (PHP, Python, JavaScript)
+- Conception, optimisation et administration de bases de données (MySQL, PostgreSQL)
 - Conception d'API REST et intégration de services tiers
-- Flux de développement assistés par l'IA (Claude Code, outils alimentés par LLM)
-- Modernisation de systèmes existants et migration de données
+- Flux de développement assistés par l'IA (Claude Code, outils s'appuyant sur des LLM)
+- Modernisation de systèmes existants et migration structurée des données
+- Exploitation continue des systèmes et contrats de maintenance avec engagement de service (SLA)
 
-**Tarif de départ** : Contactez-nous pour une consultation — la tarification dépend de la portée et de la complexité du projet.
+**Secteurs servis** : distribution de produits de santé, agriculture, gestion immobilière, commerce de détail, restauration, pharmacies et institutions de recherche.
 
-**Photo** : [PHOTO NEEDED — software development workspace or code on screen]
+**Systèmes phares développés en interne** : Maduuka (SaaS multi-tenants de gestion d'entreprise), Aqar (technologie de gestion immobilière — le pôle PropTech du cabinet) et Longhorn ERP (livraison d'ERP régionaux en Afrique de l'Est et de l'Ouest). Ces systèmes apportent la preuve que le cycle développer-déployer-exploiter-maintenir est réellement opéré, et pas seulement décrit.
+
+**Tarif de départ** : Contactez-nous pour une consultation — la tarification dépend du périmètre du système, de l'échelle du déploiement et des engagements d'exploitation continue.
+
+**Photo** : [PHOTO NEEDED — software development workspace, dashboard screenshot, or systems architecture imagery]
 
 ---
 
-## Conseil & Stratégie TIC
+## Développement web
 
-**Description courte** : Un accompagnement technologique stratégique qui aide les organisations à planifier, mettre en œuvre et gérer leur infrastructure TIC pour une fiabilité et une croissance à long terme.
+**Description courte** : Des sites web pilotés par la stratégie, qui portent la réputation et convertissent les demandes sérieuses — pour les organisations dont la présence numérique a un poids commercial.
 
-**Description détaillée** : De nombreuses organisations investissent dans la technologie sans stratégie claire — en acquérant des systèmes qui ne s'intègrent pas, en bâtissant des infrastructures qui ne passent pas à l'échelle, ou en adoptant des outils que le personnel ne peut pas utiliser efficacement. Le conseil TIC de Peter comble cette lacune. Fort de son expérience dans la gestion d'opérations TIC à travers plusieurs pays et organisations — des multinationales de produits de santé aux institutions nationales de recherche — le cabinet offre un accompagnement stratégique ancré dans la réalité opérationnelle. Que vous ayez besoin d'évaluer votre infrastructure actuelle, de planifier une transformation numérique ou de sélectionner les bons fournisseurs technologiques, Peter apporte la perspective de quelqu'un qui a construit et géré ces systèmes dans des environnements exigeants.
+**Description détaillée** : Le développement web demeure une composante significative du cabinet, positionnée en complément du travail sur les systèmes. Chaque site démarre par un diagnostic du positionnement, des audiences et du rôle commercial que le site est censé jouer, puis se construit sur une pile orientée performance — Astro avec Tailwind, zéro JavaScript par défaut, et des scores Lighthouse compris entre 95 et 100 traités comme un prérequis et non une ambition. La capacité multilingue (français, anglais et kiswahili) est intégrée dès la conception, tout comme le SEO structuré, le balisage schema et la mesure analytique. Cette approche convient aux cabinets de conseil, aux institutions, aux entreprises techniques et aux jeunes entreprises financées par des investisseurs — des organisations pour lesquelles un site web constitue un outil opérationnel à part entière, et non une simple plaquette de présentation.
+
+**Livrables clés** :
+- Conception et développement de sites web pilotés par la stratégie (Astro, Tailwind, zéro JavaScript par défaut)
+- Positionnement, message et architecture des preuves
+- Capacité multilingue (français / anglais / kiswahili)
+- SEO, balisage schema, mesure analytique et suivi des conversions
+- Mise en place de l'hébergement et forfaits de suivi post-lancement
+- Audits et refontes de sites existants
+
+**Tarif de départ** : Contactez-nous pour une consultation — les projets démarrent au palier Foundation (voir la grille tarifaire).
+
+**Photo** : [PHOTO NEEDED — website design or browser-on-desk imagery]
+
+---
+
+## Conseil & stratégie TIC
+
+**Description courte** : Un accompagnement technologique stratégique qui aide les organisations à planifier, mettre en œuvre et exploiter leur infrastructure TIC dans une perspective de fiabilité et de croissance à long terme.
+
+**Description détaillée** : De nombreuses organisations investissent dans la technologie sans stratégie claire — en acquérant des systèmes qui ne s'intègrent pas, en bâtissant des infrastructures qui ne passent pas à l'échelle, ou en adoptant des outils que les équipes ne peuvent pas utiliser efficacement. Le conseil TIC du cabinet comble cette lacune. Le cabinet, fort de l'expérience acquise dans la gestion d'opérations TIC à travers plusieurs pays et plusieurs organisations — depuis des distributeurs multinationaux de produits de santé présents dans huit pays africains, notamment en Afrique de l'Ouest francophone, jusqu'à des institutions nationales de recherche —, fournit un accompagnement stratégique ancré dans la réalité opérationnelle. Qu'il s'agisse d'évaluer l'infrastructure existante, de planifier une transformation numérique, de sélectionner les bons fournisseurs ou de cadrer une démarche de conformité (notamment dans les environnements régis par l'OHADA), la perspective est celle d'un praticien qui a construit et exploité ces systèmes dans des environnements exigeants.
 
 **Livrables clés** :
 - Évaluation d'infrastructure informatique et planification stratégique
@@ -41,122 +77,65 @@ Peter Bamuhigire propose des services complets de conseil en technologie et en a
 - Mise en place et optimisation de SIG (Systèmes d'Information de Gestion)
 - Stratégie de migration vers le cloud et d'infrastructure hybride
 
-**Tarif de départ** : Contactez-nous pour une consultation — les missions vont de sessions de conseil ponctuelles à des partenariats stratégiques de plusieurs mois.
+**Tarif de départ** : Contactez-nous pour une consultation — les missions vont de courtes sessions de conseil à des partenariats stratégiques de plusieurs mois.
 
 **Photo** : [PHOTO NEEDED — consulting or strategy session imagery]
 
 ---
 
-## Planification & Stratégie d'Entreprise
+## Planification & stratégie d'entreprise
 
-**Description courte** : Des services de planification et de stratégie d'entreprise qui aident les organisations à structurer leur vision, à convaincre les financeurs et à mettre en œuvre des processus durables pour atteindre leurs objectifs.
+**Description courte** : Plans d'affaires bancables, cadres stratégiques et intelligence de marché qui aident les entrepreneurs et les organisations à mobiliser des financements, à entrer sur de nouveaux marchés et à atteindre une croissance mesurable.
 
-**Description détaillée** : La technologie n'est efficace que lorsqu'elle est au service de processus métier bien conçus. Les services de planification et de stratégie de Peter s'appuient sur une expérience acquise auprès d'organisations de secteurs variés — distribution de produits de santé, recherche agricole, gestion immobilière, commerce de détail, et bien d'autres. Le cabinet accompagne les organisations à formaliser leur stratégie, à élaborer des plans d'affaires bancables à destination des banques, des institutions de financement du développement et des investisseurs, et à concevoir des cadres de suivi-évaluation rigoureux. L'accent est toujours mis sur un conseil pragmatique qui tient compte des réalités de votre marché, de vos équipes et de vos ressources — pas d'un rapport qui reste sur une étagère, mais d'un travail qui produit des résultats mesurables.
+**Description détaillée** : De bons résultats économiques commencent par une planification rigoureuse. Le cabinet accompagne entrepreneurs, PME et organisations établies dans l'élaboration des documents, des cadres et de la réflexion stratégique nécessaires pour avancer avec confiance. Que l'objectif soit d'obtenir un financement auprès d'une banque commerciale (Ecobank, Bank of Africa) ou d'une institution de financement du développement (BCEAO, BDEAC, AFD, BAD), de répondre à un appel à subventions, de présenter un projet à des investisseurs ou de construire une feuille de route crédible pour la phase suivante, les livrables sont ancrés dans la réalité du marché et conformes aux exigences comptables et réglementaires applicables (notamment le référentiel SYSCOHADA dans les pays OHADA), avec la rigueur analytique et le discernement opérationnel nécessaires pour transformer des idées en plans finançables et exécutables.
 
 **Livrables clés** :
-- Élaboration de plans d'affaires bancables (banques, IFD & investisseurs)
+- Élaboration de plans d'affaires (plans bancables pour banques, IFD & investisseurs)
 - Planification stratégique & définition d'objectifs
 - Propositions commerciales & dossiers de subvention
 - Études de marché & études de faisabilité
-- Développement de pitch decks & coaching à la présentation
+- Conception de pitch decks & coaching à la présentation
 - Conception de cadres de suivi-évaluation
 - Analyse & optimisation des processus métier
 
-**Page dédiée** : [/fr/business-planning-consulting-service/](/fr/business-planning-consulting-service/)
-
 **Tarif de départ** : Contactez-nous pour une consultation — les missions de conseil sont dimensionnées selon vos besoins spécifiques.
 
-**Photo** : [PHOTO NEEDED — business planning or strategy session]
+**Photo** : [PHOTO NEEDED — business meeting or planning session]
 
 ---
 
-## Technologie pour la Gestion Immobilière
+## Stratégie de marketing digital & médias sociaux
 
-**Description courte** : Des solutions PropTech spécialisées qui aident les propriétaires et les gestionnaires immobiliers à numériser leurs opérations, suivre leurs locataires et gérer efficacement leurs portefeuilles.
+**Description courte** : Stratégies de marketing digital pilotées par la donnée et *playbooks* de médias sociaux qui aident les organisations à construire leur marque, à élargir leur audience et à transformer l'attention en chiffre d'affaires — sur l'ensemble des plateformes pertinentes.
 
-**Description détaillée** : La gestion immobilière demeure l'un des secteurs les moins numérisés en Afrique et sur de nombreux marchés internationaux. Peter a développé Aqar, une plateforme dédiée à la gestion immobilière, et accompagne les propriétaires et les sociétés de gestion pour faire évoluer leurs opérations vers des systèmes numériques structurés et fiables. Que vous gériez cinq biens ou cinquante, le cabinet vous aide à passer des tableurs et des registres papier à un système qui suit vos locataires, contrôle la perception des loyers, planifie la maintenance et génère des rapports financiers — le tout en un seul endroit. Pour les organisations ayant des exigences particulières, des solutions PropTech sur mesure sont développées pour s'adapter à votre portefeuille et à vos flux de travail spécifiques.
+**Description détaillée** : Sur les marchés africains, les canaux sociaux assument désormais le rôle que tenaient autrefois les brochures et les salons professionnels — mais la plupart des organisations publient de manière irrégulière et n'ont aucun moyen de mesurer si tout cela produit des résultats. Le travail de marketing digital et de médias sociaux du cabinet comble cet écart. Fort d'une réflexion marketing couvrant l'ensemble du tunnel de conversion (*full-funnel*) et d'une familiarité approfondie avec les plateformes qui comptent sur les marchés africains — notamment WhatsApp, Facebook, Instagram, LinkedIn, TikTok, YouTube et X —, il aide les organisations à passer de la publication ad hoc à un marketing digital stratégique et mesurable. Les missions associent généralement une stratégie de médias sociaux documentée et une stratégie de marketing digital full-funnel construite sur le cadre POEM (Paid, Owned, Earned Media). S'y ajoutent des *playbooks* par plateforme (guides opérationnels par plateforme) que les équipes internes peuvent appliquer directement, ainsi que des ateliers de formation et de renforcement des capacités. Le livrable est un système opérationnel que l'équipe du client peut exécuter, et non une présentation. Une page dédiée à ce service est disponible à l'adresse [/fr/strategie-marketing-digital/](/fr/strategie-marketing-digital/).
 
 **Livrables clés** :
-- Mise en œuvre et personnalisation du logiciel de gestion immobilière Aqar
-- Numérisation de portefeuilles immobiliers et migration de données
-- Mise en place et configuration de systèmes de gestion des locataires
-- Systèmes de suivi et de planification de la maintenance
-- Tableaux de bord de reporting financier et de perception des loyers
-- Développement de solutions PropTech sur mesure pour des besoins spécifiques
+- Stratégie de médias sociaux documentée avec personas d'audience et justification par plateforme
+- Stratégie de marketing digital full-funnel (cadre POEM)
+- Intégration du marketing WhatsApp et conception de campagnes
+- Stratégie et modèles de marketing par e-mail et SMS
+- Calendrier de contenu et feuille de route éditoriale
+- Playbooks spécifiques par plateforme (WhatsApp, Facebook, Instagram, LinkedIn, TikTok, YouTube, X)
+- Cadre d'indicateurs (KPI) et méthodologie de mesure du ROI
+- Ateliers de formation et programmes de renforcement des capacités
 
-**Tarif de départ** : Contactez-nous pour une consultation — les coûts de mise en œuvre dépendent de la taille du portefeuille et des exigences.
-
-**Photo** : [PHOTO NEEDED — property or real estate related imagery]
-
----
-
-## Marketing Digital & Stratégie des Réseaux Sociaux
-
-**Description courte** : Des stratégies de marketing digital et de réseaux sociaux sur mesure pour aider les entreprises et organisations d'Afrique francophone à construire leur présence en ligne, engager leurs audiences et convertir leur visibilité en résultats concrets.
-
-**Description détaillée** : En Afrique francophone, la présence digitale n'est plus optionnelle — c'est un levier de compétitivité. Pourtant, beaucoup d'entreprises publient sans stratégie, investissent en publicité sans ROI mesurable, et peinent à transformer leur communauté en clients. Peter accompagne les organisations à construire une présence digitale cohérente, de l'audit initial jusqu'aux playbooks opérationnels et à la formation des équipes. Chaque mission repose sur une compréhension fine du contexte africain : usage dominant du mobile, pénétration de WhatsApp, dynamiques propres aux marchés francophones (Côte d'Ivoire, Sénégal, Cameroun, RDC, et au-delà). Le résultat : des stratégies actionnables, des équipes formées, et des systèmes qui continuent à créer de la valeur après la mission.
-
-**Page dédiée** : [/fr/strategie-marketing-digital/](/fr/strategie-marketing-digital/)
-
-### Stratégie Réseaux Sociaux
-Construisez une présence sur les réseaux sociaux qui reflète votre marque et parle à votre audience.
-
-**Livrables** :
-- Audit de marque et analyse de la présence actuelle
-- Définition des personas d'audience par marché cible
-- Stratégie par plateforme (WhatsApp, Facebook, Instagram, LinkedIn, TikTok, YouTube, X)
-- Calendrier de contenu mensuel et trimestriel
-- Guide de ton et charte éditoriale
-- Tableau de bord KPIs et protocole de reporting
-
-### Stratégie de Marketing Digital
-Un plan marketing intégré, du premier contact jusqu'à la fidélisation, adapté aux réalités du marché africain francophone.
-
-**Livrables** :
-- Stratégie full-funnel (notoriété, considération, conversion, fidélisation)
-- Cadre POEM — Paid, Owned & Earned Media
-- Système de communication WhatsApp (broadcasts, groupes, catalogue)
-- Stratégie e-mail et SMS marketing
-- Feuille de route contenu avec priorisation par canal
-- Modèle de mesure du ROI et indicateurs de performance
-
-### Playbooks de Plateformes
-Des manuels opérationnels clés en main pour chaque canal, conçus pour être utilisés directement par vos équipes.
-
-**Canaux couverts** :
-- WhatsApp Business & WhatsApp Business API
-- Facebook Pages & Facebook Ads
-- Instagram (organique & payant)
-- LinkedIn (personal branding & pages entreprise)
-- TikTok (stratégie de contenu vidéo court)
-- YouTube (stratégie de contenu long & Shorts)
-- X / Twitter (communication corporate & veille)
-
-### Formation & Renforcement des Capacités
-Des formations pratiques pour que vos équipes maîtrisent les outils et les stratégies du marketing digital.
-
-**Programmes disponibles** :
-- **Fondamentaux des Réseaux Sociaux** — panorama des plateformes, algorithmes, bonnes pratiques (tous niveaux)
-- **Atelier de Création de Contenu** — production de visuels, rédaction, formats vidéo adaptés à chaque plateforme
-- **Marketing Digital pour Dirigeants** — prise de décision stratégique, lecture des indicateurs, supervision des équipes digitales
-- **WhatsApp for Business** — utilisation avancée pour la relation client, la prospection et la fidélisation
-
-**Tarif de départ** : Contactez-nous pour une consultation — les missions sont dimensionnées selon vos objectifs, votre secteur et la taille de votre marché cible.
+**Tarif de départ** : Contactez-nous pour une consultation — les missions vont du document de stratégie autonome aux dispositifs complets de formation et de mise en œuvre.
 
 **Photo** : [PHOTO NEEDED — digital marketing or social media strategy session]
 
 ---
 
-## Notre Méthode de Travail
+## Notre méthode
 
-Chaque mission suit un processus structuré conçu pour garantir clarté, alignement et résultats mesurables :
+Chaque mission suit le même processus en cinq étapes, depuis la première conversation jusqu'à l'exploitation de long terme :
 
-1. **Découverte** — Une consultation initiale pour comprendre votre organisation, vos défis et vos objectifs. C'est un échange, pas un argumentaire commercial.
-2. **Analyse** — Une évaluation approfondie de vos systèmes, processus et besoins actuels. Identifier ce qui fonctionne, ce qui ne fonctionne pas, et où se trouvent les opportunités.
+1. **Découverte** — Une consultation initiale pour comprendre l'organisation, ses défis et ses objectifs. Un échange, pas un argumentaire commercial.
+2. **Analyse** — Une évaluation approfondie des systèmes, des processus et des besoins actuels. Identifier ce qui fonctionne, ce qui ne fonctionne pas et où se situent les opportunités.
 3. **Proposition** — Une proposition claire et détaillée présentant l'approche recommandée, le calendrier, les livrables et l'investissement. Pas de coûts cachés, pas de promesses vagues.
-4. **Mise en œuvre** — Une exécution concrète avec des mises à jour régulières sur l'avancement. Peter travaille aux côtés de votre équipe, jamais en vase clos.
-5. **Accompagnement** — Un soutien continu, de la formation et du conseil pour garantir que vos solutions continuent à créer de la valeur bien au-delà de la mission initiale.
+4. **Mise en œuvre** — Une exécution concrète, avec des points d'avancement réguliers. Le cabinet travaille aux côtés de l'équipe du client, jamais en vase clos.
+5. **Accompagnement — Exploiter et maintenir** — Pour les systèmes de gestion d'entreprise, les logiciels et les sites web, la mission ne s'arrête pas à la livraison. Administration courante, support utilisateurs, supervision des performances, surveillance de la sécurité, évolution fonctionnelle et entretien de l'infrastructure sont assurés dans le cadre de contrats de maintenance avec engagement de service (SLA). La plupart des clients basculent à ce stade dans une relation opérationnelle de long terme — c'est ainsi que le cycle développer-déployer-exploiter-maintenir se concrétise dans la pratique.
 
 ---
 
-**Prêt à discuter de votre projet ?** Chaque mission commence par un échange. [Prenez rendez-vous](/fr/contact) pour explorer comment ces services peuvent accompagner votre organisation.
+**Prêt à discuter de votre projet ?** Chaque mission commence par un échange — mais la plupart ne s'y arrêtent pas. Les relations les plus solides du cabinet sont celles qui se prolongent sur plusieurs années, autour de systèmes qui sont développés, déployés, puis exploités ensemble. [Prenez rendez-vous](/fr/contact) pour étudier la manière dont ces services peuvent accompagner votre organisation.

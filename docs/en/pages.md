@@ -9,19 +9,24 @@
 **Slug**: /
 
 **What should this page communicate?**
-The first impression of Peter Bamuhigire's professional practice. Visitors should immediately understand: this is a seasoned technology and business consultant with deep Pan-African experience who builds practical solutions that deliver real business results. The page should convey competence, reliability, and warmth — an approachable expert, not a faceless consultancy.
+The first impression of Peter Bamuhigire's professional practice. Visitors should immediately understand: this is a practice that builds, deploys, and maintains the business management systems organisations actually run on — backed by deep Pan-African experience. Lead with systems and software development as the primary offering, with websites and advisory work as supporting services. The page should convey competence, reliability, and warmth — an approachable expert, not a faceless consultancy.
 
 **Key sections:**
 
-1. **Hero Section** — Bold, dark-background hero with professional headshot. Headline: "Building Technology Solutions Across Africa & Beyond". Subheadline: "15+ years of software development, ICT consulting, and business advisory across 10+ African countries." Primary CTA: "Book a Consultation". Secondary CTA: "View My Work" (links to Portfolio).
+1. **Hero Section** — Bold, dark-background hero with professional headshot. Example headline: "Business management systems, developed, deployed, and maintained for organisations across Africa." Subheadline should emphasise the full lifecycle (develop → deploy → manage → maintain) as the differentiator, with a nod to 15+ years of experience across 10+ African countries. Primary CTA: "Book a Consultation". Secondary CTA: "View My Work" (links to Portfolio). (Headline is guidance — final copy lives in the page implementation.)
 
-2. **Service Pillars** — Four service cards with icons: Software Development, ICT Consulting & Strategy, Business Consulting, Property Management Technology. Each with a 2-line summary and "Find Out More" link to the Services page.
+2. **Service Pillars** — Four service cards with icons, in this exact order of prominence:
+   - **Business Management Systems & Software Development** — develop, deploy, manage, maintain. The primary practice: ERP, accounting, PropTech, and custom platforms operated end-to-end.
+   - **Website Development** — strategy-led websites that perform, with the same lifecycle discipline applied to web.
+   - **ICT Consulting & Strategy** — independent technology advisory, infrastructure assessments, vendor selection.
+   - **Business Advisory** — business planning and digital marketing collapsed into one tertiary card to keep the homepage focused.
+   Each card has a 2-line summary and a "Find Out More" link to the Services page. Property Management Technology is no longer a standalone pillar — Aqar is positioned as a flagship example under Systems.
 
-3. **Track Record Numbers** — Key statistics in a visually prominent strip: "15+ Years Experience", "10+ Countries Served", "3 SaaS Products Built", "6+ Industries". Use animated counters on scroll if GSAP is available.
+3. **Track Record Numbers** — Key statistics in a visually prominent strip: "15+ Years Experience", "10+ Countries Served", "4 Flagship Systems Launched", "6+ Industries". Use animated counters on scroll if GSAP is available.
 
-4. **Flagship Products Showcase** — Brief showcase of Maduuka and Aqar with screenshots [SCREENSHOT NEEDED] and one-line descriptions. Link to Portfolio page for full details.
+4. **Flagship Products Showcase** — Brief showcase of three flagship business management systems with screenshots [SCREENSHOT NEEDED] and one-line descriptions: Maduuka (multi-tenant SaaS bookkeeping), Aqar (PropTech for landlords), and Longhorn ERP. Link to Portfolio page for full details.
 
-5. **Why Work With Peter** — Three trust signals: Pan-African Experience (worked across East and West Africa in English and French environments), Technical Depth (full-stack developer who builds, not just advises), Business Understanding (consulting that starts with business outcomes, not technology assumptions).
+5. **Why Work With Peter** — Three trust signals: Pan-African Experience (worked across East and West Africa in English and French environments), Technical Depth (full-stack developer who builds, deploys, and operates the systems, not just advises — the practice owns the full lifecycle), Business Understanding (consulting that starts with business outcomes, not technology assumptions).
 
 6. **Testimonials Preview** — 2-3 rotating testimonials [PLACEHOLDER — replace with real testimonials].
 
@@ -38,17 +43,18 @@ The first impression of Peter Bamuhigire's professional practice. Visitors shoul
 **Slug**: /services
 
 **What should this page communicate?**
-The full breadth of Peter's capabilities across four service pillars, presented in business-outcome language that speaks to decision-makers. Each pillar should feel substantial and well-defined — not a vague list, but a clear offering with specific deliverables.
+The full breadth of Peter's capabilities, structured around a clear systems-first hierarchy: business management systems and software development as the primary practice (with the develop-deploy-manage-maintain lifecycle as the differentiator), website development as the secondary offering, and ICT consulting, business planning, and digital marketing as supporting tertiary services. Each section should feel substantial and well-defined — not a vague list, but a clear offering with specific deliverables. Property management technology is presented as a flagship example under Systems (via Aqar), not as a standalone pillar.
 
 **Key sections:**
 
-1. **Page Header** — "Services" with introductory paragraph: comprehensive technology and business services backed by 15+ years of cross-continental experience.
+1. **Page Header** — "Services" with introductory paragraph framing the practice around business management systems and software development, with web, ICT, and advisory services as complementary offerings.
 
-2. **Four Service Pillars** — Each pillar gets a dedicated section with: icon, title, approach paragraph (2-3 sentences), deliverables list (5-8 items), and "Book a Consultation" CTA.
-   - Software Development
-   - ICT Consulting & Strategy
-   - Business Consulting
-   - Property Management Technology
+2. **Service Hierarchy** — Each service gets a dedicated section with: icon, title, approach paragraph (2-3 sentences), deliverables list (5-8 items), and "Book a Consultation" CTA. Present in this order:
+   - **Primary: Business Management Systems & Software Development** — full lifecycle (develop, deploy, manage, maintain); cite Maduuka, Aqar, and Longhorn ERP as examples; this is the largest, most prominent section.
+   - **Secondary: Website Development** — strategy-led websites built and maintained with the same lifecycle discipline.
+   - **Tertiary: ICT Consulting & Strategy** — independent technology advisory, infrastructure assessments, vendor selection, ICT modernisation.
+   - **Tertiary: Business Planning** — business plans, market entry, organisational strategy.
+   - **Tertiary: Digital Marketing** — strategy and execution support for organisations needing reach.
 
 3. **How We Work** — Brief process overview: Discovery → Analysis → Proposal → Implementation → Support. Shows professionalism and sets expectations.
 
@@ -71,10 +77,10 @@ The tangible results of Peter's work — products built, open-source contributio
 
 1. **Page Header** — "Portfolio" with introductory text about the breadth of work across products, open-source, and consulting.
 
-2. **Flagship Products (SaaS)** — Three product showcases with screenshots [SCREENSHOT NEEDED], descriptions, tech stack, and links:
+2. **Flagship Business Management Systems** — Three flagship system showcases with screenshots [SCREENSHOT NEEDED], descriptions, tech stack, and links — framed consistently with services.md as business management systems developed, deployed, and maintained by the practice:
    - Maduuka — Multi-tenant SaaS bookkeeping platform
    - Aqar Property Management — PropTech for landlords
-   - Chwezi Server Manager — Self-hosted server administration
+   - Longhorn ERP — Enterprise resource planning system
 
 3. **Open-Source Projects** — Grid of GitHub projects with repo links, descriptions, and tech stack:
    - MyWampSSL
@@ -187,7 +193,7 @@ Clear, accessible ways to reach Peter. The primary conversion point — booking 
 
 ## Navigation
 
-**Nav order**: Home, Services, Portfolio, About, Blog, Contact
+**Nav order**: Home, Services, Software, Websites, Portfolio, About, Blog, AI, Contact
 
 **Primary CTA button in navigation**: "Book a Consultation" (links to /contact) — appears as a distinct button in the top navigation, separate from regular nav links.
 

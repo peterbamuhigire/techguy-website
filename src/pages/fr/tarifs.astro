@@ -9,8 +9,8 @@ const lang: Lang = 'fr';
 ---
 
 <BaseLayout
-  title="Tarifs et fit commercial | Peter Bamuhigire"
-  description="Repere de tarifs pour les sites d'autorite, les systemes numeriques et les retainers post-lancement."
+  title="Tarifs et profil d'engagement | Peter Bamuhigire"
+  description="Repère tarifaire pour les systèmes de gestion d'entreprise, le développement logiciel, les sites stratégiques et les contrats de maintenance post-lancement."
   lang={lang}
   page="pricing"
   altUrl="/en/pricing/"
@@ -19,9 +19,9 @@ const lang: Lang = 'fr';
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl fade-up">
         <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold-400">Transparence tarifaire</p>
-        <h1 class="mt-4 text-4xl font-bold text-warm-white md:text-6xl">Un travail strategique merite une clarte commerciale reelle.</h1>
+        <h1 class="mt-4 text-4xl font-bold text-warm-white md:text-6xl">Un travail stratégique mérite une clarté commerciale réelle.</h1>
         <p class="mt-6 text-lg leading-relaxed text-navy-200">
-          Cette page sert a juger rapidement le fit: le niveau de travail implique, le type de client vise et les options de suivi apres lancement.
+          Cette page aide à juger rapidement le profil d'engagement : le niveau de travail impliqué, le type de client visé, et les options d'accompagnement après la mise en production.
         </p>
       </div>
     </div>
@@ -39,10 +39,36 @@ const lang: Lang = 'fr';
     </div>
   </section>
 
+  <section class="bg-warm-cream py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="fade-up rounded-3xl border border-navy-100 bg-white p-7 shadow-sm shadow-navy-900/5">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-amber-accent">Ce qui détermine le prix</p>
+          <ul class="mt-5 space-y-3 text-navy-700">
+            <li>Le niveau de diagnostic, de cadrage et d'ingénierie des exigences avant tout développement.</li>
+            <li>S'il s'agit d'un module système unique, d'un système multi-modules avec intégrations, ou d'un portefeuille de systèmes et de sites web exploités ensemble.</li>
+            <li>Le nombre de rôles utilisateurs, de langues, de marchés ou de parties prenantes que le système ou le site doit servir.</li>
+            <li>Si l'engagement s'arrête à la livraison ou se poursuit en exploitation, maintenance et accompagnement sous SLA.</li>
+          </ul>
+        </div>
+        <div class="fade-up rounded-3xl border border-gold-400/20 bg-navy-900 p-7 text-warm-white">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-gold-400">Ce qui n'est pas vendu</p>
+          <ul class="mt-5 space-y-3 text-navy-200">
+            <li>Du temps de développeur à l'heure sans appropriation stratégique ou opérationnelle.</li>
+            <li>Du code livré sans suite, des sites de type plaquette, ou un périmètre vendu à l'heure.</li>
+            <li>Des forfaits tout-inclus flous qui masquent le support, l'hébergement ou les évolutions futures.</li>
+            <li>Des développements génériques qui ignorent les processus métiers que le système doit servir.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="bg-navy-50 py-16 md:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="fade-up max-w-3xl">
-        <h2 class="text-3xl font-bold text-navy-900 md:text-5xl">Retainers</h2>
+        <h2 class="text-3xl font-bold text-navy-900 md:text-5xl">Contrats de maintenance — comment le cabinet exploite vos systèmes avec vous après la mise en production</h2>
+        <p class="mt-5 text-lg text-navy-600">Chaque système de gestion d'entreprise, ERP ou logiciel critique mérite un plan opérationnel clair. Ces contrats sont la manière dont l'engagement développer-déployer-exploiter-maintenir s'incarne mois après mois.</p>
       </div>
       <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
         {siteConfig.offers.retainers.map((retainer) => (
@@ -56,11 +82,37 @@ const lang: Lang = 'fr';
     </div>
   </section>
 
+  <section class="bg-navy-50 py-16 md:py-20">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="fade-up rounded-3xl border border-navy-100 bg-white p-8 shadow-sm shadow-navy-900/5">
+        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-amber-accent">À qui s'adresse cette pratique</p>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          <div>
+            <h2 class="text-2xl font-bold text-navy-900">Profil adapté</h2>
+            <ul class="mt-4 space-y-3 text-navy-700">
+              <li>Vos systèmes, sites ou outils numériques actuels sous-représentent la qualité du travail qu'il y a derrière — ou ne correspondent plus à l'opération qu'ils devaient soutenir.</li>
+              <li>La confiance, la crédibilité, la fiabilité opérationnelle ou l'avis des parties prenantes pèsent réellement sur la conversion ou la rétention.</li>
+              <li>Vous voulez un diagnostic, une direction et une responsabilité sur le cycle de vie — pas seulement des heures d'exécution.</li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-navy-900">Profil moins adapté</h2>
+            <ul class="mt-4 space-y-3 text-navy-700">
+              <li>Vous avez besoin d'une toute petite tâche ponctuelle au prix le plus bas possible.</li>
+              <li>Vous connaissez déjà le cahier des charges et ne cherchez qu'une paire de mains pour exécuter.</li>
+              <li>Vous voulez des résultats stratégiques sans le budget ni la patience pour la stratégie.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <CTASection
     lang={lang}
-    title="Si le fit est bon, la prochaine etape est un appel diagnostic."
-    subtitle="Expliquez le contexte business, la pression commerciale et le niveau d'accompagnement recherche."
+    title="Si le profil correspond, la prochaine étape est un appel diagnostic."
+    subtitle="Expliquez le contexte business, le système ou le site sur lequel il faut agir, et le niveau d'accompagnement recherché."
     ctaHref="/fr/contact/"
-    ctaLabel="Reserver un appel diagnostic"
+    ctaLabel="Réserver un appel diagnostic"
   />
 </BaseLayout>
